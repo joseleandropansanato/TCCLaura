@@ -4,7 +4,7 @@
 	Private _tensaoCisalhanteY As Double = 0
 
 	Public Sub New()
-
+		'comentario
 	End Sub
 
 	Public Sub New(ByVal tensaoCisalhanteX As Double,
