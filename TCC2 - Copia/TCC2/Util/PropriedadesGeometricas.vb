@@ -19,17 +19,41 @@ Public Class PropriedadesGeometricas
     Public Shared Qx As Double = 0 'MOMENTO ESTÁTICO DE ÁREA EM X
     Public Shared Qy As Double = 0 'MOMENTO ESTÁTICO DE ÁREA EM Y
 
+    'SEÇÃO RETANGULAR
+
+    'SEÇÃO CAIXÃO
+
+
+    'SEÇÃO T OU I
+    Public Shared b1 As Double = 0 'bf2
+    Public Shared b2 As Double = 0 'bw
+    Public Shared b3 As Double = 0 'bf1
+    Public Shared h1 As Double = 0 'hf2
+    Public Shared h2 As Double = 0 'h
+    Public Shared h3 As Double = 0 'hf1
+
+    'caixão
+    Public Shared b1c As Double = 0
+    Public Shared b2c As Double = 0
+    Public Shared b3c As Double = 0
+    Public Shared b4c As Double = 0 'bf2-bw caixao
+    Public Shared h1c As Double = 0
+    Public Shared h2c As Double = 0
+    Public Shared h3c As Double = 0
+    Public Shared h4c As Double = 0 'hbf1 caixao
+
+
 
     Enum Pilar
         Espaçador
         Chapa
     End Enum
 
-
-    Public Function MomentoEstaticoDeArea(dadosIniciais As DadosIniciais, tipoSecao As Madeira.TipoSecao) As Double
+    ''CÁLCULO DO MOMENTO ESTATICO DE ÁREA======================================
+    Public Function MomentoEstaticoDeArea(tipoSecao As Madeira.TipoSecao) As Double
         Dim bases As Double() = {0, 0, 0}
         Dim alturas As Double() = {0, 0, 0}
-        Dim xCG As Double = 0
+        Dim xCG As Double = bases.Max / 2
         Dim x_CGi As Double() = {0, 0, 0}
         Dim y_CGi As Double() = {0, 0, 0}
 
@@ -38,35 +62,28 @@ Public Class PropriedadesGeometricas
         Select Case tipoSecao
             Case Madeira.TipoSecao.SecaoT, Madeira.TipoSecao.SecaoI
                 'SEÇÃO I OU T ==========================================
-                'Dim bases As Double() = {10.0, 5.0, 40.0}
-                'Dim alturas As Double() = {4, 10.0, 2.0}
-
-                bases = {dadosIniciais.b1, dadosIniciais.b2, dadosIniciais.b3}
-                alturas = {dadosIniciais.h1, dadosIniciais.h2, dadosIniciais.h3}
+                bases = {b1, b2, b3}
+                alturas = {h1, h2, h3}
 
                 'calcula as coordenadas x, y do CG de cada figura
                 xCG = bases.Max / 2
                 x_CGi = {xCG, xCG, xCG}
                 y_CGi = {alturas(0) / 2, alturas(0) + alturas(1) / 2, alturas.Sum - alturas(2) / 2}
-        'FIM SEÇÃO I OU T ======================================
 
             Case Madeira.TipoSecao.Caixao
                 ''SEÇÃO CAIXAO ------------------------------------------
-                ' Dim bases As Double() = {20, 4, 4, 20}
-                'Dim alturas As Double() = {10, 40, 40, 10}
-                bases = {dadosIniciais.b1c, dadosIniciais.b2c, dadosIniciais.b3c, dadosIniciais.b4c}
-                alturas = {dadosIniciais.h1c, dadosIniciais.h2c, dadosIniciais.h3c, dadosIniciais.h4c}
+                bases = {b1c, b2c, b3c, b4c}
+                alturas = {h1c, h2c, h3c, h4c}
 
-                ''calcula as coordenadas x,y do CG de cada figura
+                'calcula as coordenadas x,y do CG de cada figura
                 xCG = bases.Max / 2
-                Dim base As Double = Min(bases(0), bases(3))
+                Dim base As Double = Math.Min(bases(0), bases(3))
                 x_CGi = {xCG, xCG - base / 2 + bases(1) / 2, xCG + base / 2 - bases(1) / 2, xCG}
                 y_CGi = {alturas(0) / 2, alturas(0) + alturas(1) / 2, alturas(0) + alturas(1) / 2, alturas(0) + alturas(1) + alturas(3) / 2}
-                ''FIM SEÇÃO CAIXÃO ----------------------------------------
 
         End Select
 
-        Dim area As Double = Calcular_Area(bases, alturas)
+        area = Calcular_Area(bases, alturas)
 
         Dim xCG_perfil = Calcular_CG(bases, alturas, x_CGi)
         Dim yCG_perfil = Calcular_CG(bases, alturas, y_CGi)
@@ -74,9 +91,9 @@ Public Class PropriedadesGeometricas
         Dim InerciaX = Inercia(bases, alturas, y_CGi)
         Dim InerciaY = Inercia(alturas, bases, x_CGi)
 
-        Dim qxy = New Qxy()
-        qxy.Qx = Momento_Estatico_Qx(bases, alturas, y_CGi, tipoSecao)
-        qxy.Qy = Momento_Estatico_Qy(bases, alturas, x_CGi, tipoSecao)
+
+        Qx = Momento_Estatico_Qx(bases, alturas, y_CGi, tipoSecao)
+        Qy = Momento_Estatico_Qy(bases, alturas, x_CGi, tipoSecao)
 
         'Dim Qx = Momento_Estatico_Qx(bases, alturas, y_CGi, "I")
         'Dim Qy = Momento_Estatico_Qy(bases, alturas, x_CGi, "I")
@@ -88,18 +105,18 @@ Public Class PropriedadesGeometricas
                         "yCG: " + yCG_perfil.ToString + vbNewLine +
                         "Ix: " + InerciaX.ToString + vbNewLine +
                         "Iy: " + InerciaY.ToString + vbNewLine +
-                        "Qx: " + qxy.Qx.ToString + vbNewLine +
-                        "Qy: " + qxy.Qy.ToString + vbNewLine)
+                        "Qx: " + Qx.ToString + vbNewLine +
+                        "Qy: " + Qy.ToString + vbNewLine)
 
-        Return q
+        Return MomentoEstaticoDeArea
     End Function
 
     Private Function Calcular_Area(ByVal bases() As Double, ByVal alturas() As Double) As Double
-        Dim area As Double = 0
+        Dim A As Double = 0
         For i As Integer = 0 To bases.Length - 1
-            area += bases(i) * alturas(i)
+            A += bases(i) * alturas(i)
         Next
-        Return area
+        Return A
     End Function
 
     Private Function Calcular_CG(ByVal bases() As Double, ByVal alturas() As Double, ByVal CG_i() As Double) As Double
@@ -203,31 +220,23 @@ Public Class PropriedadesGeometricas
                 A_corte = Calcular_Area(bases, alturas) / 2
 
         End Select
-
         Return A_corte * x_barra
     End Function
 
-    Private Function Min(b1 As Double, b2 As Double) As Double
-        If b1 < b2 Then
-            Return b1
-        ElseIf b1 > b2 Then
-            Return b2
-        End If
-        Return b2
-    End Function
+    '' FIM DO CÁLCULO DO MOMENTO ESTATICO DE ÁREA======================================
 
     'PROPRIEDADES GEOMÉTRICAS DA PEÇA 
-    Public Function CalculoRetangular(baseX As Double, baseY As Double, altura As Double) As PropriedadesGeometricas
+    Public Function CalculoRetangular(baseX As Double, baseY As Double, altura As Double)
         Dim propriedadesGeometricas = New PropriedadesGeometricas()
 
         'seção retangular
-        PropriedadesGeometricas.area = baseX * baseY 'OK
-        PropriedadesGeometricas.eixoXmi = (baseX * baseY ^ 3) / 12 'OK
-        PropriedadesGeometricas.eixoXrg = Math.Sqrt(PropriedadesGeometricas.eixoXmi / PropriedadesGeometricas.area)
-        PropriedadesGeometricas.eixoXmr = PropriedadesGeometricas.eixoXmi / (altura / 2)
-        PropriedadesGeometricas.eixoYmi = (baseY * baseX ^ 3) / 12 'OK
-        PropriedadesGeometricas.eixoYrg = Math.Sqrt(PropriedadesGeometricas.eixoYmi / PropriedadesGeometricas.area)
-        PropriedadesGeometricas.eixoYmr = PropriedadesGeometricas.eixoYmi / (altura / 2)
+        area = baseX * baseY 'OK
+        eixoXmi = (baseX * baseY ^ 3) / 12 'OK
+        eixoXrg = Math.Sqrt(eixoXmi / area)
+        eixoXmr = eixoXmi / (altura / 2)
+        eixoYmi = (baseY * baseX ^ 3) / 12 'OK
+        eixoYrg = Math.Sqrt(eixoYmi / area)
+        eixoYmr = eixoYmi / (altura / 2)
 
         Return propriedadesGeometricas
     End Function
@@ -236,13 +245,13 @@ Public Class PropriedadesGeometricas
         Dim propriedadesGeometricas = New PropriedadesGeometricas()
 
         'seção cirucular
-        PropriedadesGeometricas.area = System.Math.PI * (diametro / 2) ^ 2 'OK
-        PropriedadesGeometricas.eixoXmi = (System.Math.PI * (diametro) ^ 4) / 64 'OK
-        PropriedadesGeometricas.eixoXrg = Math.Sqrt(PropriedadesGeometricas.eixoXmi / PropriedadesGeometricas.area)
-        PropriedadesGeometricas.eixoXmr = PropriedadesGeometricas.eixoXmi / (altura / 2)
-        PropriedadesGeometricas.eixoYmi = (System.Math.PI * (diametro) ^ 4) / 64 'OK
-        PropriedadesGeometricas.eixoYrg = Math.Sqrt(PropriedadesGeometricas.eixoYmi / PropriedadesGeometricas.area)
-        PropriedadesGeometricas.eixoYmr = PropriedadesGeometricas.eixoYmi / (altura / 2)
+        area = System.Math.PI * (diametro / 2) ^ 2 'OK
+        eixoXmi = (System.Math.PI * (diametro) ^ 4) / 64 'OK
+        eixoXrg = Math.Sqrt(eixoXmi / area)
+        eixoXmr = eixoXmi / (altura / 2)
+        eixoYmi = (System.Math.PI * (diametro) ^ 4) / 64 'OK
+        eixoYrg = Math.Sqrt(eixoYmi / area)
+        eixoYmr = eixoYmi / (altura / 2)
 
 
         Return propriedadesGeometricas
@@ -257,15 +266,15 @@ Public Class PropriedadesGeometricas
         Dim y_CGi As Double() = {alturas(0) / 2, alturas(0) + alturas(1) / 2, alturas.Sum - alturas(2) / 2}
 
         'seção T
-        PropriedadesGeometricas.area = Calcular_Area(bases, alturas)
-        PropriedadesGeometricas.eixoXmi = Inercia(bases, alturas, y_CGi)
-        PropriedadesGeometricas.eixoXie = PropriedadesGeometricas.eixoXmi * 0.95
-        PropriedadesGeometricas.eixoXrg = Math.Sqrt(PropriedadesGeometricas.eixoXie / PropriedadesGeometricas.area)
-        PropriedadesGeometricas.eixoXmr = PropriedadesGeometricas.eixoXie / (h / 2)
-        PropriedadesGeometricas.eixoYmi = Inercia(alturas, bases, x_CGi)
-        PropriedadesGeometricas.eixoYie = PropriedadesGeometricas.eixoYmi * 0.95
-        PropriedadesGeometricas.eixoYrg = Math.Sqrt(PropriedadesGeometricas.eixoYie / PropriedadesGeometricas.area)
-        PropriedadesGeometricas.eixoYmr = PropriedadesGeometricas.eixoYie / (h / 2)
+        area = Calcular_Area(bases, alturas)
+        eixoXmi = Inercia(bases, alturas, y_CGi)
+        eixoXie = eixoXmi * 0.95
+        eixoXrg = Math.Sqrt(eixoXie / area)
+        eixoXmr = eixoXie / (h / 2)
+        eixoYmi = Inercia(alturas, bases, x_CGi)
+        eixoYie = eixoYmi * 0.95
+        eixoYrg = Math.Sqrt(eixoYie / area)
+        eixoYmr = eixoYie / (h / 2)
 
         Return propriedadesGeometricas
     End Function
@@ -279,18 +288,16 @@ Public Class PropriedadesGeometricas
         Dim y_CGi As Double() = {alturas(0) / 2, alturas(0) + alturas(1) / 2, alturas.Sum - alturas(2) / 2}
 
         'seção I
-        'propriedadesGeometricas.Area = (bf1 * hf1) + (bf2 * hf2) + (d - bf1 - bf2)
-        PropriedadesGeometricas.area = Calcular_Area(bases, alturas)
-        'propriedadesGeometricas.EixoXmi = ((bf1 * hf1 ^ 3) / 12) + ((bf2 * hf2 ^ 3) / 12) + ((bw * (d - hf1 - hf2) ^ 3) / 12)
-        PropriedadesGeometricas.eixoXmi = Inercia(bases, alturas, y_CGi)
-        PropriedadesGeometricas.eixoXie = PropriedadesGeometricas.eixoXmi * 0.85
-        PropriedadesGeometricas.eixoXrg = Math.Sqrt(PropriedadesGeometricas.eixoXie / PropriedadesGeometricas.area)
-        PropriedadesGeometricas.eixoXmr = PropriedadesGeometricas.eixoXie / ((d - hf1 - hf2) / 2)
-        'propriedadesGeometricas.EixoYmi = ((bf1 ^ 3 * hf1) / 12) + ((bf2 ^ 3 * hf2) / 12) + ((bw ^ 3 * (d - hf1 - hf2)) / 12)
-        PropriedadesGeometricas.eixoYmi = Inercia(bases, alturas, x_CGi)
-        PropriedadesGeometricas.eixoYie = PropriedadesGeometricas.eixoYmi * 0.85
-        PropriedadesGeometricas.eixoYrg = Math.Sqrt(PropriedadesGeometricas.eixoYie / PropriedadesGeometricas.area)
-        PropriedadesGeometricas.eixoYmr = PropriedadesGeometricas.eixoYie / ((d - hf1 - hf2) / 2)
+
+        area = Calcular_Area(bases, alturas)
+        eixoXmi = Inercia(bases, alturas, y_CGi)
+        eixoXie = eixoXmi * 0.85
+        eixoXrg = Math.Sqrt(eixoXie / area)
+        eixoXmr = eixoXie / ((d - hf1 - hf2) / 2)
+        eixoYmi = Inercia(bases, alturas, x_CGi)
+        eixoYie = eixoYmi * 0.85
+        eixoYrg = Math.Sqrt(eixoYie / area)
+        eixoYmr = eixoYie / ((d - hf1 - hf2) / 2)
 
         Return propriedadesGeometricas
     End Function
@@ -301,23 +308,20 @@ Public Class PropriedadesGeometricas
         Dim bases As Double() = {b1, b2, b3, b4}
         Dim alturas As Double() = {h1, h2, h3, h4}
         Dim xCG = bases.Max / 2
-        Dim base As Double = Min(bases(0), bases(3))
+        Dim base As Double = Math.Min(bases(0), bases(3))
         Dim x_CGi As Double() = {xCG, xCG - base / 2 + bases(1) / 2, xCG + base / 2 - bases(1) / 2, xCG}
         Dim y_CGi As Double() = {alturas(0) / 2, alturas(0) + alturas(1) / 2, alturas(0) + alturas(1) / 2, alturas(0) + alturas(1) + alturas(3) / 2}
 
         'seção Caixão
-        'propriedadesGeometricas.Area = (bf2 * d) - (bf1 * h)
-        PropriedadesGeometricas.area = Calcular_Area(bases, alturas)
-        'propriedadesGeometricas.EixoXmi = ((bf2 * d ^ 3) - (bf1 * h ^ 3)) / 12
-        PropriedadesGeometricas.eixoXmi = Inercia(bases, alturas, y_CGi)
-        PropriedadesGeometricas.eixoXie = PropriedadesGeometricas.eixoXmi * 0.85
-        PropriedadesGeometricas.eixoXrg = Math.Sqrt(PropriedadesGeometricas.eixoXie / PropriedadesGeometricas.area)
-        PropriedadesGeometricas.eixoXmr = PropriedadesGeometricas.eixoXie / (h3 / 2)
-        'propriedadesGeometricas.EixoYmi = ((bf2 ^ 3 * d) - (bf1 ^ 3 * h)) / 12
-        PropriedadesGeometricas.eixoYmi = Inercia(bases, alturas, x_CGi)
-        PropriedadesGeometricas.eixoYie = PropriedadesGeometricas.eixoYmi * 0.85
-        PropriedadesGeometricas.eixoYrg = Math.Sqrt(PropriedadesGeometricas.eixoYie / PropriedadesGeometricas.area)
-        PropriedadesGeometricas.eixoYmr = PropriedadesGeometricas.eixoYie / (h3 / 2)
+        area = Calcular_Area(bases, alturas)
+        eixoXmi = Inercia(bases, alturas, y_CGi)
+        eixoXie = eixoXmi * 0.85
+        eixoXrg = Math.Sqrt(eixoXie / area)
+        eixoXmr = eixoXie / (h3 / 2)
+        eixoYmi = Inercia(bases, alturas, x_CGi)
+        eixoYie = eixoYmi * 0.85
+        eixoYrg = Math.Sqrt(eixoYie / area)
+        eixoYmr = eixoYie / (h3 / 2)
 
         Return propriedadesGeometricas
     End Function
@@ -327,22 +331,22 @@ Public Class PropriedadesGeometricas
         Dim propriedadesGeometricas = New PropriedadesGeometricas()
 
         '2 Elementos Justapostos
-        PropriedadesGeometricas.areaA1 = b1 * h1
-        PropriedadesGeometricas.area = PropriedadesGeometricas.areaA1 * 2
-        PropriedadesGeometricas.eixoXmi1 = (b1 * h1 ^ 3) / 12
-        PropriedadesGeometricas.eixoXmi = 2 * PropriedadesGeometricas.eixoXmi1
-        PropriedadesGeometricas.eixoYmi1 = (b1 ^ 3 * h1) / 12
-        PropriedadesGeometricas.eixoYmi = (2 * PropriedadesGeometricas.eixoYmi1) + (2 * PropriedadesGeometricas.areaA1 * (a1 ^ 2))
+        areaA1 = b1 * h1
+        area = areaA1 * 2
+        eixoXmi1 = (b1 * h1 ^ 3) / 12
+        eixoXmi = 2 * eixoXmi1
+        eixoYmi1 = (b1 ^ 3 * h1) / 12
+        eixoYmi = (2 * eixoYmi1) + (2 * areaA1 * (a1 ^ 2))
         Select Case pilar
-            Case PropriedadesGeometricas.Pilar.Espaçador
-                PropriedadesGeometricas.coefBy = PropriedadesGeometricas.eixoYmi1 * ((l / l1) ^ 2) / ((PropriedadesGeometricas.eixoYmi1 * ((l / l1) ^ 2)) + (1.25 * PropriedadesGeometricas.eixoYmi))
-                PropriedadesGeometricas.coefBy = PropriedadesGeometricas.eixoYmi1 * ((l / l1) ^ 2) / ((PropriedadesGeometricas.eixoYmi1 * ((l / l1) ^ 2)) + (1.25 * PropriedadesGeometricas.eixoYmi))
+            Case Pilar.Espaçador
+                coefBy = eixoYmi1 * ((l / l1) ^ 2) / ((eixoYmi1 * ((l / l1) ^ 2)) + (1.25 * eixoYmi))
+                coefBy = eixoYmi1 * ((l / l1) ^ 2) / ((eixoYmi1 * ((l / l1) ^ 2)) + (1.25 * eixoYmi))
             Case PropriedadesGeometricas.Pilar.Chapa
-                PropriedadesGeometricas.coefBy = PropriedadesGeometricas.eixoYmi1 * ((l / l1) ^ 2) / ((PropriedadesGeometricas.eixoYmi1 * ((l / l1) ^ 2)) + (2.25 * PropriedadesGeometricas.eixoYmi))
-                PropriedadesGeometricas.coefBy = PropriedadesGeometricas.eixoYmi1 * ((l / l1) ^ 2) / ((PropriedadesGeometricas.eixoYmi1 * ((l / l1) ^ 2)) + (2.25 * PropriedadesGeometricas.eixoYmi))
+                coefBy = eixoYmi1 * ((l / l1) ^ 2) / ((eixoYmi1 * ((l / l1) ^ 2)) + (2.25 * eixoYmi))
+                coefBy = eixoYmi1 * ((l / l1) ^ 2) / ((eixoYmi1 * ((l / l1) ^ 2)) + (2.25 * eixoYmi))
         End Select
-        PropriedadesGeometricas.eixoYie = PropriedadesGeometricas.coefBy * PropriedadesGeometricas.eixoYmi
-        PropriedadesGeometricas.eixoYmr = PropriedadesGeometricas.eixoYmi1 / (b1 / 2)
+        eixoYie = coefBy * eixoYmi
+        eixoYmr = eixoYmi1 / (b1 / 2)
 
 
         Return propriedadesGeometricas
@@ -352,22 +356,22 @@ Public Class PropriedadesGeometricas
         Dim propriedadesGeometricas = New PropriedadesGeometricas()
 
         '3 Elementos Justapostos
-        PropriedadesGeometricas.areaA1 = b1 * h1
-        PropriedadesGeometricas.area = PropriedadesGeometricas.areaA1 * 3
-        PropriedadesGeometricas.eixoXmi1 = (b1 * h1 ^ 3) / 12
-        PropriedadesGeometricas.eixoXmi = 3 * PropriedadesGeometricas.eixoXmi1
-        PropriedadesGeometricas.eixoYmi1 = (b1 ^ 3 * h1) / 12
-        PropriedadesGeometricas.eixoYmi = (3 * PropriedadesGeometricas.eixoYmi1) + (2 * PropriedadesGeometricas.areaA1 * (a1 ^ 2))
+        areaA1 = b1 * h1
+        area = areaA1 * 3
+        eixoXmi1 = (b1 * h1 ^ 3) / 12
+        eixoXmi = 3 * eixoXmi1
+        eixoYmi1 = (b1 ^ 3 * h1) / 12
+        eixoYmi = (3 * eixoYmi1) + (2 * areaA1 * (a1 ^ 2))
         Select Case pilar
             Case PropriedadesGeometricas.Pilar.Espaçador
-                PropriedadesGeometricas.coefBy = PropriedadesGeometricas.eixoYmi1 * ((l / l1) ^ 2) / ((PropriedadesGeometricas.eixoYmi1 * ((l / l1) ^ 2)) + (1.25 * PropriedadesGeometricas.eixoYmi))
-                PropriedadesGeometricas.coefBy = PropriedadesGeometricas.eixoYmi1 * ((l / l1) ^ 2) / ((PropriedadesGeometricas.eixoYmi1 * ((l / l1) ^ 2)) + (1.25 * PropriedadesGeometricas.eixoYmi))
+                coefBy = eixoYmi1 * ((l / l1) ^ 2) / ((eixoYmi1 * ((l / l1) ^ 2)) + (1.25 * eixoYmi))
+                coefBy = eixoYmi1 * ((l / l1) ^ 2) / ((eixoYmi1 * ((l / l1) ^ 2)) + (1.25 * eixoYmi))
             Case PropriedadesGeometricas.Pilar.Chapa
-                PropriedadesGeometricas.coefBy = PropriedadesGeometricas.eixoYmi1 * ((l / l1) ^ 2) / ((PropriedadesGeometricas.eixoYmi1 * ((l / l1) ^ 2)) + (2.25 * PropriedadesGeometricas.eixoXmi))
-                PropriedadesGeometricas.coefBy = PropriedadesGeometricas.eixoYmi1 * ((l / l1) ^ 2) / ((PropriedadesGeometricas.eixoYmi1 * ((l / l1) ^ 2)) + (2.25 * PropriedadesGeometricas.eixoYmi))
+                coefBy = eixoYmi1 * ((l / l1) ^ 2) / ((eixoYmi1 * ((l / l1) ^ 2)) + (2.25 * eixoXmi))
+                coefBy = eixoYmi1 * ((l / l1) ^ 2) / ((eixoYmi1 * ((l / l1) ^ 2)) + (2.25 * eixoYmi))
         End Select
-        PropriedadesGeometricas.eixoYie = PropriedadesGeometricas.coefBy * PropriedadesGeometricas.eixoYmi
-        PropriedadesGeometricas.eixoYmr = (PropriedadesGeometricas.eixoYmi1 / (b1 / 2))
+        eixoYie = coefBy * eixoYmi
+        eixoYmr = (eixoYmi1 / (b1 / 2))
 
 
         Return propriedadesGeometricas

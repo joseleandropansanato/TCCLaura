@@ -880,6 +880,7 @@ Partial Class Form1
         Me.Label512 = New System.Windows.Forms.Label()
         Me.Label513 = New System.Windows.Forms.Label()
         Me.TableLayoutPanel9 = New System.Windows.Forms.TableLayoutPanel()
+        Me.btnCalcularPropriedadesGeometricas = New System.Windows.Forms.Button()
         Me.MenuStrip2.SuspendLayout
         Me.StatusStrip1.SuspendLayout
         Me.GroupBox8.SuspendLayout
@@ -2358,6 +2359,7 @@ Partial Class Form1
         '
         'TabDadosIniciais
         '
+        Me.TabDadosIniciais.Controls.Add(Me.btnCalcularPropriedadesGeometricas)
         Me.TabDadosIniciais.Controls.Add(Me.GroupBox10)
         Me.TabDadosIniciais.Controls.Add(Me.gbx3Elementos)
         Me.TabDadosIniciais.Controls.Add(Me.imgSecao)
@@ -10478,6 +10480,18 @@ Partial Class Form1
         Me.TableLayoutPanel9.Size = New System.Drawing.Size(200, 100)
         Me.TableLayoutPanel9.TabIndex = 0
         '
+        'btnCalcularPropriedadesGeometricas
+        '
+        Me.btnCalcularPropriedadesGeometricas.BackColor = System.Drawing.Color.Transparent
+        Me.btnCalcularPropriedadesGeometricas.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnCalcularPropriedadesGeometricas.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.btnCalcularPropriedadesGeometricas.Location = New System.Drawing.Point(94, 487)
+        Me.btnCalcularPropriedadesGeometricas.Name = "btnCalcularPropriedadesGeometricas"
+        Me.btnCalcularPropriedadesGeometricas.Size = New System.Drawing.Size(208, 29)
+        Me.btnCalcularPropriedadesGeometricas.TabIndex = 92
+        Me.btnCalcularPropriedadesGeometricas.Text = "Calcular Propriedades "
+        Me.btnCalcularPropriedadesGeometricas.UseVisualStyleBackColor = False
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 23.0!)
@@ -11486,4 +11500,5 @@ Partial Class Form1
     Friend WithEvents Label363 As Label
     Friend WithEvents Label231 As Label
     Friend WithEvents txtEntradaCaixaoB4 As TextBox
+    Friend WithEvents btnCalcularPropriedadesGeometricas As Button
 End Class

@@ -19,14 +19,16 @@
 	Public Shared edy As Double = 0 'excentricidade de projeto em y
 	Public Shared ec As Double = 0 'excentricidade suplementar de primeira ordem
 	Public Shared e1ef As Double = 0 'excentricidade de primeira ordem
-	Public Shared eig As Double = 0 'excentricidade de primeira ordem devido as cargas permanentes
+    Public Shared eig As Double = 0 'excentricidade de primeira ordem devido as cargas permanentes
+    Public Shared eixoXPecaComposta As Double = 0
+    Public Shared eixoYPecaComposta As Double = 0
 
 
-    Public Function Tensao(normalCompressao As Double, momentoFletorX As Double, momentoFletorY As Double, lvinculado As Double, propriedadesGeometricas As PropriedadesGeometricas, tipoSecao As Madeira.TipoSecao,
+    Public Function CalcTensaoC(normalCompressao As Double, momentoFletorX As Double, momentoFletorY As Double, lvinculado As Double, propriedadesGeometricas As PropriedadesGeometricas, tipoSecao As Madeira.TipoSecao,
                                      MomentoCargaPermanenteX As Double, MomentoCargaPermanenteY As Double, MomentoCargaVariavelX As Double, MomentoCargaVariavelY As Double, NormalCargaPermanente As Double, NormalCargaVariavel As Double,
-                                     coefInfluencia As Double, f1 As Double, f2 As Double) As Compressao
+                                     coefInfluencia As Double, f1 As Double, f2 As Double, l As Double, b1 As Double, a As Double, elementoFixacaoSelecionado As String, h1 As Double) As Double
 
-        Dim compressao = New Compressao()
+        'Dim compressao = New Compressao()
         Dim mdX As Double = 0
         Dim mdY As Double = 0
 
@@ -384,8 +386,7 @@
                 End If
 
             Case Madeira.TipoSecao.ElementosJustaposto3
-                esbeltezCompressaoX = 0
-                esbeltezCompressaoY = 0
+
 
                 If esbeltezCompressaoX <= 40 Then 'PEÇA CURTA EM X
 
@@ -406,11 +407,38 @@
 
                 End If
 
+
+                'não é assim, arrumar
+                esbeltezCompressaoX = 0
+                esbeltezCompressaoY = 0
+
+                'botar o espaçador aqui tb
+                If ElementoJustaposto(l, b1, a, elementoFixacaoSelecionado) Then
+                    'tracao.TensaoTracao = normalTracao / propriedadesGeometricas.Area
+                    esbeltezCompressaoX = ((lvinculado) / (Math.Sqrt(PropriedadesGeometricas.eixoXmi / PropriedadesGeometricas.area)))
+                    esbeltezCompressaoY = ((lvinculado) / (Math.Sqrt(PropriedadesGeometricas.eixoYmi / PropriedadesGeometricas.area)))
+                    'eixo X::
+                    eixoXPecaComposta = (normalCompressao / PropriedadesGeometricas.area) + (momentoFletorX / PropriedadesGeometricas.eixoXmi) * (h1 / 2)
+                    'eixo y::
+                    eixoYPecaComposta = (normalCompressao / PropriedadesGeometricas.area) + ((momentoFletorY * PropriedadesGeometricas.eixoYmi1) / PropriedadesGeometricas.eixoYie * PropriedadesGeometricas.eixoYmr) + (momentoFletorY / (2 * PropriedadesGeometricas.area * PropriedadesGeometricas.areaA1)) * (1 - 2 * (PropriedadesGeometricas.eixoYmi1 / PropriedadesGeometricas.eixoYie))
+                End If
+
+                If ElementoJustaposto(l, b1, a, elementoFixacaoSelecionado) Then
+                    'tracao.TensaoTracao = normalTracao / propriedadesGeometricas.Area
+                    esbeltezCompressaoX = (lvinculado) / PropriedadesGeometricas.eixoXrg
+                    esbeltezCompressaoY = (lvinculado) / (Math.Sqrt(PropriedadesGeometricas.eixoYie / PropriedadesGeometricas.area))
+                    'eixo X::
+                    eixoXPecaComposta = (normalCompressao / PropriedadesGeometricas.area) + (momentoFletorX / PropriedadesGeometricas.eixoXmi) * (h1 / 2)
+                    'eixo y::
+                    eixoYPecaComposta = (normalCompressao / PropriedadesGeometricas.area) + ((momentoFletorY * PropriedadesGeometricas.eixoYmi1) / PropriedadesGeometricas.eixoYie * PropriedadesGeometricas.eixoYmr) + (momentoFletorY / (3 * PropriedadesGeometricas.area * PropriedadesGeometricas.areaA1)) * (1 - 2 * (PropriedadesGeometricas.eixoYmi1 / PropriedadesGeometricas.eixoYie))
+                End If
+
+
+
+
         End Select
 
-        Return compressao
+        Return CalcTensaoC
     End Function
-
-
 
 End Class
