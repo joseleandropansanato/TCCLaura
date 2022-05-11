@@ -4240,7 +4240,7 @@ Partial Class Form1
         '
         'Button10
         '
-        Me.Button10.Location = New System.Drawing.Point(566, 346)
+        Me.Button10.Location = New System.Drawing.Point(723, 291)
         Me.Button10.Name = "Button10"
         Me.Button10.Size = New System.Drawing.Size(94, 29)
         Me.Button10.TabIndex = 21
@@ -4252,7 +4252,7 @@ Partial Class Form1
         Me.gbxResultadosElementos.Controls.Add(Me.GroupBox21)
         Me.gbxResultadosElementos.Controls.Add(Me.GroupBox22)
         Me.gbxResultadosElementos.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.gbxResultadosElementos.Location = New System.Drawing.Point(8, 16)
+        Me.gbxResultadosElementos.Location = New System.Drawing.Point(8, 346)
         Me.gbxResultadosElementos.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.gbxResultadosElementos.Name = "gbxResultadosElementos"
         Me.gbxResultadosElementos.Padding = New System.Windows.Forms.Padding(3, 4, 3, 4)

@@ -1,6 +1,5 @@
-﻿Module Definicoes
+﻿Module PropriedadesResistencia
     'definições: lista com cada madeira que será necessario para o cálculo
-
     Public Function ListaDenominacaoMadeira() As IEnumerable(Of Madeira)
         Return New List(Of Madeira) From
             {
@@ -159,13 +158,13 @@
 
         'TODAS AS LINHAS OK TIVERAM AS CONTAS VALIDADAS NO EXCEL DO PROFESSOR OU MANUALMENTE 
         'seção retangular
-        propriedadesGeometricas.Area = baseX * baseY 'OK
-        propriedadesGeometricas.EixoXmi = (baseX * baseY ^ 3) / 12 'OK
-        propriedadesGeometricas.EixoXrg = Math.Sqrt(propriedadesGeometricas.EixoXmi / propriedadesGeometricas.Area)
-        propriedadesGeometricas.EixoXmr = propriedadesGeometricas.EixoXmi / (altura / 2)
-        propriedadesGeometricas.EixoYmi = (baseY * baseX ^ 3) / 12 'OK
-        propriedadesGeometricas.EixoYrg = Math.Sqrt(propriedadesGeometricas.EixoYmi / propriedadesGeometricas.Area)
-        propriedadesGeometricas.EixoYmr = propriedadesGeometricas.EixoYmi / (altura / 2)
+        PropriedadesGeometricas.area = baseX * baseY 'OK
+        PropriedadesGeometricas.eixoXmi = (baseX * baseY ^ 3) / 12 'OK
+        PropriedadesGeometricas.eixoXrg = Math.Sqrt(PropriedadesGeometricas.eixoXmi / PropriedadesGeometricas.area)
+        PropriedadesGeometricas.eixoXmr = PropriedadesGeometricas.eixoXmi / (altura / 2)
+        PropriedadesGeometricas.eixoYmi = (baseY * baseX ^ 3) / 12 'OK
+        PropriedadesGeometricas.eixoYrg = Math.Sqrt(PropriedadesGeometricas.eixoYmi / PropriedadesGeometricas.area)
+        PropriedadesGeometricas.eixoYmr = PropriedadesGeometricas.eixoYmi / (altura / 2)
 
         Return propriedadesGeometricas
     End Function
@@ -174,13 +173,13 @@
         Dim propriedadesGeometricas = New PropriedadesGeometricas()
 
         'seção cirucular
-        propriedadesGeometricas.Area = System.Math.PI * (diametro / 2) ^ 2 'OK
-        propriedadesGeometricas.EixoXmi = (System.Math.PI * (diametro) ^ 4) / 64 'OK
-        propriedadesGeometricas.EixoXrg = Math.Sqrt(propriedadesGeometricas.EixoXmi / propriedadesGeometricas.Area)
-        propriedadesGeometricas.EixoXmr = propriedadesGeometricas.EixoXmi / (altura / 2)
-        propriedadesGeometricas.EixoYmi = (System.Math.PI * (diametro) ^ 4) / 64 'OK
-        propriedadesGeometricas.EixoYrg = Math.Sqrt(propriedadesGeometricas.EixoYmi / propriedadesGeometricas.Area)
-        propriedadesGeometricas.EixoYmr = propriedadesGeometricas.EixoYmi / (altura / 2)
+        PropriedadesGeometricas.area = System.Math.PI * (diametro / 2) ^ 2 'OK
+        PropriedadesGeometricas.eixoXmi = (System.Math.PI * (diametro) ^ 4) / 64 'OK
+        PropriedadesGeometricas.eixoXrg = Math.Sqrt(PropriedadesGeometricas.eixoXmi / PropriedadesGeometricas.area)
+        PropriedadesGeometricas.eixoXmr = PropriedadesGeometricas.eixoXmi / (altura / 2)
+        PropriedadesGeometricas.eixoYmi = (System.Math.PI * (diametro) ^ 4) / 64 'OK
+        PropriedadesGeometricas.eixoYrg = Math.Sqrt(PropriedadesGeometricas.eixoYmi / PropriedadesGeometricas.area)
+        PropriedadesGeometricas.eixoYmr = PropriedadesGeometricas.eixoYmi / (altura / 2)
 
 
         Return propriedadesGeometricas
@@ -195,15 +194,15 @@
         Dim y_CGi As Double() = {alturas(0) / 2, alturas(0) + alturas(1) / 2, alturas.Sum - alturas(2) / 2}
 
         'seção T
-        propriedadesGeometricas.Area = Calcular_Area(bases, alturas)
-        propriedadesGeometricas.EixoXmi = Inercia(bases, alturas, y_CGi)
-        propriedadesGeometricas.EixoXie = propriedadesGeometricas.EixoXmi * 0.95
-        propriedadesGeometricas.EixoXrg = Math.Sqrt(propriedadesGeometricas.EixoXie / propriedadesGeometricas.Area)
-        propriedadesGeometricas.EixoXmr = propriedadesGeometricas.EixoXie / (h / 2)
-        propriedadesGeometricas.EixoYmi = Inercia(alturas, bases, x_CGi)
-        propriedadesGeometricas.EixoYie = propriedadesGeometricas.EixoYmi * 0.95
-        propriedadesGeometricas.EixoYrg = Math.Sqrt(propriedadesGeometricas.EixoYie / propriedadesGeometricas.Area)
-        propriedadesGeometricas.EixoYmr = propriedadesGeometricas.EixoYie / (h / 2)
+        PropriedadesGeometricas.area = Calcular_Area(bases, alturas)
+        PropriedadesGeometricas.eixoXmi = Inercia(bases, alturas, y_CGi)
+        PropriedadesGeometricas.eixoXie = PropriedadesGeometricas.eixoXmi * 0.95
+        PropriedadesGeometricas.eixoXrg = Math.Sqrt(PropriedadesGeometricas.eixoXie / PropriedadesGeometricas.area)
+        PropriedadesGeometricas.eixoXmr = PropriedadesGeometricas.eixoXie / (h / 2)
+        PropriedadesGeometricas.eixoYmi = Inercia(alturas, bases, x_CGi)
+        PropriedadesGeometricas.eixoYie = PropriedadesGeometricas.eixoYmi * 0.95
+        PropriedadesGeometricas.eixoYrg = Math.Sqrt(PropriedadesGeometricas.eixoYie / PropriedadesGeometricas.area)
+        PropriedadesGeometricas.eixoYmr = PropriedadesGeometricas.eixoYie / (h / 2)
 
         Return propriedadesGeometricas
     End Function
@@ -218,17 +217,17 @@
 
         'seção I
         'propriedadesGeometricas.Area = (bf1 * hf1) + (bf2 * hf2) + (d - bf1 - bf2)
-        propriedadesGeometricas.Area = Calcular_Area(bases, alturas)
+        PropriedadesGeometricas.area = Calcular_Area(bases, alturas)
         'propriedadesGeometricas.EixoXmi = ((bf1 * hf1 ^ 3) / 12) + ((bf2 * hf2 ^ 3) / 12) + ((bw * (d - hf1 - hf2) ^ 3) / 12)
-        propriedadesGeometricas.EixoXmi = Inercia(bases, alturas, y_CGi)
-        propriedadesGeometricas.EixoXie = propriedadesGeometricas.EixoXmi * 0.85
-        propriedadesGeometricas.EixoXrg = Math.Sqrt(propriedadesGeometricas.EixoXie / propriedadesGeometricas.Area)
-        propriedadesGeometricas.EixoXmr = propriedadesGeometricas.EixoXie / ((d - hf1 - hf2) / 2)
+        PropriedadesGeometricas.eixoXmi = Inercia(bases, alturas, y_CGi)
+        PropriedadesGeometricas.eixoXie = PropriedadesGeometricas.eixoXmi * 0.85
+        PropriedadesGeometricas.eixoXrg = Math.Sqrt(PropriedadesGeometricas.eixoXie / PropriedadesGeometricas.area)
+        PropriedadesGeometricas.eixoXmr = PropriedadesGeometricas.eixoXie / ((d - hf1 - hf2) / 2)
         'propriedadesGeometricas.EixoYmi = ((bf1 ^ 3 * hf1) / 12) + ((bf2 ^ 3 * hf2) / 12) + ((bw ^ 3 * (d - hf1 - hf2)) / 12)
-        propriedadesGeometricas.EixoYmi = Inercia(bases, alturas, x_CGi)
-        propriedadesGeometricas.EixoYie = propriedadesGeometricas.EixoYmi * 0.85
-        propriedadesGeometricas.EixoYrg = Math.Sqrt(propriedadesGeometricas.EixoYie / propriedadesGeometricas.Area)
-        propriedadesGeometricas.EixoYmr = propriedadesGeometricas.EixoYie / ((d - hf1 - hf2) / 2)
+        PropriedadesGeometricas.eixoYmi = Inercia(bases, alturas, x_CGi)
+        PropriedadesGeometricas.eixoYie = PropriedadesGeometricas.eixoYmi * 0.85
+        PropriedadesGeometricas.eixoYrg = Math.Sqrt(PropriedadesGeometricas.eixoYie / PropriedadesGeometricas.area)
+        PropriedadesGeometricas.eixoYmr = PropriedadesGeometricas.eixoYie / ((d - hf1 - hf2) / 2)
 
         Return propriedadesGeometricas
     End Function
@@ -245,17 +244,17 @@
 
         'seção Caixão
         'propriedadesGeometricas.Area = (bf2 * d) - (bf1 * h)
-        propriedadesGeometricas.Area = Calcular_Area(bases, alturas)
+        PropriedadesGeometricas.area = Calcular_Area(bases, alturas)
         'propriedadesGeometricas.EixoXmi = ((bf2 * d ^ 3) - (bf1 * h ^ 3)) / 12
-        propriedadesGeometricas.EixoXmi = Inercia(bases, alturas, y_CGi)
-        propriedadesGeometricas.EixoXie = propriedadesGeometricas.EixoXmi * 0.85
-        propriedadesGeometricas.EixoXrg = Math.Sqrt(propriedadesGeometricas.EixoXie / propriedadesGeometricas.Area)
-        propriedadesGeometricas.EixoXmr = propriedadesGeometricas.EixoXie / (h3 / 2)
+        PropriedadesGeometricas.eixoXmi = Inercia(bases, alturas, y_CGi)
+        PropriedadesGeometricas.eixoXie = PropriedadesGeometricas.eixoXmi * 0.85
+        PropriedadesGeometricas.eixoXrg = Math.Sqrt(PropriedadesGeometricas.eixoXie / PropriedadesGeometricas.area)
+        PropriedadesGeometricas.eixoXmr = PropriedadesGeometricas.eixoXie / (h3 / 2)
         'propriedadesGeometricas.EixoYmi = ((bf2 ^ 3 * d) - (bf1 ^ 3 * h)) / 12
-        propriedadesGeometricas.EixoYmi = Inercia(bases, alturas, x_CGi)
-        propriedadesGeometricas.EixoYie = propriedadesGeometricas.EixoYmi * 0.85
-        propriedadesGeometricas.EixoYrg = Math.Sqrt(propriedadesGeometricas.EixoYie / propriedadesGeometricas.Area)
-        propriedadesGeometricas.EixoYmr = propriedadesGeometricas.EixoYie / (h3 / 2)
+        PropriedadesGeometricas.eixoYmi = Inercia(bases, alturas, x_CGi)
+        PropriedadesGeometricas.eixoYie = PropriedadesGeometricas.eixoYmi * 0.85
+        PropriedadesGeometricas.eixoYrg = Math.Sqrt(PropriedadesGeometricas.eixoYie / PropriedadesGeometricas.area)
+        PropriedadesGeometricas.eixoYmr = PropriedadesGeometricas.eixoYie / (h3 / 2)
 
         Return propriedadesGeometricas
     End Function
@@ -265,22 +264,22 @@
         Dim propriedadesGeometricas = New PropriedadesGeometricas()
 
         '2 Elementos Justapostos
-        propriedadesGeometricas.AreaA1 = b1 * h1
-        propriedadesGeometricas.Area = propriedadesGeometricas.AreaA1 * 2
-        propriedadesGeometricas.EixoXmi1 = (b1 * h1 ^ 3) / 12
-        propriedadesGeometricas.EixoXmi = 2 * propriedadesGeometricas.EixoXmi1
-        propriedadesGeometricas.EixoYmi1 = (b1 ^ 3 * h1) / 12
-        propriedadesGeometricas.EixoYmi = (2 * propriedadesGeometricas.EixoYmi1) + (2 * propriedadesGeometricas.AreaA1 * (a1 ^ 2))
+        PropriedadesGeometricas.areaA1 = b1 * h1
+        PropriedadesGeometricas.area = PropriedadesGeometricas.areaA1 * 2
+        PropriedadesGeometricas.eixoXmi1 = (b1 * h1 ^ 3) / 12
+        PropriedadesGeometricas.eixoXmi = 2 * PropriedadesGeometricas.eixoXmi1
+        PropriedadesGeometricas.eixoYmi1 = (b1 ^ 3 * h1) / 12
+        PropriedadesGeometricas.eixoYmi = (2 * PropriedadesGeometricas.eixoYmi1) + (2 * PropriedadesGeometricas.areaA1 * (a1 ^ 2))
         Select Case pilar
             Case PropriedadesGeometricas.Pilar.Espaçador
-                propriedadesGeometricas.CoefBy = propriedadesGeometricas.EixoYmi1 * ((l / l1) ^ 2) / ((propriedadesGeometricas.EixoYmi1 * ((l / l1) ^ 2)) + (1.25 * propriedadesGeometricas.EixoYmi))
-                propriedadesGeometricas.CoefBy = propriedadesGeometricas.EixoYmi1 * ((l / l1) ^ 2) / ((propriedadesGeometricas.EixoYmi1 * ((l / l1) ^ 2)) + (1.25 * propriedadesGeometricas.EixoYmi))
+                PropriedadesGeometricas.coefBy = PropriedadesGeometricas.eixoYmi1 * ((l / l1) ^ 2) / ((PropriedadesGeometricas.eixoYmi1 * ((l / l1) ^ 2)) + (1.25 * PropriedadesGeometricas.eixoYmi))
+                PropriedadesGeometricas.coefBy = PropriedadesGeometricas.eixoYmi1 * ((l / l1) ^ 2) / ((PropriedadesGeometricas.eixoYmi1 * ((l / l1) ^ 2)) + (1.25 * PropriedadesGeometricas.eixoYmi))
             Case PropriedadesGeometricas.Pilar.Chapa
-                propriedadesGeometricas.CoefBy = propriedadesGeometricas.EixoYmi1 * ((l / l1) ^ 2) / ((propriedadesGeometricas.EixoYmi1 * ((l / l1) ^ 2)) + (2.25 * propriedadesGeometricas.EixoYmi))
-                propriedadesGeometricas.CoefBy = propriedadesGeometricas.EixoYmi1 * ((l / l1) ^ 2) / ((propriedadesGeometricas.EixoYmi1 * ((l / l1) ^ 2)) + (2.25 * propriedadesGeometricas.EixoYmi))
+                PropriedadesGeometricas.coefBy = PropriedadesGeometricas.eixoYmi1 * ((l / l1) ^ 2) / ((PropriedadesGeometricas.eixoYmi1 * ((l / l1) ^ 2)) + (2.25 * PropriedadesGeometricas.eixoYmi))
+                PropriedadesGeometricas.coefBy = PropriedadesGeometricas.eixoYmi1 * ((l / l1) ^ 2) / ((PropriedadesGeometricas.eixoYmi1 * ((l / l1) ^ 2)) + (2.25 * PropriedadesGeometricas.eixoYmi))
         End Select
-        propriedadesGeometricas.EixoYie = propriedadesGeometricas.CoefBy * propriedadesGeometricas.EixoYmi
-        propriedadesGeometricas.EixoYmr = propriedadesGeometricas.EixoYmi1 / (b1 / 2)
+        PropriedadesGeometricas.eixoYie = PropriedadesGeometricas.coefBy * PropriedadesGeometricas.eixoYmi
+        PropriedadesGeometricas.eixoYmr = PropriedadesGeometricas.eixoYmi1 / (b1 / 2)
 
 
         Return propriedadesGeometricas
@@ -290,22 +289,22 @@
         Dim propriedadesGeometricas = New PropriedadesGeometricas()
 
         '3 Elementos Justapostos
-        propriedadesGeometricas.AreaA1 = b1 * h1
-        propriedadesGeometricas.Area = propriedadesGeometricas.AreaA1 * 3
-        propriedadesGeometricas.EixoXmi1 = (b1 * h1 ^ 3) / 12
-        propriedadesGeometricas.EixoXmi = 3 * propriedadesGeometricas.EixoXmi1
-        propriedadesGeometricas.EixoYmi1 = (b1 ^ 3 * h1) / 12
-        propriedadesGeometricas.EixoYmi = (3 * propriedadesGeometricas.EixoYmi1) + (2 * propriedadesGeometricas.AreaA1 * (a1 ^ 2))
+        PropriedadesGeometricas.areaA1 = b1 * h1
+        PropriedadesGeometricas.area = PropriedadesGeometricas.areaA1 * 3
+        PropriedadesGeometricas.eixoXmi1 = (b1 * h1 ^ 3) / 12
+        PropriedadesGeometricas.eixoXmi = 3 * PropriedadesGeometricas.eixoXmi1
+        PropriedadesGeometricas.eixoYmi1 = (b1 ^ 3 * h1) / 12
+        PropriedadesGeometricas.eixoYmi = (3 * PropriedadesGeometricas.eixoYmi1) + (2 * PropriedadesGeometricas.areaA1 * (a1 ^ 2))
         Select Case pilar
             Case PropriedadesGeometricas.Pilar.Espaçador
-                propriedadesGeometricas.CoefBy = propriedadesGeometricas.EixoYmi1 * ((l / l1) ^ 2) / ((propriedadesGeometricas.EixoYmi1 * ((l / l1) ^ 2)) + (1.25 * propriedadesGeometricas.EixoYmi))
-                propriedadesGeometricas.CoefBy = propriedadesGeometricas.EixoYmi1 * ((l / l1) ^ 2) / ((propriedadesGeometricas.EixoYmi1 * ((l / l1) ^ 2)) + (1.25 * propriedadesGeometricas.EixoYmi))
+                PropriedadesGeometricas.coefBy = PropriedadesGeometricas.eixoYmi1 * ((l / l1) ^ 2) / ((PropriedadesGeometricas.eixoYmi1 * ((l / l1) ^ 2)) + (1.25 * PropriedadesGeometricas.eixoYmi))
+                PropriedadesGeometricas.coefBy = PropriedadesGeometricas.eixoYmi1 * ((l / l1) ^ 2) / ((PropriedadesGeometricas.eixoYmi1 * ((l / l1) ^ 2)) + (1.25 * PropriedadesGeometricas.eixoYmi))
             Case PropriedadesGeometricas.Pilar.Chapa
-                propriedadesGeometricas.CoefBy = propriedadesGeometricas.EixoYmi1 * ((l / l1) ^ 2) / ((propriedadesGeometricas.EixoYmi1 * ((l / l1) ^ 2)) + (2.25 * propriedadesGeometricas.EixoXmi))
-                propriedadesGeometricas.CoefBy = propriedadesGeometricas.EixoYmi1 * ((l / l1) ^ 2) / ((propriedadesGeometricas.EixoYmi1 * ((l / l1) ^ 2)) + (2.25 * propriedadesGeometricas.EixoYmi))
+                PropriedadesGeometricas.coefBy = PropriedadesGeometricas.eixoYmi1 * ((l / l1) ^ 2) / ((PropriedadesGeometricas.eixoYmi1 * ((l / l1) ^ 2)) + (2.25 * PropriedadesGeometricas.eixoXmi))
+                PropriedadesGeometricas.coefBy = PropriedadesGeometricas.eixoYmi1 * ((l / l1) ^ 2) / ((PropriedadesGeometricas.eixoYmi1 * ((l / l1) ^ 2)) + (2.25 * PropriedadesGeometricas.eixoYmi))
         End Select
-        propriedadesGeometricas.EixoYie = propriedadesGeometricas.CoefBy * propriedadesGeometricas.EixoYmi
-        propriedadesGeometricas.EixoYmr = (propriedadesGeometricas.EixoYmi1 / (b1 / 2))
+        PropriedadesGeometricas.eixoYie = PropriedadesGeometricas.coefBy * PropriedadesGeometricas.eixoYmi
+        PropriedadesGeometricas.eixoYmr = (PropriedadesGeometricas.eixoYmi1 / (b1 / 2))
 
 
         Return propriedadesGeometricas
@@ -337,50 +336,50 @@
 
         Select Case tipoSecao
             Case Madeira.TipoSecao.Retangular
-                tracao.TensaoTracao = ((normalTracao) / (propriedadesGeometricas.Area)) 'OK
-                tracao.EsbeltezTracaoX = (c * 100 / (Math.Sqrt(propriedadesGeometricas.EixoXmi / propriedadesGeometricas.Area))) 'OK
-                tracao.EsbeltezTracaoY = (c * 100 / (Math.Sqrt(propriedadesGeometricas.EixoYmi / propriedadesGeometricas.Area))) 'OK
+                tracao.tensaoTracao = ((normalTracao) / (PropriedadesGeometricas.area)) 'OK
+                Tracao.esbeltezTracaoX = (c * 100 / (Math.Sqrt(PropriedadesGeometricas.eixoXmi / PropriedadesGeometricas.area))) 'OK
+                Tracao.esbeltezTracaoY = (c * 100 / (Math.Sqrt(PropriedadesGeometricas.eixoYmi / PropriedadesGeometricas.area))) 'OK
 
             Case Madeira.TipoSecao.Circular
-                tracao.TensaoTracao = normalTracao / propriedadesGeometricas.Area
-                tracao.EsbeltezTracaoX = (diametro / (Math.Sqrt(propriedadesGeometricas.EixoXmi / propriedadesGeometricas.Area)))
-                tracao.EsbeltezTracaoY = (altura / (Math.Sqrt(propriedadesGeometricas.EixoYmi / propriedadesGeometricas.Area)))
+                tracao.tensaoTracao = normalTracao / PropriedadesGeometricas.area
+                Tracao.esbeltezTracaoX = (diametro / (Math.Sqrt(PropriedadesGeometricas.eixoXmi / PropriedadesGeometricas.area)))
+                Tracao.esbeltezTracaoY = (altura / (Math.Sqrt(PropriedadesGeometricas.eixoYmi / PropriedadesGeometricas.area)))
 
             Case Madeira.TipoSecao.SecaoT
-                tracao.TensaoTracao = normalTracao / propriedadesGeometricas.Area
-                tracao.EsbeltezTracaoX = (bw / (Math.Sqrt(propriedadesGeometricas.EixoXmi / propriedadesGeometricas.Area)))
-                tracao.EsbeltezTracaoY = (d / (Math.Sqrt(propriedadesGeometricas.EixoYmi / propriedadesGeometricas.Area)))
+                tracao.tensaoTracao = normalTracao / PropriedadesGeometricas.area
+                Tracao.esbeltezTracaoX = (bw / (Math.Sqrt(PropriedadesGeometricas.eixoXmi / PropriedadesGeometricas.area)))
+                Tracao.esbeltezTracaoY = (d / (Math.Sqrt(PropriedadesGeometricas.eixoYmi / PropriedadesGeometricas.area)))
 
             Case Madeira.TipoSecao.SecaoI
-                tracao.TensaoTracao = normalTracao / propriedadesGeometricas.Area
-                tracao.EsbeltezTracaoX = (bf1 / (Math.Sqrt(propriedadesGeometricas.EixoXmi / propriedadesGeometricas.Area)))
-                tracao.EsbeltezTracaoY = (d / (Math.Sqrt(propriedadesGeometricas.EixoYmi / propriedadesGeometricas.Area)))
+                tracao.tensaoTracao = normalTracao / PropriedadesGeometricas.area
+                Tracao.esbeltezTracaoX = (bf1 / (Math.Sqrt(PropriedadesGeometricas.eixoXmi / PropriedadesGeometricas.area)))
+                Tracao.esbeltezTracaoY = (d / (Math.Sqrt(PropriedadesGeometricas.eixoYmi / PropriedadesGeometricas.area)))
 
             Case Madeira.TipoSecao.Caixao
-                tracao.TensaoTracao = normalTracao / propriedadesGeometricas.Area
-                tracao.EsbeltezTracaoX = (bf1 / (Math.Sqrt(propriedadesGeometricas.EixoXmi / propriedadesGeometricas.Area)))
-                tracao.EsbeltezTracaoY = (d / (Math.Sqrt(propriedadesGeometricas.EixoYmi / propriedadesGeometricas.Area)))
+                tracao.tensaoTracao = normalTracao / PropriedadesGeometricas.area
+                Tracao.esbeltezTracaoX = (bf1 / (Math.Sqrt(PropriedadesGeometricas.eixoXmi / PropriedadesGeometricas.area)))
+                Tracao.esbeltezTracaoY = (d / (Math.Sqrt(PropriedadesGeometricas.eixoYmi / PropriedadesGeometricas.area)))
 
             Case Madeira.TipoSecao.ElementosJustaposto2
                 'botar o espaçador aqui tb
                 If ElementoJustaposto(l, b1, a, elementoFixacaoSelecionado) Then
                     'tracao.TensaoTracao = normalTracao / propriedadesGeometricas.Area
-                    tracao.EsbeltezTracaoX = ((lvinculado) / (Math.Sqrt(propriedadesGeometricas.EixoXmi / propriedadesGeometricas.Area)))
-                    tracao.EsbeltezTracaoY = ((lvinculado) / (Math.Sqrt(propriedadesGeometricas.EixoYmi / propriedadesGeometricas.Area)))
+                    Tracao.esbeltezTracaoX = ((lvinculado) / (Math.Sqrt(PropriedadesGeometricas.eixoXmi / PropriedadesGeometricas.area)))
+                    Tracao.esbeltezTracaoY = ((lvinculado) / (Math.Sqrt(PropriedadesGeometricas.eixoYmi / PropriedadesGeometricas.area)))
                     'eixo X::
-                    tracao.EixoXPecaComposta = (normalTracao / propriedadesGeometricas.Area) + (momentoFletorX / propriedadesGeometricas.EixoXmi) * (h1 / 2)
+                    Tracao.eixoXPecaComposta = (normalTracao / PropriedadesGeometricas.area) + (momentoFletorX / PropriedadesGeometricas.eixoXmi) * (h1 / 2)
                     'eixo y::
-                    tracao.EixoYPecaComposta = (normalTracao / propriedadesGeometricas.Area) + ((momentoFletorY * propriedadesGeometricas.EixoYmi1) / propriedadesGeometricas.EixoYie * propriedadesGeometricas.EixoYmr) + (momentoFletorY / (2 * propriedadesGeometricas.Area * propriedadesGeometricas.AreaA1)) * (1 - 2 * (propriedadesGeometricas.EixoYmi1 / propriedadesGeometricas.EixoYie))
+                    Tracao.eixoYPecaComposta = (normalTracao / PropriedadesGeometricas.area) + ((momentoFletorY * PropriedadesGeometricas.eixoYmi1) / PropriedadesGeometricas.eixoYie * PropriedadesGeometricas.eixoYmr) + (momentoFletorY / (2 * PropriedadesGeometricas.area * PropriedadesGeometricas.areaA1)) * (1 - 2 * (PropriedadesGeometricas.eixoYmi1 / PropriedadesGeometricas.eixoYie))
                 End If
             Case Madeira.TipoSecao.ElementosJustaposto3
                 If ElementoJustaposto(l, b1, a, elementoFixacaoSelecionado) Then
                     'tracao.TensaoTracao = normalTracao / propriedadesGeometricas.Area
-                    tracao.EsbeltezTracaoX = (lvinculado) / propriedadesGeometricas.EixoXrg
-                    tracao.EsbeltezTracaoY = (lvinculado) / (Math.Sqrt(propriedadesGeometricas.EixoYie / propriedadesGeometricas.Area))
+                    Tracao.esbeltezTracaoX = (lvinculado) / PropriedadesGeometricas.eixoXrg
+                    Tracao.esbeltezTracaoY = (lvinculado) / (Math.Sqrt(PropriedadesGeometricas.eixoYie / PropriedadesGeometricas.area))
                     'eixo X::
-                    tracao.EixoXPecaComposta = (normalTracao / propriedadesGeometricas.Area) + (momentoFletorX / propriedadesGeometricas.EixoXmi) * (h1 / 2)
+                    Tracao.eixoXPecaComposta = (normalTracao / PropriedadesGeometricas.area) + (momentoFletorX / PropriedadesGeometricas.eixoXmi) * (h1 / 2)
                     'eixo y::
-                    tracao.EixoYPecaComposta = (normalTracao / propriedadesGeometricas.Area) + ((momentoFletorY * propriedadesGeometricas.EixoYmi1) / propriedadesGeometricas.EixoYie * propriedadesGeometricas.EixoYmr) + (momentoFletorY / (3 * propriedadesGeometricas.Area * propriedadesGeometricas.AreaA1)) * (1 - 2 * (propriedadesGeometricas.EixoYmi1 / propriedadesGeometricas.EixoYie))
+                    Tracao.eixoYPecaComposta = (normalTracao / PropriedadesGeometricas.area) + ((momentoFletorY * PropriedadesGeometricas.eixoYmi1) / PropriedadesGeometricas.eixoYie * PropriedadesGeometricas.eixoYmr) + (momentoFletorY / (3 * PropriedadesGeometricas.area * PropriedadesGeometricas.areaA1)) * (1 - 2 * (PropriedadesGeometricas.eixoYmi1 / PropriedadesGeometricas.eixoYie))
                 End If
         End Select
 
@@ -399,195 +398,195 @@
 
             Case Madeira.TipoSecao.Retangular
 
-                compressao.EsbeltezCompressaoX = (lvinculado * 100 / (Math.Sqrt(propriedadesGeometricas.EixoXmi / propriedadesGeometricas.Area))) 'OK
-                compressao.EsbeltezCompressaoY = (lvinculado * 100 / (Math.Sqrt(propriedadesGeometricas.EixoYmi / propriedadesGeometricas.Area))) 'OK
+                Compressao.esbeltezCompressaoX = (lvinculado * 100 / (Math.Sqrt(PropriedadesGeometricas.eixoXmi / PropriedadesGeometricas.area))) 'OK
+                Compressao.esbeltezCompressaoY = (lvinculado * 100 / (Math.Sqrt(PropriedadesGeometricas.eixoYmi / PropriedadesGeometricas.area))) 'OK
 
-                If compressao.EsbeltezCompressaoX <= 40 Then 'PEÇA CURTA EM X
-                    compressao.TensaoCompressao = normalCompressao / propriedadesGeometricas.Area
+                If Compressao.esbeltezCompressaoX <= 40 Then 'PEÇA CURTA EM X
+                    Compressao.tensaoCompressao = normalCompressao / PropriedadesGeometricas.area
 
-                ElseIf compressao.EsbeltezCompressaoY <= 40 Then 'PEÇA CURTA EM y
-                    compressao.TensaoCompressao = normalCompressao / propriedadesGeometricas.Area
+                ElseIf Compressao.esbeltezCompressaoY <= 40 Then 'PEÇA CURTA EM y
+                    Compressao.tensaoCompressao = normalCompressao / PropriedadesGeometricas.area
 
-                ElseIf 40 < compressao.EsbeltezCompressaoX <= 80 Then 'ELEMENTO MEDIANAMENTE ESBELTO EM X
-                    compressao.ForcaElasticaX = ((System.Math.PI) * propriedadesGeometricas.EixoXmi * propriedadesGeometricas.EixoXmr) / (lvinculado ^ 2)
-                    compressao.Ea = lvinculado / 300
+                ElseIf 40 < Compressao.esbeltezCompressaoX <= 80 Then 'ELEMENTO MEDIANAMENTE ESBELTO EM X
+                    Compressao.forcaElasticaX = ((System.Math.PI) * PropriedadesGeometricas.eixoXmi * PropriedadesGeometricas.eixoXmr) / (lvinculado ^ 2)
+                    Compressao.ea = lvinculado / 300
                     'O MOMENTO CARACTERISTICO O USUARIO VAI TER QUE INSERIR QUANDO A PEÇA DER MEDIANAMENTE
-                    compressao.Ei = momentoFletorX / normalCompressao 'se esse valor for menor que altura/30 usa h/30 fazer um if else aquior 30
-                    compressao.Edx = (compressao.Ei + compressao.Ea) * (compressao.ForcaElasticaX / (compressao.ForcaElasticaX - normalCompressao))
-                    mdX = normalCompressao * compressao.Edx
-                    compressao.TensaoCompressao = normalCompressao / propriedadesGeometricas.Area
-                    compressao.TensaoMxd = (mdX / propriedadesGeometricas.EixoXmr) / 10 ^ 6 'w é o modulo de resistencia divindo por 10^6 para transformar em MPa
+                    Compressao.ei = momentoFletorX / normalCompressao 'se esse valor for menor que altura/30 usa h/30 fazer um if else aquior 30
+                    Compressao.edx = (Compressao.ei + Compressao.ea) * (Compressao.forcaElasticaX / (Compressao.forcaElasticaX - normalCompressao))
+                    mdX = normalCompressao * Compressao.edx
+                    Compressao.tensaoCompressao = normalCompressao / PropriedadesGeometricas.area
+                    Compressao.tensaoMxd = (mdX / PropriedadesGeometricas.eixoXmr) / 10 ^ 6 'w é o modulo de resistencia divindo por 10^6 para transformar em MPa
 
-                ElseIf 40 < compressao.EsbeltezCompressaoY <= 80 Then 'ELEMENTO MEDIANAMENTE ESBELTO EM Y
-                    compressao.ForcaElasticaY = ((System.Math.PI) * propriedadesGeometricas.EixoYmi * propriedadesGeometricas.EixoYmr) / (lvinculado ^ 2)
-                    compressao.Ea = lvinculado / 300
+                ElseIf 40 < Compressao.esbeltezCompressaoY <= 80 Then 'ELEMENTO MEDIANAMENTE ESBELTO EM Y
+                    Compressao.forcaElasticaY = ((System.Math.PI) * PropriedadesGeometricas.eixoYmi * PropriedadesGeometricas.eixoYmr) / (lvinculado ^ 2)
+                    Compressao.ea = lvinculado / 300
                     'O MOMENTO CARACTERISTICO O USUARIO VAI TER QUE INSERIR QUANDO A PEÇA DER MEDIANAMENTE
-                    compressao.Ei = momentoFletorY / normalCompressao 'se esse valor for menor que altura/30 usa h/30 fazer um if else aquior 30
-                    compressao.Edy = (compressao.Ei + compressao.Ea) * (compressao.ForcaElasticaY / (compressao.ForcaElasticaY - normalCompressao))
-                    mdY = normalCompressao * compressao.Edy
-                    compressao.TensaoCompressao = normalCompressao / propriedadesGeometricas.Area
-                    compressao.TensaoMyd = (mdY / propriedadesGeometricas.EixoYmr) / 10 ^ 6 'w é o modulo de resistencia divindo por 10^6 para transformar em MPa
+                    Compressao.ei = momentoFletorY / normalCompressao 'se esse valor for menor que altura/30 usa h/30 fazer um if else aquior 30
+                    Compressao.edy = (Compressao.ei + Compressao.ea) * (Compressao.forcaElasticaY / (Compressao.forcaElasticaY - normalCompressao))
+                    mdY = normalCompressao * Compressao.edy
+                    Compressao.tensaoCompressao = normalCompressao / PropriedadesGeometricas.area
+                    Compressao.tensaoMyd = (mdY / PropriedadesGeometricas.eixoYmr) / 10 ^ 6 'w é o modulo de resistencia divindo por 10^6 para transformar em MPa
 
 
-                ElseIf 80 < compressao.EsbeltezCompressaoX <= 140 Then 'ELEMENTO ESBELTO EM X
+                ElseIf 80 < Compressao.esbeltezCompressaoX <= 140 Then 'ELEMENTO ESBELTO EM X
                     MessageBox.Show("Aviso: o Elemento é esbelto.")
 
-                    compressao.ForcaElasticaX = ((System.Math.PI) * propriedadesGeometricas.EixoXmi * propriedadesGeometricas.EixoXmr) / (lvinculado ^ 2)
-                    compressao.Ea = lvinculado / 300
+                    Compressao.forcaElasticaX = ((System.Math.PI) * PropriedadesGeometricas.eixoXmi * PropriedadesGeometricas.eixoXmr) / (lvinculado ^ 2)
+                    Compressao.ea = lvinculado / 300
                     'O MOMENTO CARACTERISTICO O USUARIO VAI TER QUE INSERIR QUANDO A PEÇA DER ESBELTA E MOMENTO CARACTERISTICOXAC DEVIDO A PARCELA ACIDENTAL
-                    compressao.Ei = (MomentoCargaPermanenteX + MomentoCargaVariavelX) / normalCompressao 'se esse valor for menor que altura/30 usa h/30 fazer um if else aquior 30
-                    compressao.Eig = (MomentoCargaPermanenteX / NormalCargaPermanente)
-                    compressao.Ec = (compressao.Ea + compressao.Eig) * System.Math.Exp(((coefInfluencia * (NormalCargaPermanente + (f1 + f2) * NormalCargaVariavel)) / (NormalCargaPermanente - (NormalCargaPermanente + (f1 + f2) * NormalCargaVariavel))) - 1)
-                    compressao.E1ef = compressao.Ea + compressao.Ei + compressao.Ec
-                    mdX = normalCompressao * compressao.E1ef * (compressao.ForcaElasticaX / (compressao.ForcaElasticaX - normalCompressao))
-                    compressao.TensaoCompressao = normalCompressao / propriedadesGeometricas.Area
-                    compressao.TensaoMxd = (mdX / propriedadesGeometricas.EixoXmr) / 10 ^ 6 'w é o modulo de resistencia divindo por 10^6 para transformar em MPa
+                    Compressao.ei = (MomentoCargaPermanenteX + MomentoCargaVariavelX) / normalCompressao 'se esse valor for menor que altura/30 usa h/30 fazer um if else aquior 30
+                    Compressao.eig = (MomentoCargaPermanenteX / NormalCargaPermanente)
+                    Compressao.ec = (Compressao.ea + Compressao.eig) * System.Math.Exp(((coefInfluencia * (NormalCargaPermanente + (f1 + f2) * NormalCargaVariavel)) / (NormalCargaPermanente - (NormalCargaPermanente + (f1 + f2) * NormalCargaVariavel))) - 1)
+                    Compressao.e1ef = Compressao.ea + Compressao.ei + Compressao.ec
+                    mdX = normalCompressao * Compressao.e1ef * (Compressao.forcaElasticaX / (Compressao.forcaElasticaX - normalCompressao))
+                    Compressao.tensaoCompressao = normalCompressao / PropriedadesGeometricas.area
+                    Compressao.tensaoMxd = (mdX / PropriedadesGeometricas.eixoXmr) / 10 ^ 6 'w é o modulo de resistencia divindo por 10^6 para transformar em MPa
 
 
-                ElseIf 80 < compressao.EsbeltezCompressaoY <= 140 Then 'ELEMENTO ESBELTO EM Y
+                ElseIf 80 < Compressao.esbeltezCompressaoY <= 140 Then 'ELEMENTO ESBELTO EM Y
                     MessageBox.Show("Aviso: o Elemento é esbelto.")
 
-                    compressao.ForcaElasticaY = ((System.Math.PI) * propriedadesGeometricas.EixoYmi * propriedadesGeometricas.EixoYmr) / (lvinculado ^ 2)
-                    compressao.Ea = lvinculado / 300
+                    Compressao.forcaElasticaY = ((System.Math.PI) * PropriedadesGeometricas.eixoYmi * PropriedadesGeometricas.eixoYmr) / (lvinculado ^ 2)
+                    Compressao.ea = lvinculado / 300
                     'O MOMENTO CARACTERISTICO O USUARIO VAI TER QUE INSERIR QUANDO A PEÇA DER ESBELTA E MOMENTO CARACTERISTICOXAC DEVIDO A PARCELA ACIDENTAL
-                    compressao.Ei = (MomentoCargaPermanenteY + MomentoCargaVariavelY) / normalCompressao 'se esse valor for menor que altura/30 usa h/30 fazer um if else aquior 30
-                    compressao.Eig = (MomentoCargaPermanenteY / NormalCargaPermanente)
-                    compressao.Ec = (compressao.Ea + compressao.Eig) * System.Math.Exp(((coefInfluencia * (NormalCargaPermanente + (f1 + f2) * NormalCargaVariavel)) / (NormalCargaPermanente - (NormalCargaPermanente + (f1 + f2) * NormalCargaVariavel))) - 1)
-                    compressao.E1ef = compressao.Ea + compressao.Ei + compressao.Ec
-                    mdY = normalCompressao * compressao.E1ef * (compressao.ForcaElasticaY / (compressao.ForcaElasticaY - normalCompressao))
-                    compressao.TensaoCompressao = normalCompressao / propriedadesGeometricas.Area
-                    compressao.TensaoMyd = (mdY / propriedadesGeometricas.EixoXmr) / 10 ^ 6 'w é o modulo de resistencia divindo por 10^6 para transformar em MPa
+                    Compressao.ei = (MomentoCargaPermanenteY + MomentoCargaVariavelY) / normalCompressao 'se esse valor for menor que altura/30 usa h/30 fazer um if else aquior 30
+                    Compressao.eig = (MomentoCargaPermanenteY / NormalCargaPermanente)
+                    Compressao.ec = (Compressao.ea + Compressao.eig) * System.Math.Exp(((coefInfluencia * (NormalCargaPermanente + (f1 + f2) * NormalCargaVariavel)) / (NormalCargaPermanente - (NormalCargaPermanente + (f1 + f2) * NormalCargaVariavel))) - 1)
+                    Compressao.e1ef = Compressao.ea + Compressao.ei + Compressao.ec
+                    mdY = normalCompressao * Compressao.e1ef * (Compressao.forcaElasticaY / (Compressao.forcaElasticaY - normalCompressao))
+                    Compressao.tensaoCompressao = normalCompressao / PropriedadesGeometricas.area
+                    Compressao.tensaoMyd = (mdY / PropriedadesGeometricas.eixoXmr) / 10 ^ 6 'w é o modulo de resistencia divindo por 10^6 para transformar em MPa
 
-                ElseIf compressao.EsbeltezCompressaoX > 140 And compressao.EsbeltezCompressaoY > 140 Then
+                ElseIf Compressao.esbeltezCompressaoX > 140 And Compressao.esbeltezCompressaoY > 140 Then
                     MessageBox.Show("Valores acima de 140 não devem ser considerados pois violam o estado limite de serviço imposto pela NBR.")
 
                 End If
 
             Case Madeira.TipoSecao.Circular
-                compressao.EsbeltezCompressaoX = lvinculado / propriedadesGeometricas.EixoXrg
-                compressao.EsbeltezCompressaoY = lvinculado / propriedadesGeometricas.EixoYrg
+                Compressao.esbeltezCompressaoX = lvinculado / PropriedadesGeometricas.eixoXrg
+                Compressao.esbeltezCompressaoY = lvinculado / PropriedadesGeometricas.eixoYrg
 
-                If compressao.EsbeltezCompressaoX <= 40 Then 'PEÇA CURTA EM X
-                    compressao.TensaoCompressao = normalCompressao / propriedadesGeometricas.Area
+                If Compressao.esbeltezCompressaoX <= 40 Then 'PEÇA CURTA EM X
+                    Compressao.tensaoCompressao = normalCompressao / PropriedadesGeometricas.area
 
-                ElseIf compressao.EsbeltezCompressaoY <= 40 Then 'PEÇA CURTA EM y
-                    compressao.TensaoCompressao = normalCompressao / propriedadesGeometricas.Area
+                ElseIf Compressao.esbeltezCompressaoY <= 40 Then 'PEÇA CURTA EM y
+                    Compressao.tensaoCompressao = normalCompressao / PropriedadesGeometricas.area
 
-                ElseIf 40 < compressao.EsbeltezCompressaoX <= 80 Then 'ELEMENTO MEDIANAMENTE ESBELTO EM X
-                    compressao.ForcaElasticaX = ((System.Math.PI) * propriedadesGeometricas.EixoXmi * propriedadesGeometricas.EixoXmr) / (lvinculado ^ 2)
-                    compressao.Ea = lvinculado / 300
+                ElseIf 40 < Compressao.esbeltezCompressaoX <= 80 Then 'ELEMENTO MEDIANAMENTE ESBELTO EM X
+                    Compressao.forcaElasticaX = ((System.Math.PI) * PropriedadesGeometricas.eixoXmi * PropriedadesGeometricas.eixoXmr) / (lvinculado ^ 2)
+                    Compressao.ea = lvinculado / 300
                     'O MOMENTO CARACTERISTICO O USUARIO VAI TER QUE INSERIR QUANDO A PEÇA DER MEDIANAMENTE
-                    compressao.Ei = momentoFletorX / normalCompressao 'se esse valor for menor que altura/30 usa h/30 fazer um if else aquior 30
-                    compressao.Edx = (compressao.Ei + compressao.Ea) * (compressao.ForcaElasticaX / (compressao.ForcaElasticaX - normalCompressao))
-                    mdX = normalCompressao * compressao.Edx
-                    compressao.TensaoCompressao = normalCompressao / propriedadesGeometricas.Area
-                    compressao.TensaoMxd = (mdX / propriedadesGeometricas.EixoXmr) / 10 ^ 6 'w é o modulo de resistencia divindo por 10^6 para transformar em MPa
+                    Compressao.ei = momentoFletorX / normalCompressao 'se esse valor for menor que altura/30 usa h/30 fazer um if else aquior 30
+                    Compressao.edx = (Compressao.ei + Compressao.ea) * (Compressao.forcaElasticaX / (Compressao.forcaElasticaX - normalCompressao))
+                    mdX = normalCompressao * Compressao.edx
+                    Compressao.tensaoCompressao = normalCompressao / PropriedadesGeometricas.area
+                    Compressao.tensaoMxd = (mdX / PropriedadesGeometricas.eixoXmr) / 10 ^ 6 'w é o modulo de resistencia divindo por 10^6 para transformar em MPa
 
-                ElseIf 40 < compressao.EsbeltezCompressaoY <= 80 Then 'ELEMENTO MEDIANAMENTE ESBELTO EM Y
-                    compressao.ForcaElasticaY = ((System.Math.PI) * propriedadesGeometricas.EixoYmi * propriedadesGeometricas.EixoYmr) / (lvinculado ^ 2)
-                    compressao.Ea = lvinculado / 300
+                ElseIf 40 < Compressao.esbeltezCompressaoY <= 80 Then 'ELEMENTO MEDIANAMENTE ESBELTO EM Y
+                    Compressao.forcaElasticaY = ((System.Math.PI) * PropriedadesGeometricas.eixoYmi * PropriedadesGeometricas.eixoYmr) / (lvinculado ^ 2)
+                    Compressao.ea = lvinculado / 300
                     'O MOMENTO CARACTERISTICO O USUARIO VAI TER QUE INSERIR QUANDO A PEÇA DER MEDIANAMENTE
-                    compressao.Ei = momentoFletorY / normalCompressao 'se esse valor for menor que altura/30 usa h/30 fazer um if else aquior 30
-                    compressao.Edy = (compressao.Ei + compressao.Ea) * (compressao.ForcaElasticaY / (compressao.ForcaElasticaY - normalCompressao))
-                    mdY = normalCompressao * compressao.Edy
-                    compressao.TensaoCompressao = normalCompressao / propriedadesGeometricas.Area
-                    compressao.TensaoMyd = (mdY / propriedadesGeometricas.EixoYmr) / 10 ^ 6 'w é o modulo de resistencia divindo por 10^6 para transformar em MPa
+                    Compressao.ei = momentoFletorY / normalCompressao 'se esse valor for menor que altura/30 usa h/30 fazer um if else aquior 30
+                    Compressao.edy = (Compressao.ei + Compressao.ea) * (Compressao.forcaElasticaY / (Compressao.forcaElasticaY - normalCompressao))
+                    mdY = normalCompressao * Compressao.edy
+                    Compressao.tensaoCompressao = normalCompressao / PropriedadesGeometricas.area
+                    Compressao.tensaoMyd = (mdY / PropriedadesGeometricas.eixoYmr) / 10 ^ 6 'w é o modulo de resistencia divindo por 10^6 para transformar em MPa
 
 
-                ElseIf 80 < compressao.EsbeltezCompressaoX <= 140 Then 'ELEMENTO ESBELTO EM X
+                ElseIf 80 < Compressao.esbeltezCompressaoX <= 140 Then 'ELEMENTO ESBELTO EM X
                     MessageBox.Show("Aviso: o Elemento é esbelto.")
 
-                    compressao.ForcaElasticaX = ((System.Math.PI) * propriedadesGeometricas.EixoXmi * propriedadesGeometricas.EixoXmr) / (lvinculado ^ 2)
-                    compressao.Ea = lvinculado / 300
+                    Compressao.forcaElasticaX = ((System.Math.PI) * PropriedadesGeometricas.eixoXmi * PropriedadesGeometricas.eixoXmr) / (lvinculado ^ 2)
+                    Compressao.ea = lvinculado / 300
                     'O MOMENTO CARACTERISTICO O USUARIO VAI TER QUE INSERIR QUANDO A PEÇA DER ESBELTA E MOMENTO CARACTERISTICOXAC DEVIDO A PARCELA ACIDENTAL
-                    compressao.Ei = (MomentoCargaPermanenteX + MomentoCargaVariavelX) / normalCompressao 'se esse valor for menor que altura/30 usa h/30 fazer um if else aquior 30
-                    compressao.Eig = (MomentoCargaPermanenteX / NormalCargaPermanente)
-                    compressao.Ec = (compressao.Ea + compressao.Eig) * System.Math.Exp(((coefInfluencia * (NormalCargaPermanente + (f1 + f2) * NormalCargaVariavel)) / (NormalCargaPermanente - (NormalCargaPermanente + (f1 + f2) * NormalCargaVariavel))) - 1)
-                    compressao.E1ef = compressao.Ea + compressao.Ei + compressao.Ec
-                    mdX = normalCompressao * compressao.E1ef * (compressao.ForcaElasticaX / (compressao.ForcaElasticaX - normalCompressao))
-                    compressao.TensaoCompressao = normalCompressao / propriedadesGeometricas.Area
-                    compressao.TensaoMxd = (mdX / propriedadesGeometricas.EixoXmr) / 10 ^ 6 'w é o modulo de resistencia divindo por 10^6 para transformar em MPa
+                    Compressao.ei = (MomentoCargaPermanenteX + MomentoCargaVariavelX) / normalCompressao 'se esse valor for menor que altura/30 usa h/30 fazer um if else aquior 30
+                    Compressao.eig = (MomentoCargaPermanenteX / NormalCargaPermanente)
+                    Compressao.ec = (Compressao.ea + Compressao.eig) * System.Math.Exp(((coefInfluencia * (NormalCargaPermanente + (f1 + f2) * NormalCargaVariavel)) / (NormalCargaPermanente - (NormalCargaPermanente + (f1 + f2) * NormalCargaVariavel))) - 1)
+                    Compressao.e1ef = Compressao.ea + Compressao.ei + Compressao.ec
+                    mdX = normalCompressao * Compressao.e1ef * (Compressao.forcaElasticaX / (Compressao.forcaElasticaX - normalCompressao))
+                    Compressao.tensaoCompressao = normalCompressao / PropriedadesGeometricas.area
+                    Compressao.tensaoMxd = (mdX / PropriedadesGeometricas.eixoXmr) / 10 ^ 6 'w é o modulo de resistencia divindo por 10^6 para transformar em MPa
 
 
-                ElseIf 80 < compressao.EsbeltezCompressaoY <= 140 Then 'ELEMENTO ESBELTO EM Y
+                ElseIf 80 < Compressao.esbeltezCompressaoY <= 140 Then 'ELEMENTO ESBELTO EM Y
                     MessageBox.Show("Aviso: o Elemento é esbelto.")
 
-                    compressao.ForcaElasticaY = ((System.Math.PI) * propriedadesGeometricas.EixoYmi * propriedadesGeometricas.EixoYmr) / (lvinculado ^ 2)
-                    compressao.Ea = lvinculado / 300
+                    Compressao.forcaElasticaY = ((System.Math.PI) * PropriedadesGeometricas.eixoYmi * PropriedadesGeometricas.eixoYmr) / (lvinculado ^ 2)
+                    Compressao.ea = lvinculado / 300
                     'O MOMENTO CARACTERISTICO O USUARIO VAI TER QUE INSERIR QUANDO A PEÇA DER ESBELTA E MOMENTO CARACTERISTICOXAC DEVIDO A PARCELA ACIDENTAL
-                    compressao.Ei = (MomentoCargaPermanenteY + MomentoCargaVariavelY) / normalCompressao 'se esse valor for menor que altura/30 usa h/30 fazer um if else aquior 30
-                    compressao.Eig = (MomentoCargaPermanenteY / NormalCargaPermanente)
-                    compressao.Ec = (compressao.Ea + compressao.Eig) * System.Math.Exp(((coefInfluencia * (NormalCargaPermanente + (f1 + f2) * NormalCargaVariavel)) / (NormalCargaPermanente - (NormalCargaPermanente + (f1 + f2) * NormalCargaVariavel))) - 1)
-                    compressao.E1ef = compressao.Ea + compressao.Ei + compressao.Ec
-                    mdY = normalCompressao * compressao.E1ef * (compressao.ForcaElasticaY / (compressao.ForcaElasticaY - normalCompressao))
-                    compressao.TensaoCompressao = normalCompressao / propriedadesGeometricas.Area
-                    compressao.TensaoMyd = (mdY / propriedadesGeometricas.EixoXmr) / 10 ^ 6 'w é o modulo de resistencia divindo por 10^6 para transformar em MPa
+                    Compressao.ei = (MomentoCargaPermanenteY + MomentoCargaVariavelY) / normalCompressao 'se esse valor for menor que altura/30 usa h/30 fazer um if else aquior 30
+                    Compressao.eig = (MomentoCargaPermanenteY / NormalCargaPermanente)
+                    Compressao.ec = (Compressao.ea + Compressao.eig) * System.Math.Exp(((coefInfluencia * (NormalCargaPermanente + (f1 + f2) * NormalCargaVariavel)) / (NormalCargaPermanente - (NormalCargaPermanente + (f1 + f2) * NormalCargaVariavel))) - 1)
+                    Compressao.e1ef = Compressao.ea + Compressao.ei + Compressao.ec
+                    mdY = normalCompressao * Compressao.e1ef * (Compressao.forcaElasticaY / (Compressao.forcaElasticaY - normalCompressao))
+                    Compressao.tensaoCompressao = normalCompressao / PropriedadesGeometricas.area
+                    Compressao.tensaoMyd = (mdY / PropriedadesGeometricas.eixoXmr) / 10 ^ 6 'w é o modulo de resistencia divindo por 10^6 para transformar em MPa
 
-                ElseIf compressao.EsbeltezCompressaoX > 140 And compressao.EsbeltezCompressaoY > 140 Then
+                ElseIf Compressao.esbeltezCompressaoX > 140 And Compressao.esbeltezCompressaoY > 140 Then
                     MessageBox.Show("Valores acima de 140 não devem ser considerados pois violam o estado limite de serviço imposto pela NBR.")
 
                 End If
 
             Case Madeira.TipoSecao.SecaoT
-                compressao.EsbeltezCompressaoX = 0
-                compressao.EsbeltezCompressaoY = 0
-                If compressao.EsbeltezCompressaoX <= 40 Then 'PEÇA CURTA EM X
-                    compressao.TensaoCompressao = normalCompressao / propriedadesGeometricas.Area
+                Compressao.esbeltezCompressaoX = 0
+                Compressao.esbeltezCompressaoY = 0
+                If Compressao.esbeltezCompressaoX <= 40 Then 'PEÇA CURTA EM X
+                    Compressao.tensaoCompressao = normalCompressao / PropriedadesGeometricas.area
 
-                ElseIf compressao.EsbeltezCompressaoY <= 40 Then 'PEÇA CURTA EM y
-                    compressao.TensaoCompressao = normalCompressao / propriedadesGeometricas.Area
+                ElseIf Compressao.esbeltezCompressaoY <= 40 Then 'PEÇA CURTA EM y
+                    Compressao.tensaoCompressao = normalCompressao / PropriedadesGeometricas.area
 
-                ElseIf 40 < compressao.EsbeltezCompressaoX <= 80 Then 'ELEMENTO MEDIANAMENTE ESBELTO EM X
-                    compressao.ForcaElasticaX = ((System.Math.PI) * propriedadesGeometricas.EixoXmi * propriedadesGeometricas.EixoXmr) / (lvinculado ^ 2)
-                    compressao.Ea = lvinculado / 300
+                ElseIf 40 < Compressao.esbeltezCompressaoX <= 80 Then 'ELEMENTO MEDIANAMENTE ESBELTO EM X
+                    Compressao.forcaElasticaX = ((System.Math.PI) * PropriedadesGeometricas.eixoXmi * PropriedadesGeometricas.eixoXmr) / (lvinculado ^ 2)
+                    Compressao.ea = lvinculado / 300
                     'O MOMENTO CARACTERISTICO O USUARIO VAI TER QUE INSERIR QUANDO A PEÇA DER MEDIANAMENTE
-                    compressao.Ei = momentoFletorX / normalCompressao 'se esse valor for menor que altura/30 usa h/30 fazer um if else aquior 30
-                    compressao.Edx = (compressao.Ei + compressao.Ea) * (compressao.ForcaElasticaX / (compressao.ForcaElasticaX - normalCompressao))
-                    mdX = normalCompressao * compressao.Edx
-                    compressao.TensaoCompressao = normalCompressao / propriedadesGeometricas.Area
-                    compressao.TensaoMxd = (mdX / propriedadesGeometricas.EixoXmr) / 10 ^ 6 'w é o modulo de resistencia divindo por 10^6 para transformar em MPa
+                    Compressao.ei = momentoFletorX / normalCompressao 'se esse valor for menor que altura/30 usa h/30 fazer um if else aquior 30
+                    Compressao.edx = (Compressao.ei + Compressao.ea) * (Compressao.forcaElasticaX / (Compressao.forcaElasticaX - normalCompressao))
+                    mdX = normalCompressao * Compressao.edx
+                    Compressao.tensaoCompressao = normalCompressao / PropriedadesGeometricas.area
+                    Compressao.tensaoMxd = (mdX / PropriedadesGeometricas.eixoXmr) / 10 ^ 6 'w é o modulo de resistencia divindo por 10^6 para transformar em MPa
 
-                ElseIf 40 < compressao.EsbeltezCompressaoY <= 80 Then 'ELEMENTO MEDIANAMENTE ESBELTO EM Y
-                    compressao.ForcaElasticaY = ((System.Math.PI) * propriedadesGeometricas.EixoYmi * propriedadesGeometricas.EixoYmr) / (lvinculado ^ 2)
-                    compressao.Ea = lvinculado / 300
+                ElseIf 40 < Compressao.esbeltezCompressaoY <= 80 Then 'ELEMENTO MEDIANAMENTE ESBELTO EM Y
+                    Compressao.forcaElasticaY = ((System.Math.PI) * PropriedadesGeometricas.eixoYmi * PropriedadesGeometricas.eixoYmr) / (lvinculado ^ 2)
+                    Compressao.ea = lvinculado / 300
                     'O MOMENTO CARACTERISTICO O USUARIO VAI TER QUE INSERIR QUANDO A PEÇA DER MEDIANAMENTE
-                    compressao.Ei = momentoFletorY / normalCompressao 'se esse valor for menor que altura/30 usa h/30 fazer um if else aquior 30
-                    compressao.Edy = (compressao.Ei + compressao.Ea) * (compressao.ForcaElasticaY / (compressao.ForcaElasticaY - normalCompressao))
-                    mdY = normalCompressao * compressao.Edy
-                    compressao.TensaoCompressao = normalCompressao / propriedadesGeometricas.Area
-                    compressao.TensaoMyd = (mdY / propriedadesGeometricas.EixoYmr) / 10 ^ 6 'w é o modulo de resistencia divindo por 10^6 para transformar em MPa
+                    Compressao.ei = momentoFletorY / normalCompressao 'se esse valor for menor que altura/30 usa h/30 fazer um if else aquior 30
+                    Compressao.edy = (Compressao.ei + Compressao.ea) * (Compressao.forcaElasticaY / (Compressao.forcaElasticaY - normalCompressao))
+                    mdY = normalCompressao * Compressao.edy
+                    Compressao.tensaoCompressao = normalCompressao / PropriedadesGeometricas.area
+                    Compressao.tensaoMyd = (mdY / PropriedadesGeometricas.eixoYmr) / 10 ^ 6 'w é o modulo de resistencia divindo por 10^6 para transformar em MPa
 
 
-                ElseIf 80 < compressao.EsbeltezCompressaoX <= 140 Then 'ELEMENTO ESBELTO EM X
+                ElseIf 80 < Compressao.esbeltezCompressaoX <= 140 Then 'ELEMENTO ESBELTO EM X
                     MessageBox.Show("Aviso: o Elemento é esbelto.")
 
-                    compressao.ForcaElasticaX = ((System.Math.PI) * propriedadesGeometricas.EixoXmi * propriedadesGeometricas.EixoXmr) / (lvinculado ^ 2)
-                    compressao.Ea = lvinculado / 300
+                    Compressao.forcaElasticaX = ((System.Math.PI) * PropriedadesGeometricas.eixoXmi * PropriedadesGeometricas.eixoXmr) / (lvinculado ^ 2)
+                    Compressao.ea = lvinculado / 300
                     'O MOMENTO CARACTERISTICO O USUARIO VAI TER QUE INSERIR QUANDO A PEÇA DER ESBELTA E MOMENTO CARACTERISTICOXAC DEVIDO A PARCELA ACIDENTAL
-                    compressao.Ei = (MomentoCargaPermanenteX + MomentoCargaVariavelX) / normalCompressao 'se esse valor for menor que altura/30 usa h/30 fazer um if else aquior 30
-                    compressao.Eig = (MomentoCargaPermanenteX / NormalCargaPermanente)
-                    compressao.Ec = (compressao.Ea + compressao.Eig) * System.Math.Exp(((coefInfluencia * (NormalCargaPermanente + (f1 + f2) * NormalCargaVariavel)) / (NormalCargaPermanente - (NormalCargaPermanente + (f1 + f2) * NormalCargaVariavel))) - 1)
-                    compressao.E1ef = compressao.Ea + compressao.Ei + compressao.Ec
-                    mdX = normalCompressao * compressao.E1ef * (compressao.ForcaElasticaX / (compressao.ForcaElasticaX - normalCompressao))
-                    compressao.TensaoCompressao = normalCompressao / propriedadesGeometricas.Area
-                    compressao.TensaoMxd = (mdX / propriedadesGeometricas.EixoXmr) / 10 ^ 6 'w é o modulo de resistencia divindo por 10^6 para transformar em MPa
+                    Compressao.ei = (MomentoCargaPermanenteX + MomentoCargaVariavelX) / normalCompressao 'se esse valor for menor que altura/30 usa h/30 fazer um if else aquior 30
+                    Compressao.eig = (MomentoCargaPermanenteX / NormalCargaPermanente)
+                    Compressao.ec = (Compressao.ea + Compressao.eig) * System.Math.Exp(((coefInfluencia * (NormalCargaPermanente + (f1 + f2) * NormalCargaVariavel)) / (NormalCargaPermanente - (NormalCargaPermanente + (f1 + f2) * NormalCargaVariavel))) - 1)
+                    Compressao.e1ef = Compressao.ea + Compressao.ei + Compressao.ec
+                    mdX = normalCompressao * Compressao.e1ef * (Compressao.forcaElasticaX / (Compressao.forcaElasticaX - normalCompressao))
+                    Compressao.tensaoCompressao = normalCompressao / PropriedadesGeometricas.area
+                    Compressao.tensaoMxd = (mdX / PropriedadesGeometricas.eixoXmr) / 10 ^ 6 'w é o modulo de resistencia divindo por 10^6 para transformar em MPa
 
 
-                ElseIf 80 < compressao.EsbeltezCompressaoY <= 140 Then 'ELEMENTO ESBELTO EM Y
+                ElseIf 80 < Compressao.esbeltezCompressaoY <= 140 Then 'ELEMENTO ESBELTO EM Y
                     MessageBox.Show("Aviso: o Elemento é esbelto.")
 
-                    compressao.ForcaElasticaY = ((System.Math.PI) * propriedadesGeometricas.EixoYmi * propriedadesGeometricas.EixoYmr) / (lvinculado ^ 2)
-                    compressao.Ea = lvinculado / 300
+                    Compressao.forcaElasticaY = ((System.Math.PI) * PropriedadesGeometricas.eixoYmi * PropriedadesGeometricas.eixoYmr) / (lvinculado ^ 2)
+                    Compressao.ea = lvinculado / 300
                     'O MOMENTO CARACTERISTICO O USUARIO VAI TER QUE INSERIR QUANDO A PEÇA DER ESBELTA E MOMENTO CARACTERISTICOXAC DEVIDO A PARCELA ACIDENTAL
-                    compressao.Ei = (MomentoCargaPermanenteY + MomentoCargaVariavelY) / normalCompressao 'se esse valor for menor que altura/30 usa h/30 fazer um if else aquior 30
-                    compressao.Eig = (MomentoCargaPermanenteY / NormalCargaPermanente)
-                    compressao.Ec = (compressao.Ea + compressao.Eig) * System.Math.Exp(((coefInfluencia * (NormalCargaPermanente + (f1 + f2) * NormalCargaVariavel)) / (NormalCargaPermanente - (NormalCargaPermanente + (f1 + f2) * NormalCargaVariavel))) - 1)
-                    compressao.E1ef = compressao.Ea + compressao.Ei + compressao.Ec
-                    mdY = normalCompressao * compressao.E1ef * (compressao.ForcaElasticaY / (compressao.ForcaElasticaY - normalCompressao))
-                    compressao.TensaoCompressao = normalCompressao / propriedadesGeometricas.Area
-                    compressao.TensaoMyd = (mdY / propriedadesGeometricas.EixoXmr) / 10 ^ 6 'w é o modulo de resistencia divindo por 10^6 para transformar em MPa
+                    Compressao.ei = (MomentoCargaPermanenteY + MomentoCargaVariavelY) / normalCompressao 'se esse valor for menor que altura/30 usa h/30 fazer um if else aquior 30
+                    Compressao.eig = (MomentoCargaPermanenteY / NormalCargaPermanente)
+                    Compressao.ec = (Compressao.ea + Compressao.eig) * System.Math.Exp(((coefInfluencia * (NormalCargaPermanente + (f1 + f2) * NormalCargaVariavel)) / (NormalCargaPermanente - (NormalCargaPermanente + (f1 + f2) * NormalCargaVariavel))) - 1)
+                    Compressao.e1ef = Compressao.ea + Compressao.ei + Compressao.ec
+                    mdY = normalCompressao * Compressao.e1ef * (Compressao.forcaElasticaY / (Compressao.forcaElasticaY - normalCompressao))
+                    Compressao.tensaoCompressao = normalCompressao / PropriedadesGeometricas.area
+                    Compressao.tensaoMyd = (mdY / PropriedadesGeometricas.eixoXmr) / 10 ^ 6 'w é o modulo de resistencia divindo por 10^6 para transformar em MPa
 
-                ElseIf compressao.EsbeltezCompressaoX > 140 And compressao.EsbeltezCompressaoY > 140 Then
+                ElseIf Compressao.esbeltezCompressaoX > 140 And Compressao.esbeltezCompressaoY > 140 Then
                     MessageBox.Show("Valores acima de 140 não devem ser considerados pois violam o estado limite de serviço imposto pela NBR.
                                      Insira novamente a seção transversal da peça para prosseguir com o dimensionamento.")
 
@@ -595,177 +594,177 @@
                 End If
 
             Case Madeira.TipoSecao.SecaoI
-                compressao.EsbeltezCompressaoX = 0
-                compressao.EsbeltezCompressaoY = 0
+                Compressao.esbeltezCompressaoX = 0
+                Compressao.esbeltezCompressaoY = 0
 
-                If compressao.EsbeltezCompressaoX <= 40 Then 'PEÇA CURTA EM X
-                    compressao.TensaoCompressao = normalCompressao / propriedadesGeometricas.Area
+                If Compressao.esbeltezCompressaoX <= 40 Then 'PEÇA CURTA EM X
+                    Compressao.tensaoCompressao = normalCompressao / PropriedadesGeometricas.area
 
-                ElseIf compressao.EsbeltezCompressaoY <= 40 Then 'PEÇA CURTA EM y
-                    compressao.TensaoCompressao = normalCompressao / propriedadesGeometricas.Area
+                ElseIf Compressao.esbeltezCompressaoY <= 40 Then 'PEÇA CURTA EM y
+                    Compressao.tensaoCompressao = normalCompressao / PropriedadesGeometricas.area
 
-                ElseIf 40 < compressao.EsbeltezCompressaoX <= 80 Then 'ELEMENTO MEDIANAMENTE ESBELTO EM X
-                    compressao.ForcaElasticaX = ((System.Math.PI) * propriedadesGeometricas.EixoXmi * propriedadesGeometricas.EixoXmr) / (lvinculado ^ 2)
-                    compressao.Ea = lvinculado / 300
+                ElseIf 40 < Compressao.esbeltezCompressaoX <= 80 Then 'ELEMENTO MEDIANAMENTE ESBELTO EM X
+                    Compressao.forcaElasticaX = ((System.Math.PI) * PropriedadesGeometricas.eixoXmi * PropriedadesGeometricas.eixoXmr) / (lvinculado ^ 2)
+                    Compressao.ea = lvinculado / 300
                     'O MOMENTO CARACTERISTICO O USUARIO VAI TER QUE INSERIR QUANDO A PEÇA DER MEDIANAMENTE
-                    compressao.Ei = momentoFletorX / normalCompressao 'se esse valor for menor que altura/30 usa h/30 fazer um if else aquior 30
-                    compressao.Edx = (compressao.Ei + compressao.Ea) * (compressao.ForcaElasticaX / (compressao.ForcaElasticaX - normalCompressao))
-                    mdX = normalCompressao * compressao.Edx
-                    compressao.TensaoCompressao = normalCompressao / propriedadesGeometricas.Area
-                    compressao.TensaoMxd = (mdX / propriedadesGeometricas.EixoXmr) / 10 ^ 6 'w é o modulo de resistencia divindo por 10^6 para transformar em MPa
+                    Compressao.ei = momentoFletorX / normalCompressao 'se esse valor for menor que altura/30 usa h/30 fazer um if else aquior 30
+                    Compressao.edx = (Compressao.ei + Compressao.ea) * (Compressao.forcaElasticaX / (Compressao.forcaElasticaX - normalCompressao))
+                    mdX = normalCompressao * Compressao.edx
+                    Compressao.tensaoCompressao = normalCompressao / PropriedadesGeometricas.area
+                    Compressao.tensaoMxd = (mdX / PropriedadesGeometricas.eixoXmr) / 10 ^ 6 'w é o modulo de resistencia divindo por 10^6 para transformar em MPa
 
-                ElseIf 40 < compressao.EsbeltezCompressaoY <= 80 Then 'ELEMENTO MEDIANAMENTE ESBELTO EM Y
-                    compressao.ForcaElasticaY = ((System.Math.PI) * propriedadesGeometricas.EixoYmi * propriedadesGeometricas.EixoYmr) / (lvinculado ^ 2)
-                    compressao.Ea = lvinculado / 300
+                ElseIf 40 < Compressao.esbeltezCompressaoY <= 80 Then 'ELEMENTO MEDIANAMENTE ESBELTO EM Y
+                    Compressao.forcaElasticaY = ((System.Math.PI) * PropriedadesGeometricas.eixoYmi * PropriedadesGeometricas.eixoYmr) / (lvinculado ^ 2)
+                    Compressao.ea = lvinculado / 300
                     'O MOMENTO CARACTERISTICO O USUARIO VAI TER QUE INSERIR QUANDO A PEÇA DER MEDIANAMENTE
-                    compressao.Ei = momentoFletorY / normalCompressao 'se esse valor for menor que altura/30 usa h/30 fazer um if else aquior 30
-                    compressao.Edy = (compressao.Ei + compressao.Ea) * (compressao.ForcaElasticaY / (compressao.ForcaElasticaY - normalCompressao))
-                    mdY = normalCompressao * compressao.Edy
-                    compressao.TensaoCompressao = normalCompressao / propriedadesGeometricas.Area
-                    compressao.TensaoMyd = (mdY / propriedadesGeometricas.EixoYmr) / 10 ^ 6 'w é o modulo de resistencia divindo por 10^6 para transformar em MPa
+                    Compressao.ei = momentoFletorY / normalCompressao 'se esse valor for menor que altura/30 usa h/30 fazer um if else aquior 30
+                    Compressao.edy = (Compressao.ei + Compressao.ea) * (Compressao.forcaElasticaY / (Compressao.forcaElasticaY - normalCompressao))
+                    mdY = normalCompressao * Compressao.edy
+                    Compressao.tensaoCompressao = normalCompressao / PropriedadesGeometricas.area
+                    Compressao.tensaoMyd = (mdY / PropriedadesGeometricas.eixoYmr) / 10 ^ 6 'w é o modulo de resistencia divindo por 10^6 para transformar em MPa
 
 
-                ElseIf 80 < compressao.EsbeltezCompressaoX <= 140 Then 'ELEMENTO ESBELTO EM X
+                ElseIf 80 < Compressao.esbeltezCompressaoX <= 140 Then 'ELEMENTO ESBELTO EM X
                     MessageBox.Show("Aviso: o Elemento é esbelto.")
 
-                    compressao.ForcaElasticaX = ((System.Math.PI) * propriedadesGeometricas.EixoXmi * propriedadesGeometricas.EixoXmr) / (lvinculado ^ 2)
-                    compressao.Ea = lvinculado / 300
+                    Compressao.forcaElasticaX = ((System.Math.PI) * PropriedadesGeometricas.eixoXmi * PropriedadesGeometricas.eixoXmr) / (lvinculado ^ 2)
+                    Compressao.ea = lvinculado / 300
                     'O MOMENTO CARACTERISTICO O USUARIO VAI TER QUE INSERIR QUANDO A PEÇA DER ESBELTA E MOMENTO CARACTERISTICOXAC DEVIDO A PARCELA ACIDENTAL
-                    compressao.Ei = (MomentoCargaPermanenteX + MomentoCargaVariavelX) / normalCompressao 'se esse valor for menor que altura/30 usa h/30 fazer um if else aquior 30
-                    compressao.Eig = (MomentoCargaPermanenteX / NormalCargaPermanente)
-                    compressao.Ec = (compressao.Ea + compressao.Eig) * System.Math.Exp(((coefInfluencia * (NormalCargaPermanente + (f1 + f2) * NormalCargaVariavel)) / (NormalCargaPermanente - (NormalCargaPermanente + (f1 + f2) * NormalCargaVariavel))) - 1)
-                    compressao.E1ef = compressao.Ea + compressao.Ei + compressao.Ec
-                    mdX = normalCompressao * compressao.E1ef * (compressao.ForcaElasticaX / (compressao.ForcaElasticaX - normalCompressao))
-                    compressao.TensaoCompressao = normalCompressao / propriedadesGeometricas.Area
-                    compressao.TensaoMxd = (mdX / propriedadesGeometricas.EixoXmr) / 10 ^ 6 'w é o modulo de resistencia divindo por 10^6 para transformar em MPa
+                    Compressao.ei = (MomentoCargaPermanenteX + MomentoCargaVariavelX) / normalCompressao 'se esse valor for menor que altura/30 usa h/30 fazer um if else aquior 30
+                    Compressao.eig = (MomentoCargaPermanenteX / NormalCargaPermanente)
+                    Compressao.ec = (Compressao.ea + Compressao.eig) * System.Math.Exp(((coefInfluencia * (NormalCargaPermanente + (f1 + f2) * NormalCargaVariavel)) / (NormalCargaPermanente - (NormalCargaPermanente + (f1 + f2) * NormalCargaVariavel))) - 1)
+                    Compressao.e1ef = Compressao.ea + Compressao.ei + Compressao.ec
+                    mdX = normalCompressao * Compressao.e1ef * (Compressao.forcaElasticaX / (Compressao.forcaElasticaX - normalCompressao))
+                    Compressao.tensaoCompressao = normalCompressao / PropriedadesGeometricas.area
+                    Compressao.tensaoMxd = (mdX / PropriedadesGeometricas.eixoXmr) / 10 ^ 6 'w é o modulo de resistencia divindo por 10^6 para transformar em MPa
 
 
-                ElseIf 80 < compressao.EsbeltezCompressaoY <= 140 Then 'ELEMENTO ESBELTO EM Y
+                ElseIf 80 < Compressao.esbeltezCompressaoY <= 140 Then 'ELEMENTO ESBELTO EM Y
                     MessageBox.Show("Aviso: o Elemento é esbelto.")
 
-                    compressao.ForcaElasticaY = ((System.Math.PI) * propriedadesGeometricas.EixoYmi * propriedadesGeometricas.EixoYmr) / (lvinculado ^ 2)
-                    compressao.Ea = lvinculado / 300
+                    Compressao.forcaElasticaY = ((System.Math.PI) * PropriedadesGeometricas.eixoYmi * PropriedadesGeometricas.eixoYmr) / (lvinculado ^ 2)
+                    Compressao.ea = lvinculado / 300
                     'O MOMENTO CARACTERISTICO O USUARIO VAI TER QUE INSERIR QUANDO A PEÇA DER ESBELTA E MOMENTO CARACTERISTICOXAC DEVIDO A PARCELA ACIDENTAL
-                    compressao.Ei = (MomentoCargaPermanenteY + MomentoCargaVariavelY) / normalCompressao 'se esse valor for menor que altura/30 usa h/30 fazer um if else aquior 30
-                    compressao.Eig = (MomentoCargaPermanenteY / NormalCargaPermanente)
-                    compressao.Ec = (compressao.Ea + compressao.Eig) * System.Math.Exp(((coefInfluencia * (NormalCargaPermanente + (f1 + f2) * NormalCargaVariavel)) / (NormalCargaPermanente - (NormalCargaPermanente + (f1 + f2) * NormalCargaVariavel))) - 1)
-                    compressao.E1ef = compressao.Ea + compressao.Ei + compressao.Ec
-                    mdY = normalCompressao * compressao.E1ef * (compressao.ForcaElasticaY / (compressao.ForcaElasticaY - normalCompressao))
-                    compressao.TensaoCompressao = normalCompressao / propriedadesGeometricas.Area
-                    compressao.TensaoMyd = (mdY / propriedadesGeometricas.EixoXmr) / 10 ^ 6 'w é o modulo de resistencia divindo por 10^6 para transformar em MPa
+                    Compressao.ei = (MomentoCargaPermanenteY + MomentoCargaVariavelY) / normalCompressao 'se esse valor for menor que altura/30 usa h/30 fazer um if else aquior 30
+                    Compressao.eig = (MomentoCargaPermanenteY / NormalCargaPermanente)
+                    Compressao.ec = (Compressao.ea + Compressao.eig) * System.Math.Exp(((coefInfluencia * (NormalCargaPermanente + (f1 + f2) * NormalCargaVariavel)) / (NormalCargaPermanente - (NormalCargaPermanente + (f1 + f2) * NormalCargaVariavel))) - 1)
+                    Compressao.e1ef = Compressao.ea + Compressao.ei + Compressao.ec
+                    mdY = normalCompressao * Compressao.e1ef * (Compressao.forcaElasticaY / (Compressao.forcaElasticaY - normalCompressao))
+                    Compressao.tensaoCompressao = normalCompressao / PropriedadesGeometricas.area
+                    Compressao.tensaoMyd = (mdY / PropriedadesGeometricas.eixoXmr) / 10 ^ 6 'w é o modulo de resistencia divindo por 10^6 para transformar em MPa
 
-                ElseIf compressao.EsbeltezCompressaoX > 140 And compressao.EsbeltezCompressaoY > 140 Then
+                ElseIf Compressao.esbeltezCompressaoX > 140 And Compressao.esbeltezCompressaoY > 140 Then
                     MessageBox.Show("Valores acima de 140 não devem ser considerados pois violam o estado limite de serviço imposto pela NBR.")
 
                 End If
 
             Case Madeira.TipoSecao.Caixao
-                compressao.EsbeltezCompressaoX = 0
-                compressao.EsbeltezCompressaoY = 0
+                Compressao.esbeltezCompressaoX = 0
+                Compressao.esbeltezCompressaoY = 0
 
-                If compressao.EsbeltezCompressaoX <= 40 Then 'PEÇA CURTA EM X
-                    compressao.TensaoCompressao = normalCompressao / propriedadesGeometricas.Area
+                If Compressao.esbeltezCompressaoX <= 40 Then 'PEÇA CURTA EM X
+                    Compressao.tensaoCompressao = normalCompressao / PropriedadesGeometricas.area
 
-                ElseIf compressao.EsbeltezCompressaoY <= 40 Then 'PEÇA CURTA EM y
-                    compressao.TensaoCompressao = normalCompressao / propriedadesGeometricas.Area
+                ElseIf Compressao.esbeltezCompressaoY <= 40 Then 'PEÇA CURTA EM y
+                    Compressao.tensaoCompressao = normalCompressao / PropriedadesGeometricas.area
 
-                ElseIf 40 < compressao.EsbeltezCompressaoX <= 80 Then 'ELEMENTO MEDIANAMENTE ESBELTO EM X
-                    compressao.ForcaElasticaX = ((System.Math.PI) * propriedadesGeometricas.EixoXmi * propriedadesGeometricas.EixoXmr) / (lvinculado ^ 2)
-                    compressao.Ea = lvinculado / 300
+                ElseIf 40 < Compressao.esbeltezCompressaoX <= 80 Then 'ELEMENTO MEDIANAMENTE ESBELTO EM X
+                    Compressao.forcaElasticaX = ((System.Math.PI) * PropriedadesGeometricas.eixoXmi * PropriedadesGeometricas.eixoXmr) / (lvinculado ^ 2)
+                    Compressao.ea = lvinculado / 300
                     'O MOMENTO CARACTERISTICO O USUARIO VAI TER QUE INSERIR QUANDO A PEÇA DER MEDIANAMENTE
-                    compressao.Ei = momentoFletorX / normalCompressao 'se esse valor for menor que altura/30 usa h/30 fazer um if else aquior 30
-                    compressao.Edx = (compressao.Ei + compressao.Ea) * (compressao.ForcaElasticaX / (compressao.ForcaElasticaX - normalCompressao))
-                    mdX = normalCompressao * compressao.Edx
-                    compressao.TensaoCompressao = normalCompressao / propriedadesGeometricas.Area
-                    compressao.TensaoMxd = (mdX / propriedadesGeometricas.EixoXmr) / 10 ^ 6 'w é o modulo de resistencia divindo por 10^6 para transformar em MPa
+                    Compressao.ei = momentoFletorX / normalCompressao 'se esse valor for menor que altura/30 usa h/30 fazer um if else aquior 30
+                    Compressao.edx = (Compressao.ei + Compressao.ea) * (Compressao.forcaElasticaX / (Compressao.forcaElasticaX - normalCompressao))
+                    mdX = normalCompressao * Compressao.edx
+                    Compressao.tensaoCompressao = normalCompressao / PropriedadesGeometricas.area
+                    Compressao.tensaoMxd = (mdX / PropriedadesGeometricas.eixoXmr) / 10 ^ 6 'w é o modulo de resistencia divindo por 10^6 para transformar em MPa
 
-                ElseIf 40 < compressao.EsbeltezCompressaoY <= 80 Then 'ELEMENTO MEDIANAMENTE ESBELTO EM Y
-                    compressao.ForcaElasticaY = ((System.Math.PI) * propriedadesGeometricas.EixoYmi * propriedadesGeometricas.EixoYmr) / (lvinculado ^ 2)
-                    compressao.Ea = lvinculado / 300
+                ElseIf 40 < Compressao.esbeltezCompressaoY <= 80 Then 'ELEMENTO MEDIANAMENTE ESBELTO EM Y
+                    Compressao.forcaElasticaY = ((System.Math.PI) * PropriedadesGeometricas.eixoYmi * PropriedadesGeometricas.eixoYmr) / (lvinculado ^ 2)
+                    Compressao.ea = lvinculado / 300
                     'O MOMENTO CARACTERISTICO O USUARIO VAI TER QUE INSERIR QUANDO A PEÇA DER MEDIANAMENTE
-                    compressao.Ei = momentoFletorY / normalCompressao 'se esse valor for menor que altura/30 usa h/30 fazer um if else aquior 30
-                    compressao.Edy = (compressao.Ei + compressao.Ea) * (compressao.ForcaElasticaY / (compressao.ForcaElasticaY - normalCompressao))
-                    mdY = normalCompressao * compressao.Edy
-                    compressao.TensaoCompressao = normalCompressao / propriedadesGeometricas.Area
-                    compressao.TensaoMyd = (mdY / propriedadesGeometricas.EixoYmr) / 10 ^ 6 'w é o modulo de resistencia divindo por 10^6 para transformar em MPa
+                    Compressao.ei = momentoFletorY / normalCompressao 'se esse valor for menor que altura/30 usa h/30 fazer um if else aquior 30
+                    Compressao.edy = (Compressao.ei + Compressao.ea) * (Compressao.forcaElasticaY / (Compressao.forcaElasticaY - normalCompressao))
+                    mdY = normalCompressao * Compressao.edy
+                    Compressao.tensaoCompressao = normalCompressao / PropriedadesGeometricas.area
+                    Compressao.tensaoMyd = (mdY / PropriedadesGeometricas.eixoYmr) / 10 ^ 6 'w é o modulo de resistencia divindo por 10^6 para transformar em MPa
 
 
-                ElseIf 80 < compressao.EsbeltezCompressaoX <= 140 Then 'ELEMENTO ESBELTO EM X
+                ElseIf 80 < Compressao.esbeltezCompressaoX <= 140 Then 'ELEMENTO ESBELTO EM X
                     MessageBox.Show("Aviso: o Elemento é esbelto.")
 
-                    compressao.ForcaElasticaX = ((System.Math.PI) * propriedadesGeometricas.EixoXmi * propriedadesGeometricas.EixoXmr) / (lvinculado ^ 2)
-                    compressao.Ea = lvinculado / 300
+                    Compressao.forcaElasticaX = ((System.Math.PI) * PropriedadesGeometricas.eixoXmi * PropriedadesGeometricas.eixoXmr) / (lvinculado ^ 2)
+                    Compressao.ea = lvinculado / 300
                     'O MOMENTO CARACTERISTICO O USUARIO VAI TER QUE INSERIR QUANDO A PEÇA DER ESBELTA E MOMENTO CARACTERISTICOXAC DEVIDO A PARCELA ACIDENTAL
-                    compressao.Ei = (MomentoCargaPermanenteX + MomentoCargaVariavelX) / normalCompressao 'se esse valor for menor que altura/30 usa h/30 fazer um if else aquior 30
-                    compressao.Eig = (MomentoCargaPermanenteX / NormalCargaPermanente)
-                    compressao.Ec = (compressao.Ea + compressao.Eig) * System.Math.Exp(((coefInfluencia * (NormalCargaPermanente + (f1 + f2) * NormalCargaVariavel)) / (NormalCargaPermanente - (NormalCargaPermanente + (f1 + f2) * NormalCargaVariavel))) - 1)
-                    compressao.E1ef = compressao.Ea + compressao.Ei + compressao.Ec
-                    mdX = normalCompressao * compressao.E1ef * (compressao.ForcaElasticaX / (compressao.ForcaElasticaX - normalCompressao))
-                    compressao.TensaoCompressao = normalCompressao / propriedadesGeometricas.Area
-                    compressao.TensaoMxd = (mdX / propriedadesGeometricas.EixoXmr) / 10 ^ 6 'w é o modulo de resistencia divindo por 10^6 para transformar em MPa
+                    Compressao.ei = (MomentoCargaPermanenteX + MomentoCargaVariavelX) / normalCompressao 'se esse valor for menor que altura/30 usa h/30 fazer um if else aquior 30
+                    Compressao.eig = (MomentoCargaPermanenteX / NormalCargaPermanente)
+                    Compressao.ec = (Compressao.ea + Compressao.eig) * System.Math.Exp(((coefInfluencia * (NormalCargaPermanente + (f1 + f2) * NormalCargaVariavel)) / (NormalCargaPermanente - (NormalCargaPermanente + (f1 + f2) * NormalCargaVariavel))) - 1)
+                    Compressao.e1ef = Compressao.ea + Compressao.ei + Compressao.ec
+                    mdX = normalCompressao * Compressao.e1ef * (Compressao.forcaElasticaX / (Compressao.forcaElasticaX - normalCompressao))
+                    Compressao.tensaoCompressao = normalCompressao / PropriedadesGeometricas.area
+                    Compressao.tensaoMxd = (mdX / PropriedadesGeometricas.eixoXmr) / 10 ^ 6 'w é o modulo de resistencia divindo por 10^6 para transformar em MPa
 
 
-                ElseIf 80 < compressao.EsbeltezCompressaoY <= 140 Then 'ELEMENTO ESBELTO EM Y
+                ElseIf 80 < Compressao.esbeltezCompressaoY <= 140 Then 'ELEMENTO ESBELTO EM Y
                     MessageBox.Show("Aviso: o Elemento é esbelto.")
 
-                    compressao.ForcaElasticaY = ((System.Math.PI) * propriedadesGeometricas.EixoYmi * propriedadesGeometricas.EixoYmr) / (lvinculado ^ 2)
-                    compressao.Ea = lvinculado / 300
+                    Compressao.forcaElasticaY = ((System.Math.PI) * PropriedadesGeometricas.eixoYmi * PropriedadesGeometricas.eixoYmr) / (lvinculado ^ 2)
+                    Compressao.ea = lvinculado / 300
                     'O MOMENTO CARACTERISTICO O USUARIO VAI TER QUE INSERIR QUANDO A PEÇA DER ESBELTA E MOMENTO CARACTERISTICOXAC DEVIDO A PARCELA ACIDENTAL
-                    compressao.Ei = (MomentoCargaPermanenteY + MomentoCargaVariavelY) / normalCompressao 'se esse valor for menor que altura/30 usa h/30 fazer um if else aquior 30
-                    compressao.Eig = (MomentoCargaPermanenteY / NormalCargaPermanente)
-                    compressao.Ec = (compressao.Ea + compressao.Eig) * System.Math.Exp(((coefInfluencia * (NormalCargaPermanente + (f1 + f2) * NormalCargaVariavel)) / (NormalCargaPermanente - (NormalCargaPermanente + (f1 + f2) * NormalCargaVariavel))) - 1)
-                    compressao.E1ef = compressao.Ea + compressao.Ei + compressao.Ec
-                    mdY = normalCompressao * compressao.E1ef * (compressao.ForcaElasticaY / (compressao.ForcaElasticaY - normalCompressao))
-                    compressao.TensaoCompressao = normalCompressao / propriedadesGeometricas.Area
-                    compressao.TensaoMyd = (mdY / propriedadesGeometricas.EixoXmr) / 10 ^ 6 'w é o modulo de resistencia divindo por 10^6 para transformar em MPa
+                    Compressao.ei = (MomentoCargaPermanenteY + MomentoCargaVariavelY) / normalCompressao 'se esse valor for menor que altura/30 usa h/30 fazer um if else aquior 30
+                    Compressao.eig = (MomentoCargaPermanenteY / NormalCargaPermanente)
+                    Compressao.ec = (Compressao.ea + Compressao.eig) * System.Math.Exp(((coefInfluencia * (NormalCargaPermanente + (f1 + f2) * NormalCargaVariavel)) / (NormalCargaPermanente - (NormalCargaPermanente + (f1 + f2) * NormalCargaVariavel))) - 1)
+                    Compressao.e1ef = Compressao.ea + Compressao.ei + Compressao.ec
+                    mdY = normalCompressao * Compressao.e1ef * (Compressao.forcaElasticaY / (Compressao.forcaElasticaY - normalCompressao))
+                    Compressao.tensaoCompressao = normalCompressao / PropriedadesGeometricas.area
+                    Compressao.tensaoMyd = (mdY / PropriedadesGeometricas.eixoXmr) / 10 ^ 6 'w é o modulo de resistencia divindo por 10^6 para transformar em MPa
 
-                ElseIf compressao.EsbeltezCompressaoX > 140 And compressao.EsbeltezCompressaoY > 140 Then
+                ElseIf Compressao.esbeltezCompressaoX > 140 And Compressao.esbeltezCompressaoY > 140 Then
                     MessageBox.Show("Valores acima de 140 não devem ser considerados pois violam o estado limite de serviço imposto pela NBR.")
 
                 End If
 
             Case Madeira.TipoSecao.ElementosJustaposto2
-                compressao.EsbeltezCompressaoX = 0
-                compressao.EsbeltezCompressaoY = 0
+                Compressao.esbeltezCompressaoX = 0
+                Compressao.esbeltezCompressaoY = 0
 
-                If compressao.EsbeltezCompressaoX <= 40 Then 'PEÇA CURTA EM X
+                If Compressao.esbeltezCompressaoX <= 40 Then 'PEÇA CURTA EM X
 
-                ElseIf compressao.EsbeltezCompressaoY <= 40 Then 'PEÇA CURTA EM y
+                ElseIf Compressao.esbeltezCompressaoY <= 40 Then 'PEÇA CURTA EM y
 
-                ElseIf 40 < compressao.EsbeltezCompressaoX <= 80 Then 'ELEMENTO MEDIANAMENTE ESBELTO EM X
+                ElseIf 40 < Compressao.esbeltezCompressaoX <= 80 Then 'ELEMENTO MEDIANAMENTE ESBELTO EM X
 
-                ElseIf 40 < compressao.EsbeltezCompressaoY <= 80 Then 'ELEMENTO MEDIANAMENTE ESBELTO EM Y
+                ElseIf 40 < Compressao.esbeltezCompressaoY <= 80 Then 'ELEMENTO MEDIANAMENTE ESBELTO EM Y
 
-                ElseIf 80 < compressao.EsbeltezCompressaoX <= 140 Then 'ELEMENTO ESBELTO EM X
+                ElseIf 80 < Compressao.esbeltezCompressaoX <= 140 Then 'ELEMENTO ESBELTO EM X
                     MessageBox.Show("Aviso: o Elemento é esbelto.")
 
-                ElseIf 80 < compressao.EsbeltezCompressaoY <= 140 Then 'ELEMENTO ESBELTO EM Y
+                ElseIf 80 < Compressao.esbeltezCompressaoY <= 140 Then 'ELEMENTO ESBELTO EM Y
                     MessageBox.Show("Aviso: o Elemento é esbelto.")
 
-                ElseIf compressao.EsbeltezCompressaoX > 140 And compressao.EsbeltezCompressaoY > 140 Then
+                ElseIf Compressao.esbeltezCompressaoX > 140 And Compressao.esbeltezCompressaoY > 140 Then
                     MessageBox.Show("Valores acima de 140 não devem ser considerados pois violam o estado limite de serviço imposto pela NBR.")
 
                 End If
 
             Case Madeira.TipoSecao.ElementosJustaposto3
-                compressao.EsbeltezCompressaoX = 0
-                compressao.EsbeltezCompressaoY = 0
+                Compressao.esbeltezCompressaoX = 0
+                Compressao.esbeltezCompressaoY = 0
 
-                If compressao.EsbeltezCompressaoX <= 40 Then 'PEÇA CURTA EM X
+                If Compressao.esbeltezCompressaoX <= 40 Then 'PEÇA CURTA EM X
 
-                ElseIf compressao.EsbeltezCompressaoY <= 40 Then 'PEÇA CURTA EM y
+                ElseIf Compressao.esbeltezCompressaoY <= 40 Then 'PEÇA CURTA EM y
 
-                ElseIf 40 < compressao.EsbeltezCompressaoX <= 80 Then 'ELEMENTO MEDIANAMENTE ESBELTO EM X
+                ElseIf 40 < Compressao.esbeltezCompressaoX <= 80 Then 'ELEMENTO MEDIANAMENTE ESBELTO EM X
 
-                ElseIf 40 < compressao.EsbeltezCompressaoY <= 80 Then 'ELEMENTO MEDIANAMENTE ESBELTO EM Y
+                ElseIf 40 < Compressao.esbeltezCompressaoY <= 80 Then 'ELEMENTO MEDIANAMENTE ESBELTO EM Y
 
-                ElseIf 80 < compressao.EsbeltezCompressaoX <= 140 Then 'ELEMENTO ESBELTO EM X
+                ElseIf 80 < Compressao.esbeltezCompressaoX <= 140 Then 'ELEMENTO ESBELTO EM X
                     MessageBox.Show("Aviso: o Elemento é esbelto.")
 
-                ElseIf 80 < compressao.EsbeltezCompressaoY <= 140 Then 'ELEMENTO ESBELTO EM Y
+                ElseIf 80 < Compressao.esbeltezCompressaoY <= 140 Then 'ELEMENTO ESBELTO EM Y
                     MessageBox.Show("Aviso: o Elemento é esbelto.")
 
-                ElseIf compressao.EsbeltezCompressaoX > 140 And compressao.EsbeltezCompressaoY > 140 Then
+                ElseIf Compressao.esbeltezCompressaoX > 140 And Compressao.esbeltezCompressaoY > 140 Then
                     MessageBox.Show("Valores acima de 140 não devem ser considerados pois violam o estado limite de serviço imposto pela NBR.")
 
                 End If
@@ -780,30 +779,30 @@
 
         Select Case tipoSecao
             Case Madeira.TipoSecao.Retangular
-                cisalhamento.TensaoCisalhanteX = ((2 / 3) * (forcaCortanteX / propriedadesGeometricas.Area) / 10 ^ 6)
-                cisalhamento.TensaoCisalhanteY = ((2 / 3) * (forcaCortanteY / propriedadesGeometricas.Area) / 10 ^ 6)
+                Cisalhamento.tensaoCisalhanteX = ((2 / 3) * (forcaCortanteX / PropriedadesGeometricas.area) / 10 ^ 6)
+                Cisalhamento.tensaoCisalhanteY = ((2 / 3) * (forcaCortanteY / PropriedadesGeometricas.area) / 10 ^ 6)
 
             Case Madeira.TipoSecao.Circular
-                cisalhamento.TensaoCisalhanteX = ((4 * forcaCortanteX) / (3 * System.Math.PI * (diametro / 2))) / 10 ^ 6
-                cisalhamento.TensaoCisalhanteY = ((4 * forcaCortanteY) / (3 * System.Math.PI * (diametro / 2))) / 10 ^ 6
+                Cisalhamento.tensaoCisalhanteX = ((4 * forcaCortanteX) / (3 * System.Math.PI * (diametro / 2))) / 10 ^ 6
+                Cisalhamento.tensaoCisalhanteY = ((4 * forcaCortanteY) / (3 * System.Math.PI * (diametro / 2))) / 10 ^ 6
 
             Case Madeira.TipoSecao.SecaoT
-                cisalhamento.TensaoCisalhanteX = forcaCortanteX * q.Qx / propriedadesGeometricas.EixoXmi
-                cisalhamento.TensaoCisalhanteY = forcaCortanteY * q.Qy / propriedadesGeometricas.EixoYmi
+                Cisalhamento.tensaoCisalhanteX = forcaCortanteX * q.Qx / PropriedadesGeometricas.eixoXmi
+                Cisalhamento.tensaoCisalhanteY = forcaCortanteY * q.Qy / PropriedadesGeometricas.eixoYmi
 
             Case Madeira.TipoSecao.SecaoI
-                cisalhamento.TensaoCisalhanteX = forcaCortanteX * q.Qx / propriedadesGeometricas.EixoXmi
-                cisalhamento.TensaoCisalhanteY = forcaCortanteY * q.Qy / propriedadesGeometricas.EixoYmi
+                Cisalhamento.tensaoCisalhanteX = forcaCortanteX * q.Qx / PropriedadesGeometricas.eixoXmi
+                Cisalhamento.tensaoCisalhanteY = forcaCortanteY * q.Qy / PropriedadesGeometricas.eixoYmi
 
             Case Madeira.TipoSecao.Caixao
-                cisalhamento.TensaoCisalhanteX = forcaCortanteX * q.Qx / propriedadesGeometricas.EixoXmi
-                cisalhamento.TensaoCisalhanteY = forcaCortanteY * q.Qy / propriedadesGeometricas.EixoYmi
+                Cisalhamento.tensaoCisalhanteX = forcaCortanteX * q.Qx / PropriedadesGeometricas.eixoXmi
+                Cisalhamento.tensaoCisalhanteY = forcaCortanteY * q.Qy / PropriedadesGeometricas.eixoYmi
 
             Case Madeira.TipoSecao.ElementosJustaposto2
-                cisalhamento.TensaoCisalhanteX = 0
+                Cisalhamento.tensaoCisalhanteX = 0
 
             Case Madeira.TipoSecao.ElementosJustaposto3
-                cisalhamento.TensaoCisalhanteX = 0
+                Cisalhamento.tensaoCisalhanteX = 0
         End Select
 
         Return cisalhamento
@@ -814,24 +813,24 @@
 
         Select Case tipoSecao
             Case Madeira.TipoSecao.Retangular
-                flexao.tensaoFlexaoX = (momentoFletorX / propriedadesGeometricas.EixoXmr) / 10 ^ 6
-                flexao.tensaoFlexaoY = (momentoFletorY / propriedadesGeometricas.EixoYmr) / 10 ^ 6
+                Flexao.tensaoFlexaoX = (momentoFletorX / PropriedadesGeometricas.eixoXmr) / 10 ^ 6
+                Flexao.tensaoFlexaoY = (momentoFletorY / PropriedadesGeometricas.eixoYmr) / 10 ^ 6
 
             Case Madeira.TipoSecao.Circular
-                flexao.tensaoFlexaoX = (momentoFletorX / propriedadesGeometricas.EixoXmr) / 10 ^ 6
-                flexao.tensaoFlexaoY = (momentoFletorY / propriedadesGeometricas.EixoYmr) / 10 ^ 6
+                Flexao.tensaoFlexaoX = (momentoFletorX / PropriedadesGeometricas.eixoXmr) / 10 ^ 6
+                Flexao.tensaoFlexaoY = (momentoFletorY / PropriedadesGeometricas.eixoYmr) / 10 ^ 6
 
             Case Madeira.TipoSecao.SecaoT
-                flexao.tensaoFlexaoX = (momentoFletorX / propriedadesGeometricas.EixoXmr) / 10 ^ 6
-                flexao.tensaoFlexaoY = (momentoFletorY / propriedadesGeometricas.EixoYmr) / 10 ^ 6
+                Flexao.tensaoFlexaoX = (momentoFletorX / PropriedadesGeometricas.eixoXmr) / 10 ^ 6
+                Flexao.tensaoFlexaoY = (momentoFletorY / PropriedadesGeometricas.eixoYmr) / 10 ^ 6
 
             Case Madeira.TipoSecao.SecaoI
-                flexao.tensaoFlexaoX = (momentoFletorX / propriedadesGeometricas.EixoXmr) / 10 ^ 6
-                flexao.tensaoFlexaoY = (momentoFletorY / propriedadesGeometricas.EixoYmr) / 10 ^ 6
+                Flexao.tensaoFlexaoX = (momentoFletorX / PropriedadesGeometricas.eixoXmr) / 10 ^ 6
+                Flexao.tensaoFlexaoY = (momentoFletorY / PropriedadesGeometricas.eixoYmr) / 10 ^ 6
 
             Case Madeira.TipoSecao.Caixao
-                flexao.tensaoFlexaoX = (momentoFletorX / propriedadesGeometricas.EixoXmr) / 10 ^ 6
-                flexao.tensaoFlexaoY = (momentoFletorY / propriedadesGeometricas.EixoYmr) / 10 ^ 6
+                Flexao.tensaoFlexaoX = (momentoFletorX / PropriedadesGeometricas.eixoXmr) / 10 ^ 6
+                Flexao.tensaoFlexaoY = (momentoFletorY / PropriedadesGeometricas.eixoYmr) / 10 ^ 6
 
             Case Madeira.TipoSecao.ElementosJustaposto2
 
@@ -847,24 +846,24 @@
 
         Select Case tipoSecao
             Case Madeira.TipoSecao.Retangular
-                flexao.tensaoFlexaoX = (momentoFletorX / propriedadesGeometricas.EixoXmr) / 10 ^ 6
-                flexao.tensaoFlexaoY = (momentoFletorY / propriedadesGeometricas.EixoYmr) / 10 ^ 6
+                Flexao.tensaoFlexaoX = (momentoFletorX / PropriedadesGeometricas.eixoXmr) / 10 ^ 6
+                Flexao.tensaoFlexaoY = (momentoFletorY / PropriedadesGeometricas.eixoYmr) / 10 ^ 6
 
             Case Madeira.TipoSecao.Circular
-                flexao.tensaoFlexaoX = (momentoFletorX / propriedadesGeometricas.EixoXmr) / 10 ^ 6
-                flexao.tensaoFlexaoY = (momentoFletorY / propriedadesGeometricas.EixoYmr) / 10 ^ 6
+                Flexao.tensaoFlexaoX = (momentoFletorX / PropriedadesGeometricas.eixoXmr) / 10 ^ 6
+                Flexao.tensaoFlexaoY = (momentoFletorY / PropriedadesGeometricas.eixoYmr) / 10 ^ 6
 
             Case Madeira.TipoSecao.SecaoT
-                flexao.tensaoFlexaoX = (momentoFletorX / propriedadesGeometricas.EixoXmr) / 10 ^ 6
-                flexao.tensaoFlexaoY = (momentoFletorY / propriedadesGeometricas.EixoYmr) / 10 ^ 6
+                Flexao.tensaoFlexaoX = (momentoFletorX / PropriedadesGeometricas.eixoXmr) / 10 ^ 6
+                Flexao.tensaoFlexaoY = (momentoFletorY / PropriedadesGeometricas.eixoYmr) / 10 ^ 6
 
             Case Madeira.TipoSecao.SecaoI
-                flexao.tensaoFlexaoX = (momentoFletorX / propriedadesGeometricas.EixoXmr) / 10 ^ 6
-                flexao.tensaoFlexaoY = (momentoFletorY / propriedadesGeometricas.EixoYmr) / 10 ^ 6
+                Flexao.tensaoFlexaoX = (momentoFletorX / PropriedadesGeometricas.eixoXmr) / 10 ^ 6
+                Flexao.tensaoFlexaoY = (momentoFletorY / PropriedadesGeometricas.eixoYmr) / 10 ^ 6
 
             Case Madeira.TipoSecao.Caixao
-                flexao.tensaoFlexaoX = (momentoFletorX / propriedadesGeometricas.EixoXmr) / 10 ^ 6
-                flexao.tensaoFlexaoY = (momentoFletorY / propriedadesGeometricas.EixoYmr) / 10 ^ 6
+                Flexao.tensaoFlexaoX = (momentoFletorX / PropriedadesGeometricas.eixoXmr) / 10 ^ 6
+                Flexao.tensaoFlexaoY = (momentoFletorY / PropriedadesGeometricas.eixoYmr) / 10 ^ 6
 
             Case Madeira.TipoSecao.ElementosJustaposto2
 
@@ -882,32 +881,32 @@
 
         Select Case tipoSecao
             Case Madeira.TipoSecao.Retangular
-                flexao.tensaoFlexaoX = (momentoFletorX / propriedadesGeometricas.EixoXmr) / 10 ^ 6
-                flexao.tensaoFlexaoY = (momentoFletorY / propriedadesGeometricas.EixoYmr) / 10 ^ 6
+                Flexao.tensaoFlexaoX = (momentoFletorX / PropriedadesGeometricas.eixoXmr) / 10 ^ 6
+                Flexao.tensaoFlexaoY = (momentoFletorY / PropriedadesGeometricas.eixoYmr) / 10 ^ 6
 
             Case Madeira.TipoSecao.Circular
-                flexao.tensaoFlexaoX = (momentoFletorX / propriedadesGeometricas.EixoXmr) / 10 ^ 6
-                flexao.tensaoFlexaoY = (momentoFletorY / propriedadesGeometricas.EixoYmr) / 10 ^ 6
+                Flexao.tensaoFlexaoX = (momentoFletorX / PropriedadesGeometricas.eixoXmr) / 10 ^ 6
+                Flexao.tensaoFlexaoY = (momentoFletorY / PropriedadesGeometricas.eixoYmr) / 10 ^ 6
 
             Case Madeira.TipoSecao.SecaoT
-                flexao.tensaoFlexaoX = (momentoFletorX / propriedadesGeometricas.EixoXmr) / 10 ^ 6
-                flexao.tensaoFlexaoY = (momentoFletorY / propriedadesGeometricas.EixoYmr) / 10 ^ 6
+                Flexao.tensaoFlexaoX = (momentoFletorX / PropriedadesGeometricas.eixoXmr) / 10 ^ 6
+                Flexao.tensaoFlexaoY = (momentoFletorY / PropriedadesGeometricas.eixoYmr) / 10 ^ 6
 
             Case Madeira.TipoSecao.SecaoI
-                flexao.tensaoFlexaoX = (momentoFletorX / propriedadesGeometricas.EixoXmr) / 10 ^ 6
-                flexao.tensaoFlexaoY = (momentoFletorY / propriedadesGeometricas.EixoYmr) / 10 ^ 6
+                Flexao.tensaoFlexaoX = (momentoFletorX / PropriedadesGeometricas.eixoXmr) / 10 ^ 6
+                Flexao.tensaoFlexaoY = (momentoFletorY / PropriedadesGeometricas.eixoYmr) / 10 ^ 6
 
             Case Madeira.TipoSecao.Caixao
-                flexao.tensaoFlexaoX = (momentoFletorX / propriedadesGeometricas.EixoXmr) / 10 ^ 6
-                flexao.tensaoFlexaoY = (momentoFletorY / propriedadesGeometricas.EixoYmr) / 10 ^ 6
+                Flexao.tensaoFlexaoX = (momentoFletorX / PropriedadesGeometricas.eixoXmr) / 10 ^ 6
+                Flexao.tensaoFlexaoY = (momentoFletorY / PropriedadesGeometricas.eixoYmr) / 10 ^ 6
 
             Case Madeira.TipoSecao.ElementosJustaposto2
-                flexao.tensaoFlexaoX = 0
-                flexao.tensaoFlexaoY = 0
+                Flexao.tensaoFlexaoX = 0
+                Flexao.tensaoFlexaoY = 0
 
             Case Madeira.TipoSecao.ElementosJustaposto3
-                flexao.tensaoFlexaoX = 0
-                flexao.tensaoFlexaoY = 0
+                Flexao.tensaoFlexaoX = 0
+                Flexao.tensaoFlexaoY = 0
 
         End Select
 
@@ -919,33 +918,33 @@
 
         Select Case tipoSecao
             Case Madeira.TipoSecao.Retangular
-                flexao.tensaoFlexaoX = (momentoFletorX / propriedadesGeometricas.EixoXmr) / 10 ^ 6
-                flexao.tensaoFlexaoY = (momentoFletorY / propriedadesGeometricas.EixoYmr) / 10 ^ 6
+                Flexao.tensaoFlexaoX = (momentoFletorX / PropriedadesGeometricas.eixoXmr) / 10 ^ 6
+                Flexao.tensaoFlexaoY = (momentoFletorY / PropriedadesGeometricas.eixoYmr) / 10 ^ 6
 
             Case Madeira.TipoSecao.Circular
-                flexao.tensaoFlexaoX = (momentoFletorX / propriedadesGeometricas.EixoXmr) / 10 ^ 6
-                flexao.tensaoFlexaoY = (momentoFletorY / propriedadesGeometricas.EixoYmr) / 10 ^ 6
+                Flexao.tensaoFlexaoX = (momentoFletorX / PropriedadesGeometricas.eixoXmr) / 10 ^ 6
+                Flexao.tensaoFlexaoY = (momentoFletorY / PropriedadesGeometricas.eixoYmr) / 10 ^ 6
 
             Case Madeira.TipoSecao.SecaoT
-                flexao.tensaoFlexaoX = (momentoFletorX / propriedadesGeometricas.EixoXmr) / 10 ^ 6
-                flexao.tensaoFlexaoY = (momentoFletorY / propriedadesGeometricas.EixoYmr) / 10 ^ 6
+                Flexao.tensaoFlexaoX = (momentoFletorX / PropriedadesGeometricas.eixoXmr) / 10 ^ 6
+                Flexao.tensaoFlexaoY = (momentoFletorY / PropriedadesGeometricas.eixoYmr) / 10 ^ 6
 
             Case Madeira.TipoSecao.SecaoI
-                flexao.tensaoFlexaoX = (momentoFletorX / propriedadesGeometricas.EixoXmr) / 10 ^ 6
-                flexao.tensaoFlexaoY = (momentoFletorY / propriedadesGeometricas.EixoYmr) / 10 ^ 6
+                Flexao.tensaoFlexaoX = (momentoFletorX / PropriedadesGeometricas.eixoXmr) / 10 ^ 6
+                Flexao.tensaoFlexaoY = (momentoFletorY / PropriedadesGeometricas.eixoYmr) / 10 ^ 6
 
             Case Madeira.TipoSecao.Caixao
-                flexao.tensaoFlexaoX = (momentoFletorX / propriedadesGeometricas.EixoXmr) / 10 ^ 6
-                flexao.tensaoFlexaoY = (momentoFletorY / propriedadesGeometricas.EixoYmr) / 10 ^ 6
+                Flexao.tensaoFlexaoX = (momentoFletorX / PropriedadesGeometricas.eixoXmr) / 10 ^ 6
+                Flexao.tensaoFlexaoY = (momentoFletorY / PropriedadesGeometricas.eixoYmr) / 10 ^ 6
 
             Case Madeira.TipoSecao.ElementosJustaposto2
-                flexao.tensaoFlexaoX = 0
-                flexao.tensaoFlexaoY = 0
+                Flexao.tensaoFlexaoX = 0
+                Flexao.tensaoFlexaoY = 0
 
             Case Madeira.TipoSecao.ElementosJustaposto3
 
-                flexao.tensaoFlexaoX = 0
-                flexao.tensaoFlexaoY = 0
+                Flexao.tensaoFlexaoX = 0
+                Flexao.tensaoFlexaoY = 0
         End Select
 
         Return flexao
@@ -1070,12 +1069,6 @@
         Return 0
     End Function
 
-    'só para tirar o erro do form1 dps apago
-    ' Public Function MomentoEstaticoDeArea()
-
-    ' End Function
-
-    'AVISO: JOGAR A FUNÇÃO NO FORM1
     Public Function MomentoEstaticoDeArea(dadosIniciais As DadosIniciais, tipoSecao As Madeira.TipoSecao) As Qxy
         Dim bases As Double() = {0, 0, 0}
         Dim alturas As Double() = {0, 0, 0}
