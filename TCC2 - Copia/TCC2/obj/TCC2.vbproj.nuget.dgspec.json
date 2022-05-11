@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Usuario\\source\\repos\\TCC2\\TCC2\\TCC2.vbproj": {}
+    "C:\\Users\\Usuario\\Documents\\git\\TCCLaura\\TCC2 - Copia\\TCC2\\TCC2.vbproj": {}
   },
   "projects": {
-    "C:\\Users\\Usuario\\source\\repos\\TCC2\\TCC2\\TCC2.vbproj": {
+    "C:\\Users\\Usuario\\Documents\\git\\TCCLaura\\TCC2 - Copia\\TCC2\\TCC2.vbproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Usuario\\source\\repos\\TCC2\\TCC2\\TCC2.vbproj",
+        "projectUniqueName": "C:\\Users\\Usuario\\Documents\\git\\TCCLaura\\TCC2 - Copia\\TCC2\\TCC2.vbproj",
         "projectName": "TCC2",
-        "projectPath": "C:\\Users\\Usuario\\source\\repos\\TCC2\\TCC2\\TCC2.vbproj",
+        "projectPath": "C:\\Users\\Usuario\\Documents\\git\\TCCLaura\\TCC2 - Copia\\TCC2\\TCC2.vbproj",
         "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Usuario\\source\\repos\\TCC2\\TCC2\\obj\\",
+        "outputPath": "C:\\Users\\Usuario\\Documents\\git\\TCCLaura\\TCC2 - Copia\\TCC2\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Usuario\\AppData\\Roaming\\NuGet\\NuGet.Config",
