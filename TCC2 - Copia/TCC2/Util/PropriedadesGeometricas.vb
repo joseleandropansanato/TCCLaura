@@ -455,7 +455,7 @@ Public Class PropriedadesGeometricas
         proprGeometricas.EixoXie = proprGeometricas.EixoXmi * 0.85
         proprGeometricas.EixoXrg = Math.Sqrt(proprGeometricas.EixoXie / proprGeometricas.Area)
         proprGeometricas.EixoXmr = proprGeometricas.EixoXie / ((d - hf1 - hf2) / 2)
-        proprGeometricas.EixoYmi = Inercia(bases, alturas, x_CGi)
+        proprGeometricas.EixoYmi = Inercia(alturas, bases, x_CGi)
         proprGeometricas.EixoYie = proprGeometricas.EixoYmi * 0.85
         proprGeometricas.EixoYrg = Math.Sqrt(proprGeometricas.EixoYie / proprGeometricas.Area)
         proprGeometricas.EixoYmr = proprGeometricas.EixoYie / ((d - hf1 - hf2) / 2)
@@ -479,7 +479,7 @@ Public Class PropriedadesGeometricas
         proprGeometricas.EixoXie = proprGeometricas.EixoXmi * 0.85
         proprGeometricas.EixoXrg = Math.Sqrt(proprGeometricas.EixoXie / proprGeometricas.Area)
         proprGeometricas.EixoXmr = proprGeometricas.EixoXie / (h3 / 2)
-        proprGeometricas.EixoYmi = Inercia(bases, alturas, x_CGi)
+        proprGeometricas.EixoYmi = Inercia(alturas, bases, x_CGi)
         proprGeometricas.EixoYie = EixoYmi * 0.85
         proprGeometricas.EixoYrg = Math.Sqrt(proprGeometricas.EixoYie / proprGeometricas.Area)
         proprGeometricas.EixoYmr = proprGeometricas.EixoYie / (h3 / 2)
