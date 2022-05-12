@@ -18,7 +18,39 @@ Public Class Madeira
 	Public Shared flexao As Flexao = New Flexao()
     Public Shared resistenciaCalculo As ResistenciaCalculo = New ResistenciaCalculo()
 
+    Enum TipoSecao
+        Retangular
+        Circular
+        SecaoT
+        SecaoI
+        Caixao
+        ElementosJustaposto2
+        ElementosJustaposto3
+    End Enum
 
+    'função retorna string.
+    '"As" precisa de um retorno
+    Public Sub New()
+
+    End Sub
+
+    Public Sub New(ByVal _id As Integer,
+                   ByVal _name As String,
+                   ByVal _resistCompParalela As Double,
+                   ByVal _resistTracaoParalela As Double,
+                   ByVal _resistTracaoNormal As Double,
+                   ByVal _resistAoCisalhamento As Double,
+                   ByVal _modElasticidade As Double,
+                   ByVal _densAparente As Double)
+        id = _id
+        name = _name
+        resistCompParalela = _resistCompParalela
+        resistTracaoParalela = _resistTracaoParalela
+        resistTracaoNormal = _resistTracaoNormal
+        resistAoCisalhamento = _resistAoCisalhamento
+        modElasticidade = _modElasticidade
+        densAparente = _densAparente
+    End Sub
 
     Public Shared ListaEspecies = New List(Of Madeira) From {
                 New Madeira(0, "Angelim araroba", 50.5, 69.2, 3.1, 7.1, 12876, 688),
@@ -71,42 +103,6 @@ Public Class Madeira
                 New Madeira(48, "Pinus Elliotti", 40.4, 66.0, 2.5, 7.4, 11889, 560),
                 New Madeira(49, "Pinus Oocarpa", 43.6, 60.9, 2.5, 8.0, 10904, 538),
                 New Madeira(50, "Pinus Taeda", 44.4, 82.8, 2.8, 7.7, 13304, 645)
-                }
-
-    Enum TipoSecao
-		Retangular
-		Circular
-		SecaoT
-		SecaoI
-		Caixao
-		ElementosJustaposto2
-		ElementosJustaposto3
-	End Enum
-
-	'função retorna string.
-	'"As" precisa de um retorno
-	Public Sub New()
-
-	End Sub
-    Public Sub New(ByVal _id As Integer,
-                   ByVal _name As String,
-                   ByVal _resistCompParalela As Double,
-                   ByVal _resistTracaoParalela As Double,
-                   ByVal _resistTracaoNormal As Double,
-                   ByVal _resistAoCisalhamento As Double,
-                   ByVal _modElasticidade As Double,
-                   ByVal _densAparente As Double)
-        id = _id
-        name = _name
-        resistCompParalela = _resistCompParalela
-        resistTracaoParalela = _resistTracaoParalela
-        resistTracaoNormal = _resistTracaoNormal
-        resistAoCisalhamento = _resistAoCisalhamento
-        modElasticidade = _modElasticidade
-        densAparente = _densAparente
-
-    End Sub
-
-
+    }
 
 End Class

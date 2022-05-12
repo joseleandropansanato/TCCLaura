@@ -1,41 +1,63 @@
 ﻿Public Class Cisalhamento
 
-	Public Shared tensaoCisalhanteX As Double = 0
-	Public Shared tensaoCisalhanteY As Double = 0
+    'Public Shared tensaoCisalhanteX As Double = 0
+    'Public Shared tensaoCisalhanteY As Double = 0
+    Private _tensaoCisalhanteX As Double = 0
+    Private _tensaoCisalhanteY As Double = 0
 
+    Public Sub New()
+    End Sub
 
-    Public Function CalcTensaoCisalhamento(forcaCortanteX As Double, forcaCortanteY As Double, diametro As Double, propriedadesGeometricas As PropriedadesGeometricas, tipoSecao As Madeira.TipoSecao) As Double
-        Dim cisalhamento = New Cisalhamento()
+    Public Property TensaoCisalhanteX() As Double
+        Get
+            Return _tensaoCisalhanteX
+        End Get
+        Set(value As Double)
+            _tensaoCisalhanteX = value
+        End Set
+    End Property
+
+    Public Property TensaoCisalhanteY() As Double
+        Get
+            Return _tensaoCisalhanteY
+        End Get
+        Set(value As Double)
+            _tensaoCisalhanteY = value
+        End Set
+    End Property
+
+    Public Shared Function CalcTensaoCisalhamento(forcaCortanteX As Double, forcaCortanteY As Double, diametro As Double, propriedadesGeometricas As PropriedadesGeometricas, tipoSecao As Madeira.TipoSecao) As Cisalhamento
+        Dim cisalh = New Cisalhamento()
 
         Select Case tipoSecao
             Case Madeira.TipoSecao.Retangular
-                tensaoCisalhanteX = ((2 / 3) * (forcaCortanteX / PropriedadesGeometricas.area) / 10 ^ 6)
-                tensaoCisalhanteY = ((2 / 3) * (forcaCortanteY / PropriedadesGeometricas.area) / 10 ^ 6)
+                cisalh.tensaoCisalhanteX = ((2 / 3) * (forcaCortanteX / propriedadesGeometricas.Area) / 10 ^ 6)
+                cisalh.tensaoCisalhanteY = ((2 / 3) * (forcaCortanteY / propriedadesGeometricas.Area) / 10 ^ 6)
 
             Case Madeira.TipoSecao.Circular
-                tensaoCisalhanteX = ((4 * forcaCortanteX) / (3 * System.Math.PI * (diametro / 2))) / 10 ^ 6
-                tensaoCisalhanteY = ((4 * forcaCortanteY) / (3 * System.Math.PI * (diametro / 2))) / 10 ^ 6
+                cisalh.tensaoCisalhanteX = ((4 * forcaCortanteX) / (3 * System.Math.PI * (diametro / 2))) / 10 ^ 6
+                cisalh.tensaoCisalhanteY = ((4 * forcaCortanteY) / (3 * System.Math.PI * (diametro / 2))) / 10 ^ 6
 
             Case Madeira.TipoSecao.SecaoT
-                tensaoCisalhanteX = forcaCortanteX * PropriedadesGeometricas.Qx / PropriedadesGeometricas.eixoXmi
-                tensaoCisalhanteY = forcaCortanteY * PropriedadesGeometricas.Qy / PropriedadesGeometricas.eixoYmi
+                cisalh.tensaoCisalhanteX = forcaCortanteX * propriedadesGeometricas.Qx / propriedadesGeometricas.EixoXmi
+                cisalh.tensaoCisalhanteY = forcaCortanteY * propriedadesGeometricas.Qy / propriedadesGeometricas.EixoYmi
 
             Case Madeira.TipoSecao.SecaoI
-                tensaoCisalhanteX = forcaCortanteX * PropriedadesGeometricas.Qx / PropriedadesGeometricas.eixoXmi
-                tensaoCisalhanteY = forcaCortanteY * PropriedadesGeometricas.Qy / PropriedadesGeometricas.eixoYmi
+                cisalh.tensaoCisalhanteX = forcaCortanteX * propriedadesGeometricas.Qx / propriedadesGeometricas.EixoXmi
+                cisalh.tensaoCisalhanteY = forcaCortanteY * propriedadesGeometricas.Qy / propriedadesGeometricas.EixoYmi
 
             Case Madeira.TipoSecao.Caixao
-                tensaoCisalhanteX = forcaCortanteX * PropriedadesGeometricas.Qx / PropriedadesGeometricas.eixoXmi
-                tensaoCisalhanteY = forcaCortanteY * PropriedadesGeometricas.Qy / PropriedadesGeometricas.eixoYmi
+                cisalh.tensaoCisalhanteX = forcaCortanteX * propriedadesGeometricas.Qx / propriedadesGeometricas.EixoXmi
+                cisalh.tensaoCisalhanteY = forcaCortanteY * propriedadesGeometricas.Qy / propriedadesGeometricas.EixoYmi
 
             Case Madeira.TipoSecao.ElementosJustaposto2
-                tensaoCisalhanteX = 0
+                cisalh.tensaoCisalhanteX = 0
 
             Case Madeira.TipoSecao.ElementosJustaposto3
-                tensaoCisalhanteX = 0
+                cisalh.tensaoCisalhanteX = 0
         End Select
 
-        Return CalcTensaoCisalhamento
+        Return cisalh
     End Function
 
 End Class
