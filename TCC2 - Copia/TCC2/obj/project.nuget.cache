@@ -1,8 +1,42 @@
 {
   "version": 2,
-  "dgSpecHash": "72921mP2XO8cpjBsB40++/r7QN2CiDZrra2Tqa2OQyIqxBrKarUfNd2j4iVsTcnv5llu6q1INxUuOaU1WDc0RQ==",
+  "dgSpecHash": "6ZPfUwmAN0UdmYlq1V9w3hH5LHrVGDx57gvWfQ23XgPnzHMOzsureZ0m/3B0MfTBK6k+1KRFJYDH0Cfp0hAc+Q==",
   "success": true,
   "projectFilePath": "C:\\Users\\Usuario\\Documents\\git\\TCCLaura\\TCC2 - Copia\\TCC2\\TCC2.vbproj",
-  "expectedPackageFiles": [],
-  "logs": []
+  "expectedPackageFiles": [
+    "C:\\Users\\Usuario\\.nuget\\packages\\microsoft.reportingservices.reportviewercontrol.winforms\\150.1484.0\\microsoft.reportingservices.reportviewercontrol.winforms.150.1484.0.nupkg.sha512",
+    "C:\\Users\\Usuario\\.nuget\\packages\\microsoft.sqlserver.types\\14.0.314.76\\microsoft.sqlserver.types.14.0.314.76.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1603",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Microsoft.ReportingServices.ReportViewerControl.Winforms 150.1484.0 depende de Microsoft.SqlServer.Types (>= 14.0.0), mas Microsoft.SqlServer.Types 14.0.0 não foi encontrado. A melhor correspondência aproximada de Microsoft.SqlServer.Types 14.0.314.76 foi resolvida.",
+      "libraryId": "Microsoft.SqlServer.Types",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v3.1"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "O pacote 'Microsoft.ReportingServices.ReportViewerControl.Winforms 150.1484.0' foi restaurado usando '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' em vez da estrutura de destino do projeto '.NETCoreApp,Version=v3.1'. Esse pacote pode não ser totalmente compatível com o seu projeto.",
+      "libraryId": "Microsoft.ReportingServices.ReportViewerControl.Winforms",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v3.1"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "O pacote 'Microsoft.SqlServer.Types 14.0.314.76' foi restaurado usando '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' em vez da estrutura de destino do projeto '.NETCoreApp,Version=v3.1'. Esse pacote pode não ser totalmente compatível com o seu projeto.",
+      "libraryId": "Microsoft.SqlServer.Types",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v3.1"
+      ]
+    }
+  ]
 }

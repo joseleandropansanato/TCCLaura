@@ -34,8 +34,8 @@ Public Class Form1
     End Sub
 
     Private Sub CaracteristicaMadeira()
-
         Dim checked = rbtInserirValores.Checked
+
         txtResistCompParalela.Enabled = checked
         txtResistTracaoParalela.Enabled = checked
         txtResistTracaoNormal.Enabled = checked
@@ -283,14 +283,7 @@ Public Class Form1
         If txtNormal.Text.ToString <> "" And cboTracaoCompressao.Text = "Tração" Then
             madeiraSelecionada.tracao = CalcTensaoT(
                 PropriedadesResistencia.verificaVazio(txtNormal.Text),
-                PropriedadesResistencia.verificaVazio(txtEntradaRetangularBx.Text),
-                PropriedadesResistencia.verificaVazio(txtEntradaRetangularBy.Text),
-                PropriedadesResistencia.verificaVazio(txtEntradaRetangularL.Text),
-                PropriedadesResistencia.verificaVazio(txtEntradaCircularD.Text),
-                PropriedadesResistencia.verificaVazio(txtEntradaCompostaH.Text),
-                PropriedadesResistencia.verificaVazio(txtEntradaCompostaBw.Text),
-                PropriedadesResistencia.verificaVazio(txtEntradaIBf1.Text),
-                PropriedadesResistencia.verificaVazio(txtEntradaCircularL.Text),
+                comprimento(),
                 proprGeometricas,
                 tipoSecao,
                 PropriedadesResistencia.verificaVazio(txtEntrada2L.Text),
@@ -330,6 +323,8 @@ Public Class Form1
              PropriedadesResistencia.verificaVazio(txtCortanteX.Text),
              PropriedadesResistencia.verificaVazio(txtCortanteY.Text),
              PropriedadesResistencia.verificaVazio(txtEntradaCircularD.Text),
+             cisalhamento_a1,
+             cisalhamento_L1,
              proprGeometricas,
              tipoSecao
              )
@@ -389,11 +384,9 @@ Public Class Form1
 
     End Sub
 
-
     'TRAÇÃO: CONTAS CORRETAS
     Private Sub tracao()
-
-        txtTensaoTracao.Text = madeiraSelecionada.Tracao.tensaoTracao
+        txtTensaoTracao.Text = madeiraSelecionada.tracao.TensaoTracao
         txtEsbeltezTracaoX.Text = madeiraSelecionada.Tracao.esbeltezTracaoX
         txtEsbeltezTracaoY.Text = madeiraSelecionada.Tracao.esbeltezTracaoY
 
@@ -543,6 +536,7 @@ Public Class Form1
         End If
 
     End Sub
+
 
     'CISALHAMENTO
     Private Sub cisalhamento()
@@ -713,26 +707,21 @@ Public Class Form1
     Private Sub txtEntradaCompostaTh_TextChanged(sender As Object, e As EventArgs) Handles txtEntradaCompostaTh.TextChanged
         txtEntradaCompostaH.Text = PropriedadesResistencia.somaT(PropriedadesResistencia.verificaVazio(txtEntradaCompostaHf.Text), PropriedadesResistencia.verificaVazio(txtEntradaCompostaTh.Text))
     End Sub
-
     Private Sub txtEntradaCompostaHf_TextChanged(sender As Object, e As EventArgs) Handles txtEntradaCompostaHf.TextChanged
         txtEntradaCompostaH.Text = PropriedadesResistencia.somaT(PropriedadesResistencia.verificaVazio(txtEntradaCompostaHf.Text), PropriedadesResistencia.verificaVazio(txtEntradaCompostaTh.Text))
     End Sub
 
     'SEÇÃO I----------------------------------------
-
     Private Sub txtEntradaIHf1_TextChanged(sender As Object, e As EventArgs) Handles txtEntradaIHf1.TextChanged
         txtEntradaIHf2.Text = txtEntradaIHf1.Text
         txtEntradaID.Text = PropriedadesResistencia.somaI(PropriedadesResistencia.verificaVazio(txtEntradaIHf1.Text), PropriedadesResistencia.verificaVazio(txtEntradaIH.Text), PropriedadesResistencia.verificaVazio(txtEntradaIHf2.Text))
     End Sub
-
     Private Sub txtEntradaIH_TextChanged(sender As Object, e As EventArgs) Handles txtEntradaIH.TextChanged
         txtEntradaID.Text = PropriedadesResistencia.somaI(PropriedadesResistencia.verificaVazio(txtEntradaIHf1.Text), PropriedadesResistencia.verificaVazio(txtEntradaIH.Text), PropriedadesResistencia.verificaVazio(txtEntradaIHf2.Text))
     End Sub
-
     Private Sub txtEntradaIHf2_TextChanged(sender As Object, e As EventArgs) Handles txtEntradaIHf2.TextChanged
         txtEntradaID.Text = PropriedadesResistencia.somaI(PropriedadesResistencia.verificaVazio(txtEntradaIHf1.Text), PropriedadesResistencia.verificaVazio(txtEntradaIH.Text), PropriedadesResistencia.verificaVazio(txtEntradaIHf2.Text))
     End Sub
-
     Private Sub txtEntradaIBf1_TextChanged(sender As Object, e As EventArgs) Handles txtEntradaIBf1.TextChanged
         txtEntradaIBf2.Text = txtEntradaIBf1.Text
     End Sub
@@ -741,7 +730,6 @@ Public Class Form1
     Private Sub txtEntradaCaixaoH1_TextChanged(sender As Object, e As EventArgs) Handles txtEntradaCaixaoH1.TextChanged
         txtEntradaCaixaoD.Text = PropriedadesResistencia.somaCaixao(PropriedadesResistencia.verificaVazio(txtEntradaCaixaoH1.Text), PropriedadesResistencia.verificaVazio(txtEntradaCaixaoH2.Text), PropriedadesResistencia.verificaVazio(txtEntradaCaixaoH3.Text), PropriedadesResistencia.verificaVazio(txtEntradaCaixaoH4.Text))
     End Sub
-
     Private Sub txtEntradaCaixaoH2_TextChanged(sender As Object, e As EventArgs) Handles txtEntradaCaixaoH2.TextChanged
         txtEntradaCaixaoD.Text = PropriedadesResistencia.somaCaixao(PropriedadesResistencia.verificaVazio(txtEntradaCaixaoH1.Text), PropriedadesResistencia.verificaVazio(txtEntradaCaixaoH2.Text), PropriedadesResistencia.verificaVazio(txtEntradaCaixaoH3.Text), PropriedadesResistencia.verificaVazio(txtEntradaCaixaoH4.Text))
     End Sub
@@ -751,21 +739,23 @@ Public Class Form1
     Private Sub txtEntradaCaixaoH4_TextChanged(sender As Object, e As EventArgs) Handles txtEntradaCaixaoH4.TextChanged
         txtEntradaCaixaoD.Text = PropriedadesResistencia.somaCaixao(PropriedadesResistencia.verificaVazio(txtEntradaCaixaoH1.Text), PropriedadesResistencia.verificaVazio(txtEntradaCaixaoH2.Text), PropriedadesResistencia.verificaVazio(txtEntradaCaixaoH3.Text), PropriedadesResistencia.verificaVazio(txtEntradaCaixaoH4.Text))
     End Sub
-
     Private Sub txtEntradaCaixaoBf1_TextChanged(sender As Object, e As EventArgs) Handles txtEntradaCaixaoB1.TextChanged
         txtEntradaCaixaoB2.Text = txtEntradaCaixaoB1.Text
     End Sub
 
-    Private Sub cboTracaoCompressao_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboTracaoCompressao.SelectedIndexChanged
-        TabTracao.Enabled = cboTracaoCompressao.SelectedIndex.CompareTo(1)
-        TabCompressao.Enabled = cboTracaoCompressao.SelectedIndex.CompareTo(0)
-    End Sub
+    '3 ELEMENTOS JUSTAPOSTO----------------------------------------
     Private Sub txtEntrada3a_TextChanged(sender As Object, e As EventArgs) Handles txtEntrada3a.TextChanged
         txtEntrada3a1.Text = (txtEntrada3a.Text) / 2
     End Sub
     Private Sub txtEntrada3h_TextChanged(sender As Object, e As EventArgs) Handles txtEntrada3h.TextChanged
         txtEntrada3h.Text = txtEntrada3a.Text + txtEntrada3b1.Text
     End Sub
+
+    Private Sub cboTracaoCompressao_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboTracaoCompressao.SelectedIndexChanged
+        TabTracao.Enabled = cboTracaoCompressao.SelectedIndex.CompareTo(1)
+        TabCompressao.Enabled = cboTracaoCompressao.SelectedIndex.CompareTo(0)
+    End Sub
+
 
     Private Sub ExibirDadosEntrada()
         Dim selectedComposta = rbtSecaoT.Checked Or rbtSecaoI.Checked Or rbtSecaoCaixao.Checked
@@ -810,43 +800,37 @@ Public Class Form1
         txtInterpoEixoYInerciaEfetiva.Text = resultProprGeometricas.eixoYie
     End Sub
 
-    'VALIDAÇÕES TXT PROPRIEDADES DA MADEIRA
+    'VALIDAÇÕES TXT PROPRIEDADES DA MADEIRA =========================================================================
     Private Sub txtResistCompParalela_Validated(sender As Object, e As EventArgs) Handles txtResistCompParalela.Validated
         If Validacao.ValidarDados(txtResistCompParalela, Validacao.TipoValidacao.RealDiferenteDeZero) Then
             fcok = Convert.ToDouble(txtResistCompParalela.Text)
         End If
     End Sub
-
     Private Sub txtResistTracaoParalela_Validated(sender As Object, e As EventArgs) Handles txtResistTracaoParalela.Validated
         If Validacao.ValidarDados(txtResistTracaoParalela, Validacao.TipoValidacao.RealDiferenteDeZero) Then
             fcok = Convert.ToDouble(txtResistTracaoParalela.Text)
         End If
     End Sub
-
     Private Sub txtResistTracaoNormal_Validated(sender As Object, e As EventArgs) Handles txtResistTracaoNormal.Validated
         If Validacao.ValidarDados(txtResistTracaoNormal, Validacao.TipoValidacao.RealDiferenteDeZero) Then
             fcok = Convert.ToDouble(txtResistTracaoNormal.Text)
         End If
     End Sub
-
     Private Sub txtResistAoCisalhamento_Validated(sender As Object, e As EventArgs) Handles txtResistAoCisalhamento.Validated
         If Validacao.ValidarDados(txtResistAoCisalhamento, Validacao.TipoValidacao.RealDiferenteDeZero) Then
             fcok = Convert.ToDouble(txtResistAoCisalhamento.Text)
         End If
     End Sub
-
     Private Sub txtUmidadeVento_Validated(sender As Object, e As EventArgs) Handles txtUmidadeVento.Validated
         If Validacao.ValidarDados(txtUmidadeVento, Validacao.TipoValidacao.RealDiferenteDeZero) Then
             fcok = Convert.ToDouble(txtUmidadeVento.Text)
         End If
     End Sub
-
     Private Sub txtModElasticidade_Validated(sender As Object, e As EventArgs) Handles txtModElasticidade.Validated
         If Validacao.ValidarDados(txtModElasticidade, Validacao.TipoValidacao.RealDiferenteDeZero) Then
             fcok = Convert.ToDouble(txtModElasticidade.Text)
         End If
     End Sub
-
     Private Sub txtDensAparente_Validated(sender As Object, e As EventArgs) Handles txtDensAparente.Validated
         If Validacao.ValidarDados(txtDensAparente, Validacao.TipoValidacao.RealDiferenteDeZero) Then
             fcok = Convert.ToDouble(txtDensAparente.Text)
@@ -858,128 +842,120 @@ Public Class Form1
     Private Sub txtEntradaRetangularBx_Validated(sender As Object, e As EventArgs) Handles txtEntradaRetangularBx.Validated
         If Validacao.ValidarDados(txtEntradaRetangularBx, Validacao.TipoValidacao.RealDiferenteDeZero) Then
             fcok = Convert.ToDouble(txtEntradaRetangularBx.Text)
-
         End If
     End Sub
-
     Private Sub txtEntradaRetangularBy_Validated_1(sender As Object, e As EventArgs) Handles txtEntradaRetangularBy.Validated
         If Validacao.ValidarDados(txtEntradaRetangularBy, Validacao.TipoValidacao.RealDiferenteDeZero) Then
             fcok = Convert.ToDouble(txtEntradaRetangularBy.Text)
         End If
     End Sub
-
     Private Sub txtEntradaRetangularL_Validated(sender As Object, e As EventArgs) Handles txtEntradaRetangularL.Validated
         If Validacao.ValidarDados(txtEntradaRetangularL, Validacao.TipoValidacao.RealDiferenteDeZero) Then
             fcok = Convert.ToDouble(txtEntradaRetangularL.Text)
         End If
     End Sub
-
     'SEÇÃO CIRCULAR 
     Private Sub txtEntradaCircularL_Validated(sender As Object, e As EventArgs) Handles txtEntradaCircularL.Validated
         If Validacao.ValidarDados(txtEntradaCircularL, Validacao.TipoValidacao.RealDiferenteDeZero) Then
             fcok = Convert.ToDouble(txtEntradaCircularL.Text)
         End If
     End Sub
-
     Private Sub txtEntradaCircularD_Validated(sender As Object, e As EventArgs) Handles txtEntradaCircularD.Validated
         If Validacao.ValidarDados(txtEntradaCircularD, Validacao.TipoValidacao.RealDiferenteDeZero) Then
             fcok = Convert.ToDouble(txtEntradaCircularD.Text)
         End If
     End Sub
-
     'SEÇÃO T
     Private Sub txtEntradaCompostaH_Validated(sender As Object, e As EventArgs) Handles txtEntradaCompostaH.Validated
         If Validacao.ValidarDados(txtEntradaCompostaH, Validacao.TipoValidacao.RealDiferenteDeZero) Then
             fcok = Convert.ToDouble(txtEntradaCompostaH.Text)
         End If
     End Sub
-
     Private Sub txtEntradaCompostaHf_Validated(sender As Object, e As EventArgs) Handles txtEntradaCompostaHf.Validated
         If Validacao.ValidarDados(txtEntradaCompostaHf, Validacao.TipoValidacao.RealDiferenteDeZero) Then
             fcok = Convert.ToDouble(txtEntradaCompostaHf.Text)
         End If
     End Sub
-
     Private Sub txtEntradaCompostaBf_Validated_1(sender As Object, e As EventArgs) Handles txtEntradaCompostaBf.Validated
         If Validacao.ValidarDados(txtEntradaCompostaHf, Validacao.TipoValidacao.RealDiferenteDeZero) Then
             fcok = Convert.ToDouble(txtEntradaCompostaHf.Text)
         End If
     End Sub
-
     Private Sub txtEntradaCompostaBw_Validated(sender As Object, e As EventArgs) Handles txtEntradaCompostaBw.Validated
         If Validacao.ValidarDados(txtEntradaCompostaBw, Validacao.TipoValidacao.RealDiferenteDeZero) Then
             fcok = Convert.ToDouble(txtEntradaCompostaBw.Text)
         End If
     End Sub
-
     'SEÇÃO I 
     Private Sub txtEntradaID_Validated(sender As Object, e As EventArgs) Handles txtEntradaID.Validated
         If Validacao.ValidarDados(txtEntradaID, Validacao.TipoValidacao.RealDiferenteDeZero) Then
             fcok = Convert.ToDouble(txtEntradaID.Text)
         End If
     End Sub
-
     Private Sub txtEntradaIBw_Validated(sender As Object, e As EventArgs) Handles txtEntradaIBw.Validated
         If Validacao.ValidarDados(txtEntradaIBw, Validacao.TipoValidacao.RealDiferenteDeZero) Then
             fcok = Convert.ToDouble(txtEntradaIBw.Text)
         End If
     End Sub
-
     Private Sub txtEntradaIHf1_Validated(sender As Object, e As EventArgs) Handles txtEntradaIHf1.Validated
         If Validacao.ValidarDados(txtEntradaIHf1, Validacao.TipoValidacao.RealDiferenteDeZero) Then
             fcok = Convert.ToDouble(txtEntradaIHf1.Text)
         End If
     End Sub
-
     Private Sub txtEntradaIBf1_Validated(sender As Object, e As EventArgs) Handles txtEntradaIBf1.Validated
         If Validacao.ValidarDados(txtEntradaIBf1, Validacao.TipoValidacao.RealDiferenteDeZero) Then
             fcok = Convert.ToDouble(txtEntradaIBf1.Text)
         End If
     End Sub
-
     'SEÇÃO CAIXÃO
     Private Sub txtEntradaCaixaoD_Validated(sender As Object, e As EventArgs) Handles txtEntradaCaixaoD.Validated
         If Validacao.ValidarDados(txtEntradaCaixaoD, Validacao.TipoValidacao.RealDiferenteDeZero) Then
             fcok = Convert.ToDouble(txtEntradaCaixaoD.Text)
         End If
     End Sub
-
     Private Sub txtEntradaCaixaoBf1_Validated(sender As Object, e As EventArgs) Handles txtEntradaCaixaoB1.Validated
         If Validacao.ValidarDados(txtEntradaCaixaoB1, Validacao.TipoValidacao.RealDiferenteDeZero) Then
             fcok = Convert.ToDouble(txtEntradaCaixaoB1.Text)
         End If
     End Sub
-
     Private Sub txtEntradaCaixaoH_Validated(sender As Object, e As EventArgs) Handles txtEntradaCaixaoH4.Validated
         If Validacao.ValidarDados(txtEntradaCaixaoH4, Validacao.TipoValidacao.RealDiferenteDeZero) Then
             fcok = Convert.ToDouble(txtEntradaCaixaoH4.Text)
         End If
     End Sub
-
     'SOLICITAÇÕES EXTERNAS
     Private Sub txtNormal_Validated(sender As Object, e As EventArgs) Handles txtNormal.Validated
         If Validacao.ValidarDados(txtNormal, Validacao.TipoValidacao.RealDiferenteDeZero) Then
             fcok = Convert.ToDouble(txtNormal.Text)
         End If
     End Sub
-
     Private Sub txtCortante_Validated(sender As Object, e As EventArgs) Handles txtCortanteX.Validated
         If Validacao.ValidarDados(txtCortanteX, Validacao.TipoValidacao.RealDiferenteDeZero) Then
             fcok = Convert.ToDouble(txtCortanteX.Text)
         End If
     End Sub
+    Private Sub txtMx_Validated(sender As Object, e As EventArgs) Handles txtMx.Validated
+        If Validacao.ValidarDados(txtMx, Validacao.TipoValidacao.RealDiferenteDeZero) Then
+            fcok = Convert.ToDouble(txtMx.Text)
+        End If
+    End Sub
+    Private Sub txtMy_Validated(sender As Object, e As EventArgs) Handles txtMy.Validated
+        If Validacao.ValidarDados(txtMy, Validacao.TipoValidacao.RealDiferenteDeZero) Then
+            fcok = Convert.ToDouble(txtMy.Text)
+        End If
+    End Sub
+
+    'JANELA GEOMETRICA DE AJUDA
     'kmod1
     Private Sub PictureBox5_Click(sender As Object, e As EventArgs) Handles PictureBox5.Click 'janela Geometria
         form2Kmod1.Show()
         'Form2ResistCalculo.Show()
         'PictureBox2.BackgroundImage = My.Resources.help
     End Sub
-
     'kmod2:
     Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
         form2Kmod2.Show()
     End Sub
-
     'kmod3
     Private Sub PictureBox3_Click(sender As Object, e As EventArgs) Handles PictureBox3.Click
         form2Kmod3.Show()
@@ -1009,9 +985,10 @@ Public Class Form1
 
     End Sub
 
+    'DEFINIÇÃO DA VINCULAÇÃO PARA ESFORÇOS DE COMPRESSÃO =========================
     Private Function vinculacao(l As Double) As Double
-
         Dim lvinculado As Double = 0
+
         Select Case cboLvinculado.SelectedIndex
             Case 0
                 lblKe.Text = 0.65
@@ -1032,53 +1009,10 @@ Public Class Form1
                 lblKe.Text = 2.4
                 lvinculado = 0.65 * l
         End Select
-
         Return lvinculado
     End Function
 
-    Public Function comprimento() As Double
-
-        If rbtSecaoRetangular.Checked Then
-            Return PropriedadesResistencia.verificaVazio(txtEntradaRetangularL.Text)
-
-        ElseIf rbtSecaoCircular.Checked Then
-            Return PropriedadesResistencia.verificaVazio(txtEntradaCircularL.Text)
-
-            'ARRUMAR AQUI
-        ElseIf rbtSecaoT.Checked Then
-            Return PropriedadesResistencia.verificaVazio(txtEntradaCompostaHf.Text)
-
-        ElseIf rbtSecaoI.Checked Then
-            Return PropriedadesResistencia.verificaVazio(txtEntradaCompostaH.Text)
-
-        ElseIf rbtSecaoCaixao.Checked Then
-            Return PropriedadesResistencia.verificaVazio(txtEntradaCaixaoH4.Text)
-
-        ElseIf rbt2Elementos.Checked Then
-            Return PropriedadesResistencia.verificaVazio(txtEntrada2L.Text)
-
-        ElseIf rbt3Elementos.Checked Then
-            Return PropriedadesResistencia.verificaVazio(txtEntrada3L.Text)
-
-        Else
-            Return 0
-        End If
-
-    End Function
-
-    Public Function entradaElementoJustaposto() As Double
-
-        If rbt2Elementos.Checked Then
-            Return PropriedadesResistencia.verificaVazio(txtEntrada2h1.Text)
-
-        ElseIf rbt3Elementos.Checked Then
-            Return PropriedadesResistencia.verificaVazio(txtEntrada3h1.Text)
-        Else
-            Return 0
-        End If
-
-    End Function
-
+    'DEFINIÇÃO DO COEFICIENT DEVIDO A FLUENCIA DO MATERIAL PARA ESFORÇOS DE COMPRESSÃO QUANDO A PEÇA É ESBELTA =================
     Private Function coefInfluencia() As Double
         Dim coeficiente As Double = 0
 
@@ -1118,21 +1052,74 @@ Public Class Form1
         Return coeficiente
     End Function
 
+    'CALCULANDO O CISALHAMENTO NOS ESPAÇADORES ===================
+    Public Function cisalhamento_a1() As Double
 
-    Private Sub txtMx_Validated(sender As Object, e As EventArgs) Handles txtMx.Validated
-        If Validacao.ValidarDados(txtMx, Validacao.TipoValidacao.RealDiferenteDeZero) Then
-            fcok = Convert.ToDouble(txtMx.Text)
+        If rbt2Elementos.Checked Then
+            Return PropriedadesResistencia.verificaVazio(txtEntrada2a1.Text)
+
+        ElseIf rbt3Elementos.Checked Then
+            Return PropriedadesResistencia.verificaVazio(txtEntrada3a1.Text)
+        Else
+            Return 0
         End If
-    End Sub
+    End Function
+    Public Function cisalhamento_L1() As Double
 
+        If rbt2Elementos.Checked Then
+            Return PropriedadesResistencia.verificaVazio(txtEntrada2L1.Text)
 
-
-    Private Sub txtMy_Validated(sender As Object, e As EventArgs) Handles txtMy.Validated
-        If Validacao.ValidarDados(txtMy, Validacao.TipoValidacao.RealDiferenteDeZero) Then
-            fcok = Convert.ToDouble(txtMy.Text)
+        ElseIf rbt3Elementos.Checked Then
+            Return PropriedadesResistencia.verificaVazio(txtEntrada3L1.Text)
+        Else
+            Return 0
         End If
-    End Sub
+    End Function
 
+    Public Function comprimento() As Double
+
+        If rbtSecaoRetangular.Checked Then
+            Return PropriedadesResistencia.verificaVazio(txtEntradaRetangularL.Text)
+
+        ElseIf rbtSecaoCircular.Checked Then
+            Return PropriedadesResistencia.verificaVazio(txtEntradaCircularL.Text)
+
+            'ARRUMAR AQUI
+        ElseIf rbtSecaoT.Checked Then
+            Return PropriedadesResistencia.verificaVazio(txtTComp.Text)
+
+        ElseIf rbtSecaoI.Checked Then
+            Return PropriedadesResistencia.verificaVazio(txtIComp.Text)
+
+        ElseIf rbtSecaoCaixao.Checked Then
+            Return PropriedadesResistencia.verificaVazio(txtCaixaoComp.Text)
+
+        ElseIf rbt2Elementos.Checked Then
+            Return PropriedadesResistencia.verificaVazio(txtEntrada2L.Text)
+
+        ElseIf rbt3Elementos.Checked Then
+            Return PropriedadesResistencia.verificaVazio(txtEntrada3L.Text)
+
+        Else
+            Return 0
+        End If
+
+    End Function
+
+    Public Function entradaElementoJustaposto() As Double
+
+        If rbt2Elementos.Checked Then
+            Return PropriedadesResistencia.verificaVazio(txtEntrada2h1.Text)
+
+        ElseIf rbt3Elementos.Checked Then
+            Return PropriedadesResistencia.verificaVazio(txtEntrada3h1.Text)
+        Else
+            Return 0
+        End If
+
+    End Function
+
+    'DEFINIÇÃO DO ELEMENTO DE FIXAÇÃO DO ESPAÇADOR DO PILAR COMPOSTO
     Public Function pilar() As PropriedadesGeometricas.Pilar
 
         Select Case cboElementFixacao.SelectedIndex
@@ -1140,12 +1127,12 @@ Public Class Form1
                 Return PropriedadesGeometricas.Pilar.Espaçador
             Case 1
                 Return PropriedadesGeometricas.Pilar.Chapa
-            Case Else
-                Return PropriedadesGeometricas.Pilar.Espaçador
+                'Case Else
+                'Return PropriedadesGeometricas.Pilar.Espaçador
         End Select
-
     End Function
 
+    'DEFINICÇÃO DOS DADOS INICIAIS PARA O CÁCLULO DO MOMENTO DE INERCIA, MOMENTO DE AREA EFETIVO E CG DAS PEÇAS COMPOSTAS (SEÇÃI T, I e CAIXÃO)
     Private Sub getDadosIniciais(tipoSecao As Madeira.TipoSecao)
 
         Select Case tipoSecao
@@ -1175,7 +1162,6 @@ Public Class Form1
                 madeiraSelecionada.PropriedadesGeometricas.h3c = txtEntradaCaixaoH3.Text 'OK
                 madeiraSelecionada.PropriedadesGeometricas.h4c = txtEntradaCaixaoH4.Text 'OK
         End Select
-
     End Sub
 
 End Class

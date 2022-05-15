@@ -24,7 +24,7 @@ Public Class PropriedadesGeometricas
     Private _eixoXmi As Double = 0 'EIXO X MOMENTO DE INERCIA
     Private _eixoXmi1 As Double = 0 'EIXO X MOMENTO DE INERCIA PRINCIPAL EM X
     Private _eixoXrg As Double = 0 'EIXO X RAIO DE GIRAÇÃO
-    Private _eixoXmr As Double = 0 'EIXO X 
+    Private _eixoXmr As Double = 0 'EIXO X MODULO DE RESISTENCIA
     Private _eixoYmi As Double = 0 'EIXO Y MOMENTO DE INERCIA
     Private _eixoYrg As Double = 0 'EIXO Y RAIO DE GIRAÇÃO
     Private _eixoYmr As Double = 0 'EIXO Y MODULO DE RESISTENCIA
@@ -422,7 +422,7 @@ Public Class PropriedadesGeometricas
         Dim proprGeometricas = New PropriedadesGeometricas()
         Dim bases As Double() = {0, bw, bf}
         Dim alturas As Double() = {0, h, hf}
-        Dim xCG As Double = bf / 2
+        Dim xCG = bases.Max / 2
         Dim x_CGi As Double() = {xCG, xCG, xCG}
         Dim y_CGi As Double() = {alturas(0) / 2, alturas(0) + alturas(1) / 2, alturas.Sum - alturas(2) / 2}
 
@@ -431,11 +431,11 @@ Public Class PropriedadesGeometricas
         proprGeometricas.EixoXmi = Inercia(bases, alturas, y_CGi)
         proprGeometricas.EixoXie = proprGeometricas.EixoXmi * 0.95
         proprGeometricas.EixoXrg = Math.Sqrt(proprGeometricas.EixoXie / proprGeometricas.Area)
-        proprGeometricas.EixoXmr = proprGeometricas.EixoXie / (h / 2)
+        proprGeometricas.EixoXmr = proprGeometricas.EixoXie / (Calcular_CG(bases, alturas, y_CGi))
         proprGeometricas.EixoYmi = Inercia(alturas, bases, x_CGi)
         proprGeometricas.EixoYie = proprGeometricas.EixoYmi * 0.95
         proprGeometricas.EixoYrg = Math.Sqrt(proprGeometricas.EixoYie / proprGeometricas.Area)
-        proprGeometricas.EixoYmr = proprGeometricas.EixoYie / (h / 2)
+        proprGeometricas.EixoYmr = proprGeometricas.EixoYie / (Calcular_CG(bases, alturas, y_CGi))
 
         Return proprGeometricas
     End Function
@@ -444,7 +444,7 @@ Public Class PropriedadesGeometricas
 
         Dim bases As Double() = {bf1, bf2, bw}
         Dim alturas As Double() = {hf1, hf2, d}
-        Dim xCG As Double = 0
+        Dim xCG As Double = bases.Max / 2
         Dim x_CGi As Double() = {xCG, xCG, xCG}
         Dim y_CGi As Double() = {alturas(0) / 2, alturas(0) + alturas(1) / 2, alturas.Sum - alturas(2) / 2}
 
@@ -454,11 +454,11 @@ Public Class PropriedadesGeometricas
         proprGeometricas.EixoXmi = Inercia(bases, alturas, y_CGi)
         proprGeometricas.EixoXie = proprGeometricas.EixoXmi * 0.85
         proprGeometricas.EixoXrg = Math.Sqrt(proprGeometricas.EixoXie / proprGeometricas.Area)
-        proprGeometricas.EixoXmr = proprGeometricas.EixoXie / ((d - hf1 - hf2) / 2)
+        proprGeometricas.EixoXmr = proprGeometricas.EixoXie / (Calcular_CG(bases, alturas, y_CGi))
         proprGeometricas.EixoYmi = Inercia(alturas, bases, x_CGi)
         proprGeometricas.EixoYie = proprGeometricas.EixoYmi * 0.85
         proprGeometricas.EixoYrg = Math.Sqrt(proprGeometricas.EixoYie / proprGeometricas.Area)
-        proprGeometricas.EixoYmr = proprGeometricas.EixoYie / ((d - hf1 - hf2) / 2)
+        proprGeometricas.EixoYmr = proprGeometricas.EixoYie / (Calcular_CG(bases, alturas, y_CGi))
 
         Return proprGeometricas
     End Function
@@ -478,11 +478,11 @@ Public Class PropriedadesGeometricas
         proprGeometricas.EixoXmi = Inercia(bases, alturas, y_CGi)
         proprGeometricas.EixoXie = proprGeometricas.EixoXmi * 0.85
         proprGeometricas.EixoXrg = Math.Sqrt(proprGeometricas.EixoXie / proprGeometricas.Area)
-        proprGeometricas.EixoXmr = proprGeometricas.EixoXie / (h3 / 2)
+        proprGeometricas.EixoXmr = proprGeometricas.EixoXie / (Calcular_CG(bases, alturas, y_CGi))
         proprGeometricas.EixoYmi = Inercia(alturas, bases, x_CGi)
         proprGeometricas.EixoYie = EixoYmi * 0.85
         proprGeometricas.EixoYrg = Math.Sqrt(proprGeometricas.EixoYie / proprGeometricas.Area)
-        proprGeometricas.EixoYmr = proprGeometricas.EixoYie / (h3 / 2)
+        proprGeometricas.EixoYmr = proprGeometricas.EixoYie / (Calcular_CG(bases, alturas, y_CGi))
 
         Return proprGeometricas
     End Function
@@ -501,9 +501,7 @@ Public Class PropriedadesGeometricas
         Select Case pilar
             Case Pilar.Espaçador
                 proprGeometricas.CoefBy = proprGeometricas.EixoYmi1 * ((l / l1) ^ 2) / ((proprGeometricas.EixoYmi1 * ((l / l1) ^ 2)) + (1.25 * proprGeometricas.EixoYmi))
-                proprGeometricas.CoefBy = proprGeometricas.EixoYmi1 * ((l / l1) ^ 2) / ((proprGeometricas.EixoYmi1 * ((l / l1) ^ 2)) + (1.25 * proprGeometricas.EixoYmi))
             Case Pilar.Chapa
-                proprGeometricas.CoefBy = proprGeometricas.EixoYmi1 * ((l / l1) ^ 2) / ((proprGeometricas.EixoYmi1 * ((l / l1) ^ 2)) + (2.25 * proprGeometricas.EixoYmi))
                 proprGeometricas.CoefBy = proprGeometricas.EixoYmi1 * ((l / l1) ^ 2) / ((proprGeometricas.EixoYmi1 * ((l / l1) ^ 2)) + (2.25 * proprGeometricas.EixoYmi))
         End Select
         proprGeometricas.EixoYie = proprGeometricas.CoefBy * proprGeometricas.EixoYmi
@@ -525,9 +523,7 @@ Public Class PropriedadesGeometricas
         Select Case pilar
             Case Pilar.Espaçador
                 proprGeometricas.CoefBy = proprGeometricas.EixoYmi1 * ((l / l1) ^ 2) / ((proprGeometricas.EixoYmi1 * ((l / l1) ^ 2)) + (1.25 * proprGeometricas.EixoYmi))
-                proprGeometricas.CoefBy = proprGeometricas.EixoYmi1 * ((l / l1) ^ 2) / ((proprGeometricas.EixoYmi1 * ((l / l1) ^ 2)) + (1.25 * proprGeometricas.EixoYmi))
             Case Pilar.Chapa
-                proprGeometricas.CoefBy = proprGeometricas.EixoYmi1 * ((l / l1) ^ 2) / ((proprGeometricas.EixoYmi1 * ((l / l1) ^ 2)) + (2.25 * proprGeometricas.EixoXmi))
                 proprGeometricas.CoefBy = proprGeometricas.EixoYmi1 * ((l / l1) ^ 2) / ((proprGeometricas.EixoYmi1 * ((l / l1) ^ 2)) + (2.25 * proprGeometricas.EixoYmi))
         End Select
         proprGeometricas.EixoYie = proprGeometricas.CoefBy * proprGeometricas.EixoYmi

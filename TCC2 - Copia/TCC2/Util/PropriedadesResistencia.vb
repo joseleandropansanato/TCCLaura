@@ -1,7 +1,6 @@
 ﻿Module PropriedadesResistencia
-    'definições: lista com cada madeira que será necessario para o cálculo
 
-    'RESISTÊNCIA DE CÁLCULO:
+    'kmod
     Private Function SelectKmod1(tipo As Integer) As Kmod1
         Dim kmod1 As New Kmod1
         Select Case tipo
@@ -51,7 +50,6 @@
                 Return SelectKmod1(tipo).Instantanea
         End Select
     End Function
-
     Public Function Kmod2Final(tipo As Integer, kmod2 As Integer) As Double
         Select Case kmod2
             Case 0
@@ -78,10 +76,10 @@
         End Select
     End Function
 
+    'RESISTÊNCIA DE CÁLCULO
     Public Function resistCalCompParalela(kmod As Double, resistCompParalela As Double) As Double
         Return (resistCompParalela * kmod) / 1.4
     End Function
-
     Public Function resistCalTracaoParalela(kmod As Double, resistTracaoParalela As Double) As Double
         Return (resistTracaoParalela * kmod) / 1.8
     End Function
@@ -100,7 +98,6 @@
 
 
 
-
     Public Function ElementoJustaposto(l As Double, b1 As Double, a As Double, elementoFixacaoSelecionado As String) As Boolean
 
         If ((9 * b1 <= l) And (l <= 18 * b1) And (a <= 3 * b1) And (elementoFixacaoSelecionado = "Espacador Interposto")) Then
@@ -114,7 +111,6 @@
                             9b1≤L1≤18b1 e
                             a≤6b1: para chapas laterais de fixação")
             Return False
-
         Else
             Return True
         End If
@@ -127,7 +123,8 @@
         Return value
     End Function
 
-    'TRAÇÃO:
+
+    'VALIDAÇÃO TRAÇÃO:
     Public Function validarTensaoTracao(tensaoTracao As Double, resistenciaCalTracaoParalela As Double) As Boolean
         Return tensaoTracao <= resistenciaCalTracaoParalela
     End Function
@@ -140,7 +137,7 @@
         Return esbeltezTracaoY <= 173
     End Function
 
-    'COMPRESSÃO
+    'VALIDAÇÃO COMPRESSÃO
     Public Function validarTensaoCompressaoCurtaX(TensaoCompressaoX As Double, resistenciaCalCompressaoParalela As Double) As Boolean
         Return TensaoCompressaoX <= resistenciaCalCompressaoParalela
     End Function
@@ -166,7 +163,7 @@
     End Function
 
 
-    'CISALHAMENTO
+    'VALIDAÇÃO CISALHAMENTO
     Public Function validarTensaoCisalhanteX(tensaoCisalhante As Double, resistenciaCalAoCisalhamento As Double) As Boolean
         Return tensaoCisalhante <= resistenciaCalAoCisalhamento
     End Function
@@ -175,7 +172,8 @@
         Return tensaoCisalhante <= resistenciaCalAoCisalhamento
     End Function
 
-    'FLEXÃO SIMPLES RETA
+
+    'VALIDAÇÃO FLEXÃO SIMPLES RETA
     Public Function validarTensaoFlexaoSimplesRetaX(tensaoFlexaoX As Double, resistenciaCalTracaoParalela As Double) As Boolean
         Return tensaoFlexaoX <= resistenciaCalTracaoParalela
     End Function
@@ -183,10 +181,24 @@
     Public Function validarTensaoFlexaoSimplesRetaY(tensaoFlexaoY As Double, resistenciaCalCompressaoParalela As Double) As Boolean
         Return tensaoFlexaoY <= resistenciaCalCompressaoParalela
     End Function
+    Public Function validarTensaoCX(tensaoFlexaoX As Double, resistenciaCalTracaoParalela As Double) As Boolean
+        Return tensaoFlexaoX <= resistenciaCalTracaoParalela
+    End Function
 
-    'FLEXÃO SIMPLES obliqua
-    'km é 0.5 se a seção for retangular e outras seções 1
-    'km é 0 caso a seção nao for obliqua
+    Public Function validarTensaoCY(tensaoFlexaoY As Double, resistenciaCalCompressaoParalela As Double) As Boolean
+        Return tensaoFlexaoY <= resistenciaCalCompressaoParalela
+    End Function
+
+    Public Function validarTensaoTX(tensaoFlexaoX As Double, resistenciaCalTracaoParalela As Double) As Boolean
+        Return tensaoFlexaoX <= resistenciaCalTracaoParalela
+    End Function
+
+    Public Function validarTensaoTY(tensaoFlexaoY As Double, resistenciaCalCompressaoParalela As Double) As Boolean
+        Return tensaoFlexaoY <= resistenciaCalCompressaoParalela
+    End Function
+
+    'VALIDAÇÃO FLEXÃO SIMPLES OBLÍQUA
+    ''Definindo o coeficiente de correção para a flexão:
     Public Function definirKm(secao As Madeira.TipoSecao) As Double
         Select Case secao
             Case Madeira.TipoSecao.Retangular
@@ -204,19 +216,19 @@
         Return (definirKm(tipoSecao) * tensaoFlexaoX) + tensaoFlexaoY <= resistenciaCalCompressaoParalela
     End Function
 
-    'FLEXÃO COMPOSTA
-    'km é 0.5 se a seção for retangular e se for obliqua outras seções 1
-    'km é 0 caso a seção nao for obliqua
+    'VALIDAÇÃO FLEXÃO COMPOSTA
+    'FLEXOTRAÇÃO
     Public Function validarTensaoFlexotracaoX(tensaoTracao As Double, tensaoFlexaoX As Double, tensaoFlexaoY As Double, resistenciaCalTracaoParalela As Double, tipoSecao As Madeira.TipoSecao) As Boolean
         Return (tensaoTracao / resistenciaCalTracaoParalela) + (tensaoFlexaoX / resistenciaCalTracaoParalela) + (definirKm(tipoSecao) * (tensaoFlexaoY / resistenciaCalTracaoParalela)) <= 1
     End Function
     Public Function validarTensaoFlexotracaoY(tensaoTracao As Double, tensaoFlexaoX As Double, tensaoFlexaoY As Double, resistenciaCalTracaoParalela As Double, tipoSecao As Madeira.TipoSecao) As Boolean
         Return (tensaoTracao / resistenciaCalTracaoParalela) + (tensaoFlexaoY / resistenciaCalTracaoParalela) + (definirKm(tipoSecao) * (tensaoFlexaoX / resistenciaCalTracaoParalela)) <= 1
     End Function
+
+    'FLEXOCOMPRESSÃO
     Public Function validarTensaoFlexocompressaoX(tensaoCompressao As Double, tensaoFlexaoX As Double, tensaoFlexaoY As Double, resistenciaCalCompressaoParalela As Double, tipoSecao As Madeira.TipoSecao) As Boolean
         Return (tensaoCompressao / resistenciaCalCompressaoParalela) + (tensaoFlexaoX / resistenciaCalCompressaoParalela) + (definirKm(tipoSecao) * (tensaoFlexaoY / resistenciaCalCompressaoParalela)) <= 1
     End Function
-
     Public Function validarTensaoFlexocompressaoY(tensaoCompressao As Double, tensaoFlexaoX As Double, tensaoFlexaoY As Double, resistenciaCalCompressaoParalela As Double, tipoSecao As Madeira.TipoSecao) As Boolean
         Return (tensaoCompressao / resistenciaCalCompressaoParalela) + (tensaoFlexaoY / resistenciaCalCompressaoParalela) + (definirKm(tipoSecao) * (tensaoFlexaoX / resistenciaCalCompressaoParalela)) <= 1
     End Function
@@ -238,7 +250,6 @@
     Public Function ElementosJustaposto3EixoY()
         Return 0
     End Function
-
 
     'CALCULO DIRETO DA ALTURA TOTAL DA PEÇA EM T
     Public Function somaT(hf As Double, h As Double) As Double

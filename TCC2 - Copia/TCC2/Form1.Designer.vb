@@ -142,6 +142,7 @@ Partial Class Form1
         Me.Label27 = New System.Windows.Forms.Label()
         Me.txtKmod = New System.Windows.Forms.TextBox()
         Me.TabDadosIniciais = New System.Windows.Forms.TabPage()
+        Me.btnCalcularPropriedadesGeometricas = New System.Windows.Forms.Button()
         Me.GroupBox10 = New System.Windows.Forms.GroupBox()
         Me.lblKe = New System.Windows.Forms.Label()
         Me.Label53 = New System.Windows.Forms.Label()
@@ -880,7 +881,15 @@ Partial Class Form1
         Me.Label512 = New System.Windows.Forms.Label()
         Me.Label513 = New System.Windows.Forms.Label()
         Me.TableLayoutPanel9 = New System.Windows.Forms.TableLayoutPanel()
-        Me.btnCalcularPropriedadesGeometricas = New System.Windows.Forms.Button()
+        Me.txtTComp = New System.Windows.Forms.TextBox()
+        Me.Label237 = New System.Windows.Forms.Label()
+        Me.Label238 = New System.Windows.Forms.Label()
+        Me.txtIComp = New System.Windows.Forms.TextBox()
+        Me.Label239 = New System.Windows.Forms.Label()
+        Me.Label514 = New System.Windows.Forms.Label()
+        Me.txtCaixaoComp = New System.Windows.Forms.TextBox()
+        Me.Label515 = New System.Windows.Forms.Label()
+        Me.Label566 = New System.Windows.Forms.Label()
         Me.MenuStrip2.SuspendLayout
         Me.StatusStrip1.SuspendLayout
         Me.GroupBox8.SuspendLayout
@@ -2380,6 +2389,18 @@ Partial Class Form1
         Me.TabDadosIniciais.Text = "Dados Iniciais"
         Me.TabDadosIniciais.UseVisualStyleBackColor = True
         '
+        'btnCalcularPropriedadesGeometricas
+        '
+        Me.btnCalcularPropriedadesGeometricas.BackColor = System.Drawing.Color.Transparent
+        Me.btnCalcularPropriedadesGeometricas.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnCalcularPropriedadesGeometricas.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.btnCalcularPropriedadesGeometricas.Location = New System.Drawing.Point(428, 580)
+        Me.btnCalcularPropriedadesGeometricas.Name = "btnCalcularPropriedadesGeometricas"
+        Me.btnCalcularPropriedadesGeometricas.Size = New System.Drawing.Size(208, 29)
+        Me.btnCalcularPropriedadesGeometricas.TabIndex = 92
+        Me.btnCalcularPropriedadesGeometricas.Text = "Calcular Propriedades "
+        Me.btnCalcularPropriedadesGeometricas.UseVisualStyleBackColor = False
+        '
         'GroupBox10
         '
         Me.GroupBox10.Controls.Add(Me.lblKe)
@@ -2486,7 +2507,7 @@ Partial Class Form1
         Me.gbx3Elementos.Controls.Add(Me.Label360)
         Me.gbx3Elementos.Controls.Add(Me.label800)
         Me.gbx3Elementos.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.gbx3Elementos.Location = New System.Drawing.Point(929, 360)
+        Me.gbx3Elementos.Location = New System.Drawing.Point(6, 250)
         Me.gbx3Elementos.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.gbx3Elementos.Name = "gbx3Elementos"
         Me.gbx3Elementos.Padding = New System.Windows.Forms.Padding(3, 4, 3, 4)
@@ -2737,7 +2758,7 @@ Partial Class Form1
         Me.gbx2Elementos.Controls.Add(Me.Label221)
         Me.gbx2Elementos.Controls.Add(Me.Label222)
         Me.gbx2Elementos.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.gbx2Elementos.Location = New System.Drawing.Point(979, 437)
+        Me.gbx2Elementos.Location = New System.Drawing.Point(6, 250)
         Me.gbx2Elementos.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.gbx2Elementos.Name = "gbx2Elementos"
         Me.gbx2Elementos.Padding = New System.Windows.Forms.Padding(3, 4, 3, 4)
@@ -2951,8 +2972,11 @@ Partial Class Form1
         '
         'gbxCompostaI
         '
+        Me.gbxCompostaI.Controls.Add(Me.txtIComp)
+        Me.gbxCompostaI.Controls.Add(Me.Label239)
         Me.gbxCompostaI.Controls.Add(Me.Label117)
         Me.gbxCompostaI.Controls.Add(Me.txtEntradaIH)
+        Me.gbxCompostaI.Controls.Add(Me.Label514)
         Me.gbxCompostaI.Controls.Add(Me.Label430)
         Me.gbxCompostaI.Controls.Add(Me.Label361)
         Me.gbxCompostaI.Controls.Add(Me.Label163)
@@ -2973,11 +2997,11 @@ Partial Class Form1
         Me.gbxCompostaI.Controls.Add(Me.txtEntradaIHf2)
         Me.gbxCompostaI.Controls.Add(Me.Label151)
         Me.gbxCompostaI.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.gbxCompostaI.Location = New System.Drawing.Point(907, 147)
+        Me.gbxCompostaI.Location = New System.Drawing.Point(6, 250)
         Me.gbxCompostaI.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.gbxCompostaI.Name = "gbxCompostaI"
         Me.gbxCompostaI.Padding = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.gbxCompostaI.Size = New System.Drawing.Size(403, 293)
+        Me.gbxCompostaI.Size = New System.Drawing.Size(403, 334)
         Me.gbxCompostaI.TabIndex = 29
         Me.gbxCompostaI.TabStop = False
         Me.gbxCompostaI.Text = "Dados Iniciais: Seção I"
@@ -3190,7 +3214,10 @@ Partial Class Form1
         '
         'gbxCompostaCaixao
         '
+        Me.gbxCompostaCaixao.Controls.Add(Me.txtCaixaoComp)
+        Me.gbxCompostaCaixao.Controls.Add(Me.Label515)
         Me.gbxCompostaCaixao.Controls.Add(Me.Label126)
+        Me.gbxCompostaCaixao.Controls.Add(Me.Label566)
         Me.gbxCompostaCaixao.Controls.Add(Me.Label463)
         Me.gbxCompostaCaixao.Controls.Add(Me.txtEntradaCaixaoB3)
         Me.gbxCompostaCaixao.Controls.Add(Me.Label556)
@@ -3218,11 +3245,11 @@ Partial Class Form1
         Me.gbxCompostaCaixao.Controls.Add(Me.txtEntradaCaixaoB4)
         Me.gbxCompostaCaixao.Controls.Add(Me.txtEntradaCaixaoH4)
         Me.gbxCompostaCaixao.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.gbxCompostaCaixao.Location = New System.Drawing.Point(895, 128)
+        Me.gbxCompostaCaixao.Location = New System.Drawing.Point(6, 250)
         Me.gbxCompostaCaixao.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.gbxCompostaCaixao.Name = "gbxCompostaCaixao"
         Me.gbxCompostaCaixao.Padding = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.gbxCompostaCaixao.Size = New System.Drawing.Size(403, 293)
+        Me.gbxCompostaCaixao.Size = New System.Drawing.Size(403, 311)
         Me.gbxCompostaCaixao.TabIndex = 32
         Me.gbxCompostaCaixao.TabStop = False
         Me.gbxCompostaCaixao.Text = "Dados de Entrada: Seção Caixão"
@@ -3504,7 +3531,7 @@ Partial Class Form1
         Me.gbxCircular.Controls.Add(Me.Label36)
         Me.gbxCircular.Controls.Add(Me.Label35)
         Me.gbxCircular.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.gbxCircular.Location = New System.Drawing.Point(884, 126)
+        Me.gbxCircular.Location = New System.Drawing.Point(6, 250)
         Me.gbxCircular.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.gbxCircular.Name = "gbxCircular"
         Me.gbxCircular.Padding = New System.Windows.Forms.Padding(3, 4, 3, 4)
@@ -3584,7 +3611,10 @@ Partial Class Form1
         '
         'gbxCompostaT
         '
+        Me.gbxCompostaT.Controls.Add(Me.txtTComp)
+        Me.gbxCompostaT.Controls.Add(Me.Label237)
         Me.gbxCompostaT.Controls.Add(Me.txtEntradaCompostaTh)
+        Me.gbxCompostaT.Controls.Add(Me.Label238)
         Me.gbxCompostaT.Controls.Add(Me.Label352)
         Me.gbxCompostaT.Controls.Add(Me.Label383)
         Me.gbxCompostaT.Controls.Add(Me.txtEntradaCompostaBw)
@@ -3604,7 +3634,7 @@ Partial Class Form1
         Me.gbxCompostaT.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.gbxCompostaT.Name = "gbxCompostaT"
         Me.gbxCompostaT.Padding = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.gbxCompostaT.Size = New System.Drawing.Size(403, 221)
+        Me.gbxCompostaT.Size = New System.Drawing.Size(403, 256)
         Me.gbxCompostaT.TabIndex = 27
         Me.gbxCompostaT.TabStop = False
         Me.gbxCompostaT.Text = "Dados de Entrada: Seção T"
@@ -10480,17 +10510,92 @@ Partial Class Form1
         Me.TableLayoutPanel9.Size = New System.Drawing.Size(200, 100)
         Me.TableLayoutPanel9.TabIndex = 0
         '
-        'btnCalcularPropriedadesGeometricas
+        'txtTComp
         '
-        Me.btnCalcularPropriedadesGeometricas.BackColor = System.Drawing.Color.Transparent
-        Me.btnCalcularPropriedadesGeometricas.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnCalcularPropriedadesGeometricas.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.btnCalcularPropriedadesGeometricas.Location = New System.Drawing.Point(94, 487)
-        Me.btnCalcularPropriedadesGeometricas.Name = "btnCalcularPropriedadesGeometricas"
-        Me.btnCalcularPropriedadesGeometricas.Size = New System.Drawing.Size(208, 29)
-        Me.btnCalcularPropriedadesGeometricas.TabIndex = 92
-        Me.btnCalcularPropriedadesGeometricas.Text = "Calcular Propriedades "
-        Me.btnCalcularPropriedadesGeometricas.UseVisualStyleBackColor = False
+        Me.txtTComp.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.txtTComp.Location = New System.Drawing.Point(196, 218)
+        Me.txtTComp.Name = "txtTComp"
+        Me.txtTComp.Size = New System.Drawing.Size(59, 30)
+        Me.txtTComp.TabIndex = 94
+        '
+        'Label237
+        '
+        Me.Label237.AutoSize = True
+        Me.Label237.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Label237.Location = New System.Drawing.Point(254, 221)
+        Me.Label237.Name = "Label237"
+        Me.Label237.Size = New System.Drawing.Size(25, 23)
+        Me.Label237.TabIndex = 95
+        Me.Label237.Text = "m"
+        Me.Label237.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Label238
+        '
+        Me.Label238.AutoSize = True
+        Me.Label238.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Label238.Location = New System.Drawing.Point(83, 221)
+        Me.Label238.Name = "Label238"
+        Me.Label238.Size = New System.Drawing.Size(143, 23)
+        Me.Label238.TabIndex = 93
+        Me.Label238.Text = "Comprimento (L):"
+        '
+        'txtIComp
+        '
+        Me.txtIComp.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.txtIComp.Location = New System.Drawing.Point(262, 292)
+        Me.txtIComp.Name = "txtIComp"
+        Me.txtIComp.Size = New System.Drawing.Size(59, 30)
+        Me.txtIComp.TabIndex = 97
+        '
+        'Label239
+        '
+        Me.Label239.AutoSize = True
+        Me.Label239.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Label239.Location = New System.Drawing.Point(320, 295)
+        Me.Label239.Name = "Label239"
+        Me.Label239.Size = New System.Drawing.Size(25, 23)
+        Me.Label239.TabIndex = 98
+        Me.Label239.Text = "m"
+        Me.Label239.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Label514
+        '
+        Me.Label514.AutoSize = True
+        Me.Label514.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Label514.Location = New System.Drawing.Point(149, 295)
+        Me.Label514.Name = "Label514"
+        Me.Label514.Size = New System.Drawing.Size(143, 23)
+        Me.Label514.TabIndex = 96
+        Me.Label514.Text = "Comprimento (L):"
+        '
+        'txtCaixaoComp
+        '
+        Me.txtCaixaoComp.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.txtCaixaoComp.Location = New System.Drawing.Point(123, 268)
+        Me.txtCaixaoComp.Name = "txtCaixaoComp"
+        Me.txtCaixaoComp.Size = New System.Drawing.Size(59, 30)
+        Me.txtCaixaoComp.TabIndex = 100
+        '
+        'Label515
+        '
+        Me.Label515.AutoSize = True
+        Me.Label515.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Label515.Location = New System.Drawing.Point(181, 271)
+        Me.Label515.Name = "Label515"
+        Me.Label515.Size = New System.Drawing.Size(25, 23)
+        Me.Label515.TabIndex = 101
+        Me.Label515.Text = "m"
+        Me.Label515.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Label566
+        '
+        Me.Label566.AutoSize = True
+        Me.Label566.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Label566.Location = New System.Drawing.Point(10, 271)
+        Me.Label566.Name = "Label566"
+        Me.Label566.Size = New System.Drawing.Size(143, 23)
+        Me.Label566.TabIndex = 99
+        Me.Label566.Text = "Comprimento (L):"
         '
         'Form1
         '
@@ -11501,4 +11606,13 @@ Partial Class Form1
     Friend WithEvents Label231 As Label
     Friend WithEvents txtEntradaCaixaoB4 As TextBox
     Friend WithEvents btnCalcularPropriedadesGeometricas As Button
+    Friend WithEvents txtTComp As TextBox
+    Friend WithEvents Label237 As Label
+    Friend WithEvents Label238 As Label
+    Friend WithEvents txtIComp As TextBox
+    Friend WithEvents Label239 As Label
+    Friend WithEvents Label514 As Label
+    Friend WithEvents txtCaixaoComp As TextBox
+    Friend WithEvents Label515 As Label
+    Friend WithEvents Label566 As Label
 End Class

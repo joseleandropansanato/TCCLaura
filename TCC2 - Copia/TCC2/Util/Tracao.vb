@@ -39,43 +39,45 @@
         End Set
     End Property
 
-    Public Shared Function CalcTensaoT(normalTracao As Double, baseX As Double, baseY As Double, c As Double, diametro As Double, d As Double, bw As Double, bf1 As Double, altura As Double, propriedadesGeometricas As PropriedadesGeometricas, tipoSecao As Madeira.TipoSecao, l As Double, b1 As Double, a As Double, elementoFixacaoSelecionado As String) As Tracao
+    Public Shared Function CalcTensaoT(normalTracao As Double, c As Double, propriedadesGeometricas As PropriedadesGeometricas, tipoSecao As Madeira.TipoSecao, l As Double, b1 As Double, a As Double, elementoFixacaoSelecionado As String) As Tracao
         Dim tracao = New Tracao()
 
         Select Case tipoSecao
             Case Madeira.TipoSecao.Retangular
-                tracao.TensaoTracao = ((normalTracao) / (PropriedadesGeometricas.area)) 'OK
-                tracao.EsbeltezTracaoX = (c * 100 / (Math.Sqrt(PropriedadesGeometricas.eixoXmi / PropriedadesGeometricas.area))) 'OK
-                tracao.EsbeltezTracaoY = (c * 100 / (Math.Sqrt(PropriedadesGeometricas.eixoYmi / PropriedadesGeometricas.area))) 'OK
+                tracao.TensaoTracao = ((normalTracao) / (propriedadesGeometricas.Area)) 'OK
+                tracao.EsbeltezTracaoX = (c * 100 / (Math.Sqrt(propriedadesGeometricas.EixoXmi / propriedadesGeometricas.Area))) 'OK
+                tracao.EsbeltezTracaoY = (c * 100 / (Math.Sqrt(propriedadesGeometricas.EixoYmi / propriedadesGeometricas.Area))) 'OK
 
             Case Madeira.TipoSecao.Circular
-                tracao.TensaoTracao = normalTracao / PropriedadesGeometricas.area
-                tracao.EsbeltezTracaoX = (diametro / (Math.Sqrt(PropriedadesGeometricas.eixoXmi / PropriedadesGeometricas.area)))
-                tracao.EsbeltezTracaoY = (altura / (Math.Sqrt(PropriedadesGeometricas.eixoYmi / PropriedadesGeometricas.area)))
+                tracao.TensaoTracao = normalTracao / propriedadesGeometricas.Area
+                tracao.EsbeltezTracaoX = (l * 100 / (Math.Sqrt(propriedadesGeometricas.EixoXmi / propriedadesGeometricas.Area)))
+                tracao.EsbeltezTracaoY = (l * 100 / (Math.Sqrt(propriedadesGeometricas.EixoYmi / propriedadesGeometricas.Area)))
+
 
             Case Madeira.TipoSecao.SecaoT
-                tracao.TensaoTracao = normalTracao / PropriedadesGeometricas.area
-                tracao.EsbeltezTracaoX = (bw / (Math.Sqrt(PropriedadesGeometricas.eixoXmi / PropriedadesGeometricas.area)))
-                tracao.EsbeltezTracaoY = (d / (Math.Sqrt(PropriedadesGeometricas.eixoYmi / PropriedadesGeometricas.area)))
+                tracao.TensaoTracao = normalTracao / propriedadesGeometricas.Area
+                tracao.EsbeltezTracaoX = (c * 100 / (Math.Sqrt(propriedadesGeometricas.EixoXie / propriedadesGeometricas.Area)))
+                tracao.EsbeltezTracaoY = (c * 100 / (Math.Sqrt(propriedadesGeometricas.EixoYie / propriedadesGeometricas.Area)))
 
             Case Madeira.TipoSecao.SecaoI
-                tracao.TensaoTracao = normalTracao / PropriedadesGeometricas.area
-                tracao.EsbeltezTracaoX = (bf1 / (Math.Sqrt(PropriedadesGeometricas.eixoXmi / PropriedadesGeometricas.area)))
-                tracao.EsbeltezTracaoY = (d / (Math.Sqrt(PropriedadesGeometricas.eixoYmi / PropriedadesGeometricas.area)))
+                tracao.TensaoTracao = normalTracao / propriedadesGeometricas.Area
+                tracao.EsbeltezTracaoX = (c * 100 / (Math.Sqrt(propriedadesGeometricas.EixoXie / propriedadesGeometricas.Area)))
+                tracao.EsbeltezTracaoY = (c * 100 / (Math.Sqrt(propriedadesGeometricas.EixoYie / propriedadesGeometricas.Area)))
 
             Case Madeira.TipoSecao.Caixao
-                tracao.TensaoTracao = normalTracao / PropriedadesGeometricas.area
-                tracao.EsbeltezTracaoX = (bf1 / (Math.Sqrt(PropriedadesGeometricas.eixoXmi / PropriedadesGeometricas.area)))
-                tracao.EsbeltezTracaoY = (d / (Math.Sqrt(PropriedadesGeometricas.eixoYmi / PropriedadesGeometricas.area)))
+                tracao.TensaoTracao = normalTracao / propriedadesGeometricas.Area
+                tracao.EsbeltezTracaoX = (c * 100 / (Math.Sqrt(propriedadesGeometricas.EixoXie / propriedadesGeometricas.Area)))
+                tracao.EsbeltezTracaoY = (c * 100 / (Math.Sqrt(propriedadesGeometricas.EixoYie / propriedadesGeometricas.Area)))
 
             Case Madeira.TipoSecao.ElementosJustaposto2
                 'botar o espaçador aqui tb
+                'acho que nao precisa disso, pq na vdd o pilar nao sofra forças axiais de tração??
                 If ElementoJustaposto(l, b1, a, elementoFixacaoSelecionado) Then
-
+                    tracao.TensaoTracao = normalTracao / propriedadesGeometricas.Area
                 End If
             Case Madeira.TipoSecao.ElementosJustaposto3
                 If ElementoJustaposto(l, b1, a, elementoFixacaoSelecionado) Then
-
+                    tracao.TensaoTracao = normalTracao / propriedadesGeometricas.Area
                 End If
         End Select
 
