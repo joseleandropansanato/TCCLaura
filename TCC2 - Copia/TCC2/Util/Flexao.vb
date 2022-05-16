@@ -69,34 +69,34 @@
 
         Select Case tipoSecao
             Case Madeira.TipoSecao.Retangular
-                flex.tensaoCX = ((momentoFletorX * 100) / (b / 2))
-                flex.tensaoCY = ((momentoFletorY * 100) / (h / 2))
-                flex.tensaoTX = ((momentoFletorX * 100) / (b / 2))
-                flex.tensaoTY = ((momentoFletorY * 100) / (h / 2))
+                flex.tensaoCY = ((momentoFletorX * 100) / (b / 2))
+                flex.tensaoCX = ((momentoFletorY * 100) / (h / 2))
+                flex.tensaoTY = ((momentoFletorX * 100) / (b / 2))
+                flex.tensaoTX = ((momentoFletorY * 100) / (h / 2))
 
             Case Madeira.TipoSecao.Circular
-                flex.tensaoCX = ((momentoFletorX * 100) / propriedadesGeometricas.EixoXmr)
-                flex.tensaoCY = ((momentoFletorY * 100) / propriedadesGeometricas.EixoYmr)
-                flex.tensaoTX = ((momentoFletorX * 100) / propriedadesGeometricas.EixoXmr)
-                flex.tensaoTY = ((momentoFletorY * 100) / propriedadesGeometricas.EixoYmr)
+                flex.tensaoCY = ((momentoFletorX * 100) / propriedadesGeometricas.EixoXmr)
+                flex.tensaoCX = ((momentoFletorY * 100) / propriedadesGeometricas.EixoYmr)
+                flex.tensaoTY = ((momentoFletorX * 100) / propriedadesGeometricas.EixoXmr)
+                flex.tensaoTX = ((momentoFletorY * 100) / propriedadesGeometricas.EixoYmr)
 
             Case Madeira.TipoSecao.SecaoT
-                ' flex.tensaoCX = ((momentoFletorX * 100) / x_CGi
-                'flex.tensaoCY = ((momentoFletorY * 100) / (hd - y_CGi)
-                'flex.tensaoTX = ((momentoFletorX * 100) / x_CGi
-               ' flex.tensaoTY = ((momentoFletorY * 100) / y_CGi
+                'flex.tensaoCY = ((momentoFletorX * 100) / x_CGi)
+                'flex.tensaoCX = ((momentoFletorY * 100) / (hd - y_CGi)
+                'flex.tensaoTY = ((momentoFletorX * 100) / x_CGi)
+               ' flex.tensaoTX = ((momentoFletorY * 100) / y_CGi)
 
             Case Madeira.TipoSecao.SecaoI
-                flex.tensaoCX = ((momentoFletorX * 100) / propriedadesGeometricas.EixoXmr) / 100
-                flex.tensaoCY = ((momentoFletorY * 100) / propriedadesGeometricas.EixoYmr) / 100
-                flex.tensaoTX = ((momentoFletorX * 100) / 1)
-                flex.tensaoTY = ((momentoFletorY * 100) / 1)
+                'flex.tensaoCY = ((momentoFletorX * 100) / x_CG)
+                'flex.tensaoCX = ((momentoFletorY * 100) / (hd - y_CGi))
+                'flex.tensaoTY = ((momentoFletorX * 100) / x_CGi)
+                'flex.tensaoTX = ((momentoFletorY * 100) / y_CGi)
 
             Case Madeira.TipoSecao.Caixao
-                flex.tensaoCX = ((momentoFletorX * 100) / propriedadesGeometricas.EixoXmr) / 100
-                flex.tensaoCY = ((momentoFletorY * 100) / propriedadesGeometricas.EixoYmr) / 100
-                flex.tensaoTX = ((momentoFletorX * 100) / 1)
-                flex.tensaoTY = ((momentoFletorY * 100) / 1)
+                flex.tensaoCY = ((momentoFletorX * 100) / propriedadesGeometricas.EixoXmr) / 100
+                flex.tensaoCX = ((momentoFletorY * 100) / propriedadesGeometricas.EixoYmr) / 100
+                flex.tensaoTY = ((momentoFletorX * 100) / 1)
+                flex.tensaoTX = ((momentoFletorY * 100) / 1)
 
             Case Madeira.TipoSecao.ElementosJustaposto2
 

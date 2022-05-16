@@ -39,6 +39,7 @@
     Public Shared Function CalcTensaoCisalhamento(forcaCortanteX As Double, forcaCortanteY As Double, diametro As Double, a1 As Double, L1 As Double, propriedadesGeometricas As PropriedadesGeometricas, tipoSecao As Madeira.TipoSecao) As Cisalhamento
         Dim cisalh = New Cisalhamento()
 
+        'PELA REGRA DA MÃO DIREITA, O MOMNETO EM X CAUSA FLEXÃO NO EIXO Y E O MOMENTO EM Y NO EIXO X
         Select Case tipoSecao
             Case Madeira.TipoSecao.Retangular
                 cisalh.TensaoCisalhanteX = ((2 / 3) * (forcaCortanteX / propriedadesGeometricas.Area))

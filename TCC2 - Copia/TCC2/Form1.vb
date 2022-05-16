@@ -292,13 +292,15 @@ Public Class Form1
                 cboElementFixacao.Text
                 )
 
-
+            'arrumar para 3 ou 2 cnforme a seçãoe scolhida
             'COMPRESSAO
         ElseIf txtNormal.Text.ToString <> "" And cboTracaoCompressao.Text = "Compressão" Then
             madeiraSelecionada.compressao = CalcTensaoC(
                 PropriedadesResistencia.verificaVazio(txtNormal.Text),
                 PropriedadesResistencia.verificaVazio(txtMx.Text),
                 PropriedadesResistencia.verificaVazio(txtMy.Text),
+                PropriedadesResistencia.verificaVazio(txtEntrada2b1.Text),
+                PropriedadesResistencia.verificaVazio(txtEntrada2h1.Text),
                 vinculacao(comprimento),
                 madeiraSelecionada.propriedadesGeometricas,
                 tipoSecao,
@@ -315,7 +317,9 @@ Public Class Form1
                 PropriedadesResistencia.verificaVazio(txtEntrada2b1.Text),
                 PropriedadesResistencia.verificaVazio(txtEntrada2a.Text),
                 cboElementFixacao.Text,
-                entradaElementoJustaposto)
+                entradaElementoJustaposto,
+                PropriedadesResistencia.verificaVazio(txtEntrada2a1.Text)
+                )
         End If
 
         'CISALHAMENTO
@@ -330,13 +334,15 @@ Public Class Form1
              )
 
         'FLEXÃO SIMPLES RETA
-
         If txtMx.Text.ToString <> "" And txtMy.Text.ToString <> "" And txtCortanteX.Text.ToString <> "" And rbtFlexaoSimples.Checked Then
             gbxFlexaoSimples.Visible = True
             gbxFlexaoObliqua.Visible = False
             madeiraSelecionada.flexao = CalcTensaoFlexaoSimples(
             PropriedadesResistencia.verificaVazio(txtMx.Text),
             PropriedadesResistencia.verificaVazio(txtMy.Text),
+            PropriedadesResistencia.verificaVazio(txtEntradaRetangularBx.Text),
+            PropriedadesResistencia.verificaVazio(txtEntradaRetangularBy.Text),
+            PropriedadesResistencia.verificaVazio(txtEntradaCompostaTh.Text),
            madeiraSelecionada.propriedadesGeometricas,
            tipoSecao
            )
@@ -380,8 +386,6 @@ Public Class Form1
         cisalhamento()
         flexaoSimples(tipoSecao)
         flexaoComposta(tipoSecao)
-
-
     End Sub
 
     'TRAÇÃO: CONTAS CORRETAS
