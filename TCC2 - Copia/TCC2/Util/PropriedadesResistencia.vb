@@ -116,6 +116,7 @@
         End If
     End Function
 
+    'Verifica vazio: Captura o conteudo do textbox, entra no if e verifica se o conteudo é vazio, caso seja true o conteudo vai receber 0, caso seja falso o conteudo será ele mesmo
     Public Function verificaVazio(value As String) As Double
         If value = "" Then
             Return 0

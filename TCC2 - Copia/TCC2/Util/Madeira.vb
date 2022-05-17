@@ -3,20 +3,35 @@
 'Objeto é definido por uma classe que descreve as variaveis.
 'Classe onde espera as caracteristicas da madeira, que confrome a escolha que o usuario faz da madeira, manda as informações atraves dessa classe
 Public Class Madeira
-	Public Shared id As Integer = 0
-	Public Shared name As String = ""
-	Public Shared resistCompParalela As Double = 0 'serve para receber valor e mandar quando pedir 
-	Public Shared resistTracaoParalela As Double = 0
-	Public Shared resistTracaoNormal As Double = 0
-	Public Shared resistAoCisalhamento As Double = 0
-	Public Shared modElasticidade As Double = 0
-	Public Shared densAparente As Double = 0
-	Public Shared propriedadesGeometricas As PropriedadesGeometricas = New PropriedadesGeometricas()
-	Public Shared tracao As Tracao = New Tracao()
-	Public Shared compressao As Compressao = New Compressao()
-	Public Shared cisalhamento As Cisalhamento = New Cisalhamento()
-	Public Shared flexao As Flexao = New Flexao()
-    Public Shared resistenciaCalculo As ResistenciaCalculo = New ResistenciaCalculo()
+    'Public Shared id As Integer = 0
+    'Public Shared name As String = ""
+    'Public Shared resistCompParalela As Double = 0 'serve para receber valor e mandar quando pedir 
+    'Public Shared resistTracaoParalela As Double = 0
+    'Public Shared resistTracaoNormal As Double = 0
+    'Public Shared resistAoCisalhamento As Double = 0
+    'Public Shared modElasticidade As Double = 0
+    'Public Shared densAparente As Double = 0
+    'Public Shared propriedadesGeometricas As PropriedadesGeometricas = New PropriedadesGeometricas()
+    'Public Shared tracao As Tracao = New Tracao()
+    'Public Shared compressao As Compressao = New Compressao()
+    'Public Shared cisalhamento As Cisalhamento = New Cisalhamento()
+    'Public Shared flexao As Flexao = New Flexao()
+    'Public Shared resistenciaCalculo As ResistenciaCalculo = New ResistenciaCalculo()
+    Private _id As Integer = 0
+    Private _name As String = ""
+    Private _resistCompParalela As Double = 0 'serve para receber valor e mandar quando pedir 
+    Private _resistTracaoParalela As Double = 0
+    Private _resistTracaoNormal As Double = 0
+    Private _resistAoCisalhamento As Double = 0
+    Private _modElasticidade As Double = 0
+    Private _densAparente As Double = 0
+    Private _propriedadesGeometricas As PropriedadesGeometricas = New PropriedadesGeometricas()
+    Private _tracao As Tracao = New Tracao()
+    Private _compressao As Compressao = New Compressao()
+    Private _cisalhamento As Cisalhamento = New Cisalhamento()
+    Private _flexao As Flexao = New Flexao()
+    Private _resistenciaCalculo As ResistenciaCalculo = New ResistenciaCalculo()
+
 
     Enum TipoSecao
         Retangular
@@ -34,22 +49,22 @@ Public Class Madeira
 
     End Sub
 
-    Public Sub New(ByVal _id As Integer,
-                   ByVal _name As String,
-                   ByVal _resistCompParalela As Double,
-                   ByVal _resistTracaoParalela As Double,
-                   ByVal _resistTracaoNormal As Double,
-                   ByVal _resistAoCisalhamento As Double,
-                   ByVal _modElasticidade As Double,
-                   ByVal _densAparente As Double)
-        id = _id
-        name = _name
-        resistCompParalela = _resistCompParalela
-        resistTracaoParalela = _resistTracaoParalela
-        resistTracaoNormal = _resistTracaoNormal
-        resistAoCisalhamento = _resistAoCisalhamento
-        modElasticidade = _modElasticidade
-        densAparente = _densAparente
+    Public Sub New(ByVal id As Integer,
+                   ByVal name As String,
+                   ByVal resistCompParalela As Double,
+                   ByVal resistTracaoParalela As Double,
+                   ByVal resistTracaoNormal As Double,
+                   ByVal resistAoCisalhamento As Double,
+                   ByVal modElasticidade As Double,
+                   ByVal densAparente As Double)
+        _id = id
+        _name = name
+        _resistCompParalela = resistCompParalela
+        _resistTracaoParalela = resistTracaoParalela
+        _resistTracaoNormal = resistTracaoNormal
+        _resistAoCisalhamento = resistAoCisalhamento
+        _modElasticidade = modElasticidade
+        _densAparente = densAparente
     End Sub
 
     Public Shared ListaEspecies = New List(Of Madeira) From {
@@ -104,5 +119,129 @@ Public Class Madeira
                 New Madeira(49, "Pinus Oocarpa", 43.6, 60.9, 2.5, 8.0, 10904, 538),
                 New Madeira(50, "Pinus Taeda", 44.4, 82.8, 2.8, 7.7, 13304, 645)
     }
+
+    'get: precisa retornar algo (chama um valor)
+    'set: digita o valot 
+    'lista: coleção de algo - duas formas: 
+    'primeiro: coleção de algo (clica no inserir valores)
+    'segundo: vazio (sem passar valor nenhum)
+    Public Property Id() As Integer
+        Get
+            Return _id
+        End Get
+        Set(value As Integer)
+            _id = value
+        End Set
+    End Property
+    Public Property Name() As String
+        Get
+            Return _name
+        End Get
+        Set(value As String)
+            _name = value
+        End Set
+    End Property
+    Public Property ResistCompParalela() As Double
+        Get
+            Return _resistCompParalela
+        End Get
+        Set(value As Double)
+            _resistCompParalela = value
+        End Set
+    End Property
+
+    Public Property ResistTracaoParalela() As Double
+        Get
+            Return _resistTracaoParalela
+        End Get
+        Set(value As Double)
+            _resistTracaoParalela = value
+        End Set
+    End Property
+
+    Public Property ResistTracaoNormal() As Double
+        Get
+            Return _resistTracaoNormal
+        End Get
+        Set(value As Double)
+            _resistTracaoNormal = value
+        End Set
+    End Property
+
+    Public Property ResistAoCisalhamento() As Double
+        Get
+            Return _resistAoCisalhamento
+        End Get
+        Set(value As Double)
+            _resistAoCisalhamento = value
+        End Set
+    End Property
+
+    Public Property ModElasticidade() As Double
+        Get
+            Return _modElasticidade
+        End Get
+        Set(value As Double)
+            _modElasticidade = value
+        End Set
+    End Property
+
+    Public Property DensAparente() As Double
+        Get
+            Return _densAparente
+        End Get
+        Set(value As Double)
+            _densAparente = value
+        End Set
+    End Property
+    Public Property PropriedadesGeometricas() As PropriedadesGeometricas
+        Get
+            Return _propriedadesGeometricas
+        End Get
+        Set(value As PropriedadesGeometricas)
+            _propriedadesGeometricas = value
+        End Set
+    End Property
+    Public Property Tracao() As Tracao
+        Get
+            Return _tracao
+        End Get
+        Set(value As Tracao)
+            _tracao = value
+        End Set
+    End Property
+    Public Property Compressao() As Compressao
+        Get
+            Return _compressao
+        End Get
+        Set(value As Compressao)
+            _compressao = value
+        End Set
+    End Property
+    Public Property Cisalhamento() As Cisalhamento
+        Get
+            Return _cisalhamento
+        End Get
+        Set(value As Cisalhamento)
+            _cisalhamento = value
+        End Set
+    End Property
+    Public Property Flexao() As Flexao
+        Get
+            Return _flexao
+        End Get
+        Set(value As Flexao)
+            _flexao = value
+        End Set
+    End Property
+
+    Public Property ResistenciaCalculo() As ResistenciaCalculo
+        Get
+            Return _resistenciaCalculo
+        End Get
+        Set(value As ResistenciaCalculo)
+            _resistenciaCalculo = value
+        End Set
+    End Property
 
 End Class

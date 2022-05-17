@@ -202,74 +202,10 @@ Public Class Form1
     End Sub
 
     Private Sub btnCalcularPropriedadesGeometricas_Click(sender As Object, e As EventArgs) Handles btnCalcularPropriedadesGeometricas.Click
-        Dim tipoSecao As Madeira.TipoSecao
+        'inicio - é o que precisa para calcular propriedades geometricas
+        Dim tipoSecao As Madeira.TipoSecao = defineTipoSessao()
 
-        If rbtSecaoRetangular.Checked Then
-            madeiraSelecionada.propriedadesGeometricas = proprGeometricas.CalculoRetangular(txtEntradaRetangularBx.Text, txtEntradaRetangularBy.Text, txtEntradaRetangularL.Text)
-            tipoSecao = Madeira.TipoSecao.Retangular
-
-        ElseIf rbtSecaoCircular.Checked Then
-            madeiraSelecionada.propriedadesGeometricas = proprGeometricas.CalculoCircular(txtEntradaCircularD.Text, txtEntradaCircularL.Text)
-            tipoSecao = Madeira.TipoSecao.Circular
-
-        ElseIf rbtSecaoT.Checked Then
-            madeiraSelecionada.propriedadesGeometricas = proprGeometricas.CalculoCompostoSecaoT(txtEntradaCompostaBf.Text, txtEntradaCompostaHf.Text, txtEntradaCompostaTh.Text, txtEntradaCompostaBw.Text)
-            tipoSecao = Madeira.TipoSecao.SecaoT
-
-        ElseIf rbtSecaoI.Checked Then
-            madeiraSelecionada.propriedadesGeometricas = proprGeometricas.CalculoCompostoSecaoI(txtEntradaIBf1.Text, txtEntradaIHf1.Text, txtEntradaIBf2.Text, txtEntradaIHf2.Text, txtEntradaIBw.Text, txtEntradaID.Text)
-            tipoSecao = Madeira.TipoSecao.SecaoI
-
-        ElseIf rbtSecaoCaixao.Checked Then
-            madeiraSelecionada.propriedadesGeometricas = proprGeometricas.CalculoCompostoSecaoCaixao(txtEntradaCaixaoD.Text, txtEntradaCaixaoB1.Text, txtEntradaCaixaoB2.Text, txtEntradaCaixaoB3.Text, txtEntradaCaixaoB4.Text, txtEntradaCaixaoH1.Text, txtEntradaCaixaoH2.Text, txtEntradaCaixaoH3.Text, txtEntradaCaixaoH4.Text)
-            tipoSecao = Madeira.TipoSecao.Caixao
-
-        ElseIf rbt2Elementos.Checked Then
-            madeiraSelecionada.propriedadesGeometricas = proprGeometricas.Calculo2Elementos(txtEntrada2L.Text, txtEntrada2L1.Text, txtEntrada2a.Text, txtEntrada2a1.Text, txtEntrada2h.Text, txtEntrada2h1.Text, txtEntrada2b1.Text, pilar())
-            tipoSecao = Madeira.TipoSecao.ElementosJustaposto2
-
-        ElseIf rbt3Elementos.Checked Then
-            madeiraSelecionada.propriedadesGeometricas = proprGeometricas.Calculo3Elementos(txtEntrada3L.Text, txtEntrada3L1.Text, txtEntrada3a.Text, txtEntrada3a1.Text, txtEntrada3h.Text, txtEntrada3h1.Text, txtEntrada3b1.Text, pilar())
-            tipoSecao = Madeira.TipoSecao.ElementosJustaposto3
-        Else
-        End If
-    End Sub
-
-
-    Private Sub btnCalcularPropriedades_Click(sender As Object, e As EventArgs) Handles btnCalcularPropriedades.Click
-
-        Dim tipoSecao As Madeira.TipoSecao
-        'Dim tipoSecao
-
-        If rbtSecaoRetangular.Checked Then
-            madeiraSelecionada.propriedadesGeometricas = proprGeometricas.CalculoRetangular(txtEntradaRetangularBx.Text, txtEntradaRetangularBy.Text, txtEntradaRetangularL.Text)
-            tipoSecao = Madeira.TipoSecao.Retangular
-
-        ElseIf rbtSecaoCircular.Checked Then
-            madeiraSelecionada.propriedadesGeometricas = proprGeometricas.CalculoCircular(txtEntradaCircularD.Text, txtEntradaCircularL.Text)
-            tipoSecao = Madeira.TipoSecao.Circular
-
-        ElseIf rbtSecaoT.Checked Then
-            madeiraSelecionada.propriedadesGeometricas = proprGeometricas.CalculoCompostoSecaoT(txtEntradaCompostaBf.Text, txtEntradaCompostaHf.Text, txtEntradaCompostaTh.Text, txtEntradaCompostaBw.Text)
-            tipoSecao = Madeira.TipoSecao.SecaoT
-
-        ElseIf rbtSecaoI.Checked Then
-            madeiraSelecionada.propriedadesGeometricas = proprGeometricas.CalculoCompostoSecaoI(txtEntradaIBf1.Text, txtEntradaIHf1.Text, txtEntradaIBf2.Text, txtEntradaIHf2.Text, txtEntradaIBw.Text, txtEntradaID.Text)
-            tipoSecao = Madeira.TipoSecao.SecaoI
-
-        ElseIf rbtSecaoCaixao.Checked Then
-            madeiraSelecionada.propriedadesGeometricas = proprGeometricas.CalculoCompostoSecaoCaixao(txtEntradaCaixaoD.Text, txtEntradaCaixaoB1.Text, txtEntradaCaixaoB2.Text, txtEntradaCaixaoB3.Text, txtEntradaCaixaoB4.Text, txtEntradaCaixaoH1.Text, txtEntradaCaixaoH2.Text, txtEntradaCaixaoH3.Text, txtEntradaCaixaoH4.Text)
-            tipoSecao = Madeira.TipoSecao.Caixao
-
-        ElseIf rbt2Elementos.Checked Then
-            madeiraSelecionada.propriedadesGeometricas = proprGeometricas.Calculo2Elementos(txtEntrada2L.Text, txtEntrada2L1.Text, txtEntrada2a.Text, txtEntrada2a1.Text, txtEntrada2h.Text, txtEntrada2h1.Text, txtEntrada2b1.Text, pilar())
-            tipoSecao = Madeira.TipoSecao.ElementosJustaposto2
-
-        ElseIf rbt3Elementos.Checked Then
-            madeiraSelecionada.propriedadesGeometricas = proprGeometricas.Calculo3Elementos(txtEntrada3L.Text, txtEntrada3L1.Text, txtEntrada3a.Text, txtEntrada3a1.Text, txtEntrada3h.Text, txtEntrada3h1.Text, txtEntrada3b1.Text, pilar())
-            tipoSecao = Madeira.TipoSecao.ElementosJustaposto3
-        Else
-        End If
+        madeiraSelecionada.PropriedadesGeometricas = definePropriedadesGeometricas()
 
         getDadosIniciais(tipoSecao)
 
@@ -278,6 +214,24 @@ Public Class Form1
         Else
             ResultadoPropriedadesGeometricas(madeiraSelecionada.PropriedadesGeometricas)
         End If
+        'fim
+    End Sub
+
+
+    Private Sub btnCalcularPropriedades_Click(sender As Object, e As EventArgs) Handles btnCalcularPropriedades.Click
+        'inicio - é o que precisa para calcular propriedades geometricas
+        Dim tipoSecao As Madeira.TipoSecao = defineTipoSessao()
+
+        madeiraSelecionada.PropriedadesGeometricas = definePropriedadesGeometricas()
+
+        getDadosIniciais(tipoSecao)
+
+        If rbt2Elementos.Checked Or rbt3Elementos.Checked Then
+            ResultadoPropriedadesGeometricas23Elemento(madeiraSelecionada.PropriedadesGeometricas)
+        Else
+            ResultadoPropriedadesGeometricas(madeiraSelecionada.PropriedadesGeometricas)
+        End If
+        'fim
 
         'TRAÇÃO
         If txtNormal.Text.ToString <> "" And cboTracaoCompressao.Text = "Tração" Then
@@ -295,14 +249,14 @@ Public Class Form1
             'arrumar para 3 ou 2 cnforme a seçãoe scolhida
             'COMPRESSAO
         ElseIf txtNormal.Text.ToString <> "" And cboTracaoCompressao.Text = "Compressão" Then
-            madeiraSelecionada.compressao = CalcTensaoC(
+            madeiraSelecionada.Compressao = CalcTensaoC(
                 PropriedadesResistencia.verificaVazio(txtNormal.Text),
                 PropriedadesResistencia.verificaVazio(txtMx.Text),
                 PropriedadesResistencia.verificaVazio(txtMy.Text),
+                vinculacao(comprimento),
                 PropriedadesResistencia.verificaVazio(txtEntrada2b1.Text),
                 PropriedadesResistencia.verificaVazio(txtEntrada2h1.Text),
-                vinculacao(comprimento),
-                madeiraSelecionada.propriedadesGeometricas,
+                madeiraSelecionada.PropriedadesGeometricas,
                 tipoSecao,
                 PropriedadesResistencia.verificaVazio(txtMomentoCargaPermanenteX.Text),
                 PropriedadesResistencia.verificaVazio(txtMomentoCargaPermanenteY.Text),
@@ -313,7 +267,7 @@ Public Class Form1
                 coefInfluencia(),
                 PropriedadesResistencia.verificaVazio(txtF1.Text),
                 PropriedadesResistencia.verificaVazio(txtF2.Text),
-                vinculacao(comprimento),
+                comprimento(),
                 PropriedadesResistencia.verificaVazio(txtEntrada2b1.Text),
                 PropriedadesResistencia.verificaVazio(txtEntrada2a.Text),
                 cboElementFixacao.Text,
@@ -387,6 +341,54 @@ Public Class Form1
         flexaoSimples(tipoSecao)
         flexaoComposta(tipoSecao)
     End Sub
+
+    Private Function defineTipoSessao() As Madeira.TipoSecao
+        If rbtSecaoRetangular.Checked Then
+            Return Madeira.TipoSecao.Retangular
+
+        ElseIf rbtSecaoCircular.Checked Then
+            Return Madeira.TipoSecao.Circular
+
+        ElseIf rbtSecaoT.Checked Then
+            Return Madeira.TipoSecao.SecaoT
+
+        ElseIf rbtSecaoI.Checked Then
+            Return Madeira.TipoSecao.SecaoI
+
+        ElseIf rbtSecaoCaixao.Checked Then
+            Return Madeira.TipoSecao.Caixao
+
+        ElseIf rbt2Elementos.Checked Then
+            Return Madeira.TipoSecao.ElementosJustaposto2
+
+        ElseIf rbt3Elementos.Checked Then
+            Return Madeira.TipoSecao.ElementosJustaposto3
+        End If
+    End Function
+
+    Private Function definePropriedadesGeometricas() As PropriedadesGeometricas
+        If rbtSecaoRetangular.Checked Then
+            Return proprGeometricas.CalculoRetangular(txtEntradaRetangularBx.Text, txtEntradaRetangularBy.Text, txtEntradaRetangularL.Text)
+
+        ElseIf rbtSecaoCircular.Checked Then
+            Return proprGeometricas.CalculoCircular(txtEntradaCircularD.Text, txtEntradaCircularL.Text)
+
+        ElseIf rbtSecaoT.Checked Then
+            Return proprGeometricas.CalculoCompostoSecaoT(txtEntradaCompostaBf.Text, txtEntradaCompostaHf.Text, txtEntradaCompostaTh.Text, txtEntradaCompostaBw.Text)
+
+        ElseIf rbtSecaoI.Checked Then
+            Return proprGeometricas.CalculoCompostoSecaoI(txtEntradaIBf1.Text, txtEntradaIHf1.Text, txtEntradaIBf2.Text, txtEntradaIHf2.Text, txtEntradaIBw.Text, txtEntradaID.Text)
+
+        ElseIf rbtSecaoCaixao.Checked Then
+            Return proprGeometricas.CalculoCompostoSecaoCaixao(txtEntradaCaixaoD.Text, txtEntradaCaixaoB1.Text, txtEntradaCaixaoB2.Text, txtEntradaCaixaoB3.Text, txtEntradaCaixaoB4.Text, txtEntradaCaixaoH1.Text, txtEntradaCaixaoH2.Text, txtEntradaCaixaoH3.Text, txtEntradaCaixaoH4.Text)
+
+        ElseIf rbt2Elementos.Checked Then
+            Return proprGeometricas.Calculo2Elementos(txtEntrada2L.Text, txtEntrada2L1.Text, txtEntrada2a.Text, txtEntrada2a1.Text, txtEntrada2h.Text, txtEntrada2h1.Text, txtEntrada2b1.Text, pilar())
+
+        ElseIf rbt3Elementos.Checked Then
+            Return proprGeometricas.Calculo3Elementos(txtEntrada3L.Text, txtEntrada3L1.Text, txtEntrada3a.Text, txtEntrada3a1.Text, txtEntrada3h.Text, txtEntrada3h1.Text, txtEntrada3b1.Text, pilar())
+        End If
+    End Function
 
     'TRAÇÃO: CONTAS CORRETAS
     Private Sub tracao()

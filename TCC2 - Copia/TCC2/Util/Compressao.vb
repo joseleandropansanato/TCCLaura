@@ -236,9 +236,6 @@
                 If compr.EsbeltezCompressaoX <= 40 Then 'PEÇA CURTA EM X
                     compr.TensaoCompressao = (normalCompressao / proprGeo.Area)
 
-                ElseIf compr.EsbeltezCompressaoY <= 40 Then 'PEÇA CURTA EM y
-                    compr.TensaoCompressao = (normalCompressao / proprGeo.Area)
-
                 ElseIf 40 < compr.EsbeltezCompressaoX <= 80 Then 'ELEMENTO MEDIANAMENTE ESBELTO EM X
                     compr.ForcaElasticaX = ((System.Math.PI ^ 2) * proprGeo.EixoXmi * (ResistenciaCalculo.moduloElasticidade / 10)) / ((lvinculado ^ 2) * 100)
                     compr.Ea = (lvinculado * 100) / 300
@@ -252,21 +249,6 @@
                     mdX = normalCompressao * compr.Edx
                     compr.TensaoCompressao = (normalCompressao / proprGeo.Area)
                     compr.TensaoMxd = (mdX / proprGeo.EixoXmr)
-
-                ElseIf 40 < compr.EsbeltezCompressaoY <= 80 Then 'ELEMENTO MEDIANAMENTE ESBELTO EM Y
-                    compr.ForcaElasticaY = ((System.Math.PI) ^ 2 * proprGeo.EixoYmi * (ResistenciaCalculo.moduloElasticidade / 10)) / ((lvinculado ^ 2) * 100)
-                    compr.Ea = (lvinculado * 100) / 300
-                    'DEFININDO O VALOR DA EXCENTRICIDADE INICIAL
-                    If ((momentoFletorX / normalCompressao) * 100) < (h / 30) Then
-                        compr.Ei = h / 30
-                    Else
-                        compr.Ei = (momentoFletorX / normalCompressao) * 100
-                    End If
-                    compr.Edy = (compr.Ei + compr.Ea) * (compr.ForcaElasticaY / (compr.ForcaElasticaY - normalCompressao))
-                    mdY = normalCompressao * compr.Edy
-                    compr.TensaoCompressao = normalCompressao / proprGeo.Area
-                    compr.TensaoMyd = (mdY / proprGeo.EixoYmr)
-
 
                 ElseIf 80 < compr.EsbeltezCompressaoX <= 140 Then 'ELEMENTO ESBELTO EM X
                     MessageBox.Show("Aviso: o Elemento é esbelto.")
@@ -285,7 +267,27 @@
                     mdX = normalCompressao * compr.E1ef * (compr.ForcaElasticaX / (compr.ForcaElasticaX - normalCompressao))
                     compr.TensaoCompressao = normalCompressao / proprGeo.Area
                     compr.TensaoMxd = (mdX / proprGeo.EixoXmr)
+                ElseIf compr.EsbeltezCompressaoX > 140 Then
+                    MessageBox.Show("Valores acima de 140 não devem ser considerados pois violam o estado limite de serviço imposto pela NBR.")
 
+                End If
+
+
+                If compr.EsbeltezCompressaoY <= 40 Then 'PEÇA CURTA EM y
+                    compr.TensaoCompressao = (normalCompressao / proprGeo.Area)
+                ElseIf 40 < compr.EsbeltezCompressaoY <= 80 Then 'ELEMENTO MEDIANAMENTE ESBELTO EM Y
+                    compr.ForcaElasticaY = ((System.Math.PI) ^ 2 * proprGeo.EixoYmi * (ResistenciaCalculo.moduloElasticidade / 10)) / ((lvinculado ^ 2) * 100)
+                    compr.Ea = (lvinculado * 100) / 300
+                    'DEFININDO O VALOR DA EXCENTRICIDADE INICIAL
+                    If ((momentoFletorX / normalCompressao) * 100) < (h / 30) Then
+                        compr.Ei = h / 30
+                    Else
+                        compr.Ei = (momentoFletorX / normalCompressao) * 100
+                    End If
+                    compr.Edy = (compr.Ei + compr.Ea) * (compr.ForcaElasticaY / (compr.ForcaElasticaY - normalCompressao))
+                    mdY = normalCompressao * compr.Edy
+                    compr.TensaoCompressao = normalCompressao / proprGeo.Area
+                    compr.TensaoMyd = (mdY / proprGeo.EixoYmr)
 
                 ElseIf 80 < compr.EsbeltezCompressaoY <= 140 Then 'ELEMENTO ESBELTO EM Y
                     MessageBox.Show("Aviso: o Elemento é esbelto.")
@@ -305,7 +307,7 @@
                     compr.TensaoCompressao = normalCompressao / proprGeo.Area
                     compr.TensaoMyd = (mdY / proprGeo.EixoXmr)
 
-                ElseIf compr.EsbeltezCompressaoX > 140 And compr.EsbeltezCompressaoY > 140 Then
+                ElseIf compr.EsbeltezCompressaoY > 140 Then
                     MessageBox.Show("Valores acima de 140 não devem ser considerados pois violam o estado limite de serviço imposto pela NBR.")
                 End If
 
