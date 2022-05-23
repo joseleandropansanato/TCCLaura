@@ -5,6 +5,7 @@ Imports TCC2.Cisalhamento
 Imports TCC2.Flexao
 Imports TCC2.Madeira
 Imports TCC2.FormAjuda
+Imports TCC2.frmEsforcoCaracteristico
 Public Class Form1
 
     Public madeiraSelecionada As Madeira = New Madeira 'chamei as propriedades da madeira (modelei as propriedades para ser igual a classe madeira)
@@ -17,6 +18,15 @@ Public Class Form1
     Public formAjuda As FormAjuda = New FormAjuda
     Public formFatorComb As FormFatorComb = New FormFatorComb
     Public form4Vinculacao As Form4Vinculacao = New Form4Vinculacao
+
+    Public Shared momentoCargaPermanenteX As Double = 0
+    Public Shared momentoCargaPermanenteY As Double = 0
+    Public Shared momentoCargaVariavelX As Double = 0
+    Public Shared momentoCargaVariavelY As Double = 0
+    Public Shared normalCargaPermanente As Double = 0
+    Public Shared normalCargaVariavel As Double = 0
+    Public Shared f1 As Double = 0
+    Public Shared f2 As Double = 0
 
     'ROTINA PARA APARECER A DATA NO CANTINHO DA TELA E SELECINAR A LISTA DE MADEIRA
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -238,9 +248,16 @@ Public Class Form1
     End Sub
 
 
+    Public Function Retorno()
+        CalcularPropriedades()
+    End Function
 
     'ROTINA PARA CALCULAR O DIMENSIONAMENTO (DEPENDE DA MADEIRA SELECIONADA):
     Private Sub btnCalcularPropriedades_Click(sender As Object, e As EventArgs) Handles btnCalcularPropriedades.Click
+        CalcularPropriedades()
+    End Sub
+
+    Private Function CalcularPropriedades()
         'inicio - é o que precisa para calcular propriedades geometricas e dimensionar toda a peça
         Dim tipoSecao As Madeira.TipoSecao = defineTipoSessao()
 
@@ -281,15 +298,15 @@ Public Class Form1
                 altura(),
                 madeiraSelecionada.PropriedadesGeometricas,
                 tipoSecao,
-                PropriedadesResistencia.verificaVazio(txtMomentoCargaPermanenteX.Text),
-                PropriedadesResistencia.verificaVazio(txtMomentoCargaPermanenteY.Text),
-                PropriedadesResistencia.verificaVazio(txtMomentoCargaVariavelX.Text),
-                PropriedadesResistencia.verificaVazio(txtMomentoCargaVariavelY.Text),
-                PropriedadesResistencia.verificaVazio(txtNormalCargaPermanente.Text),
-                PropriedadesResistencia.verificaVazio(txtNormalCargaVariavel.Text),
+                momentoCargaPermanenteX,
+                momentoCargaPermanenteY,
+                momentoCargaVariavelX,
+                momentoCargaVariavelY,
+                normalCargaPermanente,
+                normalCargaVariavel,
                 coefInfluencia(),
-                PropriedadesResistencia.verificaVazio(txtF1.Text),
-                PropriedadesResistencia.verificaVazio(txtF2.Text),
+                f1,
+                f2,
                 b1ElementoJustaposto(),
                 aElementoJustaposto(),
                 cboElementFixacao.Text,
@@ -375,7 +392,7 @@ Public Class Form1
         cisalhamento()
         flexaoSimples(tipoSecao)
         flexaoComposta(tipoSecao)
-    End Sub
+    End Function
 
 
     'ROTINA PARA DEFINIR O TIPO DE SEÇÃO JA QUE OS CÁLCULOS MUDAM PARA CADA UMA :
@@ -1023,13 +1040,13 @@ Public Class Form1
         PictureBox4.BackgroundImage = My.Resources.help
     End Sub
     'ROTINA PARA APARECER AJUD AEM PEÇAS ESBELTAS
-    Private Sub gbxSolicExtCalc_Enter(sender As Object, e As EventArgs) Handles gbxSolicExtCalc.Enter
+    Private Sub gbxSolicExtCalc_Enter(sender As Object, e As EventArgs)
         MessageBox.Show("Para peças esbeltas sujeitas à compressão, os esforços normais devem ser 
                          inseridos em seu valor característico devidos às cargas permanentes (Ng,k)
                          e variáveis (Nq,k), ou seja, sem as suas devidas combinações normativas")
 
     End Sub
-    Private Sub PictureBox8_Click_1(sender As Object, e As EventArgs) Handles PictureBox8.Click
+    Private Sub PictureBox8_Click_1(sender As Object, e As EventArgs)
         formFatorComb.Show()
     End Sub
 

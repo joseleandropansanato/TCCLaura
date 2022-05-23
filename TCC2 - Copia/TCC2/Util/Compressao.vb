@@ -1,4 +1,6 @@
-﻿Public Class Compressao
+﻿Imports TCC2.frmEsforcoCaracteristico
+
+Public Class Compressao
     'Public Shared tensaoCompressao As Double = 0
     'Public Shared tensaoCompressaoCurtaX As Double = 0
     'Public Shared tensaoCompressaoCurtaY As Double = 0
@@ -217,6 +219,11 @@
         Dim mdX As Double = 0
         Dim mdY As Double = 0
 
+        Dim frmEsfCarc As frmEsforcoCaracteristico = New frmEsforcoCaracteristico
+        Dim esbelta As Boolean = False
+
+        compr.Lvinculado = lvinculado
+
         Select Case tipoSecao
 
             Case Madeira.TipoSecao.Retangular
@@ -229,7 +236,7 @@
                     compr.TensaoCompressaoX = (normalCompressao / proprGeo.Area)
 
                     'ELEMENTO MEDIANAMENTE ESBELTO EM X ==============
-                ElseIf 40 < compr.EsbeltezCompressaoX <= 80 Then
+                ElseIf 40 < compr.EsbeltezCompressaoX And compr.EsbeltezCompressaoX <= 80 Then
                     compr.ForcaElasticaX = ((System.Math.PI ^ 2) * proprGeo.EixoXmi * (ResistenciaCalculo.moduloElasticidade / 10)) / ((lvinculado * 100) ^ 2)
                     compr.EaX = (lvinculado * 100) / 300
                     'Definindo o valor da excentricidade inicial
@@ -244,8 +251,10 @@
                     compr.TensaoMxd = (mdX / proprGeo.EixoXmr)
 
                     'ELEMENTO ESBELTO EM X ==============
-                ElseIf 80 < compr.EsbeltezCompressaoX <= 140 Then
+                ElseIf 80 < compr.EsbeltezCompressaoX And compr.EsbeltezCompressaoX <= 140 Then
                     MessageBox.Show("Aviso: o Elemento é esbelto.")
+
+                    esbelta = True
 
                     compr.ForcaElasticaX = ((System.Math.PI) ^ 2 * proprGeo.EixoXmi * (ResistenciaCalculo.moduloElasticidade / 10)) / ((lvinculado * 100) ^ 2)
                     compr.EaX = (lvinculado * 100) / 300
@@ -294,6 +303,7 @@
                     'ELEMENTO ESBELTO EM Y ==============
                 ElseIf 80 < compr.EsbeltezCompressaoY <= 140 Then
                     MessageBox.Show("Aviso: o Elemento é esbelto.")
+
 
                     compr.ForcaElasticaY = ((System.Math.PI) ^ 2 * proprGeo.EixoYmi * (ResistenciaCalculo.moduloElasticidade / 10)) / ((lvinculado * 100) ^ 2)
                     compr.EaY = (lvinculado * 100) / 300
@@ -840,6 +850,10 @@
 
 
         End Select
+
+        If esbelta Then
+            frmEsfCarc.Show()
+        End If
 
         Return compr
     End Function
