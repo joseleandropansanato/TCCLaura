@@ -10,9 +10,6 @@
     <Compile Update="Form4Vinculacao.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Form5CompEsbelta.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Update="Util\Form2Kmod1.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -20,6 +17,12 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Util\Form2Kmod3.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Util\FormAjuda.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Util\FormFatorComb.vb">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>

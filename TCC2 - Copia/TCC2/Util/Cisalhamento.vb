@@ -36,30 +36,30 @@
         End Set
     End Property
 
-    Public Shared Function CalcTensaoCisalhamento(forcaCortanteX As Double, forcaCortanteY As Double, diametro As Double, a1 As Double, L1 As Double, propriedadesGeometricas As PropriedadesGeometricas, tipoSecao As Madeira.TipoSecao) As Cisalhamento
+    Public Shared Function CalcTensaoCisalhamento(forcaCortanteX As Double, forcaCortanteY As Double, diametro As Double, a1 As Double, L1 As Double, proprGeo As PropriedadesGeometricas, tipoSecao As Madeira.TipoSecao) As Cisalhamento
         Dim cisalh = New Cisalhamento()
 
         'PELA REGRA DA MÃO DIREITA, O MOMNETO EM X CAUSA FLEXÃO NO EIXO Y E O MOMENTO EM Y NO EIXO X
         Select Case tipoSecao
             Case Madeira.TipoSecao.Retangular
-                cisalh.TensaoCisalhanteX = ((2 / 3) * (forcaCortanteX / propriedadesGeometricas.Area))
-                cisalh.TensaoCisalhanteY = ((2 / 3) * (forcaCortanteY / propriedadesGeometricas.Area))
+                cisalh.TensaoCisalhanteX = ((2 / 3) * (forcaCortanteX / proprGeo.Area))
+                cisalh.TensaoCisalhanteY = ((2 / 3) * (forcaCortanteY / proprGeo.Area))
 
             Case Madeira.TipoSecao.Circular
                 cisalh.TensaoCisalhanteX = ((4 * forcaCortanteX) / (3 * System.Math.PI * (diametro / 2)))
                 cisalh.TensaoCisalhanteY = ((4 * forcaCortanteY) / (3 * System.Math.PI * (diametro / 2)))
 
             Case Madeira.TipoSecao.SecaoT
-                cisalh.TensaoCisalhanteX = ((forcaCortanteX * propriedadesGeometricas.Qx) / propriedadesGeometricas.EixoXmi)
-                cisalh.TensaoCisalhanteY = ((forcaCortanteY * propriedadesGeometricas.Qy) / propriedadesGeometricas.EixoYmi)
+                cisalh.TensaoCisalhanteX = ((forcaCortanteX * proprGeo.Qx) / proprGeo.EixoXmi)
+                cisalh.TensaoCisalhanteY = ((forcaCortanteY * proprGeo.Qy) / proprGeo.EixoYmi)
 
             Case Madeira.TipoSecao.SecaoI
-                cisalh.TensaoCisalhanteX = ((forcaCortanteX * propriedadesGeometricas.Qx) / propriedadesGeometricas.EixoXmi)
-                cisalh.TensaoCisalhanteY = ((forcaCortanteY * propriedadesGeometricas.Qy) / propriedadesGeometricas.EixoYmi)
+                cisalh.TensaoCisalhanteX = ((forcaCortanteX * proprGeo.Qx) / proprGeo.EixoXmi)
+                cisalh.TensaoCisalhanteY = ((forcaCortanteY * proprGeo.Qy) / proprGeo.EixoYmi)
 
             Case Madeira.TipoSecao.Caixao
-                cisalh.TensaoCisalhanteX = ((forcaCortanteX * propriedadesGeometricas.Qx) / propriedadesGeometricas.EixoXmi)
-                cisalh.TensaoCisalhanteY = ((forcaCortanteY * propriedadesGeometricas.Qy) / propriedadesGeometricas.EixoYmi)
+                cisalh.TensaoCisalhanteX = ((forcaCortanteX * proprGeo.Qx) / proprGeo.EixoXmi)
+                cisalh.TensaoCisalhanteY = ((forcaCortanteY * proprGeo.Qy) / proprGeo.EixoYmi)
 
                 'PARA SEÇÃO COMPOSTA POR ESPAÇADORES A GNT SÓ CONFERE O CISALHAMENTO FRENTE DO ESPAÇADOR
             Case Madeira.TipoSecao.ElementosJustaposto2

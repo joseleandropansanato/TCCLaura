@@ -32,7 +32,7 @@ Public Class Madeira
     Private _flexao As Flexao = New Flexao()
     Private _resistenciaCalculo As ResistenciaCalculo = New ResistenciaCalculo()
 
-
+    'ENUM: fornece uma forma de tratar um conjunto relacionado de constantes e de associar os valores destas constantes com os nomes atribuídos a elas.
     Enum TipoSecao
         Retangular
         Circular
@@ -48,7 +48,6 @@ Public Class Madeira
     Public Sub New()
 
     End Sub
-
     Public Sub New(ByVal id As Integer,
                    ByVal name As String,
                    ByVal resistCompParalela As Double,
@@ -117,7 +116,14 @@ Public Class Madeira
                 New Madeira(47, "Pinus Hondurensis", 42.3, 50.3, 2.6, 7.8, 9868, 535),
                 New Madeira(48, "Pinus Elliotti", 40.4, 66.0, 2.5, 7.4, 11889, 560),
                 New Madeira(49, "Pinus Oocarpa", 43.6, 60.9, 2.5, 8.0, 10904, 538),
-                New Madeira(50, "Pinus Taeda", 44.4, 82.8, 2.8, 7.7, 13304, 645)
+                New Madeira(50, "Pinus Taeda", 44.4, 82.8, 2.8, 7.7, 13304, 645),
+                New Madeira(50, "Coníferas - C20", 20, 0, 0, 4, 3500, 400),
+                New Madeira(50, "Coníferas - C25", 25, 0, 0, 5, 8500, 450),
+                New Madeira(50, "Coníferas - C30", 30, 0, 0, 6, 14500, 500),
+                New Madeira(50, "Dicotiledôneas C-20", 20, 0, 0, 4, 9500, 500),
+                New Madeira(50, "Dicotiledôneas C-30", 30, 0, 0, 5, 14500, 650),
+                New Madeira(50, "Dicotiledôneas C-40", 40, 0, 0, 6, 19500, 750),
+                New Madeira(50, "Dicotiledôneas C-60", 60, 0, 0, 8, 24500, 800)
     }
 
     'get: precisa retornar algo (chama um valor)
@@ -149,7 +155,6 @@ Public Class Madeira
             _resistCompParalela = value
         End Set
     End Property
-
     Public Property ResistTracaoParalela() As Double
         Get
             Return _resistTracaoParalela
@@ -158,7 +163,6 @@ Public Class Madeira
             _resistTracaoParalela = value
         End Set
     End Property
-
     Public Property ResistTracaoNormal() As Double
         Get
             Return _resistTracaoNormal
@@ -167,7 +171,6 @@ Public Class Madeira
             _resistTracaoNormal = value
         End Set
     End Property
-
     Public Property ResistAoCisalhamento() As Double
         Get
             Return _resistAoCisalhamento
@@ -176,7 +179,6 @@ Public Class Madeira
             _resistAoCisalhamento = value
         End Set
     End Property
-
     Public Property ModElasticidade() As Double
         Get
             Return _modElasticidade
@@ -185,7 +187,6 @@ Public Class Madeira
             _modElasticidade = value
         End Set
     End Property
-
     Public Property DensAparente() As Double
         Get
             Return _densAparente
@@ -234,7 +235,6 @@ Public Class Madeira
             _flexao = value
         End Set
     End Property
-
     Public Property ResistenciaCalculo() As ResistenciaCalculo
         Get
             Return _resistenciaCalculo
