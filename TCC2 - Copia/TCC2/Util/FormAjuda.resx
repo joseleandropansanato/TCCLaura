@@ -58,11 +58,22 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Label2.Text" xml:space="preserve">
-    <value>Software desenvolvido segundo a norma brasileira em vigência ABNT
-NBR 7190, entretanto, desenvolvedores, parceiros ou qualquer outra 
-instituição vinculada nãosão responsáveis pela utilização indevida do 
-software e seus resultados, não havendo qualquer responsabilidade 
-sobre os resultados obtidos na utilização educacional do software.
+    <value>O XXXXXXXXXX é uma ferramenta computacional capaz de realizar o dimensionamento de elementos estruturais de madeira seguindo as diretrizes de cálculo da versão vigente da ABNT NBR 7190:1997 e da versão em revisão de 2012, entretanto, desenvolvedores, parceiros ou qualquer outra instituição vinculada não são responsáveis pela utilização indevida do software e seus resultados, não havendo qualquer responsabilidade sobre os resultados obtidos na utilização educacional do software.
 </value>
+  </data>
+  <data name="Label12.Text" xml:space="preserve">
+    <value>kmod1: Depende da classe de carregamento e do tipo de material empregado.
+kmod2: Relaciona a classe de umidade e o tipo de material empregado
+kmod3: Considera a qualidade da madeira
+Os valores podem ser consultados apertando o botão simbolizado com ?</value>
+  </data>
+  <data name="Label7.Text" xml:space="preserve">
+    <value>As classes de resistência das madeiras têm por objetivo o emprego de madeiras com propriedades padronizadas, orientando a escolha do material para elaboração de projetos estruturais. Para encontrar a resistência de cálculo de determinada espécie de madeira, a NBR 7190:1997 prescreve que a resistência característica seja divido por um coeficiente de segurança no valor de 1,4 para esforços de compressão e 1,8 para esforços de tração e cisalhamento, este multiplicado pelo coeficiente de modificação.</value>
+  </data>
+  <data name="Label6.Text" xml:space="preserve">
+    <value>Os elementos estruturais em madeira estão suscetíveis a esforços solicitantes de compressão, tração, cisalhamento, flexão e torção. Conforme o tipo de esforço e sua direção em relação às fibras da madeira, o material apresenta diferentes valores de resistência. A NBR dispõe de uma coleção de madeiras nativas e de florestamento e seus valores médios usuais de resistência e rigidez. Além disso, caso seja de seu interesse, é possivel utilizar os valores  das resistências devido a ensaios laboratoriais realizado por você, clicando em inserir valores.</value>
+  </data>
+  <data name="Label5.Text" xml:space="preserve">
+    <value>Nesta etapa você deverá selecionar o tipo de seção que deseja, e inserir de acordo com a seção desejado as informações necessárias para o  cálculo das propriedades geométricas da peça clicando no botão "calcular". Caso seja de seu interesse dimensionar a peça de acordo com um tipo de esforço solicitante, você deve seguir as orientações que aparecerão no decorrer do dimensionamento. Lembre-se de sempre inserir as informações nas respecitvas unidades.</value>
   </data>
 </root>

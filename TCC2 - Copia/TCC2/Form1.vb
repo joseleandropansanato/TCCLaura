@@ -16,7 +16,6 @@ Public Class Form1
     Public form2Kmod2 As Form2Kmod2 = New Form2Kmod2
     Public form2Kmod3 As Form2Kmod3 = New Form2Kmod3
     Public formAjuda As FormAjuda = New FormAjuda
-    Public formFatorComb As FormFatorComb = New FormFatorComb
     Public form4Vinculacao As Form4Vinculacao = New Form4Vinculacao
 
     Public Shared momentoCargaPermanenteX As Double = 0
@@ -27,6 +26,7 @@ Public Class Form1
     Public Shared normalCargaVariavel As Double = 0
     Public Shared f1 As Double = 0
     Public Shared f2 As Double = 0
+    Public Shared voltou As Boolean = False
 
     'ROTINA PARA APARECER A DATA NO CANTINHO DA TELA E SELECINAR A LISTA DE MADEIRA
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -63,7 +63,7 @@ Public Class Form1
         txtDensAparente.Enabled = checked
     End Sub
 
-    'Se o button estiver checked ele é visivel
+    'ROTINA PARA USAR VALORES DAS MADEIRAS DIFERENTES DA NBR: Se o button estiver checked ele é visivel
     Private Sub RadioButton7_CheckedChanged(sender As Object, e As EventArgs) Handles rbtInserirValores.CheckedChanged
         btnConfirmarInsercao.Visible = True
         CaracteristicaMadeira()
@@ -82,6 +82,14 @@ Public Class Form1
         txtResistAoCisalhamento.Text = madeiraSelecionada.ResistAoCisalhamento
         txtModElasticidade.Text = madeiraSelecionada.ModElasticidade
         txtDensAparente.Text = madeiraSelecionada.DensAparente
+        'FORMATANDO A QUANTIDADE DE CASAS DPS DA VIRGULA NOS TXT
+        txtResistCompParalela.Text = Format(madeiraSelecionada.ResistCompParalela, "#0.0##;-#0.0##")
+        txtResistTracaoParalela.Text = Format(madeiraSelecionada.ResistTracaoParalela, "#0.0##;-#0.0##")
+        txtResistTracaoNormal.Text = Format(madeiraSelecionada.ResistTracaoNormal, "#0.0##;-#0.0##")
+        txtResistAoCisalhamento.Text = Format(madeiraSelecionada.ResistAoCisalhamento, "#0.0##;-#0.0##")
+        txtModElasticidade.Text = Format(madeiraSelecionada.ModElasticidade, "#0.0##;-#0.0###")
+        txtDensAparente.Text = Format(madeiraSelecionada.DensAparente, "#0.0##;-#0.0##")
+
     End Sub
 
     Private Sub btnConfirmarInsercao_Click(sender As Object, e As EventArgs) Handles btnConfirmarInsercao.Click
@@ -159,7 +167,6 @@ Public Class Form1
         gbxResultadosSecao.Visible = True
         gbxResultadosElementos.Visible = False
     End Sub
-
     Private Sub rbtSecaoCircular_CheckedChanged(sender As Object, e As EventArgs) Handles rbtSecaoCircular.CheckedChanged
         ExibirDadosEntrada()
         imgSecao.Image = My.Resources.secaocircular
@@ -168,7 +175,6 @@ Public Class Form1
         gbxResultadosSecao.Visible = True
         gbxResultadosElementos.Visible = False
     End Sub
-
     Private Sub rbtSecaoT_CheckedChanged(sender As Object, e As EventArgs) Handles rbtSecaoT.CheckedChanged
         ExibirDadosEntrada()
         imgSecao.Image = My.Resources.secaoT
@@ -177,7 +183,6 @@ Public Class Form1
         gbxResultadosSecao.Visible = True
         gbxResultadosElementos.Visible = False
     End Sub
-
     Private Sub rbtSecaoI_CheckedChanged(sender As Object, e As EventArgs) Handles rbtSecaoI.CheckedChanged
         ExibirDadosEntrada()
         imgSecao.Image = My.Resources.secaoi
@@ -186,7 +191,6 @@ Public Class Form1
         gbxResultadosSecao.Visible = True
         gbxResultadosElementos.Visible = False
     End Sub
-
     Private Sub rbtSecaoCaixao_CheckedChanged(sender As Object, e As EventArgs) Handles rbtSecaoCaixao.CheckedChanged
         ExibirDadosEntrada()
         imgSecao.Image = My.Resources.secaocaixao
@@ -195,7 +199,6 @@ Public Class Form1
         gbxResultadosSecao.Visible = True
         gbxResultadosElementos.Visible = False
     End Sub
-
     Private Sub rbt2Elementos_CheckedChanged(sender As Object, e As EventArgs) Handles rbt2Elementos.CheckedChanged
         ExibirDadosEntrada()
         imgSecao.Image = My.Resources.secao2elementos
@@ -204,7 +207,6 @@ Public Class Form1
         gbxResultadosSecao.Visible = False
         gbxResultadosElementos.Visible = True
     End Sub
-
     Private Sub rbt3Elementos_CheckedChanged(sender As Object, e As EventArgs) Handles rbt3Elementos.CheckedChanged
         ExibirDadosEntrada()
         imgSecao.Image = My.Resources.secao3elementos
@@ -214,23 +216,8 @@ Public Class Form1
         gbxResultadosElementos.Visible = True
     End Sub
 
-    Private Sub gbxFlexaoSimples_visible(sender As Object, e As EventArgs) Handles gbxFlexaoSimples.VisibleChanged
-        txtCortanteX.Text = 0
-        txtMx.Text = 0
-        txtMy.Text = 0
-    End Sub
-    ' Private Sub rbtFlexoTracao_CheckedChanged(sender As Object, e As EventArgs)
-    ' If txtNormal.Text.ToString <> "" And cboTracaoCompressao.Text = "Tração" Then
-    '   gbxFlexoTracao.Visible = True
-    '  gbxFlexoCompressao.Visible = False
 
-    ' ElseIf txtNormal.Text.ToString <> "" And cboTracaoCompressao.Text = "Compressão" Then
-    '   gbxFlexoCompressao.Visible = True
-    '   gbxFlexoTracao.Visible = False
-    'End If
-    ' End Sub
-
-    'rotina: botão para atualizar as propriedades geometricas sem depender da madeira selecionada
+    'ROTINA PARA ATUALIZAR AS PROPRIEDADES GEOMÉTRICAS SEM DEPENDER DA MADEIRA SELECIONADA
     Private Sub btnCalcularPropriedadesGeometricas_Click(sender As Object, e As EventArgs) Handles btnCalcularPropriedadesGeometricas.Click
         'inicio - é o que precisa para calcular apenas as propriedades geometricas
         Dim tipoSecao As Madeira.TipoSecao = defineTipoSessao()
@@ -247,7 +234,7 @@ Public Class Form1
         'fim
     End Sub
 
-
+    'ROTINA PARA APARECER A JANELA DOS ESFORÇOS CARACTERISTICOS, QND ESBELTO
     Public Function Retorno()
         CalcularPropriedades()
     End Function
@@ -260,13 +247,11 @@ Public Class Form1
     Private Function CalcularPropriedades()
         'inicio - é o que precisa para calcular propriedades geometricas e dimensionar toda a peça
         Dim tipoSecao As Madeira.TipoSecao = defineTipoSessao()
-
         madeiraSelecionada.PropriedadesGeometricas = definePropriedadesGeometricas()
-
         getDadosIniciais(tipoSecao)
-
         If rbt2Elementos.Checked Or rbt3Elementos.Checked Then
             ResultadoPropriedadesGeometricas23Elemento(madeiraSelecionada.PropriedadesGeometricas)
+
         Else
             ResultadoPropriedadesGeometricas(madeiraSelecionada.PropriedadesGeometricas)
         End If
@@ -286,7 +271,7 @@ Public Class Form1
 
             'COMPRESSAO: ACONTEECE QUANDO A NORMAL TRAÇÃO ESTÁ SELECIONADA: OK
         ElseIf txtNormal.Text.ToString <> "" And cboTracaoCompressao.Text = "Compressão" Then
-            MessageBox.Show("Peças sob esforços de compressão, estão sujeitas aos fenomênos de falmabgem.
+            MessageBox.Show("Peças sob esforços de compressão, estão sujeitas aos fenomênos de flambagem.
                              Por favor, insira a vinculação da peça.")
             'gbxVinculacao.Visible = True
             madeiraSelecionada.Compressao = CalcTensaoC(
@@ -311,10 +296,12 @@ Public Class Form1
                 aElementoJustaposto(),
                 cboElementFixacao.Text,
                 l1entradaElementoJustaposto 'TEM QUE CHAMAR O L1 
-               )
+)
         End If
 
-        'CISALHAMENTO: ACONTEECE QUANDO Vx ou Vy ESTÁ SELECIONADA: OK
+
+
+        'CISALHAMENTO: ACONTEECE QUANDO Vx ou Vy ESTÁ SELECIONADA: OK 
         If txtCortanteX.Text.ToString <> "" Or txtCortanteY.Text.ToString <> "" Then
             madeiraSelecionada.Cisalhamento = CalcTensaoCisalhamento(
              PropriedadesResistencia.verificaVazio(txtCortanteX.Text),
@@ -328,8 +315,8 @@ Public Class Form1
         End If
 
         'FLEXÃO SIMPLES RETA: ACONTECE: mX OU mY SELECIONADOS JUNTO A ESFORÇOS DE CISALHAMENTO
-        ' If (txtMx.Text.ToString <> "" And txtCortanteX.Text.ToString <> "") Or (txtMx.Text.ToString <> "" And txtCortanteY.Text.ToString <> "") Or (txtMy.Text.ToString <> "" And txtCortanteX.Text.ToString <> "") Or (txtMy.Text.ToString <> "" And txtCortanteY.Text.ToString <> "") Then
-        If txtMx.Text.ToString <> "" Or txtMy.Text.ToString <> "" Then
+        If (txtMx.Text.ToString <> "" And txtMy.Text.ToString = "" And (txtCortanteX.Text.ToString <> "" Or txtCortanteY.Text.ToString <> "")) Or
+           (txtMy.Text.ToString <> "" And txtMx.Text.ToString = "" And (txtCortanteX.Text.ToString <> "" Or txtCortanteY.Text.ToString <> "")) Then
             gbxFlexaoSimples.Visible = True
             gbxFlexaoObliqua.Visible = False
             madeiraSelecionada.Flexao = CalcTensaoFlexaoSimples(
@@ -338,12 +325,13 @@ Public Class Form1
             PropriedadesResistencia.verificaVazio(txtEntradaRetangularBx.Text),
             PropriedadesResistencia.verificaVazio(txtEntradaRetangularBy.Text),
             PropriedadesResistencia.verificaVazio(txtEntradaCircularD.Text),
+            PropriedadesResistencia.verificaVazio(txtApoioX.Text),
+            PropriedadesResistencia.verificaVazio(txtApoioY.Text),
            madeiraSelecionada.PropriedadesGeometricas,
            tipoSecao
            )
-
             'FLEXÃO OBLIQUA: ACONTECE QUANDO Mx e My ESTÃOO SELECIONADO: OK
-        ElseIf txtMx.Text.ToString <> "" And txtMy.Text.ToString <> "" Then
+        ElseIf txtMx.Text.ToString <> "" And txtMy.Text.ToString <> "" And (txtCortanteX.Text.ToString <> "" Or txtCortanteY.Text.ToString <> "") Then
             gbxFlexaoSimples.Visible = False
             gbxFlexaoObliqua.Visible = True
             madeiraSelecionada.Flexao = CalcTensaoFlexaoObliqua(
@@ -352,6 +340,8 @@ Public Class Form1
             PropriedadesResistencia.verificaVazio(txtEntradaRetangularBx.Text),
             PropriedadesResistencia.verificaVazio(txtEntradaRetangularBy.Text),
             PropriedadesResistencia.verificaVazio(txtEntradaCircularD.Text),
+            PropriedadesResistencia.verificaVazio(txtApoioX.Text),
+            PropriedadesResistencia.verificaVazio(txtApoioY.Text),
             madeiraSelecionada.PropriedadesGeometricas,
             tipoSecao
             )
@@ -359,7 +349,7 @@ Public Class Form1
 
         'FLEXAO COMPOSTA
         '------------------------FLEXOTRAÇÃO------------------------
-        If txtMx.Text.ToString <> "" And txtMy.Text.ToString <> "" And txtNormal.Text.ToString <> "" And cboTracaoCompressao.Text = "Tração" Then
+        If txtMx.Text.ToString <> "" Or txtMy.Text.ToString <> "" And txtNormal.Text.ToString <> "" And cboTracaoCompressao.Text = "Tração" Then
             gbxFlexoTracao.Visible = True
             gbxFlexoCompressao.Visible = False
             madeiraSelecionada.Flexao = CalcTensaoFlexotracao(
@@ -373,7 +363,7 @@ Public Class Form1
             )
 
             '------------------------FLEXOCOMPRESSAO------------------------
-        ElseIf txtMx.Text.ToString <> "" And txtMy.Text.ToString <> "" And txtNormal.Text.ToString <> "" And cboTracaoCompressao.Text = "Compressão" Then
+        ElseIf txtMx.Text.ToString <> "" Or txtMy.Text.ToString <> "" And txtNormal.Text.ToString <> "" And cboTracaoCompressao.Text = "Compressão" Then
             gbxFlexoCompressao.Visible = True
             gbxFlexoTracao.Visible = False
             madeiraSelecionada.Flexao = CalcTensaoFlexocompressao(
@@ -393,7 +383,6 @@ Public Class Form1
         flexaoSimples(tipoSecao)
         flexaoComposta(tipoSecao)
     End Function
-
 
     'ROTINA PARA DEFINIR O TIPO DE SEÇÃO JA QUE OS CÁLCULOS MUDAM PARA CADA UMA :
     Private Function defineTipoSessao() As Madeira.TipoSecao
@@ -451,12 +440,25 @@ Public Class Form1
         txtTensaoTracao.Text = madeiraSelecionada.tracao.TensaoTracao
         txtEsbeltezTracaoX.Text = madeiraSelecionada.Tracao.esbeltezTracaoX
         txtEsbeltezTracaoY.Text = madeiraSelecionada.Tracao.EsbeltezTracaoY
+        txtFt.Text = madeiraSelecionada.ResistenciaCalculo.resistCalculoTracaoParalela
+
+        txtTensaoTracao.Text = Format(madeiraSelecionada.Tracao.TensaoTracao, "#0.0##;-#0.0##")
+        txtEsbeltezTracaoX.Text = Format(madeiraSelecionada.Tracao.EsbeltezTracaoX, "#0.0##;-#0.0##")
+        txtEsbeltezTracaoY.Text = Format(madeiraSelecionada.Tracao.EsbeltezTracaoY, "#0.0##;-#0.0##")
+
 
         'VALIDAÇÃO TENSÃO TRAÇÃO:
         If PropriedadesResistencia.validarTensaoTracao(madeiraSelecionada.Tracao.TensaoTracao, madeiraSelecionada.ResistenciaCalculo.resistCalculoTracaoParalela) Then
             lblValidacaoTensaoTracao.Text = "PASSOU NA VERIFICAÇÃO"
             lblValidacaoTensaoTracao.Visible = True
             lblValidacaoTensaoTracao.ForeColor = Color.Green
+            lblValidacaoFlexaoObliquaX.Visible = False
+            lblValidacaoFlexaoObliquaY.Visible = False
+            lblValidacaoFlexaoSimplesX.Visible = False
+            lblValidacaoFlexaoSimplesY.Visible = False
+            lblValidacaoCisalhanteX.Visible = False
+            lblValidacaoCisalhanteY.Visible = False
+
         Else
             lblValidacaoTensaoTracao.Text = "NÃO PASSOU NA VERIFICAÇÃO"
             lblValidacaoTensaoTracao.Visible = True
@@ -516,21 +518,44 @@ Public Class Form1
         txtEcX.Text = coefInfluencia()
         txtEcY.Text = coefInfluencia()
 
-        'txt == madeiraSelecionada.Compressao.Ec
-        '     = madeiraSelecionada.Compressao.Ec
+
+
+        txtEsbeltezCompressaoX.Text = Format(madeiraSelecionada.Compressao.EsbeltezCompressaoX, "#0.0##;-#0.0##")
+        txtEsbeltezCompressaoY.Text = Format(madeiraSelecionada.Compressao.EsbeltezCompressaoY, "#0.0##;-#0.0##")
+
+        txtTensaoCompressaoX.Text = Format(madeiraSelecionada.Compressao.TensaoCompressaoX, "#0.0##;-#0.0##")
+        txtTensaoCompressaoY.Text = Format(madeiraSelecionada.Compressao.TensaoCompressaoY, "#0.0##;-#0.0##")
+
+        txtEsforçoFlexaoX.Text = Format(madeiraSelecionada.Compressao.TensaoMxd, "#0.0##;-#0.0##")
+        txtEsforçoFlexaoY.Text = Format(madeiraSelecionada.Compressao.TensaoMyd, "#0.0##;-#0.0##")
+
+        txtForçaElasticaX.Text = Format(madeiraSelecionada.Compressao.ForcaElasticaX, "#0.0##;-#0.0##")
+        txtForçaElasticaY.Text = Format(madeiraSelecionada.Compressao.ForcaElasticaY, "#0.0##;-#0.0##")
+
+        txtEaX.Text = Format(madeiraSelecionada.Compressao.EaX, "#0.0##;-#0.0##")
+        txtEaY.Text = Format(madeiraSelecionada.Compressao.EaY, "#0.0##;-#0.0##")
+
+        txtEdX.Text = Format(madeiraSelecionada.Compressao.Edx, "#0.0##;-#0.0##")
+        txtEdY.Text = Format(madeiraSelecionada.Compressao.Edy, "#0.0##;-#0.0##")
+
+        txtEiX.Text = Format(madeiraSelecionada.Compressao.EiX, "#0.0##;-#0.0##")
+        txtEiY.Text = Format(madeiraSelecionada.Compressao.EiY, "#0.0##;-#0.0##")
+
+        txtE1efX.Text = Format(madeiraSelecionada.Compressao.E1ef, "#0.0##;-#0.0##")
+        txtE1efY.Text = Format(madeiraSelecionada.Compressao.E1ef, "#0.0##;-#0.0##")
 
 
         If (madeiraSelecionada.Compressao.EsbeltezCompressaoX <= 40) Then
-            lblClassifEsbeltezX.Text = "PEÇA CURTA"
-        ElseIf (40 < madeiraSelecionada.Compressao.EsbeltezCompressaoX <= 80) Then
-            lblClassifEsbeltezX.Text = "PEÇA MEDIANAMENTE ESBELTA"
-        Else
-            lblClassifEsbeltezX.Text = "PEÇA ESBELTA"
+            lblClassifEsbeltezX.Text="PEÇA CURTA"
+                                                                  ElseIf (40 <madeiraSelecionada.Compressao.EsbeltezCompressaoX And madeiraSelecionada.Compressao.EsbeltezCompressaoX <= 80) Then
+            lblClassifEsbeltezX.Text="PEÇA MEDIANAMENTE ESBELTA"
+                                                                                                                                                                                          Else
+            lblClassifEsbeltezX.Text="PEÇA ESBELTA"
         End If
 
         If (madeiraSelecionada.Compressao.EsbeltezCompressaoY <= 40) Then
             lblClassifEsbeltezY.Text = "PEÇA CURTA"
-        ElseIf (40 < madeiraSelecionada.Compressao.EsbeltezCompressaoY <= 80) Then
+        ElseIf (40 < madeiraSelecionada.Compressao.EsbeltezCompressaoY And madeiraSelecionada.Compressao.EsbeltezCompressaoY <= 80) Then
             lblClassifEsbeltezY.Text = "PEÇA MEDIANAMENTE ESBELTA"
         Else
             lblClassifEsbeltezY.Text = "PEÇA ESBELTA"
@@ -543,9 +568,9 @@ Public Class Form1
             lblValidacaoXComp.Visible = True
             lblValidacaoXComp.ForeColor = Color.Green
         Else
-            lblValidacaoXComp.Text = "PASSOU NA VERIFICAÇÃO"
+            lblValidacaoXComp.Text = "NÃO PASSOU NA VERIFICAÇÃO"
             lblValidacaoXComp.Visible = True
-            lblValidacaoXComp.ForeColor = Color.Green
+            lblValidacaoXComp.ForeColor = Color.Red
         End If
 
         'VALIDAÇÃO COMPRESSÃO CURTA Y
@@ -555,9 +580,9 @@ Public Class Form1
             lblValidacaoYComp.Visible = True
             lblValidacaoYComp.ForeColor = Color.Green
         Else
-            lblValidacaoYComp.Text = "PASSOU NA VERIFICAÇÃO"
+            lblValidacaoYComp.Text = "NÃO PASSOU NA VERIFICAÇÃO"
             lblValidacaoYComp.Visible = True
-            lblValidacaoYComp.ForeColor = Color.Green
+            lblValidacaoYComp.ForeColor = Color.Red
         End If
 
         'VALIDAÇÃO COMPRESSAO MEDIANAMENTE ESBELTA E ESBELTA X
@@ -566,9 +591,9 @@ Public Class Form1
             lblValidacaoXComp.Visible = True
             lblValidacaoXComp.ForeColor = Color.Green
         Else
-            lblValidacaoXComp.Text = "PASSOU NA VERIFICAÇÃO"
+            lblValidacaoXComp.Text = "NÃO PASSOU NA VERIFICAÇÃO"
             lblValidacaoXComp.Visible = True
-            lblValidacaoXComp.ForeColor = Color.Green
+            lblValidacaoXComp.ForeColor = Color.Red
         End If
 
         'VALIDAÇÃO COMPRESSAO MEDIANAMENTE ESBELTA E ESBELTA Y
@@ -578,9 +603,9 @@ Public Class Form1
             lblValidacaoYComp.Visible = True
             lblValidacaoYComp.ForeColor = Color.Green
         Else
-            lblValidacaoYComp.Text = "PASSOU NA VERIFICAÇÃO"
+            lblValidacaoYComp.Text = "NÃO PASSOU NA VERIFICAÇÃO"
             lblValidacaoYComp.Visible = True
-            lblValidacaoYComp.ForeColor = Color.Green
+            lblValidacaoYComp.ForeColor = Color.Red
         End If
 
         'VALIDAÇÃO SEÇÃO COSTA PEÇAS SOLIDARIZADAS DESCONTÍNUAMENTE 
@@ -593,6 +618,11 @@ Public Class Form1
     Private Sub cisalhamento()
         txtTensaoCisalhanteX.Text = madeiraSelecionada.Cisalhamento.TensaoCisalhanteX
         txtTensaoCisalhanteY.Text = madeiraSelecionada.Cisalhamento.TensaoCisalhanteY
+        txtfv.Text = madeiraSelecionada.ResistenciaCalculo.resistCalculoAoCisalhamento
+
+        txtTensaoCisalhanteX.Text = Format(madeiraSelecionada.Cisalhamento.TensaoCisalhanteX, "#0.0##;-#0.0##")
+        txtTensaoCisalhanteY.Text = Format(madeiraSelecionada.Cisalhamento.TensaoCisalhanteY, "#0.0##;-#0.0##")
+        txtfv.Text = Format(madeiraSelecionada.ResistenciaCalculo.resistCalculoAoCisalhamento, "#0.0##;-#0.0##")
 
         'VALIDAÇÃO TENSÃO CISALHANTE X:
         If PropriedadesResistencia.validarTensaoCisalhanteX(madeiraSelecionada.Cisalhamento.TensaoCisalhanteX, madeiraSelecionada.ResistenciaCalculo.resistCalculoAoCisalhamento) Then
@@ -606,7 +636,7 @@ Public Class Form1
         End If
 
         'VALIDAÇÃO TENSÃO CISALHANTE Y:
-        If PropriedadesResistencia.validarTensaoCisalhanteY(madeiraSelecionada.Cisalhamento.TensaoCisalhanteX, madeiraSelecionada.ResistenciaCalculo.resistCalculoAoCisalhamento) Then
+        If PropriedadesResistencia.validarTensaoCisalhanteY(madeiraSelecionada.Cisalhamento.TensaoCisalhanteY, madeiraSelecionada.ResistenciaCalculo.resistCalculoAoCisalhamento) Then
             lblValidacaoCisalhanteY.Text = "PASSOU NA VERIFICAÇÃO"
             lblValidacaoCisalhanteY.Visible = True
             lblValidacaoCisalhanteY.ForeColor = Color.Green
@@ -620,12 +650,22 @@ Public Class Form1
 
     'FLEXÃO SIMPLES ====================================
     Private Sub flexaoSimples(tipoSecao As Madeira.TipoSecao)
+
+        txtftFlexo.Text = madeiraSelecionada.ResistenciaCalculo.resistCalculoTracaoParalela
+        txtfc.Text = madeiraSelecionada.ResistenciaCalculo.resistCalculoCompressaoParalela
+
         'reta
-        txtTensaoTx.Text = madeiraSelecionada.Flexao.tensaoFlexaoX
-        txtTensaoCy.Text = madeiraSelecionada.Flexao.tensaoFlexaoY
+        txtTensaoTx.Text = madeiraSelecionada.Flexao.tensaoTY
+        txtTensaoCy.Text = madeiraSelecionada.Flexao.tensaoCY
         'obliqua
         txtTensaoMx.Text = madeiraSelecionada.Flexao.tensaoFlexaoX
         txtTensaoMy.Text = madeiraSelecionada.Flexao.tensaoFlexaoY
+        'reta
+        txtTensaoTx.Text = Format(madeiraSelecionada.Flexao.tensaoTY, "#0.0##;-#0.0##")
+        txtTensaoCy.Text = Format(madeiraSelecionada.Flexao.tensaoCY, "#0.0##;-#0.0##")
+        'obliqua
+        txtTensaoMx.Text = Format(madeiraSelecionada.Flexao.tensaoFlexaoX, "#0.0##;-#0.0##")
+        txtTensaoMy.Text = Format(madeiraSelecionada.Flexao.tensaoFlexaoY, "#0.0##;-#0.0##")
 
         'VALIDAÇÃO FLEXÃO SIMPLES RETA X:
         If PropriedadesResistencia.validarTensaoFlexaoSimplesRetaX(madeiraSelecionada.Flexao.tensaoFlexaoX, madeiraSelecionada.ResistenciaCalculo.resistCalculoTracaoParalela) Then
@@ -671,6 +711,26 @@ Public Class Form1
             lblValidacaoFlexaoObliquaY.ForeColor = Color.Red
         End If
 
+
+        If rbtCompApoio.Checked Then
+            If PropriedadesResistencia.validarApoioX(madeiraSelecionada.Flexao.ApoioX, madeiraSelecionada.ResistenciaCalculo.resistCalculoCompressaoParalela) And
+               PropriedadesResistencia.validarApoioY(madeiraSelecionada.Flexao.ApoioY, madeiraSelecionada.ResistenciaCalculo.resistCalculoCompressaoParalela) Then
+                lblApoioX.Text = "PASSOU NA VERIFICAÇÃO"
+                lblApoioX.Visible = True
+                lblApoioX.ForeColor = Color.Green
+                lblApoioY.Text = "PASSOU NA VERIFICAÇÃO"
+                lblApoioY.Visible = True
+                lblApoioY.ForeColor = Color.Green
+            Else
+                lblApoioX.Text = "NÃO PASSOU NA VERIFICAÇÃO"
+                lblApoioX.Visible = True
+                lblApoioX.ForeColor = Color.Red
+                lblApoioY.Text = "NÃO PASSOU NA VERIFICAÇÃO"
+                lblApoioY.Visible = True
+                lblApoioY.ForeColor = Color.Red
+            End If
+        End If
+
     End Sub
 
     'FLEXÃO COMPOSTA ================================
@@ -681,6 +741,16 @@ Public Class Form1
         txtFlexoCompressao.Text = madeiraSelecionada.Compressao.TensaoCompressaoX 'OU Y POIS SÃO IGUAIS
         txtFlexoCompressaoMx.Text = madeiraSelecionada.Flexao.tensaoFlexaoX
         txtFlexoCompressaoMy.Text = madeiraSelecionada.Flexao.tensaoFlexaoY
+        txtftFlexo.Text = madeiraSelecionada.ResistenciaCalculo.resistCalculoTracaoParalela
+        txtfc.Text = madeiraSelecionada.ResistenciaCalculo.resistCalculoCompressaoParalela
+
+        txtFlexoTracao.Text = Format(madeiraSelecionada.Tracao.TensaoTracao, "#0.0##;-#0.0##")
+        txtFlexoTracaoMx.Text = Format(madeiraSelecionada.Flexao.tensaoFlexaoX, "#0.0##;-#0.0##")
+        txtFlexoTracaoMy.Text = Format(madeiraSelecionada.Flexao.tensaoFlexaoY, "#0.0##;-#0.0##")
+        txtFlexoCompressao.Text = Format(madeiraSelecionada.Compressao.TensaoCompressaoX, "#0.0##;-#0.0##") 'OU Y POIS SÃO IGUAIS
+        txtFlexoCompressaoMx.Text = Format(madeiraSelecionada.Flexao.tensaoFlexaoX, "#0.0##;-#0.0##")
+        txtFlexoCompressaoMy.Text = Format(madeiraSelecionada.Flexao.tensaoFlexaoY, "#0.0##;-#0.0##")
+
 
         'VALIDAÇÃO FLEXOTRAÇÃO X:
         If PropriedadesResistencia.validarTensaoFlexotracaoX(madeiraSelecionada.Tracao.TensaoTracao, madeiraSelecionada.Flexao.tensaoFlexaoX, madeiraSelecionada.Flexao.tensaoFlexaoY, madeiraSelecionada.ResistenciaCalculo.resistCalculoTracaoParalela, tipoSecao) Then
@@ -694,7 +764,7 @@ Public Class Form1
         End If
 
         'VALIDAÇÃO FLEXOTRAÇÃO Y:
-        If PropriedadesResistencia.validarTensaoFlexotracaoY(madeiraSelecionada.Tracao.TensaoTracao, madeiraSelecionada.Flexao.tensaoFlexaoX, madeiraSelecionada.Flexao.tensaoFlexaoY, madeiraSelecionada.ResistenciaCalculo.resistCalculoCompressaoParalela, tipoSecao) Then
+        If PropriedadesResistencia.validarTensaoFlexotracaoY(madeiraSelecionada.Tracao.TensaoTracao, madeiraSelecionada.Flexao.tensaoFlexaoX, madeiraSelecionada.Flexao.tensaoFlexaoY, madeiraSelecionada.ResistenciaCalculo.resistCalculoTracaoParalela, tipoSecao) Then
             lblValidacaoFlexoTracaoY.Text = "PASSOU NA VERIFICAÇÃO"
             lblValidacaoFlexoTracaoY.Visible = True
             lblValidacaoFlexoTracaoY.ForeColor = Color.Green
@@ -705,7 +775,7 @@ Public Class Form1
         End If
 
         'VALIDAÇÃO FLEXOCOMPRESSAO X:
-        If PropriedadesResistencia.validarTensaoFlexocompressaoX(madeiraSelecionada.Compressao.TensaoCompressaoX, madeiraSelecionada.Flexao.tensaoFlexaoX, madeiraSelecionada.Flexao.tensaoFlexaoY, madeiraSelecionada.ResistenciaCalculo.resistCalculoTracaoParalela, tipoSecao) Then
+        If PropriedadesResistencia.validarTensaoFlexocompressaoX(madeiraSelecionada.Compressao.TensaoCompressaoX, madeiraSelecionada.Flexao.tensaoFlexaoX, madeiraSelecionada.Flexao.tensaoFlexaoY, madeiraSelecionada.ResistenciaCalculo.resistCalculoCompressaoParalela, tipoSecao) Then
             lblValidacaoFlexoCompressaoX.Text = "PASSOU NA VERIFICAÇÃO"
             lblValidacaoFlexoCompressaoX.Visible = True
             lblValidacaoFlexoCompressaoX.ForeColor = Color.Green
@@ -716,7 +786,7 @@ Public Class Form1
         End If
 
         'VALIDAÇÃO FLEXOCOMPRESSAO Y:
-        If PropriedadesResistencia.validarTensaoFlexocompressaoY(madeiraSelecionada.Compressao.TensaoCompressaoY, madeiraSelecionada.Flexao.tensaoFlexaoX, madeiraSelecionada.Flexao.tensaoFlexaoY, madeiraSelecionada.ResistenciaCalculo.resistCalculoTracaoParalela, tipoSecao) Then
+        If PropriedadesResistencia.validarTensaoFlexocompressaoY(madeiraSelecionada.Compressao.TensaoCompressaoY, madeiraSelecionada.Flexao.tensaoFlexaoX, madeiraSelecionada.Flexao.tensaoFlexaoY, madeiraSelecionada.ResistenciaCalculo.resistCalculoCompressaoParalela, tipoSecao) Then
             lblValidacaoFlexoCompressaoY.Text = "PASSOU NA VERIFICAÇÃO"
             lblValidacaoFlexoCompressaoY.Visible = True
             lblValidacaoFlexoCompressaoY.ForeColor = Color.Green
@@ -726,8 +796,6 @@ Public Class Form1
             lblValidacaoFlexoCompressaoY.ForeColor = Color.Red
         End If
     End Sub
-
-
     Private Sub ResistCalculo()
         madeiraSelecionada.ResistenciaCalculo.resistCalculoCompressaoParalela = PropriedadesResistencia.resistCalCompParalela(kmod, madeiraSelecionada.ResistCompParalela)
         madeiraSelecionada.ResistenciaCalculo.resistCalculoTracaoParalela = PropriedadesResistencia.resistCalTracaoParalela(kmod, madeiraSelecionada.ResistTracaoParalela)
@@ -746,7 +814,28 @@ Public Class Form1
         txtMeTransversal.Text = Format(madeiraSelecionada.ResistenciaCalculo.moduloElasticidadeTransversal, "#0.000##;-#0.000##")
         txtDAparente.Text = Format(madeiraSelecionada.ResistenciaCalculo.densidadeAparente, "#0.0##;-#0.0##")
     End Sub
+    Private Sub ResultadoPropriedadesGeometricas(resultProprGeometricas As PropriedadesGeometricas)
+        txtAreaSecao.Text = resultProprGeometricas.Area
+        txtEixoXMomentoInercia.Text = resultProprGeometricas.EixoXmi
+        txtEixoXRaioGiracao.Text = resultProprGeometricas.EixoXrg
+        txtEixoXModuloResistencia.Text = resultProprGeometricas.EixoXmr
+        txtEixoXInerciaEfetiva.Text = resultProprGeometricas.EixoXie
+        txtEixoYMomentoInercia.Text = resultProprGeometricas.EixoYmi
+        txtEixoYRaioGiracao.Text = resultProprGeometricas.EixoYrg
+        txtEixoYModuloResistencia.Text = resultProprGeometricas.EixoYmr
+        txtEixoYInerciaEfetiva.Text = resultProprGeometricas.EixoYie
 
+        'FORMATANDO A QUANTIDADE DE CASAS DPS DA VIRGULA NOS TXT
+        txtAreaSecao.Text = Format(resultProprGeometricas.Area, "#0.0##;-#0.0##")
+        txtEixoXMomentoInercia.Text = Format(resultProprGeometricas.EixoXmi, "#0.0##;-#0.0##")
+        txtEixoXRaioGiracao.Text = Format(resultProprGeometricas.EixoXrg, "#0.0##;-#0.0##")
+        txtEixoXModuloResistencia.Text = Format(resultProprGeometricas.EixoXmr, "#0.0##;-#0.0##")
+        txtEixoXInerciaEfetiva.Text = Format(resultProprGeometricas.EixoXie, "#0.0##;-#0.0##")
+        txtEixoYMomentoInercia.Text = Format(resultProprGeometricas.EixoYmi, "#0.0##;-#0.0##")
+        txtEixoYRaioGiracao.Text = Format(resultProprGeometricas.EixoYrg, "#0.0##;-#0.0##")
+        txtEixoYModuloResistencia.Text = Format(resultProprGeometricas.EixoYmr, "#0.0##;-#0.0##")
+        txtEixoYInerciaEfetiva.Text = Format(resultProprGeometricas.EixoYie, "#0.0##;-#0.0##")
+    End Sub
 
     'DADOS INICIAIS QUE SÃO FECHADOS PRO USUARIO NÃO DIGITAR NADA 
     'SEÇÃO T----------------------------------------
@@ -771,7 +860,6 @@ Public Class Form1
     Private Sub txtEntradaIBf1_TextChanged(sender As Object, e As EventArgs) Handles txtEntradaIBf1.TextChanged
         txtEntradaIBf2.Text = txtEntradaIBf1.Text
     End Sub
-
 
     'SEÇÃO CAIXÃO----------------------------------------
     'ALTURAS:
@@ -799,7 +887,7 @@ Public Class Form1
         txtCaixaoComp.Text = PropriedadesResistencia.somaCaixaoComprimento(PropriedadesResistencia.verificaVazio(txtEntradaCaixaoB1.Text), PropriedadesResistencia.verificaVazio(txtEntradaCaixaoB2.Text), PropriedadesResistencia.verificaVazio(txtEntradaCaixaoB3.Text))
     End Sub
 
-
+    'ROTINA QUE TA BLOQUEANDO UM TAB (TRAÇÃO OU COMPRESSÃO) CASO ELE NAO SEJA SELECIONADO
     Private Sub cboTracaoCompressao_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboTracaoCompressao.SelectedIndexChanged
         TabTracao.Enabled = cboTracaoCompressao.SelectedIndex.CompareTo(1)
         TabCompressao.Enabled = cboTracaoCompressao.SelectedIndex.CompareTo(0)
@@ -817,37 +905,6 @@ Public Class Form1
         gbx3Elementos.Visible = rbt3Elementos.Checked
     End Sub
 
-    'não deu::::
-    Private Sub ExibirResultados()
-        Dim selectedResultados = rbtSecaoRetangular.Checked Or rbtSecaoCircular.Checked Or rbtSecaoT.Checked Or rbtSecaoI.Checked Or rbtSecaoCaixao.Checked
-        gbxResultadosSecao.Visible = rbtSecaoRetangular.Checked Or rbtSecaoCircular.Checked Or rbtSecaoT.Checked Or rbtSecaoI.Checked Or rbtSecaoCaixao.Checked
-        gbxResultadosSecao.Visible = rbt2Elementos.Checked Or rbt3Elementos.Checked
-
-    End Sub
-
-    'ROTINA PARA EXIBIR OS RESULTADOS DAS SEÇÕES SIMPLES E COMPOSTAS POR SOLIDARIZAÇÃO CONTÍNUA
-    Private Sub ResultadoPropriedadesGeometricas(resultProprGeometricas As PropriedadesGeometricas)
-        txtAreaSecao.Text = resultProprGeometricas.Area
-        txtEixoXMomentoInercia.Text = resultProprGeometricas.EixoXmi
-        txtEixoXRaioGiracao.Text = resultProprGeometricas.EixoXrg
-        txtEixoXModuloResistencia.Text = resultProprGeometricas.EixoXmr
-        txtEixoXInerciaEfetiva.Text = resultProprGeometricas.EixoXie
-        txtEixoYMomentoInercia.Text = resultProprGeometricas.EixoYmi
-        txtEixoYRaioGiracao.Text = resultProprGeometricas.EixoYrg
-        txtEixoYModuloResistencia.Text = resultProprGeometricas.EixoYmr
-        txtEixoYInerciaEfetiva.Text = resultProprGeometricas.EixoYie
-
-        'FORMATANDO A QUANTIDADE DE CASAS DPS DA VIRGULA NOS TXT
-        txtAreaSecao.Text = Format(resultProprGeometricas.Area, "#0.0##;-#0.0##")
-        txtEixoXMomentoInercia.Text = Format(resultProprGeometricas.EixoXmi, "#0.0##;-#0.0##")
-        txtEixoXRaioGiracao.Text = Format(resultProprGeometricas.EixoXrg, "#0.0##;-#0.0##")
-        txtEixoXModuloResistencia.Text = Format(resultProprGeometricas.EixoXmr, "#0.0##;-#0.0##")
-        txtEixoXInerciaEfetiva.Text = Format(resultProprGeometricas.EixoXie, "#0.0##;-#0.0##")
-        txtEixoYMomentoInercia.Text = Format(resultProprGeometricas.EixoYmi, "#0.0##;-#0.0##")
-        txtEixoYRaioGiracao.Text = Format(resultProprGeometricas.EixoYrg, "#0.0##;-#0.0##")
-        txtEixoYModuloResistencia.Text = Format(resultProprGeometricas.EixoYmr, "#0.0##;-#0.0##")
-        txtEixoYInerciaEfetiva.Text = Format(resultProprGeometricas.EixoYie, "#0.0##;-#0.0##")
-    End Sub
 
     'ROTINA PARA EXIBIR OS RESULTADOS DAS SEÇÕES SIMPLES E COMPOSTAS POR SOLIDARIZAÇÃO DESCONTÍNUA
     Private Sub ResultadoPropriedadesGeometricas23Elemento(resultProprGeometricas As PropriedadesGeometricas)
@@ -872,8 +929,6 @@ Public Class Form1
         txtInterpoIModuloResist.Text = Format(resultProprGeometricas.EixoYmr, "#0.0##;-#0.0##")
         txtInterpoEixoYInerciaEfetiva.Text = Format(resultProprGeometricas.EixoYie, "#0.0##;-#0.0##")
     End Sub
-
-
     'VALIDAÇÕES TXT PROPRIEDADES DA MADEIRA =========================================================================
     Private Sub txtResistCompParalela_Validated(sender As Object, e As EventArgs) Handles txtResistCompParalela.Validated
         If Validacao.ValidarDados(txtResistCompParalela, Validacao.TipoValidacao.RealDiferenteDeZero) Then
@@ -1039,17 +1094,6 @@ Public Class Form1
         form4Vinculacao.Show()
         PictureBox4.BackgroundImage = My.Resources.help
     End Sub
-    'ROTINA PARA APARECER AJUD AEM PEÇAS ESBELTAS
-    Private Sub gbxSolicExtCalc_Enter(sender As Object, e As EventArgs)
-        MessageBox.Show("Para peças esbeltas sujeitas à compressão, os esforços normais devem ser 
-                         inseridos em seu valor característico devidos às cargas permanentes (Ng,k)
-                         e variáveis (Nq,k), ou seja, sem as suas devidas combinações normativas")
-
-    End Sub
-    Private Sub PictureBox8_Click_1(sender As Object, e As EventArgs)
-        formFatorComb.Show()
-    End Sub
-
     'ROTINA PARA APARECER MANUAL DO SOFTWARES
     Private Sub AjudaToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles AjudaToolStripMenuItem1.Click
         formAjuda.Show()
@@ -1059,7 +1103,6 @@ Public Class Form1
         txtKmod.Enabled = True
         txtKmod.Focus()
     End Sub
-
     Private Sub PictureBox2_Click_1(sender As Object, e As EventArgs) Handles PictureBox2.Click
         MessageBox.Show("As exigências impostas ao dimensionamento de barras comprimidas sujeitas à instabilidade dependem de seu índice de esbeltez, definido para ambas as direções dos eixos principais de inércia da peça:
                         Peças Curta: λ≤40
@@ -1069,11 +1112,6 @@ Public Class Form1
     Private Sub PictureBox6_Click(sender As Object, e As EventArgs) Handles PictureBox6.Click
         MessageBox.Show(" A NBR 7190:1997 proíbe o emprego de peças cujo comprimento teórico de referência exceda 50 vezes a dimensão transversal correspondente a fim de evitar a ocorrência de estados limites de serviço. Tal disposição limita, portanto, o índice de esbeltez de peças simples ou compostas a um valor máximo de aproximadamente 173.")
     End Sub
-
-    Private Sub TabDadosIniciais_Click(sender As Object, e As EventArgs) Handles TabDadosIniciais.Click
-
-    End Sub
-
     'DEFINIÇÃO DA VINCULAÇÃO PARA ESFORÇOS DE COMPRESSÃO =========================
     Private Function vinculacao(l As Double) As Double
         Dim lvinculado As Double = 0
@@ -1105,8 +1143,12 @@ Public Class Form1
     Private Function coefInfluencia() As Double
         Dim coeficiente As Double = 0
 
-        'classe de umidade 1 e 2 e classe de carregamento permanente e longa duração:
-        If (cboKmod1.Text = "Permanente" Or cboKmod1.Text = "Longa Duração") And (cboKmod2.Text = "Classe (1)" Or cboKmod2.Text = "Classe (2)") Then
+        If (madeiraSelecionada.Compressao.EsbeltezCompressaoX <= 40) Then
+            coeficiente = 0
+        ElseIf (40 < madeiraSelecionada.Compressao.EsbeltezCompressaoX And madeiraSelecionada.Compressao.EsbeltezCompressaoX <= 80) Then
+            coeficiente = 0
+            'classe de umidade 1 e 2 e classe de carregamento permanente e longa duração:
+        ElseIf (cboKmod1.Text = "Permanente" Or cboKmod1.Text = "Longa Duração") And (cboKmod2.Text = "Classe (1)" Or cboKmod2.Text = "Classe (2)") Then
             coeficiente = 0.8
             'classe de umidade 3 e 4 e classe de carregamento permanente e longa duração:
         ElseIf (cboKmod1.Text = "Permanente" Or cboKmod1.Text = "Longa Duração") And (cboKmod2.Text = "Classe (3)" Or cboKmod2.Text = "Classe (4)") Then
@@ -1138,10 +1180,8 @@ Public Class Form1
 
     'CALCULANDO O CISALHAMENTO NOS ESPAÇADORES ===================
     Public Function cisalhamento_a1() As Double
-
         If rbt2Elementos.Checked Then
             Return PropriedadesResistencia.verificaVazio(txtEntrada2a1.Text)
-
         ElseIf rbt3Elementos.Checked Then
             Return PropriedadesResistencia.verificaVazio(txtEntrada3a1.Text)
         Else
@@ -1149,20 +1189,17 @@ Public Class Form1
         End If
     End Function
     Public Function cisalhamento_L1() As Double
-
         If rbt2Elementos.Checked Then
             Return PropriedadesResistencia.verificaVazio(txtEntrada2L1.Text)
-
         ElseIf rbt3Elementos.Checked Then
             Return PropriedadesResistencia.verificaVazio(txtEntrada3L1.Text)
         Else
             Return 0
         End If
     End Function
-
-    'rotina para chamar o comprimento de cada seção nas verificações
+    'rotina para chamar o comprimento de cada seção
+    'nas verificações
     Public Function comprimento() As Double
-
         If rbtSecaoRetangular.Checked Then
             Return PropriedadesResistencia.verificaVazio(txtEntradaRetangularL.Text)
 
@@ -1193,7 +1230,6 @@ Public Class Form1
 
         If rbtSecaoRetangular.Checked Then
             Return PropriedadesResistencia.verificaVazio(txtEntradaRetangularBx.Text)
-
         ElseIf rbtSecaoCircular.Checked Then
             Return PropriedadesResistencia.verificaVazio(txtEntradaCircularD.Text)
 
@@ -1269,6 +1305,19 @@ Public Class Form1
         End If
     End Function
 
+    Private Sub Form1_Activated(sender As Object, e As EventArgs) Handles MyBase.Activated
+        If voltou Then
+            voltou = False
+            Retorno()
+        End If
+    End Sub
+
+    Private Sub PictureBox7_Click(sender As Object, e As EventArgs) Handles PictureBox7.Click
+        MessageBox.Show("Peças submetidas à flexão, devem ter a região dos apoios verificadas devido ao fato de
+                        estarem sujeitas a aos esforços de compressão normal às fibras nas regiões dos apoios.")
+
+    End Sub
+
     'rotina para chamar o valor de L1 nos esforços de compressão
     Public Function l1entradaElementoJustaposto() As Double
 
@@ -1281,7 +1330,6 @@ Public Class Form1
             Return 0
         End If
     End Function
-
 
     'DEFINIÇÃO DO ELEMENTO DE FIXAÇÃO DO ESPAÇADOR DO PILAR COMPOSTO
     Public Function pilar() As PropriedadesGeometricas.Pilar

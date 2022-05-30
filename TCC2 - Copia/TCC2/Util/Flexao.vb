@@ -8,6 +8,8 @@
     Private _tensaoCY As Double = 0
     Private _tensaoTX As Double = 0
     Private _tensaoTY As Double = 0
+    Private _apoioX As Double = 0
+    Private _apoioY As Double = 0
     Public Sub New()
     End Sub
     Public Property tensaoFlexaoX() As Double
@@ -58,40 +60,71 @@
             _tensaoTY = value
         End Set
     End Property
+    Public Property ApoioX() As Double
+        Get
+            Return _apoioX
+        End Get
+        Set(value As Double)
+            _apoioX = value
+        End Set
+    End Property
+    Public Property ApoioY() As Double
+        Get
+            Return _apoioY
+        End Get
+        Set(value As Double)
+            _apoioY = value
+        End Set
+    End Property
 
-    Public Shared Function CalcTensaoFlexaoSimples(momentoFletorX As Double, momentoFletorY As Double, b As Double, h As Double, d As Double, proprGeo As PropriedadesGeometricas, tipoSecao As Madeira.TipoSecao) As Flexao
+    Public Shared Function CalcTensaoFlexaoSimples(momentoFletorX As Double, momentoFletorY As Double, b As Double, h As Double, d As Double, fx As Double, fy As Double, proprGeo As PropriedadesGeometricas, tipoSecao As Madeira.TipoSecao) As Flexao
         Dim flex = New Flexao()
 
         Select Case tipoSecao
             Case Madeira.TipoSecao.Retangular
-                flex.tensaoCX = ((momentoFletorY * 100) * (b / 2)) / proprGeo.EixoXmi
-                flex.tensaoTX = ((momentoFletorY * 100) * (b / 2)) / proprGeo.EixoXmi
-                flex.tensaoCY = ((momentoFletorX * 100) * (h / 2)) / proprGeo.EixoYmi
-                flex.tensaoTY = ((momentoFletorX * 100) * (h / 2)) / proprGeo.EixoYmi
+                flex.tensaoCX = (momentoFletorY * 100) / proprGeo.EixoXmr
+                flex.tensaoTX = (momentoFletorY * 100) / proprGeo.EixoXmr
+
+                flex.tensaoCY = (momentoFletorX * 100) / proprGeo.EixoXmr
+                flex.tensaoTY = (momentoFletorX * 100) / proprGeo.EixoXmr
+
+                flex.ApoioX = fx / proprGeo.Area
+                flex.ApoioY = fy / proprGeo.Area
 
             Case Madeira.TipoSecao.Circular
                 flex.tensaoCX = ((momentoFletorY * 100) * (d / 2)) / proprGeo.EixoXmi
                 flex.tensaoTX = ((momentoFletorY * 100) * (d / 2)) / proprGeo.EixoXmi
+
                 flex.tensaoCY = ((momentoFletorX * 100) * (d / 2)) / proprGeo.EixoYmi
                 flex.tensaoTY = ((momentoFletorX * 100) * (d / 2)) / proprGeo.EixoYmi
+
+                flex.ApoioX = fx / proprGeo.Area
+                flex.ApoioY = fy / proprGeo.Area
+
 
             Case Madeira.TipoSecao.SecaoT
                 flex.tensaoCX = ((momentoFletorY * 100) * PropriedadesGeometricas.centroGeometricoX) / proprGeo.EixoXmi
                 flex.tensaoTX = ((momentoFletorY * 100) * PropriedadesGeometricas.centroGeometricoX) / proprGeo.EixoYmi
+
                 flex.tensaoCY = ((momentoFletorX * 100) * PropriedadesGeometricas.centroGeometricoY) / proprGeo.EixoXmi
                 flex.tensaoTY = ((momentoFletorX * 100) * PropriedadesGeometricas.centroGeometricoY) / proprGeo.EixoYmi
 
             Case Madeira.TipoSecao.SecaoI
                 flex.tensaoCX = ((momentoFletorY * 100) * PropriedadesGeometricas.centroGeometricoX) / proprGeo.EixoXmi
                 flex.tensaoTX = ((momentoFletorY * 100) * PropriedadesGeometricas.centroGeometricoX) / proprGeo.EixoYmi
+
                 flex.tensaoCY = ((momentoFletorX * 100) * PropriedadesGeometricas.centroGeometricoY) / proprGeo.EixoXmi
                 flex.tensaoTY = ((momentoFletorX * 100) * PropriedadesGeometricas.centroGeometricoY) / proprGeo.EixoYmi
 
             Case Madeira.TipoSecao.Caixao
                 flex.tensaoCX = ((momentoFletorY * 100) * PropriedadesGeometricas.centroGeometricoX) / proprGeo.EixoXmi
                 flex.tensaoTX = ((momentoFletorY * 100) * PropriedadesGeometricas.centroGeometricoX) / proprGeo.EixoYmi
+
                 flex.tensaoCY = ((momentoFletorX * 100) * PropriedadesGeometricas.centroGeometricoY) / proprGeo.EixoXmi
                 flex.tensaoTY = ((momentoFletorX * 100) * PropriedadesGeometricas.centroGeometricoY) / proprGeo.EixoYmi
+
+                flex.ApoioX = fx / proprGeo.Area
+                flex.ApoioY = fy / proprGeo.Area
 
             Case Madeira.TipoSecao.ElementosJustaposto2
 
@@ -102,29 +135,45 @@
 
     End Function
 
-    Public Shared Function CalcTensaoFlexaoObliqua(momentoFletorX As Double, momentoFletorY As Double, b As Double, h As Double, d As Double, proprGeo As PropriedadesGeometricas, tipoSecao As Madeira.TipoSecao) As Flexao
+    Public Shared Function CalcTensaoFlexaoObliqua(momentoFletorX As Double, momentoFletorY As Double, b As Double, h As Double, d As Double, fx As Double, fy As Double, proprGeo As PropriedadesGeometricas, tipoSecao As Madeira.TipoSecao) As Flexao
         Dim flex = New Flexao()
 
         Select Case tipoSecao
             Case Madeira.TipoSecao.Retangular
-                flex.tensaoFlexaoX = ((momentoFletorY * 100) * (b / 2)) / proprGeo.EixoXmi
-                flex.tensaoFlexaoY = ((momentoFletorX * 100) * (h / 2)) / proprGeo.EixoYmi
+                flex.tensaoFlexaoX = (momentoFletorX * 100) / proprGeo.EixoXmr
+                flex.tensaoFlexaoY = (momentoFletorY * 100) / proprGeo.EixoYmr
+
+                flex.ApoioX = fx / proprGeo.Area
+                flex.ApoioY = fy / proprGeo.Area
 
             Case Madeira.TipoSecao.Circular
                 flex.tensaoFlexaoX = ((momentoFletorY * 100) * (d / 2)) / proprGeo.EixoXmi
                 flex.tensaoFlexaoY = ((momentoFletorX * 100) * (d / 2)) / proprGeo.EixoYmi
 
+                flex.ApoioX = fx / proprGeo.Area
+                flex.ApoioY = fy / proprGeo.Area
+
             Case Madeira.TipoSecao.SecaoT
-                flex.tensaoFlexaoX = ((momentoFletorY * 100) * PropriedadesGeometricas.centroGeometricoX) / proprGeo.EixoXmi
-                flex.tensaoFlexaoY = ((momentoFletorX * 100) * PropriedadesGeometricas.centroGeometricoY) / proprGeo.EixoYmi
+                flex.tensaoFlexaoX = ((momentoFletorY * 100) * PropriedadesGeometricas.centroGeometricoY) / proprGeo.EixoXmi
+                flex.tensaoFlexaoY = ((momentoFletorX * 100) * PropriedadesGeometricas.centroGeometricoX) / proprGeo.EixoYmi
+
+                flex.ApoioX = fx / proprGeo.Area
+                flex.ApoioY = fy / proprGeo.Area
+
 
             Case Madeira.TipoSecao.SecaoI
-                flex.tensaoFlexaoX = ((momentoFletorY * 100) * PropriedadesGeometricas.centroGeometricoX) / proprGeo.EixoXmi
-                flex.tensaoFlexaoY = ((momentoFletorX * 100) * PropriedadesGeometricas.centroGeometricoY) / proprGeo.EixoYmi
+                flex.tensaoFlexaoX = ((momentoFletorY * 100) * PropriedadesGeometricas.centroGeometricoY) / proprGeo.EixoXmi
+                flex.tensaoFlexaoY = ((momentoFletorX * 100) * PropriedadesGeometricas.centroGeometricoX) / proprGeo.EixoYmi
+
+                flex.ApoioX = fx / proprGeo.Area
+                flex.ApoioY = fy / proprGeo.Area
 
             Case Madeira.TipoSecao.Caixao
-                flex.tensaoFlexaoX = ((momentoFletorY * 100) * PropriedadesGeometricas.centroGeometricoX) / proprGeo.EixoXmi
-                flex.tensaoFlexaoY = ((momentoFletorX * 100) * PropriedadesGeometricas.centroGeometricoY) / proprGeo.EixoYmi
+                flex.tensaoFlexaoX = ((momentoFletorY * 100) * PropriedadesGeometricas.centroGeometricoY) / proprGeo.EixoXmi
+                flex.tensaoFlexaoY = ((momentoFletorX * 100) * PropriedadesGeometricas.centroGeometricoX) / proprGeo.EixoYmi
+
+                flex.ApoioX = fx / proprGeo.Area
+                flex.ApoioY = fy / proprGeo.Area
 
             Case Madeira.TipoSecao.ElementosJustaposto2
 
@@ -149,17 +198,18 @@
                 flex.tensaoFlexaoX = ((momentoFletorY * 100) * (d / 2)) / proprGeo.EixoXmi
                 flex.tensaoFlexaoY = ((momentoFletorX * 100) * (d / 2)) / proprGeo.EixoYmi
 
+
             Case Madeira.TipoSecao.SecaoT
-                flex.tensaoFlexaoX = ((momentoFletorY * 100) * PropriedadesGeometricas.centroGeometricoX) / proprGeo.EixoXmi
-                flex.tensaoFlexaoY = ((momentoFletorX * 100) * PropriedadesGeometricas.centroGeometricoY) / proprGeo.EixoYmi
+                flex.tensaoFlexaoX = ((momentoFletorY * 100) * PropriedadesGeometricas.centroGeometricoY) / proprGeo.EixoXmi
+                flex.tensaoFlexaoY = ((momentoFletorX * 100) * PropriedadesGeometricas.centroGeometricoX) / proprGeo.EixoYmi
 
             Case Madeira.TipoSecao.SecaoI
-                flex.tensaoFlexaoX = ((momentoFletorY * 100) * PropriedadesGeometricas.centroGeometricoX) / proprGeo.EixoXmi
-                flex.tensaoFlexaoY = ((momentoFletorX * 100) * PropriedadesGeometricas.centroGeometricoY) / proprGeo.EixoYmi
+                flex.tensaoFlexaoX = ((momentoFletorY * 100) * PropriedadesGeometricas.centroGeometricoY) / proprGeo.EixoXmi
+                flex.tensaoFlexaoY = ((momentoFletorX * 100) * PropriedadesGeometricas.centroGeometricoX) / proprGeo.EixoYmi
 
             Case Madeira.TipoSecao.Caixao
-                flex.tensaoFlexaoX = ((momentoFletorY * 100) * PropriedadesGeometricas.centroGeometricoX) / proprGeo.EixoXmi
-                flex.tensaoFlexaoY = ((momentoFletorX * 100) * PropriedadesGeometricas.centroGeometricoY) / proprGeo.EixoYmi
+                flex.tensaoFlexaoX = ((momentoFletorY * 100) * PropriedadesGeometricas.centroGeometricoY) / proprGeo.EixoXmi
+                flex.tensaoFlexaoY = ((momentoFletorX * 100) * PropriedadesGeometricas.centroGeometricoX) / proprGeo.EixoYmi
 
             Case Madeira.TipoSecao.ElementosJustaposto2
                 flex.tensaoFlexaoX = 0
@@ -187,16 +237,16 @@
                 flex.tensaoFlexaoY = ((momentoFletorX * 100) * (d / 2)) / proprGeo.EixoYmi
 
             Case Madeira.TipoSecao.SecaoT
-                flex.tensaoFlexaoX = ((momentoFletorY * 100) * PropriedadesGeometricas.centroGeometricoX) / proprGeo.EixoXmi
-                flex.tensaoFlexaoY = ((momentoFletorX * 100) * PropriedadesGeometricas.centroGeometricoY) / proprGeo.EixoYmi
+                flex.tensaoFlexaoX = ((momentoFletorY * 100) * PropriedadesGeometricas.centroGeometricoY) / proprGeo.EixoXmi
+                flex.tensaoFlexaoY = ((momentoFletorX * 100) * PropriedadesGeometricas.centroGeometricoX) / proprGeo.EixoYmi
 
             Case Madeira.TipoSecao.SecaoI
-                flex.tensaoFlexaoX = ((momentoFletorY * 100) * PropriedadesGeometricas.centroGeometricoX) / proprGeo.EixoXmi
-                flex.tensaoFlexaoY = ((momentoFletorX * 100) * PropriedadesGeometricas.centroGeometricoY) / proprGeo.EixoYmi
+                flex.tensaoFlexaoX = ((momentoFletorY * 100) * PropriedadesGeometricas.centroGeometricoY) / proprGeo.EixoXmi
+                flex.tensaoFlexaoY = ((momentoFletorX * 100) * PropriedadesGeometricas.centroGeometricoX) / proprGeo.EixoYmi
 
             Case Madeira.TipoSecao.Caixao
-                flex.tensaoFlexaoX = ((momentoFletorY * 100) * PropriedadesGeometricas.centroGeometricoX) / proprGeo.EixoXmi
-                flex.tensaoFlexaoY = ((momentoFletorX * 100) * PropriedadesGeometricas.centroGeometricoY) / proprGeo.EixoYmi
+                flex.tensaoFlexaoX = ((momentoFletorY * 100) * PropriedadesGeometricas.centroGeometricoY) / proprGeo.EixoXmi
+                flex.tensaoFlexaoY = ((momentoFletorX * 100) * PropriedadesGeometricas.centroGeometricoX) / proprGeo.EixoYmi
 
             Case Madeira.TipoSecao.ElementosJustaposto2
                 flex.tensaoFlexaoX = 0

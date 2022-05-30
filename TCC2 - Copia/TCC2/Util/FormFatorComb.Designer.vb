@@ -31,42 +31,31 @@ Partial Class FormFatorComb
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
-        Me.Label10 = New System.Windows.Forms.Label()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.TableLayoutPanel5 = New System.Windows.Forms.TableLayoutPanel()
         Me.Label37 = New System.Windows.Forms.Label()
         Me.Label36 = New System.Windows.Forms.Label()
-        Me.Label29 = New System.Windows.Forms.Label()
         Me.Label46 = New System.Windows.Forms.Label()
         Me.Label45 = New System.Windows.Forms.Label()
-        Me.Label44 = New System.Windows.Forms.Label()
         Me.Label43 = New System.Windows.Forms.Label()
         Me.Label42 = New System.Windows.Forms.Label()
-        Me.Label41 = New System.Windows.Forms.Label()
         Me.Label40 = New System.Windows.Forms.Label()
         Me.Label39 = New System.Windows.Forms.Label()
-        Me.Label38 = New System.Windows.Forms.Label()
         Me.Label32 = New System.Windows.Forms.Label()
         Me.Label31 = New System.Windows.Forms.Label()
-        Me.Label30 = New System.Windows.Forms.Label()
         Me.Label22 = New System.Windows.Forms.Label()
         Me.Label21 = New System.Windows.Forms.Label()
-        Me.Label20 = New System.Windows.Forms.Label()
         Me.Label19 = New System.Windows.Forms.Label()
         Me.Label18 = New System.Windows.Forms.Label()
         Me.Label14 = New System.Windows.Forms.Label()
         Me.Label13 = New System.Windows.Forms.Label()
-        Me.Label17 = New System.Windows.Forms.Label()
-        Me.Label23 = New System.Windows.Forms.Label()
-        Me.Label24 = New System.Windows.Forms.Label()
         Me.Label25 = New System.Windows.Forms.Label()
         Me.Label26 = New System.Windows.Forms.Label()
         Me.Label27 = New System.Windows.Forms.Label()
         Me.Label28 = New System.Windows.Forms.Label()
         Me.Label35 = New System.Windows.Forms.Label()
         Me.Label34 = New System.Windows.Forms.Label()
-        Me.Label33 = New System.Windows.Forms.Label()
         Me.Label15 = New System.Windows.Forms.Label()
         Me.Label16 = New System.Windows.Forms.Label()
         Me.TableLayoutPanel5.SuspendLayout()
@@ -76,7 +65,7 @@ Partial Class FormFatorComb
         '
         Me.Label1.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(116, 3)
+        Me.Label1.Location = New System.Drawing.Point(149, 3)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(217, 20)
         Me.Label1.TabIndex = 0
@@ -86,9 +75,9 @@ Partial Class FormFatorComb
         '
         Me.Label2.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(4, 27)
+        Me.Label2.Location = New System.Drawing.Point(4, 35)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(429, 37)
+        Me.Label2.Size = New System.Drawing.Size(461, 20)
         Me.Label2.TabIndex = 1
         Me.Label2.Text = "Variações uniformes de temperatura em relação à média anual local"
         '
@@ -108,7 +97,7 @@ Partial Class FormFatorComb
         Me.Label4.AutoSize = True
         Me.Label4.Location = New System.Drawing.Point(4, 132)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(440, 40)
+        Me.Label4.Size = New System.Drawing.Size(482, 40)
         Me.Label4.TabIndex = 3
         Me.Label4.Text = "Locais em que não há predominância de pesos de equipamentos fixos, nem de elevada" &
     "s concentrações de pessoas"
@@ -119,7 +108,7 @@ Partial Class FormFatorComb
         Me.Label5.AutoSize = True
         Me.Label5.Location = New System.Drawing.Point(4, 177)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(415, 40)
+        Me.Label5.Size = New System.Drawing.Size(507, 40)
         Me.Label5.TabIndex = 4
         Me.Label5.Text = "Locais em que há predominância de pesos de equipamentos fixos, nem de elevadas co" &
     "ncentrações de pessoas"
@@ -164,23 +153,12 @@ Partial Class FormFatorComb
         Me.Label9.TabIndex = 6
         Me.Label9.Text = "Pontes ferroviárias (ferrovias não especializadas)"
         '
-        'Label10
-        '
-        Me.Label10.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.Label10.AutoSize = True
-        Me.Label10.Font = New System.Drawing.Font("Symbol", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label10.Location = New System.Drawing.Point(468, 4)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(27, 19)
-        Me.Label10.TabIndex = 4
-        Me.Label10.Text = "y0"
-        '
         'Label11
         '
         Me.Label11.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label11.AutoSize = True
         Me.Label11.Font = New System.Drawing.Font("Symbol", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label11.Location = New System.Drawing.Point(534, 4)
+        Me.Label11.Location = New System.Drawing.Point(533, 4)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(27, 19)
         Me.Label11.TabIndex = 5
@@ -191,7 +169,7 @@ Partial Class FormFatorComb
         Me.Label12.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label12.AutoSize = True
         Me.Label12.Font = New System.Drawing.Font("Symbol", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label12.Location = New System.Drawing.Point(599, 4)
+        Me.Label12.Location = New System.Drawing.Point(598, 4)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(27, 19)
         Me.Label12.TabIndex = 6
@@ -201,31 +179,25 @@ Partial Class FormFatorComb
         '
         Me.TableLayoutPanel5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.TableLayoutPanel5.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.[Single]
-        Me.TableLayoutPanel5.ColumnCount = 4
-        Me.TableLayoutPanel5.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 87.14011!))
-        Me.TableLayoutPanel5.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.85989!))
+        Me.TableLayoutPanel5.ColumnCount = 3
+        Me.TableLayoutPanel5.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
         Me.TableLayoutPanel5.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 64.0!))
-        Me.TableLayoutPanel5.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 62.0!))
-        Me.TableLayoutPanel5.Controls.Add(Me.Label37, 3, 6)
-        Me.TableLayoutPanel5.Controls.Add(Me.Label36, 2, 6)
-        Me.TableLayoutPanel5.Controls.Add(Me.Label29, 1, 6)
-        Me.TableLayoutPanel5.Controls.Add(Me.Label46, 3, 10)
-        Me.TableLayoutPanel5.Controls.Add(Me.Label45, 2, 10)
-        Me.TableLayoutPanel5.Controls.Add(Me.Label44, 1, 10)
-        Me.TableLayoutPanel5.Controls.Add(Me.Label43, 3, 9)
-        Me.TableLayoutPanel5.Controls.Add(Me.Label42, 2, 9)
-        Me.TableLayoutPanel5.Controls.Add(Me.Label41, 1, 9)
-        Me.TableLayoutPanel5.Controls.Add(Me.Label40, 3, 8)
-        Me.TableLayoutPanel5.Controls.Add(Me.Label39, 2, 8)
-        Me.TableLayoutPanel5.Controls.Add(Me.Label38, 1, 8)
-        Me.TableLayoutPanel5.Controls.Add(Me.Label32, 3, 3)
-        Me.TableLayoutPanel5.Controls.Add(Me.Label31, 2, 3)
-        Me.TableLayoutPanel5.Controls.Add(Me.Label30, 1, 3)
-        Me.TableLayoutPanel5.Controls.Add(Me.Label22, 3, 2)
-        Me.TableLayoutPanel5.Controls.Add(Me.Label21, 2, 2)
-        Me.TableLayoutPanel5.Controls.Add(Me.Label20, 1, 2)
-        Me.TableLayoutPanel5.Controls.Add(Me.Label19, 3, 1)
-        Me.TableLayoutPanel5.Controls.Add(Me.Label18, 2, 1)
+        Me.TableLayoutPanel5.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 64.0!))
+        Me.TableLayoutPanel5.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
+        Me.TableLayoutPanel5.Controls.Add(Me.Label37, 2, 6)
+        Me.TableLayoutPanel5.Controls.Add(Me.Label36, 1, 6)
+        Me.TableLayoutPanel5.Controls.Add(Me.Label46, 2, 10)
+        Me.TableLayoutPanel5.Controls.Add(Me.Label45, 1, 10)
+        Me.TableLayoutPanel5.Controls.Add(Me.Label43, 2, 9)
+        Me.TableLayoutPanel5.Controls.Add(Me.Label42, 1, 9)
+        Me.TableLayoutPanel5.Controls.Add(Me.Label40, 2, 8)
+        Me.TableLayoutPanel5.Controls.Add(Me.Label39, 1, 8)
+        Me.TableLayoutPanel5.Controls.Add(Me.Label32, 2, 3)
+        Me.TableLayoutPanel5.Controls.Add(Me.Label31, 1, 3)
+        Me.TableLayoutPanel5.Controls.Add(Me.Label22, 2, 2)
+        Me.TableLayoutPanel5.Controls.Add(Me.Label21, 1, 2)
+        Me.TableLayoutPanel5.Controls.Add(Me.Label19, 2, 1)
+        Me.TableLayoutPanel5.Controls.Add(Me.Label18, 1, 1)
         Me.TableLayoutPanel5.Controls.Add(Me.Label14, 0, 7)
         Me.TableLayoutPanel5.Controls.Add(Me.Label9, 0, 10)
         Me.TableLayoutPanel5.Controls.Add(Me.Label6, 0, 6)
@@ -233,23 +205,18 @@ Partial Class FormFatorComb
         Me.TableLayoutPanel5.Controls.Add(Me.Label7, 0, 8)
         Me.TableLayoutPanel5.Controls.Add(Me.Label3, 0, 2)
         Me.TableLayoutPanel5.Controls.Add(Me.Label2, 0, 1)
-        Me.TableLayoutPanel5.Controls.Add(Me.Label12, 3, 0)
+        Me.TableLayoutPanel5.Controls.Add(Me.Label12, 2, 0)
         Me.TableLayoutPanel5.Controls.Add(Me.Label1, 0, 0)
-        Me.TableLayoutPanel5.Controls.Add(Me.Label11, 2, 0)
-        Me.TableLayoutPanel5.Controls.Add(Me.Label10, 1, 0)
         Me.TableLayoutPanel5.Controls.Add(Me.Label5, 0, 5)
         Me.TableLayoutPanel5.Controls.Add(Me.Label13, 0, 3)
         Me.TableLayoutPanel5.Controls.Add(Me.Label4, 0, 4)
-        Me.TableLayoutPanel5.Controls.Add(Me.Label17, 1, 1)
-        Me.TableLayoutPanel5.Controls.Add(Me.Label23, 1, 4)
-        Me.TableLayoutPanel5.Controls.Add(Me.Label24, 1, 5)
-        Me.TableLayoutPanel5.Controls.Add(Me.Label25, 2, 5)
-        Me.TableLayoutPanel5.Controls.Add(Me.Label26, 2, 4)
-        Me.TableLayoutPanel5.Controls.Add(Me.Label27, 3, 4)
-        Me.TableLayoutPanel5.Controls.Add(Me.Label28, 3, 5)
-        Me.TableLayoutPanel5.Controls.Add(Me.Label35, 3, 7)
-        Me.TableLayoutPanel5.Controls.Add(Me.Label34, 2, 7)
-        Me.TableLayoutPanel5.Controls.Add(Me.Label33, 1, 7)
+        Me.TableLayoutPanel5.Controls.Add(Me.Label25, 1, 5)
+        Me.TableLayoutPanel5.Controls.Add(Me.Label26, 1, 4)
+        Me.TableLayoutPanel5.Controls.Add(Me.Label27, 2, 4)
+        Me.TableLayoutPanel5.Controls.Add(Me.Label28, 2, 5)
+        Me.TableLayoutPanel5.Controls.Add(Me.Label35, 2, 7)
+        Me.TableLayoutPanel5.Controls.Add(Me.Label34, 1, 7)
+        Me.TableLayoutPanel5.Controls.Add(Me.Label11, 1, 0)
         Me.TableLayoutPanel5.Location = New System.Drawing.Point(12, 39)
         Me.TableLayoutPanel5.Name = "TableLayoutPanel5"
         Me.TableLayoutPanel5.RowCount = 11
@@ -269,9 +236,9 @@ Partial Class FormFatorComb
         '
         'Label37
         '
-        Me.Label37.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.Label37.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label37.AutoSize = True
-        Me.Label37.Location = New System.Drawing.Point(584, 223)
+        Me.Label37.Location = New System.Drawing.Point(598, 223)
         Me.Label37.Name = "Label37"
         Me.Label37.Size = New System.Drawing.Size(28, 20)
         Me.Label37.TabIndex = 39
@@ -279,29 +246,19 @@ Partial Class FormFatorComb
         '
         'Label36
         '
-        Me.Label36.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.Label36.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label36.AutoSize = True
-        Me.Label36.Location = New System.Drawing.Point(519, 223)
+        Me.Label36.Location = New System.Drawing.Point(533, 223)
         Me.Label36.Name = "Label36"
         Me.Label36.Size = New System.Drawing.Size(28, 20)
         Me.Label36.TabIndex = 38
         Me.Label36.Text = "0,7"
         '
-        'Label29
-        '
-        Me.Label29.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.Label29.AutoSize = True
-        Me.Label29.Location = New System.Drawing.Point(452, 223)
-        Me.Label29.Name = "Label29"
-        Me.Label29.Size = New System.Drawing.Size(28, 20)
-        Me.Label29.TabIndex = 37
-        Me.Label29.Text = "0,8"
-        '
         'Label46
         '
-        Me.Label46.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.Label46.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label46.AutoSize = True
-        Me.Label46.Location = New System.Drawing.Point(584, 340)
+        Me.Label46.Location = New System.Drawing.Point(595, 340)
         Me.Label46.Name = "Label46"
         Me.Label46.Size = New System.Drawing.Size(33, 20)
         Me.Label46.TabIndex = 36
@@ -309,29 +266,19 @@ Partial Class FormFatorComb
         '
         'Label45
         '
-        Me.Label45.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.Label45.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label45.AutoSize = True
-        Me.Label45.Location = New System.Drawing.Point(519, 340)
+        Me.Label45.Location = New System.Drawing.Point(533, 340)
         Me.Label45.Name = "Label45"
         Me.Label45.Size = New System.Drawing.Size(28, 20)
         Me.Label45.TabIndex = 35
         Me.Label45.Text = "0,6"
         '
-        'Label44
-        '
-        Me.Label44.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.Label44.AutoSize = True
-        Me.Label44.Location = New System.Drawing.Point(452, 340)
-        Me.Label44.Name = "Label44"
-        Me.Label44.Size = New System.Drawing.Size(28, 20)
-        Me.Label44.TabIndex = 34
-        Me.Label44.Text = "0,8"
-        '
         'Label43
         '
-        Me.Label43.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.Label43.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label43.AutoSize = True
-        Me.Label43.Location = New System.Drawing.Point(584, 311)
+        Me.Label43.Location = New System.Drawing.Point(595, 311)
         Me.Label43.Name = "Label43"
         Me.Label43.Size = New System.Drawing.Size(33, 20)
         Me.Label43.TabIndex = 33
@@ -339,29 +286,19 @@ Partial Class FormFatorComb
         '
         'Label42
         '
-        Me.Label42.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.Label42.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label42.AutoSize = True
-        Me.Label42.Location = New System.Drawing.Point(519, 311)
+        Me.Label42.Location = New System.Drawing.Point(533, 311)
         Me.Label42.Name = "Label42"
         Me.Label42.Size = New System.Drawing.Size(28, 20)
         Me.Label42.TabIndex = 32
         Me.Label42.Text = "0,4"
         '
-        'Label41
-        '
-        Me.Label41.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.Label41.AutoSize = True
-        Me.Label41.Location = New System.Drawing.Point(452, 311)
-        Me.Label41.Name = "Label41"
-        Me.Label41.Size = New System.Drawing.Size(28, 20)
-        Me.Label41.TabIndex = 31
-        Me.Label41.Text = "0,6"
-        '
         'Label40
         '
-        Me.Label40.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.Label40.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label40.AutoSize = True
-        Me.Label40.Location = New System.Drawing.Point(584, 285)
+        Me.Label40.Location = New System.Drawing.Point(595, 285)
         Me.Label40.Name = "Label40"
         Me.Label40.Size = New System.Drawing.Size(33, 20)
         Me.Label40.TabIndex = 30
@@ -369,30 +306,20 @@ Partial Class FormFatorComb
         '
         'Label39
         '
-        Me.Label39.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.Label39.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label39.AutoSize = True
-        Me.Label39.Location = New System.Drawing.Point(519, 285)
+        Me.Label39.Location = New System.Drawing.Point(533, 285)
         Me.Label39.Name = "Label39"
         Me.Label39.Size = New System.Drawing.Size(28, 20)
         Me.Label39.TabIndex = 29
         Me.Label39.Text = "0,3"
-        '
-        'Label38
-        '
-        Me.Label38.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.Label38.AutoSize = True
-        Me.Label38.Location = New System.Drawing.Point(452, 285)
-        Me.Label38.Name = "Label38"
-        Me.Label38.Size = New System.Drawing.Size(28, 20)
-        Me.Label38.TabIndex = 28
-        Me.Label38.Text = "0,4"
         '
         'Label32
         '
         Me.Label32.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label32.AutoSize = True
         Me.Label32.Font = New System.Drawing.Font("Symbol", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label32.Location = New System.Drawing.Point(599, 104)
+        Me.Label32.Location = New System.Drawing.Point(598, 104)
         Me.Label32.Name = "Label32"
         Me.Label32.Size = New System.Drawing.Size(27, 19)
         Me.Label32.TabIndex = 22
@@ -403,28 +330,17 @@ Partial Class FormFatorComb
         Me.Label31.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label31.AutoSize = True
         Me.Label31.Font = New System.Drawing.Font("Symbol", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label31.Location = New System.Drawing.Point(534, 104)
+        Me.Label31.Location = New System.Drawing.Point(533, 104)
         Me.Label31.Name = "Label31"
         Me.Label31.Size = New System.Drawing.Size(27, 19)
         Me.Label31.TabIndex = 21
         Me.Label31.Text = "y1"
         '
-        'Label30
-        '
-        Me.Label30.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.Label30.AutoSize = True
-        Me.Label30.Font = New System.Drawing.Font("Symbol", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label30.Location = New System.Drawing.Point(468, 104)
-        Me.Label30.Name = "Label30"
-        Me.Label30.Size = New System.Drawing.Size(27, 19)
-        Me.Label30.TabIndex = 20
-        Me.Label30.Text = "y0"
-        '
         'Label22
         '
-        Me.Label22.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.Label22.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label22.AutoSize = True
-        Me.Label22.Location = New System.Drawing.Point(584, 71)
+        Me.Label22.Location = New System.Drawing.Point(603, 71)
         Me.Label22.Name = "Label22"
         Me.Label22.Size = New System.Drawing.Size(17, 20)
         Me.Label22.TabIndex = 12
@@ -432,29 +348,19 @@ Partial Class FormFatorComb
         '
         'Label21
         '
-        Me.Label21.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.Label21.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label21.AutoSize = True
-        Me.Label21.Location = New System.Drawing.Point(519, 71)
+        Me.Label21.Location = New System.Drawing.Point(533, 71)
         Me.Label21.Name = "Label21"
         Me.Label21.Size = New System.Drawing.Size(28, 20)
         Me.Label21.TabIndex = 11
         Me.Label21.Text = "0,2"
         '
-        'Label20
-        '
-        Me.Label20.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.Label20.AutoSize = True
-        Me.Label20.Location = New System.Drawing.Point(452, 71)
-        Me.Label20.Name = "Label20"
-        Me.Label20.Size = New System.Drawing.Size(28, 20)
-        Me.Label20.TabIndex = 10
-        Me.Label20.Text = "0,5"
-        '
         'Label19
         '
-        Me.Label19.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.Label19.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label19.AutoSize = True
-        Me.Label19.Location = New System.Drawing.Point(584, 35)
+        Me.Label19.Location = New System.Drawing.Point(598, 35)
         Me.Label19.Name = "Label19"
         Me.Label19.Size = New System.Drawing.Size(28, 20)
         Me.Label19.TabIndex = 9
@@ -462,9 +368,9 @@ Partial Class FormFatorComb
         '
         'Label18
         '
-        Me.Label18.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.Label18.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label18.AutoSize = True
-        Me.Label18.Location = New System.Drawing.Point(519, 35)
+        Me.Label18.Location = New System.Drawing.Point(533, 35)
         Me.Label18.Name = "Label18"
         Me.Label18.Size = New System.Drawing.Size(28, 20)
         Me.Label18.TabIndex = 8
@@ -474,7 +380,7 @@ Partial Class FormFatorComb
         '
         Me.Label14.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label14.AutoSize = True
-        Me.Label14.Location = New System.Drawing.Point(88, 253)
+        Me.Label14.Location = New System.Drawing.Point(121, 253)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(272, 20)
         Me.Label14.TabIndex = 5
@@ -484,47 +390,17 @@ Partial Class FormFatorComb
         '
         Me.Label13.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label13.AutoSize = True
-        Me.Label13.Location = New System.Drawing.Point(117, 104)
+        Me.Label13.Location = New System.Drawing.Point(150, 104)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(215, 20)
         Me.Label13.TabIndex = 5
         Me.Label13.Text = "Cargas Acidentais dos Edifícios"
         '
-        'Label17
-        '
-        Me.Label17.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.Label17.AutoSize = True
-        Me.Label17.Location = New System.Drawing.Point(452, 35)
-        Me.Label17.Name = "Label17"
-        Me.Label17.Size = New System.Drawing.Size(28, 20)
-        Me.Label17.TabIndex = 7
-        Me.Label17.Text = "0,6"
-        '
-        'Label23
-        '
-        Me.Label23.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.Label23.AutoSize = True
-        Me.Label23.Location = New System.Drawing.Point(452, 142)
-        Me.Label23.Name = "Label23"
-        Me.Label23.Size = New System.Drawing.Size(28, 20)
-        Me.Label23.TabIndex = 13
-        Me.Label23.Text = "0,4"
-        '
-        'Label24
-        '
-        Me.Label24.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.Label24.AutoSize = True
-        Me.Label24.Location = New System.Drawing.Point(452, 187)
-        Me.Label24.Name = "Label24"
-        Me.Label24.Size = New System.Drawing.Size(28, 20)
-        Me.Label24.TabIndex = 14
-        Me.Label24.Text = "0,7"
-        '
         'Label25
         '
-        Me.Label25.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.Label25.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label25.AutoSize = True
-        Me.Label25.Location = New System.Drawing.Point(519, 187)
+        Me.Label25.Location = New System.Drawing.Point(533, 187)
         Me.Label25.Name = "Label25"
         Me.Label25.Size = New System.Drawing.Size(28, 20)
         Me.Label25.TabIndex = 15
@@ -532,9 +408,9 @@ Partial Class FormFatorComb
         '
         'Label26
         '
-        Me.Label26.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.Label26.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label26.AutoSize = True
-        Me.Label26.Location = New System.Drawing.Point(519, 142)
+        Me.Label26.Location = New System.Drawing.Point(533, 142)
         Me.Label26.Name = "Label26"
         Me.Label26.Size = New System.Drawing.Size(28, 20)
         Me.Label26.TabIndex = 16
@@ -542,9 +418,9 @@ Partial Class FormFatorComb
         '
         'Label27
         '
-        Me.Label27.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.Label27.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label27.AutoSize = True
-        Me.Label27.Location = New System.Drawing.Point(584, 142)
+        Me.Label27.Location = New System.Drawing.Point(598, 142)
         Me.Label27.Name = "Label27"
         Me.Label27.Size = New System.Drawing.Size(28, 20)
         Me.Label27.TabIndex = 17
@@ -552,9 +428,9 @@ Partial Class FormFatorComb
         '
         'Label28
         '
-        Me.Label28.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.Label28.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label28.AutoSize = True
-        Me.Label28.Location = New System.Drawing.Point(584, 187)
+        Me.Label28.Location = New System.Drawing.Point(598, 187)
         Me.Label28.Name = "Label28"
         Me.Label28.Size = New System.Drawing.Size(28, 20)
         Me.Label28.TabIndex = 18
@@ -565,7 +441,7 @@ Partial Class FormFatorComb
         Me.Label35.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label35.AutoSize = True
         Me.Label35.Font = New System.Drawing.Font("Symbol", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label35.Location = New System.Drawing.Point(599, 254)
+        Me.Label35.Location = New System.Drawing.Point(598, 254)
         Me.Label35.Name = "Label35"
         Me.Label35.Size = New System.Drawing.Size(27, 19)
         Me.Label35.TabIndex = 25
@@ -576,22 +452,11 @@ Partial Class FormFatorComb
         Me.Label34.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label34.AutoSize = True
         Me.Label34.Font = New System.Drawing.Font("Symbol", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label34.Location = New System.Drawing.Point(534, 254)
+        Me.Label34.Location = New System.Drawing.Point(533, 254)
         Me.Label34.Name = "Label34"
         Me.Label34.Size = New System.Drawing.Size(27, 19)
         Me.Label34.TabIndex = 24
         Me.Label34.Text = "y1"
-        '
-        'Label33
-        '
-        Me.Label33.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.Label33.AutoSize = True
-        Me.Label33.Font = New System.Drawing.Font("Symbol", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label33.Location = New System.Drawing.Point(468, 254)
-        Me.Label33.Name = "Label33"
-        Me.Label33.Size = New System.Drawing.Size(27, 19)
-        Me.Label33.TabIndex = 23
-        Me.Label33.Text = "y0"
         '
         'Label15
         '
@@ -630,7 +495,6 @@ Partial Class FormFatorComb
     End Sub
     Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label
-    Friend WithEvents Label10 As Label
     Friend WithEvents Label1 As Label
     Friend WithEvents Label6 As Label
     Friend WithEvents Label4 As Label
@@ -643,36 +507,26 @@ Partial Class FormFatorComb
     Friend WithEvents TableLayoutPanel5 As TableLayoutPanel
     Friend WithEvents Label37 As Label
     Friend WithEvents Label36 As Label
-    Friend WithEvents Label29 As Label
     Friend WithEvents Label46 As Label
     Friend WithEvents Label45 As Label
-    Friend WithEvents Label44 As Label
     Friend WithEvents Label43 As Label
     Friend WithEvents Label42 As Label
-    Friend WithEvents Label41 As Label
     Friend WithEvents Label40 As Label
     Friend WithEvents Label39 As Label
-    Friend WithEvents Label38 As Label
     Friend WithEvents Label32 As Label
     Friend WithEvents Label31 As Label
-    Friend WithEvents Label30 As Label
     Friend WithEvents Label22 As Label
     Friend WithEvents Label21 As Label
-    Friend WithEvents Label20 As Label
     Friend WithEvents Label19 As Label
     Friend WithEvents Label18 As Label
     Friend WithEvents Label14 As Label
     Friend WithEvents Label13 As Label
-    Friend WithEvents Label17 As Label
-    Friend WithEvents Label23 As Label
-    Friend WithEvents Label24 As Label
     Friend WithEvents Label25 As Label
     Friend WithEvents Label26 As Label
     Friend WithEvents Label27 As Label
     Friend WithEvents Label28 As Label
     Friend WithEvents Label35 As Label
     Friend WithEvents Label34 As Label
-    Friend WithEvents Label33 As Label
     Friend WithEvents Label15 As Label
     Friend WithEvents Label16 As Label
 End Class

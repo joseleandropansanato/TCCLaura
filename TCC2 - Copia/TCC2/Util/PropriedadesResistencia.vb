@@ -154,6 +154,13 @@
     Public Function validarTensaoCompressaoMedEsbY(TensaoCompressaoY As Double, TensaoMdY As Double, resistenciaCalCompressaoParalela As Double) As Boolean
         Return (TensaoCompressaoY / resistenciaCalCompressaoParalela) + (TensaoMdY / resistenciaCalCompressaoParalela) <= 1
     End Function
+    Public Function validarApoioX(ApoioX As Double, resistenciaCalCompressaoParalela As Double) As Boolean
+        Return ApoioX <= resistenciaCalCompressaoParalela
+    End Function
+    Public Function validarApoioY(ApoioY As Double, resistenciaCalCompressaoParalela As Double) As Boolean
+        Return ApoioY <= resistenciaCalCompressaoParalela
+    End Function
+
 
     'COMPRESSÃO: SEÇÃO COMPOSTA
     'COMPRESSÃO: PEÇAS MACIÇAS:
@@ -161,12 +168,12 @@
 
 
     'VALIDAÇÃO CISALHAMENTO
-    Public Function validarTensaoCisalhanteX(tensaoCisalhante As Double, resistenciaCalAoCisalhamento As Double) As Boolean
-        Return tensaoCisalhante <= resistenciaCalAoCisalhamento
+    Public Function validarTensaoCisalhanteX(tensaoCisalhanteX As Double, resistenciaCalAoCisalhamento As Double) As Boolean
+        Return tensaoCisalhanteX <= resistenciaCalAoCisalhamento
     End Function
 
-    Public Function validarTensaoCisalhanteY(tensaoCisalhante As Double, resistenciaCalAoCisalhamento As Double) As Boolean
-        Return tensaoCisalhante <= resistenciaCalAoCisalhamento
+    Public Function validarTensaoCisalhanteY(tensaoCisalhanteY As Double, resistenciaCalAoCisalhamento As Double) As Boolean
+        Return tensaoCisalhanteY <= resistenciaCalAoCisalhamento
     End Function
 
     Public Function validarTensaoCisalhanteEspaçador() As Boolean
