@@ -27,6 +27,7 @@ Public Class Form1
     Public Shared f1 As Double = 0
     Public Shared f2 As Double = 0
     Public Shared voltou As Boolean = False
+    Public Shared esbelta As Boolean = False
 
     'ROTINA PARA APARECER A DATA NO CANTINHO DA TELA E SELECINAR A LISTA DE MADEIRA
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -242,13 +243,24 @@ Public Class Form1
     'ROTINA PARA CALCULAR O DIMENSIONAMENTO (DEPENDE DA MADEIRA SELECIONADA):
     Private Sub btnCalcularPropriedades_Click(sender As Object, e As EventArgs) Handles btnCalcularPropriedades.Click
         CalcularPropriedades()
+        isEsbelta()
     End Sub
+
+    Private Function isEsbelta()
+        If esbelta Then
+            Dim frmEsfCarc As frmEsforcoCaracteristico = New frmEsforcoCaracteristico
+            frmEsfCarc.Show()
+        End If
+    End Function
 
     Private Function CalcularPropriedades()
         'inicio - é o que precisa para calcular propriedades geometricas e dimensionar toda a peça
         Dim tipoSecao As Madeira.TipoSecao = defineTipoSessao()
+
         madeiraSelecionada.PropriedadesGeometricas = definePropriedadesGeometricas()
+
         getDadosIniciais(tipoSecao)
+
         If rbt2Elementos.Checked Or rbt3Elementos.Checked Then
             ResultadoPropriedadesGeometricas23Elemento(madeiraSelecionada.PropriedadesGeometricas)
 
@@ -298,8 +310,6 @@ Public Class Form1
                 l1entradaElementoJustaposto 'TEM QUE CHAMAR O L1 
 )
         End If
-
-
 
         'CISALHAMENTO: ACONTEECE QUANDO Vx ou Vy ESTÁ SELECIONADA: OK 
         If txtCortanteX.Text.ToString <> "" Or txtCortanteY.Text.ToString <> "" Then
