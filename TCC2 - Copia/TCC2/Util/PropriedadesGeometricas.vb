@@ -193,7 +193,6 @@ Public Class PropriedadesGeometricas
             _w2 = value
         End Set
     End Property
-
     Public Property Qx() As Double
         Get
             Return _qx
@@ -427,7 +426,6 @@ Public Class PropriedadesGeometricas
         End Select
         Return A_corte * x_barra
     End Function
-
 
     'PROPRIEDADES GEOMÉTRICAS DAS SEÇÕES
     Public Function CalculoRetangular(baseX As Double, baseY As Double) As PropriedadesGeometricas

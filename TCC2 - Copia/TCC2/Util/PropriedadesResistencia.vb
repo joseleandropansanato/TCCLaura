@@ -160,11 +160,20 @@
     Public Function validarApoioY(ApoioY As Double, resistenciaCalCompressaoParalela As Double) As Boolean
         Return ApoioY <= resistenciaCalCompressaoParalela
     End Function
-
-
     'COMPRESSÃO: SEÇÃO COMPOSTA
     'COMPRESSÃO: PEÇAS MACIÇAS:
     '2 ELEMENTOS JUSTAPOSTOS
+    Public Function eixo2XX(normalCompressao As Double, md As Double, I2 As Double, A As Double, Iyef As Double, w2 As Double, a1 As Double, Ar1 As Double, resistenciaCalCompressaoParalela As Double) As Boolean
+        Return (normalCompressao / A) + ((md * I2) / (Iyef * w2)) + ((md / (2 * a1 * Ar1)) * (1 - (2 * (I2 / Iyef)))) <= resistenciaCalCompressaoParalela
+    End Function
+    Public Function eixo2YY(normalCompressao As Double, md As Double, I2 As Double, A As Double, Iyef As Double, w2 As Double, a1 As Double, Ar1 As Double, resistenciaCalCompressaoParalela As Double) As Boolean
+        Return (normalCompressao / A) + ((md * I2) / (Iyef * w2)) + ((md / (2 * a1 * Ar1)) * (1 - (2 * (I2 / Iyef)))) <= resistenciaCalCompressaoParalela
+    End Function
+    Public Function eixo3YY(normalCompressao As Double, md As Double, I2 As Double, A As Double, Iyef As Double, w2 As Double, a1 As Double, Ar1 As Double, resistenciaCalCompressaoParalela As Double) As Boolean
+        Return (normalCompressao / A) + ((md * I2) / (Iyef * w2)) + ((md / (2 * a1 * Ar1)) * (1 - (3 * (I2 / Iyef)))) <= resistenciaCalCompressaoParalela
+    End Function
+
+
 
 
     'VALIDAÇÃO CISALHAMENTO

@@ -307,8 +307,10 @@ Public Class Form1
                 b1ElementoJustaposto(),
                 aElementoJustaposto(),
                 cboElementFixacao.Text,
-                l1entradaElementoJustaposto 'TEM QUE CHAMAR O L1 
-)
+                l1entradaElementoJustaposto, 'TEM QUE CHAMAR O L1 
+                a1ElementoJustaposto()
+                )
+
         End If
 
         'CISALHAMENTO: ACONTEECE QUANDO Vx ou Vy ESTÁ SELECIONADA: OK 
@@ -556,10 +558,10 @@ Public Class Form1
 
 
         If (madeiraSelecionada.Compressao.EsbeltezCompressaoX <= 40) Then
-            lblClassifEsbeltezX.Text="PEÇA CURTA"
-                                                                  ElseIf (40 <madeiraSelecionada.Compressao.EsbeltezCompressaoX And madeiraSelecionada.Compressao.EsbeltezCompressaoX <= 80) Then
-            lblClassifEsbeltezX.Text="PEÇA MEDIANAMENTE ESBELTA"
-                                                                                                                                                                                          Else
+            lblClassifEsbeltezX.Text = "PEÇA CURTA"
+        ElseIf (40 < madeiraSelecionada.Compressao.EsbeltezCompressaoX And madeiraSelecionada.Compressao.EsbeltezCompressaoX <= 80) Then
+            lblClassifEsbeltezX.Text = "PEÇA MEDIANAMENTE ESBELTA"
+        ElseIf (80 < madeiraSelecionada.Compressao.EsbeltezCompressaoY And madeiraSelecionada.Compressao.EsbeltezCompressaoY <= 140) Then
             lblClassifEsbeltezX.Text="PEÇA ESBELTA"
         End If
 
@@ -567,7 +569,7 @@ Public Class Form1
             lblClassifEsbeltezY.Text = "PEÇA CURTA"
         ElseIf (40 < madeiraSelecionada.Compressao.EsbeltezCompressaoY And madeiraSelecionada.Compressao.EsbeltezCompressaoY <= 80) Then
             lblClassifEsbeltezY.Text = "PEÇA MEDIANAMENTE ESBELTA"
-        Else
+        ElseIf (80 < madeiraSelecionada.Compressao.EsbeltezCompressaoY And madeiraSelecionada.Compressao.EsbeltezCompressaoY <= 140) Then
             lblClassifEsbeltezY.Text = "PEÇA ESBELTA"
         End If
 
@@ -760,6 +762,8 @@ Public Class Form1
         txtFlexoCompressao.Text = Format(madeiraSelecionada.Compressao.TensaoCompressaoX, "#0.0##;-#0.0##") 'OU Y POIS SÃO IGUAIS
         txtFlexoCompressaoMx.Text = Format(madeiraSelecionada.Flexao.tensaoFlexaoX, "#0.0##;-#0.0##")
         txtFlexoCompressaoMy.Text = Format(madeiraSelecionada.Flexao.tensaoFlexaoY, "#0.0##;-#0.0##")
+
+
 
 
         'VALIDAÇÃO FLEXOTRAÇÃO X:
@@ -1153,36 +1157,41 @@ Public Class Form1
     Private Function coefInfluencia() As Double
         Dim coeficiente As Double = 0
 
-        If (madeiraSelecionada.Compressao.EsbeltezCompressaoX <= 40) Then
-            coeficiente = 0
-        ElseIf (40 < madeiraSelecionada.Compressao.EsbeltezCompressaoX And madeiraSelecionada.Compressao.EsbeltezCompressaoX <= 80) Then
-            coeficiente = 0
-            'classe de umidade 1 e 2 e classe de carregamento permanente e longa duração:
-        ElseIf (cboKmod1.Text = "Permanente" Or cboKmod1.Text = "Longa Duração") And (cboKmod2.Text = "Classe (1)" Or cboKmod2.Text = "Classe (2)") Then
-            coeficiente = 0.8
-            'classe de umidade 3 e 4 e classe de carregamento permanente e longa duração:
-        ElseIf (cboKmod1.Text = "Permanente" Or cboKmod1.Text = "Longa Duração") And (cboKmod2.Text = "Classe (3)" Or cboKmod2.Text = "Classe (4)") Then
-            coeficiente = 2
+        ' If (madeiraSelecionada.Compressao.EsbeltezCompressaoX <= 40) Then
+        '     coeficiente = 0
+        ' ElseIf (madeiraSelecionada.Compressao.EsbeltezCompressaoY <= 40) Then
+        'coeficiente = 0
+        ' ElseIf (40 < madeiraSelecionada.Compressao.EsbeltezCompressaoX And madeiraSelecionada.Compressao.EsbeltezCompressaoX <= 80) And
+        'Coeficiente = 0 Then
+        ' ElseIf (40 < madeiraSelecionada.Compressao.EsbeltezCompressaoY And madeiraSelecionada.Compressao.EsbeltezCompressaoY <= 80) Then
+        'coeficiente = 0
+        'classe de umidade 1 e 2 e classe de carregamento permanente e longa duração:
+        'ElseIf (cboKmod1.Text = "Permanente" Or cboKmod1.Text = "Longa Duração") And (cboKmod2.Text = "Classe (1)" Or cboKmod2.Text = "Classe (2)") Then
+        If (cboKmod1.Text = "Permanente" Or cboKmod1.Text = "Longa Duração") And (cboKmod2.Text = "Classe (1)" Or cboKmod2.Text = "Classe (2)") Then
+                coeficiente = 0.8
+                'classe de umidade 3 e 4 e classe de carregamento permanente e longa duração:
+            ElseIf (cboKmod1.Text = "Permanente" Or cboKmod1.Text = "Longa Duração") And (cboKmod2.Text = "Classe (3)" Or cboKmod2.Text = "Classe (4)") Then
+                coeficiente = 2
 
-            'classe de umidade 1 e 2 e classe de carregamento média duração
-        ElseIf cboKmod1.Text = "Média Duração" And (cboKmod2.Text = "Classe (1)" Or cboKmod2.Text = "Classe (2)") Then
-            coeficiente = 0.3
+                'classe de umidade 1 e 2 e classe de carregamento média duração
+            ElseIf cboKmod1.Text = "Média Duração" And (cboKmod2.Text = "Classe (1)" Or cboKmod2.Text = "Classe (2)") Then
+                coeficiente = 0.3
 
-            'classe de umidade 2 e 3 e classe de carregamento média duração
-        ElseIf cboKmod1.Text = "Média Duração" And (cboKmod2.Text = "Classe (3)" Or cboKmod2.Text = "Classe (4)") Then
-            coeficiente = 1
+                'classe de umidade 2 e 3 e classe de carregamento média duração
+            ElseIf cboKmod1.Text = "Média Duração" And (cboKmod2.Text = "Classe (3)" Or cboKmod2.Text = "Classe (4)") Then
+                coeficiente = 1
 
-            'classe de umidade 1 e 2 e classe de carregamento Curta Duração
-        ElseIf cboKmod1.Text = "Curta Duração" And (cboKmod2.Text = "Classe (1)" Or cboKmod2.Text = "Classe (2)") Then
-            coeficiente = 0.1
+                'classe de umidade 1 e 2 e classe de carregamento Curta Duração
+            ElseIf cboKmod1.Text = "Curta Duração" And (cboKmod2.Text = "Classe (1)" Or cboKmod2.Text = "Classe (2)") Then
+                coeficiente = 0.1
 
-            'classe de umidade 2 e 3 e classe de carregamento Curta Duração
-        ElseIf cboKmod1.Text = "Curta Duração" And (cboKmod2.Text = "Classe (3)" Or cboKmod2.Text = "Classe (4)") Then
-            coeficiente = 0.5
+                'classe de umidade 2 e 3 e classe de carregamento Curta Duração
+            ElseIf cboKmod1.Text = "Curta Duração" And (cboKmod2.Text = "Classe (3)" Or cboKmod2.Text = "Classe (4)") Then
+                coeficiente = 0.5
 
-            'classe de umidade 1 e 2 e classe de carregamento Instantânea
-        ElseIf cboKmod1.Text = "Instantânea" Then
-            coeficiente = 0
+                'classe de umidade 1 e 2 e classe de carregamento Instantânea
+            ElseIf cboKmod1.Text = "Instantânea" Then
+                coeficiente = 0
         End If
 
         Return coeficiente
@@ -1281,10 +1290,10 @@ Public Class Form1
             'Return PropriedadesResistencia.verificaVazio(txt.Text)
 
         ElseIf rbt2Elementos.Checked Then
-            'Return PropriedadesResistencia.verificaVazio(txtL.Text)
+            Return PropriedadesResistencia.verificaVazio(txtEntrada2h1.Text)
 
         ElseIf rbt3Elementos.Checked Then
-            'Return PropriedadesResistencia.verificaVazio(txt.Text)
+            Return PropriedadesResistencia.verificaVazio(txtEntrada3h1.Text)
         Else
             Return 0
         End If
@@ -1314,6 +1323,20 @@ Public Class Form1
             Return 0
         End If
     End Function
+
+    'rotina para chamar o valor de a1 nos esforços de compressão
+    Public Function a1ElementoJustaposto() As Double
+
+        If rbt2Elementos.Checked Then
+            Return PropriedadesResistencia.verificaVazio(txtEntrada2a1.Text)
+
+        ElseIf rbt3Elementos.Checked Then
+            Return PropriedadesResistencia.verificaVazio(txtEntrada3a1.Text)
+        Else
+            Return 0
+        End If
+    End Function
+
 
     Private Sub Form1_Activated(sender As Object, e As EventArgs) Handles MyBase.Activated
         If voltou Then

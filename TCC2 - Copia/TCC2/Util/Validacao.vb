@@ -90,7 +90,7 @@
                         Case TipoValidacao.RealF1
                             Try
                                 Convert.ToInt32(TxBox.Text)
-                                If Convert.ToInt32(TxBox.Text) <= 0.2 And Convert.ToInt32(TxBox.Text) <= 0.7 Then
+                                If Convert.ToInt32(TxBox.Text) <= 0.2 And Convert.ToInt32(TxBox.Text) >= 0.7 Then
                                     MessageBox.Show("Por favor, entre com um número conforme descrito na NBR 7190.")
                                     TxBox.Text = ""
                                     TxBox.Focus()

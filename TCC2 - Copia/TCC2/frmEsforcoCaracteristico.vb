@@ -36,15 +36,15 @@
     End Sub
 
     Private Sub txtF1_Validated(sender As Object, e As EventArgs) Handles txtF1.Validated
-        If Validacao.ValidarDados(txtF1, Validacao.TipoValidacao.RealF1) Or
-            f = Convert.ToDouble(txtF1.Text) Then
-        End If
+        'If Validacao.ValidarDados(txtF1, Validacao.TipoValidacao.RealF1) Or
+        'f = Convert.ToDouble(txtF1.Text) Then
+        'End If
     End Sub
 
     Private Sub txtF2_Validated(sender As Object, e As EventArgs) Handles txtF2.Validated
-        If Validacao.ValidarDados(txtF2, Validacao.TipoValidacao.RealF2) Then
-            f = Convert.ToDouble(txtF2.Text)
-        End If
+        ' If Validacao.ValidarDados(txtF2, Validacao.TipoValidacao.RealF2) Then
+        ' f = Convert.ToDouble(txtF2.Text)
+        'End If
     End Sub
 
 End Class
