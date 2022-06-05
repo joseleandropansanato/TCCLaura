@@ -8,7 +8,6 @@
 
     Public Sub New()
     End Sub
-
     Public Property TensaoCisalhanteX() As Double
         Get
             Return _tensaoCisalhanteX
@@ -17,7 +16,6 @@
             _tensaoCisalhanteX = value
         End Set
     End Property
-
     Public Property TensaoCisalhanteY() As Double
         Get
             Return _tensaoCisalhanteY
@@ -26,7 +24,6 @@
             _tensaoCisalhanteY = value
         End Set
     End Property
-
     Public Property Vd() As Double
         Get
             Return _vd
@@ -65,10 +62,10 @@
                 'PARA SEÇÃO COMPOSTA POR ESPAÇADORES A GNT SÓ CONFERE O CISALHAMENTO FRENTE DO ESPAÇADOR
             Case Madeira.TipoSecao.ElementosJustaposto2
 
-                'cisalh.Vd = (propriedadesGeometricas.AreaA1 * PropriedadesResistencia.resistCalAoCisalhamento * (L1 * a1))/100
+                'cisalh.Vd = (proprGeo.AreaA1 * PropriedadesResistencia.resistCalAoCisalhamento * (L1 * a1))/100
 
             Case Madeira.TipoSecao.ElementosJustaposto3
-                'cisalh.Vd = (propriedadesGeometricas.AreaA1 * PropriedadesResistencia.resistCalAoCisalhamento * (L1 * a1))/100
+                'cisalh.Vd = (proprGeo.AreaA1 * PropriedadesResistencia.resistCalAoCisalhamento * (L1 * a1)) / 100
         End Select
 
         Return cisalh

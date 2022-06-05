@@ -11,7 +11,6 @@
         Form1.normalCargaVariavel = PropriedadesResistencia.verificaVazio(txtNormalCargaVariavel.Text)
         Form1.f1 = PropriedadesResistencia.verificaVazio(txtF1.Text)
         Form1.f2 = PropriedadesResistencia.verificaVazio(txtF2.Text)
-
         Form1.voltou = True
         Close()
     End Sub

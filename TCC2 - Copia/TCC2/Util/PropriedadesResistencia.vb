@@ -1,5 +1,4 @@
 ﻿Module PropriedadesResistencia
-
     'kmod
     Private Function SelectKmod1(tipo As Integer) As Kmod1
         Dim kmod1 As New Kmod1
@@ -95,7 +94,23 @@
     Public Function ModElasticidadeTransversal(modDeElasticidade As Double) As Double
         Return (modDeElasticidade / 15)
     End Function
+    'ROTINA PARA O CÁLCULO DIRETO DA ALTURA TOTAL DA PEÇA EM T
+    Public Function somaT(hf As Double, h As Double) As Double
+        Return hf + h
+    End Function
 
+    'ROTINA PARA O CÁLCULO DIRETO DA ALTURA TOTAL DA PEÇA EM I
+    Public Function somaI(hf1 As Double, h As Double, hf2 As Double) As Double
+        Return hf1 + h + hf2
+    End Function
+
+    'ROTINA PARA O CÁLCULO DIRETO DA ALTURA TOTAL DA PEÇA CAIXÃO
+    Public Function somaCaixaoAltura(h1 As Double, h2 As Double, h4 As Double) As Double
+        Return h1 + h2 + h4
+    End Function
+    Public Function somaCaixaoComprimento(b1 As Double, b2 As Double, b3 As Double) As Double
+        Return b1 + b2 + b3
+    End Function
 
     'ABA DE COMPRESSÃO
     Public Function ElementoJustaposto(l As Double, b1 As Double, a As Double, elementoFixacaoSelecionado As String) As Boolean
@@ -116,7 +131,9 @@
         End If
     End Function
 
-    'Verifica vazio: Captura o conteudo do textbox, entra no if e verifica se o conteudo é vazio, caso seja true o conteudo vai receber 0, caso seja falso o conteudo será ele mesmo
+
+    'Verifica vazio: Captura o conteudo do textbox, entra no if e verifica se o conteudo é vazio,
+    'caso seja true o conteudo vai receber 0, caso seja falso o conteudo será ele mesmo
     Public Function verificaVazio(value As String) As Double
         If value = "" Then
             Return 0
@@ -128,21 +145,18 @@
     Public Function validarTensaoTracao(tensaoTracao As Double, resistenciaCalTracaoParalela As Double) As Boolean
         Return tensaoTracao <= resistenciaCalTracaoParalela
     End Function
-
     Public Function validarEsbeltezTracaoX(esbeltezTracaoX As Double)
         Return esbeltezTracaoX <= 173
     End Function
-
     Public Function validarEsbeltezTracaoY(esbeltezTracaoY As Double)
         Return esbeltezTracaoY <= 173
     End Function
 
-
     'VALIDAÇÃO COMPRESSÃO
+    'PEÇA CURTA
     Public Function validarTensaoCompressaoCurtaX(TensaoCompressaoX As Double, resistenciaCalCompressaoParalela As Double) As Boolean
         Return TensaoCompressaoX <= resistenciaCalCompressaoParalela
     End Function
-
     Public Function validarTensaoCompressaoCurtaY(TensaoCompressaoY As Double, resistenciaCalCompressaoParalela As Double) As Boolean
         Return TensaoCompressaoY <= resistenciaCalCompressaoParalela
     End Function
@@ -150,16 +164,10 @@
     Public Function validarTensaoCompressaoMedEsbX(TensaoCompressaoX As Double, TensaoMdX As Double, resistenciaCalCompressaoParalela As Double) As Boolean
         Return (TensaoCompressaoX / resistenciaCalCompressaoParalela) + (TensaoMdX / resistenciaCalCompressaoParalela) <= 1
     End Function
-
     Public Function validarTensaoCompressaoMedEsbY(TensaoCompressaoY As Double, TensaoMdY As Double, resistenciaCalCompressaoParalela As Double) As Boolean
         Return (TensaoCompressaoY / resistenciaCalCompressaoParalela) + (TensaoMdY / resistenciaCalCompressaoParalela) <= 1
     End Function
-    Public Function validarApoioX(ApoioX As Double, resistenciaCalCompressaoParalela As Double) As Boolean
-        Return ApoioX <= resistenciaCalCompressaoParalela
-    End Function
-    Public Function validarApoioY(ApoioY As Double, resistenciaCalCompressaoParalela As Double) As Boolean
-        Return ApoioY <= resistenciaCalCompressaoParalela
-    End Function
+
     'COMPRESSÃO: SEÇÃO COMPOSTA
     'COMPRESSÃO: PEÇAS MACIÇAS:
     '2 ELEMENTOS JUSTAPOSTOS
@@ -167,6 +175,9 @@
         Return (normalCompressao / A) + ((md * I2) / (Iyef * w2)) + ((md / (2 * a1 * Ar1)) * (1 - (2 * (I2 / Iyef)))) <= resistenciaCalCompressaoParalela
     End Function
     Public Function eixo2YY(normalCompressao As Double, md As Double, I2 As Double, A As Double, Iyef As Double, w2 As Double, a1 As Double, Ar1 As Double, resistenciaCalCompressaoParalela As Double) As Boolean
+        Return (normalCompressao / A) + ((md * I2) / (Iyef * w2)) + ((md / (2 * a1 * Ar1)) * (1 - (2 * (I2 / Iyef)))) <= resistenciaCalCompressaoParalela
+    End Function
+    Public Function eixo3XX(normalCompressao As Double, md As Double, I2 As Double, A As Double, Iyef As Double, w2 As Double, a1 As Double, Ar1 As Double, resistenciaCalCompressaoParalela As Double) As Boolean
         Return (normalCompressao / A) + ((md * I2) / (Iyef * w2)) + ((md / (2 * a1 * Ar1)) * (1 - (2 * (I2 / Iyef)))) <= resistenciaCalCompressaoParalela
     End Function
     Public Function eixo3YY(normalCompressao As Double, md As Double, I2 As Double, A As Double, Iyef As Double, w2 As Double, a1 As Double, Ar1 As Double, resistenciaCalCompressaoParalela As Double) As Boolean
@@ -190,6 +201,12 @@
     End Function
 
     'VALIDAÇÃO FLEXÃO SIMPLES RETA
+    Public Function validarApoioX(ApoioX As Double, resistenciaCalCompressaoParalela As Double) As Boolean
+        Return ApoioX <= resistenciaCalCompressaoParalela
+    End Function
+    Public Function validarApoioY(ApoioY As Double, resistenciaCalCompressaoParalela As Double) As Boolean
+        Return ApoioY <= resistenciaCalCompressaoParalela
+    End Function
     Public Function validarTensaoFlexaoSimplesRetaX(tensaoFlexaoX As Double, resistenciaCalTracaoParalela As Double) As Boolean
         Return tensaoFlexaoX <= resistenciaCalTracaoParalela
     End Function
@@ -224,15 +241,12 @@
                 Return 1
         End Select
     End Function
-
     Public Function validarTensaoFlexaoSimplesObliquaX(tensaoFlexaoX As Double, tensaoFlexaoY As Double, resistenciaCalTracaoParalela As Double, tipoSecao As Madeira.TipoSecao) As Boolean
         Return tensaoFlexaoX + (definirKm(tipoSecao) * tensaoFlexaoY) <= resistenciaCalTracaoParalela
     End Function
-
     Public Function validarTensaoFlexaoSimplesObliquaY(tensaoFlexaoX As Double, tensaoFlexaoY As Double, resistenciaCalCompressaoParalela As Double, tipoSecao As Madeira.TipoSecao) As Boolean
         Return (definirKm(tipoSecao) * tensaoFlexaoX) + tensaoFlexaoY <= resistenciaCalCompressaoParalela
     End Function
-
     'VALIDAÇÃO FLEXÃO COMPOSTA
     'FLEXOTRAÇÃO
     Public Function validarTensaoFlexotracaoX(tensaoTracao As Double, tensaoFlexaoX As Double, tensaoFlexaoY As Double, resistenciaCalTracaoParalela As Double, tipoSecao As Madeira.TipoSecao) As Boolean
@@ -241,7 +255,6 @@
     Public Function validarTensaoFlexotracaoY(tensaoTracao As Double, tensaoFlexaoX As Double, tensaoFlexaoY As Double, resistenciaCalTracaoParalela As Double, tipoSecao As Madeira.TipoSecao) As Boolean
         Return (tensaoTracao / resistenciaCalTracaoParalela) + (tensaoFlexaoY / resistenciaCalTracaoParalela) + (definirKm(tipoSecao) * (tensaoFlexaoX / resistenciaCalTracaoParalela)) <= 1
     End Function
-
     'FLEXOCOMPRESSÃO
     Public Function validarTensaoFlexocompressaoX(tensaoCompressao As Double, tensaoFlexaoX As Double, tensaoFlexaoY As Double, resistenciaCalCompressaoParalela As Double, tipoSecao As Madeira.TipoSecao) As Boolean
         Return (tensaoCompressao / resistenciaCalCompressaoParalela) + (tensaoFlexaoX / resistenciaCalCompressaoParalela) + (definirKm(tipoSecao) * (tensaoFlexaoY / resistenciaCalCompressaoParalela)) <= 1
@@ -251,26 +264,6 @@
     End Function
 
 
-
-
-
-    'ROTINA PARA O CÁLCULO DIRETO DA ALTURA TOTAL DA PEÇA EM T
-    Public Function somaT(hf As Double, h As Double) As Double
-        Return hf + h
-    End Function
-
-    'ROTINA PARA O CÁLCULO DIRETO DA ALTURA TOTAL DA PEÇA EM I
-    Public Function somaI(hf1 As Double, h As Double, hf2 As Double) As Double
-        Return hf1 + h + hf2
-    End Function
-
-    'ROTINA PARA O CÁLCULO DIRETO DA ALTURA TOTAL DA PEÇA CAIXÃO
-    Public Function somaCaixaoAltura(h1 As Double, h2 As Double, h4 As Double) As Double
-        Return h1 + h2 + h4
-    End Function
-    Public Function somaCaixaoComprimento(b1 As Double, b2 As Double, b3 As Double) As Double
-        Return b1 + b2 + b3
-    End Function
 
 End Module
 

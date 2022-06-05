@@ -102,6 +102,13 @@ Public Class Form1
         madeiraSelecionada.ResistAoCisalhamento = txtResistAoCisalhamento.Text
         madeiraSelecionada.ModElasticidade = txtModElasticidade.Text
         madeiraSelecionada.DensAparente = txtDensAparente.Text
+        'FORMATANDO A QUANTIDADE DE CASAS DPS DA VIRGULA NOS TXT
+        madeiraSelecionada.ResistCompParalela = Format(txtResistCompParalela.Text, "#0.0##;-#0.0##")
+        madeiraSelecionada.ResistTracaoParalela = Format(txtResistTracaoParalela.Text, "#0.0##;-#0.0##")
+        madeiraSelecionada.ResistTracaoNormal = Format(txtResistTracaoNormal.Text, "#0.0##;-#0.0##")
+        madeiraSelecionada.ResistAoCisalhamento = Format(txtResistAoCisalhamento.Text, "#0.0##;-#0.0##")
+        madeiraSelecionada.ModElasticidade = Format(txtModElasticidade.Text, "#0.0##;-#0.0###")
+        madeiraSelecionada.DensAparente = Format(txtDensAparente.Text, "#0.0##;-#0.0##")
 
         txtResistCompParalela.Enabled = False
         txtResistTracaoParalela.Enabled = False
@@ -139,6 +146,7 @@ Public Class Form1
     Private Sub CalcularKmod()
         kmod = kmod1 * kmod2 * kmod3
         txtKmod.Text = kmod
+        txtKmod.Text = Format(kmod, "#0.0##;-#0.0##")
     End Sub
 
     'ROTINA PARA SELECIONAR O TIPO DA MADEIRA E ASSIM SEUS VALORES CARACTERISTICOS
@@ -217,7 +225,6 @@ Public Class Form1
         gbxResultadosElementos.Visible = True
     End Sub
 
-
     'ROTINA PARA ATUALIZAR AS PROPRIEDADES GEOMÉTRICAS SEM DEPENDER DA MADEIRA SELECIONADA
     Private Sub btnCalcularPropriedadesGeometricas_Click(sender As Object, e As EventArgs) Handles btnCalcularPropriedadesGeometricas.Click
         'inicio - é o que precisa para calcular apenas as propriedades geometricas
@@ -246,8 +253,11 @@ Public Class Form1
         isEsbelta()
     End Sub
 
+    'ROTINA PARA APARECER OS ESFORÇOS CARACTERISTICOS PARA AS PEÇAS ESBELTAS
     Private Function isEsbelta()
         If esbelta Then
+            MessageBox.Show("Aviso: o Elemento é esbelto. 
+            Porfavor insira os esforços externos de cálculo da peça.")
             Dim frmEsfCarc As frmEsforcoCaracteristico = New frmEsforcoCaracteristico
             frmEsfCarc.Show()
         End If
@@ -284,7 +294,7 @@ Public Class Form1
             'COMPRESSAO: ACONTEECE QUANDO A NORMAL TRAÇÃO ESTÁ SELECIONADA: OK
         ElseIf txtNormal.Text.ToString <> "" And cboTracaoCompressao.Text = "Compressão" Then
             MessageBox.Show("Peças sob esforços de compressão, estão sujeitas aos fenomênos de flambagem.
-                             Por favor, insira a vinculação da peça.")
+Por favor, insira a vinculação da peça.")
             'gbxVinculacao.Visible = True
             madeiraSelecionada.Compressao = CalcTensaoC(
                 PropriedadesResistencia.verificaVazio(txtNormal.Text),
@@ -457,20 +467,13 @@ Public Class Form1
         txtTensaoTracao.Text = Format(madeiraSelecionada.Tracao.TensaoTracao, "#0.0##;-#0.0##")
         txtEsbeltezTracaoX.Text = Format(madeiraSelecionada.Tracao.EsbeltezTracaoX, "#0.0##;-#0.0##")
         txtEsbeltezTracaoY.Text = Format(madeiraSelecionada.Tracao.EsbeltezTracaoY, "#0.0##;-#0.0##")
-
+        txtFt.Text = Format(madeiraSelecionada.ResistenciaCalculo.resistCalculoTracaoParalela, "#0.0##;-#0.0##")
 
         'VALIDAÇÃO TENSÃO TRAÇÃO:
         If PropriedadesResistencia.validarTensaoTracao(madeiraSelecionada.Tracao.TensaoTracao, madeiraSelecionada.ResistenciaCalculo.resistCalculoTracaoParalela) Then
             lblValidacaoTensaoTracao.Text = "PASSOU NA VERIFICAÇÃO"
             lblValidacaoTensaoTracao.Visible = True
             lblValidacaoTensaoTracao.ForeColor = Color.Green
-            lblValidacaoFlexaoObliquaX.Visible = False
-            lblValidacaoFlexaoObliquaY.Visible = False
-            lblValidacaoFlexaoSimplesX.Visible = False
-            lblValidacaoFlexaoSimplesY.Visible = False
-            lblValidacaoCisalhanteX.Visible = False
-            lblValidacaoCisalhanteY.Visible = False
-
         Else
             lblValidacaoTensaoTracao.Text = "NÃO PASSOU NA VERIFICAÇÃO"
             lblValidacaoTensaoTracao.Visible = True
@@ -530,8 +533,6 @@ Public Class Form1
         txtEcX.Text = coefInfluencia()
         txtEcY.Text = coefInfluencia()
 
-
-
         txtEsbeltezCompressaoX.Text = Format(madeiraSelecionada.Compressao.EsbeltezCompressaoX, "#0.0##;-#0.0##")
         txtEsbeltezCompressaoY.Text = Format(madeiraSelecionada.Compressao.EsbeltezCompressaoY, "#0.0##;-#0.0##")
 
@@ -556,7 +557,6 @@ Public Class Form1
         txtE1efX.Text = Format(madeiraSelecionada.Compressao.E1ef, "#0.0##;-#0.0##")
         txtE1efY.Text = Format(madeiraSelecionada.Compressao.E1ef, "#0.0##;-#0.0##")
 
-
         If (madeiraSelecionada.Compressao.EsbeltezCompressaoX <= 40) Then
             lblClassifEsbeltezX.Text = "PEÇA CURTA"
         ElseIf (40 < madeiraSelecionada.Compressao.EsbeltezCompressaoX And madeiraSelecionada.Compressao.EsbeltezCompressaoX <= 80) Then
@@ -575,7 +575,6 @@ Public Class Form1
 
         'VALIDAÇÃO COMPRESSÃO CURTA X:
         If PropriedadesResistencia.validarTensaoCompressaoCurtaX(madeiraSelecionada.Compressao.TensaoCompressaoX, madeiraSelecionada.ResistenciaCalculo.resistCalculoCompressaoParalela) Then
-            lblClassifEsbeltezX.Text = "PEÇA CURTA"
             lblValidacaoXComp.Text = "PASSOU NA VERIFICAÇÃO"
             lblValidacaoXComp.Visible = True
             lblValidacaoXComp.ForeColor = Color.Green
@@ -587,7 +586,6 @@ Public Class Form1
 
         'VALIDAÇÃO COMPRESSÃO CURTA Y
         If PropriedadesResistencia.validarTensaoCompressaoCurtaY(madeiraSelecionada.Compressao.TensaoCompressaoY, madeiraSelecionada.ResistenciaCalculo.resistCalculoCompressaoParalela) Then
-            lblClassifEsbeltezY.Text = "PEÇA CURTA"
             lblValidacaoYComp.Text = "PASSOU NA VERIFICAÇÃO"
             lblValidacaoYComp.Visible = True
             lblValidacaoYComp.ForeColor = Color.Green
@@ -610,7 +608,6 @@ Public Class Form1
 
         'VALIDAÇÃO COMPRESSAO MEDIANAMENTE ESBELTA E ESBELTA Y
         If PropriedadesResistencia.validarTensaoCompressaoMedEsbY(madeiraSelecionada.Compressao.TensaoCompressaoX, madeiraSelecionada.Flexao.tensaoFlexaoY, madeiraSelecionada.ResistenciaCalculo.resistCalculoCompressaoParalela) Then
-            lblClassifEsbeltezY.Text = "PEÇA MEDIANAMENTE ESBELTA"
             lblValidacaoYComp.Text = "PASSOU NA VERIFICAÇÃO"
             lblValidacaoYComp.Visible = True
             lblValidacaoYComp.ForeColor = Color.Green
@@ -621,6 +618,7 @@ Public Class Form1
         End If
 
         'VALIDAÇÃO SEÇÃO COSTA PEÇAS SOLIDARIZADAS DESCONTÍNUAMENTE 
+
 
 
     End Sub
@@ -666,18 +664,45 @@ Public Class Form1
         txtftFlexo.Text = madeiraSelecionada.ResistenciaCalculo.resistCalculoTracaoParalela
         txtfc.Text = madeiraSelecionada.ResistenciaCalculo.resistCalculoCompressaoParalela
 
+        'apoio
+        txtCompApoioX.Text = madeiraSelecionada.Flexao.ApoioX
+        txtCompApoioX.Text = madeiraSelecionada.Flexao.ApoioY
         'reta
         txtTensaoTx.Text = madeiraSelecionada.Flexao.tensaoTY
         txtTensaoCy.Text = madeiraSelecionada.Flexao.tensaoCY
         'obliqua
         txtTensaoMx.Text = madeiraSelecionada.Flexao.tensaoFlexaoX
         txtTensaoMy.Text = madeiraSelecionada.Flexao.tensaoFlexaoY
+        'apoio
+        txtApoioX.Text = Format(madeiraSelecionada.Flexao.ApoioX, "#0.0##;-#0.0##")
+        txtApoioY.Text = Format(madeiraSelecionada.Flexao.ApoioY, "#0.0##;-#0.0##")
         'reta
         txtTensaoTx.Text = Format(madeiraSelecionada.Flexao.tensaoTY, "#0.0##;-#0.0##")
         txtTensaoCy.Text = Format(madeiraSelecionada.Flexao.tensaoCY, "#0.0##;-#0.0##")
         'obliqua
         txtTensaoMx.Text = Format(madeiraSelecionada.Flexao.tensaoFlexaoX, "#0.0##;-#0.0##")
         txtTensaoMy.Text = Format(madeiraSelecionada.Flexao.tensaoFlexaoY, "#0.0##;-#0.0##")
+
+        'VALIDAÇÃO APOIO X
+        If PropriedadesResistencia.validarApoioX(madeiraSelecionada.Flexao.ApoioX, madeiraSelecionada.ResistenciaCalculo.resistCalculoCompressaoParalela) Then
+            lblApoioX.Text = "PASSOU NA VERIFICAÇÃO"
+            lblApoioX.Visible = True
+            lblApoioX.ForeColor = Color.Green
+        Else
+            lblApoioX.Text = "NÃO PASSOU NA VERIFICAÇÃO"
+            lblApoioX.Visible = True
+            lblApoioX.ForeColor = Color.Red
+        End If
+        'VALIDAÇÃO APOIO y
+        If PropriedadesResistencia.validarApoioY(madeiraSelecionada.Flexao.ApoioY, madeiraSelecionada.ResistenciaCalculo.resistCalculoCompressaoParalela) Then
+            lblApoioY.Text = "PASSOU NA VERIFICAÇÃO"
+            lblApoioY.Visible = True
+            lblApoioY.ForeColor = Color.Green
+        Else
+            lblApoioY.Text = "NÃO PASSOU NA VERIFICAÇÃO"
+            lblApoioY.Visible = True
+            lblApoioY.ForeColor = Color.Red
+        End If
 
         'VALIDAÇÃO FLEXÃO SIMPLES RETA X:
         If PropriedadesResistencia.validarTensaoFlexaoSimplesRetaX(madeiraSelecionada.Flexao.tensaoFlexaoX, madeiraSelecionada.ResistenciaCalculo.resistCalculoTracaoParalela) Then
@@ -721,26 +746,6 @@ Public Class Form1
             lblValidacaoFlexaoObliquaY.Text = "NÃO PASSOU NA VERIFICAÇÃO"
             lblValidacaoFlexaoObliquaY.Visible = True
             lblValidacaoFlexaoObliquaY.ForeColor = Color.Red
-        End If
-
-
-        If rbtCompApoio.Checked Then
-            If PropriedadesResistencia.validarApoioX(madeiraSelecionada.Flexao.ApoioX, madeiraSelecionada.ResistenciaCalculo.resistCalculoCompressaoParalela) And
-               PropriedadesResistencia.validarApoioY(madeiraSelecionada.Flexao.ApoioY, madeiraSelecionada.ResistenciaCalculo.resistCalculoCompressaoParalela) Then
-                lblApoioX.Text = "PASSOU NA VERIFICAÇÃO"
-                lblApoioX.Visible = True
-                lblApoioX.ForeColor = Color.Green
-                lblApoioY.Text = "PASSOU NA VERIFICAÇÃO"
-                lblApoioY.Visible = True
-                lblApoioY.ForeColor = Color.Green
-            Else
-                lblApoioX.Text = "NÃO PASSOU NA VERIFICAÇÃO"
-                lblApoioX.Visible = True
-                lblApoioX.ForeColor = Color.Red
-                lblApoioY.Text = "NÃO PASSOU NA VERIFICAÇÃO"
-                lblApoioY.Visible = True
-                lblApoioY.ForeColor = Color.Red
-            End If
         End If
 
     End Sub
@@ -824,7 +829,7 @@ Public Class Form1
         txtRtParalelo.Text = Format(madeiraSelecionada.ResistenciaCalculo.resistCalculoTracaoParalela, "#0.0##;-#0.0##")
         txtRtNormal.Text = Format(madeiraSelecionada.ResistenciaCalculo.resistCalculoTracaNormal, "#0.0##;-#0.0##")
         txtRCisalhamento.Text = Format(madeiraSelecionada.ResistenciaCalculo.resistCalculoAoCisalhamento, "#0.0##;-#0.0##")
-        txtMElasticidade.Text = Format(madeiraSelecionada.ResistenciaCalculo.moduloElasticidade, "#0.0##;-#0.0##")
+        txtMElasticidade.Text = Format(madeiraSelecionada.ResistenciaCalculo.moduloElasticidade, "#0.0#;-#0.0#")
         txtMeTransversal.Text = Format(madeiraSelecionada.ResistenciaCalculo.moduloElasticidadeTransversal, "#0.000##;-#0.000##")
         txtDAparente.Text = Format(madeiraSelecionada.ResistenciaCalculo.densidadeAparente, "#0.0##;-#0.0##")
     End Sub
@@ -900,7 +905,6 @@ Public Class Form1
     Private Sub txtEntradaCaixaoB3_TextChanged(sender As Object, e As EventArgs) Handles txtEntradaCaixaoB3.TextChanged
         txtCaixaoComp.Text = PropriedadesResistencia.somaCaixaoComprimento(PropriedadesResistencia.verificaVazio(txtEntradaCaixaoB1.Text), PropriedadesResistencia.verificaVazio(txtEntradaCaixaoB2.Text), PropriedadesResistencia.verificaVazio(txtEntradaCaixaoB3.Text))
     End Sub
-
     'ROTINA QUE TA BLOQUEANDO UM TAB (TRAÇÃO OU COMPRESSÃO) CASO ELE NAO SEJA SELECIONADO
     Private Sub cboTracaoCompressao_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboTracaoCompressao.SelectedIndexChanged
         TabTracao.Enabled = cboTracaoCompressao.SelectedIndex.CompareTo(1)

@@ -268,7 +268,6 @@ Public Class Compressao
 
                     'ELEMENTO ESBELTO EM X ==============
                 ElseIf 80 < compr.EsbeltezCompressaoX And compr.EsbeltezCompressaoX <= 140 Then
-                    MessageBox.Show("Aviso: o Elemento é esbelto.")
                     Form1.esbelta = True
                     compr.ForcaElasticaX = (((System.Math.PI) ^ 2) * proprGeo.EixoXmi * (ResistenciaCalculo.moduloElasticidade / 10)) / ((lvinculado * 100) ^ 2)
                     'Definindo o valor da excentricidade acidental
@@ -312,7 +311,6 @@ Public Class Compressao
 
                     'ELEMENTO ESBELTO EM Y ==============
                 ElseIf 80 < compr.EsbeltezCompressaoY <= 140 Then
-                    MessageBox.Show("Aviso: o Elemento é esbelto.")
                     Form1.esbelta = True
                     compr.ForcaElasticaY = ((System.Math.PI) ^ 2 * proprGeo.EixoYmi * (ResistenciaCalculo.moduloElasticidade / 10)) / ((lvinculado * 100) ^ 2)
                     'Definindo o valor da excentricidade acidental
@@ -362,7 +360,6 @@ Public Class Compressao
 
                     'ELEMENTO ESBELTO EM X ==============
                 ElseIf 80 < compr.EsbeltezCompressaoX And compr.EsbeltezCompressaoX <= 140 Then
-                    MessageBox.Show("Aviso: o Elemento é esbelto.")
                     Form1.esbelta = True
                     compr.ForcaElasticaX = (((System.Math.PI) ^ 2) * proprGeo.EixoXmi * (ResistenciaCalculo.moduloElasticidade / 10)) / ((lvinculado * 100) ^ 2)
                     'Definindo o valor da excentricidade acidental
@@ -406,7 +403,6 @@ Public Class Compressao
 
                     'ELEMENTO ESBELTO EM Y ==============
                 ElseIf 80 < compr.EsbeltezCompressaoY <= 140 Then
-                    MessageBox.Show("Aviso: o Elemento é esbelto.")
                     Form1.esbelta = True
                     compr.ForcaElasticaY = ((System.Math.PI) ^ 2 * proprGeo.EixoYmi * (ResistenciaCalculo.moduloElasticidade / 10)) / ((lvinculado * 100) ^ 2)
                     'Definindo o valor da excentricidade acidental
@@ -456,7 +452,6 @@ Public Class Compressao
 
                     'ELEMENTO ESBELTO EM X ==============
                 ElseIf 80 < compr.EsbeltezCompressaoX And compr.EsbeltezCompressaoX <= 140 Then
-                    MessageBox.Show("Aviso: o Elemento é esbelto.")
                     Form1.esbelta = True
                     compr.ForcaElasticaX = (((System.Math.PI) ^ 2) * proprGeo.EixoXmi * (ResistenciaCalculo.moduloElasticidade / 10)) / ((lvinculado * 100) ^ 2)
                     'Definindo o valor da excentricidade acidental
@@ -500,7 +495,6 @@ Public Class Compressao
 
                     'ELEMENTO ESBELTO EM Y ==============
                 ElseIf 80 < compr.EsbeltezCompressaoY <= 140 Then
-                    MessageBox.Show("Aviso: o Elemento é esbelto.")
                     Form1.esbelta = True
                     compr.ForcaElasticaY = ((System.Math.PI) ^ 2 * proprGeo.EixoYmi * (ResistenciaCalculo.moduloElasticidade / 10)) / ((lvinculado * 100) ^ 2)
                     'Definindo o valor da excentricidade acidental
@@ -550,7 +544,6 @@ Public Class Compressao
 
                     'ELEMENTO ESBELTO EM X ==============
                 ElseIf 80 < compr.EsbeltezCompressaoX And compr.EsbeltezCompressaoX <= 140 Then
-                    MessageBox.Show("Aviso: o Elemento é esbelto.")
                     Form1.esbelta = True
                     compr.ForcaElasticaX = (((System.Math.PI) ^ 2) * proprGeo.EixoXmi * (ResistenciaCalculo.moduloElasticidade / 10)) / ((lvinculado * 100) ^ 2)
                     'Definindo o valor da excentricidade acidental
@@ -594,7 +587,6 @@ Public Class Compressao
 
                     'ELEMENTO ESBELTO EM Y ==============
                 ElseIf 80 < compr.EsbeltezCompressaoY <= 140 Then
-                    MessageBox.Show("Aviso: o Elemento é esbelto.")
                     Form1.esbelta = True
                     compr.ForcaElasticaY = ((System.Math.PI) ^ 2 * proprGeo.EixoYmi * (ResistenciaCalculo.moduloElasticidade / 10)) / ((lvinculado * 100) ^ 2)
                     'Definindo o valor da excentricidade acidental
@@ -644,7 +636,6 @@ Public Class Compressao
 
                     'ELEMENTO ESBELTO EM X ==============
                 ElseIf 80 < compr.EsbeltezCompressaoX And compr.EsbeltezCompressaoX <= 140 Then
-                    MessageBox.Show("Aviso: o Elemento é esbelto.")
                     Form1.esbelta = True
                     compr.ForcaElasticaX = (((System.Math.PI) ^ 2) * proprGeo.EixoXmi * (ResistenciaCalculo.moduloElasticidade / 10)) / ((lvinculado * 100) ^ 2)
                     'Definindo o valor da excentricidade acidental
@@ -688,7 +679,6 @@ Public Class Compressao
 
                     'ELEMENTO ESBELTO EM Y ==============
                 ElseIf 80 < compr.EsbeltezCompressaoY <= 140 Then
-                    MessageBox.Show("Aviso: o Elemento é esbelto.")
                     Form1.esbelta = True
                     compr.ForcaElasticaY = ((System.Math.PI) ^ 2 * proprGeo.EixoYmi * (ResistenciaCalculo.moduloElasticidade / 10)) / ((lvinculado * 100) ^ 2)
                     'Definindo o valor da excentricidade acidental
@@ -756,7 +746,6 @@ Public Class Compressao
 
                     'ELEMENTO ESBELTO EM X ==============
                 ElseIf 80 < compr.EsbeltezCompressaoX And compr.EsbeltezCompressaoX <= 140 Then
-                    MessageBox.Show("Aviso: o Elemento é esbelto.")
                     Form1.esbelta = True
                     compr.ForcaElasticaX = (((System.Math.PI) ^ 2) * proprGeo.EixoXmi * (ResistenciaCalculo.moduloElasticidade / 10)) / ((lvinculado * 100) ^ 2)
                     'Definindo o valor da excentricidade acidental
@@ -800,7 +789,6 @@ Public Class Compressao
 
                     'ELEMENTO ESBELTO EM Y ==============
                 ElseIf 80 < compr.EsbeltezCompressaoY <= 140 Then
-                    MessageBox.Show("Aviso: o Elemento é esbelto.")
                     Form1.esbelta = True
                     compr.ForcaElasticaY = ((System.Math.PI) ^ 2 * proprGeo.EixoYmi * (ResistenciaCalculo.moduloElasticidade / 10)) / ((lvinculado * 100) ^ 2)
                     'Definindo o valor da excentricidade acidental
@@ -863,7 +851,6 @@ Public Class Compressao
 
                     'ELEMENTO ESBELTO EM X ==============
                 ElseIf 80 < compr.EsbeltezCompressaoX And compr.EsbeltezCompressaoX <= 140 Then
-                    MessageBox.Show("Aviso: o Elemento é esbelto.")
                     Form1.esbelta = True
                     compr.ForcaElasticaX = (((System.Math.PI) ^ 2) * proprGeo.EixoXmi * (ResistenciaCalculo.moduloElasticidade / 10)) / ((lvinculado * 100) ^ 2)
                     'Definindo o valor da excentricidade acidental
@@ -907,7 +894,6 @@ Public Class Compressao
 
                     'ELEMENTO ESBELTO EM Y ==============
                 ElseIf 80 < compr.EsbeltezCompressaoY <= 140 Then
-                    MessageBox.Show("Aviso: o Elemento é esbelto.")
                     Form1.esbelta = True
                     compr.ForcaElasticaY = ((System.Math.PI) ^ 2 * proprGeo.EixoYmi * (ResistenciaCalculo.moduloElasticidade / 10)) / ((lvinculado * 100) ^ 2)
                     'Definindo o valor da excentricidade acidental
