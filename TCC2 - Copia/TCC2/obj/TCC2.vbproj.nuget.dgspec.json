@@ -40,9 +40,9 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "dependencies": {
-            "Microsoft.ReportingServices.ReportViewerControl.Winforms": {
+            "iTextSharp": {
               "target": "Package",
-              "version": "[150.1484.0, )"
+              "version": "[5.5.13.3, )"
             }
           },
           "imports": [

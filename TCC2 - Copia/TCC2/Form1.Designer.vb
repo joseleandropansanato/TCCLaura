@@ -22,9 +22,11 @@ Partial Class Form1
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
         Me.MenuStrip2 = New System.Windows.Forms.MenuStrip()
         Me.ArquivoToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.NovoProjetoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.SalvarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SairToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AjudaToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
@@ -53,17 +55,6 @@ Partial Class Form1
         Me.Label292 = New System.Windows.Forms.Label()
         Me.Label293 = New System.Windows.Forms.Label()
         Me.bntProx = New System.Windows.Forms.TabControl()
-        Me.TabInicio = New System.Windows.Forms.TabPage()
-        Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Label33 = New System.Windows.Forms.Label()
-        Me.Label31 = New System.Windows.Forms.Label()
-        Me.Label29 = New System.Windows.Forms.Label()
-        Me.Label23 = New System.Windows.Forms.Label()
-        Me.LinkLabel2 = New System.Windows.Forms.LinkLabel()
-        Me.LinkLabel1 = New System.Windows.Forms.LinkLabel()
-        Me.Link_Proj1 = New System.Windows.Forms.LinkLabel()
-        Me.Label44 = New System.Windows.Forms.Label()
-        Me.Label43 = New System.Windows.Forms.Label()
         Me.TabPropriedadesMadeiras = New System.Windows.Forms.TabPage()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.txtModElasticidade = New System.Windows.Forms.TextBox()
@@ -142,14 +133,6 @@ Partial Class Form1
         Me.Label27 = New System.Windows.Forms.Label()
         Me.txtKmod = New System.Windows.Forms.TextBox()
         Me.TabDadosIniciais = New System.Windows.Forms.TabPage()
-        Me.btnCalcularPropriedadesGeometricas = New System.Windows.Forms.Button()
-        Me.gbxVinculacao = New System.Windows.Forms.GroupBox()
-        Me.lblKe = New System.Windows.Forms.Label()
-        Me.Label53 = New System.Windows.Forms.Label()
-        Me.Label54 = New System.Windows.Forms.Label()
-        Me.cboLvinculado = New System.Windows.Forms.ComboBox()
-        Me.Label51 = New System.Windows.Forms.Label()
-        Me.PictureBox4 = New System.Windows.Forms.PictureBox()
         Me.gbx3Elementos = New System.Windows.Forms.GroupBox()
         Me.txtEntrada3L = New System.Windows.Forms.TextBox()
         Me.Label359 = New System.Windows.Forms.Label()
@@ -166,6 +149,89 @@ Partial Class Form1
         Me.Label312 = New System.Windows.Forms.Label()
         Me.Label358 = New System.Windows.Forms.Label()
         Me.label800 = New System.Windows.Forms.Label()
+        Me.lblcaixaod = New System.Windows.Forms.Label()
+        Me.gbxCompostaCaixao = New System.Windows.Forms.GroupBox()
+        Me.txtCaixaoComp = New System.Windows.Forms.TextBox()
+        Me.Label515 = New System.Windows.Forms.Label()
+        Me.Label126 = New System.Windows.Forms.Label()
+        Me.Label566 = New System.Windows.Forms.Label()
+        Me.Label463 = New System.Windows.Forms.Label()
+        Me.txtEntradaCaixaoB3 = New System.Windows.Forms.TextBox()
+        Me.Label556 = New System.Windows.Forms.Label()
+        Me.Label423 = New System.Windows.Forms.Label()
+        Me.Label426 = New System.Windows.Forms.Label()
+        Me.Label421 = New System.Windows.Forms.Label()
+        Me.Label431 = New System.Windows.Forms.Label()
+        Me.Label420 = New System.Windows.Forms.Label()
+        Me.Label45 = New System.Windows.Forms.Label()
+        Me.Label230 = New System.Windows.Forms.Label()
+        Me.txtEntradaCaixaoH3 = New System.Windows.Forms.TextBox()
+        Me.Label164 = New System.Windows.Forms.Label()
+        Me.Label424 = New System.Windows.Forms.Label()
+        Me.Label233 = New System.Windows.Forms.Label()
+        Me.txtEntradaCaixaoD = New System.Windows.Forms.TextBox()
+        Me.Label165 = New System.Windows.Forms.Label()
+        Me.Label364 = New System.Windows.Forms.Label()
+        Me.txtEntradaCaixaoH2 = New System.Windows.Forms.TextBox()
+        Me.txtEntradaCaixaoB1 = New System.Windows.Forms.TextBox()
+        Me.txtEntradaCaixaoH1 = New System.Windows.Forms.TextBox()
+        Me.Label363 = New System.Windows.Forms.Label()
+        Me.Label234 = New System.Windows.Forms.Label()
+        Me.txtEntradaCaixaoB2 = New System.Windows.Forms.TextBox()
+        Me.Label231 = New System.Windows.Forms.Label()
+        Me.txtEntradaCaixaoB4 = New System.Windows.Forms.TextBox()
+        Me.txtEntradaCaixaoH4 = New System.Windows.Forms.TextBox()
+        Me.lblcaixaob4 = New System.Windows.Forms.Label()
+        Me.lblTd = New System.Windows.Forms.Label()
+        Me.lblcaixaob3 = New System.Windows.Forms.Label()
+        Me.lblTbw = New System.Windows.Forms.Label()
+        Me.lblCaixaob2 = New System.Windows.Forms.Label()
+        Me.lblTh = New System.Windows.Forms.Label()
+        Me.lblCaixaob1 = New System.Windows.Forms.Label()
+        Me.lblThf = New System.Windows.Forms.Label()
+        Me.lblCaixaoh4 = New System.Windows.Forms.Label()
+        Me.lblTbf = New System.Windows.Forms.Label()
+        Me.lblCompRet = New System.Windows.Forms.Label()
+        Me.lblCaixaoh2 = New System.Windows.Forms.Label()
+        Me.btnCalcularPropriedadesGeometricas = New System.Windows.Forms.Button()
+        Me.gbxCompostaT = New System.Windows.Forms.GroupBox()
+        Me.txtTComp = New System.Windows.Forms.TextBox()
+        Me.Label237 = New System.Windows.Forms.Label()
+        Me.txtEntradaCompostaTh = New System.Windows.Forms.TextBox()
+        Me.Label238 = New System.Windows.Forms.Label()
+        Me.Label352 = New System.Windows.Forms.Label()
+        Me.Label383 = New System.Windows.Forms.Label()
+        Me.txtEntradaCompostaBw = New System.Windows.Forms.TextBox()
+        Me.txtEntradaCompostaBf = New System.Windows.Forms.TextBox()
+        Me.txtEntradaCompostaHf = New System.Windows.Forms.TextBox()
+        Me.txtEntradaCompostaH = New System.Windows.Forms.TextBox()
+        Me.Label107 = New System.Windows.Forms.Label()
+        Me.Label109 = New System.Windows.Forms.Label()
+        Me.Label110 = New System.Windows.Forms.Label()
+        Me.Label108 = New System.Windows.Forms.Label()
+        Me.Label111 = New System.Windows.Forms.Label()
+        Me.Label112 = New System.Windows.Forms.Label()
+        Me.Label113 = New System.Windows.Forms.Label()
+        Me.Label177 = New System.Windows.Forms.Label()
+        Me.lblCaixaoh1 = New System.Windows.Forms.Label()
+        Me.lblIH = New System.Windows.Forms.Label()
+        Me.lblId = New System.Windows.Forms.Label()
+        Me.lblIbw = New System.Windows.Forms.Label()
+        Me.lblIhf2 = New System.Windows.Forms.Label()
+        Me.lblIbf2 = New System.Windows.Forms.Label()
+        Me.lblCircL = New System.Windows.Forms.Label()
+        Me.lblIhf1 = New System.Windows.Forms.Label()
+        Me.lblIbf1 = New System.Windows.Forms.Label()
+        Me.lblBase = New System.Windows.Forms.Label()
+        Me.lblAltura = New System.Windows.Forms.Label()
+        Me.lblCircD = New System.Windows.Forms.Label()
+        Me.gbxVinculacao = New System.Windows.Forms.GroupBox()
+        Me.lblKe = New System.Windows.Forms.Label()
+        Me.Label53 = New System.Windows.Forms.Label()
+        Me.Label54 = New System.Windows.Forms.Label()
+        Me.cboLvinculado = New System.Windows.Forms.ComboBox()
+        Me.Label51 = New System.Windows.Forms.Label()
+        Me.PictureBox4 = New System.Windows.Forms.PictureBox()
         Me.imgSecao = New System.Windows.Forms.PictureBox()
         Me.gbx2Elementos = New System.Windows.Forms.GroupBox()
         Me.txtEntrada2b1 = New System.Windows.Forms.TextBox()
@@ -208,56 +274,6 @@ Partial Class Form1
         Me.Label407 = New System.Windows.Forms.Label()
         Me.Label152 = New System.Windows.Forms.Label()
         Me.Label151 = New System.Windows.Forms.Label()
-        Me.gbxCompostaCaixao = New System.Windows.Forms.GroupBox()
-        Me.txtCaixaoComp = New System.Windows.Forms.TextBox()
-        Me.Label515 = New System.Windows.Forms.Label()
-        Me.Label126 = New System.Windows.Forms.Label()
-        Me.Label566 = New System.Windows.Forms.Label()
-        Me.Label463 = New System.Windows.Forms.Label()
-        Me.txtEntradaCaixaoB3 = New System.Windows.Forms.TextBox()
-        Me.Label556 = New System.Windows.Forms.Label()
-        Me.Label423 = New System.Windows.Forms.Label()
-        Me.Label426 = New System.Windows.Forms.Label()
-        Me.Label421 = New System.Windows.Forms.Label()
-        Me.Label431 = New System.Windows.Forms.Label()
-        Me.Label420 = New System.Windows.Forms.Label()
-        Me.Label45 = New System.Windows.Forms.Label()
-        Me.Label230 = New System.Windows.Forms.Label()
-        Me.txtEntradaCaixaoH3 = New System.Windows.Forms.TextBox()
-        Me.Label164 = New System.Windows.Forms.Label()
-        Me.Label424 = New System.Windows.Forms.Label()
-        Me.Label233 = New System.Windows.Forms.Label()
-        Me.txtEntradaCaixaoD = New System.Windows.Forms.TextBox()
-        Me.Label165 = New System.Windows.Forms.Label()
-        Me.Label364 = New System.Windows.Forms.Label()
-        Me.txtEntradaCaixaoH2 = New System.Windows.Forms.TextBox()
-        Me.txtEntradaCaixaoB1 = New System.Windows.Forms.TextBox()
-        Me.txtEntradaCaixaoH1 = New System.Windows.Forms.TextBox()
-        Me.Label363 = New System.Windows.Forms.Label()
-        Me.Label234 = New System.Windows.Forms.Label()
-        Me.txtEntradaCaixaoB2 = New System.Windows.Forms.TextBox()
-        Me.Label231 = New System.Windows.Forms.Label()
-        Me.txtEntradaCaixaoB4 = New System.Windows.Forms.TextBox()
-        Me.txtEntradaCaixaoH4 = New System.Windows.Forms.TextBox()
-        Me.gbxCompostaT = New System.Windows.Forms.GroupBox()
-        Me.txtTComp = New System.Windows.Forms.TextBox()
-        Me.Label237 = New System.Windows.Forms.Label()
-        Me.txtEntradaCompostaTh = New System.Windows.Forms.TextBox()
-        Me.Label238 = New System.Windows.Forms.Label()
-        Me.Label352 = New System.Windows.Forms.Label()
-        Me.Label383 = New System.Windows.Forms.Label()
-        Me.txtEntradaCompostaBw = New System.Windows.Forms.TextBox()
-        Me.txtEntradaCompostaBf = New System.Windows.Forms.TextBox()
-        Me.txtEntradaCompostaHf = New System.Windows.Forms.TextBox()
-        Me.txtEntradaCompostaH = New System.Windows.Forms.TextBox()
-        Me.Label107 = New System.Windows.Forms.Label()
-        Me.Label109 = New System.Windows.Forms.Label()
-        Me.Label110 = New System.Windows.Forms.Label()
-        Me.Label108 = New System.Windows.Forms.Label()
-        Me.Label111 = New System.Windows.Forms.Label()
-        Me.Label112 = New System.Windows.Forms.Label()
-        Me.Label113 = New System.Windows.Forms.Label()
-        Me.Label177 = New System.Windows.Forms.Label()
         Me.gbxCircular = New System.Windows.Forms.GroupBox()
         Me.txtEntradaCircularD = New System.Windows.Forms.TextBox()
         Me.txtEntradaCircularL = New System.Windows.Forms.TextBox()
@@ -314,6 +330,8 @@ Partial Class Form1
         Me.txtMy = New System.Windows.Forms.TextBox()
         Me.Label41 = New System.Windows.Forms.Label()
         Me.TabResultados = New System.Windows.Forms.TabPage()
+        Me.Label23 = New System.Windows.Forms.Label()
+        Me.PictureBox9 = New System.Windows.Forms.PictureBox()
         Me.gbxResultadosElementos = New System.Windows.Forms.GroupBox()
         Me.GroupBox21 = New System.Windows.Forms.GroupBox()
         Me.Label266 = New System.Windows.Forms.Label()
@@ -494,29 +512,6 @@ Partial Class Form1
         Me.Label490 = New System.Windows.Forms.Label()
         Me.txtForçaElasticaX = New System.Windows.Forms.TextBox()
         Me.Label496 = New System.Windows.Forms.Label()
-        Me.gbxEixoXCurta = New System.Windows.Forms.GroupBox()
-        Me.Label77 = New System.Windows.Forms.Label()
-        Me.Label88 = New System.Windows.Forms.Label()
-        Me.Label78 = New System.Windows.Forms.Label()
-        Me.Label87 = New System.Windows.Forms.Label()
-        Me.Label176 = New System.Windows.Forms.Label()
-        Me.Label86 = New System.Windows.Forms.Label()
-        Me.Label246 = New System.Windows.Forms.Label()
-        Me.Label73 = New System.Windows.Forms.Label()
-        Me.Label247 = New System.Windows.Forms.Label()
-        Me.Label85 = New System.Windows.Forms.Label()
-        Me.Label74 = New System.Windows.Forms.Label()
-        Me.Label248 = New System.Windows.Forms.Label()
-        Me.Label244 = New System.Windows.Forms.Label()
-        Me.Label242 = New System.Windows.Forms.Label()
-        Me.Label69 = New System.Windows.Forms.Label()
-        Me.Label245 = New System.Windows.Forms.Label()
-        Me.Label62 = New System.Windows.Forms.Label()
-        Me.Label243 = New System.Windows.Forms.Label()
-        Me.Label63 = New System.Windows.Forms.Label()
-        Me.Label61 = New System.Windows.Forms.Label()
-        Me.Label55 = New System.Windows.Forms.Label()
-        Me.Label58 = New System.Windows.Forms.Label()
         Me.TabCisalhamento = New System.Windows.Forms.TabPage()
         Me.GroupBox17 = New System.Windows.Forms.GroupBox()
         Me.GroupBox53 = New System.Windows.Forms.GroupBox()
@@ -541,7 +536,6 @@ Partial Class Form1
         Me.txtTensaoCisalhanteX = New System.Windows.Forms.TextBox()
         Me.Label356 = New System.Windows.Forms.Label()
         Me.TabFlexaoSimples = New System.Windows.Forms.TabPage()
-        Me.GroupBox16 = New System.Windows.Forms.GroupBox()
         Me.gbxApoio = New System.Windows.Forms.GroupBox()
         Me.Label255 = New System.Windows.Forms.Label()
         Me.PictureBox7 = New System.Windows.Forms.PictureBox()
@@ -563,66 +557,6 @@ Partial Class Form1
         Me.Label89 = New System.Windows.Forms.Label()
         Me.Label90 = New System.Windows.Forms.Label()
         Me.Label91 = New System.Windows.Forms.Label()
-        Me.gbxFlexaoObliqua = New System.Windows.Forms.GroupBox()
-        Me.Label257 = New System.Windows.Forms.Label()
-        Me.Label79 = New System.Windows.Forms.Label()
-        Me.Label258 = New System.Windows.Forms.Label()
-        Me.Label76 = New System.Windows.Forms.Label()
-        Me.TextBox4 = New System.Windows.Forms.TextBox()
-        Me.lblValidacaoFlexaoObliquaY = New System.Windows.Forms.Label()
-        Me.lblValidacaoFlexaoObliquaX = New System.Windows.Forms.Label()
-        Me.Label397 = New System.Windows.Forms.Label()
-        Me.Label398 = New System.Windows.Forms.Label()
-        Me.Label399 = New System.Windows.Forms.Label()
-        Me.Label400 = New System.Windows.Forms.Label()
-        Me.Label401 = New System.Windows.Forms.Label()
-        Me.Label402 = New System.Windows.Forms.Label()
-        Me.Label403 = New System.Windows.Forms.Label()
-        Me.Label404 = New System.Windows.Forms.Label()
-        Me.Label405 = New System.Windows.Forms.Label()
-        Me.Label395 = New System.Windows.Forms.Label()
-        Me.Label396 = New System.Windows.Forms.Label()
-        Me.Label394 = New System.Windows.Forms.Label()
-        Me.Label392 = New System.Windows.Forms.Label()
-        Me.Label393 = New System.Windows.Forms.Label()
-        Me.Label144 = New System.Windows.Forms.Label()
-        Me.Label366 = New System.Windows.Forms.Label()
-        Me.Label391 = New System.Windows.Forms.Label()
-        Me.Label145 = New System.Windows.Forms.Label()
-        Me.Label146 = New System.Windows.Forms.Label()
-        Me.Label148 = New System.Windows.Forms.Label()
-        Me.Label368 = New System.Windows.Forms.Label()
-        Me.Label369 = New System.Windows.Forms.Label()
-        Me.Label147 = New System.Windows.Forms.Label()
-        Me.txtTensaoMy = New System.Windows.Forms.TextBox()
-        Me.Label150 = New System.Windows.Forms.Label()
-        Me.txtTensaoMx = New System.Windows.Forms.TextBox()
-        Me.Label370 = New System.Windows.Forms.Label()
-        Me.Label207 = New System.Windows.Forms.Label()
-        Me.gbxFlexaoSimples = New System.Windows.Forms.GroupBox()
-        Me.Label75 = New System.Windows.Forms.Label()
-        Me.Label71 = New System.Windows.Forms.Label()
-        Me.lblValidacaoFlexaoSimplesY = New System.Windows.Forms.Label()
-        Me.lblValidacaoFlexaoSimplesX = New System.Windows.Forms.Label()
-        Me.Label142 = New System.Windows.Forms.Label()
-        Me.Label196 = New System.Windows.Forms.Label()
-        Me.Label197 = New System.Windows.Forms.Label()
-        Me.Label198 = New System.Windows.Forms.Label()
-        Me.Label138 = New System.Windows.Forms.Label()
-        Me.Label195 = New System.Windows.Forms.Label()
-        Me.Label193 = New System.Windows.Forms.Label()
-        Me.Label194 = New System.Windows.Forms.Label()
-        Me.Label139 = New System.Windows.Forms.Label()
-        Me.Label168 = New System.Windows.Forms.Label()
-        Me.Label169 = New System.Windows.Forms.Label()
-        Me.Label170 = New System.Windows.Forms.Label()
-        Me.Label171 = New System.Windows.Forms.Label()
-        Me.Label141 = New System.Windows.Forms.Label()
-        Me.Label174 = New System.Windows.Forms.Label()
-        Me.txtTensaoTx = New System.Windows.Forms.TextBox()
-        Me.txtTensaoCy = New System.Windows.Forms.TextBox()
-        Me.Label175 = New System.Windows.Forms.Label()
-        Me.TabFlexaoComposta = New System.Windows.Forms.TabPage()
         Me.GroupBox19 = New System.Windows.Forms.GroupBox()
         Me.gbxFlexoTracao = New System.Windows.Forms.GroupBox()
         Me.Label225 = New System.Windows.Forms.Label()
@@ -732,6 +666,66 @@ Partial Class Form1
         Me.Label414 = New System.Windows.Forms.Label()
         Me.Label418 = New System.Windows.Forms.Label()
         Me.Label411 = New System.Windows.Forms.Label()
+        Me.GroupBox16 = New System.Windows.Forms.GroupBox()
+        Me.gbxFlexaoObliqua = New System.Windows.Forms.GroupBox()
+        Me.Label257 = New System.Windows.Forms.Label()
+        Me.Label79 = New System.Windows.Forms.Label()
+        Me.Label258 = New System.Windows.Forms.Label()
+        Me.Label76 = New System.Windows.Forms.Label()
+        Me.TextBox4 = New System.Windows.Forms.TextBox()
+        Me.lblValidacaoFlexaoObliquaY = New System.Windows.Forms.Label()
+        Me.lblValidacaoFlexaoObliquaX = New System.Windows.Forms.Label()
+        Me.Label397 = New System.Windows.Forms.Label()
+        Me.Label398 = New System.Windows.Forms.Label()
+        Me.Label399 = New System.Windows.Forms.Label()
+        Me.Label400 = New System.Windows.Forms.Label()
+        Me.Label401 = New System.Windows.Forms.Label()
+        Me.Label402 = New System.Windows.Forms.Label()
+        Me.Label403 = New System.Windows.Forms.Label()
+        Me.Label404 = New System.Windows.Forms.Label()
+        Me.Label405 = New System.Windows.Forms.Label()
+        Me.Label395 = New System.Windows.Forms.Label()
+        Me.Label396 = New System.Windows.Forms.Label()
+        Me.Label394 = New System.Windows.Forms.Label()
+        Me.Label392 = New System.Windows.Forms.Label()
+        Me.Label393 = New System.Windows.Forms.Label()
+        Me.Label144 = New System.Windows.Forms.Label()
+        Me.Label366 = New System.Windows.Forms.Label()
+        Me.Label391 = New System.Windows.Forms.Label()
+        Me.Label145 = New System.Windows.Forms.Label()
+        Me.Label146 = New System.Windows.Forms.Label()
+        Me.Label148 = New System.Windows.Forms.Label()
+        Me.Label368 = New System.Windows.Forms.Label()
+        Me.Label369 = New System.Windows.Forms.Label()
+        Me.Label147 = New System.Windows.Forms.Label()
+        Me.txtTensaoMy = New System.Windows.Forms.TextBox()
+        Me.Label150 = New System.Windows.Forms.Label()
+        Me.txtTensaoMx = New System.Windows.Forms.TextBox()
+        Me.Label370 = New System.Windows.Forms.Label()
+        Me.Label207 = New System.Windows.Forms.Label()
+        Me.gbxFlexaoSimples = New System.Windows.Forms.GroupBox()
+        Me.Label75 = New System.Windows.Forms.Label()
+        Me.Label71 = New System.Windows.Forms.Label()
+        Me.lblValidacaoFlexaoSimplesY = New System.Windows.Forms.Label()
+        Me.lblValidacaoFlexaoSimplesX = New System.Windows.Forms.Label()
+        Me.Label142 = New System.Windows.Forms.Label()
+        Me.Label196 = New System.Windows.Forms.Label()
+        Me.Label197 = New System.Windows.Forms.Label()
+        Me.Label198 = New System.Windows.Forms.Label()
+        Me.Label138 = New System.Windows.Forms.Label()
+        Me.Label195 = New System.Windows.Forms.Label()
+        Me.Label193 = New System.Windows.Forms.Label()
+        Me.Label194 = New System.Windows.Forms.Label()
+        Me.Label139 = New System.Windows.Forms.Label()
+        Me.Label168 = New System.Windows.Forms.Label()
+        Me.Label169 = New System.Windows.Forms.Label()
+        Me.Label170 = New System.Windows.Forms.Label()
+        Me.Label171 = New System.Windows.Forms.Label()
+        Me.Label141 = New System.Windows.Forms.Label()
+        Me.Label174 = New System.Windows.Forms.Label()
+        Me.txtTensaoTx = New System.Windows.Forms.TextBox()
+        Me.txtTensaoCy = New System.Windows.Forms.TextBox()
+        Me.Label175 = New System.Windows.Forms.Label()
         Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
         Me.Label66 = New System.Windows.Forms.Label()
         Me.Label67 = New System.Windows.Forms.Label()
@@ -814,8 +808,6 @@ Partial Class Form1
         Me.StatusStrip1.SuspendLayout
         Me.GroupBox8.SuspendLayout
         Me.bntProx.SuspendLayout
-        Me.TabInicio.SuspendLayout
-        Me.Panel1.SuspendLayout
         Me.TabPropriedadesMadeiras.SuspendLayout
         Me.GroupBox2.SuspendLayout
         Me.GroupBox1.SuspendLayout
@@ -826,19 +818,20 @@ Partial Class Form1
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit
         Me.GroupBox7.SuspendLayout
         Me.TabDadosIniciais.SuspendLayout
+        Me.gbx3Elementos.SuspendLayout
+        Me.gbxCompostaCaixao.SuspendLayout
+        Me.gbxCompostaT.SuspendLayout
         Me.gbxVinculacao.SuspendLayout
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit
-        Me.gbx3Elementos.SuspendLayout
         CType(Me.imgSecao, System.ComponentModel.ISupportInitialize).BeginInit
         Me.gbx2Elementos.SuspendLayout
         Me.gbxCompostaI.SuspendLayout
-        Me.gbxCompostaCaixao.SuspendLayout
-        Me.gbxCompostaT.SuspendLayout
         Me.gbxCircular.SuspendLayout
         Me.GroupBox23.SuspendLayout
         Me.gbxRetangular.SuspendLayout
         Me.GroupBox6.SuspendLayout
         Me.TabResultados.SuspendLayout
+        CType(Me.PictureBox9, System.ComponentModel.ISupportInitialize).BeginInit
         Me.gbxResultadosElementos.SuspendLayout
         Me.GroupBox21.SuspendLayout
         Me.GroupBox22.SuspendLayout
@@ -856,20 +849,18 @@ Partial Class Form1
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit
         Me.gbxEixoYMediEsbelta.SuspendLayout
         Me.gbxEixoXMediEsbelta.SuspendLayout
-        Me.gbxEixoXCurta.SuspendLayout
         Me.TabCisalhamento.SuspendLayout
         Me.GroupBox17.SuspendLayout
         Me.GroupBox53.SuspendLayout
         Me.TabFlexaoSimples.SuspendLayout
-        Me.GroupBox16.SuspendLayout
         Me.gbxApoio.SuspendLayout
         CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).BeginInit
-        Me.gbxFlexaoObliqua.SuspendLayout
-        Me.gbxFlexaoSimples.SuspendLayout
-        Me.TabFlexaoComposta.SuspendLayout
         Me.GroupBox19.SuspendLayout
         Me.gbxFlexoTracao.SuspendLayout
         Me.gbxFlexoCompressao.SuspendLayout
+        Me.GroupBox16.SuspendLayout
+        Me.gbxFlexaoObliqua.SuspendLayout
+        Me.gbxFlexaoSimples.SuspendLayout
         Me.TableLayoutPanel2.SuspendLayout
         Me.TableLayoutPanel4.SuspendLayout
         Me.GroupBox29.SuspendLayout
@@ -897,13 +888,13 @@ Partial Class Form1
         Me.MenuStrip2.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip2.Name = "MenuStrip2"
         Me.MenuStrip2.Padding = New System.Windows.Forms.Padding(7, 2, 0, 2)
-        Me.MenuStrip2.Size = New System.Drawing.Size(1190, 34)
+        Me.MenuStrip2.Size = New System.Drawing.Size(1090, 34)
         Me.MenuStrip2.TabIndex = 2
         Me.MenuStrip2.Text = "MenuStrip2"
         '
         'ArquivoToolStripMenuItem1
         '
-        Me.ArquivoToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.NovoProjetoToolStripMenuItem, Me.SairToolStripMenuItem})
+        Me.ArquivoToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.NovoProjetoToolStripMenuItem, Me.SalvarToolStripMenuItem, Me.SairToolStripMenuItem})
         Me.ArquivoToolStripMenuItem1.Name = "ArquivoToolStripMenuItem1"
         Me.ArquivoToolStripMenuItem1.Size = New System.Drawing.Size(88, 30)
         Me.ArquivoToolStripMenuItem1.Text = "Arquivo "
@@ -911,14 +902,21 @@ Partial Class Form1
         'NovoProjetoToolStripMenuItem
         '
         Me.NovoProjetoToolStripMenuItem.Name = "NovoProjetoToolStripMenuItem"
-        Me.NovoProjetoToolStripMenuItem.Size = New System.Drawing.Size(200, 28)
+        Me.NovoProjetoToolStripMenuItem.Size = New System.Drawing.Size(224, 28)
         Me.NovoProjetoToolStripMenuItem.Text = "Novo projeto "
+        '
+        'SalvarToolStripMenuItem
+        '
+        Me.SalvarToolStripMenuItem.Image = CType(resources.GetObject("SalvarToolStripMenuItem.Image"), System.Drawing.Image)
+        Me.SalvarToolStripMenuItem.Name = "SalvarToolStripMenuItem"
+        Me.SalvarToolStripMenuItem.Size = New System.Drawing.Size(224, 28)
+        Me.SalvarToolStripMenuItem.Text = "Salvar"
         '
         'SairToolStripMenuItem
         '
         Me.SairToolStripMenuItem.Name = "SairToolStripMenuItem"
-        Me.SairToolStripMenuItem.Size = New System.Drawing.Size(200, 28)
-        Me.SairToolStripMenuItem.Text = "Sair "
+        Me.SairToolStripMenuItem.Size = New System.Drawing.Size(224, 28)
+        Me.SairToolStripMenuItem.Text = "Sair"
         '
         'AjudaToolStripMenuItem1
         '
@@ -930,9 +928,9 @@ Partial Class Form1
         '
         Me.StatusStrip1.ImageScalingSize = New System.Drawing.Size(20, 20)
         Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.lbldata})
-        Me.StatusStrip1.Location = New System.Drawing.Point(0, 702)
+        Me.StatusStrip1.Location = New System.Drawing.Point(0, 612)
         Me.StatusStrip1.Name = "StatusStrip1"
-        Me.StatusStrip1.Size = New System.Drawing.Size(1190, 22)
+        Me.StatusStrip1.Size = New System.Drawing.Size(1090, 22)
         Me.StatusStrip1.TabIndex = 3
         Me.StatusStrip1.Text = "StatusStrip1"
         '
@@ -1223,7 +1221,6 @@ Partial Class Form1
         '
         'bntProx
         '
-        Me.bntProx.Controls.Add(Me.TabInicio)
         Me.bntProx.Controls.Add(Me.TabPropriedadesMadeiras)
         Me.bntProx.Controls.Add(Me.TabResistCalculo)
         Me.bntProx.Controls.Add(Me.TabDadosIniciais)
@@ -1232,133 +1229,14 @@ Partial Class Form1
         Me.bntProx.Controls.Add(Me.TabCompressao)
         Me.bntProx.Controls.Add(Me.TabCisalhamento)
         Me.bntProx.Controls.Add(Me.TabFlexaoSimples)
-        Me.bntProx.Controls.Add(Me.TabFlexaoComposta)
         Me.bntProx.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.bntProx.Location = New System.Drawing.Point(12, 38)
         Me.bntProx.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.bntProx.Name = "bntProx"
         Me.bntProx.SelectedIndex = 0
-        Me.bntProx.Size = New System.Drawing.Size(1166, 660)
+        Me.bntProx.Size = New System.Drawing.Size(1076, 570)
         Me.bntProx.SizeMode = System.Windows.Forms.TabSizeMode.FillToRight
         Me.bntProx.TabIndex = 28
-        '
-        'TabInicio
-        '
-        Me.TabInicio.Controls.Add(Me.Panel1)
-        Me.TabInicio.Controls.Add(Me.Label44)
-        Me.TabInicio.Controls.Add(Me.Label43)
-        Me.TabInicio.Location = New System.Drawing.Point(4, 32)
-        Me.TabInicio.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.TabInicio.Name = "TabInicio"
-        Me.TabInicio.Padding = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.TabInicio.Size = New System.Drawing.Size(1158, 624)
-        Me.TabInicio.TabIndex = 0
-        Me.TabInicio.Text = "Início"
-        Me.TabInicio.UseVisualStyleBackColor = True
-        '
-        'Panel1
-        '
-        Me.Panel1.Controls.Add(Me.Label33)
-        Me.Panel1.Controls.Add(Me.Label31)
-        Me.Panel1.Controls.Add(Me.Label29)
-        Me.Panel1.Controls.Add(Me.Label23)
-        Me.Panel1.Controls.Add(Me.LinkLabel2)
-        Me.Panel1.Controls.Add(Me.LinkLabel1)
-        Me.Panel1.Controls.Add(Me.Link_Proj1)
-        Me.Panel1.Location = New System.Drawing.Point(18, 492)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(317, 125)
-        Me.Panel1.TabIndex = 2
-        '
-        'Label33
-        '
-        Me.Label33.AutoSize = True
-        Me.Label33.Location = New System.Drawing.Point(108, 84)
-        Me.Label33.Name = "Label33"
-        Me.Label33.Size = New System.Drawing.Size(137, 23)
-        Me.Label33.TabIndex = 6
-        Me.Label33.Text = "Sem Registro (...)"
-        '
-        'Label31
-        '
-        Me.Label31.AutoSize = True
-        Me.Label31.Location = New System.Drawing.Point(108, 54)
-        Me.Label31.Name = "Label31"
-        Me.Label31.Size = New System.Drawing.Size(137, 23)
-        Me.Label31.TabIndex = 5
-        Me.Label31.Text = "Sem Registro (...)"
-        '
-        'Label29
-        '
-        Me.Label29.AutoSize = True
-        Me.Label29.Location = New System.Drawing.Point(108, 26)
-        Me.Label29.Name = "Label29"
-        Me.Label29.Size = New System.Drawing.Size(137, 23)
-        Me.Label29.TabIndex = 4
-        Me.Label29.Text = "Sem Registro (...)"
-        '
-        'Label23
-        '
-        Me.Label23.AutoSize = True
-        Me.Label23.Location = New System.Drawing.Point(3, 0)
-        Me.Label23.Name = "Label23"
-        Me.Label23.Size = New System.Drawing.Size(149, 23)
-        Me.Label23.TabIndex = 3
-        Me.Label23.Text = "Projetos Recentes:"
-        '
-        'LinkLabel2
-        '
-        Me.LinkLabel2.AutoSize = True
-        Me.LinkLabel2.Location = New System.Drawing.Point(13, 54)
-        Me.LinkLabel2.Name = "LinkLabel2"
-        Me.LinkLabel2.Size = New System.Drawing.Size(110, 23)
-        Me.LinkLabel2.TabIndex = 2
-        Me.LinkLabel2.TabStop = True
-        Me.LinkLabel2.Text = "Sem Registro"
-        '
-        'LinkLabel1
-        '
-        Me.LinkLabel1.AutoSize = True
-        Me.LinkLabel1.Location = New System.Drawing.Point(13, 84)
-        Me.LinkLabel1.Name = "LinkLabel1"
-        Me.LinkLabel1.Size = New System.Drawing.Size(110, 23)
-        Me.LinkLabel1.TabIndex = 1
-        Me.LinkLabel1.TabStop = True
-        Me.LinkLabel1.Text = "Sem Registro"
-        '
-        'Link_Proj1
-        '
-        Me.Link_Proj1.AutoSize = True
-        Me.Link_Proj1.Location = New System.Drawing.Point(13, 26)
-        Me.Link_Proj1.Name = "Link_Proj1"
-        Me.Link_Proj1.Size = New System.Drawing.Size(110, 23)
-        Me.Link_Proj1.TabIndex = 0
-        Me.Link_Proj1.TabStop = True
-        Me.Link_Proj1.Text = "Sem Registro"
-        '
-        'Label44
-        '
-        Me.Label44.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.Label44.AutoSize = True
-        Me.Label44.Font = New System.Drawing.Font("Segoe UI", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label44.Location = New System.Drawing.Point(599, 39)
-        Me.Label44.Name = "Label44"
-        Me.Label44.Size = New System.Drawing.Size(426, 31)
-        Me.Label44.TabIndex = 0
-        Me.Label44.Text = "Desenvolvedor: Laura Maria Cury Clivatti"
-        Me.Label44.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        '
-        'Label43
-        '
-        Me.Label43.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.Label43.AutoSize = True
-        Me.Label43.Font = New System.Drawing.Font("Segoe UI", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label43.Location = New System.Drawing.Point(668, 61)
-        Me.Label43.Name = "Label43"
-        Me.Label43.Size = New System.Drawing.Size(335, 31)
-        Me.Label43.TabIndex = 1
-        Me.Label43.Text = "Orientador: Rodolfo Krul Tessari"
-        Me.Label43.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'TabPropriedadesMadeiras
         '
@@ -1368,7 +1246,7 @@ Partial Class Form1
         Me.TabPropriedadesMadeiras.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.TabPropriedadesMadeiras.Name = "TabPropriedadesMadeiras"
         Me.TabPropriedadesMadeiras.Padding = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.TabPropriedadesMadeiras.Size = New System.Drawing.Size(1158, 624)
+        Me.TabPropriedadesMadeiras.Size = New System.Drawing.Size(1068, 534)
         Me.TabPropriedadesMadeiras.TabIndex = 1
         Me.TabPropriedadesMadeiras.Text = "Propriedades da Madeira"
         Me.TabPropriedadesMadeiras.UseVisualStyleBackColor = True
@@ -1807,7 +1685,7 @@ Partial Class Form1
         Me.TabResistCalculo.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.TabResistCalculo.Name = "TabResistCalculo"
         Me.TabResistCalculo.Padding = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.TabResistCalculo.Size = New System.Drawing.Size(1158, 624)
+        Me.TabResistCalculo.Size = New System.Drawing.Size(1068, 534)
         Me.TabResistCalculo.TabIndex = 2
         Me.TabResistCalculo.Text = "Resistência de Cálculo"
         Me.TabResistCalculo.UseVisualStyleBackColor = True
@@ -2285,119 +2163,50 @@ Partial Class Form1
         '
         'TabDadosIniciais
         '
-        Me.TabDadosIniciais.Controls.Add(Me.btnCalcularPropriedadesGeometricas)
-        Me.TabDadosIniciais.Controls.Add(Me.gbxVinculacao)
+        Me.TabDadosIniciais.AutoScroll = True
         Me.TabDadosIniciais.Controls.Add(Me.gbx3Elementos)
+        Me.TabDadosIniciais.Controls.Add(Me.lblcaixaod)
+        Me.TabDadosIniciais.Controls.Add(Me.gbxCompostaCaixao)
+        Me.TabDadosIniciais.Controls.Add(Me.lblcaixaob4)
+        Me.TabDadosIniciais.Controls.Add(Me.lblTd)
+        Me.TabDadosIniciais.Controls.Add(Me.lblcaixaob3)
+        Me.TabDadosIniciais.Controls.Add(Me.lblTbw)
+        Me.TabDadosIniciais.Controls.Add(Me.lblCaixaob2)
+        Me.TabDadosIniciais.Controls.Add(Me.lblTh)
+        Me.TabDadosIniciais.Controls.Add(Me.lblCaixaob1)
+        Me.TabDadosIniciais.Controls.Add(Me.lblThf)
+        Me.TabDadosIniciais.Controls.Add(Me.lblCaixaoh4)
+        Me.TabDadosIniciais.Controls.Add(Me.lblTbf)
+        Me.TabDadosIniciais.Controls.Add(Me.lblCompRet)
+        Me.TabDadosIniciais.Controls.Add(Me.lblCaixaoh2)
+        Me.TabDadosIniciais.Controls.Add(Me.btnCalcularPropriedadesGeometricas)
+        Me.TabDadosIniciais.Controls.Add(Me.gbxCompostaT)
+        Me.TabDadosIniciais.Controls.Add(Me.lblCaixaoh1)
+        Me.TabDadosIniciais.Controls.Add(Me.lblIH)
+        Me.TabDadosIniciais.Controls.Add(Me.lblId)
+        Me.TabDadosIniciais.Controls.Add(Me.lblIbw)
+        Me.TabDadosIniciais.Controls.Add(Me.lblIhf2)
+        Me.TabDadosIniciais.Controls.Add(Me.lblIbf2)
+        Me.TabDadosIniciais.Controls.Add(Me.lblCircL)
+        Me.TabDadosIniciais.Controls.Add(Me.lblIhf1)
+        Me.TabDadosIniciais.Controls.Add(Me.lblIbf1)
+        Me.TabDadosIniciais.Controls.Add(Me.lblBase)
+        Me.TabDadosIniciais.Controls.Add(Me.lblAltura)
+        Me.TabDadosIniciais.Controls.Add(Me.lblCircD)
+        Me.TabDadosIniciais.Controls.Add(Me.gbxVinculacao)
         Me.TabDadosIniciais.Controls.Add(Me.imgSecao)
         Me.TabDadosIniciais.Controls.Add(Me.gbx2Elementos)
         Me.TabDadosIniciais.Controls.Add(Me.gbxCompostaI)
-        Me.TabDadosIniciais.Controls.Add(Me.gbxCompostaCaixao)
-        Me.TabDadosIniciais.Controls.Add(Me.gbxCompostaT)
         Me.TabDadosIniciais.Controls.Add(Me.gbxCircular)
         Me.TabDadosIniciais.Controls.Add(Me.GroupBox23)
         Me.TabDadosIniciais.Controls.Add(Me.gbxRetangular)
         Me.TabDadosIniciais.Controls.Add(Me.GroupBox6)
         Me.TabDadosIniciais.Location = New System.Drawing.Point(4, 32)
-        Me.TabDadosIniciais.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.TabDadosIniciais.Name = "TabDadosIniciais"
-        Me.TabDadosIniciais.Padding = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.TabDadosIniciais.Size = New System.Drawing.Size(1158, 624)
+        Me.TabDadosIniciais.Size = New System.Drawing.Size(1068, 534)
         Me.TabDadosIniciais.TabIndex = 3
         Me.TabDadosIniciais.Text = "Dados Iniciais"
         Me.TabDadosIniciais.UseVisualStyleBackColor = True
-        '
-        'btnCalcularPropriedadesGeometricas
-        '
-        Me.btnCalcularPropriedadesGeometricas.BackColor = System.Drawing.Color.Transparent
-        Me.btnCalcularPropriedadesGeometricas.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnCalcularPropriedadesGeometricas.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.btnCalcularPropriedadesGeometricas.Location = New System.Drawing.Point(311, 595)
-        Me.btnCalcularPropriedadesGeometricas.Name = "btnCalcularPropriedadesGeometricas"
-        Me.btnCalcularPropriedadesGeometricas.Size = New System.Drawing.Size(86, 29)
-        Me.btnCalcularPropriedadesGeometricas.TabIndex = 92
-        Me.btnCalcularPropriedadesGeometricas.Text = "Calcular"
-        Me.btnCalcularPropriedadesGeometricas.UseVisualStyleBackColor = False
-        '
-        'gbxVinculacao
-        '
-        Me.gbxVinculacao.Controls.Add(Me.lblKe)
-        Me.gbxVinculacao.Controls.Add(Me.Label53)
-        Me.gbxVinculacao.Controls.Add(Me.Label54)
-        Me.gbxVinculacao.Controls.Add(Me.cboLvinculado)
-        Me.gbxVinculacao.Controls.Add(Me.Label51)
-        Me.gbxVinculacao.Controls.Add(Me.PictureBox4)
-        Me.gbxVinculacao.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.gbxVinculacao.Location = New System.Drawing.Point(884, 333)
-        Me.gbxVinculacao.Name = "gbxVinculacao"
-        Me.gbxVinculacao.Size = New System.Drawing.Size(250, 107)
-        Me.gbxVinculacao.TabIndex = 91
-        Me.gbxVinculacao.TabStop = False
-        Me.gbxVinculacao.Text = "Vinculação"
-        '
-        'lblKe
-        '
-        Me.lblKe.AutoSize = True
-        Me.lblKe.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.lblKe.Location = New System.Drawing.Point(127, 79)
-        Me.lblKe.Name = "lblKe"
-        Me.lblKe.Size = New System.Drawing.Size(0, 23)
-        Me.lblKe.TabIndex = 73
-        Me.lblKe.Visible = False
-        '
-        'Label53
-        '
-        Me.Label53.AutoSize = True
-        Me.Label53.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Label53.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label53.Location = New System.Drawing.Point(110, 86)
-        Me.Label53.Name = "Label53"
-        Me.Label53.Size = New System.Drawing.Size(13, 15)
-        Me.Label53.TabIndex = 72
-        Me.Label53.Text = "e"
-        '
-        'Label54
-        '
-        Me.Label54.AutoSize = True
-        Me.Label54.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Label54.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label54.Location = New System.Drawing.Point(101, 79)
-        Me.Label54.Name = "Label54"
-        Me.Label54.Size = New System.Drawing.Size(37, 23)
-        Me.Label54.TabIndex = 71
-        Me.Label54.Text = "k   :"
-        '
-        'cboLvinculado
-        '
-        Me.cboLvinculado.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.cboLvinculado.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.cboLvinculado.FormattingEnabled = True
-        Me.cboLvinculado.Items.AddRange(New Object() {"Bi-Engastada", "Engastada Rotulada", "Engaste - Engaste Movel ", "Bi-Rotulada", "Engaste - Extremidade Livre", "Apoio - Engaste Movel "})
-        Me.cboLvinculado.Location = New System.Drawing.Point(6, 50)
-        Me.cboLvinculado.Name = "cboLvinculado"
-        Me.cboLvinculado.Size = New System.Drawing.Size(188, 31)
-        Me.cboLvinculado.TabIndex = 70
-        Me.cboLvinculado.Text = "Selecione.."
-        '
-        'Label51
-        '
-        Me.Label51.AutoSize = True
-        Me.Label51.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label51.Location = New System.Drawing.Point(4, 24)
-        Me.Label51.Name = "Label51"
-        Me.Label51.Size = New System.Drawing.Size(161, 23)
-        Me.Label51.TabIndex = 69
-        Me.Label51.Text = "Vinculação da Peça:"
-        '
-        'PictureBox4
-        '
-        Me.PictureBox4.BackgroundImage = Global.TCC2.My.Resources.Resources.help
-        Me.PictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.PictureBox4.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PictureBox4.Location = New System.Drawing.Point(210, 16)
-        Me.PictureBox4.Name = "PictureBox4"
-        Me.PictureBox4.Size = New System.Drawing.Size(33, 36)
-        Me.PictureBox4.TabIndex = 67
-        Me.PictureBox4.TabStop = False
         '
         'gbx3Elementos
         '
@@ -2417,7 +2226,7 @@ Partial Class Form1
         Me.gbx3Elementos.Controls.Add(Me.Label358)
         Me.gbx3Elementos.Controls.Add(Me.label800)
         Me.gbx3Elementos.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.gbx3Elementos.Location = New System.Drawing.Point(6, 250)
+        Me.gbx3Elementos.Location = New System.Drawing.Point(6, 240)
         Me.gbx3Elementos.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.gbx3Elementos.Name = "gbx3Elementos"
         Me.gbx3Elementos.Padding = New System.Windows.Forms.Padding(3, 4, 3, 4)
@@ -2572,463 +2381,14 @@ Partial Class Form1
         Me.label800.TabIndex = 21
         Me.label800.Text = "Comprimento Entre Eixos dos Espaçadores(L1):"
         '
-        'imgSecao
-        '
-        Me.imgSecao.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.imgSecao.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.imgSecao.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.imgSecao.InitialImage = Nothing
-        Me.imgSecao.Location = New System.Drawing.Point(428, 18)
-        Me.imgSecao.Name = "imgSecao"
-        Me.imgSecao.Size = New System.Drawing.Size(450, 300)
-        Me.imgSecao.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.imgSecao.TabIndex = 22
-        Me.imgSecao.TabStop = False
-        '
-        'gbx2Elementos
-        '
-        Me.gbx2Elementos.Controls.Add(Me.txtEntrada2b1)
-        Me.gbx2Elementos.Controls.Add(Me.Label223)
-        Me.gbx2Elementos.Controls.Add(Me.Label303)
-        Me.gbx2Elementos.Controls.Add(Me.txtEntrada2h1)
-        Me.gbx2Elementos.Controls.Add(Me.txtEntrada2a1)
-        Me.gbx2Elementos.Controls.Add(Me.txtEntrada2L1)
-        Me.gbx2Elementos.Controls.Add(Me.txtEntrada2L)
-        Me.gbx2Elementos.Controls.Add(Me.Label132)
-        Me.gbx2Elementos.Controls.Add(Me.Label133)
-        Me.gbx2Elementos.Controls.Add(Me.Label137)
-        Me.gbx2Elementos.Controls.Add(Me.Label178)
-        Me.gbx2Elementos.Controls.Add(Me.Label180)
-        Me.gbx2Elementos.Controls.Add(Me.Label206)
-        Me.gbx2Elementos.Controls.Add(Me.Label220)
-        Me.gbx2Elementos.Controls.Add(Me.Label222)
-        Me.gbx2Elementos.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.gbx2Elementos.Location = New System.Drawing.Point(6, 250)
-        Me.gbx2Elementos.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.gbx2Elementos.Name = "gbx2Elementos"
-        Me.gbx2Elementos.Padding = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.gbx2Elementos.Size = New System.Drawing.Size(391, 232)
-        Me.gbx2Elementos.TabIndex = 39
-        Me.gbx2Elementos.TabStop = False
-        Me.gbx2Elementos.Text = "Dados Iniciais: 2 Elementos Justapostos"
-        Me.gbx2Elementos.Visible = False
-        '
-        'txtEntrada2b1
-        '
-        Me.txtEntrada2b1.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.txtEntrada2b1.Location = New System.Drawing.Point(304, 190)
-        Me.txtEntrada2b1.Name = "txtEntrada2b1"
-        Me.txtEntrada2b1.Size = New System.Drawing.Size(59, 30)
-        Me.txtEntrada2b1.TabIndex = 40
-        '
-        'Label223
-        '
-        Me.Label223.AutoSize = True
-        Me.Label223.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label223.Location = New System.Drawing.Point(362, 193)
-        Me.Label223.Name = "Label223"
-        Me.Label223.Size = New System.Drawing.Size(33, 23)
-        Me.Label223.TabIndex = 41
-        Me.Label223.Text = "cm"
-        Me.Label223.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'Label303
-        '
-        Me.Label303.AutoSize = True
-        Me.Label303.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label303.Location = New System.Drawing.Point(137, 193)
-        Me.Label303.Name = "Label303"
-        Me.Label303.Size = New System.Drawing.Size(208, 23)
-        Me.Label303.TabIndex = 39
-        Me.Label303.Text = "Largura do Elemento (b1):"
-        '
-        'txtEntrada2h1
-        '
-        Me.txtEntrada2h1.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.txtEntrada2h1.Location = New System.Drawing.Point(304, 150)
-        Me.txtEntrada2h1.Name = "txtEntrada2h1"
-        Me.txtEntrada2h1.Size = New System.Drawing.Size(59, 30)
-        Me.txtEntrada2h1.TabIndex = 36
-        '
-        'txtEntrada2a1
-        '
-        Me.txtEntrada2a1.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.txtEntrada2a1.Location = New System.Drawing.Point(304, 108)
-        Me.txtEntrada2a1.Name = "txtEntrada2a1"
-        Me.txtEntrada2a1.Size = New System.Drawing.Size(59, 30)
-        Me.txtEntrada2a1.TabIndex = 31
-        '
-        'txtEntrada2L1
-        '
-        Me.txtEntrada2L1.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.txtEntrada2L1.Location = New System.Drawing.Point(304, 68)
-        Me.txtEntrada2L1.Name = "txtEntrada2L1"
-        Me.txtEntrada2L1.Size = New System.Drawing.Size(59, 30)
-        Me.txtEntrada2L1.TabIndex = 25
-        '
-        'txtEntrada2L
-        '
-        Me.txtEntrada2L.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.txtEntrada2L.Location = New System.Drawing.Point(304, 29)
-        Me.txtEntrada2L.Name = "txtEntrada2L"
-        Me.txtEntrada2L.Size = New System.Drawing.Size(59, 30)
-        Me.txtEntrada2L.TabIndex = 24
-        '
-        'Label132
-        '
-        Me.Label132.AutoSize = True
-        Me.Label132.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label132.Location = New System.Drawing.Point(362, 154)
-        Me.Label132.Name = "Label132"
-        Me.Label132.Size = New System.Drawing.Size(33, 23)
-        Me.Label132.TabIndex = 37
-        Me.Label132.Text = "cm"
-        Me.Label132.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'Label133
-        '
-        Me.Label133.AutoSize = True
-        Me.Label133.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label133.Location = New System.Drawing.Point(69, 154)
-        Me.Label133.Name = "Label133"
-        Me.Label133.Size = New System.Drawing.Size(292, 23)
-        Me.Label133.TabIndex = 34
-        Me.Label133.Text = "Largura do Elemento Composto (h1):"
-        '
-        'Label137
-        '
-        Me.Label137.AutoSize = True
-        Me.Label137.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label137.Location = New System.Drawing.Point(362, 113)
-        Me.Label137.Name = "Label137"
-        Me.Label137.Size = New System.Drawing.Size(33, 23)
-        Me.Label137.TabIndex = 32
-        Me.Label137.Text = "cm"
-        Me.Label137.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'Label178
-        '
-        Me.Label178.AutoSize = True
-        Me.Label178.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label178.Location = New System.Drawing.Point(31, 113)
-        Me.Label178.Name = "Label178"
-        Me.Label178.Size = New System.Drawing.Size(343, 23)
-        Me.Label178.TabIndex = 30
-        Me.Label178.Text = "Comprimento Entre Eixos do Elemento (a1):"
-        '
-        'Label180
-        '
-        Me.Label180.AutoSize = True
-        Me.Label180.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label180.Location = New System.Drawing.Point(362, 73)
-        Me.Label180.Name = "Label180"
-        Me.Label180.Size = New System.Drawing.Size(33, 23)
-        Me.Label180.TabIndex = 29
-        Me.Label180.Text = "cm"
-        Me.Label180.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'Label206
-        '
-        Me.Label206.AutoSize = True
-        Me.Label206.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label206.Location = New System.Drawing.Point(362, 34)
-        Me.Label206.Name = "Label206"
-        Me.Label206.Size = New System.Drawing.Size(33, 23)
-        Me.Label206.TabIndex = 27
-        Me.Label206.Text = "cm"
-        Me.Label206.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'Label220
-        '
-        Me.Label220.AutoSize = True
-        Me.Label220.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label220.Location = New System.Drawing.Point(156, 32)
-        Me.Label220.Name = "Label220"
-        Me.Label220.Size = New System.Drawing.Size(184, 23)
-        Me.Label220.TabIndex = 23
-        Me.Label220.Text = "Comprimento Total (L):"
-        '
-        'Label222
-        '
-        Me.Label222.AutoSize = True
-        Me.Label222.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label222.Location = New System.Drawing.Point(8, 71)
-        Me.Label222.Name = "Label222"
-        Me.Label222.Size = New System.Drawing.Size(366, 23)
-        Me.Label222.TabIndex = 21
-        Me.Label222.Text = "Comprimento Entre Eixos dos Espaçadores(L1):"
-        '
-        'gbxCompostaI
-        '
-        Me.gbxCompostaI.Controls.Add(Me.txtIComp)
-        Me.gbxCompostaI.Controls.Add(Me.txtEntradaIH)
-        Me.gbxCompostaI.Controls.Add(Me.txtEntradaIHf1)
-        Me.gbxCompostaI.Controls.Add(Me.txtEntradaIBf1)
-        Me.gbxCompostaI.Controls.Add(Me.txtEntradaID)
-        Me.gbxCompostaI.Controls.Add(Me.txtEntradaIBw)
-        Me.gbxCompostaI.Controls.Add(Me.txtEntradaIBf2)
-        Me.gbxCompostaI.Controls.Add(Me.txtEntradaIHf2)
-        Me.gbxCompostaI.Controls.Add(Me.Label239)
-        Me.gbxCompostaI.Controls.Add(Me.Label117)
-        Me.gbxCompostaI.Controls.Add(Me.Label514)
-        Me.gbxCompostaI.Controls.Add(Me.Label430)
-        Me.gbxCompostaI.Controls.Add(Me.Label361)
-        Me.gbxCompostaI.Controls.Add(Me.Label163)
-        Me.gbxCompostaI.Controls.Add(Me.Label429)
-        Me.gbxCompostaI.Controls.Add(Me.Label362)
-        Me.gbxCompostaI.Controls.Add(Me.Label427)
-        Me.gbxCompostaI.Controls.Add(Me.Label422)
-        Me.gbxCompostaI.Controls.Add(Me.Label419)
-        Me.gbxCompostaI.Controls.Add(Me.Label116)
-        Me.gbxCompostaI.Controls.Add(Me.Label406)
-        Me.gbxCompostaI.Controls.Add(Me.Label407)
-        Me.gbxCompostaI.Controls.Add(Me.Label152)
-        Me.gbxCompostaI.Controls.Add(Me.Label151)
-        Me.gbxCompostaI.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.gbxCompostaI.Location = New System.Drawing.Point(6, 250)
-        Me.gbxCompostaI.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.gbxCompostaI.Name = "gbxCompostaI"
-        Me.gbxCompostaI.Padding = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.gbxCompostaI.Size = New System.Drawing.Size(391, 341)
-        Me.gbxCompostaI.TabIndex = 29
-        Me.gbxCompostaI.TabStop = False
-        Me.gbxCompostaI.Text = "Dados Iniciais: Seção I"
-        Me.gbxCompostaI.Visible = False
-        '
-        'txtIComp
-        '
-        Me.txtIComp.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.txtIComp.Location = New System.Drawing.Point(206, 308)
-        Me.txtIComp.Name = "txtIComp"
-        Me.txtIComp.Size = New System.Drawing.Size(59, 30)
-        Me.txtIComp.TabIndex = 97
-        '
-        'txtEntradaIH
-        '
-        Me.txtEntradaIH.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.txtEntradaIH.Location = New System.Drawing.Point(206, 66)
-        Me.txtEntradaIH.Name = "txtEntradaIH"
-        Me.txtEntradaIH.Size = New System.Drawing.Size(59, 30)
-        Me.txtEntradaIH.TabIndex = 26
-        '
-        'txtEntradaIHf1
-        '
-        Me.txtEntradaIHf1.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.txtEntradaIHf1.Location = New System.Drawing.Point(206, 25)
-        Me.txtEntradaIHf1.Name = "txtEntradaIHf1"
-        Me.txtEntradaIHf1.Size = New System.Drawing.Size(59, 30)
-        Me.txtEntradaIHf1.TabIndex = 25
-        '
-        'txtEntradaIBf1
-        '
-        Me.txtEntradaIBf1.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.txtEntradaIBf1.Location = New System.Drawing.Point(206, 189)
-        Me.txtEntradaIBf1.Name = "txtEntradaIBf1"
-        Me.txtEntradaIBf1.Size = New System.Drawing.Size(59, 30)
-        Me.txtEntradaIBf1.TabIndex = 26
-        '
-        'txtEntradaID
-        '
-        Me.txtEntradaID.Enabled = False
-        Me.txtEntradaID.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.txtEntradaID.Location = New System.Drawing.Point(206, 150)
-        Me.txtEntradaID.Name = "txtEntradaID"
-        Me.txtEntradaID.Size = New System.Drawing.Size(59, 30)
-        Me.txtEntradaID.TabIndex = 24
-        '
-        'txtEntradaIBw
-        '
-        Me.txtEntradaIBw.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.txtEntradaIBw.Location = New System.Drawing.Point(206, 229)
-        Me.txtEntradaIBw.Name = "txtEntradaIBw"
-        Me.txtEntradaIBw.Size = New System.Drawing.Size(59, 30)
-        Me.txtEntradaIBw.TabIndex = 31
-        '
-        'txtEntradaIBf2
-        '
-        Me.txtEntradaIBf2.Enabled = False
-        Me.txtEntradaIBf2.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.txtEntradaIBf2.Location = New System.Drawing.Point(206, 269)
-        Me.txtEntradaIBf2.Name = "txtEntradaIBf2"
-        Me.txtEntradaIBf2.Size = New System.Drawing.Size(59, 30)
-        Me.txtEntradaIBf2.TabIndex = 36
-        '
-        'txtEntradaIHf2
-        '
-        Me.txtEntradaIHf2.Enabled = False
-        Me.txtEntradaIHf2.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.txtEntradaIHf2.Location = New System.Drawing.Point(206, 108)
-        Me.txtEntradaIHf2.Name = "txtEntradaIHf2"
-        Me.txtEntradaIHf2.Size = New System.Drawing.Size(59, 30)
-        Me.txtEntradaIHf2.TabIndex = 35
-        '
-        'Label239
-        '
-        Me.Label239.AutoSize = True
-        Me.Label239.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label239.Location = New System.Drawing.Point(265, 311)
-        Me.Label239.Name = "Label239"
-        Me.Label239.Size = New System.Drawing.Size(25, 23)
-        Me.Label239.TabIndex = 98
-        Me.Label239.Text = "m"
-        Me.Label239.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'Label117
-        '
-        Me.Label117.AutoSize = True
-        Me.Label117.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label117.Location = New System.Drawing.Point(265, 70)
-        Me.Label117.Name = "Label117"
-        Me.Label117.Size = New System.Drawing.Size(33, 23)
-        Me.Label117.TabIndex = 39
-        Me.Label117.Text = "cm"
-        Me.Label117.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'Label514
-        '
-        Me.Label514.AutoSize = True
-        Me.Label514.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label514.Location = New System.Drawing.Point(96, 311)
-        Me.Label514.Name = "Label514"
-        Me.Label514.Size = New System.Drawing.Size(143, 23)
-        Me.Label514.TabIndex = 96
-        Me.Label514.Text = "Comprimento (L):"
-        '
-        'Label430
-        '
-        Me.Label430.AutoSize = True
-        Me.Label430.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label430.Location = New System.Drawing.Point(19, 27)
-        Me.Label430.Name = "Label430"
-        Me.Label430.Size = New System.Drawing.Size(237, 23)
-        Me.Label430.TabIndex = 21
-        Me.Label430.Text = "Altura da Mesa Superior (hf1):"
-        '
-        'Label361
-        '
-        Me.Label361.AutoSize = True
-        Me.Label361.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label361.Location = New System.Drawing.Point(265, 192)
-        Me.Label361.Name = "Label361"
-        Me.Label361.Size = New System.Drawing.Size(33, 23)
-        Me.Label361.TabIndex = 38
-        Me.Label361.Text = "cm"
-        Me.Label361.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'Label163
-        '
-        Me.Label163.AutoSize = True
-        Me.Label163.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label163.Location = New System.Drawing.Point(265, 272)
-        Me.Label163.Name = "Label163"
-        Me.Label163.Size = New System.Drawing.Size(33, 23)
-        Me.Label163.TabIndex = 27
-        Me.Label163.Text = "cm"
-        Me.Label163.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'Label429
-        '
-        Me.Label429.AutoSize = True
-        Me.Label429.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label429.Location = New System.Drawing.Point(7, 189)
-        Me.Label429.Name = "Label429"
-        Me.Label429.Size = New System.Drawing.Size(249, 23)
-        Me.Label429.TabIndex = 22
-        Me.Label429.Text = "Largura da Mesa Superior (bf1):"
-        '
-        'Label362
-        '
-        Me.Label362.AutoSize = True
-        Me.Label362.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label362.Location = New System.Drawing.Point(265, 232)
-        Me.Label362.Name = "Label362"
-        Me.Label362.Size = New System.Drawing.Size(33, 23)
-        Me.Label362.TabIndex = 37
-        Me.Label362.Text = "cm"
-        Me.Label362.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'Label427
-        '
-        Me.Label427.AutoSize = True
-        Me.Label427.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label427.Location = New System.Drawing.Point(106, 150)
-        Me.Label427.Name = "Label427"
-        Me.Label427.Size = New System.Drawing.Size(126, 23)
-        Me.Label427.TabIndex = 23
-        Me.Label427.Text = "Altura Total (d):"
-        '
-        'Label422
-        '
-        Me.Label422.AutoSize = True
-        Me.Label422.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label422.Location = New System.Drawing.Point(69, 229)
-        Me.Label422.Name = "Label422"
-        Me.Label422.Size = New System.Drawing.Size(177, 23)
-        Me.Label422.TabIndex = 30
-        Me.Label422.Text = "Largura da Alma (bw):"
-        '
-        'Label419
-        '
-        Me.Label419.AutoSize = True
-        Me.Label419.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label419.Location = New System.Drawing.Point(16, 269)
-        Me.Label419.Name = "Label419"
-        Me.Label419.Size = New System.Drawing.Size(240, 23)
-        Me.Label419.TabIndex = 34
-        Me.Label419.Text = "Largura da Mesa Inferior (bf2):"
-        '
-        'Label116
-        '
-        Me.Label116.AutoSize = True
-        Me.Label116.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label116.Location = New System.Drawing.Point(265, 153)
-        Me.Label116.Name = "Label116"
-        Me.Label116.Size = New System.Drawing.Size(33, 23)
-        Me.Label116.TabIndex = 32
-        Me.Label116.Text = "cm"
-        Me.Label116.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'Label406
-        '
-        Me.Label406.AutoSize = True
-        Me.Label406.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label406.Location = New System.Drawing.Point(26, 108)
-        Me.Label406.Name = "Label406"
-        Me.Label406.Size = New System.Drawing.Size(228, 23)
-        Me.Label406.TabIndex = 35
-        Me.Label406.Text = "Altura da Mesa Inferior (hf2):"
-        '
-        'Label407
-        '
-        Me.Label407.AutoSize = True
-        Me.Label407.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label407.Location = New System.Drawing.Point(86, 67)
-        Me.Label407.Name = "Label407"
-        Me.Label407.Size = New System.Drawing.Size(153, 23)
-        Me.Label407.TabIndex = 36
-        Me.Label407.Text = "Altura da Alma (h):"
-        '
-        'Label152
-        '
-        Me.Label152.AutoSize = True
-        Me.Label152.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label152.Location = New System.Drawing.Point(265, 111)
-        Me.Label152.Name = "Label152"
-        Me.Label152.Size = New System.Drawing.Size(33, 23)
-        Me.Label152.TabIndex = 28
-        Me.Label152.Text = "cm"
-        Me.Label152.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'Label151
-        '
-        Me.Label151.AutoSize = True
-        Me.Label151.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label151.Location = New System.Drawing.Point(265, 30)
-        Me.Label151.Name = "Label151"
-        Me.Label151.Size = New System.Drawing.Size(33, 23)
-        Me.Label151.TabIndex = 29
-        Me.Label151.Text = "cm"
-        Me.Label151.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        'lblcaixaod
+        '
+        Me.lblcaixaod.AutoSize = True
+        Me.lblcaixaod.Location = New System.Drawing.Point(840, 215)
+        Me.lblcaixaod.Name = "lblcaixaod"
+        Me.lblcaixaod.Size = New System.Drawing.Size(0, 23)
+        Me.lblcaixaod.TabIndex = 110
+        Me.lblcaixaod.Visible = False
         '
         'gbxCompostaCaixao
         '
@@ -3063,7 +2423,7 @@ Partial Class Form1
         Me.gbxCompostaCaixao.Controls.Add(Me.txtEntradaCaixaoB4)
         Me.gbxCompostaCaixao.Controls.Add(Me.txtEntradaCaixaoH4)
         Me.gbxCompostaCaixao.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.gbxCompostaCaixao.Location = New System.Drawing.Point(6, 250)
+        Me.gbxCompostaCaixao.Location = New System.Drawing.Point(6, 240)
         Me.gbxCompostaCaixao.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.gbxCompostaCaixao.Name = "gbxCompostaCaixao"
         Me.gbxCompostaCaixao.Padding = New System.Windows.Forms.Padding(3, 4, 3, 4)
@@ -3368,6 +2728,128 @@ Partial Class Form1
         Me.txtEntradaCaixaoH4.Size = New System.Drawing.Size(59, 30)
         Me.txtEntradaCaixaoH4.TabIndex = 31
         '
+        'lblcaixaob4
+        '
+        Me.lblcaixaob4.AutoSize = True
+        Me.lblcaixaob4.Location = New System.Drawing.Point(654, 39)
+        Me.lblcaixaob4.Name = "lblcaixaob4"
+        Me.lblcaixaob4.Size = New System.Drawing.Size(0, 23)
+        Me.lblcaixaob4.TabIndex = 109
+        Me.lblcaixaob4.Visible = False
+        '
+        'lblTd
+        '
+        Me.lblTd.AutoSize = True
+        Me.lblTd.Location = New System.Drawing.Point(810, 218)
+        Me.lblTd.Name = "lblTd"
+        Me.lblTd.Size = New System.Drawing.Size(0, 23)
+        Me.lblTd.TabIndex = 98
+        Me.lblTd.Visible = False
+        '
+        'lblcaixaob3
+        '
+        Me.lblcaixaob3.AutoSize = True
+        Me.lblcaixaob3.Location = New System.Drawing.Point(752, 240)
+        Me.lblcaixaob3.Name = "lblcaixaob3"
+        Me.lblcaixaob3.Size = New System.Drawing.Size(0, 23)
+        Me.lblcaixaob3.TabIndex = 108
+        Me.lblcaixaob3.Visible = False
+        '
+        'lblTbw
+        '
+        Me.lblTbw.AutoSize = True
+        Me.lblTbw.Location = New System.Drawing.Point(690, 391)
+        Me.lblTbw.Name = "lblTbw"
+        Me.lblTbw.Size = New System.Drawing.Size(0, 23)
+        Me.lblTbw.TabIndex = 99
+        Me.lblTbw.Visible = False
+        '
+        'lblCaixaob2
+        '
+        Me.lblCaixaob2.AutoSize = True
+        Me.lblCaixaob2.Location = New System.Drawing.Point(584, 240)
+        Me.lblCaixaob2.Name = "lblCaixaob2"
+        Me.lblCaixaob2.Size = New System.Drawing.Size(0, 23)
+        Me.lblCaixaob2.TabIndex = 107
+        Me.lblCaixaob2.Visible = False
+        '
+        'lblTh
+        '
+        Me.lblTh.AutoSize = True
+        Me.lblTh.Location = New System.Drawing.Point(557, 236)
+        Me.lblTh.Name = "lblTh"
+        Me.lblTh.Size = New System.Drawing.Size(0, 23)
+        Me.lblTh.TabIndex = 96
+        Me.lblTh.Visible = False
+        '
+        'lblCaixaob1
+        '
+        Me.lblCaixaob1.AutoSize = True
+        Me.lblCaixaob1.Location = New System.Drawing.Point(656, 390)
+        Me.lblCaixaob1.Name = "lblCaixaob1"
+        Me.lblCaixaob1.Size = New System.Drawing.Size(0, 23)
+        Me.lblCaixaob1.TabIndex = 106
+        Me.lblCaixaob1.Visible = False
+        '
+        'lblThf
+        '
+        Me.lblThf.AutoSize = True
+        Me.lblThf.Location = New System.Drawing.Point(561, 90)
+        Me.lblThf.Name = "lblThf"
+        Me.lblThf.Size = New System.Drawing.Size(0, 23)
+        Me.lblThf.TabIndex = 97
+        Me.lblThf.Visible = False
+        '
+        'lblCaixaoh4
+        '
+        Me.lblCaixaoh4.AutoSize = True
+        Me.lblCaixaoh4.Location = New System.Drawing.Point(531, 86)
+        Me.lblCaixaoh4.Name = "lblCaixaoh4"
+        Me.lblCaixaoh4.Size = New System.Drawing.Size(0, 23)
+        Me.lblCaixaoh4.TabIndex = 105
+        Me.lblCaixaoh4.Visible = False
+        '
+        'lblTbf
+        '
+        Me.lblTbf.AutoSize = True
+        Me.lblTbf.Location = New System.Drawing.Point(693, 46)
+        Me.lblTbf.Name = "lblTbf"
+        Me.lblTbf.Size = New System.Drawing.Size(0, 23)
+        Me.lblTbf.TabIndex = 100
+        Me.lblTbf.Visible = False
+        '
+        'lblCompRet
+        '
+        Me.lblCompRet.AutoSize = True
+        Me.lblCompRet.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.lblCompRet.Location = New System.Drawing.Point(641, 238)
+        Me.lblCompRet.Name = "lblCompRet"
+        Me.lblCompRet.Size = New System.Drawing.Size(20, 23)
+        Me.lblCompRet.TabIndex = 95
+        Me.lblCompRet.Text = "  "
+        Me.lblCompRet.Visible = False
+        '
+        'lblCaixaoh2
+        '
+        Me.lblCaixaoh2.AutoSize = True
+        Me.lblCaixaoh2.Location = New System.Drawing.Point(530, 218)
+        Me.lblCaixaoh2.Name = "lblCaixaoh2"
+        Me.lblCaixaoh2.Size = New System.Drawing.Size(0, 23)
+        Me.lblCaixaoh2.TabIndex = 103
+        Me.lblCaixaoh2.Visible = False
+        '
+        'btnCalcularPropriedadesGeometricas
+        '
+        Me.btnCalcularPropriedadesGeometricas.BackColor = System.Drawing.Color.Transparent
+        Me.btnCalcularPropriedadesGeometricas.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnCalcularPropriedadesGeometricas.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.btnCalcularPropriedadesGeometricas.Location = New System.Drawing.Point(828, 360)
+        Me.btnCalcularPropriedadesGeometricas.Name = "btnCalcularPropriedadesGeometricas"
+        Me.btnCalcularPropriedadesGeometricas.Size = New System.Drawing.Size(109, 64)
+        Me.btnCalcularPropriedadesGeometricas.TabIndex = 92
+        Me.btnCalcularPropriedadesGeometricas.Text = "Propriedades Geométricas"
+        Me.btnCalcularPropriedadesGeometricas.UseVisualStyleBackColor = False
+        '
         'gbxCompostaT
         '
         Me.gbxCompostaT.Controls.Add(Me.txtTComp)
@@ -3389,7 +2871,7 @@ Partial Class Form1
         Me.gbxCompostaT.Controls.Add(Me.Label113)
         Me.gbxCompostaT.Controls.Add(Me.Label177)
         Me.gbxCompostaT.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.gbxCompostaT.Location = New System.Drawing.Point(6, 250)
+        Me.gbxCompostaT.Location = New System.Drawing.Point(6, 240)
         Me.gbxCompostaT.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.gbxCompostaT.Name = "gbxCompostaT"
         Me.gbxCompostaT.Padding = New System.Windows.Forms.Padding(3, 4, 3, 4)
@@ -3574,6 +3056,654 @@ Partial Class Form1
         Me.Label177.TabIndex = 21
         Me.Label177.Text = "Altura da Mesa (hf):"
         '
+        'lblCaixaoh1
+        '
+        Me.lblCaixaoh1.AutoSize = True
+        Me.lblCaixaoh1.Location = New System.Drawing.Point(533, 347)
+        Me.lblCaixaoh1.Name = "lblCaixaoh1"
+        Me.lblCaixaoh1.Size = New System.Drawing.Size(0, 23)
+        Me.lblCaixaoh1.TabIndex = 102
+        Me.lblCaixaoh1.Visible = False
+        '
+        'lblIH
+        '
+        Me.lblIH.AutoSize = True
+        Me.lblIH.Location = New System.Drawing.Point(551, 215)
+        Me.lblIH.Name = "lblIH"
+        Me.lblIH.Size = New System.Drawing.Size(0, 23)
+        Me.lblIH.TabIndex = 100
+        Me.lblIH.Visible = False
+        '
+        'lblId
+        '
+        Me.lblId.AutoSize = True
+        Me.lblId.Location = New System.Drawing.Point(828, 215)
+        Me.lblId.Name = "lblId"
+        Me.lblId.Size = New System.Drawing.Size(0, 23)
+        Me.lblId.TabIndex = 102
+        Me.lblId.Visible = False
+        '
+        'lblIbw
+        '
+        Me.lblIbw.AutoSize = True
+        Me.lblIbw.Location = New System.Drawing.Point(687, 230)
+        Me.lblIbw.Name = "lblIbw"
+        Me.lblIbw.Size = New System.Drawing.Size(0, 23)
+        Me.lblIbw.TabIndex = 104
+        Me.lblIbw.Visible = False
+        '
+        'lblIhf2
+        '
+        Me.lblIhf2.AutoSize = True
+        Me.lblIhf2.Location = New System.Drawing.Point(562, 357)
+        Me.lblIhf2.Name = "lblIhf2"
+        Me.lblIhf2.Size = New System.Drawing.Size(0, 23)
+        Me.lblIhf2.TabIndex = 101
+        Me.lblIhf2.Visible = False
+        '
+        'lblIbf2
+        '
+        Me.lblIbf2.AutoSize = True
+        Me.lblIbf2.Location = New System.Drawing.Point(693, 394)
+        Me.lblIbf2.Name = "lblIbf2"
+        Me.lblIbf2.Size = New System.Drawing.Size(0, 23)
+        Me.lblIbf2.TabIndex = 105
+        Me.lblIbf2.Visible = False
+        '
+        'lblCircL
+        '
+        Me.lblCircL.AutoSize = True
+        Me.lblCircL.Location = New System.Drawing.Point(648, 238)
+        Me.lblCircL.Name = "lblCircL"
+        Me.lblCircL.Size = New System.Drawing.Size(0, 23)
+        Me.lblCircL.TabIndex = 97
+        Me.lblCircL.Visible = False
+        '
+        'lblIhf1
+        '
+        Me.lblIhf1.AutoSize = True
+        Me.lblIhf1.Location = New System.Drawing.Point(562, 80)
+        Me.lblIhf1.Name = "lblIhf1"
+        Me.lblIhf1.Size = New System.Drawing.Size(0, 23)
+        Me.lblIhf1.TabIndex = 99
+        Me.lblIhf1.Visible = False
+        '
+        'lblIbf1
+        '
+        Me.lblIbf1.AutoSize = True
+        Me.lblIbf1.Location = New System.Drawing.Point(693, 29)
+        Me.lblIbf1.Name = "lblIbf1"
+        Me.lblIbf1.Size = New System.Drawing.Size(0, 23)
+        Me.lblIbf1.TabIndex = 103
+        Me.lblIbf1.Visible = False
+        '
+        'lblBase
+        '
+        Me.lblBase.AutoSize = True
+        Me.lblBase.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.lblBase.Location = New System.Drawing.Point(770, 307)
+        Me.lblBase.Name = "lblBase"
+        Me.lblBase.Size = New System.Drawing.Size(0, 23)
+        Me.lblBase.TabIndex = 94
+        Me.lblBase.Visible = False
+        '
+        'lblAltura
+        '
+        Me.lblAltura.AutoSize = True
+        Me.lblAltura.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.lblAltura.Location = New System.Drawing.Point(707, 236)
+        Me.lblAltura.Name = "lblAltura"
+        Me.lblAltura.Size = New System.Drawing.Size(0, 23)
+        Me.lblAltura.TabIndex = 93
+        Me.lblAltura.Visible = False
+        '
+        'lblCircD
+        '
+        Me.lblCircD.AutoSize = True
+        Me.lblCircD.Location = New System.Drawing.Point(786, 260)
+        Me.lblCircD.Name = "lblCircD"
+        Me.lblCircD.Size = New System.Drawing.Size(0, 23)
+        Me.lblCircD.TabIndex = 96
+        Me.lblCircD.Visible = False
+        '
+        'gbxVinculacao
+        '
+        Me.gbxVinculacao.Controls.Add(Me.lblKe)
+        Me.gbxVinculacao.Controls.Add(Me.Label53)
+        Me.gbxVinculacao.Controls.Add(Me.Label54)
+        Me.gbxVinculacao.Controls.Add(Me.cboLvinculado)
+        Me.gbxVinculacao.Controls.Add(Me.Label51)
+        Me.gbxVinculacao.Controls.Add(Me.PictureBox4)
+        Me.gbxVinculacao.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.gbxVinculacao.Location = New System.Drawing.Point(874, 441)
+        Me.gbxVinculacao.Name = "gbxVinculacao"
+        Me.gbxVinculacao.Size = New System.Drawing.Size(250, 107)
+        Me.gbxVinculacao.TabIndex = 91
+        Me.gbxVinculacao.TabStop = False
+        Me.gbxVinculacao.Text = "Vinculação"
+        '
+        'lblKe
+        '
+        Me.lblKe.AutoSize = True
+        Me.lblKe.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.lblKe.Location = New System.Drawing.Point(127, 79)
+        Me.lblKe.Name = "lblKe"
+        Me.lblKe.Size = New System.Drawing.Size(0, 23)
+        Me.lblKe.TabIndex = 73
+        Me.lblKe.Visible = False
+        '
+        'Label53
+        '
+        Me.Label53.AutoSize = True
+        Me.Label53.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Label53.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Label53.Location = New System.Drawing.Point(110, 86)
+        Me.Label53.Name = "Label53"
+        Me.Label53.Size = New System.Drawing.Size(13, 15)
+        Me.Label53.TabIndex = 72
+        Me.Label53.Text = "e"
+        '
+        'Label54
+        '
+        Me.Label54.AutoSize = True
+        Me.Label54.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Label54.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Label54.Location = New System.Drawing.Point(101, 79)
+        Me.Label54.Name = "Label54"
+        Me.Label54.Size = New System.Drawing.Size(37, 23)
+        Me.Label54.TabIndex = 71
+        Me.Label54.Text = "k   :"
+        '
+        'cboLvinculado
+        '
+        Me.cboLvinculado.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.cboLvinculado.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.cboLvinculado.FormattingEnabled = True
+        Me.cboLvinculado.Items.AddRange(New Object() {"Bi-Engastada", "Engastada Rotulada", "Engaste - Engaste Movel ", "Bi-Rotulada", "Engaste - Extremidade Livre", "Apoio - Engaste Movel "})
+        Me.cboLvinculado.Location = New System.Drawing.Point(6, 50)
+        Me.cboLvinculado.Name = "cboLvinculado"
+        Me.cboLvinculado.Size = New System.Drawing.Size(188, 31)
+        Me.cboLvinculado.TabIndex = 70
+        Me.cboLvinculado.Text = "Selecione.."
+        '
+        'Label51
+        '
+        Me.Label51.AutoSize = True
+        Me.Label51.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Label51.Location = New System.Drawing.Point(4, 24)
+        Me.Label51.Name = "Label51"
+        Me.Label51.Size = New System.Drawing.Size(161, 23)
+        Me.Label51.TabIndex = 69
+        Me.Label51.Text = "Vinculação da Peça:"
+        '
+        'PictureBox4
+        '
+        Me.PictureBox4.BackgroundImage = Global.TCC2.My.Resources.Resources.help
+        Me.PictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.PictureBox4.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PictureBox4.Location = New System.Drawing.Point(210, 16)
+        Me.PictureBox4.Name = "PictureBox4"
+        Me.PictureBox4.Size = New System.Drawing.Size(33, 36)
+        Me.PictureBox4.TabIndex = 67
+        Me.PictureBox4.TabStop = False
+        '
+        'imgSecao
+        '
+        Me.imgSecao.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.imgSecao.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.imgSecao.InitialImage = Nothing
+        Me.imgSecao.Location = New System.Drawing.Point(418, 18)
+        Me.imgSecao.Name = "imgSecao"
+        Me.imgSecao.Size = New System.Drawing.Size(532, 411)
+        Me.imgSecao.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.imgSecao.TabIndex = 22
+        Me.imgSecao.TabStop = False
+        '
+        'gbx2Elementos
+        '
+        Me.gbx2Elementos.Controls.Add(Me.txtEntrada2b1)
+        Me.gbx2Elementos.Controls.Add(Me.Label223)
+        Me.gbx2Elementos.Controls.Add(Me.Label303)
+        Me.gbx2Elementos.Controls.Add(Me.txtEntrada2h1)
+        Me.gbx2Elementos.Controls.Add(Me.txtEntrada2a1)
+        Me.gbx2Elementos.Controls.Add(Me.txtEntrada2L1)
+        Me.gbx2Elementos.Controls.Add(Me.txtEntrada2L)
+        Me.gbx2Elementos.Controls.Add(Me.Label132)
+        Me.gbx2Elementos.Controls.Add(Me.Label133)
+        Me.gbx2Elementos.Controls.Add(Me.Label137)
+        Me.gbx2Elementos.Controls.Add(Me.Label178)
+        Me.gbx2Elementos.Controls.Add(Me.Label180)
+        Me.gbx2Elementos.Controls.Add(Me.Label206)
+        Me.gbx2Elementos.Controls.Add(Me.Label220)
+        Me.gbx2Elementos.Controls.Add(Me.Label222)
+        Me.gbx2Elementos.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.gbx2Elementos.Location = New System.Drawing.Point(880, 555)
+        Me.gbx2Elementos.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.gbx2Elementos.Name = "gbx2Elementos"
+        Me.gbx2Elementos.Padding = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.gbx2Elementos.Size = New System.Drawing.Size(391, 232)
+        Me.gbx2Elementos.TabIndex = 39
+        Me.gbx2Elementos.TabStop = False
+        Me.gbx2Elementos.Text = "Dados Iniciais: 2 Elementos Justapostos"
+        Me.gbx2Elementos.Visible = False
+        '
+        'txtEntrada2b1
+        '
+        Me.txtEntrada2b1.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.txtEntrada2b1.Location = New System.Drawing.Point(304, 190)
+        Me.txtEntrada2b1.Name = "txtEntrada2b1"
+        Me.txtEntrada2b1.Size = New System.Drawing.Size(59, 30)
+        Me.txtEntrada2b1.TabIndex = 40
+        '
+        'Label223
+        '
+        Me.Label223.AutoSize = True
+        Me.Label223.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Label223.Location = New System.Drawing.Point(362, 193)
+        Me.Label223.Name = "Label223"
+        Me.Label223.Size = New System.Drawing.Size(33, 23)
+        Me.Label223.TabIndex = 41
+        Me.Label223.Text = "cm"
+        Me.Label223.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Label303
+        '
+        Me.Label303.AutoSize = True
+        Me.Label303.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Label303.Location = New System.Drawing.Point(137, 193)
+        Me.Label303.Name = "Label303"
+        Me.Label303.Size = New System.Drawing.Size(208, 23)
+        Me.Label303.TabIndex = 39
+        Me.Label303.Text = "Largura do Elemento (b1):"
+        '
+        'txtEntrada2h1
+        '
+        Me.txtEntrada2h1.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.txtEntrada2h1.Location = New System.Drawing.Point(304, 150)
+        Me.txtEntrada2h1.Name = "txtEntrada2h1"
+        Me.txtEntrada2h1.Size = New System.Drawing.Size(59, 30)
+        Me.txtEntrada2h1.TabIndex = 36
+        '
+        'txtEntrada2a1
+        '
+        Me.txtEntrada2a1.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.txtEntrada2a1.Location = New System.Drawing.Point(304, 108)
+        Me.txtEntrada2a1.Name = "txtEntrada2a1"
+        Me.txtEntrada2a1.Size = New System.Drawing.Size(59, 30)
+        Me.txtEntrada2a1.TabIndex = 31
+        '
+        'txtEntrada2L1
+        '
+        Me.txtEntrada2L1.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.txtEntrada2L1.Location = New System.Drawing.Point(304, 68)
+        Me.txtEntrada2L1.Name = "txtEntrada2L1"
+        Me.txtEntrada2L1.Size = New System.Drawing.Size(59, 30)
+        Me.txtEntrada2L1.TabIndex = 25
+        '
+        'txtEntrada2L
+        '
+        Me.txtEntrada2L.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.txtEntrada2L.Location = New System.Drawing.Point(304, 29)
+        Me.txtEntrada2L.Name = "txtEntrada2L"
+        Me.txtEntrada2L.Size = New System.Drawing.Size(59, 30)
+        Me.txtEntrada2L.TabIndex = 24
+        '
+        'Label132
+        '
+        Me.Label132.AutoSize = True
+        Me.Label132.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Label132.Location = New System.Drawing.Point(362, 154)
+        Me.Label132.Name = "Label132"
+        Me.Label132.Size = New System.Drawing.Size(33, 23)
+        Me.Label132.TabIndex = 37
+        Me.Label132.Text = "cm"
+        Me.Label132.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Label133
+        '
+        Me.Label133.AutoSize = True
+        Me.Label133.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Label133.Location = New System.Drawing.Point(69, 154)
+        Me.Label133.Name = "Label133"
+        Me.Label133.Size = New System.Drawing.Size(292, 23)
+        Me.Label133.TabIndex = 34
+        Me.Label133.Text = "Largura do Elemento Composto (h1):"
+        '
+        'Label137
+        '
+        Me.Label137.AutoSize = True
+        Me.Label137.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Label137.Location = New System.Drawing.Point(362, 113)
+        Me.Label137.Name = "Label137"
+        Me.Label137.Size = New System.Drawing.Size(33, 23)
+        Me.Label137.TabIndex = 32
+        Me.Label137.Text = "cm"
+        Me.Label137.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Label178
+        '
+        Me.Label178.AutoSize = True
+        Me.Label178.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Label178.Location = New System.Drawing.Point(31, 113)
+        Me.Label178.Name = "Label178"
+        Me.Label178.Size = New System.Drawing.Size(343, 23)
+        Me.Label178.TabIndex = 30
+        Me.Label178.Text = "Comprimento Entre Eixos do Elemento (a1):"
+        '
+        'Label180
+        '
+        Me.Label180.AutoSize = True
+        Me.Label180.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Label180.Location = New System.Drawing.Point(362, 73)
+        Me.Label180.Name = "Label180"
+        Me.Label180.Size = New System.Drawing.Size(33, 23)
+        Me.Label180.TabIndex = 29
+        Me.Label180.Text = "cm"
+        Me.Label180.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Label206
+        '
+        Me.Label206.AutoSize = True
+        Me.Label206.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Label206.Location = New System.Drawing.Point(362, 34)
+        Me.Label206.Name = "Label206"
+        Me.Label206.Size = New System.Drawing.Size(33, 23)
+        Me.Label206.TabIndex = 27
+        Me.Label206.Text = "cm"
+        Me.Label206.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Label220
+        '
+        Me.Label220.AutoSize = True
+        Me.Label220.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Label220.Location = New System.Drawing.Point(156, 32)
+        Me.Label220.Name = "Label220"
+        Me.Label220.Size = New System.Drawing.Size(184, 23)
+        Me.Label220.TabIndex = 23
+        Me.Label220.Text = "Comprimento Total (L):"
+        '
+        'Label222
+        '
+        Me.Label222.AutoSize = True
+        Me.Label222.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Label222.Location = New System.Drawing.Point(8, 71)
+        Me.Label222.Name = "Label222"
+        Me.Label222.Size = New System.Drawing.Size(366, 23)
+        Me.Label222.TabIndex = 21
+        Me.Label222.Text = "Comprimento Entre Eixos dos Espaçadores(L1):"
+        '
+        'gbxCompostaI
+        '
+        Me.gbxCompostaI.Controls.Add(Me.txtIComp)
+        Me.gbxCompostaI.Controls.Add(Me.txtEntradaIH)
+        Me.gbxCompostaI.Controls.Add(Me.txtEntradaIHf1)
+        Me.gbxCompostaI.Controls.Add(Me.txtEntradaIBf1)
+        Me.gbxCompostaI.Controls.Add(Me.txtEntradaID)
+        Me.gbxCompostaI.Controls.Add(Me.txtEntradaIBw)
+        Me.gbxCompostaI.Controls.Add(Me.txtEntradaIBf2)
+        Me.gbxCompostaI.Controls.Add(Me.txtEntradaIHf2)
+        Me.gbxCompostaI.Controls.Add(Me.Label239)
+        Me.gbxCompostaI.Controls.Add(Me.Label117)
+        Me.gbxCompostaI.Controls.Add(Me.Label514)
+        Me.gbxCompostaI.Controls.Add(Me.Label430)
+        Me.gbxCompostaI.Controls.Add(Me.Label361)
+        Me.gbxCompostaI.Controls.Add(Me.Label163)
+        Me.gbxCompostaI.Controls.Add(Me.Label429)
+        Me.gbxCompostaI.Controls.Add(Me.Label362)
+        Me.gbxCompostaI.Controls.Add(Me.Label427)
+        Me.gbxCompostaI.Controls.Add(Me.Label422)
+        Me.gbxCompostaI.Controls.Add(Me.Label419)
+        Me.gbxCompostaI.Controls.Add(Me.Label116)
+        Me.gbxCompostaI.Controls.Add(Me.Label406)
+        Me.gbxCompostaI.Controls.Add(Me.Label407)
+        Me.gbxCompostaI.Controls.Add(Me.Label152)
+        Me.gbxCompostaI.Controls.Add(Me.Label151)
+        Me.gbxCompostaI.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.gbxCompostaI.Location = New System.Drawing.Point(6, 240)
+        Me.gbxCompostaI.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.gbxCompostaI.Name = "gbxCompostaI"
+        Me.gbxCompostaI.Padding = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.gbxCompostaI.Size = New System.Drawing.Size(391, 341)
+        Me.gbxCompostaI.TabIndex = 29
+        Me.gbxCompostaI.TabStop = False
+        Me.gbxCompostaI.Text = "Dados Iniciais: Seção I"
+        Me.gbxCompostaI.Visible = False
+        '
+        'txtIComp
+        '
+        Me.txtIComp.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.txtIComp.Location = New System.Drawing.Point(206, 308)
+        Me.txtIComp.Name = "txtIComp"
+        Me.txtIComp.Size = New System.Drawing.Size(59, 30)
+        Me.txtIComp.TabIndex = 97
+        '
+        'txtEntradaIH
+        '
+        Me.txtEntradaIH.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.txtEntradaIH.Location = New System.Drawing.Point(206, 66)
+        Me.txtEntradaIH.Name = "txtEntradaIH"
+        Me.txtEntradaIH.Size = New System.Drawing.Size(59, 30)
+        Me.txtEntradaIH.TabIndex = 26
+        '
+        'txtEntradaIHf1
+        '
+        Me.txtEntradaIHf1.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.txtEntradaIHf1.Location = New System.Drawing.Point(206, 25)
+        Me.txtEntradaIHf1.Name = "txtEntradaIHf1"
+        Me.txtEntradaIHf1.Size = New System.Drawing.Size(59, 30)
+        Me.txtEntradaIHf1.TabIndex = 25
+        '
+        'txtEntradaIBf1
+        '
+        Me.txtEntradaIBf1.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.txtEntradaIBf1.Location = New System.Drawing.Point(206, 189)
+        Me.txtEntradaIBf1.Name = "txtEntradaIBf1"
+        Me.txtEntradaIBf1.Size = New System.Drawing.Size(59, 30)
+        Me.txtEntradaIBf1.TabIndex = 26
+        '
+        'txtEntradaID
+        '
+        Me.txtEntradaID.Enabled = False
+        Me.txtEntradaID.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.txtEntradaID.Location = New System.Drawing.Point(206, 150)
+        Me.txtEntradaID.Name = "txtEntradaID"
+        Me.txtEntradaID.Size = New System.Drawing.Size(59, 30)
+        Me.txtEntradaID.TabIndex = 24
+        '
+        'txtEntradaIBw
+        '
+        Me.txtEntradaIBw.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.txtEntradaIBw.Location = New System.Drawing.Point(206, 229)
+        Me.txtEntradaIBw.Name = "txtEntradaIBw"
+        Me.txtEntradaIBw.Size = New System.Drawing.Size(59, 30)
+        Me.txtEntradaIBw.TabIndex = 31
+        '
+        'txtEntradaIBf2
+        '
+        Me.txtEntradaIBf2.Enabled = False
+        Me.txtEntradaIBf2.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.txtEntradaIBf2.Location = New System.Drawing.Point(206, 269)
+        Me.txtEntradaIBf2.Name = "txtEntradaIBf2"
+        Me.txtEntradaIBf2.Size = New System.Drawing.Size(59, 30)
+        Me.txtEntradaIBf2.TabIndex = 36
+        '
+        'txtEntradaIHf2
+        '
+        Me.txtEntradaIHf2.Enabled = False
+        Me.txtEntradaIHf2.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.txtEntradaIHf2.Location = New System.Drawing.Point(206, 108)
+        Me.txtEntradaIHf2.Name = "txtEntradaIHf2"
+        Me.txtEntradaIHf2.Size = New System.Drawing.Size(59, 30)
+        Me.txtEntradaIHf2.TabIndex = 35
+        '
+        'Label239
+        '
+        Me.Label239.AutoSize = True
+        Me.Label239.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Label239.Location = New System.Drawing.Point(265, 311)
+        Me.Label239.Name = "Label239"
+        Me.Label239.Size = New System.Drawing.Size(25, 23)
+        Me.Label239.TabIndex = 98
+        Me.Label239.Text = "m"
+        Me.Label239.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Label117
+        '
+        Me.Label117.AutoSize = True
+        Me.Label117.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Label117.Location = New System.Drawing.Point(265, 70)
+        Me.Label117.Name = "Label117"
+        Me.Label117.Size = New System.Drawing.Size(33, 23)
+        Me.Label117.TabIndex = 39
+        Me.Label117.Text = "cm"
+        Me.Label117.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Label514
+        '
+        Me.Label514.AutoSize = True
+        Me.Label514.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Label514.Location = New System.Drawing.Point(96, 311)
+        Me.Label514.Name = "Label514"
+        Me.Label514.Size = New System.Drawing.Size(143, 23)
+        Me.Label514.TabIndex = 96
+        Me.Label514.Text = "Comprimento (L):"
+        '
+        'Label430
+        '
+        Me.Label430.AutoSize = True
+        Me.Label430.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Label430.Location = New System.Drawing.Point(19, 27)
+        Me.Label430.Name = "Label430"
+        Me.Label430.Size = New System.Drawing.Size(237, 23)
+        Me.Label430.TabIndex = 21
+        Me.Label430.Text = "Altura da Mesa Superior (hf1):"
+        '
+        'Label361
+        '
+        Me.Label361.AutoSize = True
+        Me.Label361.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Label361.Location = New System.Drawing.Point(265, 192)
+        Me.Label361.Name = "Label361"
+        Me.Label361.Size = New System.Drawing.Size(33, 23)
+        Me.Label361.TabIndex = 38
+        Me.Label361.Text = "cm"
+        Me.Label361.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Label163
+        '
+        Me.Label163.AutoSize = True
+        Me.Label163.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Label163.Location = New System.Drawing.Point(265, 272)
+        Me.Label163.Name = "Label163"
+        Me.Label163.Size = New System.Drawing.Size(33, 23)
+        Me.Label163.TabIndex = 27
+        Me.Label163.Text = "cm"
+        Me.Label163.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Label429
+        '
+        Me.Label429.AutoSize = True
+        Me.Label429.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Label429.Location = New System.Drawing.Point(7, 189)
+        Me.Label429.Name = "Label429"
+        Me.Label429.Size = New System.Drawing.Size(249, 23)
+        Me.Label429.TabIndex = 22
+        Me.Label429.Text = "Largura da Mesa Superior (bf1):"
+        '
+        'Label362
+        '
+        Me.Label362.AutoSize = True
+        Me.Label362.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Label362.Location = New System.Drawing.Point(265, 232)
+        Me.Label362.Name = "Label362"
+        Me.Label362.Size = New System.Drawing.Size(33, 23)
+        Me.Label362.TabIndex = 37
+        Me.Label362.Text = "cm"
+        Me.Label362.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Label427
+        '
+        Me.Label427.AutoSize = True
+        Me.Label427.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Label427.Location = New System.Drawing.Point(106, 150)
+        Me.Label427.Name = "Label427"
+        Me.Label427.Size = New System.Drawing.Size(126, 23)
+        Me.Label427.TabIndex = 23
+        Me.Label427.Text = "Altura Total (d):"
+        '
+        'Label422
+        '
+        Me.Label422.AutoSize = True
+        Me.Label422.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Label422.Location = New System.Drawing.Point(69, 229)
+        Me.Label422.Name = "Label422"
+        Me.Label422.Size = New System.Drawing.Size(177, 23)
+        Me.Label422.TabIndex = 30
+        Me.Label422.Text = "Largura da Alma (bw):"
+        '
+        'Label419
+        '
+        Me.Label419.AutoSize = True
+        Me.Label419.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Label419.Location = New System.Drawing.Point(16, 269)
+        Me.Label419.Name = "Label419"
+        Me.Label419.Size = New System.Drawing.Size(240, 23)
+        Me.Label419.TabIndex = 34
+        Me.Label419.Text = "Largura da Mesa Inferior (bf2):"
+        '
+        'Label116
+        '
+        Me.Label116.AutoSize = True
+        Me.Label116.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Label116.Location = New System.Drawing.Point(265, 153)
+        Me.Label116.Name = "Label116"
+        Me.Label116.Size = New System.Drawing.Size(33, 23)
+        Me.Label116.TabIndex = 32
+        Me.Label116.Text = "cm"
+        Me.Label116.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Label406
+        '
+        Me.Label406.AutoSize = True
+        Me.Label406.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Label406.Location = New System.Drawing.Point(26, 108)
+        Me.Label406.Name = "Label406"
+        Me.Label406.Size = New System.Drawing.Size(228, 23)
+        Me.Label406.TabIndex = 35
+        Me.Label406.Text = "Altura da Mesa Inferior (hf2):"
+        '
+        'Label407
+        '
+        Me.Label407.AutoSize = True
+        Me.Label407.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Label407.Location = New System.Drawing.Point(86, 67)
+        Me.Label407.Name = "Label407"
+        Me.Label407.Size = New System.Drawing.Size(153, 23)
+        Me.Label407.TabIndex = 36
+        Me.Label407.Text = "Altura da Alma (h):"
+        '
+        'Label152
+        '
+        Me.Label152.AutoSize = True
+        Me.Label152.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Label152.Location = New System.Drawing.Point(265, 111)
+        Me.Label152.Name = "Label152"
+        Me.Label152.Size = New System.Drawing.Size(33, 23)
+        Me.Label152.TabIndex = 28
+        Me.Label152.Text = "cm"
+        Me.Label152.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Label151
+        '
+        Me.Label151.AutoSize = True
+        Me.Label151.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Label151.Location = New System.Drawing.Point(265, 30)
+        Me.Label151.Name = "Label151"
+        Me.Label151.Size = New System.Drawing.Size(33, 23)
+        Me.Label151.TabIndex = 29
+        Me.Label151.Text = "cm"
+        Me.Label151.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
         'gbxCircular
         '
         Me.gbxCircular.Controls.Add(Me.txtEntradaCircularD)
@@ -3584,7 +3714,7 @@ Partial Class Form1
         Me.gbxCircular.Controls.Add(Me.Label36)
         Me.gbxCircular.Controls.Add(Me.Label35)
         Me.gbxCircular.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.gbxCircular.Location = New System.Drawing.Point(6, 250)
+        Me.gbxCircular.Location = New System.Drawing.Point(6, 240)
         Me.gbxCircular.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.gbxCircular.Name = "gbxCircular"
         Me.gbxCircular.Padding = New System.Windows.Forms.Padding(3, 4, 3, 4)
@@ -3838,7 +3968,7 @@ Partial Class Form1
         Me.gbxRetangular.Controls.Add(Me.Label28)
         Me.gbxRetangular.Controls.Add(Me.Label382)
         Me.gbxRetangular.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.gbxRetangular.Location = New System.Drawing.Point(6, 250)
+        Me.gbxRetangular.Location = New System.Drawing.Point(6, 240)
         Me.gbxRetangular.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.gbxRetangular.Name = "gbxRetangular"
         Me.gbxRetangular.Padding = New System.Windows.Forms.Padding(3, 4, 3, 4)
@@ -3962,11 +4092,11 @@ Partial Class Form1
         Me.GroupBox6.Controls.Add(Me.txtMy)
         Me.GroupBox6.Controls.Add(Me.Label41)
         Me.GroupBox6.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.GroupBox6.Location = New System.Drawing.Point(428, 325)
+        Me.GroupBox6.Location = New System.Drawing.Point(418, 435)
         Me.GroupBox6.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.GroupBox6.Name = "GroupBox6"
         Me.GroupBox6.Padding = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.GroupBox6.Size = New System.Drawing.Size(450, 295)
+        Me.GroupBox6.Size = New System.Drawing.Size(450, 293)
         Me.GroupBox6.TabIndex = 30
         Me.GroupBox6.TabStop = False
         Me.GroupBox6.Text = "Solicitações Externas"
@@ -4177,7 +4307,7 @@ Partial Class Form1
         Me.btnCalcularPropriedades.BackColor = System.Drawing.Color.Transparent
         Me.btnCalcularPropriedades.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnCalcularPropriedades.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.btnCalcularPropriedades.Location = New System.Drawing.Point(298, 259)
+        Me.btnCalcularPropriedades.Location = New System.Drawing.Point(298, 253)
         Me.btnCalcularPropriedades.Name = "btnCalcularPropriedades"
         Me.btnCalcularPropriedades.Size = New System.Drawing.Size(146, 29)
         Me.btnCalcularPropriedades.TabIndex = 10
@@ -4215,14 +4345,41 @@ Partial Class Form1
         '
         'TabResultados
         '
+        Me.TabResultados.Controls.Add(Me.Label23)
+        Me.TabResultados.Controls.Add(Me.PictureBox9)
         Me.TabResultados.Controls.Add(Me.gbxResultadosElementos)
         Me.TabResultados.Controls.Add(Me.gbxResultadosSecao)
         Me.TabResultados.Location = New System.Drawing.Point(4, 32)
         Me.TabResultados.Name = "TabResultados"
-        Me.TabResultados.Size = New System.Drawing.Size(1158, 624)
+        Me.TabResultados.Size = New System.Drawing.Size(1068, 534)
         Me.TabResultados.TabIndex = 10
         Me.TabResultados.Text = "Propriedades Geométricas"
         Me.TabResultados.UseVisualStyleBackColor = True
+        '
+        'Label23
+        '
+        Me.Label23.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label23.AutoSize = True
+        Me.Label23.Location = New System.Drawing.Point(710, 276)
+        Me.Label23.Name = "Label23"
+        Me.Label23.Size = New System.Drawing.Size(74, 23)
+        Me.Label23.TabIndex = 69
+        Me.Label23.Text = "Exportar"
+        '
+        'PictureBox9
+        '
+        Me.PictureBox9.Anchor = System.Windows.Forms.AnchorStyles.Right
+        Me.PictureBox9.BackColor = System.Drawing.Color.Transparent
+        Me.PictureBox9.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PictureBox9.Image = Global.TCC2.My.Resources.Resources.pdf_30x30
+        Me.PictureBox9.Location = New System.Drawing.Point(674, 266)
+        Me.PictureBox9.Margin = New System.Windows.Forms.Padding(8, 9, 8, 9)
+        Me.PictureBox9.Name = "PictureBox9"
+        Me.PictureBox9.Size = New System.Drawing.Size(113, 43)
+        Me.PictureBox9.TabIndex = 68
+        Me.PictureBox9.TabStop = False
         '
         'gbxResultadosElementos
         '
@@ -4984,7 +5141,7 @@ Partial Class Form1
         Me.TabTracao.Location = New System.Drawing.Point(4, 32)
         Me.TabTracao.Name = "TabTracao"
         Me.TabTracao.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabTracao.Size = New System.Drawing.Size(1158, 624)
+        Me.TabTracao.Size = New System.Drawing.Size(1068, 534)
         Me.TabTracao.TabIndex = 4
         Me.TabTracao.Text = "Tração"
         Me.TabTracao.UseVisualStyleBackColor = True
@@ -5383,7 +5540,7 @@ Partial Class Form1
         Me.TabCompressao.Location = New System.Drawing.Point(4, 32)
         Me.TabCompressao.Name = "TabCompressao"
         Me.TabCompressao.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabCompressao.Size = New System.Drawing.Size(1158, 624)
+        Me.TabCompressao.Size = New System.Drawing.Size(1068, 534)
         Me.TabCompressao.TabIndex = 7
         Me.TabCompressao.Text = "Compressão"
         Me.TabCompressao.UseVisualStyleBackColor = True
@@ -5393,7 +5550,6 @@ Partial Class Form1
         Me.GroupBox18.Controls.Add(Me.GroupBox4)
         Me.GroupBox18.Controls.Add(Me.gbxEixoYMediEsbelta)
         Me.GroupBox18.Controls.Add(Me.gbxEixoXMediEsbelta)
-        Me.GroupBox18.Controls.Add(Me.gbxEixoXCurta)
         Me.GroupBox18.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.GroupBox18.Location = New System.Drawing.Point(3, 6)
         Me.GroupBox18.Name = "GroupBox18"
@@ -6179,264 +6335,13 @@ Partial Class Form1
         Me.Label496.TabIndex = 11
         Me.Label496.Text = "Fe:"
         '
-        'gbxEixoXCurta
-        '
-        Me.gbxEixoXCurta.Controls.Add(Me.Label77)
-        Me.gbxEixoXCurta.Controls.Add(Me.Label88)
-        Me.gbxEixoXCurta.Controls.Add(Me.Label78)
-        Me.gbxEixoXCurta.Controls.Add(Me.Label87)
-        Me.gbxEixoXCurta.Controls.Add(Me.Label176)
-        Me.gbxEixoXCurta.Controls.Add(Me.Label86)
-        Me.gbxEixoXCurta.Controls.Add(Me.Label246)
-        Me.gbxEixoXCurta.Controls.Add(Me.Label73)
-        Me.gbxEixoXCurta.Controls.Add(Me.Label247)
-        Me.gbxEixoXCurta.Controls.Add(Me.Label85)
-        Me.gbxEixoXCurta.Controls.Add(Me.Label74)
-        Me.gbxEixoXCurta.Controls.Add(Me.Label248)
-        Me.gbxEixoXCurta.Controls.Add(Me.Label244)
-        Me.gbxEixoXCurta.Controls.Add(Me.Label242)
-        Me.gbxEixoXCurta.Controls.Add(Me.Label69)
-        Me.gbxEixoXCurta.Controls.Add(Me.Label245)
-        Me.gbxEixoXCurta.Controls.Add(Me.Label62)
-        Me.gbxEixoXCurta.Controls.Add(Me.Label243)
-        Me.gbxEixoXCurta.Controls.Add(Me.Label63)
-        Me.gbxEixoXCurta.Controls.Add(Me.Label61)
-        Me.gbxEixoXCurta.Controls.Add(Me.Label55)
-        Me.gbxEixoXCurta.Controls.Add(Me.Label58)
-        Me.gbxEixoXCurta.Location = New System.Drawing.Point(758, 39)
-        Me.gbxEixoXCurta.Name = "gbxEixoXCurta"
-        Me.gbxEixoXCurta.Size = New System.Drawing.Size(308, 211)
-        Me.gbxEixoXCurta.TabIndex = 12
-        Me.gbxEixoXCurta.TabStop = False
-        Me.gbxEixoXCurta.Text = "Verificação de Segurança"
-        '
-        'Label77
-        '
-        Me.Label77.AutoSize = True
-        Me.Label77.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label77.Location = New System.Drawing.Point(156, 189)
-        Me.Label77.Name = "Label77"
-        Me.Label77.Size = New System.Drawing.Size(23, 15)
-        Me.Label77.TabIndex = 98
-        Me.Label77.Text = "c,d"
-        '
-        'Label88
-        '
-        Me.Label88.AutoSize = True
-        Me.Label88.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label88.Location = New System.Drawing.Point(6, 129)
-        Me.Label88.Name = "Label88"
-        Me.Label88.Size = New System.Drawing.Size(289, 23)
-        Me.Label88.TabIndex = 116
-        Me.Label88.Text = "Peça Medianamente Esbelta/Esbelta:"
-        '
-        'Label78
-        '
-        Me.Label78.AutoSize = True
-        Me.Label78.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label78.Location = New System.Drawing.Point(135, 181)
-        Me.Label78.Name = "Label78"
-        Me.Label78.Size = New System.Drawing.Size(30, 23)
-        Me.Label78.TabIndex = 97
-        Me.Label78.Text = "   f"
-        '
-        'Label87
-        '
-        Me.Label87.AutoSize = True
-        Me.Label87.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label87.Location = New System.Drawing.Point(94, 31)
-        Me.Label87.Name = "Label87"
-        Me.Label87.Size = New System.Drawing.Size(96, 23)
-        Me.Label87.TabIndex = 115
-        Me.Label87.Text = "Peça Curta:"
-        '
-        'Label176
-        '
-        Me.Label176.AutoSize = True
-        Me.Label176.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label176.Location = New System.Drawing.Point(195, 105)
-        Me.Label176.Name = "Label176"
-        Me.Label176.Size = New System.Drawing.Size(23, 15)
-        Me.Label176.TabIndex = 62
-        Me.Label176.Text = "c,d"
-        '
-        'Label86
-        '
-        Me.Label86.AutoSize = True
-        Me.Label86.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label86.Location = New System.Drawing.Point(74, 97)
-        Me.Label86.Name = "Label86"
-        Me.Label86.Size = New System.Drawing.Size(59, 23)
-        Me.Label86.TabIndex = 114
-        Me.Label86.Text = "Eixo Y:"
-        '
-        'Label246
-        '
-        Me.Label246.AutoSize = True
-        Me.Label246.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label246.Location = New System.Drawing.Point(151, 103)
-        Me.Label246.Name = "Label246"
-        Me.Label246.Size = New System.Drawing.Size(29, 15)
-        Me.Label246.TabIndex = 63
-        Me.Label246.Text = "c,dy"
-        '
-        'Label73
-        '
-        Me.Label73.AutoSize = True
-        Me.Label73.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label73.Location = New System.Drawing.Point(110, 189)
-        Me.Label73.Name = "Label73"
-        Me.Label73.Size = New System.Drawing.Size(23, 15)
-        Me.Label73.TabIndex = 94
-        Me.Label73.Text = "c,d"
-        '
-        'Label247
-        '
-        Me.Label247.AutoSize = True
-        Me.Label247.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label247.Location = New System.Drawing.Point(174, 97)
-        Me.Label247.Name = "Label247"
-        Me.Label247.Size = New System.Drawing.Size(32, 23)
-        Me.Label247.TabIndex = 61
-        Me.Label247.Text = "≤ f"
-        '
-        'Label85
-        '
-        Me.Label85.AutoSize = True
-        Me.Label85.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label85.Location = New System.Drawing.Point(73, 65)
-        Me.Label85.Name = "Label85"
-        Me.Label85.Size = New System.Drawing.Size(60, 23)
-        Me.Label85.TabIndex = 113
-        Me.Label85.Text = "Eixo X:"
-        '
-        'Label74
-        '
-        Me.Label74.AutoSize = True
-        Me.Label74.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label74.Location = New System.Drawing.Point(89, 181)
-        Me.Label74.Name = "Label74"
-        Me.Label74.Size = New System.Drawing.Size(30, 23)
-        Me.Label74.TabIndex = 93
-        Me.Label74.Text = "   f"
-        '
-        'Label248
-        '
-        Me.Label248.AutoSize = True
-        Me.Label248.Font = New System.Drawing.Font("Symbol", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label248.Location = New System.Drawing.Point(138, 97)
-        Me.Label248.Name = "Label248"
-        Me.Label248.Size = New System.Drawing.Size(40, 21)
-        Me.Label248.TabIndex = 62
-        Me.Label248.Text = "s     "
-        '
-        'Label244
-        '
-        Me.Label244.AutoSize = True
-        Me.Label244.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label244.Location = New System.Drawing.Point(195, 73)
-        Me.Label244.Name = "Label244"
-        Me.Label244.Size = New System.Drawing.Size(23, 15)
-        Me.Label244.TabIndex = 62
-        Me.Label244.Text = "c,d"
-        '
-        'Label242
-        '
-        Me.Label242.AutoSize = True
-        Me.Label242.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label242.Location = New System.Drawing.Point(151, 71)
-        Me.Label242.Name = "Label242"
-        Me.Label242.Size = New System.Drawing.Size(29, 15)
-        Me.Label242.TabIndex = 63
-        Me.Label242.Text = "c,dx"
-        '
-        'Label69
-        '
-        Me.Label69.AutoSize = True
-        Me.Label69.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label69.Location = New System.Drawing.Point(130, 163)
-        Me.Label69.Name = "Label69"
-        Me.Label69.Size = New System.Drawing.Size(22, 23)
-        Me.Label69.TabIndex = 90
-        Me.Label69.Text = "+"
-        '
-        'Label245
-        '
-        Me.Label245.AutoSize = True
-        Me.Label245.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label245.Location = New System.Drawing.Point(174, 65)
-        Me.Label245.Name = "Label245"
-        Me.Label245.Size = New System.Drawing.Size(32, 23)
-        Me.Label245.TabIndex = 61
-        Me.Label245.Text = "≤ f"
-        '
-        'Label62
-        '
-        Me.Label62.AutoSize = True
-        Me.Label62.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label62.Location = New System.Drawing.Point(104, 165)
-        Me.Label62.Name = "Label62"
-        Me.Label62.Size = New System.Drawing.Size(32, 15)
-        Me.Label62.TabIndex = 89
-        Me.Label62.Text = "N,dx"
-        '
-        'Label243
-        '
-        Me.Label243.AutoSize = True
-        Me.Label243.Font = New System.Drawing.Font("Symbol", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label243.Location = New System.Drawing.Point(138, 65)
-        Me.Label243.Name = "Label243"
-        Me.Label243.Size = New System.Drawing.Size(40, 21)
-        Me.Label243.TabIndex = 62
-        Me.Label243.Text = "s     "
-        '
-        'Label63
-        '
-        Me.Label63.AutoSize = True
-        Me.Label63.Font = New System.Drawing.Font("Symbol", 10.2!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point)
-        Me.Label63.Location = New System.Drawing.Point(93, 160)
-        Me.Label63.Name = "Label63"
-        Me.Label63.Size = New System.Drawing.Size(40, 21)
-        Me.Label63.TabIndex = 88
-        Me.Label63.Text = "s     "
-        '
-        'Label61
-        '
-        Me.Label61.AutoSize = True
-        Me.Label61.Font = New System.Drawing.Font("Symbol", 10.2!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point)
-        Me.Label61.Location = New System.Drawing.Point(143, 161)
-        Me.Label61.Name = "Label61"
-        Me.Label61.Size = New System.Drawing.Size(40, 21)
-        Me.Label61.TabIndex = 70
-        Me.Label61.Text = "s     "
-        '
-        'Label55
-        '
-        Me.Label55.AutoSize = True
-        Me.Label55.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label55.Location = New System.Drawing.Point(154, 165)
-        Me.Label55.Name = "Label55"
-        Me.Label55.Size = New System.Drawing.Size(34, 15)
-        Me.Label55.TabIndex = 71
-        Me.Label55.Text = "M,dx"
-        '
-        'Label58
-        '
-        Me.Label58.AutoSize = True
-        Me.Label58.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label58.Location = New System.Drawing.Point(179, 161)
-        Me.Label58.Name = "Label58"
-        Me.Label58.Size = New System.Drawing.Size(36, 23)
-        Me.Label58.TabIndex = 68
-        Me.Label58.Text = "≤ 1"
-        '
         'TabCisalhamento
         '
         Me.TabCisalhamento.Controls.Add(Me.GroupBox17)
         Me.TabCisalhamento.Location = New System.Drawing.Point(4, 32)
         Me.TabCisalhamento.Name = "TabCisalhamento"
         Me.TabCisalhamento.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabCisalhamento.Size = New System.Drawing.Size(1158, 624)
+        Me.TabCisalhamento.Size = New System.Drawing.Size(1068, 534)
         Me.TabCisalhamento.TabIndex = 6
         Me.TabCisalhamento.Text = "Cisalhamento"
         Me.TabCisalhamento.UseVisualStyleBackColor = True
@@ -6680,27 +6585,16 @@ Partial Class Form1
         '
         'TabFlexaoSimples
         '
+        Me.TabFlexaoSimples.Controls.Add(Me.gbxApoio)
+        Me.TabFlexaoSimples.Controls.Add(Me.GroupBox19)
         Me.TabFlexaoSimples.Controls.Add(Me.GroupBox16)
         Me.TabFlexaoSimples.Location = New System.Drawing.Point(4, 32)
         Me.TabFlexaoSimples.Name = "TabFlexaoSimples"
         Me.TabFlexaoSimples.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabFlexaoSimples.Size = New System.Drawing.Size(1158, 624)
+        Me.TabFlexaoSimples.Size = New System.Drawing.Size(1068, 534)
         Me.TabFlexaoSimples.TabIndex = 5
-        Me.TabFlexaoSimples.Text = "Flexão Simples"
+        Me.TabFlexaoSimples.Text = "Flexão"
         Me.TabFlexaoSimples.UseVisualStyleBackColor = True
-        '
-        'GroupBox16
-        '
-        Me.GroupBox16.Controls.Add(Me.gbxApoio)
-        Me.GroupBox16.Controls.Add(Me.gbxFlexaoObliqua)
-        Me.GroupBox16.Controls.Add(Me.gbxFlexaoSimples)
-        Me.GroupBox16.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.GroupBox16.Location = New System.Drawing.Point(15, 5)
-        Me.GroupBox16.Name = "GroupBox16"
-        Me.GroupBox16.Size = New System.Drawing.Size(826, 318)
-        Me.GroupBox16.TabIndex = 0
-        Me.GroupBox16.TabStop = False
-        Me.GroupBox16.Text = "Dimensionamento à Flexão Simples"
         '
         'gbxApoio
         '
@@ -6724,9 +6618,10 @@ Partial Class Form1
         Me.gbxApoio.Controls.Add(Me.Label89)
         Me.gbxApoio.Controls.Add(Me.Label90)
         Me.gbxApoio.Controls.Add(Me.Label91)
-        Me.gbxApoio.Location = New System.Drawing.Point(450, 29)
+        Me.gbxApoio.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.gbxApoio.Location = New System.Drawing.Point(25, 319)
         Me.gbxApoio.Name = "gbxApoio"
-        Me.gbxApoio.Size = New System.Drawing.Size(360, 251)
+        Me.gbxApoio.Size = New System.Drawing.Size(360, 201)
         Me.gbxApoio.TabIndex = 93
         Me.gbxApoio.TabStop = False
         Me.gbxApoio.Text = "Compressão Normal nos Apoios"
@@ -6735,7 +6630,7 @@ Partial Class Form1
         '
         Me.Label255.AutoSize = True
         Me.Label255.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label255.Location = New System.Drawing.Point(107, 93)
+        Me.Label255.Location = New System.Drawing.Point(105, 72)
         Me.Label255.Name = "Label255"
         Me.Label255.Size = New System.Drawing.Size(43, 23)
         Me.Label255.TabIndex = 157
@@ -6756,7 +6651,7 @@ Partial Class Form1
         '
         Me.Label256.AutoSize = True
         Me.Label256.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label256.Location = New System.Drawing.Point(8, 91)
+        Me.Label256.Location = New System.Drawing.Point(6, 70)
         Me.Label256.Name = "Label256"
         Me.Label256.Size = New System.Drawing.Size(40, 23)
         Me.Label256.TabIndex = 156
@@ -6765,7 +6660,7 @@ Partial Class Form1
         'Label224
         '
         Me.Label224.AutoSize = True
-        Me.Label224.Location = New System.Drawing.Point(145, 186)
+        Me.Label224.Location = New System.Drawing.Point(143, 165)
         Me.Label224.Name = "Label224"
         Me.Label224.Size = New System.Drawing.Size(25, 23)
         Me.Label224.TabIndex = 114
@@ -6775,7 +6670,7 @@ Partial Class Form1
         '
         Me.TextBox3.Enabled = False
         Me.TextBox3.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.TextBox3.Location = New System.Drawing.Point(50, 88)
+        Me.TextBox3.Location = New System.Drawing.Point(48, 67)
         Me.TextBox3.Name = "TextBox3"
         Me.TextBox3.Size = New System.Drawing.Size(57, 30)
         Me.TextBox3.TabIndex = 155
@@ -6783,7 +6678,7 @@ Partial Class Form1
         'Label221
         '
         Me.Label221.AutoSize = True
-        Me.Label221.Location = New System.Drawing.Point(145, 140)
+        Me.Label221.Location = New System.Drawing.Point(143, 119)
         Me.Label221.Name = "Label221"
         Me.Label221.Size = New System.Drawing.Size(25, 23)
         Me.Label221.TabIndex = 113
@@ -6793,7 +6688,7 @@ Partial Class Form1
         '
         Me.lblApoioY.AutoSize = True
         Me.lblApoioY.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point)
-        Me.lblApoioY.Location = New System.Drawing.Point(176, 186)
+        Me.lblApoioY.Location = New System.Drawing.Point(174, 165)
         Me.lblApoioY.Name = "lblApoioY"
         Me.lblApoioY.Size = New System.Drawing.Size(115, 23)
         Me.lblApoioY.TabIndex = 98
@@ -6803,7 +6698,7 @@ Partial Class Form1
         '
         Me.lblApoioX.AutoSize = True
         Me.lblApoioX.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point)
-        Me.lblApoioX.Location = New System.Drawing.Point(176, 140)
+        Me.lblApoioX.Location = New System.Drawing.Point(174, 119)
         Me.lblApoioX.Name = "lblApoioX"
         Me.lblApoioX.Size = New System.Drawing.Size(115, 23)
         Me.lblApoioX.TabIndex = 97
@@ -6813,7 +6708,7 @@ Partial Class Form1
         '
         Me.Label97.AutoSize = True
         Me.Label97.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label97.Location = New System.Drawing.Point(171, 45)
+        Me.Label97.Location = New System.Drawing.Point(170, 40)
         Me.Label97.Name = "Label97"
         Me.Label97.Size = New System.Drawing.Size(23, 15)
         Me.Label97.TabIndex = 94
@@ -6823,7 +6718,7 @@ Partial Class Form1
         '
         Me.Label98.AutoSize = True
         Me.Label98.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label98.Location = New System.Drawing.Point(127, 43)
+        Me.Label98.Location = New System.Drawing.Point(126, 38)
         Me.Label98.Name = "Label98"
         Me.Label98.Size = New System.Drawing.Size(29, 15)
         Me.Label98.TabIndex = 96
@@ -6833,7 +6728,7 @@ Partial Class Form1
         '
         Me.txtCompApoioX.Enabled = False
         Me.txtCompApoioX.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.txtCompApoioX.Location = New System.Drawing.Point(50, 137)
+        Me.txtCompApoioX.Location = New System.Drawing.Point(48, 116)
         Me.txtCompApoioX.Name = "txtCompApoioX"
         Me.txtCompApoioX.Size = New System.Drawing.Size(57, 30)
         Me.txtCompApoioX.TabIndex = 81
@@ -6842,7 +6737,7 @@ Partial Class Form1
         '
         Me.Label129.AutoSize = True
         Me.Label129.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label129.Location = New System.Drawing.Point(150, 37)
+        Me.Label129.Location = New System.Drawing.Point(149, 32)
         Me.Label129.Name = "Label129"
         Me.Label129.Size = New System.Drawing.Size(32, 23)
         Me.Label129.TabIndex = 93
@@ -6852,7 +6747,7 @@ Partial Class Form1
         '
         Me.txtCompApoioY.Enabled = False
         Me.txtCompApoioY.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.txtCompApoioY.Location = New System.Drawing.Point(50, 183)
+        Me.txtCompApoioY.Location = New System.Drawing.Point(48, 162)
         Me.txtCompApoioY.Name = "txtCompApoioY"
         Me.txtCompApoioY.Size = New System.Drawing.Size(57, 30)
         Me.txtCompApoioY.TabIndex = 85
@@ -6861,7 +6756,7 @@ Partial Class Form1
         '
         Me.Label130.AutoSize = True
         Me.Label130.Font = New System.Drawing.Font("Symbol", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label130.Location = New System.Drawing.Point(114, 37)
+        Me.Label130.Location = New System.Drawing.Point(113, 32)
         Me.Label130.Name = "Label130"
         Me.Label130.Size = New System.Drawing.Size(40, 21)
         Me.Label130.TabIndex = 95
@@ -6871,7 +6766,7 @@ Partial Class Form1
         '
         Me.Label95.AutoSize = True
         Me.Label95.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label95.Location = New System.Drawing.Point(30, 192)
+        Me.Label95.Location = New System.Drawing.Point(28, 171)
         Me.Label95.Name = "Label95"
         Me.Label95.Size = New System.Drawing.Size(13, 15)
         Me.Label95.TabIndex = 89
@@ -6881,7 +6776,7 @@ Partial Class Form1
         '
         Me.Label96.AutoSize = True
         Me.Label96.Font = New System.Drawing.Font("Symbol", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label96.Location = New System.Drawing.Point(17, 186)
+        Me.Label96.Location = New System.Drawing.Point(15, 165)
         Me.Label96.Name = "Label96"
         Me.Label96.Size = New System.Drawing.Size(36, 21)
         Me.Label96.TabIndex = 88
@@ -6891,7 +6786,7 @@ Partial Class Form1
         '
         Me.Label94.AutoSize = True
         Me.Label94.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label94.Location = New System.Drawing.Point(105, 186)
+        Me.Label94.Location = New System.Drawing.Point(103, 165)
         Me.Label94.Name = "Label94"
         Me.Label94.Size = New System.Drawing.Size(43, 23)
         Me.Label94.TabIndex = 87
@@ -6901,7 +6796,7 @@ Partial Class Form1
         '
         Me.Label89.AutoSize = True
         Me.Label89.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label89.Location = New System.Drawing.Point(105, 140)
+        Me.Label89.Location = New System.Drawing.Point(103, 119)
         Me.Label89.Name = "Label89"
         Me.Label89.Size = New System.Drawing.Size(43, 23)
         Me.Label89.TabIndex = 83
@@ -6911,7 +6806,7 @@ Partial Class Form1
         '
         Me.Label90.AutoSize = True
         Me.Label90.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label90.Location = New System.Drawing.Point(30, 146)
+        Me.Label90.Location = New System.Drawing.Point(28, 125)
         Me.Label90.Name = "Label90"
         Me.Label90.Size = New System.Drawing.Size(13, 15)
         Me.Label90.TabIndex = 82
@@ -6921,11 +6816,1210 @@ Partial Class Form1
         '
         Me.Label91.AutoSize = True
         Me.Label91.Font = New System.Drawing.Font("Symbol", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label91.Location = New System.Drawing.Point(17, 140)
+        Me.Label91.Location = New System.Drawing.Point(15, 119)
         Me.Label91.Name = "Label91"
         Me.Label91.Size = New System.Drawing.Size(36, 21)
         Me.Label91.TabIndex = 80
         Me.Label91.Text = "s   :"
+        '
+        'GroupBox19
+        '
+        Me.GroupBox19.Controls.Add(Me.gbxFlexoTracao)
+        Me.GroupBox19.Controls.Add(Me.gbxFlexoCompressao)
+        Me.GroupBox19.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.GroupBox19.Location = New System.Drawing.Point(491, 3)
+        Me.GroupBox19.Name = "GroupBox19"
+        Me.GroupBox19.Size = New System.Drawing.Size(504, 306)
+        Me.GroupBox19.TabIndex = 1
+        Me.GroupBox19.TabStop = False
+        Me.GroupBox19.Text = "Dimensionamento à Flexão Composta"
+        '
+        'gbxFlexoTracao
+        '
+        Me.gbxFlexoTracao.Controls.Add(Me.Label225)
+        Me.gbxFlexoTracao.Controls.Add(Me.Label83)
+        Me.gbxFlexoTracao.Controls.Add(Me.Label82)
+        Me.gbxFlexoTracao.Controls.Add(Me.Label226)
+        Me.gbxFlexoTracao.Controls.Add(Me.lblValidacaoFlexoTracaoY)
+        Me.gbxFlexoTracao.Controls.Add(Me.Label550)
+        Me.gbxFlexoTracao.Controls.Add(Me.txtftFlexo)
+        Me.gbxFlexoTracao.Controls.Add(Me.Label319)
+        Me.gbxFlexoTracao.Controls.Add(Me.Label313)
+        Me.gbxFlexoTracao.Controls.Add(Me.Label536)
+        Me.gbxFlexoTracao.Controls.Add(Me.Label202)
+        Me.gbxFlexoTracao.Controls.Add(Me.Label537)
+        Me.gbxFlexoTracao.Controls.Add(Me.Label518)
+        Me.gbxFlexoTracao.Controls.Add(Me.Label538)
+        Me.gbxFlexoTracao.Controls.Add(Me.Label517)
+        Me.gbxFlexoTracao.Controls.Add(Me.Label539)
+        Me.gbxFlexoTracao.Controls.Add(Me.Label329)
+        Me.gbxFlexoTracao.Controls.Add(Me.Label540)
+        Me.gbxFlexoTracao.Controls.Add(Me.Label330)
+        Me.gbxFlexoTracao.Controls.Add(Me.Label541)
+        Me.gbxFlexoTracao.Controls.Add(Me.Label542)
+        Me.gbxFlexoTracao.Controls.Add(Me.txtFlexoTracaoMx)
+        Me.gbxFlexoTracao.Controls.Add(Me.Label543)
+        Me.gbxFlexoTracao.Controls.Add(Me.Label315)
+        Me.gbxFlexoTracao.Controls.Add(Me.Label544)
+        Me.gbxFlexoTracao.Controls.Add(Me.Label317)
+        Me.gbxFlexoTracao.Controls.Add(Me.Label545)
+        Me.gbxFlexoTracao.Controls.Add(Me.txtFlexoTracaoMy)
+        Me.gbxFlexoTracao.Controls.Add(Me.Label546)
+        Me.gbxFlexoTracao.Controls.Add(Me.lblValidacaoFlexoTracaoX)
+        Me.gbxFlexoTracao.Controls.Add(Me.Label547)
+        Me.gbxFlexoTracao.Controls.Add(Me.Label314)
+        Me.gbxFlexoTracao.Controls.Add(Me.Label548)
+        Me.gbxFlexoTracao.Controls.Add(Me.Label316)
+        Me.gbxFlexoTracao.Controls.Add(Me.Label549)
+        Me.gbxFlexoTracao.Controls.Add(Me.txtFlexoTracao)
+        Me.gbxFlexoTracao.Controls.Add(Me.Label320)
+        Me.gbxFlexoTracao.Controls.Add(Me.Label551)
+        Me.gbxFlexoTracao.Controls.Add(Me.Label562)
+        Me.gbxFlexoTracao.Controls.Add(Me.Label552)
+        Me.gbxFlexoTracao.Controls.Add(Me.Label565)
+        Me.gbxFlexoTracao.Controls.Add(Me.Label553)
+        Me.gbxFlexoTracao.Controls.Add(Me.Label554)
+        Me.gbxFlexoTracao.Controls.Add(Me.Label563)
+        Me.gbxFlexoTracao.Controls.Add(Me.Label555)
+        Me.gbxFlexoTracao.Controls.Add(Me.Label557)
+        Me.gbxFlexoTracao.Controls.Add(Me.Label560)
+        Me.gbxFlexoTracao.Controls.Add(Me.Label558)
+        Me.gbxFlexoTracao.Controls.Add(Me.Label559)
+        Me.gbxFlexoTracao.Controls.Add(Me.Label564)
+        Me.gbxFlexoTracao.Controls.Add(Me.Label561)
+        Me.gbxFlexoTracao.Location = New System.Drawing.Point(10, 20)
+        Me.gbxFlexoTracao.Name = "gbxFlexoTracao"
+        Me.gbxFlexoTracao.Size = New System.Drawing.Size(468, 275)
+        Me.gbxFlexoTracao.TabIndex = 6
+        Me.gbxFlexoTracao.TabStop = False
+        Me.gbxFlexoTracao.Text = "Flexotração"
+        '
+        'Label225
+        '
+        Me.Label225.AutoSize = True
+        Me.Label225.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Label225.Location = New System.Drawing.Point(106, 191)
+        Me.Label225.Name = "Label225"
+        Me.Label225.Size = New System.Drawing.Size(43, 23)
+        Me.Label225.TabIndex = 151
+        Me.Label225.Text = "MPa"
+        '
+        'Label83
+        '
+        Me.Label83.AutoSize = True
+        Me.Label83.Location = New System.Drawing.Point(250, 111)
+        Me.Label83.Name = "Label83"
+        Me.Label83.Size = New System.Drawing.Size(25, 23)
+        Me.Label83.TabIndex = 146
+        Me.Label83.Text = "→"
+        '
+        'Label82
+        '
+        Me.Label82.AutoSize = True
+        Me.Label82.Location = New System.Drawing.Point(250, 65)
+        Me.Label82.Name = "Label82"
+        Me.Label82.Size = New System.Drawing.Size(25, 23)
+        Me.Label82.TabIndex = 145
+        Me.Label82.Text = "→"
+        '
+        'Label226
+        '
+        Me.Label226.AutoSize = True
+        Me.Label226.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Label226.Location = New System.Drawing.Point(7, 189)
+        Me.Label226.Name = "Label226"
+        Me.Label226.Size = New System.Drawing.Size(38, 23)
+        Me.Label226.TabIndex = 150
+        Me.Label226.Text = "ft,0:"
+        '
+        'lblValidacaoFlexoTracaoY
+        '
+        Me.lblValidacaoFlexoTracaoY.AutoSize = True
+        Me.lblValidacaoFlexoTracaoY.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.lblValidacaoFlexoTracaoY.Location = New System.Drawing.Point(272, 112)
+        Me.lblValidacaoFlexoTracaoY.Name = "lblValidacaoFlexoTracaoY"
+        Me.lblValidacaoFlexoTracaoY.Size = New System.Drawing.Size(110, 23)
+        Me.lblValidacaoFlexoTracaoY.TabIndex = 144
+        Me.lblValidacaoFlexoTracaoY.Text = "VERFICAÇÃO"
+        '
+        'Label550
+        '
+        Me.Label550.AutoSize = True
+        Me.Label550.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Label550.Location = New System.Drawing.Point(275, 242)
+        Me.Label550.Name = "Label550"
+        Me.Label550.Size = New System.Drawing.Size(43, 23)
+        Me.Label550.TabIndex = 143
+        Me.Label550.Text = "MPa"
+        '
+        'txtftFlexo
+        '
+        Me.txtftFlexo.Enabled = False
+        Me.txtftFlexo.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.txtftFlexo.Location = New System.Drawing.Point(49, 186)
+        Me.txtftFlexo.Name = "txtftFlexo"
+        Me.txtftFlexo.Size = New System.Drawing.Size(57, 30)
+        Me.txtftFlexo.TabIndex = 149
+        '
+        'Label319
+        '
+        Me.Label319.AutoSize = True
+        Me.Label319.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Label319.Location = New System.Drawing.Point(275, 199)
+        Me.Label319.Name = "Label319"
+        Me.Label319.Size = New System.Drawing.Size(43, 23)
+        Me.Label319.TabIndex = 142
+        Me.Label319.Text = "MPa"
+        '
+        'Label313
+        '
+        Me.Label313.AutoSize = True
+        Me.Label313.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Label313.Location = New System.Drawing.Point(275, 159)
+        Me.Label313.Name = "Label313"
+        Me.Label313.Size = New System.Drawing.Size(43, 23)
+        Me.Label313.TabIndex = 111
+        Me.Label313.Text = "MPa"
+        '
+        'Label536
+        '
+        Me.Label536.AutoSize = True
+        Me.Label536.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Label536.Location = New System.Drawing.Point(181, 128)
+        Me.Label536.Name = "Label536"
+        Me.Label536.Size = New System.Drawing.Size(31, 15)
+        Me.Label536.TabIndex = 141
+        Me.Label536.Text = "ft0,d"
+        '
+        'Label202
+        '
+        Me.Label202.AutoSize = True
+        Me.Label202.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Label202.Location = New System.Drawing.Point(204, 242)
+        Me.Label202.Name = "Label202"
+        Me.Label202.Size = New System.Drawing.Size(14, 23)
+        Me.Label202.TabIndex = 97
+        Me.Label202.Text = ":"
+        '
+        'Label537
+        '
+        Me.Label537.AutoSize = True
+        Me.Label537.Font = New System.Drawing.Font("Symbol", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Label537.Location = New System.Drawing.Point(150, 112)
+        Me.Label537.Name = "Label537"
+        Me.Label537.Size = New System.Drawing.Size(19, 21)
+        Me.Label537.TabIndex = 140
+        Me.Label537.Text = "+"
+        '
+        'Label518
+        '
+        Me.Label518.AutoSize = True
+        Me.Label518.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Label518.Location = New System.Drawing.Point(202, 200)
+        Me.Label518.Name = "Label518"
+        Me.Label518.Size = New System.Drawing.Size(14, 23)
+        Me.Label518.TabIndex = 96
+        Me.Label518.Text = ":"
+        '
+        'Label538
+        '
+        Me.Label538.AutoSize = True
+        Me.Label538.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Label538.Location = New System.Drawing.Point(186, 111)
+        Me.Label538.Name = "Label538"
+        Me.Label538.Size = New System.Drawing.Size(34, 15)
+        Me.Label538.TabIndex = 138
+        Me.Label538.Text = "Mx,d"
+        '
+        'Label517
+        '
+        Me.Label517.AutoSize = True
+        Me.Label517.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Label517.Location = New System.Drawing.Point(202, 159)
+        Me.Label517.Name = "Label517"
+        Me.Label517.Size = New System.Drawing.Size(14, 23)
+        Me.Label517.TabIndex = 95
+        Me.Label517.Text = ":"
+        '
+        'Label539
+        '
+        Me.Label539.AutoSize = True
+        Me.Label539.Font = New System.Drawing.Font("Symbol", 10.2!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point)
+        Me.Label539.Location = New System.Drawing.Point(172, 107)
+        Me.Label539.Name = "Label539"
+        Me.Label539.Size = New System.Drawing.Size(56, 21)
+        Me.Label539.TabIndex = 139
+        Me.Label539.Text = "s         "
+        '
+        'Label329
+        '
+        Me.Label329.AutoSize = True
+        Me.Label329.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Label329.Location = New System.Drawing.Point(175, 247)
+        Me.Label329.Name = "Label329"
+        Me.Label329.Size = New System.Drawing.Size(34, 15)
+        Me.Label329.TabIndex = 15
+        Me.Label329.Text = "My,d"
+        '
+        'Label540
+        '
+        Me.Label540.AutoSize = True
+        Me.Label540.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Label540.Location = New System.Drawing.Point(106, 127)
+        Me.Label540.Name = "Label540"
+        Me.Label540.Size = New System.Drawing.Size(31, 15)
+        Me.Label540.TabIndex = 137
+        Me.Label540.Text = "ft0,d"
+        '
+        'Label330
+        '
+        Me.Label330.AutoSize = True
+        Me.Label330.Font = New System.Drawing.Font("Symbol", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Label330.Location = New System.Drawing.Point(160, 241)
+        Me.Label330.Name = "Label330"
+        Me.Label330.RightToLeft = System.Windows.Forms.RightToLeft.Yes
+        Me.Label330.Size = New System.Drawing.Size(20, 21)
+        Me.Label330.TabIndex = 14
+        Me.Label330.Text = "s"
+        '
+        'Label541
+        '
+        Me.Label541.AutoSize = True
+        Me.Label541.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Label541.Location = New System.Drawing.Point(15, 128)
+        Me.Label541.Name = "Label541"
+        Me.Label541.Size = New System.Drawing.Size(31, 15)
+        Me.Label541.TabIndex = 135
+        Me.Label541.Text = "ft0,d"
+        '
+        'Label542
+        '
+        Me.Label542.AutoSize = True
+        Me.Label542.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Label542.Location = New System.Drawing.Point(221, 112)
+        Me.Label542.Name = "Label542"
+        Me.Label542.Size = New System.Drawing.Size(36, 23)
+        Me.Label542.TabIndex = 134
+        Me.Label542.Text = "≤ 1"
+        '
+        'txtFlexoTracaoMx
+        '
+        Me.txtFlexoTracaoMx.Enabled = False
+        Me.txtFlexoTracaoMx.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.txtFlexoTracaoMx.Location = New System.Drawing.Point(218, 197)
+        Me.txtFlexoTracaoMx.Name = "txtFlexoTracaoMx"
+        Me.txtFlexoTracaoMx.Size = New System.Drawing.Size(57, 30)
+        Me.txtFlexoTracaoMx.TabIndex = 8
+        '
+        'Label543
+        '
+        Me.Label543.AutoSize = True
+        Me.Label543.Font = New System.Drawing.Font("Symbol", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Label543.Location = New System.Drawing.Point(86, 112)
+        Me.Label543.Name = "Label543"
+        Me.Label543.Size = New System.Drawing.Size(14, 21)
+        Me.Label543.TabIndex = 133
+        Me.Label543.Text = "."
+        '
+        'Label315
+        '
+        Me.Label315.AutoSize = True
+        Me.Label315.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Label315.Location = New System.Drawing.Point(175, 206)
+        Me.Label315.Name = "Label315"
+        Me.Label315.Size = New System.Drawing.Size(34, 15)
+        Me.Label315.TabIndex = 10
+        Me.Label315.Text = "Mx,d"
+        '
+        'Label544
+        '
+        Me.Label544.AutoSize = True
+        Me.Label544.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Label544.Location = New System.Drawing.Point(111, 110)
+        Me.Label544.Name = "Label544"
+        Me.Label544.Size = New System.Drawing.Size(34, 15)
+        Me.Label544.TabIndex = 131
+        Me.Label544.Text = "My,d"
+        '
+        'Label317
+        '
+        Me.Label317.AutoSize = True
+        Me.Label317.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Label317.Location = New System.Drawing.Point(175, 165)
+        Me.Label317.Name = "Label317"
+        Me.Label317.Size = New System.Drawing.Size(30, 15)
+        Me.Label317.TabIndex = 6
+        Me.Label317.Text = "Nt,d"
+        '
+        'Label545
+        '
+        Me.Label545.AutoSize = True
+        Me.Label545.Font = New System.Drawing.Font("Symbol", 10.2!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point)
+        Me.Label545.Location = New System.Drawing.Point(97, 106)
+        Me.Label545.Name = "Label545"
+        Me.Label545.Size = New System.Drawing.Size(56, 21)
+        Me.Label545.TabIndex = 132
+        Me.Label545.Text = "s         "
+        '
+        'txtFlexoTracaoMy
+        '
+        Me.txtFlexoTracaoMy.Enabled = False
+        Me.txtFlexoTracaoMy.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.txtFlexoTracaoMy.Location = New System.Drawing.Point(218, 238)
+        Me.txtFlexoTracaoMy.Name = "txtFlexoTracaoMy"
+        Me.txtFlexoTracaoMy.Size = New System.Drawing.Size(57, 30)
+        Me.txtFlexoTracaoMy.TabIndex = 12
+        '
+        'Label546
+        '
+        Me.Label546.AutoSize = True
+        Me.Label546.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Label546.Location = New System.Drawing.Point(69, 121)
+        Me.Label546.Name = "Label546"
+        Me.Label546.Size = New System.Drawing.Size(18, 15)
+        Me.Label546.TabIndex = 130
+        Me.Label546.Text = "M"
+        '
+        'lblValidacaoFlexoTracaoX
+        '
+        Me.lblValidacaoFlexoTracaoX.AutoSize = True
+        Me.lblValidacaoFlexoTracaoX.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.lblValidacaoFlexoTracaoX.Location = New System.Drawing.Point(272, 66)
+        Me.lblValidacaoFlexoTracaoX.Name = "lblValidacaoFlexoTracaoX"
+        Me.lblValidacaoFlexoTracaoX.Size = New System.Drawing.Size(110, 23)
+        Me.lblValidacaoFlexoTracaoX.TabIndex = 7
+        Me.lblValidacaoFlexoTracaoX.Text = "VERFICAÇÃO"
+        '
+        'Label547
+        '
+        Me.Label547.AutoSize = True
+        Me.Label547.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Label547.Location = New System.Drawing.Point(20, 110)
+        Me.Label547.Name = "Label547"
+        Me.Label547.Size = New System.Drawing.Size(32, 15)
+        Me.Label547.TabIndex = 128
+        Me.Label547.Text = "Nc,d"
+        '
+        'Label314
+        '
+        Me.Label314.AutoSize = True
+        Me.Label314.Font = New System.Drawing.Font("Symbol", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Label314.Location = New System.Drawing.Point(160, 200)
+        Me.Label314.Name = "Label314"
+        Me.Label314.RightToLeft = System.Windows.Forms.RightToLeft.Yes
+        Me.Label314.Size = New System.Drawing.Size(20, 21)
+        Me.Label314.TabIndex = 9
+        Me.Label314.Text = "s"
+        '
+        'Label548
+        '
+        Me.Label548.AutoSize = True
+        Me.Label548.Font = New System.Drawing.Font("Symbol", 10.2!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point)
+        Me.Label548.Location = New System.Drawing.Point(7, 107)
+        Me.Label548.Name = "Label548"
+        Me.Label548.Size = New System.Drawing.Size(48, 21)
+        Me.Label548.TabIndex = 129
+        Me.Label548.Text = "s       "
+        '
+        'Label316
+        '
+        Me.Label316.AutoSize = True
+        Me.Label316.Font = New System.Drawing.Font("Symbol", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Label316.Location = New System.Drawing.Point(160, 159)
+        Me.Label316.Name = "Label316"
+        Me.Label316.RightToLeft = System.Windows.Forms.RightToLeft.Yes
+        Me.Label316.Size = New System.Drawing.Size(24, 21)
+        Me.Label316.TabIndex = 6
+        Me.Label316.Text = "s "
+        '
+        'Label549
+        '
+        Me.Label549.AutoSize = True
+        Me.Label549.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Label549.Location = New System.Drawing.Point(51, 114)
+        Me.Label549.Name = "Label549"
+        Me.Label549.Size = New System.Drawing.Size(30, 23)
+        Me.Label549.TabIndex = 127
+        Me.Label549.Text = "+k"
+        '
+        'txtFlexoTracao
+        '
+        Me.txtFlexoTracao.Enabled = False
+        Me.txtFlexoTracao.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.txtFlexoTracao.Location = New System.Drawing.Point(218, 156)
+        Me.txtFlexoTracao.Name = "txtFlexoTracao"
+        Me.txtFlexoTracao.Size = New System.Drawing.Size(57, 30)
+        Me.txtFlexoTracao.TabIndex = 6
+        '
+        'Label320
+        '
+        Me.Label320.AutoSize = True
+        Me.Label320.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Label320.Location = New System.Drawing.Point(15, 26)
+        Me.Label320.Name = "Label320"
+        Me.Label320.Size = New System.Drawing.Size(327, 23)
+        Me.Label320.TabIndex = 6
+        Me.Label320.Text = "Verificação ao Estado Limite Último (ELU):"
+        '
+        'Label551
+        '
+        Me.Label551.AutoSize = True
+        Me.Label551.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Label551.Location = New System.Drawing.Point(181, 82)
+        Me.Label551.Name = "Label551"
+        Me.Label551.Size = New System.Drawing.Size(31, 15)
+        Me.Label551.TabIndex = 126
+        Me.Label551.Text = "ft0,d"
+        '
+        'Label562
+        '
+        Me.Label562.AutoSize = True
+        Me.Label562.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Label562.Location = New System.Drawing.Point(69, 75)
+        Me.Label562.Name = "Label562"
+        Me.Label562.Size = New System.Drawing.Size(18, 15)
+        Me.Label562.TabIndex = 114
+        Me.Label562.Text = "M"
+        '
+        'Label552
+        '
+        Me.Label552.AutoSize = True
+        Me.Label552.Font = New System.Drawing.Font("Symbol", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Label552.Location = New System.Drawing.Point(150, 66)
+        Me.Label552.Name = "Label552"
+        Me.Label552.Size = New System.Drawing.Size(19, 21)
+        Me.Label552.TabIndex = 125
+        Me.Label552.Text = "+"
+        '
+        'Label565
+        '
+        Me.Label565.AutoSize = True
+        Me.Label565.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Label565.Location = New System.Drawing.Point(51, 68)
+        Me.Label565.Name = "Label565"
+        Me.Label565.Size = New System.Drawing.Size(30, 23)
+        Me.Label565.TabIndex = 111
+        Me.Label565.Text = "+k"
+        '
+        'Label553
+        '
+        Me.Label553.AutoSize = True
+        Me.Label553.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Label553.Location = New System.Drawing.Point(186, 65)
+        Me.Label553.Name = "Label553"
+        Me.Label553.Size = New System.Drawing.Size(34, 15)
+        Me.Label553.TabIndex = 123
+        Me.Label553.Text = "My,d"
+        '
+        'Label554
+        '
+        Me.Label554.AutoSize = True
+        Me.Label554.Font = New System.Drawing.Font("Symbol", 10.2!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point)
+        Me.Label554.Location = New System.Drawing.Point(172, 61)
+        Me.Label554.Name = "Label554"
+        Me.Label554.Size = New System.Drawing.Size(56, 21)
+        Me.Label554.TabIndex = 124
+        Me.Label554.Text = "s         "
+        '
+        'Label563
+        '
+        Me.Label563.AutoSize = True
+        Me.Label563.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Label563.Location = New System.Drawing.Point(20, 64)
+        Me.Label563.Name = "Label563"
+        Me.Label563.Size = New System.Drawing.Size(32, 15)
+        Me.Label563.TabIndex = 112
+        Me.Label563.Text = "Nc,d"
+        '
+        'Label555
+        '
+        Me.Label555.AutoSize = True
+        Me.Label555.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Label555.Location = New System.Drawing.Point(106, 81)
+        Me.Label555.Name = "Label555"
+        Me.Label555.Size = New System.Drawing.Size(31, 15)
+        Me.Label555.TabIndex = 122
+        Me.Label555.Text = "ft0,d"
+        '
+        'Label557
+        '
+        Me.Label557.AutoSize = True
+        Me.Label557.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Label557.Location = New System.Drawing.Point(15, 82)
+        Me.Label557.Name = "Label557"
+        Me.Label557.Size = New System.Drawing.Size(31, 15)
+        Me.Label557.TabIndex = 119
+        Me.Label557.Text = "ft0,d"
+        '
+        'Label560
+        '
+        Me.Label560.AutoSize = True
+        Me.Label560.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Label560.Location = New System.Drawing.Point(111, 64)
+        Me.Label560.Name = "Label560"
+        Me.Label560.Size = New System.Drawing.Size(34, 15)
+        Me.Label560.TabIndex = 115
+        Me.Label560.Text = "Mx,d"
+        '
+        'Label558
+        '
+        Me.Label558.AutoSize = True
+        Me.Label558.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Label558.Location = New System.Drawing.Point(221, 66)
+        Me.Label558.Name = "Label558"
+        Me.Label558.Size = New System.Drawing.Size(36, 23)
+        Me.Label558.TabIndex = 118
+        Me.Label558.Text = "≤ 1"
+        '
+        'Label559
+        '
+        Me.Label559.AutoSize = True
+        Me.Label559.Font = New System.Drawing.Font("Symbol", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Label559.Location = New System.Drawing.Point(86, 66)
+        Me.Label559.Name = "Label559"
+        Me.Label559.Size = New System.Drawing.Size(14, 21)
+        Me.Label559.TabIndex = 117
+        Me.Label559.Text = "."
+        '
+        'Label564
+        '
+        Me.Label564.AutoSize = True
+        Me.Label564.Font = New System.Drawing.Font("Symbol", 10.2!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point)
+        Me.Label564.Location = New System.Drawing.Point(7, 61)
+        Me.Label564.Name = "Label564"
+        Me.Label564.Size = New System.Drawing.Size(48, 21)
+        Me.Label564.TabIndex = 113
+        Me.Label564.Text = "s       "
+        '
+        'Label561
+        '
+        Me.Label561.AutoSize = True
+        Me.Label561.Font = New System.Drawing.Font("Symbol", 10.2!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point)
+        Me.Label561.Location = New System.Drawing.Point(97, 60)
+        Me.Label561.Name = "Label561"
+        Me.Label561.Size = New System.Drawing.Size(56, 21)
+        Me.Label561.TabIndex = 116
+        Me.Label561.Text = "s         "
+        '
+        'gbxFlexoCompressao
+        '
+        Me.gbxFlexoCompressao.Controls.Add(Me.Label232)
+        Me.gbxFlexoCompressao.Controls.Add(Me.Label254)
+        Me.gbxFlexoCompressao.Controls.Add(Me.txtfc)
+        Me.gbxFlexoCompressao.Controls.Add(Me.lblValidacaoFlexoCompressaoY)
+        Me.gbxFlexoCompressao.Controls.Add(Me.Label81)
+        Me.gbxFlexoCompressao.Controls.Add(Me.Label80)
+        Me.gbxFlexoCompressao.Controls.Add(Me.Label534)
+        Me.gbxFlexoCompressao.Controls.Add(Me.Label210)
+        Me.gbxFlexoCompressao.Controls.Add(Me.Label519)
+        Me.gbxFlexoCompressao.Controls.Add(Me.Label227)
+        Me.gbxFlexoCompressao.Controls.Add(Me.Label520)
+        Me.gbxFlexoCompressao.Controls.Add(Me.Label203)
+        Me.gbxFlexoCompressao.Controls.Add(Me.Label521)
+        Me.gbxFlexoCompressao.Controls.Add(Me.Label228)
+        Me.gbxFlexoCompressao.Controls.Add(Me.Label522)
+        Me.gbxFlexoCompressao.Controls.Add(Me.txtFlexoCompressaoMy)
+        Me.gbxFlexoCompressao.Controls.Add(Me.Label523)
+        Me.gbxFlexoCompressao.Controls.Add(Me.Label524)
+        Me.gbxFlexoCompressao.Controls.Add(Me.Label204)
+        Me.gbxFlexoCompressao.Controls.Add(Me.Label525)
+        Me.gbxFlexoCompressao.Controls.Add(Me.lblValidacaoFlexoCompressaoX)
+        Me.gbxFlexoCompressao.Controls.Add(Me.Label526)
+        Me.gbxFlexoCompressao.Controls.Add(Me.Label321)
+        Me.gbxFlexoCompressao.Controls.Add(Me.Label527)
+        Me.gbxFlexoCompressao.Controls.Add(Me.Label322)
+        Me.gbxFlexoCompressao.Controls.Add(Me.Label528)
+        Me.gbxFlexoCompressao.Controls.Add(Me.txtFlexoCompressaoMx)
+        Me.gbxFlexoCompressao.Controls.Add(Me.Label529)
+        Me.gbxFlexoCompressao.Controls.Add(Me.Label325)
+        Me.gbxFlexoCompressao.Controls.Add(Me.Label530)
+        Me.gbxFlexoCompressao.Controls.Add(Me.txtFlexoCompressao)
+        Me.gbxFlexoCompressao.Controls.Add(Me.Label531)
+        Me.gbxFlexoCompressao.Controls.Add(Me.Label326)
+        Me.gbxFlexoCompressao.Controls.Add(Me.Label532)
+        Me.gbxFlexoCompressao.Controls.Add(Me.Label327)
+        Me.gbxFlexoCompressao.Controls.Add(Me.Label533)
+        Me.gbxFlexoCompressao.Controls.Add(Me.Label328)
+        Me.gbxFlexoCompressao.Controls.Add(Me.Label332)
+        Me.gbxFlexoCompressao.Controls.Add(Me.Label433)
+        Me.gbxFlexoCompressao.Controls.Add(Me.Label439)
+        Me.gbxFlexoCompressao.Controls.Add(Me.Label535)
+        Me.gbxFlexoCompressao.Controls.Add(Me.Label452)
+        Me.gbxFlexoCompressao.Controls.Add(Me.Label459)
+        Me.gbxFlexoCompressao.Controls.Add(Me.Label415)
+        Me.gbxFlexoCompressao.Controls.Add(Me.Label432)
+        Me.gbxFlexoCompressao.Controls.Add(Me.Label416)
+        Me.gbxFlexoCompressao.Controls.Add(Me.Label413)
+        Me.gbxFlexoCompressao.Controls.Add(Me.Label417)
+        Me.gbxFlexoCompressao.Controls.Add(Me.Label412)
+        Me.gbxFlexoCompressao.Controls.Add(Me.Label408)
+        Me.gbxFlexoCompressao.Controls.Add(Me.Label409)
+        Me.gbxFlexoCompressao.Controls.Add(Me.Label410)
+        Me.gbxFlexoCompressao.Controls.Add(Me.Label414)
+        Me.gbxFlexoCompressao.Controls.Add(Me.Label418)
+        Me.gbxFlexoCompressao.Controls.Add(Me.Label411)
+        Me.gbxFlexoCompressao.Location = New System.Drawing.Point(10, 20)
+        Me.gbxFlexoCompressao.Name = "gbxFlexoCompressao"
+        Me.gbxFlexoCompressao.Size = New System.Drawing.Size(468, 275)
+        Me.gbxFlexoCompressao.TabIndex = 15
+        Me.gbxFlexoCompressao.TabStop = False
+        Me.gbxFlexoCompressao.Text = "Flexocompressão"
+        '
+        'Label232
+        '
+        Me.Label232.AutoSize = True
+        Me.Label232.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Label232.Location = New System.Drawing.Point(117, 215)
+        Me.Label232.Name = "Label232"
+        Me.Label232.Size = New System.Drawing.Size(43, 23)
+        Me.Label232.TabIndex = 154
+        Me.Label232.Text = "MPa"
+        '
+        'Label254
+        '
+        Me.Label254.AutoSize = True
+        Me.Label254.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Label254.Location = New System.Drawing.Point(18, 213)
+        Me.Label254.Name = "Label254"
+        Me.Label254.Size = New System.Drawing.Size(40, 23)
+        Me.Label254.TabIndex = 153
+        Me.Label254.Text = "fc,0:"
+        '
+        'txtfc
+        '
+        Me.txtfc.Enabled = False
+        Me.txtfc.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.txtfc.Location = New System.Drawing.Point(60, 210)
+        Me.txtfc.Name = "txtfc"
+        Me.txtfc.Size = New System.Drawing.Size(57, 30)
+        Me.txtfc.TabIndex = 152
+        '
+        'lblValidacaoFlexoCompressaoY
+        '
+        Me.lblValidacaoFlexoCompressaoY.AutoSize = True
+        Me.lblValidacaoFlexoCompressaoY.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.lblValidacaoFlexoCompressaoY.Location = New System.Drawing.Point(289, 114)
+        Me.lblValidacaoFlexoCompressaoY.Name = "lblValidacaoFlexoCompressaoY"
+        Me.lblValidacaoFlexoCompressaoY.Size = New System.Drawing.Size(115, 23)
+        Me.lblValidacaoFlexoCompressaoY.TabIndex = 147
+        Me.lblValidacaoFlexoCompressaoY.Text = "VERIFICAÇÃO"
+        '
+        'Label81
+        '
+        Me.Label81.AutoSize = True
+        Me.Label81.Location = New System.Drawing.Point(265, 116)
+        Me.Label81.Name = "Label81"
+        Me.Label81.Size = New System.Drawing.Size(25, 23)
+        Me.Label81.TabIndex = 148
+        Me.Label81.Text = "→"
+        '
+        'Label80
+        '
+        Me.Label80.AutoSize = True
+        Me.Label80.Location = New System.Drawing.Point(265, 64)
+        Me.Label80.Name = "Label80"
+        Me.Label80.Size = New System.Drawing.Size(25, 23)
+        Me.Label80.TabIndex = 147
+        Me.Label80.Text = "→"
+        '
+        'Label534
+        '
+        Me.Label534.AutoSize = True
+        Me.Label534.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Label534.Location = New System.Drawing.Point(53, 104)
+        Me.Label534.Name = "Label534"
+        Me.Label534.Size = New System.Drawing.Size(13, 15)
+        Me.Label534.TabIndex = 110
+        Me.Label534.Text = "2"
+        '
+        'Label210
+        '
+        Me.Label210.AutoSize = True
+        Me.Label210.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Label210.Location = New System.Drawing.Point(295, 247)
+        Me.Label210.Name = "Label210"
+        Me.Label210.Size = New System.Drawing.Size(43, 23)
+        Me.Label210.TabIndex = 146
+        Me.Label210.Text = "MPa"
+        '
+        'Label519
+        '
+        Me.Label519.AutoSize = True
+        Me.Label519.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Label519.Location = New System.Drawing.Point(198, 132)
+        Me.Label519.Name = "Label519"
+        Me.Label519.Size = New System.Drawing.Size(33, 15)
+        Me.Label519.TabIndex = 109
+        Me.Label519.Text = "fc0,d"
+        '
+        'Label227
+        '
+        Me.Label227.AutoSize = True
+        Me.Label227.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Label227.Location = New System.Drawing.Point(294, 210)
+        Me.Label227.Name = "Label227"
+        Me.Label227.Size = New System.Drawing.Size(43, 23)
+        Me.Label227.TabIndex = 145
+        Me.Label227.Text = "MPa"
+        '
+        'Label520
+        '
+        Me.Label520.AutoSize = True
+        Me.Label520.Font = New System.Drawing.Font("Symbol", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Label520.Location = New System.Drawing.Point(167, 116)
+        Me.Label520.Name = "Label520"
+        Me.Label520.Size = New System.Drawing.Size(19, 21)
+        Me.Label520.TabIndex = 108
+        Me.Label520.Text = "+"
+        '
+        'Label203
+        '
+        Me.Label203.AutoSize = True
+        Me.Label203.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Label203.Location = New System.Drawing.Point(228, 248)
+        Me.Label203.Name = "Label203"
+        Me.Label203.Size = New System.Drawing.Size(14, 23)
+        Me.Label203.TabIndex = 106
+        Me.Label203.Text = ":"
+        '
+        'Label521
+        '
+        Me.Label521.AutoSize = True
+        Me.Label521.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Label521.Location = New System.Drawing.Point(203, 115)
+        Me.Label521.Name = "Label521"
+        Me.Label521.Size = New System.Drawing.Size(34, 15)
+        Me.Label521.TabIndex = 106
+        Me.Label521.Text = "Mx,d"
+        '
+        'Label228
+        '
+        Me.Label228.AutoSize = True
+        Me.Label228.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Label228.Location = New System.Drawing.Point(294, 171)
+        Me.Label228.Name = "Label228"
+        Me.Label228.Size = New System.Drawing.Size(43, 23)
+        Me.Label228.TabIndex = 144
+        Me.Label228.Text = "MPa"
+        '
+        'Label522
+        '
+        Me.Label522.AutoSize = True
+        Me.Label522.Font = New System.Drawing.Font("Symbol", 10.2!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point)
+        Me.Label522.Location = New System.Drawing.Point(189, 111)
+        Me.Label522.Name = "Label522"
+        Me.Label522.Size = New System.Drawing.Size(56, 21)
+        Me.Label522.TabIndex = 107
+        Me.Label522.Text = "s         "
+        '
+        'txtFlexoCompressaoMy
+        '
+        Me.txtFlexoCompressaoMy.Enabled = False
+        Me.txtFlexoCompressaoMy.Location = New System.Drawing.Point(239, 245)
+        Me.txtFlexoCompressaoMy.Name = "txtFlexoCompressaoMy"
+        Me.txtFlexoCompressaoMy.Size = New System.Drawing.Size(57, 30)
+        Me.txtFlexoCompressaoMy.TabIndex = 12
+        '
+        'Label523
+        '
+        Me.Label523.AutoSize = True
+        Me.Label523.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Label523.Location = New System.Drawing.Point(123, 131)
+        Me.Label523.Name = "Label523"
+        Me.Label523.Size = New System.Drawing.Size(33, 15)
+        Me.Label523.TabIndex = 105
+        Me.Label523.Text = "fc0,d"
+        '
+        'Label524
+        '
+        Me.Label524.AutoSize = True
+        Me.Label524.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Label524.Location = New System.Drawing.Point(24, 132)
+        Me.Label524.Name = "Label524"
+        Me.Label524.Size = New System.Drawing.Size(33, 15)
+        Me.Label524.TabIndex = 103
+        Me.Label524.Text = "fc0,d"
+        '
+        'Label204
+        '
+        Me.Label204.AutoSize = True
+        Me.Label204.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Label204.Location = New System.Drawing.Point(225, 212)
+        Me.Label204.Name = "Label204"
+        Me.Label204.Size = New System.Drawing.Size(14, 23)
+        Me.Label204.TabIndex = 105
+        Me.Label204.Text = ":"
+        '
+        'Label525
+        '
+        Me.Label525.AutoSize = True
+        Me.Label525.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Label525.Location = New System.Drawing.Point(238, 116)
+        Me.Label525.Name = "Label525"
+        Me.Label525.Size = New System.Drawing.Size(36, 23)
+        Me.Label525.TabIndex = 102
+        Me.Label525.Text = "≤ 1"
+        '
+        'lblValidacaoFlexoCompressaoX
+        '
+        Me.lblValidacaoFlexoCompressaoX.AutoSize = True
+        Me.lblValidacaoFlexoCompressaoX.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.lblValidacaoFlexoCompressaoX.Location = New System.Drawing.Point(289, 65)
+        Me.lblValidacaoFlexoCompressaoX.Name = "lblValidacaoFlexoCompressaoX"
+        Me.lblValidacaoFlexoCompressaoX.Size = New System.Drawing.Size(115, 23)
+        Me.lblValidacaoFlexoCompressaoX.TabIndex = 7
+        Me.lblValidacaoFlexoCompressaoX.Text = "VERIFICAÇÃO"
+        '
+        'Label526
+        '
+        Me.Label526.AutoSize = True
+        Me.Label526.Font = New System.Drawing.Font("Symbol", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Label526.Location = New System.Drawing.Point(103, 116)
+        Me.Label526.Name = "Label526"
+        Me.Label526.Size = New System.Drawing.Size(14, 21)
+        Me.Label526.TabIndex = 101
+        Me.Label526.Text = "."
+        '
+        'Label321
+        '
+        Me.Label321.AutoSize = True
+        Me.Label321.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Label321.Location = New System.Drawing.Point(225, 172)
+        Me.Label321.Name = "Label321"
+        Me.Label321.Size = New System.Drawing.Size(14, 23)
+        Me.Label321.TabIndex = 104
+        Me.Label321.Text = ":"
+        '
+        'Label527
+        '
+        Me.Label527.AutoSize = True
+        Me.Label527.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Label527.Location = New System.Drawing.Point(128, 114)
+        Me.Label527.Name = "Label527"
+        Me.Label527.Size = New System.Drawing.Size(34, 15)
+        Me.Label527.TabIndex = 99
+        Me.Label527.Text = "My,d"
+        '
+        'Label322
+        '
+        Me.Label322.AutoSize = True
+        Me.Label322.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Label322.Location = New System.Drawing.Point(199, 253)
+        Me.Label322.Name = "Label322"
+        Me.Label322.Size = New System.Drawing.Size(34, 15)
+        Me.Label322.TabIndex = 103
+        Me.Label322.Text = "My,d"
+        '
+        'Label528
+        '
+        Me.Label528.AutoSize = True
+        Me.Label528.Font = New System.Drawing.Font("Symbol", 10.2!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point)
+        Me.Label528.Location = New System.Drawing.Point(114, 110)
+        Me.Label528.Name = "Label528"
+        Me.Label528.Size = New System.Drawing.Size(56, 21)
+        Me.Label528.TabIndex = 100
+        Me.Label528.Text = "s         "
+        '
+        'txtFlexoCompressaoMx
+        '
+        Me.txtFlexoCompressaoMx.Enabled = False
+        Me.txtFlexoCompressaoMx.Location = New System.Drawing.Point(238, 207)
+        Me.txtFlexoCompressaoMx.Name = "txtFlexoCompressaoMx"
+        Me.txtFlexoCompressaoMx.Size = New System.Drawing.Size(57, 30)
+        Me.txtFlexoCompressaoMx.TabIndex = 8
+        '
+        'Label529
+        '
+        Me.Label529.AutoSize = True
+        Me.Label529.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Label529.Location = New System.Drawing.Point(86, 125)
+        Me.Label529.Name = "Label529"
+        Me.Label529.Size = New System.Drawing.Size(18, 15)
+        Me.Label529.TabIndex = 98
+        Me.Label529.Text = "M"
+        '
+        'Label325
+        '
+        Me.Label325.AutoSize = True
+        Me.Label325.Font = New System.Drawing.Font("Symbol", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Label325.Location = New System.Drawing.Point(184, 247)
+        Me.Label325.Name = "Label325"
+        Me.Label325.RightToLeft = System.Windows.Forms.RightToLeft.Yes
+        Me.Label325.Size = New System.Drawing.Size(20, 21)
+        Me.Label325.TabIndex = 102
+        Me.Label325.Text = "s"
+        '
+        'Label530
+        '
+        Me.Label530.AutoSize = True
+        Me.Label530.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Label530.Location = New System.Drawing.Point(29, 114)
+        Me.Label530.Name = "Label530"
+        Me.Label530.Size = New System.Drawing.Size(32, 15)
+        Me.Label530.TabIndex = 96
+        Me.Label530.Text = "Nc,d"
+        '
+        'txtFlexoCompressao
+        '
+        Me.txtFlexoCompressao.Enabled = False
+        Me.txtFlexoCompressao.Location = New System.Drawing.Point(238, 167)
+        Me.txtFlexoCompressao.Name = "txtFlexoCompressao"
+        Me.txtFlexoCompressao.Size = New System.Drawing.Size(57, 30)
+        Me.txtFlexoCompressao.TabIndex = 6
+        '
+        'Label531
+        '
+        Me.Label531.AutoSize = True
+        Me.Label531.Font = New System.Drawing.Font("Symbol", 10.2!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point)
+        Me.Label531.Location = New System.Drawing.Point(16, 111)
+        Me.Label531.Name = "Label531"
+        Me.Label531.Size = New System.Drawing.Size(48, 21)
+        Me.Label531.TabIndex = 97
+        Me.Label531.Text = "s       "
+        '
+        'Label326
+        '
+        Me.Label326.AutoSize = True
+        Me.Label326.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Label326.Location = New System.Drawing.Point(198, 218)
+        Me.Label326.Name = "Label326"
+        Me.Label326.Size = New System.Drawing.Size(34, 15)
+        Me.Label326.TabIndex = 101
+        Me.Label326.Text = "Mx,d"
+        '
+        'Label532
+        '
+        Me.Label532.AutoSize = True
+        Me.Label532.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Label532.Location = New System.Drawing.Point(68, 118)
+        Me.Label532.Name = "Label532"
+        Me.Label532.Size = New System.Drawing.Size(30, 23)
+        Me.Label532.TabIndex = 95
+        Me.Label532.Text = "+k"
+        '
+        'Label327
+        '
+        Me.Label327.AutoSize = True
+        Me.Label327.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Label327.Location = New System.Drawing.Point(198, 178)
+        Me.Label327.Name = "Label327"
+        Me.Label327.Size = New System.Drawing.Size(30, 15)
+        Me.Label327.TabIndex = 98
+        Me.Label327.Text = "Nt,d"
+        '
+        'Label533
+        '
+        Me.Label533.AutoSize = True
+        Me.Label533.Font = New System.Drawing.Font("Symbol", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Label533.Location = New System.Drawing.Point(3, 119)
+        Me.Label533.Name = "Label533"
+        Me.Label533.Size = New System.Drawing.Size(70, 21)
+        Me.Label533.TabIndex = 104
+        Me.Label533.Text = "(            )"
+        '
+        'Label328
+        '
+        Me.Label328.AutoSize = True
+        Me.Label328.Font = New System.Drawing.Font("Symbol", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Label328.Location = New System.Drawing.Point(183, 212)
+        Me.Label328.Name = "Label328"
+        Me.Label328.RightToLeft = System.Windows.Forms.RightToLeft.Yes
+        Me.Label328.Size = New System.Drawing.Size(20, 21)
+        Me.Label328.TabIndex = 100
+        Me.Label328.Text = "s"
+        '
+        'Label332
+        '
+        Me.Label332.AutoSize = True
+        Me.Label332.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Label332.Location = New System.Drawing.Point(15, 26)
+        Me.Label332.Name = "Label332"
+        Me.Label332.Size = New System.Drawing.Size(327, 23)
+        Me.Label332.TabIndex = 6
+        Me.Label332.Text = "Verificação ao Estado Limite Último (ELU):"
+        '
+        'Label433
+        '
+        Me.Label433.AutoSize = True
+        Me.Label433.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Label433.Location = New System.Drawing.Point(198, 81)
+        Me.Label433.Name = "Label433"
+        Me.Label433.Size = New System.Drawing.Size(33, 15)
+        Me.Label433.TabIndex = 94
+        Me.Label433.Text = "fc0,d"
+        '
+        'Label439
+        '
+        Me.Label439.AutoSize = True
+        Me.Label439.Font = New System.Drawing.Font("Symbol", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Label439.Location = New System.Drawing.Point(167, 65)
+        Me.Label439.Name = "Label439"
+        Me.Label439.Size = New System.Drawing.Size(19, 21)
+        Me.Label439.TabIndex = 93
+        Me.Label439.Text = "+"
+        '
+        'Label535
+        '
+        Me.Label535.AutoSize = True
+        Me.Label535.Font = New System.Drawing.Font("Symbol", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Label535.Location = New System.Drawing.Point(183, 172)
+        Me.Label535.Name = "Label535"
+        Me.Label535.RightToLeft = System.Windows.Forms.RightToLeft.Yes
+        Me.Label535.Size = New System.Drawing.Size(24, 21)
+        Me.Label535.TabIndex = 99
+        Me.Label535.Text = "s "
+        '
+        'Label452
+        '
+        Me.Label452.AutoSize = True
+        Me.Label452.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Label452.Location = New System.Drawing.Point(203, 64)
+        Me.Label452.Name = "Label452"
+        Me.Label452.Size = New System.Drawing.Size(34, 15)
+        Me.Label452.TabIndex = 91
+        Me.Label452.Text = "My,d"
+        '
+        'Label459
+        '
+        Me.Label459.AutoSize = True
+        Me.Label459.Font = New System.Drawing.Font("Symbol", 10.2!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point)
+        Me.Label459.Location = New System.Drawing.Point(189, 60)
+        Me.Label459.Name = "Label459"
+        Me.Label459.Size = New System.Drawing.Size(56, 21)
+        Me.Label459.TabIndex = 92
+        Me.Label459.Text = "s         "
+        '
+        'Label415
+        '
+        Me.Label415.AutoSize = True
+        Me.Label415.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Label415.Location = New System.Drawing.Point(68, 67)
+        Me.Label415.Name = "Label415"
+        Me.Label415.Size = New System.Drawing.Size(30, 23)
+        Me.Label415.TabIndex = 48
+        Me.Label415.Text = "+k"
+        '
+        'Label432
+        '
+        Me.Label432.AutoSize = True
+        Me.Label432.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Label432.Location = New System.Drawing.Point(123, 80)
+        Me.Label432.Name = "Label432"
+        Me.Label432.Size = New System.Drawing.Size(33, 15)
+        Me.Label432.TabIndex = 90
+        Me.Label432.Text = "fc0,d"
+        '
+        'Label416
+        '
+        Me.Label416.AutoSize = True
+        Me.Label416.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Label416.Location = New System.Drawing.Point(53, 53)
+        Me.Label416.Name = "Label416"
+        Me.Label416.Size = New System.Drawing.Size(13, 15)
+        Me.Label416.TabIndex = 67
+        Me.Label416.Text = "2"
+        '
+        'Label413
+        '
+        Me.Label413.AutoSize = True
+        Me.Label413.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Label413.Location = New System.Drawing.Point(29, 63)
+        Me.Label413.Name = "Label413"
+        Me.Label413.Size = New System.Drawing.Size(32, 15)
+        Me.Label413.TabIndex = 49
+        Me.Label413.Text = "Nc,d"
+        '
+        'Label417
+        '
+        Me.Label417.AutoSize = True
+        Me.Label417.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Label417.Location = New System.Drawing.Point(24, 81)
+        Me.Label417.Name = "Label417"
+        Me.Label417.Size = New System.Drawing.Size(33, 15)
+        Me.Label417.TabIndex = 66
+        Me.Label417.Text = "fc0,d"
+        '
+        'Label412
+        '
+        Me.Label412.AutoSize = True
+        Me.Label412.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Label412.Location = New System.Drawing.Point(86, 74)
+        Me.Label412.Name = "Label412"
+        Me.Label412.Size = New System.Drawing.Size(18, 15)
+        Me.Label412.TabIndex = 51
+        Me.Label412.Text = "M"
+        '
+        'Label408
+        '
+        Me.Label408.AutoSize = True
+        Me.Label408.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Label408.Location = New System.Drawing.Point(238, 65)
+        Me.Label408.Name = "Label408"
+        Me.Label408.Size = New System.Drawing.Size(36, 23)
+        Me.Label408.TabIndex = 55
+        Me.Label408.Text = "≤ 1"
+        '
+        'Label409
+        '
+        Me.Label409.AutoSize = True
+        Me.Label409.Font = New System.Drawing.Font("Symbol", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Label409.Location = New System.Drawing.Point(103, 65)
+        Me.Label409.Name = "Label409"
+        Me.Label409.Size = New System.Drawing.Size(14, 21)
+        Me.Label409.TabIndex = 54
+        Me.Label409.Text = "."
+        '
+        'Label410
+        '
+        Me.Label410.AutoSize = True
+        Me.Label410.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Label410.Location = New System.Drawing.Point(128, 63)
+        Me.Label410.Name = "Label410"
+        Me.Label410.Size = New System.Drawing.Size(34, 15)
+        Me.Label410.TabIndex = 52
+        Me.Label410.Text = "Mx,d"
+        '
+        'Label414
+        '
+        Me.Label414.AutoSize = True
+        Me.Label414.Font = New System.Drawing.Font("Symbol", 10.2!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point)
+        Me.Label414.Location = New System.Drawing.Point(16, 60)
+        Me.Label414.Name = "Label414"
+        Me.Label414.Size = New System.Drawing.Size(48, 21)
+        Me.Label414.TabIndex = 50
+        Me.Label414.Text = "s       "
+        '
+        'Label418
+        '
+        Me.Label418.AutoSize = True
+        Me.Label418.Font = New System.Drawing.Font("Symbol", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Label418.Location = New System.Drawing.Point(3, 68)
+        Me.Label418.Name = "Label418"
+        Me.Label418.Size = New System.Drawing.Size(70, 21)
+        Me.Label418.TabIndex = 68
+        Me.Label418.Text = "(            )"
+        '
+        'Label411
+        '
+        Me.Label411.AutoSize = True
+        Me.Label411.Font = New System.Drawing.Font("Symbol", 10.2!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point)
+        Me.Label411.Location = New System.Drawing.Point(114, 59)
+        Me.Label411.Name = "Label411"
+        Me.Label411.Size = New System.Drawing.Size(56, 21)
+        Me.Label411.TabIndex = 53
+        Me.Label411.Text = "s         "
+        '
+        'GroupBox16
+        '
+        Me.GroupBox16.Controls.Add(Me.gbxFlexaoObliqua)
+        Me.GroupBox16.Controls.Add(Me.gbxFlexaoSimples)
+        Me.GroupBox16.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.GroupBox16.Location = New System.Drawing.Point(15, 5)
+        Me.GroupBox16.Name = "GroupBox16"
+        Me.GroupBox16.Size = New System.Drawing.Size(458, 304)
+        Me.GroupBox16.TabIndex = 0
+        Me.GroupBox16.TabStop = False
+        Me.GroupBox16.Text = "Dimensionamento à Flexão Simples"
         '
         'gbxFlexaoObliqua
         '
@@ -6964,9 +8058,9 @@ Partial Class Form1
         Me.gbxFlexaoObliqua.Controls.Add(Me.txtTensaoMx)
         Me.gbxFlexaoObliqua.Controls.Add(Me.Label370)
         Me.gbxFlexaoObliqua.Controls.Add(Me.Label207)
-        Me.gbxFlexaoObliqua.Location = New System.Drawing.Point(10, 29)
+        Me.gbxFlexaoObliqua.Location = New System.Drawing.Point(10, 20)
         Me.gbxFlexaoObliqua.Name = "gbxFlexaoObliqua"
-        Me.gbxFlexaoObliqua.Size = New System.Drawing.Size(434, 283)
+        Me.gbxFlexaoObliqua.Size = New System.Drawing.Size(434, 276)
         Me.gbxFlexaoObliqua.TabIndex = 12
         Me.gbxFlexaoObliqua.TabStop = False
         Me.gbxFlexaoObliqua.Text = "Flexão Oblíqua: Verificação"
@@ -7566,1204 +8660,6 @@ Partial Class Form1
         Me.Label175.Size = New System.Drawing.Size(52, 21)
         Me.Label175.TabIndex = 53
         Me.Label175.Text = "s       :"
-        '
-        'TabFlexaoComposta
-        '
-        Me.TabFlexaoComposta.Controls.Add(Me.GroupBox19)
-        Me.TabFlexaoComposta.Location = New System.Drawing.Point(4, 32)
-        Me.TabFlexaoComposta.Name = "TabFlexaoComposta"
-        Me.TabFlexaoComposta.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabFlexaoComposta.Size = New System.Drawing.Size(1158, 624)
-        Me.TabFlexaoComposta.TabIndex = 8
-        Me.TabFlexaoComposta.Text = "Flexão Composta"
-        Me.TabFlexaoComposta.UseVisualStyleBackColor = True
-        '
-        'GroupBox19
-        '
-        Me.GroupBox19.Controls.Add(Me.gbxFlexoTracao)
-        Me.GroupBox19.Controls.Add(Me.gbxFlexoCompressao)
-        Me.GroupBox19.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.GroupBox19.Location = New System.Drawing.Point(15, 5)
-        Me.GroupBox19.Name = "GroupBox19"
-        Me.GroupBox19.Size = New System.Drawing.Size(504, 356)
-        Me.GroupBox19.TabIndex = 0
-        Me.GroupBox19.TabStop = False
-        Me.GroupBox19.Text = "Dimensionamento à Flexão Composta"
-        '
-        'gbxFlexoTracao
-        '
-        Me.gbxFlexoTracao.Controls.Add(Me.Label225)
-        Me.gbxFlexoTracao.Controls.Add(Me.Label83)
-        Me.gbxFlexoTracao.Controls.Add(Me.Label82)
-        Me.gbxFlexoTracao.Controls.Add(Me.Label226)
-        Me.gbxFlexoTracao.Controls.Add(Me.lblValidacaoFlexoTracaoY)
-        Me.gbxFlexoTracao.Controls.Add(Me.Label550)
-        Me.gbxFlexoTracao.Controls.Add(Me.txtftFlexo)
-        Me.gbxFlexoTracao.Controls.Add(Me.Label319)
-        Me.gbxFlexoTracao.Controls.Add(Me.Label313)
-        Me.gbxFlexoTracao.Controls.Add(Me.Label536)
-        Me.gbxFlexoTracao.Controls.Add(Me.Label202)
-        Me.gbxFlexoTracao.Controls.Add(Me.Label537)
-        Me.gbxFlexoTracao.Controls.Add(Me.Label518)
-        Me.gbxFlexoTracao.Controls.Add(Me.Label538)
-        Me.gbxFlexoTracao.Controls.Add(Me.Label517)
-        Me.gbxFlexoTracao.Controls.Add(Me.Label539)
-        Me.gbxFlexoTracao.Controls.Add(Me.Label329)
-        Me.gbxFlexoTracao.Controls.Add(Me.Label540)
-        Me.gbxFlexoTracao.Controls.Add(Me.Label330)
-        Me.gbxFlexoTracao.Controls.Add(Me.Label541)
-        Me.gbxFlexoTracao.Controls.Add(Me.Label542)
-        Me.gbxFlexoTracao.Controls.Add(Me.txtFlexoTracaoMx)
-        Me.gbxFlexoTracao.Controls.Add(Me.Label543)
-        Me.gbxFlexoTracao.Controls.Add(Me.Label315)
-        Me.gbxFlexoTracao.Controls.Add(Me.Label544)
-        Me.gbxFlexoTracao.Controls.Add(Me.Label317)
-        Me.gbxFlexoTracao.Controls.Add(Me.Label545)
-        Me.gbxFlexoTracao.Controls.Add(Me.txtFlexoTracaoMy)
-        Me.gbxFlexoTracao.Controls.Add(Me.Label546)
-        Me.gbxFlexoTracao.Controls.Add(Me.lblValidacaoFlexoTracaoX)
-        Me.gbxFlexoTracao.Controls.Add(Me.Label547)
-        Me.gbxFlexoTracao.Controls.Add(Me.Label314)
-        Me.gbxFlexoTracao.Controls.Add(Me.Label548)
-        Me.gbxFlexoTracao.Controls.Add(Me.Label316)
-        Me.gbxFlexoTracao.Controls.Add(Me.Label549)
-        Me.gbxFlexoTracao.Controls.Add(Me.txtFlexoTracao)
-        Me.gbxFlexoTracao.Controls.Add(Me.Label320)
-        Me.gbxFlexoTracao.Controls.Add(Me.Label551)
-        Me.gbxFlexoTracao.Controls.Add(Me.Label562)
-        Me.gbxFlexoTracao.Controls.Add(Me.Label552)
-        Me.gbxFlexoTracao.Controls.Add(Me.Label565)
-        Me.gbxFlexoTracao.Controls.Add(Me.Label553)
-        Me.gbxFlexoTracao.Controls.Add(Me.Label554)
-        Me.gbxFlexoTracao.Controls.Add(Me.Label563)
-        Me.gbxFlexoTracao.Controls.Add(Me.Label555)
-        Me.gbxFlexoTracao.Controls.Add(Me.Label557)
-        Me.gbxFlexoTracao.Controls.Add(Me.Label560)
-        Me.gbxFlexoTracao.Controls.Add(Me.Label558)
-        Me.gbxFlexoTracao.Controls.Add(Me.Label559)
-        Me.gbxFlexoTracao.Controls.Add(Me.Label564)
-        Me.gbxFlexoTracao.Controls.Add(Me.Label561)
-        Me.gbxFlexoTracao.Location = New System.Drawing.Point(10, 29)
-        Me.gbxFlexoTracao.Name = "gbxFlexoTracao"
-        Me.gbxFlexoTracao.Size = New System.Drawing.Size(468, 316)
-        Me.gbxFlexoTracao.TabIndex = 6
-        Me.gbxFlexoTracao.TabStop = False
-        Me.gbxFlexoTracao.Text = "Flexotração"
-        '
-        'Label225
-        '
-        Me.Label225.AutoSize = True
-        Me.Label225.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label225.Location = New System.Drawing.Point(229, 160)
-        Me.Label225.Name = "Label225"
-        Me.Label225.Size = New System.Drawing.Size(43, 23)
-        Me.Label225.TabIndex = 151
-        Me.Label225.Text = "MPa"
-        '
-        'Label83
-        '
-        Me.Label83.AutoSize = True
-        Me.Label83.Location = New System.Drawing.Point(250, 111)
-        Me.Label83.Name = "Label83"
-        Me.Label83.Size = New System.Drawing.Size(25, 23)
-        Me.Label83.TabIndex = 146
-        Me.Label83.Text = "→"
-        '
-        'Label82
-        '
-        Me.Label82.AutoSize = True
-        Me.Label82.Location = New System.Drawing.Point(250, 65)
-        Me.Label82.Name = "Label82"
-        Me.Label82.Size = New System.Drawing.Size(25, 23)
-        Me.Label82.TabIndex = 145
-        Me.Label82.Text = "→"
-        '
-        'Label226
-        '
-        Me.Label226.AutoSize = True
-        Me.Label226.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label226.Location = New System.Drawing.Point(130, 158)
-        Me.Label226.Name = "Label226"
-        Me.Label226.Size = New System.Drawing.Size(38, 23)
-        Me.Label226.TabIndex = 150
-        Me.Label226.Text = "ft,0:"
-        '
-        'lblValidacaoFlexoTracaoY
-        '
-        Me.lblValidacaoFlexoTracaoY.AutoSize = True
-        Me.lblValidacaoFlexoTracaoY.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.lblValidacaoFlexoTracaoY.Location = New System.Drawing.Point(272, 112)
-        Me.lblValidacaoFlexoTracaoY.Name = "lblValidacaoFlexoTracaoY"
-        Me.lblValidacaoFlexoTracaoY.Size = New System.Drawing.Size(110, 23)
-        Me.lblValidacaoFlexoTracaoY.TabIndex = 144
-        Me.lblValidacaoFlexoTracaoY.Text = "VERFICAÇÃO"
-        '
-        'Label550
-        '
-        Me.Label550.AutoSize = True
-        Me.Label550.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label550.Location = New System.Drawing.Point(229, 281)
-        Me.Label550.Name = "Label550"
-        Me.Label550.Size = New System.Drawing.Size(43, 23)
-        Me.Label550.TabIndex = 143
-        Me.Label550.Text = "MPa"
-        '
-        'txtftFlexo
-        '
-        Me.txtftFlexo.Enabled = False
-        Me.txtftFlexo.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.txtftFlexo.Location = New System.Drawing.Point(172, 155)
-        Me.txtftFlexo.Name = "txtftFlexo"
-        Me.txtftFlexo.Size = New System.Drawing.Size(57, 30)
-        Me.txtftFlexo.TabIndex = 149
-        '
-        'Label319
-        '
-        Me.Label319.AutoSize = True
-        Me.Label319.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label319.Location = New System.Drawing.Point(229, 238)
-        Me.Label319.Name = "Label319"
-        Me.Label319.Size = New System.Drawing.Size(43, 23)
-        Me.Label319.TabIndex = 142
-        Me.Label319.Text = "MPa"
-        '
-        'Label313
-        '
-        Me.Label313.AutoSize = True
-        Me.Label313.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label313.Location = New System.Drawing.Point(229, 198)
-        Me.Label313.Name = "Label313"
-        Me.Label313.Size = New System.Drawing.Size(43, 23)
-        Me.Label313.TabIndex = 111
-        Me.Label313.Text = "MPa"
-        '
-        'Label536
-        '
-        Me.Label536.AutoSize = True
-        Me.Label536.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label536.Location = New System.Drawing.Point(181, 128)
-        Me.Label536.Name = "Label536"
-        Me.Label536.Size = New System.Drawing.Size(31, 15)
-        Me.Label536.TabIndex = 141
-        Me.Label536.Text = "ft0,d"
-        '
-        'Label202
-        '
-        Me.Label202.AutoSize = True
-        Me.Label202.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label202.Location = New System.Drawing.Point(158, 281)
-        Me.Label202.Name = "Label202"
-        Me.Label202.Size = New System.Drawing.Size(14, 23)
-        Me.Label202.TabIndex = 97
-        Me.Label202.Text = ":"
-        '
-        'Label537
-        '
-        Me.Label537.AutoSize = True
-        Me.Label537.Font = New System.Drawing.Font("Symbol", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label537.Location = New System.Drawing.Point(150, 112)
-        Me.Label537.Name = "Label537"
-        Me.Label537.Size = New System.Drawing.Size(19, 21)
-        Me.Label537.TabIndex = 140
-        Me.Label537.Text = "+"
-        '
-        'Label518
-        '
-        Me.Label518.AutoSize = True
-        Me.Label518.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label518.Location = New System.Drawing.Point(156, 239)
-        Me.Label518.Name = "Label518"
-        Me.Label518.Size = New System.Drawing.Size(14, 23)
-        Me.Label518.TabIndex = 96
-        Me.Label518.Text = ":"
-        '
-        'Label538
-        '
-        Me.Label538.AutoSize = True
-        Me.Label538.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label538.Location = New System.Drawing.Point(186, 111)
-        Me.Label538.Name = "Label538"
-        Me.Label538.Size = New System.Drawing.Size(34, 15)
-        Me.Label538.TabIndex = 138
-        Me.Label538.Text = "Mx,d"
-        '
-        'Label517
-        '
-        Me.Label517.AutoSize = True
-        Me.Label517.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label517.Location = New System.Drawing.Point(156, 198)
-        Me.Label517.Name = "Label517"
-        Me.Label517.Size = New System.Drawing.Size(14, 23)
-        Me.Label517.TabIndex = 95
-        Me.Label517.Text = ":"
-        '
-        'Label539
-        '
-        Me.Label539.AutoSize = True
-        Me.Label539.Font = New System.Drawing.Font("Symbol", 10.2!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point)
-        Me.Label539.Location = New System.Drawing.Point(172, 107)
-        Me.Label539.Name = "Label539"
-        Me.Label539.Size = New System.Drawing.Size(56, 21)
-        Me.Label539.TabIndex = 139
-        Me.Label539.Text = "s         "
-        '
-        'Label329
-        '
-        Me.Label329.AutoSize = True
-        Me.Label329.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label329.Location = New System.Drawing.Point(129, 286)
-        Me.Label329.Name = "Label329"
-        Me.Label329.Size = New System.Drawing.Size(34, 15)
-        Me.Label329.TabIndex = 15
-        Me.Label329.Text = "My,d"
-        '
-        'Label540
-        '
-        Me.Label540.AutoSize = True
-        Me.Label540.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label540.Location = New System.Drawing.Point(106, 127)
-        Me.Label540.Name = "Label540"
-        Me.Label540.Size = New System.Drawing.Size(31, 15)
-        Me.Label540.TabIndex = 137
-        Me.Label540.Text = "ft0,d"
-        '
-        'Label330
-        '
-        Me.Label330.AutoSize = True
-        Me.Label330.Font = New System.Drawing.Font("Symbol", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label330.Location = New System.Drawing.Point(114, 280)
-        Me.Label330.Name = "Label330"
-        Me.Label330.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.Label330.Size = New System.Drawing.Size(20, 21)
-        Me.Label330.TabIndex = 14
-        Me.Label330.Text = "s"
-        '
-        'Label541
-        '
-        Me.Label541.AutoSize = True
-        Me.Label541.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label541.Location = New System.Drawing.Point(15, 128)
-        Me.Label541.Name = "Label541"
-        Me.Label541.Size = New System.Drawing.Size(31, 15)
-        Me.Label541.TabIndex = 135
-        Me.Label541.Text = "ft0,d"
-        '
-        'Label542
-        '
-        Me.Label542.AutoSize = True
-        Me.Label542.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label542.Location = New System.Drawing.Point(221, 112)
-        Me.Label542.Name = "Label542"
-        Me.Label542.Size = New System.Drawing.Size(36, 23)
-        Me.Label542.TabIndex = 134
-        Me.Label542.Text = "≤ 1"
-        '
-        'txtFlexoTracaoMx
-        '
-        Me.txtFlexoTracaoMx.Enabled = False
-        Me.txtFlexoTracaoMx.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.txtFlexoTracaoMx.Location = New System.Drawing.Point(172, 236)
-        Me.txtFlexoTracaoMx.Name = "txtFlexoTracaoMx"
-        Me.txtFlexoTracaoMx.Size = New System.Drawing.Size(57, 30)
-        Me.txtFlexoTracaoMx.TabIndex = 8
-        '
-        'Label543
-        '
-        Me.Label543.AutoSize = True
-        Me.Label543.Font = New System.Drawing.Font("Symbol", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label543.Location = New System.Drawing.Point(86, 112)
-        Me.Label543.Name = "Label543"
-        Me.Label543.Size = New System.Drawing.Size(14, 21)
-        Me.Label543.TabIndex = 133
-        Me.Label543.Text = "."
-        '
-        'Label315
-        '
-        Me.Label315.AutoSize = True
-        Me.Label315.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label315.Location = New System.Drawing.Point(129, 245)
-        Me.Label315.Name = "Label315"
-        Me.Label315.Size = New System.Drawing.Size(34, 15)
-        Me.Label315.TabIndex = 10
-        Me.Label315.Text = "Mx,d"
-        '
-        'Label544
-        '
-        Me.Label544.AutoSize = True
-        Me.Label544.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label544.Location = New System.Drawing.Point(111, 110)
-        Me.Label544.Name = "Label544"
-        Me.Label544.Size = New System.Drawing.Size(34, 15)
-        Me.Label544.TabIndex = 131
-        Me.Label544.Text = "My,d"
-        '
-        'Label317
-        '
-        Me.Label317.AutoSize = True
-        Me.Label317.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label317.Location = New System.Drawing.Point(129, 204)
-        Me.Label317.Name = "Label317"
-        Me.Label317.Size = New System.Drawing.Size(30, 15)
-        Me.Label317.TabIndex = 6
-        Me.Label317.Text = "Nt,d"
-        '
-        'Label545
-        '
-        Me.Label545.AutoSize = True
-        Me.Label545.Font = New System.Drawing.Font("Symbol", 10.2!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point)
-        Me.Label545.Location = New System.Drawing.Point(97, 106)
-        Me.Label545.Name = "Label545"
-        Me.Label545.Size = New System.Drawing.Size(56, 21)
-        Me.Label545.TabIndex = 132
-        Me.Label545.Text = "s         "
-        '
-        'txtFlexoTracaoMy
-        '
-        Me.txtFlexoTracaoMy.Enabled = False
-        Me.txtFlexoTracaoMy.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.txtFlexoTracaoMy.Location = New System.Drawing.Point(172, 277)
-        Me.txtFlexoTracaoMy.Name = "txtFlexoTracaoMy"
-        Me.txtFlexoTracaoMy.Size = New System.Drawing.Size(57, 30)
-        Me.txtFlexoTracaoMy.TabIndex = 12
-        '
-        'Label546
-        '
-        Me.Label546.AutoSize = True
-        Me.Label546.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label546.Location = New System.Drawing.Point(69, 121)
-        Me.Label546.Name = "Label546"
-        Me.Label546.Size = New System.Drawing.Size(18, 15)
-        Me.Label546.TabIndex = 130
-        Me.Label546.Text = "M"
-        '
-        'lblValidacaoFlexoTracaoX
-        '
-        Me.lblValidacaoFlexoTracaoX.AutoSize = True
-        Me.lblValidacaoFlexoTracaoX.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.lblValidacaoFlexoTracaoX.Location = New System.Drawing.Point(272, 66)
-        Me.lblValidacaoFlexoTracaoX.Name = "lblValidacaoFlexoTracaoX"
-        Me.lblValidacaoFlexoTracaoX.Size = New System.Drawing.Size(110, 23)
-        Me.lblValidacaoFlexoTracaoX.TabIndex = 7
-        Me.lblValidacaoFlexoTracaoX.Text = "VERFICAÇÃO"
-        '
-        'Label547
-        '
-        Me.Label547.AutoSize = True
-        Me.Label547.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label547.Location = New System.Drawing.Point(20, 110)
-        Me.Label547.Name = "Label547"
-        Me.Label547.Size = New System.Drawing.Size(32, 15)
-        Me.Label547.TabIndex = 128
-        Me.Label547.Text = "Nc,d"
-        '
-        'Label314
-        '
-        Me.Label314.AutoSize = True
-        Me.Label314.Font = New System.Drawing.Font("Symbol", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label314.Location = New System.Drawing.Point(114, 239)
-        Me.Label314.Name = "Label314"
-        Me.Label314.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.Label314.Size = New System.Drawing.Size(20, 21)
-        Me.Label314.TabIndex = 9
-        Me.Label314.Text = "s"
-        '
-        'Label548
-        '
-        Me.Label548.AutoSize = True
-        Me.Label548.Font = New System.Drawing.Font("Symbol", 10.2!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point)
-        Me.Label548.Location = New System.Drawing.Point(7, 107)
-        Me.Label548.Name = "Label548"
-        Me.Label548.Size = New System.Drawing.Size(48, 21)
-        Me.Label548.TabIndex = 129
-        Me.Label548.Text = "s       "
-        '
-        'Label316
-        '
-        Me.Label316.AutoSize = True
-        Me.Label316.Font = New System.Drawing.Font("Symbol", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label316.Location = New System.Drawing.Point(114, 198)
-        Me.Label316.Name = "Label316"
-        Me.Label316.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.Label316.Size = New System.Drawing.Size(24, 21)
-        Me.Label316.TabIndex = 6
-        Me.Label316.Text = "s "
-        '
-        'Label549
-        '
-        Me.Label549.AutoSize = True
-        Me.Label549.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label549.Location = New System.Drawing.Point(51, 114)
-        Me.Label549.Name = "Label549"
-        Me.Label549.Size = New System.Drawing.Size(30, 23)
-        Me.Label549.TabIndex = 127
-        Me.Label549.Text = "+k"
-        '
-        'txtFlexoTracao
-        '
-        Me.txtFlexoTracao.Enabled = False
-        Me.txtFlexoTracao.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.txtFlexoTracao.Location = New System.Drawing.Point(172, 195)
-        Me.txtFlexoTracao.Name = "txtFlexoTracao"
-        Me.txtFlexoTracao.Size = New System.Drawing.Size(57, 30)
-        Me.txtFlexoTracao.TabIndex = 6
-        '
-        'Label320
-        '
-        Me.Label320.AutoSize = True
-        Me.Label320.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label320.Location = New System.Drawing.Point(15, 26)
-        Me.Label320.Name = "Label320"
-        Me.Label320.Size = New System.Drawing.Size(327, 23)
-        Me.Label320.TabIndex = 6
-        Me.Label320.Text = "Verificação ao Estado Limite Último (ELU):"
-        '
-        'Label551
-        '
-        Me.Label551.AutoSize = True
-        Me.Label551.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label551.Location = New System.Drawing.Point(181, 82)
-        Me.Label551.Name = "Label551"
-        Me.Label551.Size = New System.Drawing.Size(31, 15)
-        Me.Label551.TabIndex = 126
-        Me.Label551.Text = "ft0,d"
-        '
-        'Label562
-        '
-        Me.Label562.AutoSize = True
-        Me.Label562.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label562.Location = New System.Drawing.Point(69, 75)
-        Me.Label562.Name = "Label562"
-        Me.Label562.Size = New System.Drawing.Size(18, 15)
-        Me.Label562.TabIndex = 114
-        Me.Label562.Text = "M"
-        '
-        'Label552
-        '
-        Me.Label552.AutoSize = True
-        Me.Label552.Font = New System.Drawing.Font("Symbol", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label552.Location = New System.Drawing.Point(150, 66)
-        Me.Label552.Name = "Label552"
-        Me.Label552.Size = New System.Drawing.Size(19, 21)
-        Me.Label552.TabIndex = 125
-        Me.Label552.Text = "+"
-        '
-        'Label565
-        '
-        Me.Label565.AutoSize = True
-        Me.Label565.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label565.Location = New System.Drawing.Point(51, 68)
-        Me.Label565.Name = "Label565"
-        Me.Label565.Size = New System.Drawing.Size(30, 23)
-        Me.Label565.TabIndex = 111
-        Me.Label565.Text = "+k"
-        '
-        'Label553
-        '
-        Me.Label553.AutoSize = True
-        Me.Label553.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label553.Location = New System.Drawing.Point(186, 65)
-        Me.Label553.Name = "Label553"
-        Me.Label553.Size = New System.Drawing.Size(34, 15)
-        Me.Label553.TabIndex = 123
-        Me.Label553.Text = "My,d"
-        '
-        'Label554
-        '
-        Me.Label554.AutoSize = True
-        Me.Label554.Font = New System.Drawing.Font("Symbol", 10.2!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point)
-        Me.Label554.Location = New System.Drawing.Point(172, 61)
-        Me.Label554.Name = "Label554"
-        Me.Label554.Size = New System.Drawing.Size(56, 21)
-        Me.Label554.TabIndex = 124
-        Me.Label554.Text = "s         "
-        '
-        'Label563
-        '
-        Me.Label563.AutoSize = True
-        Me.Label563.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label563.Location = New System.Drawing.Point(20, 64)
-        Me.Label563.Name = "Label563"
-        Me.Label563.Size = New System.Drawing.Size(32, 15)
-        Me.Label563.TabIndex = 112
-        Me.Label563.Text = "Nc,d"
-        '
-        'Label555
-        '
-        Me.Label555.AutoSize = True
-        Me.Label555.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label555.Location = New System.Drawing.Point(106, 81)
-        Me.Label555.Name = "Label555"
-        Me.Label555.Size = New System.Drawing.Size(31, 15)
-        Me.Label555.TabIndex = 122
-        Me.Label555.Text = "ft0,d"
-        '
-        'Label557
-        '
-        Me.Label557.AutoSize = True
-        Me.Label557.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label557.Location = New System.Drawing.Point(15, 82)
-        Me.Label557.Name = "Label557"
-        Me.Label557.Size = New System.Drawing.Size(31, 15)
-        Me.Label557.TabIndex = 119
-        Me.Label557.Text = "ft0,d"
-        '
-        'Label560
-        '
-        Me.Label560.AutoSize = True
-        Me.Label560.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label560.Location = New System.Drawing.Point(111, 64)
-        Me.Label560.Name = "Label560"
-        Me.Label560.Size = New System.Drawing.Size(34, 15)
-        Me.Label560.TabIndex = 115
-        Me.Label560.Text = "Mx,d"
-        '
-        'Label558
-        '
-        Me.Label558.AutoSize = True
-        Me.Label558.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label558.Location = New System.Drawing.Point(221, 66)
-        Me.Label558.Name = "Label558"
-        Me.Label558.Size = New System.Drawing.Size(36, 23)
-        Me.Label558.TabIndex = 118
-        Me.Label558.Text = "≤ 1"
-        '
-        'Label559
-        '
-        Me.Label559.AutoSize = True
-        Me.Label559.Font = New System.Drawing.Font("Symbol", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label559.Location = New System.Drawing.Point(86, 66)
-        Me.Label559.Name = "Label559"
-        Me.Label559.Size = New System.Drawing.Size(14, 21)
-        Me.Label559.TabIndex = 117
-        Me.Label559.Text = "."
-        '
-        'Label564
-        '
-        Me.Label564.AutoSize = True
-        Me.Label564.Font = New System.Drawing.Font("Symbol", 10.2!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point)
-        Me.Label564.Location = New System.Drawing.Point(7, 61)
-        Me.Label564.Name = "Label564"
-        Me.Label564.Size = New System.Drawing.Size(48, 21)
-        Me.Label564.TabIndex = 113
-        Me.Label564.Text = "s       "
-        '
-        'Label561
-        '
-        Me.Label561.AutoSize = True
-        Me.Label561.Font = New System.Drawing.Font("Symbol", 10.2!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point)
-        Me.Label561.Location = New System.Drawing.Point(97, 60)
-        Me.Label561.Name = "Label561"
-        Me.Label561.Size = New System.Drawing.Size(56, 21)
-        Me.Label561.TabIndex = 116
-        Me.Label561.Text = "s         "
-        '
-        'gbxFlexoCompressao
-        '
-        Me.gbxFlexoCompressao.Controls.Add(Me.Label232)
-        Me.gbxFlexoCompressao.Controls.Add(Me.Label254)
-        Me.gbxFlexoCompressao.Controls.Add(Me.txtfc)
-        Me.gbxFlexoCompressao.Controls.Add(Me.lblValidacaoFlexoCompressaoY)
-        Me.gbxFlexoCompressao.Controls.Add(Me.Label81)
-        Me.gbxFlexoCompressao.Controls.Add(Me.Label80)
-        Me.gbxFlexoCompressao.Controls.Add(Me.Label534)
-        Me.gbxFlexoCompressao.Controls.Add(Me.Label210)
-        Me.gbxFlexoCompressao.Controls.Add(Me.Label519)
-        Me.gbxFlexoCompressao.Controls.Add(Me.Label227)
-        Me.gbxFlexoCompressao.Controls.Add(Me.Label520)
-        Me.gbxFlexoCompressao.Controls.Add(Me.Label203)
-        Me.gbxFlexoCompressao.Controls.Add(Me.Label521)
-        Me.gbxFlexoCompressao.Controls.Add(Me.Label228)
-        Me.gbxFlexoCompressao.Controls.Add(Me.Label522)
-        Me.gbxFlexoCompressao.Controls.Add(Me.txtFlexoCompressaoMy)
-        Me.gbxFlexoCompressao.Controls.Add(Me.Label523)
-        Me.gbxFlexoCompressao.Controls.Add(Me.Label524)
-        Me.gbxFlexoCompressao.Controls.Add(Me.Label204)
-        Me.gbxFlexoCompressao.Controls.Add(Me.Label525)
-        Me.gbxFlexoCompressao.Controls.Add(Me.lblValidacaoFlexoCompressaoX)
-        Me.gbxFlexoCompressao.Controls.Add(Me.Label526)
-        Me.gbxFlexoCompressao.Controls.Add(Me.Label321)
-        Me.gbxFlexoCompressao.Controls.Add(Me.Label527)
-        Me.gbxFlexoCompressao.Controls.Add(Me.Label322)
-        Me.gbxFlexoCompressao.Controls.Add(Me.Label528)
-        Me.gbxFlexoCompressao.Controls.Add(Me.txtFlexoCompressaoMx)
-        Me.gbxFlexoCompressao.Controls.Add(Me.Label529)
-        Me.gbxFlexoCompressao.Controls.Add(Me.Label325)
-        Me.gbxFlexoCompressao.Controls.Add(Me.Label530)
-        Me.gbxFlexoCompressao.Controls.Add(Me.txtFlexoCompressao)
-        Me.gbxFlexoCompressao.Controls.Add(Me.Label531)
-        Me.gbxFlexoCompressao.Controls.Add(Me.Label326)
-        Me.gbxFlexoCompressao.Controls.Add(Me.Label532)
-        Me.gbxFlexoCompressao.Controls.Add(Me.Label327)
-        Me.gbxFlexoCompressao.Controls.Add(Me.Label533)
-        Me.gbxFlexoCompressao.Controls.Add(Me.Label328)
-        Me.gbxFlexoCompressao.Controls.Add(Me.Label332)
-        Me.gbxFlexoCompressao.Controls.Add(Me.Label433)
-        Me.gbxFlexoCompressao.Controls.Add(Me.Label439)
-        Me.gbxFlexoCompressao.Controls.Add(Me.Label535)
-        Me.gbxFlexoCompressao.Controls.Add(Me.Label452)
-        Me.gbxFlexoCompressao.Controls.Add(Me.Label459)
-        Me.gbxFlexoCompressao.Controls.Add(Me.Label415)
-        Me.gbxFlexoCompressao.Controls.Add(Me.Label432)
-        Me.gbxFlexoCompressao.Controls.Add(Me.Label416)
-        Me.gbxFlexoCompressao.Controls.Add(Me.Label413)
-        Me.gbxFlexoCompressao.Controls.Add(Me.Label417)
-        Me.gbxFlexoCompressao.Controls.Add(Me.Label412)
-        Me.gbxFlexoCompressao.Controls.Add(Me.Label408)
-        Me.gbxFlexoCompressao.Controls.Add(Me.Label409)
-        Me.gbxFlexoCompressao.Controls.Add(Me.Label410)
-        Me.gbxFlexoCompressao.Controls.Add(Me.Label414)
-        Me.gbxFlexoCompressao.Controls.Add(Me.Label418)
-        Me.gbxFlexoCompressao.Controls.Add(Me.Label411)
-        Me.gbxFlexoCompressao.Location = New System.Drawing.Point(10, 29)
-        Me.gbxFlexoCompressao.Name = "gbxFlexoCompressao"
-        Me.gbxFlexoCompressao.Size = New System.Drawing.Size(468, 316)
-        Me.gbxFlexoCompressao.TabIndex = 15
-        Me.gbxFlexoCompressao.TabStop = False
-        Me.gbxFlexoCompressao.Text = "Flexocompressão"
-        '
-        'Label232
-        '
-        Me.Label232.AutoSize = True
-        Me.Label232.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label232.Location = New System.Drawing.Point(242, 168)
-        Me.Label232.Name = "Label232"
-        Me.Label232.Size = New System.Drawing.Size(43, 23)
-        Me.Label232.TabIndex = 154
-        Me.Label232.Text = "MPa"
-        '
-        'Label254
-        '
-        Me.Label254.AutoSize = True
-        Me.Label254.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label254.Location = New System.Drawing.Point(143, 166)
-        Me.Label254.Name = "Label254"
-        Me.Label254.Size = New System.Drawing.Size(40, 23)
-        Me.Label254.TabIndex = 153
-        Me.Label254.Text = "fc,0:"
-        '
-        'txtfc
-        '
-        Me.txtfc.Enabled = False
-        Me.txtfc.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.txtfc.Location = New System.Drawing.Point(185, 163)
-        Me.txtfc.Name = "txtfc"
-        Me.txtfc.Size = New System.Drawing.Size(57, 30)
-        Me.txtfc.TabIndex = 152
-        '
-        'lblValidacaoFlexoCompressaoY
-        '
-        Me.lblValidacaoFlexoCompressaoY.AutoSize = True
-        Me.lblValidacaoFlexoCompressaoY.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.lblValidacaoFlexoCompressaoY.Location = New System.Drawing.Point(289, 114)
-        Me.lblValidacaoFlexoCompressaoY.Name = "lblValidacaoFlexoCompressaoY"
-        Me.lblValidacaoFlexoCompressaoY.Size = New System.Drawing.Size(115, 23)
-        Me.lblValidacaoFlexoCompressaoY.TabIndex = 147
-        Me.lblValidacaoFlexoCompressaoY.Text = "VERIFICAÇÃO"
-        '
-        'Label81
-        '
-        Me.Label81.AutoSize = True
-        Me.Label81.Location = New System.Drawing.Point(265, 116)
-        Me.Label81.Name = "Label81"
-        Me.Label81.Size = New System.Drawing.Size(25, 23)
-        Me.Label81.TabIndex = 148
-        Me.Label81.Text = "→"
-        '
-        'Label80
-        '
-        Me.Label80.AutoSize = True
-        Me.Label80.Location = New System.Drawing.Point(265, 64)
-        Me.Label80.Name = "Label80"
-        Me.Label80.Size = New System.Drawing.Size(25, 23)
-        Me.Label80.TabIndex = 147
-        Me.Label80.Text = "→"
-        '
-        'Label534
-        '
-        Me.Label534.AutoSize = True
-        Me.Label534.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label534.Location = New System.Drawing.Point(53, 104)
-        Me.Label534.Name = "Label534"
-        Me.Label534.Size = New System.Drawing.Size(13, 15)
-        Me.Label534.TabIndex = 110
-        Me.Label534.Text = "2"
-        '
-        'Label210
-        '
-        Me.Label210.AutoSize = True
-        Me.Label210.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label210.Location = New System.Drawing.Point(242, 281)
-        Me.Label210.Name = "Label210"
-        Me.Label210.Size = New System.Drawing.Size(43, 23)
-        Me.Label210.TabIndex = 146
-        Me.Label210.Text = "MPa"
-        '
-        'Label519
-        '
-        Me.Label519.AutoSize = True
-        Me.Label519.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label519.Location = New System.Drawing.Point(198, 132)
-        Me.Label519.Name = "Label519"
-        Me.Label519.Size = New System.Drawing.Size(33, 15)
-        Me.Label519.TabIndex = 109
-        Me.Label519.Text = "fc0,d"
-        '
-        'Label227
-        '
-        Me.Label227.AutoSize = True
-        Me.Label227.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label227.Location = New System.Drawing.Point(241, 244)
-        Me.Label227.Name = "Label227"
-        Me.Label227.Size = New System.Drawing.Size(43, 23)
-        Me.Label227.TabIndex = 145
-        Me.Label227.Text = "MPa"
-        '
-        'Label520
-        '
-        Me.Label520.AutoSize = True
-        Me.Label520.Font = New System.Drawing.Font("Symbol", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label520.Location = New System.Drawing.Point(167, 116)
-        Me.Label520.Name = "Label520"
-        Me.Label520.Size = New System.Drawing.Size(19, 21)
-        Me.Label520.TabIndex = 108
-        Me.Label520.Text = "+"
-        '
-        'Label203
-        '
-        Me.Label203.AutoSize = True
-        Me.Label203.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label203.Location = New System.Drawing.Point(175, 282)
-        Me.Label203.Name = "Label203"
-        Me.Label203.Size = New System.Drawing.Size(14, 23)
-        Me.Label203.TabIndex = 106
-        Me.Label203.Text = ":"
-        '
-        'Label521
-        '
-        Me.Label521.AutoSize = True
-        Me.Label521.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label521.Location = New System.Drawing.Point(203, 115)
-        Me.Label521.Name = "Label521"
-        Me.Label521.Size = New System.Drawing.Size(34, 15)
-        Me.Label521.TabIndex = 106
-        Me.Label521.Text = "Mx,d"
-        '
-        'Label228
-        '
-        Me.Label228.AutoSize = True
-        Me.Label228.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label228.Location = New System.Drawing.Point(241, 205)
-        Me.Label228.Name = "Label228"
-        Me.Label228.Size = New System.Drawing.Size(43, 23)
-        Me.Label228.TabIndex = 144
-        Me.Label228.Text = "MPa"
-        '
-        'Label522
-        '
-        Me.Label522.AutoSize = True
-        Me.Label522.Font = New System.Drawing.Font("Symbol", 10.2!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point)
-        Me.Label522.Location = New System.Drawing.Point(189, 111)
-        Me.Label522.Name = "Label522"
-        Me.Label522.Size = New System.Drawing.Size(56, 21)
-        Me.Label522.TabIndex = 107
-        Me.Label522.Text = "s         "
-        '
-        'txtFlexoCompressaoMy
-        '
-        Me.txtFlexoCompressaoMy.Enabled = False
-        Me.txtFlexoCompressaoMy.Location = New System.Drawing.Point(186, 279)
-        Me.txtFlexoCompressaoMy.Name = "txtFlexoCompressaoMy"
-        Me.txtFlexoCompressaoMy.Size = New System.Drawing.Size(57, 30)
-        Me.txtFlexoCompressaoMy.TabIndex = 12
-        '
-        'Label523
-        '
-        Me.Label523.AutoSize = True
-        Me.Label523.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label523.Location = New System.Drawing.Point(123, 131)
-        Me.Label523.Name = "Label523"
-        Me.Label523.Size = New System.Drawing.Size(33, 15)
-        Me.Label523.TabIndex = 105
-        Me.Label523.Text = "fc0,d"
-        '
-        'Label524
-        '
-        Me.Label524.AutoSize = True
-        Me.Label524.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label524.Location = New System.Drawing.Point(24, 132)
-        Me.Label524.Name = "Label524"
-        Me.Label524.Size = New System.Drawing.Size(33, 15)
-        Me.Label524.TabIndex = 103
-        Me.Label524.Text = "fc0,d"
-        '
-        'Label204
-        '
-        Me.Label204.AutoSize = True
-        Me.Label204.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label204.Location = New System.Drawing.Point(172, 246)
-        Me.Label204.Name = "Label204"
-        Me.Label204.Size = New System.Drawing.Size(14, 23)
-        Me.Label204.TabIndex = 105
-        Me.Label204.Text = ":"
-        '
-        'Label525
-        '
-        Me.Label525.AutoSize = True
-        Me.Label525.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label525.Location = New System.Drawing.Point(238, 116)
-        Me.Label525.Name = "Label525"
-        Me.Label525.Size = New System.Drawing.Size(36, 23)
-        Me.Label525.TabIndex = 102
-        Me.Label525.Text = "≤ 1"
-        '
-        'lblValidacaoFlexoCompressaoX
-        '
-        Me.lblValidacaoFlexoCompressaoX.AutoSize = True
-        Me.lblValidacaoFlexoCompressaoX.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.lblValidacaoFlexoCompressaoX.Location = New System.Drawing.Point(289, 65)
-        Me.lblValidacaoFlexoCompressaoX.Name = "lblValidacaoFlexoCompressaoX"
-        Me.lblValidacaoFlexoCompressaoX.Size = New System.Drawing.Size(115, 23)
-        Me.lblValidacaoFlexoCompressaoX.TabIndex = 7
-        Me.lblValidacaoFlexoCompressaoX.Text = "VERIFICAÇÃO"
-        '
-        'Label526
-        '
-        Me.Label526.AutoSize = True
-        Me.Label526.Font = New System.Drawing.Font("Symbol", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label526.Location = New System.Drawing.Point(103, 116)
-        Me.Label526.Name = "Label526"
-        Me.Label526.Size = New System.Drawing.Size(14, 21)
-        Me.Label526.TabIndex = 101
-        Me.Label526.Text = "."
-        '
-        'Label321
-        '
-        Me.Label321.AutoSize = True
-        Me.Label321.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label321.Location = New System.Drawing.Point(172, 206)
-        Me.Label321.Name = "Label321"
-        Me.Label321.Size = New System.Drawing.Size(14, 23)
-        Me.Label321.TabIndex = 104
-        Me.Label321.Text = ":"
-        '
-        'Label527
-        '
-        Me.Label527.AutoSize = True
-        Me.Label527.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label527.Location = New System.Drawing.Point(128, 114)
-        Me.Label527.Name = "Label527"
-        Me.Label527.Size = New System.Drawing.Size(34, 15)
-        Me.Label527.TabIndex = 99
-        Me.Label527.Text = "My,d"
-        '
-        'Label322
-        '
-        Me.Label322.AutoSize = True
-        Me.Label322.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label322.Location = New System.Drawing.Point(146, 287)
-        Me.Label322.Name = "Label322"
-        Me.Label322.Size = New System.Drawing.Size(34, 15)
-        Me.Label322.TabIndex = 103
-        Me.Label322.Text = "My,d"
-        '
-        'Label528
-        '
-        Me.Label528.AutoSize = True
-        Me.Label528.Font = New System.Drawing.Font("Symbol", 10.2!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point)
-        Me.Label528.Location = New System.Drawing.Point(114, 110)
-        Me.Label528.Name = "Label528"
-        Me.Label528.Size = New System.Drawing.Size(56, 21)
-        Me.Label528.TabIndex = 100
-        Me.Label528.Text = "s         "
-        '
-        'txtFlexoCompressaoMx
-        '
-        Me.txtFlexoCompressaoMx.Enabled = False
-        Me.txtFlexoCompressaoMx.Location = New System.Drawing.Point(185, 241)
-        Me.txtFlexoCompressaoMx.Name = "txtFlexoCompressaoMx"
-        Me.txtFlexoCompressaoMx.Size = New System.Drawing.Size(57, 30)
-        Me.txtFlexoCompressaoMx.TabIndex = 8
-        '
-        'Label529
-        '
-        Me.Label529.AutoSize = True
-        Me.Label529.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label529.Location = New System.Drawing.Point(86, 125)
-        Me.Label529.Name = "Label529"
-        Me.Label529.Size = New System.Drawing.Size(18, 15)
-        Me.Label529.TabIndex = 98
-        Me.Label529.Text = "M"
-        '
-        'Label325
-        '
-        Me.Label325.AutoSize = True
-        Me.Label325.Font = New System.Drawing.Font("Symbol", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label325.Location = New System.Drawing.Point(131, 281)
-        Me.Label325.Name = "Label325"
-        Me.Label325.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.Label325.Size = New System.Drawing.Size(20, 21)
-        Me.Label325.TabIndex = 102
-        Me.Label325.Text = "s"
-        '
-        'Label530
-        '
-        Me.Label530.AutoSize = True
-        Me.Label530.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label530.Location = New System.Drawing.Point(29, 114)
-        Me.Label530.Name = "Label530"
-        Me.Label530.Size = New System.Drawing.Size(32, 15)
-        Me.Label530.TabIndex = 96
-        Me.Label530.Text = "Nc,d"
-        '
-        'txtFlexoCompressao
-        '
-        Me.txtFlexoCompressao.Enabled = False
-        Me.txtFlexoCompressao.Location = New System.Drawing.Point(185, 201)
-        Me.txtFlexoCompressao.Name = "txtFlexoCompressao"
-        Me.txtFlexoCompressao.Size = New System.Drawing.Size(57, 30)
-        Me.txtFlexoCompressao.TabIndex = 6
-        '
-        'Label531
-        '
-        Me.Label531.AutoSize = True
-        Me.Label531.Font = New System.Drawing.Font("Symbol", 10.2!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point)
-        Me.Label531.Location = New System.Drawing.Point(16, 111)
-        Me.Label531.Name = "Label531"
-        Me.Label531.Size = New System.Drawing.Size(48, 21)
-        Me.Label531.TabIndex = 97
-        Me.Label531.Text = "s       "
-        '
-        'Label326
-        '
-        Me.Label326.AutoSize = True
-        Me.Label326.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label326.Location = New System.Drawing.Point(145, 252)
-        Me.Label326.Name = "Label326"
-        Me.Label326.Size = New System.Drawing.Size(34, 15)
-        Me.Label326.TabIndex = 101
-        Me.Label326.Text = "Mx,d"
-        '
-        'Label532
-        '
-        Me.Label532.AutoSize = True
-        Me.Label532.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label532.Location = New System.Drawing.Point(68, 118)
-        Me.Label532.Name = "Label532"
-        Me.Label532.Size = New System.Drawing.Size(30, 23)
-        Me.Label532.TabIndex = 95
-        Me.Label532.Text = "+k"
-        '
-        'Label327
-        '
-        Me.Label327.AutoSize = True
-        Me.Label327.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label327.Location = New System.Drawing.Point(145, 212)
-        Me.Label327.Name = "Label327"
-        Me.Label327.Size = New System.Drawing.Size(30, 15)
-        Me.Label327.TabIndex = 98
-        Me.Label327.Text = "Nt,d"
-        '
-        'Label533
-        '
-        Me.Label533.AutoSize = True
-        Me.Label533.Font = New System.Drawing.Font("Symbol", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label533.Location = New System.Drawing.Point(3, 119)
-        Me.Label533.Name = "Label533"
-        Me.Label533.Size = New System.Drawing.Size(70, 21)
-        Me.Label533.TabIndex = 104
-        Me.Label533.Text = "(            )"
-        '
-        'Label328
-        '
-        Me.Label328.AutoSize = True
-        Me.Label328.Font = New System.Drawing.Font("Symbol", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label328.Location = New System.Drawing.Point(130, 246)
-        Me.Label328.Name = "Label328"
-        Me.Label328.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.Label328.Size = New System.Drawing.Size(20, 21)
-        Me.Label328.TabIndex = 100
-        Me.Label328.Text = "s"
-        '
-        'Label332
-        '
-        Me.Label332.AutoSize = True
-        Me.Label332.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label332.Location = New System.Drawing.Point(15, 26)
-        Me.Label332.Name = "Label332"
-        Me.Label332.Size = New System.Drawing.Size(327, 23)
-        Me.Label332.TabIndex = 6
-        Me.Label332.Text = "Verificação ao Estado Limite Último (ELU):"
-        '
-        'Label433
-        '
-        Me.Label433.AutoSize = True
-        Me.Label433.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label433.Location = New System.Drawing.Point(198, 81)
-        Me.Label433.Name = "Label433"
-        Me.Label433.Size = New System.Drawing.Size(33, 15)
-        Me.Label433.TabIndex = 94
-        Me.Label433.Text = "fc0,d"
-        '
-        'Label439
-        '
-        Me.Label439.AutoSize = True
-        Me.Label439.Font = New System.Drawing.Font("Symbol", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label439.Location = New System.Drawing.Point(167, 65)
-        Me.Label439.Name = "Label439"
-        Me.Label439.Size = New System.Drawing.Size(19, 21)
-        Me.Label439.TabIndex = 93
-        Me.Label439.Text = "+"
-        '
-        'Label535
-        '
-        Me.Label535.AutoSize = True
-        Me.Label535.Font = New System.Drawing.Font("Symbol", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label535.Location = New System.Drawing.Point(130, 206)
-        Me.Label535.Name = "Label535"
-        Me.Label535.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.Label535.Size = New System.Drawing.Size(24, 21)
-        Me.Label535.TabIndex = 99
-        Me.Label535.Text = "s "
-        '
-        'Label452
-        '
-        Me.Label452.AutoSize = True
-        Me.Label452.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label452.Location = New System.Drawing.Point(203, 64)
-        Me.Label452.Name = "Label452"
-        Me.Label452.Size = New System.Drawing.Size(34, 15)
-        Me.Label452.TabIndex = 91
-        Me.Label452.Text = "My,d"
-        '
-        'Label459
-        '
-        Me.Label459.AutoSize = True
-        Me.Label459.Font = New System.Drawing.Font("Symbol", 10.2!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point)
-        Me.Label459.Location = New System.Drawing.Point(189, 60)
-        Me.Label459.Name = "Label459"
-        Me.Label459.Size = New System.Drawing.Size(56, 21)
-        Me.Label459.TabIndex = 92
-        Me.Label459.Text = "s         "
-        '
-        'Label415
-        '
-        Me.Label415.AutoSize = True
-        Me.Label415.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label415.Location = New System.Drawing.Point(68, 67)
-        Me.Label415.Name = "Label415"
-        Me.Label415.Size = New System.Drawing.Size(30, 23)
-        Me.Label415.TabIndex = 48
-        Me.Label415.Text = "+k"
-        '
-        'Label432
-        '
-        Me.Label432.AutoSize = True
-        Me.Label432.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label432.Location = New System.Drawing.Point(123, 80)
-        Me.Label432.Name = "Label432"
-        Me.Label432.Size = New System.Drawing.Size(33, 15)
-        Me.Label432.TabIndex = 90
-        Me.Label432.Text = "fc0,d"
-        '
-        'Label416
-        '
-        Me.Label416.AutoSize = True
-        Me.Label416.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label416.Location = New System.Drawing.Point(53, 53)
-        Me.Label416.Name = "Label416"
-        Me.Label416.Size = New System.Drawing.Size(13, 15)
-        Me.Label416.TabIndex = 67
-        Me.Label416.Text = "2"
-        '
-        'Label413
-        '
-        Me.Label413.AutoSize = True
-        Me.Label413.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label413.Location = New System.Drawing.Point(29, 63)
-        Me.Label413.Name = "Label413"
-        Me.Label413.Size = New System.Drawing.Size(32, 15)
-        Me.Label413.TabIndex = 49
-        Me.Label413.Text = "Nc,d"
-        '
-        'Label417
-        '
-        Me.Label417.AutoSize = True
-        Me.Label417.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label417.Location = New System.Drawing.Point(24, 81)
-        Me.Label417.Name = "Label417"
-        Me.Label417.Size = New System.Drawing.Size(33, 15)
-        Me.Label417.TabIndex = 66
-        Me.Label417.Text = "fc0,d"
-        '
-        'Label412
-        '
-        Me.Label412.AutoSize = True
-        Me.Label412.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label412.Location = New System.Drawing.Point(86, 74)
-        Me.Label412.Name = "Label412"
-        Me.Label412.Size = New System.Drawing.Size(18, 15)
-        Me.Label412.TabIndex = 51
-        Me.Label412.Text = "M"
-        '
-        'Label408
-        '
-        Me.Label408.AutoSize = True
-        Me.Label408.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label408.Location = New System.Drawing.Point(238, 65)
-        Me.Label408.Name = "Label408"
-        Me.Label408.Size = New System.Drawing.Size(36, 23)
-        Me.Label408.TabIndex = 55
-        Me.Label408.Text = "≤ 1"
-        '
-        'Label409
-        '
-        Me.Label409.AutoSize = True
-        Me.Label409.Font = New System.Drawing.Font("Symbol", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label409.Location = New System.Drawing.Point(103, 65)
-        Me.Label409.Name = "Label409"
-        Me.Label409.Size = New System.Drawing.Size(14, 21)
-        Me.Label409.TabIndex = 54
-        Me.Label409.Text = "."
-        '
-        'Label410
-        '
-        Me.Label410.AutoSize = True
-        Me.Label410.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label410.Location = New System.Drawing.Point(128, 63)
-        Me.Label410.Name = "Label410"
-        Me.Label410.Size = New System.Drawing.Size(34, 15)
-        Me.Label410.TabIndex = 52
-        Me.Label410.Text = "Mx,d"
-        '
-        'Label414
-        '
-        Me.Label414.AutoSize = True
-        Me.Label414.Font = New System.Drawing.Font("Symbol", 10.2!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point)
-        Me.Label414.Location = New System.Drawing.Point(16, 60)
-        Me.Label414.Name = "Label414"
-        Me.Label414.Size = New System.Drawing.Size(48, 21)
-        Me.Label414.TabIndex = 50
-        Me.Label414.Text = "s       "
-        '
-        'Label418
-        '
-        Me.Label418.AutoSize = True
-        Me.Label418.Font = New System.Drawing.Font("Symbol", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label418.Location = New System.Drawing.Point(3, 68)
-        Me.Label418.Name = "Label418"
-        Me.Label418.Size = New System.Drawing.Size(70, 21)
-        Me.Label418.TabIndex = 68
-        Me.Label418.Text = "(            )"
-        '
-        'Label411
-        '
-        Me.Label411.AutoSize = True
-        Me.Label411.Font = New System.Drawing.Font("Symbol", 10.2!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point)
-        Me.Label411.Location = New System.Drawing.Point(114, 59)
-        Me.Label411.Name = "Label411"
-        Me.Label411.Size = New System.Drawing.Size(56, 21)
-        Me.Label411.TabIndex = 53
-        Me.Label411.Text = "s         "
         '
         'TableLayoutPanel2
         '
@@ -9647,12 +9543,13 @@ Partial Class Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 23.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1190, 724)
+        Me.ClientSize = New System.Drawing.Size(1090, 634)
         Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.bntProx)
         Me.Controls.Add(Me.MenuStrip2)
         Me.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.MaximizeBox = False
         Me.Name = "Form1"
         Me.Text = "Dimensionamento de Elementos Estruturais em Madeira "
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
@@ -9663,10 +9560,6 @@ Partial Class Form1
         Me.GroupBox8.ResumeLayout(False)
         Me.GroupBox8.PerformLayout
         Me.bntProx.ResumeLayout(False)
-        Me.TabInicio.ResumeLayout(False)
-        Me.TabInicio.PerformLayout
-        Me.Panel1.ResumeLayout(False)
-        Me.Panel1.PerformLayout
         Me.TabPropriedadesMadeiras.ResumeLayout(False)
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout
@@ -9681,20 +9574,21 @@ Partial Class Form1
         Me.GroupBox7.ResumeLayout(False)
         Me.GroupBox7.PerformLayout
         Me.TabDadosIniciais.ResumeLayout(False)
+        Me.TabDadosIniciais.PerformLayout
+        Me.gbx3Elementos.ResumeLayout(False)
+        Me.gbx3Elementos.PerformLayout
+        Me.gbxCompostaCaixao.ResumeLayout(False)
+        Me.gbxCompostaCaixao.PerformLayout
+        Me.gbxCompostaT.ResumeLayout(False)
+        Me.gbxCompostaT.PerformLayout
         Me.gbxVinculacao.ResumeLayout(False)
         Me.gbxVinculacao.PerformLayout
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit
-        Me.gbx3Elementos.ResumeLayout(False)
-        Me.gbx3Elementos.PerformLayout
         CType(Me.imgSecao, System.ComponentModel.ISupportInitialize).EndInit
         Me.gbx2Elementos.ResumeLayout(False)
         Me.gbx2Elementos.PerformLayout
         Me.gbxCompostaI.ResumeLayout(False)
         Me.gbxCompostaI.PerformLayout
-        Me.gbxCompostaCaixao.ResumeLayout(False)
-        Me.gbxCompostaCaixao.PerformLayout
-        Me.gbxCompostaT.ResumeLayout(False)
-        Me.gbxCompostaT.PerformLayout
         Me.gbxCircular.ResumeLayout(False)
         Me.gbxCircular.PerformLayout
         Me.GroupBox23.ResumeLayout(False)
@@ -9704,6 +9598,8 @@ Partial Class Form1
         Me.GroupBox6.ResumeLayout(False)
         Me.GroupBox6.PerformLayout
         Me.TabResultados.ResumeLayout(False)
+        Me.TabResultados.PerformLayout
+        CType(Me.PictureBox9, System.ComponentModel.ISupportInitialize).EndInit
         Me.gbxResultadosElementos.ResumeLayout(False)
         Me.GroupBox21.ResumeLayout(False)
         Me.GroupBox21.PerformLayout
@@ -9731,27 +9627,24 @@ Partial Class Form1
         Me.gbxEixoYMediEsbelta.PerformLayout
         Me.gbxEixoXMediEsbelta.ResumeLayout(False)
         Me.gbxEixoXMediEsbelta.PerformLayout
-        Me.gbxEixoXCurta.ResumeLayout(False)
-        Me.gbxEixoXCurta.PerformLayout
         Me.TabCisalhamento.ResumeLayout(False)
         Me.GroupBox17.ResumeLayout(False)
         Me.GroupBox53.ResumeLayout(False)
         Me.GroupBox53.PerformLayout
         Me.TabFlexaoSimples.ResumeLayout(False)
-        Me.GroupBox16.ResumeLayout(False)
         Me.gbxApoio.ResumeLayout(False)
         Me.gbxApoio.PerformLayout
         CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).EndInit
-        Me.gbxFlexaoObliqua.ResumeLayout(False)
-        Me.gbxFlexaoObliqua.PerformLayout
-        Me.gbxFlexaoSimples.ResumeLayout(False)
-        Me.gbxFlexaoSimples.PerformLayout
-        Me.TabFlexaoComposta.ResumeLayout(False)
         Me.GroupBox19.ResumeLayout(False)
         Me.gbxFlexoTracao.ResumeLayout(False)
         Me.gbxFlexoTracao.PerformLayout
         Me.gbxFlexoCompressao.ResumeLayout(False)
         Me.gbxFlexoCompressao.PerformLayout
+        Me.GroupBox16.ResumeLayout(False)
+        Me.gbxFlexaoObliqua.ResumeLayout(False)
+        Me.gbxFlexaoObliqua.PerformLayout
+        Me.gbxFlexaoSimples.ResumeLayout(False)
+        Me.gbxFlexaoSimples.PerformLayout
         Me.TableLayoutPanel2.ResumeLayout(False)
         Me.TableLayoutPanel2.PerformLayout
         Me.TableLayoutPanel4.ResumeLayout(False)
@@ -9787,14 +9680,11 @@ Partial Class Form1
     Friend WithEvents ArquivoToolStripMenuItem1 As ToolStripMenuItem
     Friend WithEvents AjudaToolStripMenuItem1 As ToolStripMenuItem
     Friend WithEvents NovoProjetoToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents SairToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents StatusStrip1 As StatusStrip
     Friend WithEvents lbldata As ToolStripStatusLabel
     Friend WithEvents GroupBox8 As GroupBox
     Friend WithEvents bntProx As TabControl
-    Friend WithEvents TabInicio As TabPage
     Friend WithEvents TabResistCalculo As TabPage
-    Friend WithEvents Label44 As Label
     Friend WithEvents GroupBox3 As GroupBox
     Friend WithEvents GroupBox7 As GroupBox
     Friend WithEvents Label21 As Label
@@ -9840,7 +9730,6 @@ Partial Class Form1
     Friend WithEvents TabFlexaoSimples As TabPage
     Friend WithEvents TabCisalhamento As TabPage
     Friend WithEvents TabCompressao As TabPage
-    Friend WithEvents TabFlexaoComposta As TabPage
     Friend WithEvents GroupBox13 As GroupBox
     Friend WithEvents GroupBox15 As GroupBox
     Friend WithEvents lblValidacaoTensaoTracao As Label
@@ -9848,7 +9737,6 @@ Partial Class Form1
     Friend WithEvents GroupBox16 As GroupBox
     Friend WithEvents gbxFlexaoSimples As GroupBox
     Friend WithEvents GroupBox18 As GroupBox
-    Friend WithEvents GroupBox19 As GroupBox
     Friend WithEvents Label141 As Label
     Friend WithEvents GroupBox29 As GroupBox
     Friend WithEvents Label153 As Label
@@ -9867,7 +9755,6 @@ Partial Class Form1
     Friend WithEvents TableLayoutPanel8 As TableLayoutPanel
     Friend WithEvents Label161 As Label
     Friend WithEvents GroupBox28 As GroupBox
-    Friend WithEvents gbxEixoXCurta As GroupBox
     Friend WithEvents Label189 As Label
     Friend WithEvents Label190 As Label
     Friend WithEvents txtTensaoTracao As TextBox
@@ -9906,21 +9793,6 @@ Partial Class Form1
     Friend WithEvents Label199 As Label
     Friend WithEvents TableLayoutPanel19 As TableLayoutPanel
     Friend WithEvents Label201 As Label
-    Friend WithEvents gbxFlexoCompressao As GroupBox
-    Friend WithEvents txtFlexoCompressaoMy As TextBox
-    Friend WithEvents lblValidacaoFlexoCompressaoX As Label
-    Friend WithEvents txtFlexoCompressaoMx As TextBox
-    Friend WithEvents txtFlexoCompressao As TextBox
-    Friend WithEvents Label332 As Label
-    Friend WithEvents gbxFlexoTracao As GroupBox
-    Friend WithEvents lblValidacaoFlexoTracaoX As Label
-    Friend WithEvents Label314 As Label
-    Friend WithEvents Label315 As Label
-    Friend WithEvents Label316 As Label
-    Friend WithEvents txtFlexoTracaoMx As TextBox
-    Friend WithEvents Label317 As Label
-    Friend WithEvents txtFlexoTracao As TextBox
-    Friend WithEvents Label320 As Label
     Friend WithEvents GroupBox17 As GroupBox
     Friend WithEvents GroupBox53 As GroupBox
     Friend WithEvents lblValidacaoCisalhanteX As Label
@@ -10190,34 +10062,7 @@ Partial Class Form1
     Friend WithEvents Label358 As Label
     Friend WithEvents label800 As Label
     Friend WithEvents cboTracaoCompressao As ComboBox
-    Friend WithEvents Label43 As Label
     Friend WithEvents cboElementFixacao As ComboBox
-    Friend WithEvents gbxResultadosElementos As GroupBox
-    Friend WithEvents Label444 As Label
-    Friend WithEvents txtArea As TextBox
-    Friend WithEvents Label445 As Label
-    Friend WithEvents GroupBox21 As GroupBox
-    Friend WithEvents txtInterpoEixoYCoefB As TextBox
-    Friend WithEvents Label371 As Label
-    Friend WithEvents txtInterpoIy As TextBox
-    Friend WithEvents Label376 As Label
-    Friend WithEvents Label188 As Label
-    Friend WithEvents txtInterpoEixoYInerciaEfetiva As TextBox
-    Friend WithEvents Label365 As Label
-    Friend WithEvents txtInterpoIy2 As TextBox
-    Friend WithEvents Label381 As Label
-    Friend WithEvents Label384 As Label
-    Friend WithEvents GroupBox22 As GroupBox
-    Friend WithEvents txtInterpoIx As TextBox
-    Friend WithEvents Label441 As Label
-    Friend WithEvents txtInterpoIx1 As TextBox
-    Friend WithEvents Label440 As Label
-    Friend WithEvents Label442 As Label
-    Friend WithEvents txtArea1 As TextBox
-    Friend WithEvents Label443 As Label
-    Friend WithEvents Label435 As Label
-    Friend WithEvents txtInterpoIModuloResist As TextBox
-    Friend WithEvents Label446 As Label
     Friend WithEvents GroupBox25 As GroupBox
     Friend WithEvents Label438 As Label
     Friend WithEvents Label447 As Label
@@ -10235,28 +10080,16 @@ Partial Class Form1
     Friend WithEvents Label425 As Label
     Friend WithEvents Label450 As Label
     Friend WithEvents Label453 As Label
-    Friend WithEvents Label436 As Label
-    Friend WithEvents Label437 As Label
-    Friend WithEvents Label457 As Label
-    Friend WithEvents Label458 As Label
     Friend WithEvents Label374 As Label
     Friend WithEvents Label379 As Label
     Friend WithEvents Label184 As Label
     Friend WithEvents Label367 As Label
-    Friend WithEvents Label176 As Label
-    Friend WithEvents Label246 As Label
-    Friend WithEvents Label247 As Label
-    Friend WithEvents Label248 As Label
     Friend WithEvents lblValidacaoYComp As Label
     Friend WithEvents Label250 As Label
     Friend WithEvents txtTensaoCompressaoY As TextBox
     Friend WithEvents Label251 As Label
     Friend WithEvents Label252 As Label
     Friend WithEvents txtEsbeltezCompressaoX As TextBox
-    Friend WithEvents Label244 As Label
-    Friend WithEvents Label242 As Label
-    Friend WithEvents Label245 As Label
-    Friend WithEvents Label243 As Label
     Friend WithEvents lblValidacaoXComp As Label
     Friend WithEvents Label235 As Label
     Friend WithEvents txtTensaoCompressaoX As TextBox
@@ -10303,14 +10136,6 @@ Partial Class Form1
     Friend WithEvents Label516 As Label
     Friend WithEvents Label26 As Label
     Friend WithEvents Label19 As Label
-    Friend WithEvents Panel1 As Panel
-    Friend WithEvents Label33 As Label
-    Friend WithEvents Label31 As Label
-    Friend WithEvents Label29 As Label
-    Friend WithEvents Label23 As Label
-    Friend WithEvents LinkLabel2 As LinkLabel
-    Friend WithEvents LinkLabel1 As LinkLabel
-    Friend WithEvents Link_Proj1 As LinkLabel
     Friend WithEvents lblKmod3 As Label
     Friend WithEvents Label59 As Label
     Friend WithEvents Label60 As Label
@@ -10319,17 +10144,7 @@ Partial Class Form1
     Friend WithEvents Label57 As Label
     Friend WithEvents bntCalcularKmod As Button
     Friend WithEvents gbxEixoXMediEsbelta As GroupBox
-    Friend WithEvents Label77 As Label
-    Friend WithEvents Label78 As Label
-    Friend WithEvents Label73 As Label
-    Friend WithEvents Label74 As Label
-    Friend WithEvents Label69 As Label
-    Friend WithEvents Label62 As Label
-    Friend WithEvents Label63 As Label
-    Friend WithEvents Label55 As Label
-    Friend WithEvents Label58 As Label
     Friend WithEvents Label269 As Label
-    Friend WithEvents Label61 As Label
     Friend WithEvents txtEdX As TextBox
     Friend WithEvents Label270 As Label
     Friend WithEvents Label271 As Label
@@ -10363,93 +10178,10 @@ Partial Class Form1
     Friend WithEvents lblValidacaoFlexaoObliquaX As Label
     Friend WithEvents lblValidacaoFlexaoSimplesY As Label
     Friend WithEvents lblValidacaoFlexaoSimplesX As Label
-    Friend WithEvents Label416 As Label
-    Friend WithEvents Label417 As Label
-    Friend WithEvents Label408 As Label
-    Friend WithEvents Label409 As Label
-    Friend WithEvents Label410 As Label
-    Friend WithEvents Label411 As Label
-    Friend WithEvents Label412 As Label
-    Friend WithEvents Label413 As Label
-    Friend WithEvents Label414 As Label
-    Friend WithEvents Label415 As Label
-    Friend WithEvents Label418 As Label
-    Friend WithEvents Label433 As Label
-    Friend WithEvents Label439 As Label
-    Friend WithEvents Label452 As Label
-    Friend WithEvents Label459 As Label
-    Friend WithEvents Label432 As Label
-    Friend WithEvents Label329 As Label
-    Friend WithEvents Label330 As Label
-    Friend WithEvents txtFlexoTracaoMy As TextBox
     Friend WithEvents lblClassifEsbeltezY As Label
     Friend WithEvents lblClassifEsbeltezX As Label
-    Friend WithEvents Label536 As Label
-    Friend WithEvents Label537 As Label
-    Friend WithEvents Label538 As Label
-    Friend WithEvents Label539 As Label
-    Friend WithEvents Label540 As Label
-    Friend WithEvents Label541 As Label
-    Friend WithEvents Label542 As Label
-    Friend WithEvents Label543 As Label
-    Friend WithEvents Label544 As Label
-    Friend WithEvents Label545 As Label
-    Friend WithEvents Label546 As Label
-    Friend WithEvents Label547 As Label
-    Friend WithEvents Label548 As Label
-    Friend WithEvents Label549 As Label
-    Friend WithEvents Label551 As Label
-    Friend WithEvents Label552 As Label
-    Friend WithEvents Label553 As Label
-    Friend WithEvents Label554 As Label
-    Friend WithEvents Label555 As Label
-    Friend WithEvents Label557 As Label
-    Friend WithEvents Label558 As Label
-    Friend WithEvents Label559 As Label
-    Friend WithEvents Label560 As Label
-    Friend WithEvents Label561 As Label
-    Friend WithEvents Label562 As Label
-    Friend WithEvents Label563 As Label
-    Friend WithEvents Label564 As Label
-    Friend WithEvents Label565 As Label
-    Friend WithEvents Label534 As Label
-    Friend WithEvents Label519 As Label
-    Friend WithEvents Label520 As Label
-    Friend WithEvents Label521 As Label
-    Friend WithEvents Label522 As Label
-    Friend WithEvents Label523 As Label
-    Friend WithEvents Label524 As Label
-    Friend WithEvents Label525 As Label
-    Friend WithEvents Label526 As Label
-    Friend WithEvents Label527 As Label
-    Friend WithEvents Label528 As Label
-    Friend WithEvents Label529 As Label
-    Friend WithEvents Label530 As Label
-    Friend WithEvents Label531 As Label
-    Friend WithEvents Label532 As Label
-    Friend WithEvents Label533 As Label
-    Friend WithEvents Label518 As Label
-    Friend WithEvents Label517 As Label
-    Friend WithEvents Label203 As Label
-    Friend WithEvents Label204 As Label
-    Friend WithEvents Label321 As Label
-    Friend WithEvents Label322 As Label
-    Friend WithEvents Label325 As Label
-    Friend WithEvents Label326 As Label
-    Friend WithEvents Label327 As Label
-    Friend WithEvents Label328 As Label
-    Friend WithEvents Label535 As Label
-    Friend WithEvents Label202 As Label
-    Friend WithEvents Label210 As Label
-    Friend WithEvents Label227 As Label
-    Friend WithEvents Label228 As Label
-    Friend WithEvents Label550 As Label
-    Friend WithEvents Label319 As Label
-    Friend WithEvents Label313 As Label
     Friend WithEvents lblEditarKmod As LinkLabel
     Friend WithEvents Label229 As Label
-    Friend WithEvents lblValidacaoFlexoTracaoY As Label
-    Friend WithEvents lblValidacaoFlexoCompressaoY As Label
     Friend WithEvents PictureBox3 As PictureBox
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents txtCortanteY As TextBox
@@ -10512,14 +10244,6 @@ Partial Class Form1
     Friend WithEvents Label76 As Label
     Friend WithEvents Label75 As Label
     Friend WithEvents Label71 As Label
-    Friend WithEvents Label81 As Label
-    Friend WithEvents Label80 As Label
-    Friend WithEvents Label83 As Label
-    Friend WithEvents Label82 As Label
-    Friend WithEvents Label88 As Label
-    Friend WithEvents Label87 As Label
-    Friend WithEvents Label86 As Label
-    Friend WithEvents Label85 As Label
     Friend WithEvents Label136 As Label
     Friend WithEvents txtApoioX As TextBox
     Friend WithEvents txtApoioY As TextBox
@@ -10553,12 +10277,6 @@ Partial Class Form1
     Friend WithEvents Label221 As Label
     Friend WithEvents PictureBox7 As PictureBox
     Friend WithEvents Label224 As Label
-    Friend WithEvents Label225 As Label
-    Friend WithEvents Label226 As Label
-    Friend WithEvents txtftFlexo As TextBox
-    Friend WithEvents Label232 As Label
-    Friend WithEvents Label254 As Label
-    Friend WithEvents txtfc As TextBox
     Friend WithEvents Label255 As Label
     Friend WithEvents Label256 As Label
     Friend WithEvents TextBox3 As TextBox
@@ -10567,8 +10285,176 @@ Partial Class Form1
     Friend WithEvents TextBox4 As TextBox
     Friend WithEvents txtEixoYY As TextBox
     Friend WithEvents Label200 As Label
+    Friend WithEvents lblAltura As Label
+    Friend WithEvents lblCompRet As Label
+    Friend WithEvents lblBase As Label
+    Friend WithEvents PictureBox9 As PictureBox
+    Friend WithEvents lblCircL As Label
+    Friend WithEvents lblCircD As Label
+    Friend WithEvents gbxResultadosElementos As GroupBox
+    Friend WithEvents GroupBox21 As GroupBox
     Friend WithEvents Label266 As Label
     Friend WithEvents Label280 As Label
+    Friend WithEvents Label436 As Label
+    Friend WithEvents Label444 As Label
+    Friend WithEvents Label437 As Label
+    Friend WithEvents txtInterpoIx As TextBox
+    Friend WithEvents txtArea As TextBox
+    Friend WithEvents Label445 As Label
+    Friend WithEvents Label435 As Label
+    Friend WithEvents txtInterpoEixoYCoefB As TextBox
+    Friend WithEvents txtInterpoIModuloResist As TextBox
+    Friend WithEvents Label446 As Label
+    Friend WithEvents Label371 As Label
+    Friend WithEvents txtInterpoIy As TextBox
+    Friend WithEvents Label376 As Label
+    Friend WithEvents Label188 As Label
+    Friend WithEvents txtInterpoEixoYInerciaEfetiva As TextBox
+    Friend WithEvents Label365 As Label
+    Friend WithEvents Label381 As Label
+    Friend WithEvents Label384 As Label
+    Friend WithEvents GroupBox22 As GroupBox
     Friend WithEvents Label259 As Label
     Friend WithEvents Label265 As Label
+    Friend WithEvents txtInterpoIy2 As TextBox
+    Friend WithEvents Label457 As Label
+    Friend WithEvents Label458 As Label
+    Friend WithEvents Label441 As Label
+    Friend WithEvents txtInterpoIx1 As TextBox
+    Friend WithEvents Label442 As Label
+    Friend WithEvents Label440 As Label
+    Friend WithEvents txtArea1 As TextBox
+    Friend WithEvents Label443 As Label
+    Friend WithEvents GroupBox19 As GroupBox
+    Friend WithEvents gbxFlexoTracao As GroupBox
+    Friend WithEvents Label225 As Label
+    Friend WithEvents Label83 As Label
+    Friend WithEvents Label82 As Label
+    Friend WithEvents Label226 As Label
+    Friend WithEvents lblValidacaoFlexoTracaoY As Label
+    Friend WithEvents Label550 As Label
+    Friend WithEvents txtftFlexo As TextBox
+    Friend WithEvents Label319 As Label
+    Friend WithEvents Label313 As Label
+    Friend WithEvents Label536 As Label
+    Friend WithEvents Label202 As Label
+    Friend WithEvents Label537 As Label
+    Friend WithEvents Label518 As Label
+    Friend WithEvents Label538 As Label
+    Friend WithEvents Label517 As Label
+    Friend WithEvents Label539 As Label
+    Friend WithEvents Label329 As Label
+    Friend WithEvents Label540 As Label
+    Friend WithEvents Label330 As Label
+    Friend WithEvents Label541 As Label
+    Friend WithEvents Label542 As Label
+    Friend WithEvents txtFlexoTracaoMx As TextBox
+    Friend WithEvents Label543 As Label
+    Friend WithEvents Label315 As Label
+    Friend WithEvents Label544 As Label
+    Friend WithEvents Label317 As Label
+    Friend WithEvents Label545 As Label
+    Friend WithEvents txtFlexoTracaoMy As TextBox
+    Friend WithEvents Label546 As Label
+    Friend WithEvents lblValidacaoFlexoTracaoX As Label
+    Friend WithEvents Label547 As Label
+    Friend WithEvents Label314 As Label
+    Friend WithEvents Label548 As Label
+    Friend WithEvents Label316 As Label
+    Friend WithEvents Label549 As Label
+    Friend WithEvents txtFlexoTracao As TextBox
+    Friend WithEvents Label320 As Label
+    Friend WithEvents Label551 As Label
+    Friend WithEvents Label562 As Label
+    Friend WithEvents Label552 As Label
+    Friend WithEvents Label565 As Label
+    Friend WithEvents Label553 As Label
+    Friend WithEvents Label554 As Label
+    Friend WithEvents Label563 As Label
+    Friend WithEvents Label555 As Label
+    Friend WithEvents Label557 As Label
+    Friend WithEvents Label560 As Label
+    Friend WithEvents Label558 As Label
+    Friend WithEvents Label559 As Label
+    Friend WithEvents Label564 As Label
+    Friend WithEvents Label561 As Label
+    Friend WithEvents gbxFlexoCompressao As GroupBox
+    Friend WithEvents Label232 As Label
+    Friend WithEvents Label254 As Label
+    Friend WithEvents txtfc As TextBox
+    Friend WithEvents lblValidacaoFlexoCompressaoY As Label
+    Friend WithEvents Label81 As Label
+    Friend WithEvents Label80 As Label
+    Friend WithEvents Label534 As Label
+    Friend WithEvents Label210 As Label
+    Friend WithEvents Label519 As Label
+    Friend WithEvents Label227 As Label
+    Friend WithEvents Label520 As Label
+    Friend WithEvents Label203 As Label
+    Friend WithEvents Label521 As Label
+    Friend WithEvents Label228 As Label
+    Friend WithEvents Label522 As Label
+    Friend WithEvents txtFlexoCompressaoMy As TextBox
+    Friend WithEvents Label523 As Label
+    Friend WithEvents Label524 As Label
+    Friend WithEvents Label204 As Label
+    Friend WithEvents Label525 As Label
+    Friend WithEvents lblValidacaoFlexoCompressaoX As Label
+    Friend WithEvents Label526 As Label
+    Friend WithEvents Label321 As Label
+    Friend WithEvents Label527 As Label
+    Friend WithEvents Label322 As Label
+    Friend WithEvents Label528 As Label
+    Friend WithEvents txtFlexoCompressaoMx As TextBox
+    Friend WithEvents Label529 As Label
+    Friend WithEvents Label325 As Label
+    Friend WithEvents Label530 As Label
+    Friend WithEvents txtFlexoCompressao As TextBox
+    Friend WithEvents Label531 As Label
+    Friend WithEvents Label326 As Label
+    Friend WithEvents Label532 As Label
+    Friend WithEvents Label327 As Label
+    Friend WithEvents Label533 As Label
+    Friend WithEvents Label328 As Label
+    Friend WithEvents Label332 As Label
+    Friend WithEvents Label433 As Label
+    Friend WithEvents Label439 As Label
+    Friend WithEvents Label535 As Label
+    Friend WithEvents Label452 As Label
+    Friend WithEvents Label459 As Label
+    Friend WithEvents Label415 As Label
+    Friend WithEvents Label432 As Label
+    Friend WithEvents Label416 As Label
+    Friend WithEvents Label413 As Label
+    Friend WithEvents Label417 As Label
+    Friend WithEvents Label412 As Label
+    Friend WithEvents Label408 As Label
+    Friend WithEvents Label409 As Label
+    Friend WithEvents Label410 As Label
+    Friend WithEvents Label414 As Label
+    Friend WithEvents Label418 As Label
+    Friend WithEvents Label411 As Label
+    Friend WithEvents lblIH As Label
+    Friend WithEvents lblId As Label
+    Friend WithEvents lblIbw As Label
+    Friend WithEvents lblIhf2 As Label
+    Friend WithEvents lblIbf2 As Label
+    Friend WithEvents lblIhf1 As Label
+    Friend WithEvents lblIbf1 As Label
+    Friend WithEvents lblTbf As Label
+    Friend WithEvents lblTbw As Label
+    Friend WithEvents lblTd As Label
+    Friend WithEvents lblThf As Label
+    Friend WithEvents lblTh As Label
+    Friend WithEvents lblcaixaod As Label
+    Friend WithEvents lblcaixaob4 As Label
+    Friend WithEvents lblcaixaob3 As Label
+    Friend WithEvents lblCaixaob2 As Label
+    Friend WithEvents lblCaixaob1 As Label
+    Friend WithEvents lblCaixaoh4 As Label
+    Friend WithEvents lblCaixaoh2 As Label
+    Friend WithEvents lblCaixaoh1 As Label
+    Friend WithEvents Label23 As Label
+    Friend WithEvents SalvarToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents SairToolStripMenuItem As ToolStripMenuItem
 End Class

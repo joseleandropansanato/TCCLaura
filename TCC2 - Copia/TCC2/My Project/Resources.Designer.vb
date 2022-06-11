@@ -73,9 +73,9 @@ Namespace My.Resources
         '''<summary>
         '''  Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         '''</summary>
-        Friend ReadOnly Property secao2elementos() As System.Drawing.Bitmap
+        Friend ReadOnly Property pdf_30x30() As System.Drawing.Bitmap
             Get
-                Dim obj As Object = ResourceManager.GetObject("secao2elementos", resourceCulture)
+                Dim obj As Object = ResourceManager.GetObject("pdf_30x30", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
@@ -83,9 +83,39 @@ Namespace My.Resources
         '''<summary>
         '''  Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         '''</summary>
-        Friend ReadOnly Property secao3elementos() As System.Drawing.Bitmap
+        Friend ReadOnly Property secao2elementosChapa() As System.Drawing.Bitmap
             Get
-                Dim obj As Object = ResourceManager.GetObject("secao3elementos", resourceCulture)
+                Dim obj As Object = ResourceManager.GetObject("secao2elementosChapa", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property secao2elementosEspacador() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("secao2elementosEspacador", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property secao3elementosChapa() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("secao3elementosChapa", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property secao3elementosEspacador() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("secao3elementosEspacador", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
@@ -126,16 +156,6 @@ Namespace My.Resources
         Friend ReadOnly Property secaoretangular() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("secaoretangular", resourceCulture)
-                Return CType(obj,System.Drawing.Bitmap)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Consulta um recurso localizado do tipo System.Drawing.Bitmap.
-        '''</summary>
-        Friend ReadOnly Property secaoretangularx() As System.Drawing.Bitmap
-            Get
-                Dim obj As Object = ResourceManager.GetObject("secaoretangularx", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property

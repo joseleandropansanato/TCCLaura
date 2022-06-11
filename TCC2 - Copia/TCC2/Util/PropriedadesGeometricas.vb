@@ -1,5 +1,4 @@
-﻿
-Public Class PropriedadesGeometricas
+﻿Public Class PropriedadesGeometricas
 
     'serve para receber valor e mandar quando pedir 
     'Public Shared area As Double = 0
@@ -18,6 +17,7 @@ Public Class PropriedadesGeometricas
     'Public Shared coefBy As Double = 0 'COEFICIENTE DO ESPAÇADOR
     'Public Shared Qx As Double = 0 'MOMENTO ESTÁTICO DE ÁREA EM X
     'Public Shared Qy As Double = 0 'MOMENTO ESTÁTICO DE ÁREA EM Y
+
 
     Private _area As Double = 0
     Private _areaA1 As Double = 0
@@ -58,6 +58,7 @@ Public Class PropriedadesGeometricas
     Public Shared h2c As Double = 0
     Public Shared h3c As Double = 0
     Public Shared h4c As Double = 0 'hbf1 caixao
+
 
     Enum Pilar
         Espaçador

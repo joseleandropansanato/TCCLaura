@@ -6,8 +6,14 @@ Imports TCC2.Flexao
 Imports TCC2.Madeira
 Imports TCC2.FormAjuda
 Imports TCC2.frmEsforcoCaracteristico
-Public Class Form1
 
+Imports System.IO
+Imports iTextSharp
+Imports iTextSharp.text
+Imports iTextSharp.text.pdf
+
+Public Class Form1
+    'Public Projeto As New CProjeto
     Public madeiraSelecionada As Madeira = New Madeira 'chamei as propriedades da madeira (modelei as propriedades para ser igual a classe madeira)
     Public tipoMadeira As Integer
     Public kmod1, kmod2, kmod3, kmod As Double
@@ -43,7 +49,7 @@ Public Class Form1
     End Sub
 
     'ROTINA PARA SAIR DO PROGRAMA AO APERTAR SAIR
-    Private Sub SairToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SairToolStripMenuItem.Click
+    Private Sub SairToolStripMenuItem_Click_1(sender As Object, e As EventArgs) Handles SairToolStripMenuItem.Click
         Application.Exit()
     End Sub
 
@@ -159,68 +165,185 @@ Public Class Form1
         lblKe.Visible = True
     End Sub
 
-    ' Private Sub txtEntradaRetangularBx_TextChanged(sender As Object, e As EventArgs) Handles txtEntradaRetangularBx.TextChanged
-    'lblBase.Text = txtEntradaRetangularBx.Text
-    ' lblBase.Visible = True
-    '  End Sub
+    Private Sub txtEntradaRetangularBx_TextChanged(sender As Object, e As EventArgs) Handles txtEntradaRetangularBx.TextChanged
+        lblBase.Text = txtEntradaRetangularBx.Text
+        lblBase.Visible = True
+    End Sub
 
-    'Private Sub txtEntradaRetangularBy_TextChanged(sender As Object, e As EventArgs) Handles txtEntradaRetangularBy.TextChanged
-    'lblAltura.Text = txtEntradaRetangularBy.Text
-    ' lblAltura.Visible = True
-    '  End Sub
+    Private Sub txtEntradaRetangularBy_TextChanged(sender As Object, e As EventArgs) Handles txtEntradaRetangularBy.TextChanged
+        lblAltura.Text = txtEntradaRetangularBy.Text
+        lblAltura.Visible = True
+    End Sub
+    Private Sub txtEntradaRetangularL_TextChanged(sender As Object, e As EventArgs) Handles txtEntradaRetangularL.TextChanged
+        lblCompRet.Text = txtEntradaRetangularL.Text
+        lblCompRet.Visible = True
+    End Sub
+    Private Sub txtEntradaCircularD_TextChanged(sender As Object, e As EventArgs) Handles txtEntradaCircularD.TextChanged
+        lblCircD.Text = txtEntradaCircularD.Text
+        lblCircD.Visible = True
+    End Sub
+
+    Private Sub txtEntradaCircularL_TextChanged(sender As Object, e As EventArgs) Handles txtEntradaCircularL.TextChanged
+        lblCircL.Text = txtEntradaCircularL.Text
+        lblCircL.Visible = True
+    End Sub
+
+
 
     'ROTINA PRA APARECER OS DADOS INICIAIS DE ACORDO COM A SEÇÃO QUE O USUARIO ESCOLHE
-    Private Sub rbtSecaoRetangular_CheckedChanged(sender As Object, e As EventArgs) Handles rbtSecaoRetangular.CheckedChanged
+    Private Sub rbtSecaoRetangular_ChecimkedChanged(sender As Object, e As EventArgs) Handles rbtSecaoRetangular.CheckedChanged
         ExibirDadosEntrada()
         imgSecao.Image = My.Resources.secaoretangular
+        'seçãocir
+        lblCircL.Visible = False
+        lblCircD.Visible = False
+        'seçãoT
+        lblTbf.Visible = False
+        lblTbw.Visible = False
+        lblTh.Visible = False
+        lblTd.Visible = False
+        lblThf.Visible = False
+        'seçãoI
+        lblIbf2.Visible = False
+        lblIbw.Visible = False
+        lblIbf1.Visible = False
+        lblIhf1.Visible = False
+        lblIhf2.Visible = False
+        lblIH.Visible = False
+        lblId.Visible = False
+        'secaoCaixao
+        lblCaixaob1.Visible = False
+        lblCaixaob2.Visible = False
+        lblcaixaob3.Visible = False
+        lblcaixaob4.Visible = False
+        lblcaixaod.Visible = False
+        lblCaixaoh1.Visible = False
+        lblCaixaoh2.Visible = False
+        lblCaixaoh4.Visible = False
         gbxResultadosSecao.Visible = True
         gbxResultadosElementos.Visible = False
     End Sub
     Private Sub rbtSecaoCircular_CheckedChanged(sender As Object, e As EventArgs) Handles rbtSecaoCircular.CheckedChanged
         ExibirDadosEntrada()
         imgSecao.Image = My.Resources.secaocircular
-        'lblAltura.Visible = False
-        ' lblBase.Visible = False
+        'seçãoret
+        lblAltura.Visible = False
+        lblBase.Visible = False
+        lblCompRet.Visible = False
+        'seçãoT
+        lblTbf.Visible = False
+        lblTbw.Visible = False
+        lblTh.Visible = False
+        lblTd.Visible = False
+        lblThf.Visible = False
+        'seçãoI
+        lblIbf2.Visible = False
+        lblIbw.Visible = False
+        lblIbf1.Visible = False
+        lblIhf1.Visible = False
+        lblIhf2.Visible = False
+        lblIH.Visible = False
+        lblId.Visible = False
         gbxResultadosSecao.Visible = True
         gbxResultadosElementos.Visible = False
     End Sub
     Private Sub rbtSecaoT_CheckedChanged(sender As Object, e As EventArgs) Handles rbtSecaoT.CheckedChanged
         ExibirDadosEntrada()
         imgSecao.Image = My.Resources.secaoT
-        'lblAltura.Visible = False
-        'lblBase.Visible = False
+        'seçãoret
+        lblAltura.Visible = False
+        lblBase.Visible = False
+        lblCompRet.Visible = False
+
+        'seçãocirc
+        lblCircL.Visible = False
+        lblCircD.Visible = False
+        'seçãoI
+        lblIbf2.Visible = False
+        lblIbw.Visible = False
+        lblIbf1.Visible = False
+        lblIhf1.Visible = False
+        lblIhf2.Visible = False
+        lblIH.Visible = False
+        lblId.Visible = False
         gbxResultadosSecao.Visible = True
         gbxResultadosElementos.Visible = False
     End Sub
     Private Sub rbtSecaoI_CheckedChanged(sender As Object, e As EventArgs) Handles rbtSecaoI.CheckedChanged
         ExibirDadosEntrada()
         imgSecao.Image = My.Resources.secaoi
-        'lblAltura.Visible = False
-        'lblBase.Visible = False
+        'seçãoret
+        lblAltura.Visible = False
+        lblBase.Visible = False
+        lblCompRet.Visible = False
+        'seçãocirc
+        lblCircL.Visible = False
+        lblCircD.Visible = False
         gbxResultadosSecao.Visible = True
         gbxResultadosElementos.Visible = False
+        'seçãoT
+        lblTbf.Visible = False
+        lblTbw.Visible = False
+        lblTh.Visible = False
+        lblTd.Visible = False
+        lblThf.Visible = False
     End Sub
     Private Sub rbtSecaoCaixao_CheckedChanged(sender As Object, e As EventArgs) Handles rbtSecaoCaixao.CheckedChanged
         ExibirDadosEntrada()
         imgSecao.Image = My.Resources.secaocaixao
-        ' lblAltura.Visible = False
-        'lblBase.Visible = False
+        'seçãoret
+        lblAltura.Visible = False
+        lblBase.Visible = False
+        lblCompRet.Visible = False
+        'seçãoT
+        lblTbf.Visible = False
+        lblTbw.Visible = False
+        lblTh.Visible = False
+        lblTd.Visible = False
+        lblThf.Visible = False
+        'seçãocirc
+        lblCircL.Visible = False
+        lblCircD.Visible = False
+        'seçãoI
+        lblIbf2.Visible = False
+        lblIbw.Visible = False
+        lblIbf1.Visible = False
+        lblIhf1.Visible = False
+        lblIhf2.Visible = False
+        lblIH.Visible = False
+        lblId.Visible = False
         gbxResultadosSecao.Visible = True
         gbxResultadosElementos.Visible = False
     End Sub
     Private Sub rbt2Elementos_CheckedChanged(sender As Object, e As EventArgs) Handles rbt2Elementos.CheckedChanged
         ExibirDadosEntrada()
-        imgSecao.Image = My.Resources.secao2elementos
-        'lblAltura.Visible = False
-        ' lblBase.Visible = False
+        If (cboElementFixacao.Text = "Espacador Interposto") Then
+            imgSecao.Image = My.Resources.secao2elementosEspacador
+        ElseIf (cboElementFixacao.Text = "Chapas Laterais de Fixação") Then
+            imgSecao.Image = My.Resources.secao2elementosChapa
+        Else
+        End If
+        lblAltura.Visible = False
+        lblBase.Visible = False
+        lblCompRet.Visible = False
+        lblCircL.Visible = False
+        lblCircD.Visible = False
         gbxResultadosSecao.Visible = False
         gbxResultadosElementos.Visible = True
     End Sub
     Private Sub rbt3Elementos_CheckedChanged(sender As Object, e As EventArgs) Handles rbt3Elementos.CheckedChanged
         ExibirDadosEntrada()
-        imgSecao.Image = My.Resources.secao3elementos
-        ' lblAltura.Visible = False
-        ' lblBase.Visible = False
+        If (cboElementFixacao.Text = "Espacador Interposto") Then
+            imgSecao.Image = My.Resources.secao3elementosEspacador
+        ElseIf (cboElementFixacao.Text = "Chapas Laterais de Fixação") Then
+            imgSecao.Image = My.Resources.secao3elementosChapa
+        Else
+        End If
+        lblAltura.Visible = False
+        lblBase.Visible = False
+        lblCompRet.Visible = False
+        lblCircL.Visible = False
+        lblCircD.Visible = False
         gbxResultadosSecao.Visible = False
         gbxResultadosElementos.Visible = True
     End Sub
@@ -459,8 +582,8 @@ Por favor, insira a vinculação da peça.")
     'VALIDAÇÕES APARÊNCIAS: 
     'TRAÇÃO ==============================
     Private Sub tracao()
-        txtTensaoTracao.Text = madeiraSelecionada.tracao.TensaoTracao
-        txtEsbeltezTracaoX.Text = madeiraSelecionada.Tracao.esbeltezTracaoX
+        txtTensaoTracao.Text = madeiraSelecionada.Tracao.TensaoTracao
+        txtEsbeltezTracaoX.Text = madeiraSelecionada.Tracao.EsbeltezTracaoX
         txtEsbeltezTracaoY.Text = madeiraSelecionada.Tracao.EsbeltezTracaoY
         txtFt.Text = madeiraSelecionada.ResistenciaCalculo.resistCalculoTracaoParalela
 
@@ -482,7 +605,7 @@ Por favor, insira a vinculação da peça.")
         End If
 
         'VALIDAÇÃO ESBELTEZ X:
-        If PropriedadesResistencia.validarEsbeltezTracaoX(madeiraSelecionada.Tracao.esbeltezTracaoX) Then
+        If PropriedadesResistencia.validarEsbeltezTracaoX(madeiraSelecionada.Tracao.EsbeltezTracaoX) Then
             lblValidacaoEsbeltezXTracao.Text = "PASSOU NA VERIFICAÇÃO"
             lblValidacaoEsbeltezXTracao.Visible = True
             lblValidacaoEsbeltezXTracao.ForeColor = Color.Green
@@ -493,7 +616,7 @@ Por favor, insira a vinculação da peça.")
         End If
 
         'VALIDAÇÃO ESBELTEZ Y:
-        If PropriedadesResistencia.validarEsbeltezTracaoY(madeiraSelecionada.Tracao.esbeltezTracaoY) Then
+        If PropriedadesResistencia.validarEsbeltezTracaoY(madeiraSelecionada.Tracao.EsbeltezTracaoY) Then
             lblValidacaoEsbeltezYTracao.Text = "PASSOU NA VERIFICAÇÃO"
             lblValidacaoEsbeltezYTracao.Visible = True
             lblValidacaoEsbeltezYTracao.ForeColor = Color.Green
@@ -562,7 +685,7 @@ Por favor, insira a vinculação da peça.")
         ElseIf (40 < madeiraSelecionada.Compressao.EsbeltezCompressaoX And madeiraSelecionada.Compressao.EsbeltezCompressaoX <= 80) Then
             lblClassifEsbeltezX.Text = "PEÇA MEDIANAMENTE ESBELTA"
         ElseIf (80 < madeiraSelecionada.Compressao.EsbeltezCompressaoY And madeiraSelecionada.Compressao.EsbeltezCompressaoY <= 140) Then
-            lblClassifEsbeltezX.Text="PEÇA ESBELTA"
+            lblClassifEsbeltezX.Text = "PEÇA ESBELTA"
         End If
 
         If (madeiraSelecionada.Compressao.EsbeltezCompressaoY <= 40) Then
@@ -860,24 +983,65 @@ Por favor, insira a vinculação da peça.")
     'SEÇÃO T----------------------------------------
     Private Sub txtEntradaCompostaTh_TextChanged(sender As Object, e As EventArgs) Handles txtEntradaCompostaTh.TextChanged
         txtEntradaCompostaH.Text = PropriedadesResistencia.somaT(PropriedadesResistencia.verificaVazio(txtEntradaCompostaHf.Text), PropriedadesResistencia.verificaVazio(txtEntradaCompostaTh.Text))
+        lblTh.Text = txtEntradaCompostaTh.Text
+        lblTh.Visible = True
     End Sub
     Private Sub txtEntradaCompostaHf_TextChanged(sender As Object, e As EventArgs) Handles txtEntradaCompostaHf.TextChanged
         txtEntradaCompostaH.Text = PropriedadesResistencia.somaT(PropriedadesResistencia.verificaVazio(txtEntradaCompostaHf.Text), PropriedadesResistencia.verificaVazio(txtEntradaCompostaTh.Text))
+        lblThf.Text = txtEntradaCompostaHf.Text
+        lblThf.Visible = True
     End Sub
+    Private Sub txtEntradaCompostaH_TextChanged(sender As Object, e As EventArgs) Handles txtEntradaCompostaH.TextChanged
+        lblTd.Text = txtEntradaCompostaH.Text
+        lblTd.Visible = True
+    End Sub
+
+    Private Sub txtEntradaCompostaBw_TextChanged(sender As Object, e As EventArgs) Handles txtEntradaCompostaBw.TextChanged
+        lblTbw.Text = txtEntradaCompostaBw.Text
+        lblTbw.Visible = True
+    End Sub
+
+    Private Sub txtEntradaCompostaBf_TextChanged(sender As Object, e As EventArgs) Handles txtEntradaCompostaBf.TextChanged
+        lblTbf.Text = txtEntradaCompostaBf.Text
+        lblTbf.Visible = True
+    End Sub
+
 
     'SEÇÃO I----------------------------------------
     Private Sub txtEntradaIHf1_TextChanged(sender As Object, e As EventArgs) Handles txtEntradaIHf1.TextChanged
         txtEntradaIHf2.Text = txtEntradaIHf1.Text
         txtEntradaID.Text = PropriedadesResistencia.somaI(PropriedadesResistencia.verificaVazio(txtEntradaIHf1.Text), PropriedadesResistencia.verificaVazio(txtEntradaIH.Text), PropriedadesResistencia.verificaVazio(txtEntradaIHf2.Text))
+        lblIhf1.Text = txtEntradaIHf1.Text
+        lblIhf1.Visible = True
     End Sub
     Private Sub txtEntradaIH_TextChanged(sender As Object, e As EventArgs) Handles txtEntradaIH.TextChanged
         txtEntradaID.Text = PropriedadesResistencia.somaI(PropriedadesResistencia.verificaVazio(txtEntradaIHf1.Text), PropriedadesResistencia.verificaVazio(txtEntradaIH.Text), PropriedadesResistencia.verificaVazio(txtEntradaIHf2.Text))
+        lblIH.Text = txtEntradaIH.Text
+        lblIH.Visible = True
     End Sub
     Private Sub txtEntradaIHf2_TextChanged(sender As Object, e As EventArgs) Handles txtEntradaIHf2.TextChanged
         txtEntradaID.Text = PropriedadesResistencia.somaI(PropriedadesResistencia.verificaVazio(txtEntradaIHf1.Text), PropriedadesResistencia.verificaVazio(txtEntradaIH.Text), PropriedadesResistencia.verificaVazio(txtEntradaIHf2.Text))
+        lblIhf2.Text = txtEntradaIHf2.Text
+        lblIhf2.Visible = True
     End Sub
     Private Sub txtEntradaIBf1_TextChanged(sender As Object, e As EventArgs) Handles txtEntradaIBf1.TextChanged
         txtEntradaIBf2.Text = txtEntradaIBf1.Text
+        lblIbf1.Text = txtEntradaIBf1.Text
+        lblIbf1.Visible = True
+    End Sub
+    Private Sub txtEntradaID_TextChanged(sender As Object, e As EventArgs) Handles txtEntradaID.TextChanged
+        lblId.Text = txtEntradaID.Text
+        lblId.Visible = True
+    End Sub
+
+    Private Sub txtEntradaIBw_TextChanged(sender As Object, e As EventArgs) Handles txtEntradaIBw.TextChanged
+        lblIbw.Text = txtEntradaIBw.Text
+        lblIbw.Visible = True
+    End Sub
+
+    Private Sub txtEntradaIBf2_TextChanged(sender As Object, e As EventArgs) Handles txtEntradaIBf2.TextChanged
+        lblIbf2.Text = txtEntradaIBf2.Text
+        lblIbf2.Visible = True
     End Sub
 
     'SEÇÃO CAIXÃO----------------------------------------
@@ -885,26 +1049,47 @@ Por favor, insira a vinculação da peça.")
     Private Sub txtEntradaCaixaoH1_TextChanged(sender As Object, e As EventArgs) Handles txtEntradaCaixaoH1.TextChanged
         txtEntradaCaixaoH4.Text = txtEntradaCaixaoH1.Text
         txtEntradaCaixaoD.Text = PropriedadesResistencia.somaCaixaoAltura(PropriedadesResistencia.verificaVazio(txtEntradaCaixaoH1.Text), PropriedadesResistencia.verificaVazio(txtEntradaCaixaoH2.Text), PropriedadesResistencia.verificaVazio(txtEntradaCaixaoH4.Text))
+        lblCaixaoh1.Text = txtEntradaCaixaoH1.Text
+        lblCaixaoh1.Visible = True
     End Sub
     Private Sub txtEntradaCaixaoH2_TextChanged(sender As Object, e As EventArgs) Handles txtEntradaCaixaoH2.TextChanged
         txtEntradaCaixaoH3.Text = txtEntradaCaixaoH2.Text
         txtEntradaCaixaoD.Text = PropriedadesResistencia.somaCaixaoAltura(PropriedadesResistencia.verificaVazio(txtEntradaCaixaoH1.Text), PropriedadesResistencia.verificaVazio(txtEntradaCaixaoH2.Text), PropriedadesResistencia.verificaVazio(txtEntradaCaixaoH4.Text))
+        lblCaixaoh2.Text = txtEntradaCaixaoH2.Text
+        lblCaixaoh2.Visible = True
     End Sub
     Private Sub txtEntradaCaixaoH4_TextChanged(sender As Object, e As EventArgs) Handles txtEntradaCaixaoH4.TextChanged
         txtEntradaCaixaoD.Text = PropriedadesResistencia.somaCaixaoAltura(PropriedadesResistencia.verificaVazio(txtEntradaCaixaoH1.Text), PropriedadesResistencia.verificaVazio(txtEntradaCaixaoH2.Text), PropriedadesResistencia.verificaVazio(txtEntradaCaixaoH4.Text))
+        lblCaixaoh4.Text = txtEntradaCaixaoH4.Text
+        lblCaixaoh4.Visible = True
     End Sub
     'LARGURAS:
     Private Sub txtEntradaCaixaoB1_TextChanged(sender As Object, e As EventArgs) Handles txtEntradaCaixaoB1.TextChanged
         txtCaixaoComp.Text = PropriedadesResistencia.somaCaixaoComprimento(PropriedadesResistencia.verificaVazio(txtEntradaCaixaoB1.Text), PropriedadesResistencia.verificaVazio(txtEntradaCaixaoB2.Text), PropriedadesResistencia.verificaVazio(txtEntradaCaixaoB3.Text))
         txtEntradaCaixaoB4.Text = txtEntradaCaixaoB1.Text
+        lblCaixaob1.Text = txtEntradaCaixaoB1.Text
+        lblCaixaob1.Visible = True
     End Sub
     Private Sub txtEntradaCaixaoB2_TextChanged(sender As Object, e As EventArgs) Handles txtEntradaCaixaoB2.TextChanged
         txtCaixaoComp.Text = PropriedadesResistencia.somaCaixaoComprimento(PropriedadesResistencia.verificaVazio(txtEntradaCaixaoB1.Text), PropriedadesResistencia.verificaVazio(txtEntradaCaixaoB2.Text), PropriedadesResistencia.verificaVazio(txtEntradaCaixaoB3.Text))
         txtEntradaCaixaoB3.Text = txtEntradaCaixaoB2.Text
+        lblCaixaob2.Text = txtEntradaCaixaoB2.Text
+        lblCaixaob2.Visible = True
     End Sub
     Private Sub txtEntradaCaixaoB3_TextChanged(sender As Object, e As EventArgs) Handles txtEntradaCaixaoB3.TextChanged
         txtCaixaoComp.Text = PropriedadesResistencia.somaCaixaoComprimento(PropriedadesResistencia.verificaVazio(txtEntradaCaixaoB1.Text), PropriedadesResistencia.verificaVazio(txtEntradaCaixaoB2.Text), PropriedadesResistencia.verificaVazio(txtEntradaCaixaoB3.Text))
+        lblcaixaob3.Text = txtEntradaCaixaoB3.Text
+        lblcaixaob3.Visible = True
     End Sub
+    Private Sub txtEntradaCaixaoD_TextChanged(sender As Object, e As EventArgs) Handles txtEntradaCaixaoD.TextChanged
+        lblcaixaod.Text = txtEntradaCaixaoD.Text
+        lblcaixaod.Visible = True
+    End Sub
+    Private Sub txtEntradaCaixaoB4_TextChanged(sender As Object, e As EventArgs) Handles txtEntradaCaixaoB4.TextChanged
+        lblcaixaob4.Text = txtEntradaCaixaoB4.Text
+        lblcaixaob4.Visible = True
+    End Sub
+
     'ROTINA QUE TA BLOQUEANDO UM TAB (TRAÇÃO OU COMPRESSÃO) CASO ELE NAO SEJA SELECIONADO
     Private Sub cboTracaoCompressao_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboTracaoCompressao.SelectedIndexChanged
         TabTracao.Enabled = cboTracaoCompressao.SelectedIndex.CompareTo(1)
@@ -1172,30 +1357,30 @@ Por favor, insira a vinculação da peça.")
         'classe de umidade 1 e 2 e classe de carregamento permanente e longa duração:
         'ElseIf (cboKmod1.Text = "Permanente" Or cboKmod1.Text = "Longa Duração") And (cboKmod2.Text = "Classe (1)" Or cboKmod2.Text = "Classe (2)") Then
         If (cboKmod1.Text = "Permanente" Or cboKmod1.Text = "Longa Duração") And (cboKmod2.Text = "Classe (1)" Or cboKmod2.Text = "Classe (2)") Then
-                coeficiente = 0.8
-                'classe de umidade 3 e 4 e classe de carregamento permanente e longa duração:
-            ElseIf (cboKmod1.Text = "Permanente" Or cboKmod1.Text = "Longa Duração") And (cboKmod2.Text = "Classe (3)" Or cboKmod2.Text = "Classe (4)") Then
-                coeficiente = 2
+            coeficiente = 0.8
+            'classe de umidade 3 e 4 e classe de carregamento permanente e longa duração:
+        ElseIf (cboKmod1.Text = "Permanente" Or cboKmod1.Text = "Longa Duração") And (cboKmod2.Text = "Classe (3)" Or cboKmod2.Text = "Classe (4)") Then
+            coeficiente = 2
 
-                'classe de umidade 1 e 2 e classe de carregamento média duração
-            ElseIf cboKmod1.Text = "Média Duração" And (cboKmod2.Text = "Classe (1)" Or cboKmod2.Text = "Classe (2)") Then
-                coeficiente = 0.3
+            'classe de umidade 1 e 2 e classe de carregamento média duração
+        ElseIf cboKmod1.Text = "Média Duração" And (cboKmod2.Text = "Classe (1)" Or cboKmod2.Text = "Classe (2)") Then
+            coeficiente = 0.3
 
-                'classe de umidade 2 e 3 e classe de carregamento média duração
-            ElseIf cboKmod1.Text = "Média Duração" And (cboKmod2.Text = "Classe (3)" Or cboKmod2.Text = "Classe (4)") Then
-                coeficiente = 1
+            'classe de umidade 2 e 3 e classe de carregamento média duração
+        ElseIf cboKmod1.Text = "Média Duração" And (cboKmod2.Text = "Classe (3)" Or cboKmod2.Text = "Classe (4)") Then
+            coeficiente = 1
 
-                'classe de umidade 1 e 2 e classe de carregamento Curta Duração
-            ElseIf cboKmod1.Text = "Curta Duração" And (cboKmod2.Text = "Classe (1)" Or cboKmod2.Text = "Classe (2)") Then
-                coeficiente = 0.1
+            'classe de umidade 1 e 2 e classe de carregamento Curta Duração
+        ElseIf cboKmod1.Text = "Curta Duração" And (cboKmod2.Text = "Classe (1)" Or cboKmod2.Text = "Classe (2)") Then
+            coeficiente = 0.1
 
-                'classe de umidade 2 e 3 e classe de carregamento Curta Duração
-            ElseIf cboKmod1.Text = "Curta Duração" And (cboKmod2.Text = "Classe (3)" Or cboKmod2.Text = "Classe (4)") Then
-                coeficiente = 0.5
+            'classe de umidade 2 e 3 e classe de carregamento Curta Duração
+        ElseIf cboKmod1.Text = "Curta Duração" And (cboKmod2.Text = "Classe (3)" Or cboKmod2.Text = "Classe (4)") Then
+            coeficiente = 0.5
 
-                'classe de umidade 1 e 2 e classe de carregamento Instantânea
-            ElseIf cboKmod1.Text = "Instantânea" Then
-                coeficiente = 0
+            'classe de umidade 1 e 2 e classe de carregamento Instantânea
+        ElseIf cboKmod1.Text = "Instantânea" Then
+            coeficiente = 0
         End If
 
         Return coeficiente
@@ -1341,7 +1526,6 @@ Por favor, insira a vinculação da peça.")
         End If
     End Function
 
-
     Private Sub Form1_Activated(sender As Object, e As EventArgs) Handles MyBase.Activated
         If voltou Then
             voltou = False
@@ -1353,6 +1537,36 @@ Por favor, insira a vinculação da peça.")
         MessageBox.Show("Peças submetidas à flexão, devem ter a região dos apoios verificadas devido ao fato de
                         estarem sujeitas a aos esforços de compressão normal às fibras nas regiões dos apoios.")
 
+    End Sub
+
+    Private Sub PictureBox9_Click(sender As Object, e As EventArgs) Handles PictureBox9.Click
+        Dim gerarPdf As GeradorPDF = New GeradorPDF(madeiraSelecionada)
+        gerarPdf.GerarRelatorio()
+    End Sub
+
+    Private Sub txtEntrada3L_TextChanged(sender As Object, e As EventArgs) Handles txtEntrada3L.TextChanged
+
+    End Sub
+
+    Private Sub txtEntrada3L1_TextChanged(sender As Object, e As EventArgs) Handles txtEntrada3L1.TextChanged
+
+    End Sub
+
+    Private Sub txtEntrada3a1_TextChanged(sender As Object, e As EventArgs) Handles txtEntrada3a1.TextChanged
+
+    End Sub
+
+    Private Sub txtEntrada3h1_TextChanged(sender As Object, e As EventArgs) Handles txtEntrada3h1.TextChanged
+
+    End Sub
+
+    Private Sub txtEntrada3b1_TextChanged(sender As Object, e As EventArgs) Handles txtEntrada3b1.TextChanged
+
+    End Sub
+
+    Private Sub SalvarToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SalvarToolStripMenuItem.Click
+        'Projeto.Update()
+        ' CBackupFile.SalvarArquivoBin(Projeto, 1)
     End Sub
 
     'rotina para chamar o valor de L1 nos esforços de compressão

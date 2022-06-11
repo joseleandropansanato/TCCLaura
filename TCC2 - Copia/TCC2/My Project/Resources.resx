@@ -118,34 +118,40 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="secaocaixao" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\img\secaocaixao.JPG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="secao2elementos" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\img\secao2ELEMENTOS.JPG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="secaoT" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\img\secaoT.JPG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="secaoi" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\img\secaoi.JPG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="secao3elementos" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\img\secao3elementos.JPG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="vinculação" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\vinculação.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="help" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\help.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="secaocircular" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\img\secaocircular.JPG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="vinculação" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\vinculação.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="pdf_30x30" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pdf_30x30.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="secaoretangular" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\secaoretangular.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>..\Resources\secaoretangular.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="secaoretangularx" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\img\secaoretangular.JPG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="secao2elementosChapa" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\secao2elementosChapa.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="secao2elementosEspacador" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\secao2elementosEspacador.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="secao3elementosChapa" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\secao3elementosChapa.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="secao3elementosEspacador" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\secao3elementosEspacador.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="secaocircular" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\secaocircular.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="secaoi" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\secaoi.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="secaoT" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\secaoT.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="secaocaixao" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\secaocaixao.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
