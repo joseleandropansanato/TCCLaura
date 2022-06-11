@@ -1,3 +1,9 @@
 is_global = true
+build_property.ApplicationManifest = 
+build_property.StartupObject = TCC2.Form1
+build_property.ApplicationDefaultFont = 
+build_property.ApplicationHighDpiMode = 
+build_property.ApplicationUseCompatibleTextRendering = 
+build_property.ApplicationVisualStyles = 
 build_property.RootNamespace = TCC2
-build_property.ProjectDir = C:\Users\Usuario\Documents\git\TCCLaura\TCC2 - Copia\TCC2\
+build_property.ProjectDir = C:\Users\José Leandro\source\repos\joseleandropansanato\TCCLaura\TCC2 - Copia\TCC2\

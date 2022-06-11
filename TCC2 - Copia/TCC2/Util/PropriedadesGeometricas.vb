@@ -463,7 +463,9 @@
         Dim alturas As Double() = {0, h, hf}
         Dim xCG = bases.Max / 2
         Dim x_CGi As Double() = {xCG, xCG, xCG}
+        centroGeometricoX = Calcular_CG(bases, alturas, x_CGi)
         Dim y_CGi As Double() = {alturas(0) / 2, alturas(0) + alturas(1) / 2, alturas.Sum - alturas(2) / 2}
+        centroGeometricoY = Calcular_CG(bases, alturas, y_CGi)
         'SEÇÃO T: PROPRIEDADES VALIDADAS
         proprGeometricas.Area = Calcular_Area(bases, alturas)
         proprGeometricas.EixoXmi = Inercia(bases, alturas, y_CGi)
@@ -484,7 +486,9 @@
         Dim alturas As Double() = {hf2, h, hf1}
         Dim xCG As Double = bases.Max / 2
         Dim x_CGi As Double() = {xCG, xCG, xCG}
+        centroGeometricoX = Calcular_CG(bases, alturas, x_CGi)
         Dim y_CGi As Double() = {alturas(0) / 2, alturas(0) + alturas(1) / 2, alturas.Sum - alturas(2) / 2}
+        centroGeometricoY = Calcular_CG(bases, alturas, y_CGi)
         'SEÇÃO I: PROPRIEDADES VALIDADAS
         proprGeometricas.Area = Calcular_Area(bases, alturas)
         proprGeometricas.EixoXmi = Inercia(bases, alturas, y_CGi)
@@ -507,8 +511,9 @@
         'Dim xCG = bases.Max 
         Dim base As Double = Math.Min(bases(0), bases(3))
         Dim x_CGi As Double() = {xCG, xCG - base / 2 + bases(1) / 2, xCG + base / 2 - bases(1) / 2, xCG}
+        centroGeometricoX = Calcular_CG(bases, alturas, x_CGi)
         Dim y_CGi As Double() = {alturas(0) / 2, alturas(0) + alturas(1) / 2, alturas(0) + alturas(1) / 2, alturas(0) + alturas(1) + alturas(3) / 2}
-
+        centroGeometricoY = Calcular_CG(bases, alturas, y_CGi)
         'seção Caixão
         proprGeometricas.Area = Calcular_Area(bases, alturas)
         proprGeometricas.EixoXmi = Inercia(bases, alturas, y_CGi)

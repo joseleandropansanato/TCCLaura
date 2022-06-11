@@ -7,9 +7,11 @@ Imports TCC2
 Public Class GeradorPDF
 
     Private _madeira As Madeira
+    Private _exibir As Exibicao
 
-    Public Sub New(mMadeira As Madeira)
+    Public Sub New(mMadeira As Madeira, mExibir As Exibicao)
         _madeira = mMadeira
+        _exibir = mExibir
     End Sub
 
     Public Sub GerarRelatorio()
@@ -67,19 +69,19 @@ Public Class GeradorPDF
         doc.Add(New Paragraph("2.1Coeficiente de Modificação:", fontSubTitle))
 
 
-        'doc.Add(New Paragraph("kmod1", fontItem))
-        'doc.Add(New Paragraph(_madeira.PropriedadesResistencia.kmod1, fontDescription))
+        doc.Add(New Paragraph("kmod1", fontItem))
+        doc.Add(New Paragraph(_madeira.Kmod1, fontDescription))
 
-        'doc.Add(New Paragraph("kmod1", fontItem))
-        'doc.Add(New Paragraph(_madeira.PropriedadesResistencia.kmod2, fontDescription))
+        doc.Add(New Paragraph("kmod1", fontItem))
+        doc.Add(New Paragraph(_madeira.Kmod2, fontDescription))
 
-        'doc.Add(New Paragraph("kmod3", fontItem))
-        'doc.Add(New Paragraph(_madeira.PropriedadesResistencia.kmod3, fontDescription))
+        doc.Add(New Paragraph("kmod3", fontItem))
+        doc.Add(New Paragraph(_madeira.Kmod3, fontDescription))
 
-        'doc.Add(New Paragraph("kmod", fontItem))
+        doc.Add(New Paragraph("kmod", fontItem))
 
         doc.Add(New Paragraph("kmod = kmod1 * kmod2 * kmod3", fontForm))
-        'doc.Add(New Paragraph(_madeira.PropriedadesResistencia.kmod, fontDescription))
+        doc.Add(New Paragraph(_madeira.Kmod, fontDescription))
 
         doc.Add(New Paragraph("fd = kmod/ gama", fontForm))
 
@@ -296,106 +298,110 @@ Public Class GeradorPDF
         doc.Add(New Paragraph(_madeira.PropriedadesGeometricas.W2 & "m³", fontDescription))
 
         'TRAÇÃO:
-        doc.Add(New Paragraph("TRAÇÃO:", fontSubTitle))
+        If _exibir.ExibeTracao Then
+            doc.Add(New Paragraph("TRAÇÃO:", fontSubTitle))
 
-        doc.Add(New Paragraph("Tensao solicitante de Projeto à Tracao", fontItem))
-        doc.Add(New Paragraph("sigmat = Nt/A", fontItem))
-        doc.Add(New Paragraph(_madeira.Tracao.TensaoTracao, "MPa", fontDescription))
+            doc.Add(New Paragraph("Tensao solicitante de Projeto à Tracao", fontItem))
+            doc.Add(New Paragraph("sigmat = Nt/A", fontItem))
+            doc.Add(New Paragraph(_madeira.Tracao.TensaoTracao, "MPa", fontDescription))
 
-        doc.Add(New Paragraph("Esbeltez Eixo x:", fontItem))
-        doc.Add(New Paragraph("lambidax = L/ix ", fontItem))
-        doc.Add(New Paragraph(_madeira.Tracao.EsbeltezTracaoX, fontDescription))
+            doc.Add(New Paragraph("Esbeltez Eixo x:", fontItem))
+            doc.Add(New Paragraph("lambidax = L/ix ", fontItem))
+            doc.Add(New Paragraph(_madeira.Tracao.EsbeltezTracaoX, fontDescription))
 
-        doc.Add(New Paragraph("Esbeltez no Eixo y:", fontItem))
-        doc.Add(New Paragraph("lambiday = L/iy", fontItem))
-        doc.Add(New Paragraph(_madeira.Tracao.EsbeltezTracaoY, fontDescription))
+            doc.Add(New Paragraph("Esbeltez no Eixo y:", fontItem))
+            doc.Add(New Paragraph("lambiday = L/iy", fontItem))
+            doc.Add(New Paragraph(_madeira.Tracao.EsbeltezTracaoY, fontDescription))
+        End If
 
         'COMPRESSÃO:
-        doc.Add(New Paragraph("COMPRESSÃO:", fontSubTitle))
+        If _exibir.ExibeCompressao Then
+            doc.Add(New Paragraph("COMPRESSÃO:", fontSubTitle))
 
-        doc.Add(New Paragraph("Tensao solicitante de Projeto à Compressao no Eixo X:", fontItem))
-        doc.Add(New Paragraph("sigmacx = Nc/A", fontItem))
-        doc.Add(New Paragraph(_madeira.Compressao.TensaoCompressaoX, fontDescription))
+            doc.Add(New Paragraph("Tensao solicitante de Projeto à Compressao no Eixo X:", fontItem))
+            doc.Add(New Paragraph("sigmacx = Nc/A", fontItem))
+            doc.Add(New Paragraph(_madeira.Compressao.TensaoCompressaoX, fontDescription))
 
-        doc.Add(New Paragraph("Tensao solicitante de Projeto à Compressao no Eixo Y:", fontItem))
-        doc.Add(New Paragraph("sigmacy = Nc/A", fontItem))
-        doc.Add(New Paragraph(_madeira.Compressao.TensaoCompressaoY, fontDescription))
+            doc.Add(New Paragraph("Tensao solicitante de Projeto à Compressao no Eixo Y:", fontItem))
+            doc.Add(New Paragraph("sigmacy = Nc/A", fontItem))
+            doc.Add(New Paragraph(_madeira.Compressao.TensaoCompressaoY, fontDescription))
 
-        doc.Add(New Paragraph("Tensao Normal Devida à Flexão no Eixo X:", fontItem))
-        doc.Add(New Paragraph("", fontItem))
-        doc.Add(New Paragraph(_madeira.Compressao.TensaoMxd, fontDescription))
+            doc.Add(New Paragraph("Tensao Normal Devida à Flexão no Eixo X:", fontItem))
+            doc.Add(New Paragraph("", fontItem))
+            doc.Add(New Paragraph(_madeira.Compressao.TensaoMxd, fontDescription))
 
-        doc.Add(New Paragraph("Tensao Normal Devida à Flexão no Eixo Y:", fontItem))
-        doc.Add(New Paragraph("", fontItem))
-        doc.Add(New Paragraph(_madeira.Compressao.TensaoMyd, fontDescription))
+            doc.Add(New Paragraph("Tensao Normal Devida à Flexão no Eixo Y:", fontItem))
+            doc.Add(New Paragraph("", fontItem))
+            doc.Add(New Paragraph(_madeira.Compressao.TensaoMyd, fontDescription))
 
-        doc.Add(New Paragraph("Esbeltez no Eixo X:", fontItem))
-        doc.Add(New Paragraph("lambidax = L/ix ", fontItem))
-        doc.Add(New Paragraph(_madeira.Compressao.EsbeltezCompressaoX, fontDescription))
+            doc.Add(New Paragraph("Esbeltez no Eixo X:", fontItem))
+            doc.Add(New Paragraph("lambidax = L/ix ", fontItem))
+            doc.Add(New Paragraph(_madeira.Compressao.EsbeltezCompressaoX, fontDescription))
 
-        doc.Add(New Paragraph("Esbeltez no Eixo Y:", fontItem))
-        doc.Add(New Paragraph("lambidaY = L/iY ", fontItem))
-        doc.Add(New Paragraph(_madeira.Compressao.EsbeltezCompressaoY, fontDescription))
+            doc.Add(New Paragraph("Esbeltez no Eixo Y:", fontItem))
+            doc.Add(New Paragraph("lambidaY = L/iY ", fontItem))
+            doc.Add(New Paragraph(_madeira.Compressao.EsbeltezCompressaoY, fontDescription))
 
-        doc.Add(New Paragraph("Comprimento Teórico de Referência", fontItem))
-        doc.Add(New Paragraph("", fontItem))
-        doc.Add(New Paragraph(_madeira.Compressao.Lvinculado, fontDescription))
+            doc.Add(New Paragraph("Comprimento Teórico de Referência", fontItem))
+            doc.Add(New Paragraph("", fontItem))
+            doc.Add(New Paragraph(_madeira.Compressao.Lvinculado, fontDescription))
 
-        doc.Add(New Paragraph("Forca Elastica em X:", fontItem))
-        doc.Add(New Paragraph("Fe = pi² * Eco,ef *Ix)/(L0²)", fontItem))
-        doc.Add(New Paragraph(_madeira.Compressao.ForcaElasticaX, fontDescription))
+            doc.Add(New Paragraph("Forca Elastica em X:", fontItem))
+            doc.Add(New Paragraph("Fe = pi² * Eco,ef *Ix)/(L0²)", fontItem))
+            doc.Add(New Paragraph(_madeira.Compressao.ForcaElasticaX, fontDescription))
 
-        doc.Add(New Paragraph("Forca Elastica em Y:", fontItem))
-        doc.Add(New Paragraph("Fe = pi² * Eco,ef *Iy)/(L0²)", fontItem))
-        doc.Add(New Paragraph(_madeira.Compressao.ForcaElasticaY, fontDescription))
+            doc.Add(New Paragraph("Forca Elastica em Y:", fontItem))
+            doc.Add(New Paragraph("Fe = pi² * Eco,ef *Iy)/(L0²)", fontItem))
+            doc.Add(New Paragraph(_madeira.Compressao.ForcaElasticaY, fontDescription))
 
-        doc.Add(New Paragraph("Excentricidade Inicial no Eixo X (eix):", fontItem))
-        doc.Add(New Paragraph("", fontItem))
-        doc.Add(New Paragraph(_madeira.Compressao.EiX, fontDescription))
+            doc.Add(New Paragraph("Excentricidade Inicial no Eixo X (eix):", fontItem))
+            doc.Add(New Paragraph("", fontItem))
+            doc.Add(New Paragraph(_madeira.Compressao.EiX, fontDescription))
 
-        doc.Add(New Paragraph("Excentricidade Inicial no Eixo Y (eiY):", fontItem))
-        doc.Add(New Paragraph("", fontItem))
-        doc.Add(New Paragraph(_madeira.Compressao.EiY, fontDescription))
+            doc.Add(New Paragraph("Excentricidade Inicial no Eixo Y (eiY):", fontItem))
+            doc.Add(New Paragraph("", fontItem))
+            doc.Add(New Paragraph(_madeira.Compressao.EiY, fontDescription))
 
-        doc.Add(New Paragraph("Excentricidade Acidental no Eixo X (eax)", fontItem))
-        doc.Add(New Paragraph("", fontItem))
-        doc.Add(New Paragraph(_madeira.Compressao.EaX, fontDescription))
+            doc.Add(New Paragraph("Excentricidade Acidental no Eixo X (eax)", fontItem))
+            doc.Add(New Paragraph("", fontItem))
+            doc.Add(New Paragraph(_madeira.Compressao.EaX, fontDescription))
 
-        doc.Add(New Paragraph("Excentricidade Acidental no Eixo Y (eay)", fontItem))
-        doc.Add(New Paragraph("", fontItem))
-        doc.Add(New Paragraph(_madeira.Compressao.EaY, fontDescription))
+            doc.Add(New Paragraph("Excentricidade Acidental no Eixo Y (eay)", fontItem))
+            doc.Add(New Paragraph("", fontItem))
+            doc.Add(New Paragraph(_madeira.Compressao.EaY, fontDescription))
 
-        doc.Add(New Paragraph("Excentricidade de Projeto no Eixo X (edx)", fontItem))
-        doc.Add(New Paragraph("", fontItem))
-        doc.Add(New Paragraph(_madeira.Compressao.Edx, fontDescription))
+            doc.Add(New Paragraph("Excentricidade de Projeto no Eixo X (edx)", fontItem))
+            doc.Add(New Paragraph("", fontItem))
+            doc.Add(New Paragraph(_madeira.Compressao.Edx, fontDescription))
 
-        doc.Add(New Paragraph("Excentricidade de Projeto no Eixo Y (edy)", fontItem))
-        doc.Add(New Paragraph("", fontItem))
-        doc.Add(New Paragraph(_madeira.Compressao.Edy, fontDescription))
+            doc.Add(New Paragraph("Excentricidade de Projeto no Eixo Y (edy)", fontItem))
+            doc.Add(New Paragraph("", fontItem))
+            doc.Add(New Paragraph(_madeira.Compressao.Edy, fontDescription))
 
-        doc.Add(New Paragraph("Excentricidade Suplementar de primeira Ordem no Eixo X (ecx):", fontItem))
-        doc.Add(New Paragraph("", fontItem))
-        doc.Add(New Paragraph(_madeira.Compressao.Ecx, fontDescription))
+            doc.Add(New Paragraph("Excentricidade Suplementar de primeira Ordem no Eixo X (ecx):", fontItem))
+            doc.Add(New Paragraph("", fontItem))
+            doc.Add(New Paragraph(_madeira.Compressao.Ecx, fontDescription))
 
-        doc.Add(New Paragraph("Excentricidade Suplementar de primeira Ordem no Eixo Y (ecy)", fontItem))
-        doc.Add(New Paragraph("", fontItem))
-        doc.Add(New Paragraph(_madeira.Compressao.Ecy, fontDescription))
+            doc.Add(New Paragraph("Excentricidade Suplementar de primeira Ordem no Eixo Y (ecy)", fontItem))
+            doc.Add(New Paragraph("", fontItem))
+            doc.Add(New Paragraph(_madeira.Compressao.Ecy, fontDescription))
 
-        doc.Add(New Paragraph("Excentricidade Efetiva de Primeira Ordem (e1,ef):", fontItem))
-        doc.Add(New Paragraph("", fontItem))
-        doc.Add(New Paragraph(_madeira.Compressao.E1ef, fontDescription))
+            doc.Add(New Paragraph("Excentricidade Efetiva de Primeira Ordem (e1,ef):", fontItem))
+            doc.Add(New Paragraph("", fontItem))
+            doc.Add(New Paragraph(_madeira.Compressao.E1ef, fontDescription))
 
-        doc.Add(New Paragraph("eig", fontItem))
-        doc.Add(New Paragraph("", fontItem))
-        doc.Add(New Paragraph(_madeira.Compressao.Eig, fontDescription))
+            doc.Add(New Paragraph("eig", fontItem))
+            doc.Add(New Paragraph("", fontItem))
+            doc.Add(New Paragraph(_madeira.Compressao.Eig, fontDescription))
 
-        doc.Add(New Paragraph("Condição de Segurança no EixoXX", fontItem))
-        doc.Add(New Paragraph("", fontItem))
-        doc.Add(New Paragraph(_madeira.Compressao.EixoXX, fontDescription))
+            doc.Add(New Paragraph("Condição de Segurança no EixoXX", fontItem))
+            doc.Add(New Paragraph("", fontItem))
+            doc.Add(New Paragraph(_madeira.Compressao.EixoXX, fontDescription))
 
-        doc.Add(New Paragraph("Condição de Segurança no EixoYY", fontItem))
-        doc.Add(New Paragraph("", fontItem))
-        doc.Add(New Paragraph(_madeira.Compressao.EixoYY, fontDescription))
+            doc.Add(New Paragraph("Condição de Segurança no EixoYY", fontItem))
+            doc.Add(New Paragraph("", fontItem))
+            doc.Add(New Paragraph(_madeira.Compressao.EixoYY, fontDescription))
+        End If
 
         'CISALHAMENTO:
         doc.Add(New Paragraph("CISALHAMENTO:", fontSubTitle))

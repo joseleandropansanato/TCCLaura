@@ -25,6 +25,10 @@ Public Class Madeira
     Private _resistAoCisalhamento As Double = 0
     Private _modElasticidade As Double = 0
     Private _densAparente As Double = 0
+    Private _kmod1 As Double = 0
+    Private _kmod2 As Double = 0
+    Private _kmod3 As Double = 0
+    Private _kmod As Double = 0
     Private _propriedadesGeometricas As PropriedadesGeometricas = New PropriedadesGeometricas()
     Private _tracao As Tracao = New Tracao()
     Private _compressao As Compressao = New Compressao()
@@ -193,6 +197,38 @@ Public Class Madeira
         End Get
         Set(value As Double)
             _densAparente = value
+        End Set
+    End Property
+    Public Property Kmod1() As Double
+        Get
+            Return _kmod1
+        End Get
+        Set(value As Double)
+            _kmod1 = value
+        End Set
+    End Property
+    Public Property Kmod2() As Double
+        Get
+            Return _kmod2
+        End Get
+        Set(value As Double)
+            _kmod2 = value
+        End Set
+    End Property
+    Public Property Kmod3() As Double
+        Get
+            Return _kmod3
+        End Get
+        Set(value As Double)
+            _kmod3 = value
+        End Set
+    End Property
+    Public Property Kmod() As Double
+        Get
+            Return _kmod
+        End Get
+        Set(value As Double)
+            _kmod = value
         End Set
     End Property
     Public Property PropriedadesGeometricas() As PropriedadesGeometricas

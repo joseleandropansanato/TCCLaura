@@ -16,13 +16,13 @@ Public Class Form1
     'Public Projeto As New CProjeto
     Public madeiraSelecionada As Madeira = New Madeira 'chamei as propriedades da madeira (modelei as propriedades para ser igual a classe madeira)
     Public tipoMadeira As Integer
-    Public kmod1, kmod2, kmod3, kmod As Double
     Public Shared proprGeometricas As PropriedadesGeometricas = New PropriedadesGeometricas 'inicia como zerado, mas pode ser usado em qualquer lugar do form 1. Então ela é auto preenchida qunado precisa dela
     Public form2Kmod1 As Form2Kmod1 = New Form2Kmod1
     Public form2Kmod2 As Form2Kmod2 = New Form2Kmod2
     Public form2Kmod3 As Form2Kmod3 = New Form2Kmod3
     Public formAjuda As FormAjuda = New FormAjuda
     Public form4Vinculacao As Form4Vinculacao = New Form4Vinculacao
+    Public exibicao As Exibicao = New Exibicao
 
     Public Shared momentoCargaPermanenteX As Double = 0
     Public Shared momentoCargaPermanenteY As Double = 0
@@ -127,18 +127,18 @@ Public Class Form1
 
     'ROTINA PARA APARECER OS VALORES DE KMOD1, KMOD2 E KMOD 3 CONFORME A SELÇÃO DO USUARIO
     Private Sub cboKmod1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboKmod1.SelectedIndexChanged
-        kmod1 = PropriedadesResistencia.Kmod1Final(tipoMadeira, cboKmod1.SelectedIndex)
-        lblKmod1.Text = kmod1.ToString
+        madeiraSelecionada.Kmod1 = PropriedadesResistencia.Kmod1Final(tipoMadeira, cboKmod1.SelectedIndex)
+        lblKmod1.Text = madeiraSelecionada.Kmod1.ToString
         lblKmod1.Visible = True
     End Sub
     Private Sub cboKmod2_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboKmod2.SelectedIndexChanged
-        kmod2 = PropriedadesResistencia.Kmod2Final(tipoMadeira, cboKmod2.SelectedIndex)
-        lblKmod2.Text = kmod2.ToString
+        madeiraSelecionada.Kmod2 = PropriedadesResistencia.Kmod2Final(tipoMadeira, cboKmod2.SelectedIndex)
+        lblKmod2.Text = madeiraSelecionada.Kmod2.ToString
         lblKmod2.Visible = True
     End Sub
     Private Sub cboKmod3_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboKmod3.SelectedIndexChanged
-        kmod3 = PropriedadesResistencia.Kmod3Final(tipoMadeira, cboKmod3.SelectedIndex)
-        lblKmod3.Text = kmod3.ToString
+        madeiraSelecionada.Kmod3 = PropriedadesResistencia.Kmod3Final(tipoMadeira, cboKmod3.SelectedIndex)
+        lblKmod3.Text = madeiraSelecionada.Kmod3.ToString
         lblKmod3.Visible = True
     End Sub
 
@@ -150,9 +150,9 @@ Public Class Form1
 
     'ROTINA PARA CALCULAR O KMOD
     Private Sub CalcularKmod()
-        kmod = kmod1 * kmod2 * kmod3
-        txtKmod.Text = kmod
-        txtKmod.Text = Format(kmod, "#0.0##;-#0.0##")
+        madeiraSelecionada.Kmod = madeiraSelecionada.Kmod1 * madeiraSelecionada.Kmod2 * madeiraSelecionada.Kmod3
+        txtKmod.Text = madeiraSelecionada.Kmod
+        txtKmod.Text = Format(madeiraSelecionada.Kmod, "#0.0##;-#0.0##")
     End Sub
 
     'ROTINA PARA SELECIONAR O TIPO DA MADEIRA E ASSIM SEUS VALORES CARACTERISTICOS
@@ -317,12 +317,7 @@ Public Class Form1
     End Sub
     Private Sub rbt2Elementos_CheckedChanged(sender As Object, e As EventArgs) Handles rbt2Elementos.CheckedChanged
         ExibirDadosEntrada()
-        If (cboElementFixacao.Text = "Espacador Interposto") Then
-            imgSecao.Image = My.Resources.secao2elementosEspacador
-        ElseIf (cboElementFixacao.Text = "Chapas Laterais de Fixação") Then
-            imgSecao.Image = My.Resources.secao2elementosChapa
-        Else
-        End If
+        ExibirImg2Elementos()
         lblAltura.Visible = False
         lblBase.Visible = False
         lblCompRet.Visible = False
@@ -333,12 +328,7 @@ Public Class Form1
     End Sub
     Private Sub rbt3Elementos_CheckedChanged(sender As Object, e As EventArgs) Handles rbt3Elementos.CheckedChanged
         ExibirDadosEntrada()
-        If (cboElementFixacao.Text = "Espacador Interposto") Then
-            imgSecao.Image = My.Resources.secao3elementosEspacador
-        ElseIf (cboElementFixacao.Text = "Chapas Laterais de Fixação") Then
-            imgSecao.Image = My.Resources.secao3elementosChapa
-        Else
-        End If
+        ExibirImg3Elementos()
         lblAltura.Visible = False
         lblBase.Visible = False
         lblCompRet.Visible = False
@@ -346,6 +336,24 @@ Public Class Form1
         lblCircD.Visible = False
         gbxResultadosSecao.Visible = False
         gbxResultadosElementos.Visible = True
+    End Sub
+
+    Private Sub ExibirImg2Elementos()
+        If (cboElementFixacao.SelectedIndex = 0) Then
+            imgSecao.Image = My.Resources.secao2elementosEspacador
+        ElseIf (cboElementFixacao.SelectedIndex = 1) Then
+            imgSecao.Image = My.Resources.secao2elementosChapa
+        Else
+        End If
+    End Sub
+
+    Private Sub ExibirImg3Elementos()
+        If (cboElementFixacao.SelectedIndex = 0) Then
+            imgSecao.Image = My.Resources.secao3elementosEspacador
+        ElseIf (cboElementFixacao.SelectedIndex = 1) Then
+            imgSecao.Image = My.Resources.secao3elementosChapa
+        Else
+        End If
     End Sub
 
     'ROTINA PARA ATUALIZAR AS PROPRIEDADES GEOMÉTRICAS SEM DEPENDER DA MADEIRA SELECIONADA
@@ -603,6 +611,8 @@ Por favor, insira a vinculação da peça.")
             lblValidacaoTensaoTracao.ForeColor = Color.Red
             TabDadosIniciais.Select()
         End If
+
+        lblValidacaoTensaoTracao.Visible = (PropriedadesResistencia.verificaVazio(txtNormal.Text) <> 0) And cboTracaoCompressao.Text = "Tração"
 
         'VALIDAÇÃO ESBELTEZ X:
         If PropriedadesResistencia.validarEsbeltezTracaoX(madeiraSelecionada.Tracao.EsbeltezTracaoX) Then
@@ -939,11 +949,11 @@ Por favor, insira a vinculação da peça.")
         End If
     End Sub
     Private Sub ResistCalculo()
-        madeiraSelecionada.ResistenciaCalculo.resistCalculoCompressaoParalela = PropriedadesResistencia.resistCalCompParalela(kmod, madeiraSelecionada.ResistCompParalela)
-        madeiraSelecionada.ResistenciaCalculo.resistCalculoTracaoParalela = PropriedadesResistencia.resistCalTracaoParalela(kmod, madeiraSelecionada.ResistTracaoParalela)
-        madeiraSelecionada.ResistenciaCalculo.resistCalculoTracaNormal = PropriedadesResistencia.resistCalTracaoNormal(kmod, madeiraSelecionada.ResistTracaoNormal)
-        madeiraSelecionada.ResistenciaCalculo.resistCalculoAoCisalhamento = PropriedadesResistencia.resistCalAoCisalhamento(kmod, madeiraSelecionada.ResistAoCisalhamento)
-        Dim modElasticidade = PropriedadesResistencia.ModElasticidade(kmod, madeiraSelecionada.ModElasticidade)
+        madeiraSelecionada.ResistenciaCalculo.resistCalculoCompressaoParalela = PropriedadesResistencia.resistCalCompParalela(madeiraSelecionada.Kmod, madeiraSelecionada.ResistCompParalela)
+        madeiraSelecionada.ResistenciaCalculo.resistCalculoTracaoParalela = PropriedadesResistencia.resistCalTracaoParalela(madeiraSelecionada.Kmod, madeiraSelecionada.ResistTracaoParalela)
+        madeiraSelecionada.ResistenciaCalculo.resistCalculoTracaNormal = PropriedadesResistencia.resistCalTracaoNormal(madeiraSelecionada.Kmod, madeiraSelecionada.ResistTracaoNormal)
+        madeiraSelecionada.ResistenciaCalculo.resistCalculoAoCisalhamento = PropriedadesResistencia.resistCalAoCisalhamento(madeiraSelecionada.Kmod, madeiraSelecionada.ResistAoCisalhamento)
+        Dim modElasticidade = PropriedadesResistencia.ModElasticidade(madeiraSelecionada.Kmod, madeiraSelecionada.ModElasticidade)
         madeiraSelecionada.ResistenciaCalculo.moduloElasticidade = modElasticidade
         madeiraSelecionada.ResistenciaCalculo.moduloElasticidadeTransversal = PropriedadesResistencia.ModElasticidadeTransversal(modElasticidade)
         madeiraSelecionada.ResistenciaCalculo.densidadeAparente = (madeiraSelecionada.DensAparente)
@@ -1540,7 +1550,8 @@ Por favor, insira a vinculação da peça.")
     End Sub
 
     Private Sub PictureBox9_Click(sender As Object, e As EventArgs) Handles PictureBox9.Click
-        Dim gerarPdf As GeradorPDF = New GeradorPDF(madeiraSelecionada)
+        RegraExibicao()
+        Dim gerarPdf As GeradorPDF = New GeradorPDF(madeiraSelecionada, exibicao)
         gerarPdf.GerarRelatorio()
     End Sub
 
@@ -1567,6 +1578,16 @@ Por favor, insira a vinculação da peça.")
     Private Sub SalvarToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SalvarToolStripMenuItem.Click
         'Projeto.Update()
         ' CBackupFile.SalvarArquivoBin(Projeto, 1)
+    End Sub
+
+    Private Sub cboElementFixacao_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboElementFixacao.SelectedIndexChanged
+        If (rbt2Elementos.Checked) Then
+            ExibirImg2Elementos()
+        End If
+
+        If (rbt3Elementos.Checked) Then
+            ExibirImg3Elementos()
+        End If
     End Sub
 
     'rotina para chamar o valor de L1 nos esforços de compressão
@@ -1625,6 +1646,13 @@ Por favor, insira a vinculação da peça.")
                 madeiraSelecionada.PropriedadesGeometricas.h3c = txtEntradaCaixaoH3.Text 'OK
                 madeiraSelecionada.PropriedadesGeometricas.h4c = txtEntradaCaixaoH4.Text 'OK
         End Select
+    End Sub
+
+    Private Sub RegraExibicao()
+        exibicao.ExibeTracao = PropriedadesResistencia.verificaVazio(txtNormal.Text.ToString) <> 0 And cboTracaoCompressao.SelectedIndex = 0
+        exibicao.ExibeCompressao = PropriedadesResistencia.verificaVazio(txtNormal.Text.ToString) <> 0 And cboTracaoCompressao.SelectedIndex = 1
+        exibicao.ExibeCisalhamento = True
+        exibicao.ExibeFlexao = True
     End Sub
 
 End Class

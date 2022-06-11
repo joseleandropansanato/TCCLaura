@@ -1,11 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "JR4losfmMmRx45c15oGiLfWWa7n1K8WAMM5ekOZBAbnUc7Yr18wvsSkS54YEER3Zoq/Of/E4rNUiHQdV/G0oSQ==",
+  "dgSpecHash": "LALASREdBmYdkRYVNhKN8MjsESC9LWR0uAvZ88v9LVqQ9PmKcxUVUNGk8offmUjx8H9Rad04ureGe/dO2aZCuw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Usuario\\Documents\\git\\TCCLaura\\TCC2 - Copia\\TCC2\\TCC2.vbproj",
+  "projectFilePath": "C:\\Users\\José Leandro\\source\\repos\\joseleandropansanato\\TCCLaura\\TCC2 - Copia\\TCC2\\TCC2.vbproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Usuario\\.nuget\\packages\\bouncycastle\\1.8.9\\bouncycastle.1.8.9.nupkg.sha512",
-    "C:\\Users\\Usuario\\.nuget\\packages\\itextsharp\\5.5.13.3\\itextsharp.5.5.13.3.nupkg.sha512"
+    "C:\\Users\\José Leandro\\.nuget\\packages\\bouncycastle\\1.8.9\\bouncycastle.1.8.9.nupkg.sha512",
+    "C:\\Users\\José Leandro\\.nuget\\packages\\itextsharp\\5.5.13.3\\itextsharp.5.5.13.3.nupkg.sha512"
   ],
   "logs": [
     {
