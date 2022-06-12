@@ -12,8 +12,7 @@
         gbxResistCalc.Visible = False
         gbxDInici.Visible = False
         lblbemVindo.Visible = False
-        lblao.Visible = False
-        lblname.Visible = False
+
     End Sub
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
@@ -22,9 +21,6 @@
         gbxResistCalc.Visible = True
         gbxDInici.Visible = False
         lblbemVindo.Visible = False
-        lblao.Visible = False
-        lblname.Visible = False
-
     End Sub
 
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
@@ -33,9 +29,6 @@
         gbxResistCalc.Visible = False
         gbxDInici.Visible = True
         lblbemVindo.Visible = False
-        lblao.Visible = False
-        lblname.Visible = False
-
     End Sub
 
 End Class

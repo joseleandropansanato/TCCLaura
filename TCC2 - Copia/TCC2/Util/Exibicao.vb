@@ -3,7 +3,12 @@
     Private _exibeTracao As Boolean = True
     Private _exibeCompressao As Boolean = True
     Private _exibeCisalhamento As Boolean = True
-    Private _exibeFlexao As Boolean = True
+    Private _exibeFlexaoSimplesReta As Boolean = True
+    Private _exibeFlexaoSimplesObliqua As Boolean = True
+    Private _exibeFlexoTracao As Boolean = True
+    Private _exibeFlexoCompressao As Boolean = True
+    Private _exibeProprSimples As Boolean = True
+    Private _exibeProprComp As Boolean = True
 
     Public Sub New()
 
@@ -36,13 +41,56 @@
         End Set
     End Property
 
-    Public Property ExibeFlexao() As Boolean
+    Public Property ExibeFlexaoSimplesReta() As Boolean
         Get
-            Return _exibeFlexao
+            Return _exibeFlexaoSimplesReta
         End Get
         Set(value As Boolean)
-            _exibeFlexao = value
+            _exibeFlexaoSimplesReta = value
         End Set
     End Property
+
+    Public Property ExibeFlexaoSimplesObliqua() As Boolean
+        Get
+            Return _exibeFlexaoSimplesObliqua
+        End Get
+        Set(value As Boolean)
+            _exibeFlexaoSimplesObliqua = value
+        End Set
+    End Property
+    Public Property ExibeFlexoTracao() As Boolean
+        Get
+            Return _exibeFlexoTracao
+        End Get
+        Set(value As Boolean)
+            _exibeFlexoTracao = value
+        End Set
+    End Property
+    Public Property ExibeFlexoCompressao() As Boolean
+        Get
+            Return _exibeFlexoCompressao
+        End Get
+        Set(value As Boolean)
+            _exibeFlexoCompressao = value
+        End Set
+    End Property
+    Public Property ExibeProprSimples() As Boolean
+        Get
+            Return _exibeProprSimples
+        End Get
+        Set(value As Boolean)
+            _exibeProprSimples = value
+        End Set
+    End Property
+
+    Public Property ExibeProprComp() As Boolean
+        Get
+            Return _exibeProprComp
+        End Get
+        Set(value As Boolean)
+            _exibeProprComp = value
+        End Set
+    End Property
+
 
 End Class

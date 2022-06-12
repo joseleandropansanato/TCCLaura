@@ -68,11 +68,11 @@
             Case Madeira.TipoSecao.ElementosJustaposto2
                 'acho que nao precisa disso, pq na vdd o pilar nao sofra forças axiais de tração??
                 If ElementoJustaposto(c, b1, a, elementoFixacaoSelecionado) Then
-                    tracao.TensaoTracao = ((normalTracao / proprGeo.Area) * 10)
+                    tracao.TensaoTracao = ((normalTracao / (2 * proprGeo.AreaA1)) * 10)
                 End If
             Case Madeira.TipoSecao.ElementosJustaposto3
                 If ElementoJustaposto(c, b1, a, elementoFixacaoSelecionado) Then
-                    tracao.TensaoTracao = ((normalTracao / proprGeo.Area) * 10)
+                    tracao.TensaoTracao = ((normalTracao / (3 * proprGeo.AreaA1)) * 10)
                 End If
         End Select
 

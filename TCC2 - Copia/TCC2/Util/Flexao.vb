@@ -103,25 +103,46 @@
 
 
             Case Madeira.TipoSecao.SecaoT
-                flex.tensaoCX = ((momentoFletorY * 100) * PropriedadesGeometricas.centroGeometricoX) / proprGeo.EixoXmi
-                flex.tensaoTX = ((momentoFletorY * 100) * PropriedadesGeometricas.centroGeometricoX) / proprGeo.EixoYmi
+                If momentoFletorX > 0 Or momentoFletorY > 0 Then
 
-                flex.tensaoCY = ((momentoFletorX * 100) * PropriedadesGeometricas.centroGeometricoY) / proprGeo.EixoXmi
-                flex.tensaoTY = ((momentoFletorX * 100) * PropriedadesGeometricas.centroGeometricoY) / proprGeo.EixoYmi
+                    flex.tensaoCX = ((momentoFletorY * 100) * PropriedadesGeometricas.centroGeometricoX) / proprGeo.EixoXmi
+                    flex.tensaoTX = ((momentoFletorY * 100) * PropriedadesGeometricas.centroGeometricoX) / proprGeo.EixoYmi
+
+                    flex.tensaoCY = ((momentoFletorX * 100) * PropriedadesGeometricas.centroGeometricoY) / proprGeo.EixoXmi
+                    flex.tensaoTY = ((momentoFletorX * 100) * PropriedadesGeometricas.centroGeometricoY) / proprGeo.EixoYmi
+
+                ElseIf momentoFletorX < 0 Or momentoFletorY < 0 Then
+
+                End If
+
 
             Case Madeira.TipoSecao.SecaoI
-                flex.tensaoCX = ((momentoFletorY * 100) * PropriedadesGeometricas.centroGeometricoX) / proprGeo.EixoXmi
-                flex.tensaoTX = ((momentoFletorY * 100) * PropriedadesGeometricas.centroGeometricoX) / proprGeo.EixoYmi
 
-                flex.tensaoCY = ((momentoFletorX * 100) * PropriedadesGeometricas.centroGeometricoY) / proprGeo.EixoXmi
-                flex.tensaoTY = ((momentoFletorX * 100) * PropriedadesGeometricas.centroGeometricoY) / proprGeo.EixoYmi
+                If momentoFletorX > 0 Or momentoFletorY > 0 Then
+                    flex.tensaoCX = ((momentoFletorY * 100) * PropriedadesGeometricas.centroGeometricoX) / proprGeo.EixoXmi
+                    flex.tensaoTX = ((momentoFletorY * 100) * PropriedadesGeometricas.centroGeometricoX) / proprGeo.EixoYmi
+
+                    flex.tensaoCY = ((momentoFletorX * 100) * PropriedadesGeometricas.centroGeometricoY) / proprGeo.EixoXmi
+                    flex.tensaoTY = ((momentoFletorX * 100) * PropriedadesGeometricas.centroGeometricoY) / proprGeo.EixoYmi
+
+                ElseIf momentoFletorX < 0 Or momentoFletorY < 0 Then
+
+                End If
+
 
             Case Madeira.TipoSecao.Caixao
-                flex.tensaoCX = ((momentoFletorY * 100) * PropriedadesGeometricas.centroGeometricoX) / proprGeo.EixoXmi
-                flex.tensaoTX = ((momentoFletorY * 100) * PropriedadesGeometricas.centroGeometricoX) / proprGeo.EixoYmi
 
-                flex.tensaoCY = ((momentoFletorX * 100) * PropriedadesGeometricas.centroGeometricoY) / proprGeo.EixoXmi
-                flex.tensaoTY = ((momentoFletorX * 100) * PropriedadesGeometricas.centroGeometricoY) / proprGeo.EixoYmi
+                If momentoFletorX > 0 Or momentoFletorY > 0 Then
+                    flex.tensaoCX = ((momentoFletorY * 100) * PropriedadesGeometricas.centroGeometricoX) / proprGeo.EixoXmi
+                    flex.tensaoTX = ((momentoFletorY * 100) * PropriedadesGeometricas.centroGeometricoX) / proprGeo.EixoYmi
+
+                    flex.tensaoCY = ((momentoFletorX * 100) * PropriedadesGeometricas.centroGeometricoY) / proprGeo.EixoXmi
+                    flex.tensaoTY = ((momentoFletorX * 100) * PropriedadesGeometricas.centroGeometricoY) / proprGeo.EixoYmi
+
+                ElseIf momentoFletorX < 0 Or momentoFletorY < 0 Then
+
+                End If
+
 
                 flex.ApoioX = fx / proprGeo.Area
                 flex.ApoioY = fy / proprGeo.Area

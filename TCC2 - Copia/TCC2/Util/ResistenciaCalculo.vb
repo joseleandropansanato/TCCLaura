@@ -8,6 +8,4 @@
 	Public Shared moduloElasticidade As Double = 0 'ec0,ef
 	Public Shared moduloElasticidadeTransversal As Double = 0 'gef
 	Public Shared densidadeAparente As Double = 0
-
-
 End Class

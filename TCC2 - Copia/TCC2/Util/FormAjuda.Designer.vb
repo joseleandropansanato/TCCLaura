@@ -32,8 +32,6 @@ Partial Class FormAjuda
         Me.gbxInicio = New System.Windows.Forms.GroupBox()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.lblao = New System.Windows.Forms.Label()
-        Me.lblname = New System.Windows.Forms.Label()
         Me.gbxResistCalc = New System.Windows.Forms.GroupBox()
         Me.TableLayoutPanel3 = New System.Windows.Forms.TableLayoutPanel()
         Me.Label12 = New System.Windows.Forms.Label()
@@ -162,26 +160,6 @@ Partial Class FormAjuda
         Me.Label2.TabIndex = 0
         Me.Label2.Text = resources.GetString("Label2.Text")
         Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'lblao
-        '
-        Me.lblao.AutoSize = True
-        Me.lblao.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.lblao.Location = New System.Drawing.Point(434, 70)
-        Me.lblao.Name = "lblao"
-        Me.lblao.Size = New System.Drawing.Size(29, 23)
-        Me.lblao.TabIndex = 3
-        Me.lblao.Text = "ao"
-        '
-        'lblname
-        '
-        Me.lblname.AutoSize = True
-        Me.lblname.Font = New System.Drawing.Font("Segoe UI", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.lblname.Location = New System.Drawing.Point(406, 93)
-        Me.lblname.Name = "lblname"
-        Me.lblname.Size = New System.Drawing.Size(81, 31)
-        Me.lblname.TabIndex = 2
-        Me.lblname.Text = "NOME"
         '
         'gbxResistCalc
         '
@@ -352,10 +330,8 @@ Partial Class FormAjuda
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(724, 407)
         Me.Controls.Add(Me.gbxDInici)
-        Me.Controls.Add(Me.lblao)
-        Me.Controls.Add(Me.gbxResistCalc)
-        Me.Controls.Add(Me.lblname)
         Me.Controls.Add(Me.gbxProprMad)
+        Me.Controls.Add(Me.gbxResistCalc)
         Me.Controls.Add(Me.lblbemVindo)
         Me.Controls.Add(Me.gbxInicio)
         Me.Controls.Add(Me.GroupBox1)
@@ -408,6 +384,4 @@ Partial Class FormAjuda
     Friend WithEvents Label5 As Label
     Friend WithEvents Label10 As Label
     Friend WithEvents lblbemVindo As Label
-    Friend WithEvents lblao As Label
-    Friend WithEvents lblname As Label
 End Class

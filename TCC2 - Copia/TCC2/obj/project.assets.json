@@ -62,24 +62,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\José Leandro\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\Usuario\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\José Leandro\\source\\repos\\joseleandropansanato\\TCCLaura\\TCC2 - Copia\\TCC2\\TCC2.vbproj",
+      "projectUniqueName": "C:\\Users\\Usuario\\Documents\\git\\TCCLaura\\TCC2 - Copia\\TCC2\\TCC2.vbproj",
       "projectName": "TCC2",
-      "projectPath": "C:\\Users\\José Leandro\\source\\repos\\joseleandropansanato\\TCCLaura\\TCC2 - Copia\\TCC2\\TCC2.vbproj",
-      "packagesPath": "C:\\Users\\José Leandro\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\José Leandro\\source\\repos\\joseleandropansanato\\TCCLaura\\TCC2 - Copia\\TCC2\\obj\\",
+      "projectPath": "C:\\Users\\Usuario\\Documents\\git\\TCCLaura\\TCC2 - Copia\\TCC2\\TCC2.vbproj",
+      "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Usuario\\Documents\\git\\TCCLaura\\TCC2 - Copia\\TCC2\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\José Leandro\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\Usuario\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -128,7 +123,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
       }
     }
   },

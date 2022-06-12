@@ -133,6 +133,22 @@ Partial Class Form1
         Me.Label27 = New System.Windows.Forms.Label()
         Me.txtKmod = New System.Windows.Forms.TextBox()
         Me.TabDadosIniciais = New System.Windows.Forms.TabPage()
+        Me.gbx2Elementos = New System.Windows.Forms.GroupBox()
+        Me.txtEntrada2b1 = New System.Windows.Forms.TextBox()
+        Me.Label223 = New System.Windows.Forms.Label()
+        Me.Label303 = New System.Windows.Forms.Label()
+        Me.txtEntrada2h1 = New System.Windows.Forms.TextBox()
+        Me.txtEntrada2a1 = New System.Windows.Forms.TextBox()
+        Me.txtEntrada2L1 = New System.Windows.Forms.TextBox()
+        Me.txtEntrada2L = New System.Windows.Forms.TextBox()
+        Me.Label132 = New System.Windows.Forms.Label()
+        Me.Label133 = New System.Windows.Forms.Label()
+        Me.Label137 = New System.Windows.Forms.Label()
+        Me.Label178 = New System.Windows.Forms.Label()
+        Me.Label180 = New System.Windows.Forms.Label()
+        Me.Label206 = New System.Windows.Forms.Label()
+        Me.Label220 = New System.Windows.Forms.Label()
+        Me.Label222 = New System.Windows.Forms.Label()
         Me.gbx3Elementos = New System.Windows.Forms.GroupBox()
         Me.txtEntrada3L = New System.Windows.Forms.TextBox()
         Me.Label359 = New System.Windows.Forms.Label()
@@ -233,22 +249,6 @@ Partial Class Form1
         Me.Label51 = New System.Windows.Forms.Label()
         Me.PictureBox4 = New System.Windows.Forms.PictureBox()
         Me.imgSecao = New System.Windows.Forms.PictureBox()
-        Me.gbx2Elementos = New System.Windows.Forms.GroupBox()
-        Me.txtEntrada2b1 = New System.Windows.Forms.TextBox()
-        Me.Label223 = New System.Windows.Forms.Label()
-        Me.Label303 = New System.Windows.Forms.Label()
-        Me.txtEntrada2h1 = New System.Windows.Forms.TextBox()
-        Me.txtEntrada2a1 = New System.Windows.Forms.TextBox()
-        Me.txtEntrada2L1 = New System.Windows.Forms.TextBox()
-        Me.txtEntrada2L = New System.Windows.Forms.TextBox()
-        Me.Label132 = New System.Windows.Forms.Label()
-        Me.Label133 = New System.Windows.Forms.Label()
-        Me.Label137 = New System.Windows.Forms.Label()
-        Me.Label178 = New System.Windows.Forms.Label()
-        Me.Label180 = New System.Windows.Forms.Label()
-        Me.Label206 = New System.Windows.Forms.Label()
-        Me.Label220 = New System.Windows.Forms.Label()
-        Me.Label222 = New System.Windows.Forms.Label()
         Me.gbxCompostaI = New System.Windows.Forms.GroupBox()
         Me.txtIComp = New System.Windows.Forms.TextBox()
         Me.txtEntradaIH = New System.Windows.Forms.TextBox()
@@ -450,6 +450,7 @@ Partial Class Form1
         Me.lblClassifEsbeltezX = New System.Windows.Forms.Label()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.gbxEixoYMediEsbelta = New System.Windows.Forms.GroupBox()
+        Me.Label31 = New System.Windows.Forms.Label()
         Me.txtEixoYY = New System.Windows.Forms.TextBox()
         Me.Label261 = New System.Windows.Forms.Label()
         Me.lblValidacaoYComp = New System.Windows.Forms.Label()
@@ -482,6 +483,8 @@ Partial Class Form1
         Me.txtForçaElasticaY = New System.Windows.Forms.TextBox()
         Me.Label462 = New System.Windows.Forms.Label()
         Me.gbxEixoXMediEsbelta = New System.Windows.Forms.GroupBox()
+        Me.Label29 = New System.Windows.Forms.Label()
+        Me.txtEixoXX = New System.Windows.Forms.TextBox()
         Me.Label84 = New System.Windows.Forms.Label()
         Me.Label235 = New System.Windows.Forms.Label()
         Me.txtTensaoCompressaoX = New System.Windows.Forms.TextBox()
@@ -818,13 +821,13 @@ Partial Class Form1
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit
         Me.GroupBox7.SuspendLayout
         Me.TabDadosIniciais.SuspendLayout
+        Me.gbx2Elementos.SuspendLayout
         Me.gbx3Elementos.SuspendLayout
         Me.gbxCompostaCaixao.SuspendLayout
         Me.gbxCompostaT.SuspendLayout
         Me.gbxVinculacao.SuspendLayout
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit
         CType(Me.imgSecao, System.ComponentModel.ISupportInitialize).BeginInit
-        Me.gbx2Elementos.SuspendLayout
         Me.gbxCompostaI.SuspendLayout
         Me.gbxCircular.SuspendLayout
         Me.GroupBox23.SuspendLayout
@@ -896,32 +899,32 @@ Partial Class Form1
         '
         Me.ArquivoToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.NovoProjetoToolStripMenuItem, Me.SalvarToolStripMenuItem, Me.SairToolStripMenuItem})
         Me.ArquivoToolStripMenuItem1.Name = "ArquivoToolStripMenuItem1"
-        Me.ArquivoToolStripMenuItem1.Size = New System.Drawing.Size(73, 30)
+        Me.ArquivoToolStripMenuItem1.Size = New System.Drawing.Size(88, 30)
         Me.ArquivoToolStripMenuItem1.Text = "Arquivo "
         '
         'NovoProjetoToolStripMenuItem
         '
         Me.NovoProjetoToolStripMenuItem.Name = "NovoProjetoToolStripMenuItem"
-        Me.NovoProjetoToolStripMenuItem.Size = New System.Drawing.Size(167, 26)
+        Me.NovoProjetoToolStripMenuItem.Size = New System.Drawing.Size(200, 28)
         Me.NovoProjetoToolStripMenuItem.Text = "Novo projeto "
         '
         'SalvarToolStripMenuItem
         '
         Me.SalvarToolStripMenuItem.Image = CType(resources.GetObject("SalvarToolStripMenuItem.Image"), System.Drawing.Image)
         Me.SalvarToolStripMenuItem.Name = "SalvarToolStripMenuItem"
-        Me.SalvarToolStripMenuItem.Size = New System.Drawing.Size(167, 26)
+        Me.SalvarToolStripMenuItem.Size = New System.Drawing.Size(200, 28)
         Me.SalvarToolStripMenuItem.Text = "Salvar"
         '
         'SairToolStripMenuItem
         '
         Me.SairToolStripMenuItem.Name = "SairToolStripMenuItem"
-        Me.SairToolStripMenuItem.Size = New System.Drawing.Size(167, 26)
+        Me.SairToolStripMenuItem.Size = New System.Drawing.Size(200, 28)
         Me.SairToolStripMenuItem.Text = "Sair"
         '
         'AjudaToolStripMenuItem1
         '
         Me.AjudaToolStripMenuItem1.Name = "AjudaToolStripMenuItem1"
-        Me.AjudaToolStripMenuItem1.Size = New System.Drawing.Size(56, 30)
+        Me.AjudaToolStripMenuItem1.Size = New System.Drawing.Size(68, 30)
         Me.AjudaToolStripMenuItem1.Text = "Ajuda"
         '
         'StatusStrip1
@@ -937,7 +940,7 @@ Partial Class Form1
         'lbldata
         '
         Me.lbldata.Name = "lbldata"
-        Me.lbldata.Size = New System.Drawing.Size(0, 17)
+        Me.lbldata.Size = New System.Drawing.Size(0, 16)
         '
         'GroupBox8
         '
@@ -980,7 +983,7 @@ Partial Class Form1
         Me.Label229.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label229.Location = New System.Drawing.Point(339, 157)
         Me.Label229.Name = "Label229"
-        Me.Label229.Size = New System.Drawing.Size(37, 19)
+        Me.Label229.Size = New System.Drawing.Size(43, 23)
         Me.Label229.TabIndex = 85
         Me.Label229.Text = "MPa"
         '
@@ -993,7 +996,7 @@ Partial Class Form1
         Me.txtRcParalela.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txtRcParalela.MaxLength = 5
         Me.txtRcParalela.Name = "txtRcParalela"
-        Me.txtRcParalela.Size = New System.Drawing.Size(68, 26)
+        Me.txtRcParalela.Size = New System.Drawing.Size(68, 30)
         Me.txtRcParalela.TabIndex = 70
         '
         'txtRCisalhamento
@@ -1005,7 +1008,7 @@ Partial Class Form1
         Me.txtRCisalhamento.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txtRCisalhamento.MaxLength = 5
         Me.txtRCisalhamento.Name = "txtRCisalhamento"
-        Me.txtRCisalhamento.Size = New System.Drawing.Size(68, 26)
+        Me.txtRCisalhamento.Size = New System.Drawing.Size(68, 30)
         Me.txtRCisalhamento.TabIndex = 80
         '
         'txtMeTransversal
@@ -1016,7 +1019,7 @@ Partial Class Form1
         Me.txtMeTransversal.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txtMeTransversal.MaxLength = 5
         Me.txtMeTransversal.Name = "txtMeTransversal"
-        Me.txtMeTransversal.Size = New System.Drawing.Size(68, 26)
+        Me.txtMeTransversal.Size = New System.Drawing.Size(68, 30)
         Me.txtMeTransversal.TabIndex = 30
         '
         'Label296
@@ -1026,7 +1029,7 @@ Partial Class Form1
         Me.Label296.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label296.Location = New System.Drawing.Point(339, 77)
         Me.Label296.Name = "Label296"
-        Me.Label296.Size = New System.Drawing.Size(37, 19)
+        Me.Label296.Size = New System.Drawing.Size(43, 23)
         Me.Label296.TabIndex = 71
         Me.Label296.Text = "MPa"
         '
@@ -1037,7 +1040,7 @@ Partial Class Form1
         Me.Label290.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label290.Location = New System.Drawing.Point(19, 37)
         Me.Label290.Name = "Label290"
-        Me.Label290.Size = New System.Drawing.Size(257, 19)
+        Me.Label290.Size = New System.Drawing.Size(320, 23)
         Me.Label290.TabIndex = 78
         Me.Label290.Text = "Resistência à Compressão Paralela (fc,0): "
         '
@@ -1048,7 +1051,7 @@ Partial Class Form1
         Me.Label294.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label294.Location = New System.Drawing.Point(339, 37)
         Me.Label294.Name = "Label294"
-        Me.Label294.Size = New System.Drawing.Size(37, 19)
+        Me.Label294.Size = New System.Drawing.Size(43, 23)
         Me.Label294.TabIndex = 69
         Me.Label294.Text = "MPa"
         '
@@ -1058,7 +1061,7 @@ Partial Class Form1
         Me.Label34.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label34.Location = New System.Drawing.Point(339, 237)
         Me.Label34.Name = "Label34"
-        Me.Label34.Size = New System.Drawing.Size(37, 19)
+        Me.Label34.Size = New System.Drawing.Size(43, 23)
         Me.Label34.TabIndex = 31
         Me.Label34.Text = "MPa"
         '
@@ -1069,7 +1072,7 @@ Partial Class Form1
         Me.Label301.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label301.Location = New System.Drawing.Point(17, 237)
         Me.Label301.Name = "Label301"
-        Me.Label301.Size = New System.Drawing.Size(257, 19)
+        Me.Label301.Size = New System.Drawing.Size(320, 23)
         Me.Label301.TabIndex = 84
         Me.Label301.Text = "Módulo de Elasticidade Transversal (Gef):"
         '
@@ -1082,7 +1085,7 @@ Partial Class Form1
         Me.txtDAparente.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txtDAparente.MaxLength = 5
         Me.txtDAparente.Name = "txtDAparente"
-        Me.txtDAparente.Size = New System.Drawing.Size(68, 26)
+        Me.txtDAparente.Size = New System.Drawing.Size(68, 30)
         Me.txtDAparente.TabIndex = 82
         '
         'Label297
@@ -1092,7 +1095,7 @@ Partial Class Form1
         Me.Label297.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label297.Location = New System.Drawing.Point(339, 117)
         Me.Label297.Name = "Label297"
-        Me.Label297.Size = New System.Drawing.Size(37, 19)
+        Me.Label297.Size = New System.Drawing.Size(43, 23)
         Me.Label297.TabIndex = 72
         Me.Label297.Text = "MPa"
         '
@@ -1103,7 +1106,7 @@ Partial Class Form1
         Me.Label300.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label300.Location = New System.Drawing.Point(339, 277)
         Me.Label300.Name = "Label300"
-        Me.Label300.Size = New System.Drawing.Size(46, 19)
+        Me.Label300.Size = New System.Drawing.Size(56, 23)
         Me.Label300.TabIndex = 74
         Me.Label300.Text = "kg/m³"
         '
@@ -1116,7 +1119,7 @@ Partial Class Form1
         Me.txtMElasticidade.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txtMElasticidade.MaxLength = 5
         Me.txtMElasticidade.Name = "txtMElasticidade"
-        Me.txtMElasticidade.Size = New System.Drawing.Size(68, 26)
+        Me.txtMElasticidade.Size = New System.Drawing.Size(68, 30)
         Me.txtMElasticidade.TabIndex = 81
         '
         'Label119
@@ -1126,7 +1129,7 @@ Partial Class Form1
         Me.Label119.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label119.Location = New System.Drawing.Point(66, 157)
         Me.Label119.Name = "Label119"
-        Me.Label119.Size = New System.Drawing.Size(207, 19)
+        Me.Label119.Size = New System.Drawing.Size(258, 23)
         Me.Label119.TabIndex = 75
         Me.Label119.Text = "Resistência ao Cisalhamento (fv):" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
         '
@@ -1139,7 +1142,7 @@ Partial Class Form1
         Me.txtRtNormal.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txtRtNormal.MaxLength = 5
         Me.txtRtNormal.Name = "txtRtNormal"
-        Me.txtRtNormal.Size = New System.Drawing.Size(68, 26)
+        Me.txtRtNormal.Size = New System.Drawing.Size(68, 30)
         Me.txtRtNormal.TabIndex = 79
         '
         'Label299
@@ -1149,7 +1152,7 @@ Partial Class Form1
         Me.Label299.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label299.Location = New System.Drawing.Point(339, 197)
         Me.Label299.Name = "Label299"
-        Me.Label299.Size = New System.Drawing.Size(37, 19)
+        Me.Label299.Size = New System.Drawing.Size(43, 23)
         Me.Label299.TabIndex = 73
         Me.Label299.Text = "MPa"
         '
@@ -1160,7 +1163,7 @@ Partial Class Form1
         Me.Label291.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label291.Location = New System.Drawing.Point(51, 117)
         Me.Label291.Name = "Label291"
-        Me.Label291.Size = New System.Drawing.Size(221, 19)
+        Me.Label291.Size = New System.Drawing.Size(276, 23)
         Me.Label291.TabIndex = 66
         Me.Label291.Text = "Resistência à Tração Normal (ft,90):" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
         '
@@ -1173,7 +1176,7 @@ Partial Class Form1
         Me.txtRtParalelo.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txtRtParalelo.MaxLength = 5
         Me.txtRtParalelo.Name = "txtRtParalelo"
-        Me.txtRtParalelo.Size = New System.Drawing.Size(68, 26)
+        Me.txtRtParalelo.Size = New System.Drawing.Size(68, 30)
         Me.txtRtParalelo.TabIndex = 77
         '
         'Label8
@@ -1182,7 +1185,7 @@ Partial Class Form1
         Me.Label8.Font = New System.Drawing.Font("Symbol", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label8.Location = New System.Drawing.Point(243, 279)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(31, 17)
+        Me.Label8.Size = New System.Drawing.Size(37, 21)
         Me.Label8.TabIndex = 83
         Me.Label8.Text = "(a):"
         '
@@ -1193,7 +1196,7 @@ Partial Class Form1
         Me.Label127.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label127.Location = New System.Drawing.Point(85, 197)
         Me.Label127.Name = "Label127"
-        Me.Label127.Size = New System.Drawing.Size(189, 19)
+        Me.Label127.Size = New System.Drawing.Size(236, 23)
         Me.Label127.TabIndex = 67
         Me.Label127.Text = "Módulo de Elasticidade (Ec,0):"
         '
@@ -1204,7 +1207,7 @@ Partial Class Form1
         Me.Label292.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label292.Location = New System.Drawing.Point(57, 77)
         Me.Label292.Name = "Label292"
-        Me.Label292.Size = New System.Drawing.Size(215, 19)
+        Me.Label292.Size = New System.Drawing.Size(269, 23)
         Me.Label292.TabIndex = 65
         Me.Label292.Text = "Resistência à Tração Paralela (ft,0):"
         '
@@ -1215,7 +1218,7 @@ Partial Class Form1
         Me.Label293.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label293.Location = New System.Drawing.Point(118, 277)
         Me.Label293.Name = "Label293"
-        Me.Label293.Size = New System.Drawing.Size(133, 19)
+        Me.Label293.Size = New System.Drawing.Size(165, 23)
         Me.Label293.TabIndex = 68
         Me.Label293.Text = "Densidade Aparente"
         '
@@ -1242,11 +1245,11 @@ Partial Class Form1
         '
         Me.TabPropriedadesMadeiras.Controls.Add(Me.GroupBox2)
         Me.TabPropriedadesMadeiras.Controls.Add(Me.GroupBox1)
-        Me.TabPropriedadesMadeiras.Location = New System.Drawing.Point(4, 28)
+        Me.TabPropriedadesMadeiras.Location = New System.Drawing.Point(4, 32)
         Me.TabPropriedadesMadeiras.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.TabPropriedadesMadeiras.Name = "TabPropriedadesMadeiras"
         Me.TabPropriedadesMadeiras.Padding = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.TabPropriedadesMadeiras.Size = New System.Drawing.Size(1068, 538)
+        Me.TabPropriedadesMadeiras.Size = New System.Drawing.Size(1068, 534)
         Me.TabPropriedadesMadeiras.TabIndex = 1
         Me.TabPropriedadesMadeiras.Text = "Propriedades da Madeira"
         Me.TabPropriedadesMadeiras.UseVisualStyleBackColor = True
@@ -1294,7 +1297,7 @@ Partial Class Form1
         Me.txtModElasticidade.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txtModElasticidade.MaxLength = 5
         Me.txtModElasticidade.Name = "txtModElasticidade"
-        Me.txtModElasticidade.Size = New System.Drawing.Size(68, 26)
+        Me.txtModElasticidade.Size = New System.Drawing.Size(68, 30)
         Me.txtModElasticidade.TabIndex = 32
         '
         'Label11
@@ -1304,7 +1307,7 @@ Partial Class Form1
         Me.Label11.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label11.Location = New System.Drawing.Point(337, 78)
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(37, 19)
+        Me.Label11.Size = New System.Drawing.Size(43, 23)
         Me.Label11.TabIndex = 15
         Me.Label11.Text = "MPa"
         '
@@ -1327,7 +1330,7 @@ Partial Class Form1
         Me.rbrValorNBR.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.rbrValorNBR.Location = New System.Drawing.Point(163, 30)
         Me.rbrValorNBR.Name = "rbrValorNBR"
-        Me.rbrValorNBR.Size = New System.Drawing.Size(306, 23)
+        Me.rbrValorNBR.Size = New System.Drawing.Size(378, 27)
         Me.rbrValorNBR.TabIndex = 28
         Me.rbrValorNBR.TabStop = True
         Me.rbrValorNBR.Text = "Valores tabelados de acordo com a NBR 7190"
@@ -1340,7 +1343,7 @@ Partial Class Form1
         Me.rbtInserirValores.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.rbtInserirValores.Location = New System.Drawing.Point(12, 30)
         Me.rbtInserirValores.Name = "rbtInserirValores"
-        Me.rbtInserirValores.Size = New System.Drawing.Size(112, 23)
+        Me.rbtInserirValores.Size = New System.Drawing.Size(136, 27)
         Me.rbtInserirValores.TabIndex = 27
         Me.rbtInserirValores.Text = "Inserir valores"
         Me.rbtInserirValores.UseVisualStyleBackColor = True
@@ -1354,7 +1357,7 @@ Partial Class Form1
         Me.txtResistCompParalela.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txtResistCompParalela.MaxLength = 5
         Me.txtResistCompParalela.Name = "txtResistCompParalela"
-        Me.txtResistCompParalela.Size = New System.Drawing.Size(68, 26)
+        Me.txtResistCompParalela.Size = New System.Drawing.Size(68, 30)
         Me.txtResistCompParalela.TabIndex = 16
         '
         'txtDensAparente
@@ -1366,7 +1369,7 @@ Partial Class Form1
         Me.txtDensAparente.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txtDensAparente.MaxLength = 5
         Me.txtDensAparente.Name = "txtDensAparente"
-        Me.txtDensAparente.Size = New System.Drawing.Size(68, 26)
+        Me.txtDensAparente.Size = New System.Drawing.Size(68, 30)
         Me.txtDensAparente.TabIndex = 33
         '
         'Label240
@@ -1376,7 +1379,7 @@ Partial Class Form1
         Me.Label240.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label240.Location = New System.Drawing.Point(16, 78)
         Me.Label240.Name = "Label240"
-        Me.Label240.Size = New System.Drawing.Size(257, 19)
+        Me.Label240.Size = New System.Drawing.Size(320, 23)
         Me.Label240.TabIndex = 29
         Me.Label240.Text = "Resistência à Compressão Paralela (fc,0): "
         '
@@ -1389,7 +1392,7 @@ Partial Class Form1
         Me.txtResistTracaoParalela.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txtResistTracaoParalela.MaxLength = 5
         Me.txtResistTracaoParalela.Name = "txtResistTracaoParalela"
-        Me.txtResistTracaoParalela.Size = New System.Drawing.Size(68, 26)
+        Me.txtResistTracaoParalela.Size = New System.Drawing.Size(68, 30)
         Me.txtResistTracaoParalela.TabIndex = 29
         '
         'Label14
@@ -1399,7 +1402,7 @@ Partial Class Form1
         Me.Label14.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label14.Location = New System.Drawing.Point(337, 278)
         Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(46, 19)
+        Me.Label14.Size = New System.Drawing.Size(56, 23)
         Me.Label14.TabIndex = 23
         Me.Label14.Text = "kg/m³"
         '
@@ -1412,7 +1415,7 @@ Partial Class Form1
         Me.txtResistTracaoNormal.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txtResistTracaoNormal.MaxLength = 5
         Me.txtResistTracaoNormal.Name = "txtResistTracaoNormal"
-        Me.txtResistTracaoNormal.Size = New System.Drawing.Size(68, 26)
+        Me.txtResistTracaoNormal.Size = New System.Drawing.Size(68, 30)
         Me.txtResistTracaoNormal.TabIndex = 30
         '
         'Label6
@@ -1422,7 +1425,7 @@ Partial Class Form1
         Me.Label6.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label6.Location = New System.Drawing.Point(54, 118)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(215, 19)
+        Me.Label6.Size = New System.Drawing.Size(269, 23)
         Me.Label6.TabIndex = 10
         Me.Label6.Text = "Resistência à Tração Paralela (ft,0):"
         '
@@ -1433,7 +1436,7 @@ Partial Class Form1
         Me.Label13.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label13.Location = New System.Drawing.Point(337, 238)
         Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(37, 19)
+        Me.Label13.Size = New System.Drawing.Size(43, 23)
         Me.Label13.TabIndex = 22
         Me.Label13.Text = "MPa"
         '
@@ -1446,7 +1449,7 @@ Partial Class Form1
         Me.txtResistAoCisalhamento.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txtResistAoCisalhamento.MaxLength = 5
         Me.txtResistAoCisalhamento.Name = "txtResistAoCisalhamento"
-        Me.txtResistAoCisalhamento.Size = New System.Drawing.Size(68, 26)
+        Me.txtResistAoCisalhamento.Size = New System.Drawing.Size(68, 30)
         Me.txtResistAoCisalhamento.TabIndex = 31
         '
         'Label10
@@ -1456,7 +1459,7 @@ Partial Class Form1
         Me.Label10.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label10.Location = New System.Drawing.Point(111, 278)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(133, 19)
+        Me.Label10.Size = New System.Drawing.Size(165, 23)
         Me.Label10.TabIndex = 13
         Me.Label10.Text = "Densidade Aparente"
         '
@@ -1467,7 +1470,7 @@ Partial Class Form1
         Me.Label48.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label48.Location = New System.Drawing.Point(337, 198)
         Me.Label48.Name = "Label48"
-        Me.Label48.Size = New System.Drawing.Size(37, 19)
+        Me.Label48.Size = New System.Drawing.Size(43, 23)
         Me.Label48.TabIndex = 26
         Me.Label48.Text = "MPa"
         '
@@ -1477,7 +1480,7 @@ Partial Class Form1
         Me.Label295.Font = New System.Drawing.Font("Symbol", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label295.Location = New System.Drawing.Point(240, 278)
         Me.Label295.Name = "Label295"
-        Me.Label295.Size = New System.Drawing.Size(31, 17)
+        Me.Label295.Size = New System.Drawing.Size(37, 21)
         Me.Label295.TabIndex = 64
         Me.Label295.Text = "(a):"
         '
@@ -1488,7 +1491,7 @@ Partial Class Form1
         Me.Label12.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label12.Location = New System.Drawing.Point(337, 158)
         Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(37, 19)
+        Me.Label12.Size = New System.Drawing.Size(43, 23)
         Me.Label12.TabIndex = 21
         Me.Label12.Text = "MPa"
         '
@@ -1499,7 +1502,7 @@ Partial Class Form1
         Me.Label5.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label5.Location = New System.Drawing.Point(337, 118)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(37, 19)
+        Me.Label5.Size = New System.Drawing.Size(43, 23)
         Me.Label5.TabIndex = 20
         Me.Label5.Text = "MPa"
         '
@@ -1510,7 +1513,7 @@ Partial Class Form1
         Me.Label7.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label7.Location = New System.Drawing.Point(48, 158)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(221, 19)
+        Me.Label7.Size = New System.Drawing.Size(276, 23)
         Me.Label7.TabIndex = 11
         Me.Label7.Text = "Resistência à Tração Normal (ft,90):" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
         '
@@ -1521,7 +1524,7 @@ Partial Class Form1
         Me.Label9.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label9.Location = New System.Drawing.Point(82, 238)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(189, 19)
+        Me.Label9.Size = New System.Drawing.Size(236, 23)
         Me.Label9.TabIndex = 12
         Me.Label9.Text = "Módulo de Elasticidade (Ec,0):"
         '
@@ -1532,7 +1535,7 @@ Partial Class Form1
         Me.Label49.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label49.Location = New System.Drawing.Point(63, 198)
         Me.Label49.Name = "Label49"
-        Me.Label49.Size = New System.Drawing.Size(207, 19)
+        Me.Label49.Size = New System.Drawing.Size(258, 23)
         Me.Label49.TabIndex = 24
         Me.Label49.Text = "Resistência ao Cisalhamento (fv):" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
         '
@@ -1565,7 +1568,7 @@ Partial Class Form1
         Me.Label47.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label47.Location = New System.Drawing.Point(6, 231)
         Me.Label47.Name = "Label47"
-        Me.Label47.Size = New System.Drawing.Size(111, 19)
+        Me.Label47.Size = New System.Drawing.Size(138, 23)
         Me.Label47.TabIndex = 15
         Me.Label47.Text = "Tipo da Madeira:"
         '
@@ -1575,7 +1578,7 @@ Partial Class Form1
         Me.Label46.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label46.Location = New System.Drawing.Point(4, 161)
         Me.Label46.Name = "Label46"
-        Me.Label46.Size = New System.Drawing.Size(118, 19)
+        Me.Label46.Size = New System.Drawing.Size(147, 23)
         Me.Label46.TabIndex = 14
         Me.Label46.Text = "Madeira Utilizada:"
         '
@@ -1585,7 +1588,7 @@ Partial Class Form1
         Me.Label4.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label4.Location = New System.Drawing.Point(383, 123)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(20, 19)
+        Me.Label4.Size = New System.Drawing.Size(24, 23)
         Me.Label4.TabIndex = 13
         Me.Label4.Text = "%"
         '
@@ -1599,7 +1602,7 @@ Partial Class Form1
         Me.cboTipoMadeira.Location = New System.Drawing.Point(8, 258)
         Me.cboTipoMadeira.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.cboTipoMadeira.Name = "cboTipoMadeira"
-        Me.cboTipoMadeira.Size = New System.Drawing.Size(261, 27)
+        Me.cboTipoMadeira.Size = New System.Drawing.Size(261, 31)
         Me.cboTipoMadeira.TabIndex = 4
         Me.cboTipoMadeira.Text = "Selecione"
         '
@@ -1612,7 +1615,7 @@ Partial Class Form1
         Me.cboMadeiraUtilizada.Location = New System.Drawing.Point(6, 188)
         Me.cboMadeiraUtilizada.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.cboMadeiraUtilizada.Name = "cboMadeiraUtilizada"
-        Me.cboMadeiraUtilizada.Size = New System.Drawing.Size(261, 27)
+        Me.cboMadeiraUtilizada.Size = New System.Drawing.Size(261, 31)
         Me.cboMadeiraUtilizada.TabIndex = 9
         Me.cboMadeiraUtilizada.Text = "Selecione"
         '
@@ -1623,7 +1626,7 @@ Partial Class Form1
         Me.txtUmidadeVento.Location = New System.Drawing.Point(298, 120)
         Me.txtUmidadeVento.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txtUmidadeVento.Name = "txtUmidadeVento"
-        Me.txtUmidadeVento.Size = New System.Drawing.Size(79, 26)
+        Me.txtUmidadeVento.Size = New System.Drawing.Size(79, 30)
         Me.txtUmidadeVento.TabIndex = 12
         '
         'TextBox2
@@ -1633,7 +1636,7 @@ Partial Class Form1
         Me.TextBox2.Location = New System.Drawing.Point(8, 120)
         Me.TextBox2.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(261, 26)
+        Me.TextBox2.Size = New System.Drawing.Size(261, 30)
         Me.TextBox2.TabIndex = 11
         '
         'TextBox1
@@ -1643,7 +1646,7 @@ Partial Class Form1
         Me.TextBox1.Location = New System.Drawing.Point(6, 59)
         Me.TextBox1.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(263, 26)
+        Me.TextBox1.Size = New System.Drawing.Size(263, 30)
         Me.TextBox1.TabIndex = 10
         '
         'Label3
@@ -1652,7 +1655,7 @@ Partial Class Form1
         Me.Label3.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label3.Location = New System.Drawing.Point(289, 93)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(178, 19)
+        Me.Label3.Size = New System.Drawing.Size(222, 23)
         Me.Label3.TabIndex = 8
         Me.Label3.Text = "Umidade Relativa do Vento:"
         '
@@ -1662,7 +1665,7 @@ Partial Class Form1
         Me.Label2.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label2.Location = New System.Drawing.Point(6, 93)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(54, 19)
+        Me.Label2.Size = New System.Drawing.Size(67, 23)
         Me.Label2.TabIndex = 7
         Me.Label2.Text = "Cidade:"
         '
@@ -1672,7 +1675,7 @@ Partial Class Form1
         Me.Label1.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label1.Location = New System.Drawing.Point(6, 34)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(114, 19)
+        Me.Label1.Size = New System.Drawing.Size(142, 23)
         Me.Label1.TabIndex = 6
         Me.Label1.Text = "Título do Projeto:"
         '
@@ -1681,11 +1684,11 @@ Partial Class Form1
         Me.TabResistCalculo.Controls.Add(Me.GroupBox8)
         Me.TabResistCalculo.Controls.Add(Me.GroupBox3)
         Me.TabResistCalculo.Controls.Add(Me.GroupBox7)
-        Me.TabResistCalculo.Location = New System.Drawing.Point(4, 28)
+        Me.TabResistCalculo.Location = New System.Drawing.Point(4, 32)
         Me.TabResistCalculo.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.TabResistCalculo.Name = "TabResistCalculo"
         Me.TabResistCalculo.Padding = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.TabResistCalculo.Size = New System.Drawing.Size(1068, 538)
+        Me.TabResistCalculo.Size = New System.Drawing.Size(1068, 534)
         Me.TabResistCalculo.TabIndex = 2
         Me.TabResistCalculo.Text = "Resistência de Cálculo"
         Me.TabResistCalculo.UseVisualStyleBackColor = True
@@ -1771,7 +1774,7 @@ Partial Class Form1
         Me.cboKmod1.Location = New System.Drawing.Point(168, 77)
         Me.cboKmod1.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.cboKmod1.Name = "cboKmod1"
-        Me.cboKmod1.Size = New System.Drawing.Size(131, 27)
+        Me.cboKmod1.Size = New System.Drawing.Size(131, 31)
         Me.cboKmod1.TabIndex = 44
         Me.cboKmod1.Text = "Selecione "
         '
@@ -1798,7 +1801,7 @@ Partial Class Form1
         Me.cboKmod2.Location = New System.Drawing.Point(135, 198)
         Me.cboKmod2.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.cboKmod2.Name = "cboKmod2"
-        Me.cboKmod2.Size = New System.Drawing.Size(164, 27)
+        Me.cboKmod2.Size = New System.Drawing.Size(164, 31)
         Me.cboKmod2.TabIndex = 45
         Me.cboKmod2.Text = "Selecione "
         '
@@ -1811,7 +1814,7 @@ Partial Class Form1
         Me.cboKmod3.Location = New System.Drawing.Point(156, 321)
         Me.cboKmod3.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.cboKmod3.Name = "cboKmod3"
-        Me.cboKmod3.Size = New System.Drawing.Size(143, 27)
+        Me.cboKmod3.Size = New System.Drawing.Size(143, 31)
         Me.cboKmod3.TabIndex = 46
         Me.cboKmod3.Text = "Selecione "
         '
@@ -1821,7 +1824,7 @@ Partial Class Form1
         Me.lblKmod3.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.lblKmod3.Location = New System.Drawing.Point(212, 356)
         Me.lblKmod3.Name = "lblKmod3"
-        Me.lblKmod3.Size = New System.Drawing.Size(59, 19)
+        Me.lblKmod3.Size = New System.Drawing.Size(69, 23)
         Me.lblKmod3.TabIndex = 76
         Me.lblKmod3.Text = "KMOD3"
         Me.lblKmod3.Visible = False
@@ -1833,7 +1836,7 @@ Partial Class Form1
         Me.Label59.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label59.Location = New System.Drawing.Point(176, 362)
         Me.Label59.Name = "Label59"
-        Me.Label59.Size = New System.Drawing.Size(31, 12)
+        Me.Label59.Size = New System.Drawing.Size(38, 15)
         Me.Label59.TabIndex = 75
         Me.Label59.Text = "mod3"
         '
@@ -1843,7 +1846,7 @@ Partial Class Form1
         Me.lblKmod2.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.lblKmod2.Location = New System.Drawing.Point(218, 233)
         Me.lblKmod2.Name = "lblKmod2"
-        Me.lblKmod2.Size = New System.Drawing.Size(59, 19)
+        Me.lblKmod2.Size = New System.Drawing.Size(69, 23)
         Me.lblKmod2.TabIndex = 73
         Me.lblKmod2.Text = "KMOD2"
         Me.lblKmod2.Visible = False
@@ -1854,7 +1857,7 @@ Partial Class Form1
         Me.Label25.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label25.Location = New System.Drawing.Point(23, 45)
         Me.Label25.Name = "Label25"
-        Me.Label25.Size = New System.Drawing.Size(31, 12)
+        Me.Label25.Size = New System.Drawing.Size(38, 15)
         Me.Label25.TabIndex = 47
         Me.Label25.Text = "mod1"
         '
@@ -1865,7 +1868,7 @@ Partial Class Form1
         Me.Label56.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label56.Location = New System.Drawing.Point(182, 239)
         Me.Label56.Name = "Label56"
-        Me.Label56.Size = New System.Drawing.Size(31, 12)
+        Me.Label56.Size = New System.Drawing.Size(38, 15)
         Me.Label56.TabIndex = 72
         Me.Label56.Text = "mod2"
         '
@@ -1875,7 +1878,7 @@ Partial Class Form1
         Me.Label15.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label15.Location = New System.Drawing.Point(23, 166)
         Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(31, 12)
+        Me.Label15.Size = New System.Drawing.Size(38, 15)
         Me.Label15.TabIndex = 48
         Me.Label15.Text = "mod2"
         '
@@ -1885,7 +1888,7 @@ Partial Class Form1
         Me.Label26.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label26.Location = New System.Drawing.Point(12, 324)
         Me.Label26.Name = "Label26"
-        Me.Label26.Size = New System.Drawing.Size(147, 19)
+        Me.Label26.Size = New System.Drawing.Size(183, 23)
         Me.Label26.TabIndex = 64
         Me.Label26.Text = "Qualidade da Madeira:"
         '
@@ -1895,7 +1898,7 @@ Partial Class Form1
         Me.Label19.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label19.Location = New System.Drawing.Point(12, 201)
         Me.Label19.Name = "Label19"
-        Me.Label19.Size = New System.Drawing.Size(126, 19)
+        Me.Label19.Size = New System.Drawing.Size(157, 23)
         Me.Label19.TabIndex = 62
         Me.Label19.Text = "Classe de umidade:"
         '
@@ -1905,7 +1908,7 @@ Partial Class Form1
         Me.Label50.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label50.Location = New System.Drawing.Point(23, 289)
         Me.Label50.Name = "Label50"
-        Me.Label50.Size = New System.Drawing.Size(31, 12)
+        Me.Label50.Size = New System.Drawing.Size(38, 15)
         Me.Label50.TabIndex = 49
         Me.Label50.Text = "mod3"
         '
@@ -1915,7 +1918,7 @@ Partial Class Form1
         Me.lblKmod1.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.lblKmod1.Location = New System.Drawing.Point(217, 110)
         Me.lblKmod1.Name = "lblKmod1"
-        Me.lblKmod1.Size = New System.Drawing.Size(59, 19)
+        Me.lblKmod1.Size = New System.Drawing.Size(69, 23)
         Me.lblKmod1.TabIndex = 61
         Me.lblKmod1.Text = "KMOD1"
         Me.lblKmod1.Visible = False
@@ -1926,7 +1929,7 @@ Partial Class Form1
         Me.Label516.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label516.Location = New System.Drawing.Point(12, 80)
         Me.Label516.Name = "Label516"
-        Me.Label516.Size = New System.Drawing.Size(158, 19)
+        Me.Label516.Size = New System.Drawing.Size(197, 23)
         Me.Label516.TabIndex = 60
         Me.Label516.Text = "Classe de carregamento:"
         '
@@ -1937,7 +1940,7 @@ Partial Class Form1
         Me.Label64.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label64.Location = New System.Drawing.Point(181, 116)
         Me.Label64.Name = "Label64"
-        Me.Label64.Size = New System.Drawing.Size(31, 12)
+        Me.Label64.Size = New System.Drawing.Size(38, 15)
         Me.Label64.TabIndex = 52
         Me.Label64.Text = "mod1"
         '
@@ -1947,7 +1950,7 @@ Partial Class Form1
         Me.Label24.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label24.Location = New System.Drawing.Point(12, 38)
         Me.Label24.Name = "Label24"
-        Me.Label24.Size = New System.Drawing.Size(452, 17)
+        Me.Label24.Size = New System.Drawing.Size(534, 20)
         Me.Label24.TabIndex = 41
         Me.Label24.Text = "k        : Determinado em função da carregamento e do tipo da madeira"
         '
@@ -1957,7 +1960,7 @@ Partial Class Form1
         Me.Label16.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label16.Location = New System.Drawing.Point(12, 159)
         Me.Label16.Name = "Label16"
-        Me.Label16.Size = New System.Drawing.Size(362, 17)
+        Me.Label16.Size = New System.Drawing.Size(432, 20)
         Me.Label16.TabIndex = 43
         Me.Label16.Text = "k        : Determinado em função das classes de umidade"
         '
@@ -1967,7 +1970,7 @@ Partial Class Form1
         Me.Label18.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label18.Location = New System.Drawing.Point(12, 282)
         Me.Label18.Name = "Label18"
-        Me.Label18.Size = New System.Drawing.Size(367, 17)
+        Me.Label18.Size = New System.Drawing.Size(433, 20)
         Me.Label18.TabIndex = 42
         Me.Label18.Text = "k        : Determinado em função da qualidade da madeira"
         '
@@ -1978,7 +1981,7 @@ Partial Class Form1
         Me.Label60.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label60.Location = New System.Drawing.Point(167, 355)
         Me.Label60.Name = "Label60"
-        Me.Label60.Size = New System.Drawing.Size(51, 19)
+        Me.Label60.Size = New System.Drawing.Size(62, 23)
         Me.Label60.TabIndex = 74
         Me.Label60.Text = "k        :"
         '
@@ -1989,7 +1992,7 @@ Partial Class Form1
         Me.Label57.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label57.Location = New System.Drawing.Point(173, 232)
         Me.Label57.Name = "Label57"
-        Me.Label57.Size = New System.Drawing.Size(51, 19)
+        Me.Label57.Size = New System.Drawing.Size(62, 23)
         Me.Label57.TabIndex = 71
         Me.Label57.Text = "k        :"
         '
@@ -2000,7 +2003,7 @@ Partial Class Form1
         Me.Label65.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label65.Location = New System.Drawing.Point(172, 109)
         Me.Label65.Name = "Label65"
-        Me.Label65.Size = New System.Drawing.Size(51, 19)
+        Me.Label65.Size = New System.Drawing.Size(62, 23)
         Me.Label65.TabIndex = 51
         Me.Label65.Text = "k        :"
         '
@@ -2035,7 +2038,7 @@ Partial Class Form1
         Me.lblEditarKmod.Font = New System.Drawing.Font("Segoe UI", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.lblEditarKmod.Location = New System.Drawing.Point(195, 68)
         Me.lblEditarKmod.Name = "lblEditarKmod"
-        Me.lblEditarKmod.Size = New System.Drawing.Size(76, 13)
+        Me.lblEditarKmod.Size = New System.Drawing.Size(88, 17)
         Me.lblEditarKmod.TabIndex = 47
         Me.lblEditarKmod.TabStop = True
         Me.lblEditarKmod.Text = "Editar Campo"
@@ -2046,7 +2049,7 @@ Partial Class Form1
         Me.Label103.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label103.Location = New System.Drawing.Point(283, 22)
         Me.Label103.Name = "Label103"
-        Me.Label103.Size = New System.Drawing.Size(31, 12)
+        Me.Label103.Size = New System.Drawing.Size(38, 15)
         Me.Label103.TabIndex = 45
         Me.Label103.Text = "mod3"
         '
@@ -2056,7 +2059,7 @@ Partial Class Form1
         Me.Label101.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label101.Location = New System.Drawing.Point(231, 22)
         Me.Label101.Name = "Label101"
-        Me.Label101.Size = New System.Drawing.Size(31, 12)
+        Me.Label101.Size = New System.Drawing.Size(38, 15)
         Me.Label101.TabIndex = 43
         Me.Label101.Text = "mod2"
         '
@@ -2066,7 +2069,7 @@ Partial Class Form1
         Me.Label99.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label99.Location = New System.Drawing.Point(174, 22)
         Me.Label99.Name = "Label99"
-        Me.Label99.Size = New System.Drawing.Size(31, 12)
+        Me.Label99.Size = New System.Drawing.Size(38, 15)
         Me.Label99.TabIndex = 41
         Me.Label99.Text = "mod1"
         '
@@ -2076,7 +2079,7 @@ Partial Class Form1
         Me.Label17.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label17.Location = New System.Drawing.Point(116, 22)
         Me.Label17.Name = "Label17"
-        Me.Label17.Size = New System.Drawing.Size(26, 12)
+        Me.Label17.Size = New System.Drawing.Size(32, 15)
         Me.Label17.TabIndex = 31
         Me.Label17.Text = "mod"
         '
@@ -2086,7 +2089,7 @@ Partial Class Form1
         Me.Label104.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label104.Location = New System.Drawing.Point(267, 14)
         Me.Label104.Name = "Label104"
-        Me.Label104.Size = New System.Drawing.Size(55, 19)
+        Me.Label104.Size = New System.Drawing.Size(67, 23)
         Me.Label104.TabIndex = 44
         Me.Label104.Text = ".k         "
         '
@@ -2096,7 +2099,7 @@ Partial Class Form1
         Me.Label102.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label102.Location = New System.Drawing.Point(207, 14)
         Me.Label102.Name = "Label102"
-        Me.Label102.Size = New System.Drawing.Size(59, 19)
+        Me.Label102.Size = New System.Drawing.Size(72, 23)
         Me.Label102.TabIndex = 42
         Me.Label102.Text = ". k         "
         '
@@ -2106,7 +2109,7 @@ Partial Class Form1
         Me.Label100.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label100.Location = New System.Drawing.Point(161, 12)
         Me.Label100.Name = "Label100"
-        Me.Label100.Size = New System.Drawing.Size(36, 19)
+        Me.Label100.Size = New System.Drawing.Size(43, 23)
         Me.Label100.TabIndex = 40
         Me.Label100.Text = "k     "
         '
@@ -2117,7 +2120,7 @@ Partial Class Form1
         Me.Label72.Font = New System.Drawing.Font("Times New Roman", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.Label72.Location = New System.Drawing.Point(19, 12)
         Me.Label72.Name = "Label72"
-        Me.Label72.Size = New System.Drawing.Size(29, 13)
+        Me.Label72.Size = New System.Drawing.Size(29, 15)
         Me.Label72.TabIndex = 39
         Me.Label72.Text = "mod"
         '
@@ -2127,7 +2130,7 @@ Partial Class Form1
         Me.Label21.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label21.Location = New System.Drawing.Point(177, 53)
         Me.Label21.Name = "Label21"
-        Me.Label21.Size = New System.Drawing.Size(26, 12)
+        Me.Label21.Size = New System.Drawing.Size(32, 15)
         Me.Label21.TabIndex = 38
         Me.Label21.Text = "mod"
         '
@@ -2137,7 +2140,7 @@ Partial Class Form1
         Me.Label22.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label22.Location = New System.Drawing.Point(164, 44)
         Me.Label22.Name = "Label22"
-        Me.Label22.Size = New System.Drawing.Size(54, 19)
+        Me.Label22.Size = New System.Drawing.Size(65, 23)
         Me.Label22.TabIndex = 37
         Me.Label22.Text = "k       ="
         '
@@ -2147,7 +2150,7 @@ Partial Class Form1
         Me.Label27.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label27.Location = New System.Drawing.Point(103, 12)
         Me.Label27.Name = "Label27"
-        Me.Label27.Size = New System.Drawing.Size(54, 19)
+        Me.Label27.Size = New System.Drawing.Size(65, 23)
         Me.Label27.TabIndex = 29
         Me.Label27.Text = "k       ="
         '
@@ -2158,12 +2161,13 @@ Partial Class Form1
         Me.txtKmod.Location = New System.Drawing.Point(215, 41)
         Me.txtKmod.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txtKmod.Name = "txtKmod"
-        Me.txtKmod.Size = New System.Drawing.Size(57, 26)
+        Me.txtKmod.Size = New System.Drawing.Size(57, 30)
         Me.txtKmod.TabIndex = 10
         '
         'TabDadosIniciais
         '
         Me.TabDadosIniciais.AutoScroll = True
+        Me.TabDadosIniciais.Controls.Add(Me.gbx2Elementos)
         Me.TabDadosIniciais.Controls.Add(Me.gbx3Elementos)
         Me.TabDadosIniciais.Controls.Add(Me.lblcaixaod)
         Me.TabDadosIniciais.Controls.Add(Me.gbxCompostaCaixao)
@@ -2195,18 +2199,190 @@ Partial Class Form1
         Me.TabDadosIniciais.Controls.Add(Me.lblCircD)
         Me.TabDadosIniciais.Controls.Add(Me.gbxVinculacao)
         Me.TabDadosIniciais.Controls.Add(Me.imgSecao)
-        Me.TabDadosIniciais.Controls.Add(Me.gbx2Elementos)
         Me.TabDadosIniciais.Controls.Add(Me.gbxCompostaI)
         Me.TabDadosIniciais.Controls.Add(Me.gbxCircular)
         Me.TabDadosIniciais.Controls.Add(Me.GroupBox23)
         Me.TabDadosIniciais.Controls.Add(Me.gbxRetangular)
         Me.TabDadosIniciais.Controls.Add(Me.GroupBox6)
-        Me.TabDadosIniciais.Location = New System.Drawing.Point(4, 28)
+        Me.TabDadosIniciais.Location = New System.Drawing.Point(4, 32)
         Me.TabDadosIniciais.Name = "TabDadosIniciais"
-        Me.TabDadosIniciais.Size = New System.Drawing.Size(1068, 538)
+        Me.TabDadosIniciais.Size = New System.Drawing.Size(1068, 534)
         Me.TabDadosIniciais.TabIndex = 3
         Me.TabDadosIniciais.Text = "Dados Iniciais"
         Me.TabDadosIniciais.UseVisualStyleBackColor = True
+        '
+        'gbx2Elementos
+        '
+        Me.gbx2Elementos.Controls.Add(Me.txtEntrada2b1)
+        Me.gbx2Elementos.Controls.Add(Me.Label223)
+        Me.gbx2Elementos.Controls.Add(Me.Label303)
+        Me.gbx2Elementos.Controls.Add(Me.txtEntrada2h1)
+        Me.gbx2Elementos.Controls.Add(Me.txtEntrada2a1)
+        Me.gbx2Elementos.Controls.Add(Me.txtEntrada2L1)
+        Me.gbx2Elementos.Controls.Add(Me.txtEntrada2L)
+        Me.gbx2Elementos.Controls.Add(Me.Label132)
+        Me.gbx2Elementos.Controls.Add(Me.Label133)
+        Me.gbx2Elementos.Controls.Add(Me.Label137)
+        Me.gbx2Elementos.Controls.Add(Me.Label178)
+        Me.gbx2Elementos.Controls.Add(Me.Label180)
+        Me.gbx2Elementos.Controls.Add(Me.Label206)
+        Me.gbx2Elementos.Controls.Add(Me.Label220)
+        Me.gbx2Elementos.Controls.Add(Me.Label222)
+        Me.gbx2Elementos.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.gbx2Elementos.Location = New System.Drawing.Point(6, 240)
+        Me.gbx2Elementos.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.gbx2Elementos.Name = "gbx2Elementos"
+        Me.gbx2Elementos.Padding = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.gbx2Elementos.Size = New System.Drawing.Size(391, 232)
+        Me.gbx2Elementos.TabIndex = 39
+        Me.gbx2Elementos.TabStop = False
+        Me.gbx2Elementos.Text = "Dados Iniciais: 2 Elementos Justapostos"
+        Me.gbx2Elementos.Visible = False
+        '
+        'txtEntrada2b1
+        '
+        Me.txtEntrada2b1.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.txtEntrada2b1.Location = New System.Drawing.Point(304, 190)
+        Me.txtEntrada2b1.Name = "txtEntrada2b1"
+        Me.txtEntrada2b1.Size = New System.Drawing.Size(59, 30)
+        Me.txtEntrada2b1.TabIndex = 40
+        '
+        'Label223
+        '
+        Me.Label223.AutoSize = True
+        Me.Label223.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Label223.Location = New System.Drawing.Point(362, 193)
+        Me.Label223.Name = "Label223"
+        Me.Label223.Size = New System.Drawing.Size(33, 23)
+        Me.Label223.TabIndex = 41
+        Me.Label223.Text = "cm"
+        Me.Label223.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Label303
+        '
+        Me.Label303.AutoSize = True
+        Me.Label303.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Label303.Location = New System.Drawing.Point(137, 193)
+        Me.Label303.Name = "Label303"
+        Me.Label303.Size = New System.Drawing.Size(208, 23)
+        Me.Label303.TabIndex = 39
+        Me.Label303.Text = "Largura do Elemento (b1):"
+        '
+        'txtEntrada2h1
+        '
+        Me.txtEntrada2h1.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.txtEntrada2h1.Location = New System.Drawing.Point(304, 150)
+        Me.txtEntrada2h1.Name = "txtEntrada2h1"
+        Me.txtEntrada2h1.Size = New System.Drawing.Size(59, 30)
+        Me.txtEntrada2h1.TabIndex = 36
+        '
+        'txtEntrada2a1
+        '
+        Me.txtEntrada2a1.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.txtEntrada2a1.Location = New System.Drawing.Point(304, 108)
+        Me.txtEntrada2a1.Name = "txtEntrada2a1"
+        Me.txtEntrada2a1.Size = New System.Drawing.Size(59, 30)
+        Me.txtEntrada2a1.TabIndex = 31
+        '
+        'txtEntrada2L1
+        '
+        Me.txtEntrada2L1.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.txtEntrada2L1.Location = New System.Drawing.Point(304, 68)
+        Me.txtEntrada2L1.Name = "txtEntrada2L1"
+        Me.txtEntrada2L1.Size = New System.Drawing.Size(59, 30)
+        Me.txtEntrada2L1.TabIndex = 25
+        '
+        'txtEntrada2L
+        '
+        Me.txtEntrada2L.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.txtEntrada2L.Location = New System.Drawing.Point(304, 29)
+        Me.txtEntrada2L.Name = "txtEntrada2L"
+        Me.txtEntrada2L.Size = New System.Drawing.Size(59, 30)
+        Me.txtEntrada2L.TabIndex = 24
+        '
+        'Label132
+        '
+        Me.Label132.AutoSize = True
+        Me.Label132.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Label132.Location = New System.Drawing.Point(362, 154)
+        Me.Label132.Name = "Label132"
+        Me.Label132.Size = New System.Drawing.Size(33, 23)
+        Me.Label132.TabIndex = 37
+        Me.Label132.Text = "cm"
+        Me.Label132.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Label133
+        '
+        Me.Label133.AutoSize = True
+        Me.Label133.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Label133.Location = New System.Drawing.Point(69, 154)
+        Me.Label133.Name = "Label133"
+        Me.Label133.Size = New System.Drawing.Size(292, 23)
+        Me.Label133.TabIndex = 34
+        Me.Label133.Text = "Largura do Elemento Composto (h1):"
+        '
+        'Label137
+        '
+        Me.Label137.AutoSize = True
+        Me.Label137.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Label137.Location = New System.Drawing.Point(362, 113)
+        Me.Label137.Name = "Label137"
+        Me.Label137.Size = New System.Drawing.Size(33, 23)
+        Me.Label137.TabIndex = 32
+        Me.Label137.Text = "cm"
+        Me.Label137.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Label178
+        '
+        Me.Label178.AutoSize = True
+        Me.Label178.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Label178.Location = New System.Drawing.Point(31, 113)
+        Me.Label178.Name = "Label178"
+        Me.Label178.Size = New System.Drawing.Size(343, 23)
+        Me.Label178.TabIndex = 30
+        Me.Label178.Text = "Comprimento Entre Eixos do Elemento (a1):"
+        '
+        'Label180
+        '
+        Me.Label180.AutoSize = True
+        Me.Label180.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Label180.Location = New System.Drawing.Point(362, 73)
+        Me.Label180.Name = "Label180"
+        Me.Label180.Size = New System.Drawing.Size(33, 23)
+        Me.Label180.TabIndex = 29
+        Me.Label180.Text = "cm"
+        Me.Label180.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Label206
+        '
+        Me.Label206.AutoSize = True
+        Me.Label206.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Label206.Location = New System.Drawing.Point(362, 34)
+        Me.Label206.Name = "Label206"
+        Me.Label206.Size = New System.Drawing.Size(33, 23)
+        Me.Label206.TabIndex = 27
+        Me.Label206.Text = "cm"
+        Me.Label206.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Label220
+        '
+        Me.Label220.AutoSize = True
+        Me.Label220.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Label220.Location = New System.Drawing.Point(156, 32)
+        Me.Label220.Name = "Label220"
+        Me.Label220.Size = New System.Drawing.Size(184, 23)
+        Me.Label220.TabIndex = 23
+        Me.Label220.Text = "Comprimento Total (L):"
+        '
+        'Label222
+        '
+        Me.Label222.AutoSize = True
+        Me.Label222.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Label222.Location = New System.Drawing.Point(8, 71)
+        Me.Label222.Name = "Label222"
+        Me.Label222.Size = New System.Drawing.Size(366, 23)
+        Me.Label222.TabIndex = 21
+        Me.Label222.Text = "Comprimento Entre Eixos dos Espaçadores(L1):"
         '
         'gbx3Elementos
         '
@@ -2241,7 +2417,7 @@ Partial Class Form1
         Me.txtEntrada3L.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.txtEntrada3L.Location = New System.Drawing.Point(300, 33)
         Me.txtEntrada3L.Name = "txtEntrada3L"
-        Me.txtEntrada3L.Size = New System.Drawing.Size(59, 26)
+        Me.txtEntrada3L.Size = New System.Drawing.Size(59, 30)
         Me.txtEntrada3L.TabIndex = 24
         '
         'Label359
@@ -2250,7 +2426,7 @@ Partial Class Form1
         Me.Label359.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label359.Location = New System.Drawing.Point(156, 36)
         Me.Label359.Name = "Label359"
-        Me.Label359.Size = New System.Drawing.Size(149, 19)
+        Me.Label359.Size = New System.Drawing.Size(184, 23)
         Me.Label359.TabIndex = 42
         Me.Label359.Text = "Comprimento Total (L):"
         '
@@ -2259,7 +2435,7 @@ Partial Class Form1
         Me.txtEntrada3b1.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.txtEntrada3b1.Location = New System.Drawing.Point(300, 194)
         Me.txtEntrada3b1.Name = "txtEntrada3b1"
-        Me.txtEntrada3b1.Size = New System.Drawing.Size(59, 26)
+        Me.txtEntrada3b1.Size = New System.Drawing.Size(59, 30)
         Me.txtEntrada3b1.TabIndex = 40
         '
         'Label304
@@ -2268,7 +2444,7 @@ Partial Class Form1
         Me.Label304.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label304.Location = New System.Drawing.Point(358, 198)
         Me.Label304.Name = "Label304"
-        Me.Label304.Size = New System.Drawing.Size(21, 19)
+        Me.Label304.Size = New System.Drawing.Size(25, 23)
         Me.Label304.TabIndex = 41
         Me.Label304.Text = "m"
         Me.Label304.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -2279,7 +2455,7 @@ Partial Class Form1
         Me.Label305.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label305.Location = New System.Drawing.Point(133, 198)
         Me.Label305.Name = "Label305"
-        Me.Label305.Size = New System.Drawing.Size(168, 19)
+        Me.Label305.Size = New System.Drawing.Size(208, 23)
         Me.Label305.TabIndex = 39
         Me.Label305.Text = "Largura do Elemento (b1):"
         '
@@ -2288,7 +2464,7 @@ Partial Class Form1
         Me.txtEntrada3h1.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.txtEntrada3h1.Location = New System.Drawing.Point(300, 154)
         Me.txtEntrada3h1.Name = "txtEntrada3h1"
-        Me.txtEntrada3h1.Size = New System.Drawing.Size(59, 26)
+        Me.txtEntrada3h1.Size = New System.Drawing.Size(59, 30)
         Me.txtEntrada3h1.TabIndex = 36
         '
         'txtEntrada3a1
@@ -2296,7 +2472,7 @@ Partial Class Form1
         Me.txtEntrada3a1.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.txtEntrada3a1.Location = New System.Drawing.Point(300, 111)
         Me.txtEntrada3a1.Name = "txtEntrada3a1"
-        Me.txtEntrada3a1.Size = New System.Drawing.Size(59, 26)
+        Me.txtEntrada3a1.Size = New System.Drawing.Size(59, 30)
         Me.txtEntrada3a1.TabIndex = 31
         '
         'txtEntrada3L1
@@ -2304,7 +2480,7 @@ Partial Class Form1
         Me.txtEntrada3L1.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.txtEntrada3L1.Location = New System.Drawing.Point(300, 72)
         Me.txtEntrada3L1.Name = "txtEntrada3L1"
-        Me.txtEntrada3L1.Size = New System.Drawing.Size(59, 26)
+        Me.txtEntrada3L1.Size = New System.Drawing.Size(59, 30)
         Me.txtEntrada3L1.TabIndex = 25
         '
         'Label307
@@ -2313,7 +2489,7 @@ Partial Class Form1
         Me.Label307.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label307.Location = New System.Drawing.Point(358, 159)
         Me.Label307.Name = "Label307"
-        Me.Label307.Size = New System.Drawing.Size(27, 19)
+        Me.Label307.Size = New System.Drawing.Size(33, 23)
         Me.Label307.TabIndex = 37
         Me.Label307.Text = "cm"
         Me.Label307.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -2324,7 +2500,7 @@ Partial Class Form1
         Me.Label308.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label308.Location = New System.Drawing.Point(65, 159)
         Me.Label308.Name = "Label308"
-        Me.Label308.Size = New System.Drawing.Size(236, 19)
+        Me.Label308.Size = New System.Drawing.Size(292, 23)
         Me.Label308.TabIndex = 34
         Me.Label308.Text = "Largura do Elemento Composto (h1):"
         '
@@ -2334,7 +2510,7 @@ Partial Class Form1
         Me.Label310.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label310.Location = New System.Drawing.Point(358, 117)
         Me.Label310.Name = "Label310"
-        Me.Label310.Size = New System.Drawing.Size(27, 19)
+        Me.Label310.Size = New System.Drawing.Size(33, 23)
         Me.Label310.TabIndex = 32
         Me.Label310.Text = "cm"
         Me.Label310.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -2345,7 +2521,7 @@ Partial Class Form1
         Me.Label311.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label311.Location = New System.Drawing.Point(27, 117)
         Me.Label311.Name = "Label311"
-        Me.Label311.Size = New System.Drawing.Size(275, 19)
+        Me.Label311.Size = New System.Drawing.Size(343, 23)
         Me.Label311.TabIndex = 30
         Me.Label311.Text = "Comprimento Entre Eixos do Elemento (a1):"
         '
@@ -2355,7 +2531,7 @@ Partial Class Form1
         Me.Label312.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label312.Location = New System.Drawing.Point(358, 78)
         Me.Label312.Name = "Label312"
-        Me.Label312.Size = New System.Drawing.Size(27, 19)
+        Me.Label312.Size = New System.Drawing.Size(33, 23)
         Me.Label312.TabIndex = 29
         Me.Label312.Text = "cm"
         Me.Label312.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -2366,7 +2542,7 @@ Partial Class Form1
         Me.Label358.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label358.Location = New System.Drawing.Point(358, 39)
         Me.Label358.Name = "Label358"
-        Me.Label358.Size = New System.Drawing.Size(27, 19)
+        Me.Label358.Size = New System.Drawing.Size(33, 23)
         Me.Label358.TabIndex = 27
         Me.Label358.Text = "cm"
         Me.Label358.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -2377,7 +2553,7 @@ Partial Class Form1
         Me.label800.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.label800.Location = New System.Drawing.Point(4, 76)
         Me.label800.Name = "label800"
-        Me.label800.Size = New System.Drawing.Size(295, 19)
+        Me.label800.Size = New System.Drawing.Size(366, 23)
         Me.label800.TabIndex = 21
         Me.label800.Text = "Comprimento Entre Eixos dos Espaçadores(L1):"
         '
@@ -2386,7 +2562,7 @@ Partial Class Form1
         Me.lblcaixaod.AutoSize = True
         Me.lblcaixaod.Location = New System.Drawing.Point(840, 215)
         Me.lblcaixaod.Name = "lblcaixaod"
-        Me.lblcaixaod.Size = New System.Drawing.Size(0, 19)
+        Me.lblcaixaod.Size = New System.Drawing.Size(0, 23)
         Me.lblcaixaod.TabIndex = 110
         Me.lblcaixaod.Visible = False
         '
@@ -2438,7 +2614,7 @@ Partial Class Form1
         Me.txtCaixaoComp.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.txtCaixaoComp.Location = New System.Drawing.Point(141, 242)
         Me.txtCaixaoComp.Name = "txtCaixaoComp"
-        Me.txtCaixaoComp.Size = New System.Drawing.Size(59, 26)
+        Me.txtCaixaoComp.Size = New System.Drawing.Size(59, 30)
         Me.txtCaixaoComp.TabIndex = 100
         '
         'Label515
@@ -2447,7 +2623,7 @@ Partial Class Form1
         Me.Label515.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label515.Location = New System.Drawing.Point(199, 245)
         Me.Label515.Name = "Label515"
-        Me.Label515.Size = New System.Drawing.Size(21, 19)
+        Me.Label515.Size = New System.Drawing.Size(25, 23)
         Me.Label515.TabIndex = 101
         Me.Label515.Text = "m"
         Me.Label515.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -2458,7 +2634,7 @@ Partial Class Form1
         Me.Label126.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label126.Location = New System.Drawing.Point(205, 114)
         Me.Label126.Name = "Label126"
-        Me.Label126.Size = New System.Drawing.Size(27, 19)
+        Me.Label126.Size = New System.Drawing.Size(33, 23)
         Me.Label126.TabIndex = 46
         Me.Label126.Text = "cm"
         Me.Label126.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -2469,7 +2645,7 @@ Partial Class Form1
         Me.Label566.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label566.Location = New System.Drawing.Point(28, 245)
         Me.Label566.Name = "Label566"
-        Me.Label566.Size = New System.Drawing.Size(116, 19)
+        Me.Label566.Size = New System.Drawing.Size(143, 23)
         Me.Label566.TabIndex = 99
         Me.Label566.Text = "Comprimento (L):"
         '
@@ -2479,7 +2655,7 @@ Partial Class Form1
         Me.Label463.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label463.Location = New System.Drawing.Point(252, 163)
         Me.Label463.Name = "Label463"
-        Me.Label463.Size = New System.Drawing.Size(27, 19)
+        Me.Label463.Size = New System.Drawing.Size(33, 23)
         Me.Label463.TabIndex = 45
         Me.Label463.Text = "cm"
         Me.Label463.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -2490,7 +2666,7 @@ Partial Class Form1
         Me.txtEntradaCaixaoB3.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.txtEntradaCaixaoB3.Location = New System.Drawing.Point(191, 198)
         Me.txtEntradaCaixaoB3.Name = "txtEntradaCaixaoB3"
-        Me.txtEntradaCaixaoB3.Size = New System.Drawing.Size(59, 26)
+        Me.txtEntradaCaixaoB3.Size = New System.Drawing.Size(59, 30)
         Me.txtEntradaCaixaoB3.TabIndex = 37
         '
         'Label556
@@ -2499,7 +2675,7 @@ Partial Class Form1
         Me.Label556.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label556.Location = New System.Drawing.Point(110, 163)
         Me.Label556.Name = "Label556"
-        Me.Label556.Size = New System.Drawing.Size(27, 19)
+        Me.Label556.Size = New System.Drawing.Size(33, 23)
         Me.Label556.TabIndex = 44
         Me.Label556.Text = "cm"
         Me.Label556.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -2510,7 +2686,7 @@ Partial Class Form1
         Me.Label423.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label423.Location = New System.Drawing.Point(19, 74)
         Me.Label423.Name = "Label423"
-        Me.Label423.Size = New System.Drawing.Size(28, 19)
+        Me.Label423.Size = New System.Drawing.Size(33, 23)
         Me.Label423.TabIndex = 21
         Me.Label423.Text = "h4:"
         '
@@ -2520,7 +2696,7 @@ Partial Class Form1
         Me.Label426.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label426.Location = New System.Drawing.Point(110, 201)
         Me.Label426.Name = "Label426"
-        Me.Label426.Size = New System.Drawing.Size(27, 19)
+        Me.Label426.Size = New System.Drawing.Size(33, 23)
         Me.Label426.TabIndex = 43
         Me.Label426.Text = "cm"
         Me.Label426.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -2531,7 +2707,7 @@ Partial Class Form1
         Me.Label421.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label421.Location = New System.Drawing.Point(162, 74)
         Me.Label421.Name = "Label421"
-        Me.Label421.Size = New System.Drawing.Size(28, 19)
+        Me.Label421.Size = New System.Drawing.Size(33, 23)
         Me.Label421.TabIndex = 22
         Me.Label421.Text = "h3:"
         '
@@ -2541,7 +2717,7 @@ Partial Class Form1
         Me.Label431.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label431.Location = New System.Drawing.Point(252, 201)
         Me.Label431.Name = "Label431"
-        Me.Label431.Size = New System.Drawing.Size(27, 19)
+        Me.Label431.Size = New System.Drawing.Size(33, 23)
         Me.Label431.TabIndex = 42
         Me.Label431.Text = "cm"
         Me.Label431.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -2552,7 +2728,7 @@ Partial Class Form1
         Me.Label420.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label420.Location = New System.Drawing.Point(76, 115)
         Me.Label420.Name = "Label420"
-        Me.Label420.Size = New System.Drawing.Size(69, 19)
+        Me.Label420.Size = New System.Drawing.Size(85, 23)
         Me.Label420.TabIndex = 23
         Me.Label420.Text = "Altura (d):"
         '
@@ -2562,7 +2738,7 @@ Partial Class Form1
         Me.Label45.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label45.Location = New System.Drawing.Point(110, 74)
         Me.Label45.Name = "Label45"
-        Me.Label45.Size = New System.Drawing.Size(27, 19)
+        Me.Label45.Size = New System.Drawing.Size(33, 23)
         Me.Label45.TabIndex = 32
         Me.Label45.Text = "cm"
         Me.Label45.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -2573,7 +2749,7 @@ Partial Class Form1
         Me.Label230.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label230.Location = New System.Drawing.Point(162, 38)
         Me.Label230.Name = "Label230"
-        Me.Label230.Size = New System.Drawing.Size(28, 19)
+        Me.Label230.Size = New System.Drawing.Size(33, 23)
         Me.Label230.TabIndex = 30
         Me.Label230.Text = "h2:"
         '
@@ -2583,7 +2759,7 @@ Partial Class Form1
         Me.txtEntradaCaixaoH3.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.txtEntradaCaixaoH3.Location = New System.Drawing.Point(191, 70)
         Me.txtEntradaCaixaoH3.Name = "txtEntradaCaixaoH3"
-        Me.txtEntradaCaixaoH3.Size = New System.Drawing.Size(59, 26)
+        Me.txtEntradaCaixaoH3.Size = New System.Drawing.Size(59, 30)
         Me.txtEntradaCaixaoH3.TabIndex = 41
         '
         'Label164
@@ -2592,7 +2768,7 @@ Partial Class Form1
         Me.Label164.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label164.Location = New System.Drawing.Point(19, 38)
         Me.Label164.Name = "Label164"
-        Me.Label164.Size = New System.Drawing.Size(28, 19)
+        Me.Label164.Size = New System.Drawing.Size(33, 23)
         Me.Label164.TabIndex = 31
         Me.Label164.Text = "h1:"
         '
@@ -2602,7 +2778,7 @@ Partial Class Form1
         Me.Label424.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label424.Location = New System.Drawing.Point(19, 201)
         Me.Label424.Name = "Label424"
-        Me.Label424.Size = New System.Drawing.Size(28, 19)
+        Me.Label424.Size = New System.Drawing.Size(33, 23)
         Me.Label424.TabIndex = 32
         Me.Label424.Text = "b4:"
         '
@@ -2612,7 +2788,7 @@ Partial Class Form1
         Me.Label233.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label233.Location = New System.Drawing.Point(252, 75)
         Me.Label233.Name = "Label233"
-        Me.Label233.Size = New System.Drawing.Size(27, 19)
+        Me.Label233.Size = New System.Drawing.Size(33, 23)
         Me.Label233.TabIndex = 28
         Me.Label233.Text = "cm"
         Me.Label233.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -2623,7 +2799,7 @@ Partial Class Form1
         Me.txtEntradaCaixaoD.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.txtEntradaCaixaoD.Location = New System.Drawing.Point(141, 112)
         Me.txtEntradaCaixaoD.Name = "txtEntradaCaixaoD"
-        Me.txtEntradaCaixaoD.Size = New System.Drawing.Size(59, 26)
+        Me.txtEntradaCaixaoD.Size = New System.Drawing.Size(59, 30)
         Me.txtEntradaCaixaoD.TabIndex = 24
         '
         'Label165
@@ -2632,7 +2808,7 @@ Partial Class Form1
         Me.Label165.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label165.Location = New System.Drawing.Point(252, 38)
         Me.Label165.Name = "Label165"
-        Me.Label165.Size = New System.Drawing.Size(27, 19)
+        Me.Label165.Size = New System.Drawing.Size(33, 23)
         Me.Label165.TabIndex = 29
         Me.Label165.Text = "cm"
         Me.Label165.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -2643,7 +2819,7 @@ Partial Class Form1
         Me.Label364.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label364.Location = New System.Drawing.Point(162, 201)
         Me.Label364.Name = "Label364"
-        Me.Label364.Size = New System.Drawing.Size(28, 19)
+        Me.Label364.Size = New System.Drawing.Size(33, 23)
         Me.Label364.TabIndex = 33
         Me.Label364.Text = "b3:"
         '
@@ -2652,7 +2828,7 @@ Partial Class Form1
         Me.txtEntradaCaixaoH2.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.txtEntradaCaixaoH2.Location = New System.Drawing.Point(191, 33)
         Me.txtEntradaCaixaoH2.Name = "txtEntradaCaixaoH2"
-        Me.txtEntradaCaixaoH2.Size = New System.Drawing.Size(59, 26)
+        Me.txtEntradaCaixaoH2.Size = New System.Drawing.Size(59, 30)
         Me.txtEntradaCaixaoH2.TabIndex = 39
         '
         'txtEntradaCaixaoB1
@@ -2660,7 +2836,7 @@ Partial Class Form1
         Me.txtEntradaCaixaoB1.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.txtEntradaCaixaoB1.Location = New System.Drawing.Point(50, 160)
         Me.txtEntradaCaixaoB1.Name = "txtEntradaCaixaoB1"
-        Me.txtEntradaCaixaoB1.Size = New System.Drawing.Size(59, 26)
+        Me.txtEntradaCaixaoB1.Size = New System.Drawing.Size(59, 30)
         Me.txtEntradaCaixaoB1.TabIndex = 25
         '
         'txtEntradaCaixaoH1
@@ -2668,7 +2844,7 @@ Partial Class Form1
         Me.txtEntradaCaixaoH1.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.txtEntradaCaixaoH1.Location = New System.Drawing.Point(50, 33)
         Me.txtEntradaCaixaoH1.Name = "txtEntradaCaixaoH1"
-        Me.txtEntradaCaixaoH1.Size = New System.Drawing.Size(59, 26)
+        Me.txtEntradaCaixaoH1.Size = New System.Drawing.Size(59, 30)
         Me.txtEntradaCaixaoH1.TabIndex = 38
         '
         'Label363
@@ -2677,7 +2853,7 @@ Partial Class Form1
         Me.Label363.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label363.Location = New System.Drawing.Point(162, 163)
         Me.Label363.Name = "Label363"
-        Me.Label363.Size = New System.Drawing.Size(28, 19)
+        Me.Label363.Size = New System.Drawing.Size(33, 23)
         Me.Label363.TabIndex = 34
         Me.Label363.Text = "b2:"
         '
@@ -2687,7 +2863,7 @@ Partial Class Form1
         Me.Label234.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label234.Location = New System.Drawing.Point(110, 38)
         Me.Label234.Name = "Label234"
-        Me.Label234.Size = New System.Drawing.Size(27, 19)
+        Me.Label234.Size = New System.Drawing.Size(33, 23)
         Me.Label234.TabIndex = 27
         Me.Label234.Text = "cm"
         Me.Label234.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -2697,7 +2873,7 @@ Partial Class Form1
         Me.txtEntradaCaixaoB2.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.txtEntradaCaixaoB2.Location = New System.Drawing.Point(191, 160)
         Me.txtEntradaCaixaoB2.Name = "txtEntradaCaixaoB2"
-        Me.txtEntradaCaixaoB2.Size = New System.Drawing.Size(59, 26)
+        Me.txtEntradaCaixaoB2.Size = New System.Drawing.Size(59, 30)
         Me.txtEntradaCaixaoB2.TabIndex = 26
         '
         'Label231
@@ -2706,7 +2882,7 @@ Partial Class Form1
         Me.Label231.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label231.Location = New System.Drawing.Point(19, 163)
         Me.Label231.Name = "Label231"
-        Me.Label231.Size = New System.Drawing.Size(28, 19)
+        Me.Label231.Size = New System.Drawing.Size(33, 23)
         Me.Label231.TabIndex = 35
         Me.Label231.Text = "b1:"
         '
@@ -2716,7 +2892,7 @@ Partial Class Form1
         Me.txtEntradaCaixaoB4.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.txtEntradaCaixaoB4.Location = New System.Drawing.Point(51, 198)
         Me.txtEntradaCaixaoB4.Name = "txtEntradaCaixaoB4"
-        Me.txtEntradaCaixaoB4.Size = New System.Drawing.Size(59, 26)
+        Me.txtEntradaCaixaoB4.Size = New System.Drawing.Size(59, 30)
         Me.txtEntradaCaixaoB4.TabIndex = 36
         '
         'txtEntradaCaixaoH4
@@ -2725,7 +2901,7 @@ Partial Class Form1
         Me.txtEntradaCaixaoH4.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.txtEntradaCaixaoH4.Location = New System.Drawing.Point(50, 70)
         Me.txtEntradaCaixaoH4.Name = "txtEntradaCaixaoH4"
-        Me.txtEntradaCaixaoH4.Size = New System.Drawing.Size(59, 26)
+        Me.txtEntradaCaixaoH4.Size = New System.Drawing.Size(59, 30)
         Me.txtEntradaCaixaoH4.TabIndex = 31
         '
         'lblcaixaob4
@@ -2733,7 +2909,7 @@ Partial Class Form1
         Me.lblcaixaob4.AutoSize = True
         Me.lblcaixaob4.Location = New System.Drawing.Point(654, 39)
         Me.lblcaixaob4.Name = "lblcaixaob4"
-        Me.lblcaixaob4.Size = New System.Drawing.Size(0, 19)
+        Me.lblcaixaob4.Size = New System.Drawing.Size(0, 23)
         Me.lblcaixaob4.TabIndex = 109
         Me.lblcaixaob4.Visible = False
         '
@@ -2742,7 +2918,7 @@ Partial Class Form1
         Me.lblTd.AutoSize = True
         Me.lblTd.Location = New System.Drawing.Point(810, 218)
         Me.lblTd.Name = "lblTd"
-        Me.lblTd.Size = New System.Drawing.Size(0, 19)
+        Me.lblTd.Size = New System.Drawing.Size(0, 23)
         Me.lblTd.TabIndex = 98
         Me.lblTd.Visible = False
         '
@@ -2751,7 +2927,7 @@ Partial Class Form1
         Me.lblcaixaob3.AutoSize = True
         Me.lblcaixaob3.Location = New System.Drawing.Point(752, 240)
         Me.lblcaixaob3.Name = "lblcaixaob3"
-        Me.lblcaixaob3.Size = New System.Drawing.Size(0, 19)
+        Me.lblcaixaob3.Size = New System.Drawing.Size(0, 23)
         Me.lblcaixaob3.TabIndex = 108
         Me.lblcaixaob3.Visible = False
         '
@@ -2760,7 +2936,7 @@ Partial Class Form1
         Me.lblTbw.AutoSize = True
         Me.lblTbw.Location = New System.Drawing.Point(690, 391)
         Me.lblTbw.Name = "lblTbw"
-        Me.lblTbw.Size = New System.Drawing.Size(0, 19)
+        Me.lblTbw.Size = New System.Drawing.Size(0, 23)
         Me.lblTbw.TabIndex = 99
         Me.lblTbw.Visible = False
         '
@@ -2769,7 +2945,7 @@ Partial Class Form1
         Me.lblCaixaob2.AutoSize = True
         Me.lblCaixaob2.Location = New System.Drawing.Point(584, 240)
         Me.lblCaixaob2.Name = "lblCaixaob2"
-        Me.lblCaixaob2.Size = New System.Drawing.Size(0, 19)
+        Me.lblCaixaob2.Size = New System.Drawing.Size(0, 23)
         Me.lblCaixaob2.TabIndex = 107
         Me.lblCaixaob2.Visible = False
         '
@@ -2778,7 +2954,7 @@ Partial Class Form1
         Me.lblTh.AutoSize = True
         Me.lblTh.Location = New System.Drawing.Point(557, 236)
         Me.lblTh.Name = "lblTh"
-        Me.lblTh.Size = New System.Drawing.Size(0, 19)
+        Me.lblTh.Size = New System.Drawing.Size(0, 23)
         Me.lblTh.TabIndex = 96
         Me.lblTh.Visible = False
         '
@@ -2787,7 +2963,7 @@ Partial Class Form1
         Me.lblCaixaob1.AutoSize = True
         Me.lblCaixaob1.Location = New System.Drawing.Point(656, 390)
         Me.lblCaixaob1.Name = "lblCaixaob1"
-        Me.lblCaixaob1.Size = New System.Drawing.Size(0, 19)
+        Me.lblCaixaob1.Size = New System.Drawing.Size(0, 23)
         Me.lblCaixaob1.TabIndex = 106
         Me.lblCaixaob1.Visible = False
         '
@@ -2796,7 +2972,7 @@ Partial Class Form1
         Me.lblThf.AutoSize = True
         Me.lblThf.Location = New System.Drawing.Point(561, 90)
         Me.lblThf.Name = "lblThf"
-        Me.lblThf.Size = New System.Drawing.Size(0, 19)
+        Me.lblThf.Size = New System.Drawing.Size(0, 23)
         Me.lblThf.TabIndex = 97
         Me.lblThf.Visible = False
         '
@@ -2805,7 +2981,7 @@ Partial Class Form1
         Me.lblCaixaoh4.AutoSize = True
         Me.lblCaixaoh4.Location = New System.Drawing.Point(531, 86)
         Me.lblCaixaoh4.Name = "lblCaixaoh4"
-        Me.lblCaixaoh4.Size = New System.Drawing.Size(0, 19)
+        Me.lblCaixaoh4.Size = New System.Drawing.Size(0, 23)
         Me.lblCaixaoh4.TabIndex = 105
         Me.lblCaixaoh4.Visible = False
         '
@@ -2814,7 +2990,7 @@ Partial Class Form1
         Me.lblTbf.AutoSize = True
         Me.lblTbf.Location = New System.Drawing.Point(693, 46)
         Me.lblTbf.Name = "lblTbf"
-        Me.lblTbf.Size = New System.Drawing.Size(0, 19)
+        Me.lblTbf.Size = New System.Drawing.Size(0, 23)
         Me.lblTbf.TabIndex = 100
         Me.lblTbf.Visible = False
         '
@@ -2824,7 +3000,7 @@ Partial Class Form1
         Me.lblCompRet.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.lblCompRet.Location = New System.Drawing.Point(641, 238)
         Me.lblCompRet.Name = "lblCompRet"
-        Me.lblCompRet.Size = New System.Drawing.Size(17, 19)
+        Me.lblCompRet.Size = New System.Drawing.Size(20, 23)
         Me.lblCompRet.TabIndex = 95
         Me.lblCompRet.Text = "  "
         Me.lblCompRet.Visible = False
@@ -2834,7 +3010,7 @@ Partial Class Form1
         Me.lblCaixaoh2.AutoSize = True
         Me.lblCaixaoh2.Location = New System.Drawing.Point(530, 218)
         Me.lblCaixaoh2.Name = "lblCaixaoh2"
-        Me.lblCaixaoh2.Size = New System.Drawing.Size(0, 19)
+        Me.lblCaixaoh2.Size = New System.Drawing.Size(0, 23)
         Me.lblCaixaoh2.TabIndex = 103
         Me.lblCaixaoh2.Visible = False
         '
@@ -2843,9 +3019,9 @@ Partial Class Form1
         Me.btnCalcularPropriedadesGeometricas.BackColor = System.Drawing.Color.Transparent
         Me.btnCalcularPropriedadesGeometricas.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnCalcularPropriedadesGeometricas.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.btnCalcularPropriedadesGeometricas.Location = New System.Drawing.Point(828, 360)
+        Me.btnCalcularPropriedadesGeometricas.Location = New System.Drawing.Point(851, 381)
         Me.btnCalcularPropriedadesGeometricas.Name = "btnCalcularPropriedadesGeometricas"
-        Me.btnCalcularPropriedadesGeometricas.Size = New System.Drawing.Size(109, 64)
+        Me.btnCalcularPropriedadesGeometricas.Size = New System.Drawing.Size(86, 43)
         Me.btnCalcularPropriedadesGeometricas.TabIndex = 92
         Me.btnCalcularPropriedadesGeometricas.Text = "Propriedades Geométricas"
         Me.btnCalcularPropriedadesGeometricas.UseVisualStyleBackColor = False
@@ -2886,7 +3062,7 @@ Partial Class Form1
         Me.txtTComp.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.txtTComp.Location = New System.Drawing.Point(182, 210)
         Me.txtTComp.Name = "txtTComp"
-        Me.txtTComp.Size = New System.Drawing.Size(59, 26)
+        Me.txtTComp.Size = New System.Drawing.Size(59, 30)
         Me.txtTComp.TabIndex = 94
         '
         'Label237
@@ -2895,7 +3071,7 @@ Partial Class Form1
         Me.Label237.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label237.Location = New System.Drawing.Point(240, 213)
         Me.Label237.Name = "Label237"
-        Me.Label237.Size = New System.Drawing.Size(21, 19)
+        Me.Label237.Size = New System.Drawing.Size(25, 23)
         Me.Label237.TabIndex = 95
         Me.Label237.Text = "m"
         Me.Label237.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -2905,7 +3081,7 @@ Partial Class Form1
         Me.txtEntradaCompostaTh.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.txtEntradaCompostaTh.Location = New System.Drawing.Point(182, 30)
         Me.txtEntradaCompostaTh.Name = "txtEntradaCompostaTh"
-        Me.txtEntradaCompostaTh.Size = New System.Drawing.Size(59, 26)
+        Me.txtEntradaCompostaTh.Size = New System.Drawing.Size(59, 30)
         Me.txtEntradaCompostaTh.TabIndex = 34
         '
         'Label238
@@ -2914,7 +3090,7 @@ Partial Class Form1
         Me.Label238.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label238.Location = New System.Drawing.Point(72, 213)
         Me.Label238.Name = "Label238"
-        Me.Label238.Size = New System.Drawing.Size(116, 19)
+        Me.Label238.Size = New System.Drawing.Size(143, 23)
         Me.Label238.TabIndex = 93
         Me.Label238.Text = "Comprimento (L):"
         '
@@ -2924,7 +3100,7 @@ Partial Class Form1
         Me.Label352.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label352.Location = New System.Drawing.Point(240, 33)
         Me.Label352.Name = "Label352"
-        Me.Label352.Size = New System.Drawing.Size(27, 19)
+        Me.Label352.Size = New System.Drawing.Size(33, 23)
         Me.Label352.TabIndex = 35
         Me.Label352.Text = "cm"
         Me.Label352.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -2935,7 +3111,7 @@ Partial Class Form1
         Me.Label383.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label383.Location = New System.Drawing.Point(66, 33)
         Me.Label383.Name = "Label383"
-        Me.Label383.Size = New System.Drawing.Size(123, 19)
+        Me.Label383.Size = New System.Drawing.Size(153, 23)
         Me.Label383.TabIndex = 33
         Me.Label383.Text = "Altura da Alma (h):"
         '
@@ -2944,7 +3120,7 @@ Partial Class Form1
         Me.txtEntradaCompostaBw.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.txtEntradaCompostaBw.Location = New System.Drawing.Point(183, 138)
         Me.txtEntradaCompostaBw.Name = "txtEntradaCompostaBw"
-        Me.txtEntradaCompostaBw.Size = New System.Drawing.Size(59, 26)
+        Me.txtEntradaCompostaBw.Size = New System.Drawing.Size(59, 30)
         Me.txtEntradaCompostaBw.TabIndex = 31
         '
         'txtEntradaCompostaBf
@@ -2952,7 +3128,7 @@ Partial Class Form1
         Me.txtEntradaCompostaBf.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.txtEntradaCompostaBf.Location = New System.Drawing.Point(183, 172)
         Me.txtEntradaCompostaBf.Name = "txtEntradaCompostaBf"
-        Me.txtEntradaCompostaBf.Size = New System.Drawing.Size(59, 26)
+        Me.txtEntradaCompostaBf.Size = New System.Drawing.Size(59, 30)
         Me.txtEntradaCompostaBf.TabIndex = 26
         '
         'txtEntradaCompostaHf
@@ -2960,7 +3136,7 @@ Partial Class Form1
         Me.txtEntradaCompostaHf.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.txtEntradaCompostaHf.Location = New System.Drawing.Point(183, 66)
         Me.txtEntradaCompostaHf.Name = "txtEntradaCompostaHf"
-        Me.txtEntradaCompostaHf.Size = New System.Drawing.Size(59, 26)
+        Me.txtEntradaCompostaHf.Size = New System.Drawing.Size(59, 30)
         Me.txtEntradaCompostaHf.TabIndex = 25
         '
         'txtEntradaCompostaH
@@ -2969,7 +3145,7 @@ Partial Class Form1
         Me.txtEntradaCompostaH.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.txtEntradaCompostaH.Location = New System.Drawing.Point(182, 102)
         Me.txtEntradaCompostaH.Name = "txtEntradaCompostaH"
-        Me.txtEntradaCompostaH.Size = New System.Drawing.Size(59, 26)
+        Me.txtEntradaCompostaH.Size = New System.Drawing.Size(59, 30)
         Me.txtEntradaCompostaH.TabIndex = 24
         '
         'Label107
@@ -2978,7 +3154,7 @@ Partial Class Form1
         Me.Label107.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label107.Location = New System.Drawing.Point(241, 141)
         Me.Label107.Name = "Label107"
-        Me.Label107.Size = New System.Drawing.Size(27, 19)
+        Me.Label107.Size = New System.Drawing.Size(33, 23)
         Me.Label107.TabIndex = 32
         Me.Label107.Text = "cm"
         Me.Label107.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -2989,7 +3165,7 @@ Partial Class Form1
         Me.Label109.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label109.Location = New System.Drawing.Point(241, 69)
         Me.Label109.Name = "Label109"
-        Me.Label109.Size = New System.Drawing.Size(27, 19)
+        Me.Label109.Size = New System.Drawing.Size(33, 23)
         Me.Label109.TabIndex = 29
         Me.Label109.Text = "cm"
         Me.Label109.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -3000,7 +3176,7 @@ Partial Class Form1
         Me.Label110.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label110.Location = New System.Drawing.Point(241, 175)
         Me.Label110.Name = "Label110"
-        Me.Label110.Size = New System.Drawing.Size(27, 19)
+        Me.Label110.Size = New System.Drawing.Size(33, 23)
         Me.Label110.TabIndex = 28
         Me.Label110.Text = "cm"
         Me.Label110.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -3011,7 +3187,7 @@ Partial Class Form1
         Me.Label108.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label108.Location = New System.Drawing.Point(31, 141)
         Me.Label108.Name = "Label108"
-        Me.Label108.Size = New System.Drawing.Size(156, 19)
+        Me.Label108.Size = New System.Drawing.Size(193, 23)
         Me.Label108.TabIndex = 30
         Me.Label108.Text = "Espessura da Alma (bw):"
         '
@@ -3021,7 +3197,7 @@ Partial Class Form1
         Me.Label111.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label111.Location = New System.Drawing.Point(240, 105)
         Me.Label111.Name = "Label111"
-        Me.Label111.Size = New System.Drawing.Size(27, 19)
+        Me.Label111.Size = New System.Drawing.Size(33, 23)
         Me.Label111.TabIndex = 27
         Me.Label111.Text = "cm"
         Me.Label111.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -3032,7 +3208,7 @@ Partial Class Form1
         Me.Label112.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label112.Location = New System.Drawing.Point(85, 105)
         Me.Label112.Name = "Label112"
-        Me.Label112.Size = New System.Drawing.Size(102, 19)
+        Me.Label112.Size = New System.Drawing.Size(126, 23)
         Me.Label112.TabIndex = 23
         Me.Label112.Text = "Altura Total (d):"
         '
@@ -3042,7 +3218,7 @@ Partial Class Form1
         Me.Label113.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label113.Location = New System.Drawing.Point(13, 175)
         Me.Label113.Name = "Label113"
-        Me.Label113.Size = New System.Drawing.Size(177, 19)
+        Me.Label113.Size = New System.Drawing.Size(219, 23)
         Me.Label113.TabIndex = 22
         Me.Label113.Text = "Comprimento da Mesa (bf):"
         '
@@ -3052,7 +3228,7 @@ Partial Class Form1
         Me.Label177.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label177.Location = New System.Drawing.Point(60, 69)
         Me.Label177.Name = "Label177"
-        Me.Label177.Size = New System.Drawing.Size(129, 19)
+        Me.Label177.Size = New System.Drawing.Size(159, 23)
         Me.Label177.TabIndex = 21
         Me.Label177.Text = "Altura da Mesa (hf):"
         '
@@ -3061,7 +3237,7 @@ Partial Class Form1
         Me.lblCaixaoh1.AutoSize = True
         Me.lblCaixaoh1.Location = New System.Drawing.Point(533, 347)
         Me.lblCaixaoh1.Name = "lblCaixaoh1"
-        Me.lblCaixaoh1.Size = New System.Drawing.Size(0, 19)
+        Me.lblCaixaoh1.Size = New System.Drawing.Size(0, 23)
         Me.lblCaixaoh1.TabIndex = 102
         Me.lblCaixaoh1.Visible = False
         '
@@ -3070,7 +3246,7 @@ Partial Class Form1
         Me.lblIH.AutoSize = True
         Me.lblIH.Location = New System.Drawing.Point(551, 215)
         Me.lblIH.Name = "lblIH"
-        Me.lblIH.Size = New System.Drawing.Size(0, 19)
+        Me.lblIH.Size = New System.Drawing.Size(0, 23)
         Me.lblIH.TabIndex = 100
         Me.lblIH.Visible = False
         '
@@ -3079,7 +3255,7 @@ Partial Class Form1
         Me.lblId.AutoSize = True
         Me.lblId.Location = New System.Drawing.Point(828, 215)
         Me.lblId.Name = "lblId"
-        Me.lblId.Size = New System.Drawing.Size(0, 19)
+        Me.lblId.Size = New System.Drawing.Size(0, 23)
         Me.lblId.TabIndex = 102
         Me.lblId.Visible = False
         '
@@ -3088,7 +3264,7 @@ Partial Class Form1
         Me.lblIbw.AutoSize = True
         Me.lblIbw.Location = New System.Drawing.Point(687, 230)
         Me.lblIbw.Name = "lblIbw"
-        Me.lblIbw.Size = New System.Drawing.Size(0, 19)
+        Me.lblIbw.Size = New System.Drawing.Size(0, 23)
         Me.lblIbw.TabIndex = 104
         Me.lblIbw.Visible = False
         '
@@ -3097,7 +3273,7 @@ Partial Class Form1
         Me.lblIhf2.AutoSize = True
         Me.lblIhf2.Location = New System.Drawing.Point(562, 357)
         Me.lblIhf2.Name = "lblIhf2"
-        Me.lblIhf2.Size = New System.Drawing.Size(0, 19)
+        Me.lblIhf2.Size = New System.Drawing.Size(0, 23)
         Me.lblIhf2.TabIndex = 101
         Me.lblIhf2.Visible = False
         '
@@ -3106,7 +3282,7 @@ Partial Class Form1
         Me.lblIbf2.AutoSize = True
         Me.lblIbf2.Location = New System.Drawing.Point(693, 394)
         Me.lblIbf2.Name = "lblIbf2"
-        Me.lblIbf2.Size = New System.Drawing.Size(0, 19)
+        Me.lblIbf2.Size = New System.Drawing.Size(0, 23)
         Me.lblIbf2.TabIndex = 105
         Me.lblIbf2.Visible = False
         '
@@ -3115,7 +3291,7 @@ Partial Class Form1
         Me.lblCircL.AutoSize = True
         Me.lblCircL.Location = New System.Drawing.Point(648, 238)
         Me.lblCircL.Name = "lblCircL"
-        Me.lblCircL.Size = New System.Drawing.Size(0, 19)
+        Me.lblCircL.Size = New System.Drawing.Size(0, 23)
         Me.lblCircL.TabIndex = 97
         Me.lblCircL.Visible = False
         '
@@ -3124,7 +3300,7 @@ Partial Class Form1
         Me.lblIhf1.AutoSize = True
         Me.lblIhf1.Location = New System.Drawing.Point(562, 80)
         Me.lblIhf1.Name = "lblIhf1"
-        Me.lblIhf1.Size = New System.Drawing.Size(0, 19)
+        Me.lblIhf1.Size = New System.Drawing.Size(0, 23)
         Me.lblIhf1.TabIndex = 99
         Me.lblIhf1.Visible = False
         '
@@ -3133,7 +3309,7 @@ Partial Class Form1
         Me.lblIbf1.AutoSize = True
         Me.lblIbf1.Location = New System.Drawing.Point(693, 29)
         Me.lblIbf1.Name = "lblIbf1"
-        Me.lblIbf1.Size = New System.Drawing.Size(0, 19)
+        Me.lblIbf1.Size = New System.Drawing.Size(0, 23)
         Me.lblIbf1.TabIndex = 103
         Me.lblIbf1.Visible = False
         '
@@ -3143,7 +3319,7 @@ Partial Class Form1
         Me.lblBase.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.lblBase.Location = New System.Drawing.Point(770, 307)
         Me.lblBase.Name = "lblBase"
-        Me.lblBase.Size = New System.Drawing.Size(0, 19)
+        Me.lblBase.Size = New System.Drawing.Size(0, 23)
         Me.lblBase.TabIndex = 94
         Me.lblBase.Visible = False
         '
@@ -3153,7 +3329,7 @@ Partial Class Form1
         Me.lblAltura.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.lblAltura.Location = New System.Drawing.Point(707, 236)
         Me.lblAltura.Name = "lblAltura"
-        Me.lblAltura.Size = New System.Drawing.Size(0, 19)
+        Me.lblAltura.Size = New System.Drawing.Size(0, 23)
         Me.lblAltura.TabIndex = 93
         Me.lblAltura.Visible = False
         '
@@ -3162,7 +3338,7 @@ Partial Class Form1
         Me.lblCircD.AutoSize = True
         Me.lblCircD.Location = New System.Drawing.Point(786, 260)
         Me.lblCircD.Name = "lblCircD"
-        Me.lblCircD.Size = New System.Drawing.Size(0, 19)
+        Me.lblCircD.Size = New System.Drawing.Size(0, 23)
         Me.lblCircD.TabIndex = 96
         Me.lblCircD.Visible = False
         '
@@ -3188,7 +3364,7 @@ Partial Class Form1
         Me.lblKe.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.lblKe.Location = New System.Drawing.Point(127, 79)
         Me.lblKe.Name = "lblKe"
-        Me.lblKe.Size = New System.Drawing.Size(0, 19)
+        Me.lblKe.Size = New System.Drawing.Size(0, 23)
         Me.lblKe.TabIndex = 73
         Me.lblKe.Visible = False
         '
@@ -3199,7 +3375,7 @@ Partial Class Form1
         Me.Label53.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label53.Location = New System.Drawing.Point(110, 86)
         Me.Label53.Name = "Label53"
-        Me.Label53.Size = New System.Drawing.Size(10, 12)
+        Me.Label53.Size = New System.Drawing.Size(13, 15)
         Me.Label53.TabIndex = 72
         Me.Label53.Text = "e"
         '
@@ -3210,7 +3386,7 @@ Partial Class Form1
         Me.Label54.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label54.Location = New System.Drawing.Point(101, 79)
         Me.Label54.Name = "Label54"
-        Me.Label54.Size = New System.Drawing.Size(31, 19)
+        Me.Label54.Size = New System.Drawing.Size(37, 23)
         Me.Label54.TabIndex = 71
         Me.Label54.Text = "k   :"
         '
@@ -3222,7 +3398,7 @@ Partial Class Form1
         Me.cboLvinculado.Items.AddRange(New Object() {"Bi-Engastada", "Engastada Rotulada", "Engaste - Engaste Movel ", "Bi-Rotulada", "Engaste - Extremidade Livre", "Apoio - Engaste Movel "})
         Me.cboLvinculado.Location = New System.Drawing.Point(6, 50)
         Me.cboLvinculado.Name = "cboLvinculado"
-        Me.cboLvinculado.Size = New System.Drawing.Size(188, 27)
+        Me.cboLvinculado.Size = New System.Drawing.Size(188, 31)
         Me.cboLvinculado.TabIndex = 70
         Me.cboLvinculado.Text = "Selecione.."
         '
@@ -3232,7 +3408,7 @@ Partial Class Form1
         Me.Label51.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label51.Location = New System.Drawing.Point(4, 24)
         Me.Label51.Name = "Label51"
-        Me.Label51.Size = New System.Drawing.Size(127, 19)
+        Me.Label51.Size = New System.Drawing.Size(161, 23)
         Me.Label51.TabIndex = 69
         Me.Label51.Text = "Vinculação da Peça:"
         '
@@ -3258,179 +3434,6 @@ Partial Class Form1
         Me.imgSecao.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.imgSecao.TabIndex = 22
         Me.imgSecao.TabStop = False
-        '
-        'gbx2Elementos
-        '
-        Me.gbx2Elementos.Controls.Add(Me.txtEntrada2b1)
-        Me.gbx2Elementos.Controls.Add(Me.Label223)
-        Me.gbx2Elementos.Controls.Add(Me.Label303)
-        Me.gbx2Elementos.Controls.Add(Me.txtEntrada2h1)
-        Me.gbx2Elementos.Controls.Add(Me.txtEntrada2a1)
-        Me.gbx2Elementos.Controls.Add(Me.txtEntrada2L1)
-        Me.gbx2Elementos.Controls.Add(Me.txtEntrada2L)
-        Me.gbx2Elementos.Controls.Add(Me.Label132)
-        Me.gbx2Elementos.Controls.Add(Me.Label133)
-        Me.gbx2Elementos.Controls.Add(Me.Label137)
-        Me.gbx2Elementos.Controls.Add(Me.Label178)
-        Me.gbx2Elementos.Controls.Add(Me.Label180)
-        Me.gbx2Elementos.Controls.Add(Me.Label206)
-        Me.gbx2Elementos.Controls.Add(Me.Label220)
-        Me.gbx2Elementos.Controls.Add(Me.Label222)
-        Me.gbx2Elementos.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.gbx2Elementos.Location = New System.Drawing.Point(880, 555)
-        Me.gbx2Elementos.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.gbx2Elementos.Name = "gbx2Elementos"
-        Me.gbx2Elementos.Padding = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.gbx2Elementos.Size = New System.Drawing.Size(391, 232)
-        Me.gbx2Elementos.TabIndex = 39
-        Me.gbx2Elementos.TabStop = False
-        Me.gbx2Elementos.Text = "Dados Iniciais: 2 Elementos Justapostos"
-        Me.gbx2Elementos.Visible = False
-        '
-        'txtEntrada2b1
-        '
-        Me.txtEntrada2b1.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.txtEntrada2b1.Location = New System.Drawing.Point(304, 190)
-        Me.txtEntrada2b1.Name = "txtEntrada2b1"
-        Me.txtEntrada2b1.Size = New System.Drawing.Size(59, 26)
-        Me.txtEntrada2b1.TabIndex = 40
-        '
-        'Label223
-        '
-        Me.Label223.AutoSize = True
-        Me.Label223.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label223.Location = New System.Drawing.Point(362, 193)
-        Me.Label223.Name = "Label223"
-        Me.Label223.Size = New System.Drawing.Size(27, 19)
-        Me.Label223.TabIndex = 41
-        Me.Label223.Text = "cm"
-        Me.Label223.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'Label303
-        '
-        Me.Label303.AutoSize = True
-        Me.Label303.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label303.Location = New System.Drawing.Point(137, 193)
-        Me.Label303.Name = "Label303"
-        Me.Label303.Size = New System.Drawing.Size(168, 19)
-        Me.Label303.TabIndex = 39
-        Me.Label303.Text = "Largura do Elemento (b1):"
-        '
-        'txtEntrada2h1
-        '
-        Me.txtEntrada2h1.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.txtEntrada2h1.Location = New System.Drawing.Point(304, 150)
-        Me.txtEntrada2h1.Name = "txtEntrada2h1"
-        Me.txtEntrada2h1.Size = New System.Drawing.Size(59, 26)
-        Me.txtEntrada2h1.TabIndex = 36
-        '
-        'txtEntrada2a1
-        '
-        Me.txtEntrada2a1.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.txtEntrada2a1.Location = New System.Drawing.Point(304, 108)
-        Me.txtEntrada2a1.Name = "txtEntrada2a1"
-        Me.txtEntrada2a1.Size = New System.Drawing.Size(59, 26)
-        Me.txtEntrada2a1.TabIndex = 31
-        '
-        'txtEntrada2L1
-        '
-        Me.txtEntrada2L1.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.txtEntrada2L1.Location = New System.Drawing.Point(304, 68)
-        Me.txtEntrada2L1.Name = "txtEntrada2L1"
-        Me.txtEntrada2L1.Size = New System.Drawing.Size(59, 26)
-        Me.txtEntrada2L1.TabIndex = 25
-        '
-        'txtEntrada2L
-        '
-        Me.txtEntrada2L.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.txtEntrada2L.Location = New System.Drawing.Point(304, 29)
-        Me.txtEntrada2L.Name = "txtEntrada2L"
-        Me.txtEntrada2L.Size = New System.Drawing.Size(59, 26)
-        Me.txtEntrada2L.TabIndex = 24
-        '
-        'Label132
-        '
-        Me.Label132.AutoSize = True
-        Me.Label132.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label132.Location = New System.Drawing.Point(362, 154)
-        Me.Label132.Name = "Label132"
-        Me.Label132.Size = New System.Drawing.Size(27, 19)
-        Me.Label132.TabIndex = 37
-        Me.Label132.Text = "cm"
-        Me.Label132.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'Label133
-        '
-        Me.Label133.AutoSize = True
-        Me.Label133.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label133.Location = New System.Drawing.Point(69, 154)
-        Me.Label133.Name = "Label133"
-        Me.Label133.Size = New System.Drawing.Size(236, 19)
-        Me.Label133.TabIndex = 34
-        Me.Label133.Text = "Largura do Elemento Composto (h1):"
-        '
-        'Label137
-        '
-        Me.Label137.AutoSize = True
-        Me.Label137.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label137.Location = New System.Drawing.Point(362, 113)
-        Me.Label137.Name = "Label137"
-        Me.Label137.Size = New System.Drawing.Size(27, 19)
-        Me.Label137.TabIndex = 32
-        Me.Label137.Text = "cm"
-        Me.Label137.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'Label178
-        '
-        Me.Label178.AutoSize = True
-        Me.Label178.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label178.Location = New System.Drawing.Point(31, 113)
-        Me.Label178.Name = "Label178"
-        Me.Label178.Size = New System.Drawing.Size(275, 19)
-        Me.Label178.TabIndex = 30
-        Me.Label178.Text = "Comprimento Entre Eixos do Elemento (a1):"
-        '
-        'Label180
-        '
-        Me.Label180.AutoSize = True
-        Me.Label180.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label180.Location = New System.Drawing.Point(362, 73)
-        Me.Label180.Name = "Label180"
-        Me.Label180.Size = New System.Drawing.Size(27, 19)
-        Me.Label180.TabIndex = 29
-        Me.Label180.Text = "cm"
-        Me.Label180.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'Label206
-        '
-        Me.Label206.AutoSize = True
-        Me.Label206.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label206.Location = New System.Drawing.Point(362, 34)
-        Me.Label206.Name = "Label206"
-        Me.Label206.Size = New System.Drawing.Size(27, 19)
-        Me.Label206.TabIndex = 27
-        Me.Label206.Text = "cm"
-        Me.Label206.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'Label220
-        '
-        Me.Label220.AutoSize = True
-        Me.Label220.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label220.Location = New System.Drawing.Point(156, 32)
-        Me.Label220.Name = "Label220"
-        Me.Label220.Size = New System.Drawing.Size(149, 19)
-        Me.Label220.TabIndex = 23
-        Me.Label220.Text = "Comprimento Total (L):"
-        '
-        'Label222
-        '
-        Me.Label222.AutoSize = True
-        Me.Label222.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label222.Location = New System.Drawing.Point(8, 71)
-        Me.Label222.Name = "Label222"
-        Me.Label222.Size = New System.Drawing.Size(295, 19)
-        Me.Label222.TabIndex = 21
-        Me.Label222.Text = "Comprimento Entre Eixos dos Espaçadores(L1):"
         '
         'gbxCompostaI
         '
@@ -3474,7 +3477,7 @@ Partial Class Form1
         Me.txtIComp.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.txtIComp.Location = New System.Drawing.Point(206, 308)
         Me.txtIComp.Name = "txtIComp"
-        Me.txtIComp.Size = New System.Drawing.Size(59, 26)
+        Me.txtIComp.Size = New System.Drawing.Size(59, 30)
         Me.txtIComp.TabIndex = 97
         '
         'txtEntradaIH
@@ -3482,7 +3485,7 @@ Partial Class Form1
         Me.txtEntradaIH.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.txtEntradaIH.Location = New System.Drawing.Point(206, 66)
         Me.txtEntradaIH.Name = "txtEntradaIH"
-        Me.txtEntradaIH.Size = New System.Drawing.Size(59, 26)
+        Me.txtEntradaIH.Size = New System.Drawing.Size(59, 30)
         Me.txtEntradaIH.TabIndex = 26
         '
         'txtEntradaIHf1
@@ -3490,7 +3493,7 @@ Partial Class Form1
         Me.txtEntradaIHf1.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.txtEntradaIHf1.Location = New System.Drawing.Point(206, 25)
         Me.txtEntradaIHf1.Name = "txtEntradaIHf1"
-        Me.txtEntradaIHf1.Size = New System.Drawing.Size(59, 26)
+        Me.txtEntradaIHf1.Size = New System.Drawing.Size(59, 30)
         Me.txtEntradaIHf1.TabIndex = 25
         '
         'txtEntradaIBf1
@@ -3498,7 +3501,7 @@ Partial Class Form1
         Me.txtEntradaIBf1.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.txtEntradaIBf1.Location = New System.Drawing.Point(206, 189)
         Me.txtEntradaIBf1.Name = "txtEntradaIBf1"
-        Me.txtEntradaIBf1.Size = New System.Drawing.Size(59, 26)
+        Me.txtEntradaIBf1.Size = New System.Drawing.Size(59, 30)
         Me.txtEntradaIBf1.TabIndex = 26
         '
         'txtEntradaID
@@ -3507,7 +3510,7 @@ Partial Class Form1
         Me.txtEntradaID.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.txtEntradaID.Location = New System.Drawing.Point(206, 150)
         Me.txtEntradaID.Name = "txtEntradaID"
-        Me.txtEntradaID.Size = New System.Drawing.Size(59, 26)
+        Me.txtEntradaID.Size = New System.Drawing.Size(59, 30)
         Me.txtEntradaID.TabIndex = 24
         '
         'txtEntradaIBw
@@ -3515,7 +3518,7 @@ Partial Class Form1
         Me.txtEntradaIBw.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.txtEntradaIBw.Location = New System.Drawing.Point(206, 229)
         Me.txtEntradaIBw.Name = "txtEntradaIBw"
-        Me.txtEntradaIBw.Size = New System.Drawing.Size(59, 26)
+        Me.txtEntradaIBw.Size = New System.Drawing.Size(59, 30)
         Me.txtEntradaIBw.TabIndex = 31
         '
         'txtEntradaIBf2
@@ -3524,7 +3527,7 @@ Partial Class Form1
         Me.txtEntradaIBf2.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.txtEntradaIBf2.Location = New System.Drawing.Point(206, 269)
         Me.txtEntradaIBf2.Name = "txtEntradaIBf2"
-        Me.txtEntradaIBf2.Size = New System.Drawing.Size(59, 26)
+        Me.txtEntradaIBf2.Size = New System.Drawing.Size(59, 30)
         Me.txtEntradaIBf2.TabIndex = 36
         '
         'txtEntradaIHf2
@@ -3533,7 +3536,7 @@ Partial Class Form1
         Me.txtEntradaIHf2.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.txtEntradaIHf2.Location = New System.Drawing.Point(206, 108)
         Me.txtEntradaIHf2.Name = "txtEntradaIHf2"
-        Me.txtEntradaIHf2.Size = New System.Drawing.Size(59, 26)
+        Me.txtEntradaIHf2.Size = New System.Drawing.Size(59, 30)
         Me.txtEntradaIHf2.TabIndex = 35
         '
         'Label239
@@ -3542,7 +3545,7 @@ Partial Class Form1
         Me.Label239.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label239.Location = New System.Drawing.Point(265, 311)
         Me.Label239.Name = "Label239"
-        Me.Label239.Size = New System.Drawing.Size(21, 19)
+        Me.Label239.Size = New System.Drawing.Size(25, 23)
         Me.Label239.TabIndex = 98
         Me.Label239.Text = "m"
         Me.Label239.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -3553,7 +3556,7 @@ Partial Class Form1
         Me.Label117.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label117.Location = New System.Drawing.Point(265, 70)
         Me.Label117.Name = "Label117"
-        Me.Label117.Size = New System.Drawing.Size(27, 19)
+        Me.Label117.Size = New System.Drawing.Size(33, 23)
         Me.Label117.TabIndex = 39
         Me.Label117.Text = "cm"
         Me.Label117.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -3564,7 +3567,7 @@ Partial Class Form1
         Me.Label514.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label514.Location = New System.Drawing.Point(96, 311)
         Me.Label514.Name = "Label514"
-        Me.Label514.Size = New System.Drawing.Size(116, 19)
+        Me.Label514.Size = New System.Drawing.Size(143, 23)
         Me.Label514.TabIndex = 96
         Me.Label514.Text = "Comprimento (L):"
         '
@@ -3574,7 +3577,7 @@ Partial Class Form1
         Me.Label430.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label430.Location = New System.Drawing.Point(19, 27)
         Me.Label430.Name = "Label430"
-        Me.Label430.Size = New System.Drawing.Size(192, 19)
+        Me.Label430.Size = New System.Drawing.Size(237, 23)
         Me.Label430.TabIndex = 21
         Me.Label430.Text = "Altura da Mesa Superior (hf1):"
         '
@@ -3584,7 +3587,7 @@ Partial Class Form1
         Me.Label361.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label361.Location = New System.Drawing.Point(265, 192)
         Me.Label361.Name = "Label361"
-        Me.Label361.Size = New System.Drawing.Size(27, 19)
+        Me.Label361.Size = New System.Drawing.Size(33, 23)
         Me.Label361.TabIndex = 38
         Me.Label361.Text = "cm"
         Me.Label361.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -3595,7 +3598,7 @@ Partial Class Form1
         Me.Label163.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label163.Location = New System.Drawing.Point(265, 272)
         Me.Label163.Name = "Label163"
-        Me.Label163.Size = New System.Drawing.Size(27, 19)
+        Me.Label163.Size = New System.Drawing.Size(33, 23)
         Me.Label163.TabIndex = 27
         Me.Label163.Text = "cm"
         Me.Label163.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -3606,7 +3609,7 @@ Partial Class Form1
         Me.Label429.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label429.Location = New System.Drawing.Point(7, 189)
         Me.Label429.Name = "Label429"
-        Me.Label429.Size = New System.Drawing.Size(202, 19)
+        Me.Label429.Size = New System.Drawing.Size(249, 23)
         Me.Label429.TabIndex = 22
         Me.Label429.Text = "Largura da Mesa Superior (bf1):"
         '
@@ -3616,7 +3619,7 @@ Partial Class Form1
         Me.Label362.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label362.Location = New System.Drawing.Point(265, 232)
         Me.Label362.Name = "Label362"
-        Me.Label362.Size = New System.Drawing.Size(27, 19)
+        Me.Label362.Size = New System.Drawing.Size(33, 23)
         Me.Label362.TabIndex = 37
         Me.Label362.Text = "cm"
         Me.Label362.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -3627,7 +3630,7 @@ Partial Class Form1
         Me.Label427.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label427.Location = New System.Drawing.Point(106, 150)
         Me.Label427.Name = "Label427"
-        Me.Label427.Size = New System.Drawing.Size(102, 19)
+        Me.Label427.Size = New System.Drawing.Size(126, 23)
         Me.Label427.TabIndex = 23
         Me.Label427.Text = "Altura Total (d):"
         '
@@ -3637,7 +3640,7 @@ Partial Class Form1
         Me.Label422.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label422.Location = New System.Drawing.Point(69, 229)
         Me.Label422.Name = "Label422"
-        Me.Label422.Size = New System.Drawing.Size(143, 19)
+        Me.Label422.Size = New System.Drawing.Size(177, 23)
         Me.Label422.TabIndex = 30
         Me.Label422.Text = "Largura da Alma (bw):"
         '
@@ -3647,7 +3650,7 @@ Partial Class Form1
         Me.Label419.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label419.Location = New System.Drawing.Point(16, 269)
         Me.Label419.Name = "Label419"
-        Me.Label419.Size = New System.Drawing.Size(195, 19)
+        Me.Label419.Size = New System.Drawing.Size(240, 23)
         Me.Label419.TabIndex = 34
         Me.Label419.Text = "Largura da Mesa Inferior (bf2):"
         '
@@ -3657,7 +3660,7 @@ Partial Class Form1
         Me.Label116.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label116.Location = New System.Drawing.Point(265, 153)
         Me.Label116.Name = "Label116"
-        Me.Label116.Size = New System.Drawing.Size(27, 19)
+        Me.Label116.Size = New System.Drawing.Size(33, 23)
         Me.Label116.TabIndex = 32
         Me.Label116.Text = "cm"
         Me.Label116.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -3668,7 +3671,7 @@ Partial Class Form1
         Me.Label406.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label406.Location = New System.Drawing.Point(26, 108)
         Me.Label406.Name = "Label406"
-        Me.Label406.Size = New System.Drawing.Size(185, 19)
+        Me.Label406.Size = New System.Drawing.Size(228, 23)
         Me.Label406.TabIndex = 35
         Me.Label406.Text = "Altura da Mesa Inferior (hf2):"
         '
@@ -3678,7 +3681,7 @@ Partial Class Form1
         Me.Label407.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label407.Location = New System.Drawing.Point(86, 67)
         Me.Label407.Name = "Label407"
-        Me.Label407.Size = New System.Drawing.Size(123, 19)
+        Me.Label407.Size = New System.Drawing.Size(153, 23)
         Me.Label407.TabIndex = 36
         Me.Label407.Text = "Altura da Alma (h):"
         '
@@ -3688,7 +3691,7 @@ Partial Class Form1
         Me.Label152.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label152.Location = New System.Drawing.Point(265, 111)
         Me.Label152.Name = "Label152"
-        Me.Label152.Size = New System.Drawing.Size(27, 19)
+        Me.Label152.Size = New System.Drawing.Size(33, 23)
         Me.Label152.TabIndex = 28
         Me.Label152.Text = "cm"
         Me.Label152.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -3699,7 +3702,7 @@ Partial Class Form1
         Me.Label151.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label151.Location = New System.Drawing.Point(265, 30)
         Me.Label151.Name = "Label151"
-        Me.Label151.Size = New System.Drawing.Size(27, 19)
+        Me.Label151.Size = New System.Drawing.Size(33, 23)
         Me.Label151.TabIndex = 29
         Me.Label151.Text = "cm"
         Me.Label151.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -3729,7 +3732,7 @@ Partial Class Form1
         Me.txtEntradaCircularD.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.txtEntradaCircularD.Location = New System.Drawing.Point(139, 38)
         Me.txtEntradaCircularD.Name = "txtEntradaCircularD"
-        Me.txtEntradaCircularD.Size = New System.Drawing.Size(59, 26)
+        Me.txtEntradaCircularD.Size = New System.Drawing.Size(59, 30)
         Me.txtEntradaCircularD.TabIndex = 35
         '
         'txtEntradaCircularL
@@ -3737,7 +3740,7 @@ Partial Class Form1
         Me.txtEntradaCircularL.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.txtEntradaCircularL.Location = New System.Drawing.Point(139, 79)
         Me.txtEntradaCircularL.Name = "txtEntradaCircularL"
-        Me.txtEntradaCircularL.Size = New System.Drawing.Size(59, 26)
+        Me.txtEntradaCircularL.Size = New System.Drawing.Size(59, 30)
         Me.txtEntradaCircularL.TabIndex = 32
         '
         'Label37
@@ -3746,7 +3749,7 @@ Partial Class Form1
         Me.Label37.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label37.Location = New System.Drawing.Point(198, 41)
         Me.Label37.Name = "Label37"
-        Me.Label37.Size = New System.Drawing.Size(27, 19)
+        Me.Label37.Size = New System.Drawing.Size(33, 23)
         Me.Label37.TabIndex = 36
         Me.Label37.Text = "cm"
         Me.Label37.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -3768,7 +3771,7 @@ Partial Class Form1
         Me.Label38.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label38.Location = New System.Drawing.Point(51, 41)
         Me.Label38.Name = "Label38"
-        Me.Label38.Size = New System.Drawing.Size(89, 19)
+        Me.Label38.Size = New System.Drawing.Size(110, 23)
         Me.Label38.TabIndex = 34
         Me.Label38.Text = "Diametro (d):"
         '
@@ -3778,7 +3781,7 @@ Partial Class Form1
         Me.Label36.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label36.Location = New System.Drawing.Point(23, 82)
         Me.Label36.Name = "Label36"
-        Me.Label36.Size = New System.Drawing.Size(116, 19)
+        Me.Label36.Size = New System.Drawing.Size(143, 23)
         Me.Label36.TabIndex = 31
         Me.Label36.Text = "Comprimento (L):"
         '
@@ -3788,7 +3791,7 @@ Partial Class Form1
         Me.Label35.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label35.Location = New System.Drawing.Point(198, 82)
         Me.Label35.Name = "Label35"
-        Me.Label35.Size = New System.Drawing.Size(21, 19)
+        Me.Label35.Size = New System.Drawing.Size(25, 23)
         Me.Label35.TabIndex = 33
         Me.Label35.Text = "m"
         Me.Label35.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -3824,7 +3827,7 @@ Partial Class Form1
         Me.cboElementFixacao.Items.AddRange(New Object() {"Espacador Interposto", "Chapas Laterais de Fixação "})
         Me.cboElementFixacao.Location = New System.Drawing.Point(199, 179)
         Me.cboElementFixacao.Name = "cboElementFixacao"
-        Me.cboElementFixacao.Size = New System.Drawing.Size(188, 27)
+        Me.cboElementFixacao.Size = New System.Drawing.Size(188, 31)
         Me.cboElementFixacao.TabIndex = 44
         Me.cboElementFixacao.Text = "Selecione.."
         '
@@ -3836,7 +3839,7 @@ Partial Class Form1
         Me.rbt3Elementos.Location = New System.Drawing.Point(22, 192)
         Me.rbt3Elementos.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.rbt3Elementos.Name = "rbt3Elementos"
-        Me.rbt3Elementos.Size = New System.Drawing.Size(182, 23)
+        Me.rbt3Elementos.Size = New System.Drawing.Size(222, 27)
         Me.rbt3Elementos.TabIndex = 27
         Me.rbt3Elementos.TabStop = True
         Me.rbt3Elementos.Text = "3 Elementos Justapostos "
@@ -3850,7 +3853,7 @@ Partial Class Form1
         Me.rbt2Elementos.Location = New System.Drawing.Point(22, 166)
         Me.rbt2Elementos.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.rbt2Elementos.Name = "rbt2Elementos"
-        Me.rbt2Elementos.Size = New System.Drawing.Size(182, 23)
+        Me.rbt2Elementos.Size = New System.Drawing.Size(222, 27)
         Me.rbt2Elementos.TabIndex = 26
         Me.rbt2Elementos.TabStop = True
         Me.rbt2Elementos.Text = "2 Elementos Justapostos "
@@ -3862,7 +3865,7 @@ Partial Class Form1
         Me.Label372.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label372.Location = New System.Drawing.Point(6, 139)
         Me.Label372.Name = "Label372"
-        Me.Label372.Size = New System.Drawing.Size(284, 19)
+        Me.Label372.Size = New System.Drawing.Size(357, 23)
         Me.Label372.TabIndex = 25
         Me.Label372.Text = "Seção Composta (Solidarização Descontínua):"
         '
@@ -3872,7 +3875,7 @@ Partial Class Form1
         Me.Label32.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label32.Location = New System.Drawing.Point(6, 23)
         Me.Label32.Name = "Label32"
-        Me.Label32.Size = New System.Drawing.Size(97, 19)
+        Me.Label32.Size = New System.Drawing.Size(122, 23)
         Me.Label32.TabIndex = 24
         Me.Label32.Text = "Seção Simples:"
         '
@@ -3882,7 +3885,7 @@ Partial Class Form1
         Me.Label140.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label140.Location = New System.Drawing.Point(6, 81)
         Me.Label140.Name = "Label140"
-        Me.Label140.Size = New System.Drawing.Size(264, 19)
+        Me.Label140.Size = New System.Drawing.Size(332, 23)
         Me.Label140.TabIndex = 21
         Me.Label140.Text = "Seção Composta (Solidarização Contínua):"
         '
@@ -3894,7 +3897,7 @@ Partial Class Form1
         Me.rbtSecaoCaixao.Location = New System.Drawing.Point(254, 108)
         Me.rbtSecaoCaixao.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.rbtSecaoCaixao.Name = "rbtSecaoCaixao"
-        Me.rbtSecaoCaixao.Size = New System.Drawing.Size(67, 23)
+        Me.rbtSecaoCaixao.Size = New System.Drawing.Size(82, 27)
         Me.rbtSecaoCaixao.TabIndex = 10
         Me.rbtSecaoCaixao.TabStop = True
         Me.rbtSecaoCaixao.Text = "Caixão"
@@ -3908,7 +3911,7 @@ Partial Class Form1
         Me.rbtSecaoT.Location = New System.Drawing.Point(18, 108)
         Me.rbtSecaoT.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.rbtSecaoT.Name = "rbtSecaoT"
-        Me.rbtSecaoT.Size = New System.Drawing.Size(96, 23)
+        Me.rbtSecaoT.Size = New System.Drawing.Size(119, 27)
         Me.rbtSecaoT.TabIndex = 9
         Me.rbtSecaoT.TabStop = True
         Me.rbtSecaoT.Text = "Seção em T"
@@ -3922,7 +3925,7 @@ Partial Class Form1
         Me.rbtSecaoI.Location = New System.Drawing.Point(137, 108)
         Me.rbtSecaoI.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.rbtSecaoI.Name = "rbtSecaoI"
-        Me.rbtSecaoI.Size = New System.Drawing.Size(93, 23)
+        Me.rbtSecaoI.Size = New System.Drawing.Size(115, 27)
         Me.rbtSecaoI.TabIndex = 3
         Me.rbtSecaoI.TabStop = True
         Me.rbtSecaoI.Text = "Seção em I"
@@ -3936,7 +3939,7 @@ Partial Class Form1
         Me.rbtSecaoCircular.Location = New System.Drawing.Point(138, 50)
         Me.rbtSecaoCircular.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.rbtSecaoCircular.Name = "rbtSecaoCircular"
-        Me.rbtSecaoCircular.Size = New System.Drawing.Size(77, 23)
+        Me.rbtSecaoCircular.Size = New System.Drawing.Size(94, 27)
         Me.rbtSecaoCircular.TabIndex = 1
         Me.rbtSecaoCircular.TabStop = True
         Me.rbtSecaoCircular.Text = "Circular "
@@ -3950,7 +3953,7 @@ Partial Class Form1
         Me.rbtSecaoRetangular.Location = New System.Drawing.Point(18, 50)
         Me.rbtSecaoRetangular.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.rbtSecaoRetangular.Name = "rbtSecaoRetangular"
-        Me.rbtSecaoRetangular.Size = New System.Drawing.Size(97, 23)
+        Me.rbtSecaoRetangular.Size = New System.Drawing.Size(119, 27)
         Me.rbtSecaoRetangular.TabIndex = 0
         Me.rbtSecaoRetangular.TabStop = True
         Me.rbtSecaoRetangular.Text = "Retangular "
@@ -3983,7 +3986,7 @@ Partial Class Form1
         Me.txtEntradaRetangularBy.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.txtEntradaRetangularBy.Location = New System.Drawing.Point(141, 78)
         Me.txtEntradaRetangularBy.Name = "txtEntradaRetangularBy"
-        Me.txtEntradaRetangularBy.Size = New System.Drawing.Size(59, 26)
+        Me.txtEntradaRetangularBy.Size = New System.Drawing.Size(59, 30)
         Me.txtEntradaRetangularBy.TabIndex = 31
         '
         'txtEntradaRetangularL
@@ -3991,7 +3994,7 @@ Partial Class Form1
         Me.txtEntradaRetangularL.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.txtEntradaRetangularL.Location = New System.Drawing.Point(141, 117)
         Me.txtEntradaRetangularL.Name = "txtEntradaRetangularL"
-        Me.txtEntradaRetangularL.Size = New System.Drawing.Size(59, 26)
+        Me.txtEntradaRetangularL.Size = New System.Drawing.Size(59, 30)
         Me.txtEntradaRetangularL.TabIndex = 4
         '
         'txtEntradaRetangularBx
@@ -3999,7 +4002,7 @@ Partial Class Form1
         Me.txtEntradaRetangularBx.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.txtEntradaRetangularBx.Location = New System.Drawing.Point(141, 35)
         Me.txtEntradaRetangularBx.Name = "txtEntradaRetangularBx"
-        Me.txtEntradaRetangularBx.Size = New System.Drawing.Size(59, 26)
+        Me.txtEntradaRetangularBx.Size = New System.Drawing.Size(59, 30)
         Me.txtEntradaRetangularBx.TabIndex = 1
         '
         'Label182
@@ -4008,7 +4011,7 @@ Partial Class Form1
         Me.Label182.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label182.Location = New System.Drawing.Point(199, 81)
         Me.Label182.Name = "Label182"
-        Me.Label182.Size = New System.Drawing.Size(27, 19)
+        Me.Label182.Size = New System.Drawing.Size(33, 23)
         Me.Label182.TabIndex = 26
         Me.Label182.Text = "cm"
         Me.Label182.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -4019,7 +4022,7 @@ Partial Class Form1
         Me.Label106.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label106.Location = New System.Drawing.Point(199, 120)
         Me.Label106.Name = "Label106"
-        Me.Label106.Size = New System.Drawing.Size(21, 19)
+        Me.Label106.Size = New System.Drawing.Size(25, 23)
         Me.Label106.TabIndex = 8
         Me.Label106.Text = "m"
         Me.Label106.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -4030,7 +4033,7 @@ Partial Class Form1
         Me.Label105.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label105.Location = New System.Drawing.Point(28, 120)
         Me.Label105.Name = "Label105"
-        Me.Label105.Size = New System.Drawing.Size(116, 19)
+        Me.Label105.Size = New System.Drawing.Size(143, 23)
         Me.Label105.TabIndex = 3
         Me.Label105.Text = "Comprimento (L):"
         '
@@ -4040,7 +4043,7 @@ Partial Class Form1
         Me.Label30.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label30.Location = New System.Drawing.Point(199, 38)
         Me.Label30.Name = "Label30"
-        Me.Label30.Size = New System.Drawing.Size(27, 19)
+        Me.Label30.Size = New System.Drawing.Size(33, 23)
         Me.Label30.TabIndex = 2
         Me.Label30.Text = "cm"
         Me.Label30.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -4051,7 +4054,7 @@ Partial Class Form1
         Me.Label28.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label28.Location = New System.Drawing.Point(79, 38)
         Me.Label28.Name = "Label28"
-        Me.Label28.Size = New System.Drawing.Size(66, 19)
+        Me.Label28.Size = New System.Drawing.Size(82, 23)
         Me.Label28.TabIndex = 0
         Me.Label28.Text = "Base (bx):"
         '
@@ -4061,7 +4064,7 @@ Partial Class Form1
         Me.Label382.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label382.Location = New System.Drawing.Point(76, 81)
         Me.Label382.Name = "Label382"
-        Me.Label382.Size = New System.Drawing.Size(69, 19)
+        Me.Label382.Size = New System.Drawing.Size(85, 23)
         Me.Label382.TabIndex = 30
         Me.Label382.Text = "Altura (h):"
         '
@@ -4106,7 +4109,7 @@ Partial Class Form1
         Me.txtApoioY.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.txtApoioY.Location = New System.Drawing.Point(176, 256)
         Me.txtApoioY.Name = "txtApoioY"
-        Me.txtApoioY.Size = New System.Drawing.Size(57, 26)
+        Me.txtApoioY.Size = New System.Drawing.Size(57, 30)
         Me.txtApoioY.TabIndex = 77
         Me.txtApoioY.Text = "0"
         '
@@ -4115,7 +4118,7 @@ Partial Class Form1
         Me.Label200.AutoSize = True
         Me.Label200.Location = New System.Drawing.Point(252, 33)
         Me.Label200.Name = "Label200"
-        Me.Label200.Size = New System.Drawing.Size(21, 19)
+        Me.Label200.Size = New System.Drawing.Size(25, 23)
         Me.Label200.TabIndex = 114
         Me.Label200.Text = "→"
         '
@@ -4125,7 +4128,7 @@ Partial Class Form1
         Me.Label136.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label136.Location = New System.Drawing.Point(35, 259)
         Me.Label136.Name = "Label136"
-        Me.Label136.Size = New System.Drawing.Size(141, 19)
+        Me.Label136.Size = New System.Drawing.Size(175, 23)
         Me.Label136.TabIndex = 80
         Me.Label136.Text = "Reação no Apoio (Fy):"
         '
@@ -4134,7 +4137,7 @@ Partial Class Form1
         Me.txtCortanteY.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.txtCortanteY.Location = New System.Drawing.Point(176, 107)
         Me.txtCortanteY.Name = "txtCortanteY"
-        Me.txtCortanteY.Size = New System.Drawing.Size(57, 26)
+        Me.txtCortanteY.Size = New System.Drawing.Size(57, 30)
         Me.txtCortanteY.TabIndex = 48
         Me.txtCortanteY.Text = "0"
         '
@@ -4144,7 +4147,7 @@ Partial Class Form1
         Me.Label149.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label149.Location = New System.Drawing.Point(234, 259)
         Me.Label149.Name = "Label149"
-        Me.Label149.Size = New System.Drawing.Size(26, 19)
+        Me.Label149.Size = New System.Drawing.Size(31, 23)
         Me.Label149.TabIndex = 79
         Me.Label149.Text = "kN"
         Me.Label149.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -4154,7 +4157,7 @@ Partial Class Form1
         Me.txtApoioX.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.txtApoioX.Location = New System.Drawing.Point(176, 220)
         Me.txtApoioX.Name = "txtApoioX"
-        Me.txtApoioX.Size = New System.Drawing.Size(57, 26)
+        Me.txtApoioX.Size = New System.Drawing.Size(57, 30)
         Me.txtApoioX.TabIndex = 76
         Me.txtApoioX.Text = "0"
         '
@@ -4164,7 +4167,7 @@ Partial Class Form1
         Me.Label241.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label241.Location = New System.Drawing.Point(24, 109)
         Me.Label241.Name = "Label241"
-        Me.Label241.Size = New System.Drawing.Size(151, 19)
+        Me.Label241.Size = New System.Drawing.Size(185, 23)
         Me.Label241.TabIndex = 47
         Me.Label241.Text = "Esforço Cortante (Vs,y):"
         '
@@ -4174,7 +4177,7 @@ Partial Class Form1
         Me.Label135.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label135.Location = New System.Drawing.Point(35, 224)
         Me.Label135.Name = "Label135"
-        Me.Label135.Size = New System.Drawing.Size(140, 19)
+        Me.Label135.Size = New System.Drawing.Size(175, 23)
         Me.Label135.TabIndex = 75
         Me.Label135.Text = "Reação no Apoio (Fx):"
         '
@@ -4184,7 +4187,7 @@ Partial Class Form1
         Me.Label249.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label249.Location = New System.Drawing.Point(234, 110)
         Me.Label249.Name = "Label249"
-        Me.Label249.Size = New System.Drawing.Size(26, 19)
+        Me.Label249.Size = New System.Drawing.Size(31, 23)
         Me.Label249.TabIndex = 49
         Me.Label249.Text = "kN"
         Me.Label249.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -4195,7 +4198,7 @@ Partial Class Form1
         Me.Label143.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label143.Location = New System.Drawing.Point(234, 223)
         Me.Label143.Name = "Label143"
-        Me.Label143.Size = New System.Drawing.Size(26, 19)
+        Me.Label143.Size = New System.Drawing.Size(31, 23)
         Me.Label143.TabIndex = 78
         Me.Label143.Text = "kN"
         Me.Label143.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -4206,7 +4209,7 @@ Partial Class Form1
         Me.Label42.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label42.Location = New System.Drawing.Point(234, 185)
         Me.Label42.Name = "Label42"
-        Me.Label42.Size = New System.Drawing.Size(38, 19)
+        Me.Label42.Size = New System.Drawing.Size(46, 23)
         Me.Label42.TabIndex = 46
         Me.Label42.Text = "kNm"
         Me.Label42.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -4218,7 +4221,7 @@ Partial Class Form1
         Me.cboTracaoCompressao.Items.AddRange(New Object() {"Tração", "Compressão"})
         Me.cboTracaoCompressao.Location = New System.Drawing.Point(272, 30)
         Me.cboTracaoCompressao.Name = "cboTracaoCompressao"
-        Me.cboTracaoCompressao.Size = New System.Drawing.Size(161, 27)
+        Me.cboTracaoCompressao.Size = New System.Drawing.Size(161, 31)
         Me.cboTracaoCompressao.TabIndex = 43
         Me.cboTracaoCompressao.Text = "Selecione.."
         '
@@ -4227,7 +4230,7 @@ Partial Class Form1
         Me.txtNormal.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.txtNormal.Location = New System.Drawing.Point(176, 31)
         Me.txtNormal.Name = "txtNormal"
-        Me.txtNormal.Size = New System.Drawing.Size(57, 26)
+        Me.txtNormal.Size = New System.Drawing.Size(57, 30)
         Me.txtNormal.TabIndex = 24
         Me.txtNormal.Text = "0"
         '
@@ -4236,7 +4239,7 @@ Partial Class Form1
         Me.txtCortanteX.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.txtCortanteX.Location = New System.Drawing.Point(176, 71)
         Me.txtCortanteX.Name = "txtCortanteX"
-        Me.txtCortanteX.Size = New System.Drawing.Size(57, 26)
+        Me.txtCortanteX.Size = New System.Drawing.Size(57, 30)
         Me.txtCortanteX.TabIndex = 25
         Me.txtCortanteX.Text = "0"
         '
@@ -4246,7 +4249,7 @@ Partial Class Form1
         Me.Label378.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label378.Location = New System.Drawing.Point(30, 33)
         Me.Label378.Name = "Label378"
-        Me.Label378.Size = New System.Drawing.Size(144, 19)
+        Me.Label378.Size = New System.Drawing.Size(180, 23)
         Me.Label378.TabIndex = 23
         Me.Label378.Text = "Esforço Normal (Ns,d):"
         '
@@ -4256,7 +4259,7 @@ Partial Class Form1
         Me.Label380.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label380.Location = New System.Drawing.Point(24, 73)
         Me.Label380.Name = "Label380"
-        Me.Label380.Size = New System.Drawing.Size(150, 19)
+        Me.Label380.Size = New System.Drawing.Size(185, 23)
         Me.Label380.TabIndex = 21
         Me.Label380.Text = "Esforço Cortante (Vs,x):"
         '
@@ -4266,7 +4269,7 @@ Partial Class Form1
         Me.Label377.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label377.Location = New System.Drawing.Point(230, 34)
         Me.Label377.Name = "Label377"
-        Me.Label377.Size = New System.Drawing.Size(26, 19)
+        Me.Label377.Size = New System.Drawing.Size(31, 23)
         Me.Label377.TabIndex = 35
         Me.Label377.Text = "kN"
         Me.Label377.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -4277,7 +4280,7 @@ Partial Class Form1
         Me.Label375.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label375.Location = New System.Drawing.Point(234, 74)
         Me.Label375.Name = "Label375"
-        Me.Label375.Size = New System.Drawing.Size(26, 19)
+        Me.Label375.Size = New System.Drawing.Size(31, 23)
         Me.Label375.TabIndex = 37
         Me.Label375.Text = "kN"
         Me.Label375.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -4287,7 +4290,7 @@ Partial Class Form1
         Me.txtMx.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.txtMx.Location = New System.Drawing.Point(176, 143)
         Me.txtMx.Name = "txtMx"
-        Me.txtMx.Size = New System.Drawing.Size(57, 26)
+        Me.txtMx.Size = New System.Drawing.Size(57, 30)
         Me.txtMx.TabIndex = 42
         Me.txtMx.Text = "0"
         '
@@ -4297,7 +4300,7 @@ Partial Class Form1
         Me.Label40.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label40.Location = New System.Drawing.Point(234, 145)
         Me.Label40.Name = "Label40"
-        Me.Label40.Size = New System.Drawing.Size(38, 19)
+        Me.Label40.Size = New System.Drawing.Size(46, 23)
         Me.Label40.TabIndex = 43
         Me.Label40.Text = "kNm"
         Me.Label40.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -4320,7 +4323,7 @@ Partial Class Form1
         Me.Label39.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label39.Location = New System.Drawing.Point(24, 145)
         Me.Label39.Name = "Label39"
-        Me.Label39.Size = New System.Drawing.Size(152, 19)
+        Me.Label39.Size = New System.Drawing.Size(186, 23)
         Me.Label39.TabIndex = 41
         Me.Label39.Text = "Momento Fletor (Ms,x):"
         '
@@ -4329,7 +4332,7 @@ Partial Class Form1
         Me.txtMy.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.txtMy.Location = New System.Drawing.Point(176, 183)
         Me.txtMy.Name = "txtMy"
-        Me.txtMy.Size = New System.Drawing.Size(57, 26)
+        Me.txtMy.Size = New System.Drawing.Size(57, 30)
         Me.txtMy.TabIndex = 45
         Me.txtMy.Text = "0"
         '
@@ -4339,7 +4342,7 @@ Partial Class Form1
         Me.Label41.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label41.Location = New System.Drawing.Point(24, 185)
         Me.Label41.Name = "Label41"
-        Me.Label41.Size = New System.Drawing.Size(153, 19)
+        Me.Label41.Size = New System.Drawing.Size(186, 23)
         Me.Label41.TabIndex = 44
         Me.Label41.Text = "Momento Fletor (Ms,y):"
         '
@@ -4349,9 +4352,9 @@ Partial Class Form1
         Me.TabResultados.Controls.Add(Me.PictureBox9)
         Me.TabResultados.Controls.Add(Me.gbxResultadosElementos)
         Me.TabResultados.Controls.Add(Me.gbxResultadosSecao)
-        Me.TabResultados.Location = New System.Drawing.Point(4, 28)
+        Me.TabResultados.Location = New System.Drawing.Point(4, 32)
         Me.TabResultados.Name = "TabResultados"
-        Me.TabResultados.Size = New System.Drawing.Size(1068, 538)
+        Me.TabResultados.Size = New System.Drawing.Size(1068, 534)
         Me.TabResultados.TabIndex = 10
         Me.TabResultados.Text = "Propriedades Geométricas"
         Me.TabResultados.UseVisualStyleBackColor = True
@@ -4364,7 +4367,7 @@ Partial Class Form1
         Me.Label23.AutoSize = True
         Me.Label23.Location = New System.Drawing.Point(710, 276)
         Me.Label23.Name = "Label23"
-        Me.Label23.Size = New System.Drawing.Size(60, 19)
+        Me.Label23.Size = New System.Drawing.Size(74, 23)
         Me.Label23.TabIndex = 69
         Me.Label23.Text = "Exportar"
         '
@@ -4430,7 +4433,7 @@ Partial Class Form1
         Me.Label266.Font = New System.Drawing.Font("Segoe UI", 6.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label266.Location = New System.Drawing.Point(267, 115)
         Me.Label266.Name = "Label266"
-        Me.Label266.Size = New System.Drawing.Size(9, 11)
+        Me.Label266.Size = New System.Drawing.Size(10, 12)
         Me.Label266.TabIndex = 30
         Me.Label266.Text = "4"
         Me.Label266.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -4441,7 +4444,7 @@ Partial Class Form1
         Me.Label280.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label280.Location = New System.Drawing.Point(244, 115)
         Me.Label280.Name = "Label280"
-        Me.Label280.Size = New System.Drawing.Size(27, 19)
+        Me.Label280.Size = New System.Drawing.Size(33, 23)
         Me.Label280.TabIndex = 29
         Me.Label280.Text = "cm"
         Me.Label280.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -4452,7 +4455,7 @@ Partial Class Form1
         Me.Label436.Font = New System.Drawing.Font("Segoe UI", 6.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label436.Location = New System.Drawing.Point(267, 70)
         Me.Label436.Name = "Label436"
-        Me.Label436.Size = New System.Drawing.Size(9, 11)
+        Me.Label436.Size = New System.Drawing.Size(10, 12)
         Me.Label436.TabIndex = 24
         Me.Label436.Text = "4"
         Me.Label436.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -4463,7 +4466,7 @@ Partial Class Form1
         Me.Label444.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label444.Location = New System.Drawing.Point(244, 36)
         Me.Label444.Name = "Label444"
-        Me.Label444.Size = New System.Drawing.Size(32, 19)
+        Me.Label444.Size = New System.Drawing.Size(39, 23)
         Me.Label444.TabIndex = 23
         Me.Label444.Text = "cm²"
         Me.Label444.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -4474,7 +4477,7 @@ Partial Class Form1
         Me.Label437.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label437.Location = New System.Drawing.Point(244, 70)
         Me.Label437.Name = "Label437"
-        Me.Label437.Size = New System.Drawing.Size(27, 19)
+        Me.Label437.Size = New System.Drawing.Size(33, 23)
         Me.Label437.TabIndex = 23
         Me.Label437.Text = "cm"
         Me.Label437.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -4485,7 +4488,7 @@ Partial Class Form1
         Me.txtInterpoIx.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.txtInterpoIx.Location = New System.Drawing.Point(183, 67)
         Me.txtInterpoIx.Name = "txtInterpoIx"
-        Me.txtInterpoIx.Size = New System.Drawing.Size(59, 26)
+        Me.txtInterpoIx.Size = New System.Drawing.Size(59, 30)
         Me.txtInterpoIx.TabIndex = 7
         '
         'txtArea
@@ -4494,7 +4497,7 @@ Partial Class Form1
         Me.txtArea.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.txtArea.Location = New System.Drawing.Point(183, 31)
         Me.txtArea.Name = "txtArea"
-        Me.txtArea.Size = New System.Drawing.Size(59, 26)
+        Me.txtArea.Size = New System.Drawing.Size(59, 30)
         Me.txtArea.TabIndex = 22
         '
         'Label445
@@ -4503,7 +4506,7 @@ Partial Class Form1
         Me.Label445.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label445.Location = New System.Drawing.Point(127, 36)
         Me.Label445.Name = "Label445"
-        Me.Label445.Size = New System.Drawing.Size(61, 19)
+        Me.Label445.Size = New System.Drawing.Size(75, 23)
         Me.Label445.TabIndex = 21
         Me.Label445.Text = "Área (A):"
         '
@@ -4513,7 +4516,7 @@ Partial Class Form1
         Me.Label435.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label435.Location = New System.Drawing.Point(242, 194)
         Me.Label435.Name = "Label435"
-        Me.Label435.Size = New System.Drawing.Size(32, 19)
+        Me.Label435.Size = New System.Drawing.Size(39, 23)
         Me.Label435.TabIndex = 26
         Me.Label435.Text = "cm²"
         Me.Label435.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -4524,7 +4527,7 @@ Partial Class Form1
         Me.txtInterpoEixoYCoefB.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.txtInterpoEixoYCoefB.Location = New System.Drawing.Point(183, 151)
         Me.txtInterpoEixoYCoefB.Name = "txtInterpoEixoYCoefB"
-        Me.txtInterpoEixoYCoefB.Size = New System.Drawing.Size(59, 26)
+        Me.txtInterpoEixoYCoefB.Size = New System.Drawing.Size(59, 30)
         Me.txtInterpoEixoYCoefB.TabIndex = 20
         '
         'txtInterpoIModuloResist
@@ -4533,7 +4536,7 @@ Partial Class Form1
         Me.txtInterpoIModuloResist.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.txtInterpoIModuloResist.Location = New System.Drawing.Point(183, 191)
         Me.txtInterpoIModuloResist.Name = "txtInterpoIModuloResist"
-        Me.txtInterpoIModuloResist.Size = New System.Drawing.Size(59, 26)
+        Me.txtInterpoIModuloResist.Size = New System.Drawing.Size(59, 30)
         Me.txtInterpoIModuloResist.TabIndex = 25
         '
         'Label446
@@ -4542,7 +4545,7 @@ Partial Class Form1
         Me.Label446.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label446.Location = New System.Drawing.Point(6, 194)
         Me.Label446.Name = "Label446"
-        Me.Label446.Size = New System.Drawing.Size(180, 19)
+        Me.Label446.Size = New System.Drawing.Size(224, 23)
         Me.Label446.TabIndex = 24
         Me.Label446.Text = "Módulo de Resistência (Wx):"
         '
@@ -4552,7 +4555,7 @@ Partial Class Form1
         Me.Label371.Font = New System.Drawing.Font("Symbol", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label371.Location = New System.Drawing.Point(168, 154)
         Me.Label371.Name = "Label371"
-        Me.Label371.Size = New System.Drawing.Size(19, 17)
+        Me.Label371.Size = New System.Drawing.Size(24, 21)
         Me.Label371.TabIndex = 19
         Me.Label371.Text = "b:"
         '
@@ -4562,7 +4565,7 @@ Partial Class Form1
         Me.txtInterpoIy.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.txtInterpoIy.Location = New System.Drawing.Point(183, 111)
         Me.txtInterpoIy.Name = "txtInterpoIy"
-        Me.txtInterpoIy.Size = New System.Drawing.Size(59, 26)
+        Me.txtInterpoIy.Size = New System.Drawing.Size(59, 30)
         Me.txtInterpoIy.TabIndex = 20
         '
         'Label376
@@ -4571,7 +4574,7 @@ Partial Class Form1
         Me.Label376.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label376.Location = New System.Drawing.Point(6, 114)
         Me.Label376.Name = "Label376"
-        Me.Label376.Size = New System.Drawing.Size(183, 19)
+        Me.Label376.Size = New System.Drawing.Size(227, 23)
         Me.Label376.TabIndex = 21
         Me.Label376.Text = "      Momento de Inércia (Iy):"
         '
@@ -4581,7 +4584,7 @@ Partial Class Form1
         Me.Label188.Font = New System.Drawing.Font("Segoe UI", 6.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label188.Location = New System.Drawing.Point(265, 232)
         Me.Label188.Name = "Label188"
-        Me.Label188.Size = New System.Drawing.Size(9, 11)
+        Me.Label188.Size = New System.Drawing.Size(10, 12)
         Me.Label188.TabIndex = 23
         Me.Label188.Text = "4"
         Me.Label188.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -4592,7 +4595,7 @@ Partial Class Form1
         Me.txtInterpoEixoYInerciaEfetiva.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.txtInterpoEixoYInerciaEfetiva.Location = New System.Drawing.Point(183, 231)
         Me.txtInterpoEixoYInerciaEfetiva.Name = "txtInterpoEixoYInerciaEfetiva"
-        Me.txtInterpoEixoYInerciaEfetiva.Size = New System.Drawing.Size(59, 26)
+        Me.txtInterpoEixoYInerciaEfetiva.Size = New System.Drawing.Size(59, 30)
         Me.txtInterpoEixoYInerciaEfetiva.TabIndex = 13
         '
         'Label365
@@ -4601,7 +4604,7 @@ Partial Class Form1
         Me.Label365.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label365.Location = New System.Drawing.Point(242, 234)
         Me.Label365.Name = "Label365"
-        Me.Label365.Size = New System.Drawing.Size(27, 19)
+        Me.Label365.Size = New System.Drawing.Size(33, 23)
         Me.Label365.TabIndex = 22
         Me.Label365.Text = "cm"
         Me.Label365.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -4612,7 +4615,7 @@ Partial Class Form1
         Me.Label381.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label381.Location = New System.Drawing.Point(6, 234)
         Me.Label381.Name = "Label381"
-        Me.Label381.Size = New System.Drawing.Size(183, 19)
+        Me.Label381.Size = New System.Drawing.Size(229, 23)
         Me.Label381.TabIndex = 12
         Me.Label381.Text = "               Inércia Efetiva (Ief):"
         '
@@ -4622,7 +4625,7 @@ Partial Class Form1
         Me.Label384.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label384.Location = New System.Drawing.Point(4, 74)
         Me.Label384.Name = "Label384"
-        Me.Label384.Size = New System.Drawing.Size(182, 19)
+        Me.Label384.Size = New System.Drawing.Size(227, 23)
         Me.Label384.TabIndex = 3
         Me.Label384.Text = "      Momento de Inércia (Ix):"
         '
@@ -4652,7 +4655,7 @@ Partial Class Form1
         Me.Label259.Font = New System.Drawing.Font("Segoe UI", 6.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label259.Location = New System.Drawing.Point(273, 118)
         Me.Label259.Name = "Label259"
-        Me.Label259.Size = New System.Drawing.Size(9, 11)
+        Me.Label259.Size = New System.Drawing.Size(10, 12)
         Me.Label259.TabIndex = 32
         Me.Label259.Text = "4"
         Me.Label259.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -4663,7 +4666,7 @@ Partial Class Form1
         Me.Label265.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label265.Location = New System.Drawing.Point(250, 118)
         Me.Label265.Name = "Label265"
-        Me.Label265.Size = New System.Drawing.Size(27, 19)
+        Me.Label265.Size = New System.Drawing.Size(33, 23)
         Me.Label265.TabIndex = 31
         Me.Label265.Text = "cm"
         Me.Label265.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -4674,7 +4677,7 @@ Partial Class Form1
         Me.txtInterpoIy2.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.txtInterpoIy2.Location = New System.Drawing.Point(190, 115)
         Me.txtInterpoIy2.Name = "txtInterpoIy2"
-        Me.txtInterpoIy2.Size = New System.Drawing.Size(59, 26)
+        Me.txtInterpoIy2.Size = New System.Drawing.Size(59, 30)
         Me.txtInterpoIy2.TabIndex = 4
         '
         'Label457
@@ -4683,7 +4686,7 @@ Partial Class Form1
         Me.Label457.Font = New System.Drawing.Font("Segoe UI", 6.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label457.Location = New System.Drawing.Point(273, 78)
         Me.Label457.Name = "Label457"
-        Me.Label457.Size = New System.Drawing.Size(9, 11)
+        Me.Label457.Size = New System.Drawing.Size(10, 12)
         Me.Label457.TabIndex = 30
         Me.Label457.Text = "4"
         Me.Label457.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -4694,7 +4697,7 @@ Partial Class Form1
         Me.Label458.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label458.Location = New System.Drawing.Point(250, 78)
         Me.Label458.Name = "Label458"
-        Me.Label458.Size = New System.Drawing.Size(27, 19)
+        Me.Label458.Size = New System.Drawing.Size(33, 23)
         Me.Label458.TabIndex = 29
         Me.Label458.Text = "cm"
         Me.Label458.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -4705,7 +4708,7 @@ Partial Class Form1
         Me.Label441.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label441.Location = New System.Drawing.Point(9, 118)
         Me.Label441.Name = "Label441"
-        Me.Label441.Size = New System.Drawing.Size(184, 19)
+        Me.Label441.Size = New System.Drawing.Size(228, 23)
         Me.Label441.TabIndex = 18
         Me.Label441.Text = "      Momento de Inércia (I2):"
         '
@@ -4715,7 +4718,7 @@ Partial Class Form1
         Me.txtInterpoIx1.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.txtInterpoIx1.Location = New System.Drawing.Point(190, 75)
         Me.txtInterpoIx1.Name = "txtInterpoIx1"
-        Me.txtInterpoIx1.Size = New System.Drawing.Size(59, 26)
+        Me.txtInterpoIx1.Size = New System.Drawing.Size(59, 30)
         Me.txtInterpoIx1.TabIndex = 4
         '
         'Label442
@@ -4724,7 +4727,7 @@ Partial Class Form1
         Me.Label442.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label442.Location = New System.Drawing.Point(251, 36)
         Me.Label442.Name = "Label442"
-        Me.Label442.Size = New System.Drawing.Size(32, 19)
+        Me.Label442.Size = New System.Drawing.Size(39, 23)
         Me.Label442.TabIndex = 2
         Me.Label442.Text = "cm²"
         Me.Label442.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -4735,7 +4738,7 @@ Partial Class Form1
         Me.Label440.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label440.Location = New System.Drawing.Point(9, 78)
         Me.Label440.Name = "Label440"
-        Me.Label440.Size = New System.Drawing.Size(184, 19)
+        Me.Label440.Size = New System.Drawing.Size(228, 23)
         Me.Label440.TabIndex = 3
         Me.Label440.Text = "      Momento de Inércia (I1):"
         '
@@ -4745,7 +4748,7 @@ Partial Class Form1
         Me.txtArea1.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.txtArea1.Location = New System.Drawing.Point(190, 35)
         Me.txtArea1.Name = "txtArea1"
-        Me.txtArea1.Size = New System.Drawing.Size(59, 26)
+        Me.txtArea1.Size = New System.Drawing.Size(59, 30)
         Me.txtArea1.TabIndex = 1
         '
         'Label443
@@ -4754,7 +4757,7 @@ Partial Class Form1
         Me.Label443.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label443.Location = New System.Drawing.Point(125, 38)
         Me.Label443.Name = "Label443"
-        Me.Label443.Size = New System.Drawing.Size(69, 19)
+        Me.Label443.Size = New System.Drawing.Size(84, 23)
         Me.Label443.TabIndex = 0
         Me.Label443.Text = "Área (A1):"
         '
@@ -4804,7 +4807,7 @@ Partial Class Form1
         Me.Label374.Font = New System.Drawing.Font("Segoe UI", 6.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label374.Location = New System.Drawing.Point(267, 158)
         Me.Label374.Name = "Label374"
-        Me.Label374.Size = New System.Drawing.Size(9, 11)
+        Me.Label374.Size = New System.Drawing.Size(10, 12)
         Me.Label374.TabIndex = 22
         Me.Label374.Text = "4"
         Me.Label374.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -4815,7 +4818,7 @@ Partial Class Form1
         Me.Label379.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label379.Location = New System.Drawing.Point(244, 158)
         Me.Label379.Name = "Label379"
-        Me.Label379.Size = New System.Drawing.Size(27, 19)
+        Me.Label379.Size = New System.Drawing.Size(33, 23)
         Me.Label379.TabIndex = 21
         Me.Label379.Text = "cm"
         Me.Label379.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -4826,7 +4829,7 @@ Partial Class Form1
         Me.Label184.Font = New System.Drawing.Font("Segoe UI", 6.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label184.Location = New System.Drawing.Point(267, 38)
         Me.Label184.Name = "Label184"
-        Me.Label184.Size = New System.Drawing.Size(9, 11)
+        Me.Label184.Size = New System.Drawing.Size(10, 12)
         Me.Label184.TabIndex = 19
         Me.Label184.Text = "4"
         Me.Label184.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -4837,7 +4840,7 @@ Partial Class Form1
         Me.txtEixoYInerciaEfetiva.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.txtEixoYInerciaEfetiva.Location = New System.Drawing.Point(183, 155)
         Me.txtEixoYInerciaEfetiva.Name = "txtEixoYInerciaEfetiva"
-        Me.txtEixoYInerciaEfetiva.Size = New System.Drawing.Size(59, 26)
+        Me.txtEixoYInerciaEfetiva.Size = New System.Drawing.Size(59, 30)
         Me.txtEixoYInerciaEfetiva.TabIndex = 13
         '
         'Label367
@@ -4846,7 +4849,7 @@ Partial Class Form1
         Me.Label367.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label367.Location = New System.Drawing.Point(244, 38)
         Me.Label367.Name = "Label367"
-        Me.Label367.Size = New System.Drawing.Size(27, 19)
+        Me.Label367.Size = New System.Drawing.Size(33, 23)
         Me.Label367.TabIndex = 18
         Me.Label367.Text = "cm"
         Me.Label367.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -4857,7 +4860,7 @@ Partial Class Form1
         Me.Label186.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label186.Location = New System.Drawing.Point(242, 118)
         Me.Label186.Name = "Label186"
-        Me.Label186.Size = New System.Drawing.Size(32, 19)
+        Me.Label186.Size = New System.Drawing.Size(39, 23)
         Me.Label186.TabIndex = 20
         Me.Label186.Text = "cm³"
         Me.Label186.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -4868,7 +4871,7 @@ Partial Class Form1
         Me.txtEixoYModuloResistencia.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.txtEixoYModuloResistencia.Location = New System.Drawing.Point(183, 115)
         Me.txtEixoYModuloResistencia.Name = "txtEixoYModuloResistencia"
-        Me.txtEixoYModuloResistencia.Size = New System.Drawing.Size(59, 26)
+        Me.txtEixoYModuloResistencia.Size = New System.Drawing.Size(59, 30)
         Me.txtEixoYModuloResistencia.TabIndex = 11
         '
         'Label373
@@ -4877,7 +4880,7 @@ Partial Class Form1
         Me.Label373.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label373.Location = New System.Drawing.Point(242, 78)
         Me.Label373.Name = "Label373"
-        Me.Label373.Size = New System.Drawing.Size(32, 19)
+        Me.Label373.Size = New System.Drawing.Size(39, 23)
         Me.Label373.TabIndex = 18
         Me.Label373.Text = "cm²"
         Me.Label373.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -4888,7 +4891,7 @@ Partial Class Form1
         Me.txtEixoYMomentoInercia.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.txtEixoYMomentoInercia.Location = New System.Drawing.Point(183, 35)
         Me.txtEixoYMomentoInercia.Name = "txtEixoYMomentoInercia"
-        Me.txtEixoYMomentoInercia.Size = New System.Drawing.Size(59, 26)
+        Me.txtEixoYMomentoInercia.Size = New System.Drawing.Size(59, 30)
         Me.txtEixoYMomentoInercia.TabIndex = 4
         '
         'txtEixoYRaioGiracao
@@ -4897,7 +4900,7 @@ Partial Class Form1
         Me.txtEixoYRaioGiracao.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.txtEixoYRaioGiracao.Location = New System.Drawing.Point(183, 75)
         Me.txtEixoYRaioGiracao.Name = "txtEixoYRaioGiracao"
-        Me.txtEixoYRaioGiracao.Size = New System.Drawing.Size(59, 26)
+        Me.txtEixoYRaioGiracao.Size = New System.Drawing.Size(59, 30)
         Me.txtEixoYRaioGiracao.TabIndex = 7
         '
         'lblEixoYIE
@@ -4906,7 +4909,7 @@ Partial Class Form1
         Me.lblEixoYIE.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.lblEixoYIE.Location = New System.Drawing.Point(6, 158)
         Me.lblEixoYIE.Name = "lblEixoYIE"
-        Me.lblEixoYIE.Size = New System.Drawing.Size(183, 19)
+        Me.lblEixoYIE.Size = New System.Drawing.Size(229, 23)
         Me.lblEixoYIE.TabIndex = 12
         Me.lblEixoYIE.Text = "               Inércia Efetiva (Ief):"
         '
@@ -4916,7 +4919,7 @@ Partial Class Form1
         Me.Label166.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label166.Location = New System.Drawing.Point(6, 118)
         Me.Label166.Name = "Label166"
-        Me.Label166.Size = New System.Drawing.Size(180, 19)
+        Me.Label166.Size = New System.Drawing.Size(224, 23)
         Me.Label166.TabIndex = 10
         Me.Label166.Text = "Módulo de Resistência (Wx):"
         '
@@ -4926,7 +4929,7 @@ Partial Class Form1
         Me.Label167.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label167.Location = New System.Drawing.Point(6, 38)
         Me.Label167.Name = "Label167"
-        Me.Label167.Size = New System.Drawing.Size(182, 19)
+        Me.Label167.Size = New System.Drawing.Size(227, 23)
         Me.Label167.TabIndex = 3
         Me.Label167.Text = "      Momento de Inércia (Ix):"
         '
@@ -4936,7 +4939,7 @@ Partial Class Form1
         Me.Label185.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label185.Location = New System.Drawing.Point(6, 78)
         Me.Label185.Name = "Label185"
-        Me.Label185.Size = New System.Drawing.Size(183, 19)
+        Me.Label185.Size = New System.Drawing.Size(228, 23)
         Me.Label185.TabIndex = 6
         Me.Label185.Text = "             Raio de Giração (ry):" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
         '
@@ -4969,7 +4972,7 @@ Partial Class Form1
         Me.lblEixoXcm4.Font = New System.Drawing.Font("Segoe UI", 6.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.lblEixoXcm4.Location = New System.Drawing.Point(269, 159)
         Me.lblEixoXcm4.Name = "lblEixoXcm4"
-        Me.lblEixoXcm4.Size = New System.Drawing.Size(9, 11)
+        Me.lblEixoXcm4.Size = New System.Drawing.Size(10, 12)
         Me.lblEixoXcm4.TabIndex = 17
         Me.lblEixoXcm4.Text = "4"
         Me.lblEixoXcm4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -4980,7 +4983,7 @@ Partial Class Form1
         Me.lblEixoXcm.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.lblEixoXcm.Location = New System.Drawing.Point(244, 158)
         Me.lblEixoXcm.Name = "lblEixoXcm"
-        Me.lblEixoXcm.Size = New System.Drawing.Size(27, 19)
+        Me.lblEixoXcm.Size = New System.Drawing.Size(33, 23)
         Me.lblEixoXcm.TabIndex = 16
         Me.lblEixoXcm.Text = "cm"
         Me.lblEixoXcm.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -4991,7 +4994,7 @@ Partial Class Form1
         Me.Label118.Font = New System.Drawing.Font("Segoe UI", 6.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label118.Location = New System.Drawing.Point(269, 38)
         Me.Label118.Name = "Label118"
-        Me.Label118.Size = New System.Drawing.Size(9, 11)
+        Me.Label118.Size = New System.Drawing.Size(10, 12)
         Me.Label118.TabIndex = 15
         Me.Label118.Text = "4"
         Me.Label118.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -5002,7 +5005,7 @@ Partial Class Form1
         Me.txtEixoXInerciaEfetiva.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.txtEixoXInerciaEfetiva.Location = New System.Drawing.Point(190, 155)
         Me.txtEixoXInerciaEfetiva.Name = "txtEixoXInerciaEfetiva"
-        Me.txtEixoXInerciaEfetiva.Size = New System.Drawing.Size(59, 26)
+        Me.txtEixoXInerciaEfetiva.Size = New System.Drawing.Size(59, 30)
         Me.txtEixoXInerciaEfetiva.TabIndex = 13
         '
         'Label114
@@ -5011,7 +5014,7 @@ Partial Class Form1
         Me.Label114.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label114.Location = New System.Drawing.Point(246, 118)
         Me.Label114.Name = "Label114"
-        Me.Label114.Size = New System.Drawing.Size(32, 19)
+        Me.Label114.Size = New System.Drawing.Size(39, 23)
         Me.Label114.TabIndex = 9
         Me.Label114.Text = "cm³"
         Me.Label114.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -5022,7 +5025,7 @@ Partial Class Form1
         Me.txtEixoXModuloResistencia.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.txtEixoXModuloResistencia.Location = New System.Drawing.Point(190, 115)
         Me.txtEixoXModuloResistencia.Name = "txtEixoXModuloResistencia"
-        Me.txtEixoXModuloResistencia.Size = New System.Drawing.Size(59, 26)
+        Me.txtEixoXModuloResistencia.Size = New System.Drawing.Size(59, 30)
         Me.txtEixoXModuloResistencia.TabIndex = 11
         '
         'txtEixoXMomentoInercia
@@ -5031,7 +5034,7 @@ Partial Class Form1
         Me.txtEixoXMomentoInercia.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.txtEixoXMomentoInercia.Location = New System.Drawing.Point(190, 35)
         Me.txtEixoXMomentoInercia.Name = "txtEixoXMomentoInercia"
-        Me.txtEixoXMomentoInercia.Size = New System.Drawing.Size(59, 26)
+        Me.txtEixoXMomentoInercia.Size = New System.Drawing.Size(59, 30)
         Me.txtEixoXMomentoInercia.TabIndex = 4
         '
         'Label122
@@ -5040,7 +5043,7 @@ Partial Class Form1
         Me.Label122.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label122.Location = New System.Drawing.Point(246, 78)
         Me.Label122.Name = "Label122"
-        Me.Label122.Size = New System.Drawing.Size(32, 19)
+        Me.Label122.Size = New System.Drawing.Size(39, 23)
         Me.Label122.TabIndex = 5
         Me.Label122.Text = "cm²"
         Me.Label122.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -5051,7 +5054,7 @@ Partial Class Form1
         Me.txtEixoXRaioGiracao.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.txtEixoXRaioGiracao.Location = New System.Drawing.Point(190, 75)
         Me.txtEixoXRaioGiracao.Name = "txtEixoXRaioGiracao"
-        Me.txtEixoXRaioGiracao.Size = New System.Drawing.Size(59, 26)
+        Me.txtEixoXRaioGiracao.Size = New System.Drawing.Size(59, 30)
         Me.txtEixoXRaioGiracao.TabIndex = 7
         '
         'Label120
@@ -5060,7 +5063,7 @@ Partial Class Form1
         Me.Label120.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label120.Location = New System.Drawing.Point(246, 38)
         Me.Label120.Name = "Label120"
-        Me.Label120.Size = New System.Drawing.Size(27, 19)
+        Me.Label120.Size = New System.Drawing.Size(33, 23)
         Me.Label120.TabIndex = 8
         Me.Label120.Text = "cm"
         Me.Label120.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -5071,7 +5074,7 @@ Partial Class Form1
         Me.lblEixoXIE.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.lblEixoXIE.Location = New System.Drawing.Point(11, 158)
         Me.lblEixoXIE.Name = "lblEixoXIE"
-        Me.lblEixoXIE.Size = New System.Drawing.Size(183, 19)
+        Me.lblEixoXIE.Size = New System.Drawing.Size(229, 23)
         Me.lblEixoXIE.TabIndex = 12
         Me.lblEixoXIE.Text = "               Inércia Efetiva (Ief):"
         '
@@ -5081,7 +5084,7 @@ Partial Class Form1
         Me.Label115.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label115.Location = New System.Drawing.Point(11, 118)
         Me.Label115.Name = "Label115"
-        Me.Label115.Size = New System.Drawing.Size(180, 19)
+        Me.Label115.Size = New System.Drawing.Size(224, 23)
         Me.Label115.TabIndex = 10
         Me.Label115.Text = "Módulo de Resistência (Wx):"
         '
@@ -5091,7 +5094,7 @@ Partial Class Form1
         Me.Label123.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label123.Location = New System.Drawing.Point(10, 38)
         Me.Label123.Name = "Label123"
-        Me.Label123.Size = New System.Drawing.Size(182, 19)
+        Me.Label123.Size = New System.Drawing.Size(227, 23)
         Me.Label123.TabIndex = 3
         Me.Label123.Text = "      Momento de Inércia (Ix):"
         '
@@ -5101,7 +5104,7 @@ Partial Class Form1
         Me.Label121.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label121.Location = New System.Drawing.Point(11, 78)
         Me.Label121.Name = "Label121"
-        Me.Label121.Size = New System.Drawing.Size(182, 19)
+        Me.Label121.Size = New System.Drawing.Size(228, 23)
         Me.Label121.TabIndex = 6
         Me.Label121.Text = "              Raio de Giração(rx):"
         '
@@ -5111,7 +5114,7 @@ Partial Class Form1
         Me.Label124.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label124.Location = New System.Drawing.Point(198, 50)
         Me.Label124.Name = "Label124"
-        Me.Label124.Size = New System.Drawing.Size(32, 19)
+        Me.Label124.Size = New System.Drawing.Size(39, 23)
         Me.Label124.TabIndex = 2
         Me.Label124.Text = "cm²"
         Me.Label124.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -5122,7 +5125,7 @@ Partial Class Form1
         Me.txtAreaSecao.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.txtAreaSecao.Location = New System.Drawing.Point(137, 46)
         Me.txtAreaSecao.Name = "txtAreaSecao"
-        Me.txtAreaSecao.Size = New System.Drawing.Size(59, 26)
+        Me.txtAreaSecao.Size = New System.Drawing.Size(59, 30)
         Me.txtAreaSecao.TabIndex = 1
         '
         'Label125
@@ -5131,17 +5134,17 @@ Partial Class Form1
         Me.Label125.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label125.Location = New System.Drawing.Point(80, 49)
         Me.Label125.Name = "Label125"
-        Me.Label125.Size = New System.Drawing.Size(61, 19)
+        Me.Label125.Size = New System.Drawing.Size(75, 23)
         Me.Label125.TabIndex = 0
         Me.Label125.Text = "Área (A):"
         '
         'TabTracao
         '
         Me.TabTracao.Controls.Add(Me.GroupBox13)
-        Me.TabTracao.Location = New System.Drawing.Point(4, 28)
+        Me.TabTracao.Location = New System.Drawing.Point(4, 32)
         Me.TabTracao.Name = "TabTracao"
         Me.TabTracao.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabTracao.Size = New System.Drawing.Size(1068, 538)
+        Me.TabTracao.Size = New System.Drawing.Size(1068, 534)
         Me.TabTracao.TabIndex = 4
         Me.TabTracao.Text = "Tração"
         Me.TabTracao.UseVisualStyleBackColor = True
@@ -5190,7 +5193,7 @@ Partial Class Form1
         Me.txtEsbeltezTracaoY.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.txtEsbeltezTracaoY.Location = New System.Drawing.Point(52, 203)
         Me.txtEsbeltezTracaoY.Name = "txtEsbeltezTracaoY"
-        Me.txtEsbeltezTracaoY.Size = New System.Drawing.Size(57, 26)
+        Me.txtEsbeltezTracaoY.Size = New System.Drawing.Size(57, 30)
         Me.txtEsbeltezTracaoY.TabIndex = 25
         '
         'txtEsbeltezTracaoX
@@ -5199,7 +5202,7 @@ Partial Class Form1
         Me.txtEsbeltezTracaoX.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.txtEsbeltezTracaoX.Location = New System.Drawing.Point(52, 154)
         Me.txtEsbeltezTracaoX.Name = "txtEsbeltezTracaoX"
-        Me.txtEsbeltezTracaoX.Size = New System.Drawing.Size(57, 26)
+        Me.txtEsbeltezTracaoX.Size = New System.Drawing.Size(57, 30)
         Me.txtEsbeltezTracaoX.TabIndex = 8
         '
         'Label181
@@ -5207,7 +5210,7 @@ Partial Class Form1
         Me.Label181.AutoSize = True
         Me.Label181.Location = New System.Drawing.Point(106, 205)
         Me.Label181.Name = "Label181"
-        Me.Label181.Size = New System.Drawing.Size(21, 19)
+        Me.Label181.Size = New System.Drawing.Size(25, 23)
         Me.Label181.TabIndex = 115
         Me.Label181.Text = "→"
         '
@@ -5216,7 +5219,7 @@ Partial Class Form1
         Me.Label173.AutoSize = True
         Me.Label173.Location = New System.Drawing.Point(106, 157)
         Me.Label173.Name = "Label173"
-        Me.Label173.Size = New System.Drawing.Size(21, 19)
+        Me.Label173.Size = New System.Drawing.Size(25, 23)
         Me.Label173.TabIndex = 114
         Me.Label173.Text = "→"
         '
@@ -5237,7 +5240,7 @@ Partial Class Form1
         Me.Label302.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label302.Location = New System.Drawing.Point(36, 165)
         Me.Label302.Name = "Label302"
-        Me.Label302.Size = New System.Drawing.Size(10, 12)
+        Me.Label302.Size = New System.Drawing.Size(13, 15)
         Me.Label302.TabIndex = 29
         Me.Label302.Text = "x"
         '
@@ -5247,7 +5250,7 @@ Partial Class Form1
         Me.Label425.Font = New System.Drawing.Font("Symbol", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label425.Location = New System.Drawing.Point(22, 159)
         Me.Label425.Name = "Label425"
-        Me.Label425.Size = New System.Drawing.Size(31, 17)
+        Me.Label425.Size = New System.Drawing.Size(35, 21)
         Me.Label425.TabIndex = 28
         Me.Label425.Text = "l   :"
         '
@@ -5257,7 +5260,7 @@ Partial Class Form1
         Me.Label450.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label450.Location = New System.Drawing.Point(36, 212)
         Me.Label450.Name = "Label450"
-        Me.Label450.Size = New System.Drawing.Size(10, 12)
+        Me.Label450.Size = New System.Drawing.Size(13, 15)
         Me.Label450.TabIndex = 25
         Me.Label450.Text = "y"
         '
@@ -5267,7 +5270,7 @@ Partial Class Form1
         Me.Label453.Font = New System.Drawing.Font("Symbol", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label453.Location = New System.Drawing.Point(22, 206)
         Me.Label453.Name = "Label453"
-        Me.Label453.Size = New System.Drawing.Size(31, 17)
+        Me.Label453.Size = New System.Drawing.Size(35, 21)
         Me.Label453.TabIndex = 24
         Me.Label453.Text = "l   :"
         '
@@ -5277,7 +5280,7 @@ Partial Class Form1
         Me.lblValidacaoEsbeltezYTracao.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.lblValidacaoEsbeltezYTracao.Location = New System.Drawing.Point(125, 205)
         Me.lblValidacaoEsbeltezYTracao.Name = "lblValidacaoEsbeltezYTracao"
-        Me.lblValidacaoEsbeltezYTracao.Size = New System.Drawing.Size(95, 19)
+        Me.lblValidacaoEsbeltezYTracao.Size = New System.Drawing.Size(115, 23)
         Me.lblValidacaoEsbeltezYTracao.TabIndex = 27
         Me.lblValidacaoEsbeltezYTracao.Text = "VERIFICAÇÃO"
         Me.lblValidacaoEsbeltezYTracao.Visible = False
@@ -5288,7 +5291,7 @@ Partial Class Form1
         Me.Label438.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label438.Location = New System.Drawing.Point(162, 78)
         Me.Label438.Name = "Label438"
-        Me.Label438.Size = New System.Drawing.Size(47, 19)
+        Me.Label438.Size = New System.Drawing.Size(54, 23)
         Me.Label438.TabIndex = 21
         Me.Label438.Text = "≤ 173"
         '
@@ -5298,7 +5301,7 @@ Partial Class Form1
         Me.Label447.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label447.Location = New System.Drawing.Point(139, 84)
         Me.Label447.Name = "Label447"
-        Me.Label447.Size = New System.Drawing.Size(24, 12)
+        Me.Label447.Size = New System.Drawing.Size(30, 15)
         Me.Label447.TabIndex = 20
         Me.Label447.Text = "max"
         '
@@ -5308,7 +5311,7 @@ Partial Class Form1
         Me.Label448.Font = New System.Drawing.Font("Symbol", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label448.Location = New System.Drawing.Point(128, 78)
         Me.Label448.Name = "Label448"
-        Me.Label448.Size = New System.Drawing.Size(16, 17)
+        Me.Label448.Size = New System.Drawing.Size(19, 21)
         Me.Label448.TabIndex = 19
         Me.Label448.Text = "l"
         '
@@ -5318,7 +5321,7 @@ Partial Class Form1
         Me.Label449.Font = New System.Drawing.Font("Symbol", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label449.Location = New System.Drawing.Point(223, 119)
         Me.Label449.Name = "Label449"
-        Me.Label449.Size = New System.Drawing.Size(0, 17)
+        Me.Label449.Size = New System.Drawing.Size(0, 21)
         Me.Label449.TabIndex = 18
         '
         'Label451
@@ -5327,7 +5330,7 @@ Partial Class Form1
         Me.Label451.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label451.Location = New System.Drawing.Point(6, 118)
         Me.Label451.Name = "Label451"
-        Me.Label451.Size = New System.Drawing.Size(187, 19)
+        Me.Label451.Size = New System.Drawing.Size(235, 23)
         Me.Label451.TabIndex = 12
         Me.Label451.Text = "Tensão Solicitante de Cálculo:"
         '
@@ -5337,7 +5340,7 @@ Partial Class Form1
         Me.lblValidacaoEsbeltezXTracao.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.lblValidacaoEsbeltezXTracao.Location = New System.Drawing.Point(125, 158)
         Me.lblValidacaoEsbeltezXTracao.Name = "lblValidacaoEsbeltezXTracao"
-        Me.lblValidacaoEsbeltezXTracao.Size = New System.Drawing.Size(95, 19)
+        Me.lblValidacaoEsbeltezXTracao.Size = New System.Drawing.Size(115, 23)
         Me.lblValidacaoEsbeltezXTracao.TabIndex = 7
         Me.lblValidacaoEsbeltezXTracao.Text = "VERIFICAÇÃO"
         Me.lblValidacaoEsbeltezXTracao.Visible = False
@@ -5348,7 +5351,7 @@ Partial Class Form1
         Me.Label454.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label454.Location = New System.Drawing.Point(6, 41)
         Me.Label454.Name = "Label454"
-        Me.Label454.Size = New System.Drawing.Size(280, 19)
+        Me.Label454.Size = New System.Drawing.Size(351, 23)
         Me.Label454.TabIndex = 0
         Me.Label454.Text = "Verificação ao Estado Limite de Serviço (ELS):"
         '
@@ -5383,7 +5386,7 @@ Partial Class Form1
         Me.Label192.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label192.Location = New System.Drawing.Point(114, 162)
         Me.Label192.Name = "Label192"
-        Me.Label192.Size = New System.Drawing.Size(37, 19)
+        Me.Label192.Size = New System.Drawing.Size(43, 23)
         Me.Label192.TabIndex = 117
         Me.Label192.Text = "MPa"
         '
@@ -5393,7 +5396,7 @@ Partial Class Form1
         Me.Label183.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label183.Location = New System.Drawing.Point(17, 162)
         Me.Label183.Name = "Label183"
-        Me.Label183.Size = New System.Drawing.Size(32, 19)
+        Me.Label183.Size = New System.Drawing.Size(38, 23)
         Me.Label183.TabIndex = 116
         Me.Label183.Text = "ft,0:"
         '
@@ -5403,7 +5406,7 @@ Partial Class Form1
         Me.txtFt.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.txtFt.Location = New System.Drawing.Point(53, 159)
         Me.txtFt.Name = "txtFt"
-        Me.txtFt.Size = New System.Drawing.Size(57, 26)
+        Me.txtFt.Size = New System.Drawing.Size(57, 30)
         Me.txtFt.TabIndex = 114
         '
         'Label172
@@ -5411,7 +5414,7 @@ Partial Class Form1
         Me.Label172.AutoSize = True
         Me.Label172.Location = New System.Drawing.Point(145, 207)
         Me.Label172.Name = "Label172"
-        Me.Label172.Size = New System.Drawing.Size(21, 19)
+        Me.Label172.Size = New System.Drawing.Size(25, 23)
         Me.Label172.TabIndex = 113
         Me.Label172.Text = "→"
         '
@@ -5421,7 +5424,7 @@ Partial Class Form1
         Me.Label389.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label389.Location = New System.Drawing.Point(114, 208)
         Me.Label389.Name = "Label389"
-        Me.Label389.Size = New System.Drawing.Size(37, 19)
+        Me.Label389.Size = New System.Drawing.Size(43, 23)
         Me.Label389.TabIndex = 23
         Me.Label389.Text = "MPa"
         '
@@ -5431,7 +5434,7 @@ Partial Class Form1
         Me.Label388.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label388.Location = New System.Drawing.Point(179, 86)
         Me.Label388.Name = "Label388"
-        Me.Label388.Size = New System.Drawing.Size(16, 12)
+        Me.Label388.Size = New System.Drawing.Size(21, 15)
         Me.Label388.TabIndex = 22
         Me.Label388.Text = "t,d"
         '
@@ -5441,7 +5444,7 @@ Partial Class Form1
         Me.Label387.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label387.Location = New System.Drawing.Point(154, 78)
         Me.Label387.Name = "Label387"
-        Me.Label387.Size = New System.Drawing.Size(27, 19)
+        Me.Label387.Size = New System.Drawing.Size(32, 23)
         Me.Label387.TabIndex = 21
         Me.Label387.Text = "≤ f"
         '
@@ -5451,7 +5454,7 @@ Partial Class Form1
         Me.Label134.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label134.Location = New System.Drawing.Point(136, 84)
         Me.Label134.Name = "Label134"
-        Me.Label134.Size = New System.Drawing.Size(16, 12)
+        Me.Label134.Size = New System.Drawing.Size(21, 15)
         Me.Label134.TabIndex = 20
         Me.Label134.Text = "t,d"
         '
@@ -5461,7 +5464,7 @@ Partial Class Form1
         Me.Label386.Font = New System.Drawing.Font("Symbol", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label386.Location = New System.Drawing.Point(122, 78)
         Me.Label386.Name = "Label386"
-        Me.Label386.Size = New System.Drawing.Size(36, 17)
+        Me.Label386.Size = New System.Drawing.Size(40, 21)
         Me.Label386.TabIndex = 19
         Me.Label386.Text = "s    :"
         '
@@ -5471,7 +5474,7 @@ Partial Class Form1
         Me.Label390.Font = New System.Drawing.Font("Symbol", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label390.Location = New System.Drawing.Point(223, 119)
         Me.Label390.Name = "Label390"
-        Me.Label390.Size = New System.Drawing.Size(0, 17)
+        Me.Label390.Size = New System.Drawing.Size(0, 21)
         Me.Label390.TabIndex = 18
         '
         'Label189
@@ -5480,7 +5483,7 @@ Partial Class Form1
         Me.Label189.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label189.Location = New System.Drawing.Point(31, 215)
         Me.Label189.Name = "Label189"
-        Me.Label189.Size = New System.Drawing.Size(16, 12)
+        Me.Label189.Size = New System.Drawing.Size(21, 15)
         Me.Label189.TabIndex = 10
         Me.Label189.Text = "t,d"
         '
@@ -5490,7 +5493,7 @@ Partial Class Form1
         Me.Label187.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label187.Location = New System.Drawing.Point(6, 118)
         Me.Label187.Name = "Label187"
-        Me.Label187.Size = New System.Drawing.Size(241, 19)
+        Me.Label187.Size = New System.Drawing.Size(304, 23)
         Me.Label187.TabIndex = 12
         Me.Label187.Text = "Tensão Solicitante de Cálculo à Tração:"
         '
@@ -5500,7 +5503,7 @@ Partial Class Form1
         Me.lblValidacaoTensaoTracao.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.lblValidacaoTensaoTracao.Location = New System.Drawing.Point(160, 209)
         Me.lblValidacaoTensaoTracao.Name = "lblValidacaoTensaoTracao"
-        Me.lblValidacaoTensaoTracao.Size = New System.Drawing.Size(95, 19)
+        Me.lblValidacaoTensaoTracao.Size = New System.Drawing.Size(115, 23)
         Me.lblValidacaoTensaoTracao.TabIndex = 7
         Me.lblValidacaoTensaoTracao.Text = "VERIFICAÇÃO"
         Me.lblValidacaoTensaoTracao.Visible = False
@@ -5511,7 +5514,7 @@ Partial Class Form1
         Me.Label190.Font = New System.Drawing.Font("Symbol", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label190.Location = New System.Drawing.Point(17, 209)
         Me.Label190.Name = "Label190"
-        Me.Label190.Size = New System.Drawing.Size(40, 17)
+        Me.Label190.Size = New System.Drawing.Size(44, 21)
         Me.Label190.TabIndex = 9
         Me.Label190.Text = "s     :"
         '
@@ -5521,7 +5524,7 @@ Partial Class Form1
         Me.txtTensaoTracao.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.txtTensaoTracao.Location = New System.Drawing.Point(53, 206)
         Me.txtTensaoTracao.Name = "txtTensaoTracao"
-        Me.txtTensaoTracao.Size = New System.Drawing.Size(57, 26)
+        Me.txtTensaoTracao.Size = New System.Drawing.Size(57, 30)
         Me.txtTensaoTracao.TabIndex = 8
         '
         'Label131
@@ -5530,17 +5533,17 @@ Partial Class Form1
         Me.Label131.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label131.Location = New System.Drawing.Point(6, 41)
         Me.Label131.Name = "Label131"
-        Me.Label131.Size = New System.Drawing.Size(262, 19)
+        Me.Label131.Size = New System.Drawing.Size(327, 23)
         Me.Label131.TabIndex = 0
         Me.Label131.Text = "Verificação ao Estado Limite Último (ELU):"
         '
         'TabCompressao
         '
         Me.TabCompressao.Controls.Add(Me.GroupBox18)
-        Me.TabCompressao.Location = New System.Drawing.Point(4, 28)
+        Me.TabCompressao.Location = New System.Drawing.Point(4, 32)
         Me.TabCompressao.Name = "TabCompressao"
         Me.TabCompressao.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabCompressao.Size = New System.Drawing.Size(1068, 538)
+        Me.TabCompressao.Size = New System.Drawing.Size(1068, 534)
         Me.TabCompressao.TabIndex = 7
         Me.TabCompressao.Text = "Compressão"
         Me.TabCompressao.UseVisualStyleBackColor = True
@@ -5553,7 +5556,7 @@ Partial Class Form1
         Me.GroupBox18.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.GroupBox18.Location = New System.Drawing.Point(3, 6)
         Me.GroupBox18.Name = "GroupBox18"
-        Me.GroupBox18.Size = New System.Drawing.Size(1192, 821)
+        Me.GroupBox18.Size = New System.Drawing.Size(1059, 821)
         Me.GroupBox18.TabIndex = 0
         Me.GroupBox18.TabStop = False
         Me.GroupBox18.Text = "Dimensionamento à Compressão"
@@ -5582,7 +5585,7 @@ Partial Class Form1
         Me.Label191.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label191.Location = New System.Drawing.Point(6, 36)
         Me.Label191.Name = "Label191"
-        Me.Label191.Size = New System.Drawing.Size(46, 19)
+        Me.Label191.Size = New System.Drawing.Size(58, 23)
         Me.Label191.TabIndex = 68
         Me.Label191.Text = "Eixo x:"
         '
@@ -5592,7 +5595,7 @@ Partial Class Form1
         Me.Label460.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label460.Location = New System.Drawing.Point(6, 76)
         Me.Label460.Name = "Label460"
-        Me.Label460.Size = New System.Drawing.Size(47, 19)
+        Me.Label460.Size = New System.Drawing.Size(58, 23)
         Me.Label460.TabIndex = 59
         Me.Label460.Text = "Eixo y:"
         '
@@ -5602,7 +5605,7 @@ Partial Class Form1
         Me.txtEsbeltezCompressaoY.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.txtEsbeltezCompressaoY.Location = New System.Drawing.Point(54, 73)
         Me.txtEsbeltezCompressaoY.Name = "txtEsbeltezCompressaoY"
-        Me.txtEsbeltezCompressaoY.Size = New System.Drawing.Size(57, 26)
+        Me.txtEsbeltezCompressaoY.Size = New System.Drawing.Size(57, 30)
         Me.txtEsbeltezCompressaoY.TabIndex = 69
         '
         'txtEsbeltezCompressaoX
@@ -5611,7 +5614,7 @@ Partial Class Form1
         Me.txtEsbeltezCompressaoX.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.txtEsbeltezCompressaoX.Location = New System.Drawing.Point(54, 33)
         Me.txtEsbeltezCompressaoX.Name = "txtEsbeltezCompressaoX"
-        Me.txtEsbeltezCompressaoX.Size = New System.Drawing.Size(57, 26)
+        Me.txtEsbeltezCompressaoX.Size = New System.Drawing.Size(57, 30)
         Me.txtEsbeltezCompressaoX.TabIndex = 60
         '
         'Label93
@@ -5619,7 +5622,7 @@ Partial Class Form1
         Me.Label93.AutoSize = True
         Me.Label93.Location = New System.Drawing.Point(110, 76)
         Me.Label93.Name = "Label93"
-        Me.Label93.Size = New System.Drawing.Size(21, 19)
+        Me.Label93.Size = New System.Drawing.Size(25, 23)
         Me.Label93.TabIndex = 112
         Me.Label93.Text = "→"
         '
@@ -5628,7 +5631,7 @@ Partial Class Form1
         Me.Label92.AutoSize = True
         Me.Label92.Location = New System.Drawing.Point(110, 36)
         Me.Label92.Name = "Label92"
-        Me.Label92.Size = New System.Drawing.Size(21, 19)
+        Me.Label92.Size = New System.Drawing.Size(25, 23)
         Me.Label92.TabIndex = 111
         Me.Label92.Text = "→"
         '
@@ -5638,7 +5641,7 @@ Partial Class Form1
         Me.lblClassifEsbeltezY.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.lblClassifEsbeltezY.Location = New System.Drawing.Point(130, 76)
         Me.lblClassifEsbeltezY.Name = "lblClassifEsbeltezY"
-        Me.lblClassifEsbeltezY.Size = New System.Drawing.Size(160, 19)
+        Me.lblClassifEsbeltezY.Size = New System.Drawing.Size(201, 23)
         Me.lblClassifEsbeltezY.TabIndex = 93
         Me.lblClassifEsbeltezY.Text = "Classificação da Esbeltez "
         '
@@ -5648,7 +5651,7 @@ Partial Class Form1
         Me.lblClassifEsbeltezX.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.lblClassifEsbeltezX.Location = New System.Drawing.Point(130, 36)
         Me.lblClassifEsbeltezX.Name = "lblClassifEsbeltezX"
-        Me.lblClassifEsbeltezX.Size = New System.Drawing.Size(160, 19)
+        Me.lblClassifEsbeltezX.Size = New System.Drawing.Size(201, 23)
         Me.lblClassifEsbeltezX.TabIndex = 92
         Me.lblClassifEsbeltezX.Text = "Classificação da Esbeltez "
         '
@@ -5665,6 +5668,7 @@ Partial Class Form1
         '
         'gbxEixoYMediEsbelta
         '
+        Me.gbxEixoYMediEsbelta.Controls.Add(Me.Label31)
         Me.gbxEixoYMediEsbelta.Controls.Add(Me.txtEixoYY)
         Me.gbxEixoYMediEsbelta.Controls.Add(Me.Label261)
         Me.gbxEixoYMediEsbelta.Controls.Add(Me.lblValidacaoYComp)
@@ -5703,13 +5707,23 @@ Partial Class Form1
         Me.gbxEixoYMediEsbelta.TabStop = False
         Me.gbxEixoYMediEsbelta.Text = "Eixo y"
         '
+        'Label31
+        '
+        Me.Label31.AutoSize = True
+        Me.Label31.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Label31.Location = New System.Drawing.Point(189, 169)
+        Me.Label31.Name = "Label31"
+        Me.Label31.Size = New System.Drawing.Size(32, 23)
+        Me.Label31.TabIndex = 110
+        Me.Label31.Text = "YY:"
+        '
         'txtEixoYY
         '
         Me.txtEixoYY.Enabled = False
         Me.txtEixoYY.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.txtEixoYY.Location = New System.Drawing.Point(222, 166)
         Me.txtEixoYY.Name = "txtEixoYY"
-        Me.txtEixoYY.Size = New System.Drawing.Size(57, 26)
+        Me.txtEixoYY.Size = New System.Drawing.Size(57, 30)
         Me.txtEixoYY.TabIndex = 92
         '
         'Label261
@@ -5718,7 +5732,7 @@ Partial Class Form1
         Me.Label261.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label261.Location = New System.Drawing.Point(277, 82)
         Me.Label261.Name = "Label261"
-        Me.Label261.Size = New System.Drawing.Size(27, 19)
+        Me.Label261.Size = New System.Drawing.Size(33, 23)
         Me.Label261.TabIndex = 36
         Me.Label261.Text = "cm"
         '
@@ -5728,7 +5742,7 @@ Partial Class Form1
         Me.lblValidacaoYComp.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point)
         Me.lblValidacaoYComp.Location = New System.Drawing.Point(111, 256)
         Me.lblValidacaoYComp.Name = "lblValidacaoYComp"
-        Me.lblValidacaoYComp.Size = New System.Drawing.Size(95, 19)
+        Me.lblValidacaoYComp.Size = New System.Drawing.Size(115, 23)
         Me.lblValidacaoYComp.TabIndex = 61
         Me.lblValidacaoYComp.Text = "VERIFICAÇÃO"
         '
@@ -5738,7 +5752,7 @@ Partial Class Form1
         Me.txtEcY.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.txtEcY.Location = New System.Drawing.Point(222, 121)
         Me.txtEcY.Name = "txtEcY"
-        Me.txtEcY.Size = New System.Drawing.Size(57, 26)
+        Me.txtEcY.Size = New System.Drawing.Size(57, 30)
         Me.txtEcY.TabIndex = 34
         '
         'Label250
@@ -5747,7 +5761,7 @@ Partial Class Form1
         Me.Label250.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label250.Location = New System.Drawing.Point(104, 42)
         Me.Label250.Name = "Label250"
-        Me.Label250.Size = New System.Drawing.Size(37, 19)
+        Me.Label250.Size = New System.Drawing.Size(43, 23)
         Me.Label250.TabIndex = 25
         Me.Label250.Text = "MPa"
         '
@@ -5757,7 +5771,7 @@ Partial Class Form1
         Me.Label274.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label274.Location = New System.Drawing.Point(105, 212)
         Me.Label274.Name = "Label274"
-        Me.Label274.Size = New System.Drawing.Size(27, 19)
+        Me.Label274.Size = New System.Drawing.Size(33, 23)
         Me.Label274.TabIndex = 87
         Me.Label274.Text = "cm"
         '
@@ -5767,7 +5781,7 @@ Partial Class Form1
         Me.txtTensaoCompressaoY.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.txtTensaoCompressaoY.Location = New System.Drawing.Point(51, 39)
         Me.txtTensaoCompressaoY.Name = "txtTensaoCompressaoY"
-        Me.txtTensaoCompressaoY.Size = New System.Drawing.Size(57, 26)
+        Me.txtTensaoCompressaoY.Size = New System.Drawing.Size(57, 30)
         Me.txtTensaoCompressaoY.TabIndex = 3
         '
         'Label251
@@ -5776,7 +5790,7 @@ Partial Class Form1
         Me.Label251.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label251.Location = New System.Drawing.Point(18, 48)
         Me.Label251.Name = "Label251"
-        Me.Label251.Size = New System.Drawing.Size(23, 12)
+        Me.Label251.Size = New System.Drawing.Size(29, 15)
         Me.Label251.TabIndex = 4
         Me.Label251.Text = "c,dy"
         '
@@ -5786,7 +5800,7 @@ Partial Class Form1
         Me.Label252.Font = New System.Drawing.Font("Symbol", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label252.Location = New System.Drawing.Point(5, 42)
         Me.Label252.Name = "Label252"
-        Me.Label252.Size = New System.Drawing.Size(48, 17)
+        Me.Label252.Size = New System.Drawing.Size(52, 21)
         Me.Label252.TabIndex = 2
         Me.Label252.Text = "s       :"
         '
@@ -5796,7 +5810,7 @@ Partial Class Form1
         Me.Label262.Font = New System.Drawing.Font("Symbol", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label262.Location = New System.Drawing.Point(208, 125)
         Me.Label262.Name = "Label262"
-        Me.Label262.Size = New System.Drawing.Size(23, 17)
+        Me.Label262.Size = New System.Drawing.Size(27, 21)
         Me.Label262.TabIndex = 33
         Me.Label262.Text = "f :"
         '
@@ -5806,7 +5820,7 @@ Partial Class Form1
         Me.txtEdY.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.txtEdY.Location = New System.Drawing.Point(51, 209)
         Me.txtEdY.Name = "txtEdY"
-        Me.txtEdY.Size = New System.Drawing.Size(57, 26)
+        Me.txtEdY.Size = New System.Drawing.Size(57, 30)
         Me.txtEdY.TabIndex = 85
         '
         'Label497
@@ -5815,7 +5829,7 @@ Partial Class Form1
         Me.Label497.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label497.Location = New System.Drawing.Point(277, 41)
         Me.Label497.Name = "Label497"
-        Me.Label497.Size = New System.Drawing.Size(37, 19)
+        Me.Label497.Size = New System.Drawing.Size(43, 23)
         Me.Label497.TabIndex = 79
         Me.Label497.Text = "MPa"
         '
@@ -5825,7 +5839,7 @@ Partial Class Form1
         Me.txtEsforçoFlexaoY.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.txtEsforçoFlexaoY.Location = New System.Drawing.Point(222, 38)
         Me.txtEsforçoFlexaoY.Name = "txtEsforçoFlexaoY"
-        Me.txtEsforçoFlexaoY.Size = New System.Drawing.Size(57, 26)
+        Me.txtEsforçoFlexaoY.Size = New System.Drawing.Size(57, 30)
         Me.txtEsforçoFlexaoY.TabIndex = 77
         '
         'Label499
@@ -5834,7 +5848,7 @@ Partial Class Form1
         Me.Label499.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label499.Location = New System.Drawing.Point(187, 47)
         Me.Label499.Name = "Label499"
-        Me.Label499.Size = New System.Drawing.Size(27, 12)
+        Me.Label499.Size = New System.Drawing.Size(34, 15)
         Me.Label499.TabIndex = 78
         Me.Label499.Text = "M,dx"
         '
@@ -5844,7 +5858,7 @@ Partial Class Form1
         Me.txtE1efY.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.txtE1efY.Location = New System.Drawing.Point(222, 79)
         Me.txtE1efY.Name = "txtE1efY"
-        Me.txtE1efY.Size = New System.Drawing.Size(57, 26)
+        Me.txtE1efY.Size = New System.Drawing.Size(57, 30)
         Me.txtE1efY.TabIndex = 34
         '
         'Label501
@@ -5853,7 +5867,7 @@ Partial Class Form1
         Me.Label501.Font = New System.Drawing.Font("Symbol", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label501.Location = New System.Drawing.Point(174, 41)
         Me.Label501.Name = "Label501"
-        Me.Label501.Size = New System.Drawing.Size(48, 17)
+        Me.Label501.Size = New System.Drawing.Size(52, 21)
         Me.Label501.TabIndex = 76
         Me.Label501.Text = "s       :"
         '
@@ -5863,7 +5877,7 @@ Partial Class Form1
         Me.Label275.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label275.Location = New System.Drawing.Point(31, 218)
         Me.Label275.Name = "Label275"
-        Me.Label275.Size = New System.Drawing.Size(11, 12)
+        Me.Label275.Size = New System.Drawing.Size(14, 15)
         Me.Label275.TabIndex = 86
         Me.Label275.Text = "d"
         '
@@ -5873,7 +5887,7 @@ Partial Class Form1
         Me.Label264.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label264.Location = New System.Drawing.Point(194, 89)
         Me.Label264.Name = "Label264"
-        Me.Label264.Size = New System.Drawing.Size(20, 12)
+        Me.Label264.Size = New System.Drawing.Size(26, 15)
         Me.Label264.TabIndex = 35
         Me.Label264.Text = "1e,f"
         '
@@ -5883,7 +5897,7 @@ Partial Class Form1
         Me.Label276.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label276.Location = New System.Drawing.Point(19, 212)
         Me.Label276.Name = "Label276"
-        Me.Label276.Size = New System.Drawing.Size(31, 19)
+        Me.Label276.Size = New System.Drawing.Size(38, 23)
         Me.Label276.TabIndex = 84
         Me.Label276.Text = "e   :"
         '
@@ -5893,7 +5907,7 @@ Partial Class Form1
         Me.Label277.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label277.Location = New System.Drawing.Point(105, 166)
         Me.Label277.Name = "Label277"
-        Me.Label277.Size = New System.Drawing.Size(27, 19)
+        Me.Label277.Size = New System.Drawing.Size(33, 23)
         Me.Label277.TabIndex = 83
         Me.Label277.Text = "cm"
         '
@@ -5903,7 +5917,7 @@ Partial Class Form1
         Me.txtEaY.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.txtEaY.Location = New System.Drawing.Point(51, 163)
         Me.txtEaY.Name = "txtEaY"
-        Me.txtEaY.Size = New System.Drawing.Size(57, 26)
+        Me.txtEaY.Size = New System.Drawing.Size(57, 30)
         Me.txtEaY.TabIndex = 81
         '
         'Label278
@@ -5912,7 +5926,7 @@ Partial Class Form1
         Me.Label278.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label278.Location = New System.Drawing.Point(31, 172)
         Me.Label278.Name = "Label278"
-        Me.Label278.Size = New System.Drawing.Size(10, 12)
+        Me.Label278.Size = New System.Drawing.Size(13, 15)
         Me.Label278.TabIndex = 82
         Me.Label278.Text = "a"
         '
@@ -5922,7 +5936,7 @@ Partial Class Form1
         Me.Label267.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label267.Location = New System.Drawing.Point(182, 83)
         Me.Label267.Name = "Label267"
-        Me.Label267.Size = New System.Drawing.Size(43, 19)
+        Me.Label267.Size = New System.Drawing.Size(53, 23)
         Me.Label267.TabIndex = 33
         Me.Label267.Text = "e      :"
         '
@@ -5932,7 +5946,7 @@ Partial Class Form1
         Me.Label279.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label279.Location = New System.Drawing.Point(19, 166)
         Me.Label279.Name = "Label279"
-        Me.Label279.Size = New System.Drawing.Size(31, 19)
+        Me.Label279.Size = New System.Drawing.Size(38, 23)
         Me.Label279.TabIndex = 80
         Me.Label279.Text = "e   :"
         '
@@ -5942,7 +5956,7 @@ Partial Class Form1
         Me.Label286.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label286.Location = New System.Drawing.Point(105, 125)
         Me.Label286.Name = "Label286"
-        Me.Label286.Size = New System.Drawing.Size(27, 19)
+        Me.Label286.Size = New System.Drawing.Size(33, 23)
         Me.Label286.TabIndex = 30
         Me.Label286.Text = "cm"
         '
@@ -5952,7 +5966,7 @@ Partial Class Form1
         Me.Label287.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label287.Location = New System.Drawing.Point(104, 83)
         Me.Label287.Name = "Label287"
-        Me.Label287.Size = New System.Drawing.Size(26, 19)
+        Me.Label287.Size = New System.Drawing.Size(31, 23)
         Me.Label287.TabIndex = 28
         Me.Label287.Text = "kN"
         '
@@ -5962,7 +5976,7 @@ Partial Class Form1
         Me.txtEiY.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.txtEiY.Location = New System.Drawing.Point(51, 122)
         Me.txtEiY.Name = "txtEiY"
-        Me.txtEiY.Size = New System.Drawing.Size(57, 26)
+        Me.txtEiY.Size = New System.Drawing.Size(57, 30)
         Me.txtEiY.TabIndex = 21
         '
         'Label288
@@ -5971,7 +5985,7 @@ Partial Class Form1
         Me.Label288.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label288.Location = New System.Drawing.Point(31, 131)
         Me.Label288.Name = "Label288"
-        Me.Label288.Size = New System.Drawing.Size(7, 12)
+        Me.Label288.Size = New System.Drawing.Size(10, 15)
         Me.Label288.TabIndex = 22
         Me.Label288.Text = "i"
         '
@@ -5981,7 +5995,7 @@ Partial Class Form1
         Me.Label289.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label289.Location = New System.Drawing.Point(19, 125)
         Me.Label289.Name = "Label289"
-        Me.Label289.Size = New System.Drawing.Size(31, 19)
+        Me.Label289.Size = New System.Drawing.Size(38, 23)
         Me.Label289.TabIndex = 20
         Me.Label289.Text = "e   :"
         '
@@ -5991,7 +6005,7 @@ Partial Class Form1
         Me.txtForçaElasticaY.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.txtForçaElasticaY.Location = New System.Drawing.Point(51, 79)
         Me.txtForçaElasticaY.Name = "txtForçaElasticaY"
-        Me.txtForçaElasticaY.Size = New System.Drawing.Size(57, 26)
+        Me.txtForçaElasticaY.Size = New System.Drawing.Size(57, 30)
         Me.txtForçaElasticaY.TabIndex = 12
         '
         'Label462
@@ -6000,12 +6014,14 @@ Partial Class Form1
         Me.Label462.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label462.Location = New System.Drawing.Point(19, 82)
         Me.Label462.Name = "Label462"
-        Me.Label462.Size = New System.Drawing.Size(26, 19)
+        Me.Label462.Size = New System.Drawing.Size(31, 23)
         Me.Label462.TabIndex = 11
         Me.Label462.Text = "Fe:"
         '
         'gbxEixoXMediEsbelta
         '
+        Me.gbxEixoXMediEsbelta.Controls.Add(Me.Label29)
+        Me.gbxEixoXMediEsbelta.Controls.Add(Me.txtEixoXX)
         Me.gbxEixoXMediEsbelta.Controls.Add(Me.Label84)
         Me.gbxEixoXMediEsbelta.Controls.Add(Me.Label235)
         Me.gbxEixoXMediEsbelta.Controls.Add(Me.txtTensaoCompressaoX)
@@ -6043,13 +6059,32 @@ Partial Class Form1
         Me.gbxEixoXMediEsbelta.TabStop = False
         Me.gbxEixoXMediEsbelta.Text = "Eixo x"
         '
+        'Label29
+        '
+        Me.Label29.AutoSize = True
+        Me.Label29.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Label29.Location = New System.Drawing.Point(183, 179)
+        Me.Label29.Name = "Label29"
+        Me.Label29.Size = New System.Drawing.Size(34, 23)
+        Me.Label29.TabIndex = 92
+        Me.Label29.Text = "XX:"
+        '
+        'txtEixoXX
+        '
+        Me.txtEixoXX.Enabled = False
+        Me.txtEixoXX.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.txtEixoXX.Location = New System.Drawing.Point(218, 175)
+        Me.txtEixoXX.Name = "txtEixoXX"
+        Me.txtEixoXX.Size = New System.Drawing.Size(57, 30)
+        Me.txtEixoXX.TabIndex = 92
+        '
         'Label84
         '
         Me.Label84.AutoSize = True
         Me.Label84.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label84.Location = New System.Drawing.Point(269, 46)
         Me.Label84.Name = "Label84"
-        Me.Label84.Size = New System.Drawing.Size(37, 19)
+        Me.Label84.Size = New System.Drawing.Size(43, 23)
         Me.Label84.TabIndex = 109
         Me.Label84.Text = "MPa"
         '
@@ -6059,7 +6094,7 @@ Partial Class Form1
         Me.Label235.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label235.Location = New System.Drawing.Point(99, 45)
         Me.Label235.Name = "Label235"
-        Me.Label235.Size = New System.Drawing.Size(37, 19)
+        Me.Label235.Size = New System.Drawing.Size(43, 23)
         Me.Label235.TabIndex = 67
         Me.Label235.Text = "MPa"
         '
@@ -6069,7 +6104,7 @@ Partial Class Form1
         Me.txtTensaoCompressaoX.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.txtTensaoCompressaoX.Location = New System.Drawing.Point(46, 43)
         Me.txtTensaoCompressaoX.Name = "txtTensaoCompressaoX"
-        Me.txtTensaoCompressaoX.Size = New System.Drawing.Size(57, 26)
+        Me.txtTensaoCompressaoX.Size = New System.Drawing.Size(57, 30)
         Me.txtTensaoCompressaoX.TabIndex = 65
         '
         'lblValidacaoXComp
@@ -6078,7 +6113,7 @@ Partial Class Form1
         Me.lblValidacaoXComp.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point)
         Me.lblValidacaoXComp.Location = New System.Drawing.Point(102, 256)
         Me.lblValidacaoXComp.Name = "lblValidacaoXComp"
-        Me.lblValidacaoXComp.Size = New System.Drawing.Size(95, 19)
+        Me.lblValidacaoXComp.Size = New System.Drawing.Size(115, 23)
         Me.lblValidacaoXComp.TabIndex = 61
         Me.lblValidacaoXComp.Text = "VERIFICAÇÃO"
         '
@@ -6088,7 +6123,7 @@ Partial Class Form1
         Me.Label236.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label236.Location = New System.Drawing.Point(14, 52)
         Me.Label236.Name = "Label236"
-        Me.Label236.Size = New System.Drawing.Size(23, 12)
+        Me.Label236.Size = New System.Drawing.Size(29, 15)
         Me.Label236.TabIndex = 66
         Me.Label236.Text = "c,dx"
         '
@@ -6098,7 +6133,7 @@ Partial Class Form1
         Me.Label253.Font = New System.Drawing.Font("Symbol", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label253.Location = New System.Drawing.Point(1, 46)
         Me.Label253.Name = "Label253"
-        Me.Label253.Size = New System.Drawing.Size(48, 17)
+        Me.Label253.Size = New System.Drawing.Size(52, 21)
         Me.Label253.TabIndex = 64
         Me.Label253.Text = "s       :"
         '
@@ -6108,7 +6143,7 @@ Partial Class Form1
         Me.Label484.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label484.Location = New System.Drawing.Point(269, 90)
         Me.Label484.Name = "Label484"
-        Me.Label484.Size = New System.Drawing.Size(27, 19)
+        Me.Label484.Size = New System.Drawing.Size(33, 23)
         Me.Label484.TabIndex = 36
         Me.Label484.Text = "cm"
         '
@@ -6118,7 +6153,7 @@ Partial Class Form1
         Me.Label269.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label269.Location = New System.Drawing.Point(102, 221)
         Me.Label269.Name = "Label269"
-        Me.Label269.Size = New System.Drawing.Size(27, 19)
+        Me.Label269.Size = New System.Drawing.Size(33, 23)
         Me.Label269.TabIndex = 87
         Me.Label269.Text = "cm"
         '
@@ -6128,7 +6163,7 @@ Partial Class Form1
         Me.txtE1efX.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.txtE1efX.Location = New System.Drawing.Point(218, 87)
         Me.txtE1efX.Name = "txtE1efX"
-        Me.txtE1efX.Size = New System.Drawing.Size(57, 26)
+        Me.txtE1efX.Size = New System.Drawing.Size(57, 30)
         Me.txtE1efX.TabIndex = 34
         '
         'Label486
@@ -6137,7 +6172,7 @@ Partial Class Form1
         Me.Label486.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label486.Location = New System.Drawing.Point(182, 96)
         Me.Label486.Name = "Label486"
-        Me.Label486.Size = New System.Drawing.Size(20, 12)
+        Me.Label486.Size = New System.Drawing.Size(26, 15)
         Me.Label486.TabIndex = 35
         Me.Label486.Text = "1e,f"
         '
@@ -6147,7 +6182,7 @@ Partial Class Form1
         Me.txtEdX.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.txtEdX.Location = New System.Drawing.Point(46, 218)
         Me.txtEdX.Name = "txtEdX"
-        Me.txtEdX.Size = New System.Drawing.Size(57, 26)
+        Me.txtEdX.Size = New System.Drawing.Size(57, 30)
         Me.txtEdX.TabIndex = 85
         '
         'Label270
@@ -6156,7 +6191,7 @@ Partial Class Form1
         Me.Label270.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label270.Location = New System.Drawing.Point(26, 227)
         Me.Label270.Name = "Label270"
-        Me.Label270.Size = New System.Drawing.Size(11, 12)
+        Me.Label270.Size = New System.Drawing.Size(14, 15)
         Me.Label270.TabIndex = 86
         Me.Label270.Text = "d"
         '
@@ -6166,7 +6201,7 @@ Partial Class Form1
         Me.Label271.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label271.Location = New System.Drawing.Point(14, 221)
         Me.Label271.Name = "Label271"
-        Me.Label271.Size = New System.Drawing.Size(31, 19)
+        Me.Label271.Size = New System.Drawing.Size(38, 23)
         Me.Label271.TabIndex = 84
         Me.Label271.Text = "e   :"
         '
@@ -6176,7 +6211,7 @@ Partial Class Form1
         Me.Label179.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label179.Location = New System.Drawing.Point(102, 175)
         Me.Label179.Name = "Label179"
-        Me.Label179.Size = New System.Drawing.Size(27, 19)
+        Me.Label179.Size = New System.Drawing.Size(33, 23)
         Me.Label179.TabIndex = 83
         Me.Label179.Text = "cm"
         '
@@ -6186,7 +6221,7 @@ Partial Class Form1
         Me.txtEaX.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.txtEaX.Location = New System.Drawing.Point(46, 172)
         Me.txtEaX.Name = "txtEaX"
-        Me.txtEaX.Size = New System.Drawing.Size(57, 26)
+        Me.txtEaX.Size = New System.Drawing.Size(57, 30)
         Me.txtEaX.TabIndex = 81
         '
         'txtEcX
@@ -6195,7 +6230,7 @@ Partial Class Form1
         Me.txtEcX.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.txtEcX.Location = New System.Drawing.Point(218, 129)
         Me.txtEcX.Name = "txtEcX"
-        Me.txtEcX.Size = New System.Drawing.Size(57, 26)
+        Me.txtEcX.Size = New System.Drawing.Size(57, 30)
         Me.txtEcX.TabIndex = 34
         '
         'Label260
@@ -6204,7 +6239,7 @@ Partial Class Form1
         Me.Label260.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label260.Location = New System.Drawing.Point(26, 181)
         Me.Label260.Name = "Label260"
-        Me.Label260.Size = New System.Drawing.Size(10, 12)
+        Me.Label260.Size = New System.Drawing.Size(13, 15)
         Me.Label260.TabIndex = 82
         Me.Label260.Text = "a"
         '
@@ -6214,7 +6249,7 @@ Partial Class Form1
         Me.Label487.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label487.Location = New System.Drawing.Point(170, 90)
         Me.Label487.Name = "Label487"
-        Me.Label487.Size = New System.Drawing.Size(43, 19)
+        Me.Label487.Size = New System.Drawing.Size(53, 23)
         Me.Label487.TabIndex = 33
         Me.Label487.Text = "e      :"
         '
@@ -6224,7 +6259,7 @@ Partial Class Form1
         Me.Label268.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label268.Location = New System.Drawing.Point(14, 175)
         Me.Label268.Name = "Label268"
-        Me.Label268.Size = New System.Drawing.Size(31, 19)
+        Me.Label268.Size = New System.Drawing.Size(38, 23)
         Me.Label268.TabIndex = 80
         Me.Label268.Text = "e   :"
         '
@@ -6234,7 +6269,7 @@ Partial Class Form1
         Me.txtEsforçoFlexaoX.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.txtEsforçoFlexaoX.Location = New System.Drawing.Point(218, 42)
         Me.txtEsforçoFlexaoX.Name = "txtEsforçoFlexaoX"
-        Me.txtEsforçoFlexaoX.Size = New System.Drawing.Size(57, 26)
+        Me.txtEsforçoFlexaoX.Size = New System.Drawing.Size(57, 30)
         Me.txtEsforçoFlexaoX.TabIndex = 77
         '
         'Label482
@@ -6243,7 +6278,7 @@ Partial Class Form1
         Me.Label482.Font = New System.Drawing.Font("Symbol", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label482.Location = New System.Drawing.Point(190, 133)
         Me.Label482.Name = "Label482"
-        Me.Label482.Size = New System.Drawing.Size(23, 17)
+        Me.Label482.Size = New System.Drawing.Size(27, 21)
         Me.Label482.TabIndex = 33
         Me.Label482.Text = "f :"
         '
@@ -6253,7 +6288,7 @@ Partial Class Form1
         Me.Label471.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label471.Location = New System.Drawing.Point(183, 51)
         Me.Label471.Name = "Label471"
-        Me.Label471.Size = New System.Drawing.Size(27, 12)
+        Me.Label471.Size = New System.Drawing.Size(34, 15)
         Me.Label471.TabIndex = 78
         Me.Label471.Text = "M,dx"
         '
@@ -6263,7 +6298,7 @@ Partial Class Form1
         Me.Label472.Font = New System.Drawing.Font("Symbol", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label472.Location = New System.Drawing.Point(170, 45)
         Me.Label472.Name = "Label472"
-        Me.Label472.Size = New System.Drawing.Size(48, 17)
+        Me.Label472.Size = New System.Drawing.Size(52, 21)
         Me.Label472.TabIndex = 76
         Me.Label472.Text = "s       :"
         '
@@ -6273,7 +6308,7 @@ Partial Class Form1
         Me.Label483.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label483.Location = New System.Drawing.Point(102, 134)
         Me.Label483.Name = "Label483"
-        Me.Label483.Size = New System.Drawing.Size(27, 19)
+        Me.Label483.Size = New System.Drawing.Size(33, 23)
         Me.Label483.TabIndex = 30
         Me.Label483.Text = "cm"
         '
@@ -6283,7 +6318,7 @@ Partial Class Form1
         Me.Label485.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label485.Location = New System.Drawing.Point(100, 93)
         Me.Label485.Name = "Label485"
-        Me.Label485.Size = New System.Drawing.Size(26, 19)
+        Me.Label485.Size = New System.Drawing.Size(31, 23)
         Me.Label485.TabIndex = 28
         Me.Label485.Text = "kN"
         '
@@ -6293,7 +6328,7 @@ Partial Class Form1
         Me.txtEiX.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.txtEiX.Location = New System.Drawing.Point(46, 131)
         Me.txtEiX.Name = "txtEiX"
-        Me.txtEiX.Size = New System.Drawing.Size(57, 26)
+        Me.txtEiX.Size = New System.Drawing.Size(57, 30)
         Me.txtEiX.TabIndex = 21
         '
         'Label489
@@ -6302,7 +6337,7 @@ Partial Class Form1
         Me.Label489.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label489.Location = New System.Drawing.Point(26, 140)
         Me.Label489.Name = "Label489"
-        Me.Label489.Size = New System.Drawing.Size(7, 12)
+        Me.Label489.Size = New System.Drawing.Size(10, 15)
         Me.Label489.TabIndex = 22
         Me.Label489.Text = "i"
         '
@@ -6312,7 +6347,7 @@ Partial Class Form1
         Me.Label490.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label490.Location = New System.Drawing.Point(14, 134)
         Me.Label490.Name = "Label490"
-        Me.Label490.Size = New System.Drawing.Size(31, 19)
+        Me.Label490.Size = New System.Drawing.Size(38, 23)
         Me.Label490.TabIndex = 20
         Me.Label490.Text = "e   :"
         '
@@ -6322,7 +6357,7 @@ Partial Class Form1
         Me.txtForçaElasticaX.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.txtForçaElasticaX.Location = New System.Drawing.Point(46, 90)
         Me.txtForçaElasticaX.Name = "txtForçaElasticaX"
-        Me.txtForçaElasticaX.Size = New System.Drawing.Size(57, 26)
+        Me.txtForçaElasticaX.Size = New System.Drawing.Size(57, 30)
         Me.txtForçaElasticaX.TabIndex = 12
         '
         'Label496
@@ -6331,17 +6366,17 @@ Partial Class Form1
         Me.Label496.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label496.Location = New System.Drawing.Point(14, 93)
         Me.Label496.Name = "Label496"
-        Me.Label496.Size = New System.Drawing.Size(26, 19)
+        Me.Label496.Size = New System.Drawing.Size(31, 23)
         Me.Label496.TabIndex = 11
         Me.Label496.Text = "Fe:"
         '
         'TabCisalhamento
         '
         Me.TabCisalhamento.Controls.Add(Me.GroupBox17)
-        Me.TabCisalhamento.Location = New System.Drawing.Point(4, 28)
+        Me.TabCisalhamento.Location = New System.Drawing.Point(4, 32)
         Me.TabCisalhamento.Name = "TabCisalhamento"
         Me.TabCisalhamento.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabCisalhamento.Size = New System.Drawing.Size(1068, 538)
+        Me.TabCisalhamento.Size = New System.Drawing.Size(1068, 534)
         Me.TabCisalhamento.TabIndex = 6
         Me.TabCisalhamento.Text = "Cisalhamento"
         Me.TabCisalhamento.UseVisualStyleBackColor = True
@@ -6392,7 +6427,7 @@ Partial Class Form1
         Me.Label218.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label218.Location = New System.Drawing.Point(105, 137)
         Me.Label218.Name = "Label218"
-        Me.Label218.Size = New System.Drawing.Size(37, 19)
+        Me.Label218.Size = New System.Drawing.Size(43, 23)
         Me.Label218.TabIndex = 120
         Me.Label218.Text = "MPa"
         '
@@ -6401,7 +6436,7 @@ Partial Class Form1
         Me.Label70.AutoSize = True
         Me.Label70.Location = New System.Drawing.Point(140, 220)
         Me.Label70.Name = "Label70"
-        Me.Label70.Size = New System.Drawing.Size(21, 19)
+        Me.Label70.Size = New System.Drawing.Size(25, 23)
         Me.Label70.TabIndex = 113
         Me.Label70.Text = "→"
         '
@@ -6411,7 +6446,7 @@ Partial Class Form1
         Me.Label219.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label219.Location = New System.Drawing.Point(28, 137)
         Me.Label219.Name = "Label219"
-        Me.Label219.Size = New System.Drawing.Size(23, 19)
+        Me.Label219.Size = New System.Drawing.Size(27, 23)
         Me.Label219.TabIndex = 119
         Me.Label219.Text = "fv:"
         '
@@ -6420,7 +6455,7 @@ Partial Class Form1
         Me.Label52.AutoSize = True
         Me.Label52.Location = New System.Drawing.Point(140, 180)
         Me.Label52.Name = "Label52"
-        Me.Label52.Size = New System.Drawing.Size(21, 19)
+        Me.Label52.Size = New System.Drawing.Size(25, 23)
         Me.Label52.TabIndex = 112
         Me.Label52.Text = "→"
         '
@@ -6430,7 +6465,7 @@ Partial Class Form1
         Me.txtfv.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.txtfv.Location = New System.Drawing.Point(49, 134)
         Me.txtfv.Name = "txtfv"
-        Me.txtfv.Size = New System.Drawing.Size(57, 26)
+        Me.txtfv.Size = New System.Drawing.Size(57, 30)
         Me.txtfv.TabIndex = 118
         '
         'Label263
@@ -6439,7 +6474,7 @@ Partial Class Form1
         Me.Label263.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label263.Location = New System.Drawing.Point(107, 222)
         Me.Label263.Name = "Label263"
-        Me.Label263.Size = New System.Drawing.Size(37, 19)
+        Me.Label263.Size = New System.Drawing.Size(43, 23)
         Me.Label263.TabIndex = 25
         Me.Label263.Text = "MPa"
         '
@@ -6449,7 +6484,7 @@ Partial Class Form1
         Me.Label567.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label567.Location = New System.Drawing.Point(105, 179)
         Me.Label567.Name = "Label567"
-        Me.Label567.Size = New System.Drawing.Size(37, 19)
+        Me.Label567.Size = New System.Drawing.Size(43, 23)
         Me.Label567.TabIndex = 24
         Me.Label567.Text = "MPa"
         '
@@ -6459,7 +6494,7 @@ Partial Class Form1
         Me.Label272.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label272.Location = New System.Drawing.Point(24, 229)
         Me.Label272.Name = "Label272"
-        Me.Label272.Size = New System.Drawing.Size(18, 12)
+        Me.Label272.Size = New System.Drawing.Size(23, 15)
         Me.Label272.TabIndex = 17
         Me.Label272.Text = "y,d"
         '
@@ -6469,7 +6504,7 @@ Partial Class Form1
         Me.Label273.Font = New System.Drawing.Font("Symbol", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label273.Location = New System.Drawing.Point(10, 223)
         Me.Label273.Name = "Label273"
-        Me.Label273.Size = New System.Drawing.Size(41, 17)
+        Me.Label273.Size = New System.Drawing.Size(45, 21)
         Me.Label273.TabIndex = 16
         Me.Label273.Text = "t      :"
         '
@@ -6479,7 +6514,7 @@ Partial Class Form1
         Me.txtTensaoCisalhanteY.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.txtTensaoCisalhanteY.Location = New System.Drawing.Point(49, 220)
         Me.txtTensaoCisalhanteY.Name = "txtTensaoCisalhanteY"
-        Me.txtTensaoCisalhanteY.Size = New System.Drawing.Size(57, 26)
+        Me.txtTensaoCisalhanteY.Size = New System.Drawing.Size(57, 30)
         Me.txtTensaoCisalhanteY.TabIndex = 15
         '
         'lblValidacaoCisalhanteY
@@ -6488,7 +6523,7 @@ Partial Class Form1
         Me.lblValidacaoCisalhanteY.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.lblValidacaoCisalhanteY.Location = New System.Drawing.Point(162, 220)
         Me.lblValidacaoCisalhanteY.Name = "lblValidacaoCisalhanteY"
-        Me.lblValidacaoCisalhanteY.Size = New System.Drawing.Size(95, 19)
+        Me.lblValidacaoCisalhanteY.Size = New System.Drawing.Size(115, 23)
         Me.lblValidacaoCisalhanteY.TabIndex = 14
         Me.lblValidacaoCisalhanteY.Text = "VERIFICAÇÃO"
         Me.lblValidacaoCisalhanteY.Visible = False
@@ -6499,7 +6534,7 @@ Partial Class Form1
         Me.Label428.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label428.Location = New System.Drawing.Point(6, 105)
         Me.Label428.Name = "Label428"
-        Me.Label428.Size = New System.Drawing.Size(226, 19)
+        Me.Label428.Size = New System.Drawing.Size(283, 23)
         Me.Label428.TabIndex = 13
         Me.Label428.Text = "Tensão Solicitante de Cisalhamento:"
         '
@@ -6509,7 +6544,7 @@ Partial Class Form1
         Me.Label205.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label205.Location = New System.Drawing.Point(170, 84)
         Me.Label205.Name = "Label205"
-        Me.Label205.Size = New System.Drawing.Size(18, 12)
+        Me.Label205.Size = New System.Drawing.Size(23, 15)
         Me.Label205.TabIndex = 13
         Me.Label205.Text = "v,d"
         '
@@ -6519,7 +6554,7 @@ Partial Class Form1
         Me.Label162.Font = New System.Drawing.Font("Symbol", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label162.Location = New System.Drawing.Point(131, 76)
         Me.Label162.Name = "Label162"
-        Me.Label162.Size = New System.Drawing.Size(14, 17)
+        Me.Label162.Size = New System.Drawing.Size(17, 21)
         Me.Label162.TabIndex = 12
         Me.Label162.Text = "t"
         '
@@ -6529,7 +6564,7 @@ Partial Class Form1
         Me.lblValidacaoCisalhanteX.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.lblValidacaoCisalhanteX.Location = New System.Drawing.Point(162, 180)
         Me.lblValidacaoCisalhanteX.Name = "lblValidacaoCisalhanteX"
-        Me.lblValidacaoCisalhanteX.Size = New System.Drawing.Size(95, 19)
+        Me.lblValidacaoCisalhanteX.Size = New System.Drawing.Size(115, 23)
         Me.lblValidacaoCisalhanteX.TabIndex = 7
         Me.lblValidacaoCisalhanteX.Text = "VERIFICAÇÃO"
         Me.lblValidacaoCisalhanteX.Visible = False
@@ -6540,7 +6575,7 @@ Partial Class Form1
         Me.Label353.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label353.Location = New System.Drawing.Point(24, 186)
         Me.Label353.Name = "Label353"
-        Me.Label353.Size = New System.Drawing.Size(18, 12)
+        Me.Label353.Size = New System.Drawing.Size(23, 15)
         Me.Label353.TabIndex = 10
         Me.Label353.Text = "x,d"
         '
@@ -6550,7 +6585,7 @@ Partial Class Form1
         Me.Label354.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label354.Location = New System.Drawing.Point(143, 76)
         Me.Label354.Name = "Label354"
-        Me.Label354.Size = New System.Drawing.Size(27, 19)
+        Me.Label354.Size = New System.Drawing.Size(32, 23)
         Me.Label354.TabIndex = 6
         Me.Label354.Text = "≤ f"
         '
@@ -6560,7 +6595,7 @@ Partial Class Form1
         Me.Label355.Font = New System.Drawing.Font("Symbol", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label355.Location = New System.Drawing.Point(10, 180)
         Me.Label355.Name = "Label355"
-        Me.Label355.Size = New System.Drawing.Size(41, 17)
+        Me.Label355.Size = New System.Drawing.Size(45, 21)
         Me.Label355.TabIndex = 9
         Me.Label355.Text = "t      :"
         '
@@ -6570,7 +6605,7 @@ Partial Class Form1
         Me.txtTensaoCisalhanteX.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.txtTensaoCisalhanteX.Location = New System.Drawing.Point(49, 176)
         Me.txtTensaoCisalhanteX.Name = "txtTensaoCisalhanteX"
-        Me.txtTensaoCisalhanteX.Size = New System.Drawing.Size(57, 26)
+        Me.txtTensaoCisalhanteX.Size = New System.Drawing.Size(57, 30)
         Me.txtTensaoCisalhanteX.TabIndex = 8
         '
         'Label356
@@ -6579,7 +6614,7 @@ Partial Class Form1
         Me.Label356.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label356.Location = New System.Drawing.Point(6, 41)
         Me.Label356.Name = "Label356"
-        Me.Label356.Size = New System.Drawing.Size(262, 19)
+        Me.Label356.Size = New System.Drawing.Size(327, 23)
         Me.Label356.TabIndex = 0
         Me.Label356.Text = "Verificação ao Estado Limite Último (ELU):"
         '
@@ -6588,10 +6623,10 @@ Partial Class Form1
         Me.TabFlexaoSimples.Controls.Add(Me.gbxApoio)
         Me.TabFlexaoSimples.Controls.Add(Me.GroupBox19)
         Me.TabFlexaoSimples.Controls.Add(Me.GroupBox16)
-        Me.TabFlexaoSimples.Location = New System.Drawing.Point(4, 28)
+        Me.TabFlexaoSimples.Location = New System.Drawing.Point(4, 32)
         Me.TabFlexaoSimples.Name = "TabFlexaoSimples"
         Me.TabFlexaoSimples.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabFlexaoSimples.Size = New System.Drawing.Size(1068, 538)
+        Me.TabFlexaoSimples.Size = New System.Drawing.Size(1068, 534)
         Me.TabFlexaoSimples.TabIndex = 5
         Me.TabFlexaoSimples.Text = "Flexão"
         Me.TabFlexaoSimples.UseVisualStyleBackColor = True
@@ -6632,7 +6667,7 @@ Partial Class Form1
         Me.Label255.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label255.Location = New System.Drawing.Point(105, 72)
         Me.Label255.Name = "Label255"
-        Me.Label255.Size = New System.Drawing.Size(37, 19)
+        Me.Label255.Size = New System.Drawing.Size(43, 23)
         Me.Label255.TabIndex = 157
         Me.Label255.Text = "MPa"
         '
@@ -6653,7 +6688,7 @@ Partial Class Form1
         Me.Label256.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label256.Location = New System.Drawing.Point(6, 70)
         Me.Label256.Name = "Label256"
-        Me.Label256.Size = New System.Drawing.Size(33, 19)
+        Me.Label256.Size = New System.Drawing.Size(40, 23)
         Me.Label256.TabIndex = 156
         Me.Label256.Text = "fc,0:"
         '
@@ -6662,7 +6697,7 @@ Partial Class Form1
         Me.Label224.AutoSize = True
         Me.Label224.Location = New System.Drawing.Point(143, 165)
         Me.Label224.Name = "Label224"
-        Me.Label224.Size = New System.Drawing.Size(21, 19)
+        Me.Label224.Size = New System.Drawing.Size(25, 23)
         Me.Label224.TabIndex = 114
         Me.Label224.Text = "→"
         '
@@ -6672,7 +6707,7 @@ Partial Class Form1
         Me.TextBox3.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.TextBox3.Location = New System.Drawing.Point(48, 67)
         Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(57, 26)
+        Me.TextBox3.Size = New System.Drawing.Size(57, 30)
         Me.TextBox3.TabIndex = 155
         '
         'Label221
@@ -6680,7 +6715,7 @@ Partial Class Form1
         Me.Label221.AutoSize = True
         Me.Label221.Location = New System.Drawing.Point(143, 119)
         Me.Label221.Name = "Label221"
-        Me.Label221.Size = New System.Drawing.Size(21, 19)
+        Me.Label221.Size = New System.Drawing.Size(25, 23)
         Me.Label221.TabIndex = 113
         Me.Label221.Text = "→"
         '
@@ -6690,7 +6725,7 @@ Partial Class Form1
         Me.lblApoioY.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point)
         Me.lblApoioY.Location = New System.Drawing.Point(174, 165)
         Me.lblApoioY.Name = "lblApoioY"
-        Me.lblApoioY.Size = New System.Drawing.Size(95, 19)
+        Me.lblApoioY.Size = New System.Drawing.Size(115, 23)
         Me.lblApoioY.TabIndex = 98
         Me.lblApoioY.Text = "VERIFICAÇÃO"
         '
@@ -6700,7 +6735,7 @@ Partial Class Form1
         Me.lblApoioX.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point)
         Me.lblApoioX.Location = New System.Drawing.Point(174, 119)
         Me.lblApoioX.Name = "lblApoioX"
-        Me.lblApoioX.Size = New System.Drawing.Size(95, 19)
+        Me.lblApoioX.Size = New System.Drawing.Size(115, 23)
         Me.lblApoioX.TabIndex = 97
         Me.lblApoioX.Text = "VERIFICAÇÃO"
         '
@@ -6710,7 +6745,7 @@ Partial Class Form1
         Me.Label97.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label97.Location = New System.Drawing.Point(170, 40)
         Me.Label97.Name = "Label97"
-        Me.Label97.Size = New System.Drawing.Size(18, 12)
+        Me.Label97.Size = New System.Drawing.Size(23, 15)
         Me.Label97.TabIndex = 94
         Me.Label97.Text = "c,d"
         '
@@ -6720,7 +6755,7 @@ Partial Class Form1
         Me.Label98.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label98.Location = New System.Drawing.Point(126, 38)
         Me.Label98.Name = "Label98"
-        Me.Label98.Size = New System.Drawing.Size(23, 12)
+        Me.Label98.Size = New System.Drawing.Size(29, 15)
         Me.Label98.TabIndex = 96
         Me.Label98.Text = "c,dx"
         '
@@ -6730,7 +6765,7 @@ Partial Class Form1
         Me.txtCompApoioX.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.txtCompApoioX.Location = New System.Drawing.Point(48, 116)
         Me.txtCompApoioX.Name = "txtCompApoioX"
-        Me.txtCompApoioX.Size = New System.Drawing.Size(57, 26)
+        Me.txtCompApoioX.Size = New System.Drawing.Size(57, 30)
         Me.txtCompApoioX.TabIndex = 81
         '
         'Label129
@@ -6739,7 +6774,7 @@ Partial Class Form1
         Me.Label129.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label129.Location = New System.Drawing.Point(149, 32)
         Me.Label129.Name = "Label129"
-        Me.Label129.Size = New System.Drawing.Size(27, 19)
+        Me.Label129.Size = New System.Drawing.Size(32, 23)
         Me.Label129.TabIndex = 93
         Me.Label129.Text = "≤ f"
         '
@@ -6749,7 +6784,7 @@ Partial Class Form1
         Me.txtCompApoioY.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.txtCompApoioY.Location = New System.Drawing.Point(48, 162)
         Me.txtCompApoioY.Name = "txtCompApoioY"
-        Me.txtCompApoioY.Size = New System.Drawing.Size(57, 26)
+        Me.txtCompApoioY.Size = New System.Drawing.Size(57, 30)
         Me.txtCompApoioY.TabIndex = 85
         '
         'Label130
@@ -6758,7 +6793,7 @@ Partial Class Form1
         Me.Label130.Font = New System.Drawing.Font("Symbol", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label130.Location = New System.Drawing.Point(113, 32)
         Me.Label130.Name = "Label130"
-        Me.Label130.Size = New System.Drawing.Size(37, 17)
+        Me.Label130.Size = New System.Drawing.Size(40, 21)
         Me.Label130.TabIndex = 95
         Me.Label130.Text = "s     "
         '
@@ -6768,7 +6803,7 @@ Partial Class Form1
         Me.Label95.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label95.Location = New System.Drawing.Point(28, 171)
         Me.Label95.Name = "Label95"
-        Me.Label95.Size = New System.Drawing.Size(10, 12)
+        Me.Label95.Size = New System.Drawing.Size(13, 15)
         Me.Label95.TabIndex = 89
         Me.Label95.Text = "y"
         '
@@ -6778,7 +6813,7 @@ Partial Class Form1
         Me.Label96.Font = New System.Drawing.Font("Symbol", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label96.Location = New System.Drawing.Point(15, 165)
         Me.Label96.Name = "Label96"
-        Me.Label96.Size = New System.Drawing.Size(32, 17)
+        Me.Label96.Size = New System.Drawing.Size(36, 21)
         Me.Label96.TabIndex = 88
         Me.Label96.Text = "s   :"
         '
@@ -6788,7 +6823,7 @@ Partial Class Form1
         Me.Label94.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label94.Location = New System.Drawing.Point(103, 165)
         Me.Label94.Name = "Label94"
-        Me.Label94.Size = New System.Drawing.Size(37, 19)
+        Me.Label94.Size = New System.Drawing.Size(43, 23)
         Me.Label94.TabIndex = 87
         Me.Label94.Text = "MPa"
         '
@@ -6798,7 +6833,7 @@ Partial Class Form1
         Me.Label89.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label89.Location = New System.Drawing.Point(103, 119)
         Me.Label89.Name = "Label89"
-        Me.Label89.Size = New System.Drawing.Size(37, 19)
+        Me.Label89.Size = New System.Drawing.Size(43, 23)
         Me.Label89.TabIndex = 83
         Me.Label89.Text = "MPa"
         '
@@ -6808,7 +6843,7 @@ Partial Class Form1
         Me.Label90.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label90.Location = New System.Drawing.Point(28, 125)
         Me.Label90.Name = "Label90"
-        Me.Label90.Size = New System.Drawing.Size(10, 12)
+        Me.Label90.Size = New System.Drawing.Size(13, 15)
         Me.Label90.TabIndex = 82
         Me.Label90.Text = "x"
         '
@@ -6818,7 +6853,7 @@ Partial Class Form1
         Me.Label91.Font = New System.Drawing.Font("Symbol", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label91.Location = New System.Drawing.Point(15, 119)
         Me.Label91.Name = "Label91"
-        Me.Label91.Size = New System.Drawing.Size(32, 17)
+        Me.Label91.Size = New System.Drawing.Size(36, 21)
         Me.Label91.TabIndex = 80
         Me.Label91.Text = "s   :"
         '
@@ -6900,7 +6935,7 @@ Partial Class Form1
         Me.Label225.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label225.Location = New System.Drawing.Point(106, 191)
         Me.Label225.Name = "Label225"
-        Me.Label225.Size = New System.Drawing.Size(37, 19)
+        Me.Label225.Size = New System.Drawing.Size(43, 23)
         Me.Label225.TabIndex = 151
         Me.Label225.Text = "MPa"
         '
@@ -6909,7 +6944,7 @@ Partial Class Form1
         Me.Label83.AutoSize = True
         Me.Label83.Location = New System.Drawing.Point(250, 111)
         Me.Label83.Name = "Label83"
-        Me.Label83.Size = New System.Drawing.Size(21, 19)
+        Me.Label83.Size = New System.Drawing.Size(25, 23)
         Me.Label83.TabIndex = 146
         Me.Label83.Text = "→"
         '
@@ -6918,7 +6953,7 @@ Partial Class Form1
         Me.Label82.AutoSize = True
         Me.Label82.Location = New System.Drawing.Point(250, 65)
         Me.Label82.Name = "Label82"
-        Me.Label82.Size = New System.Drawing.Size(21, 19)
+        Me.Label82.Size = New System.Drawing.Size(25, 23)
         Me.Label82.TabIndex = 145
         Me.Label82.Text = "→"
         '
@@ -6928,7 +6963,7 @@ Partial Class Form1
         Me.Label226.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label226.Location = New System.Drawing.Point(7, 189)
         Me.Label226.Name = "Label226"
-        Me.Label226.Size = New System.Drawing.Size(32, 19)
+        Me.Label226.Size = New System.Drawing.Size(38, 23)
         Me.Label226.TabIndex = 150
         Me.Label226.Text = "ft,0:"
         '
@@ -6938,7 +6973,7 @@ Partial Class Form1
         Me.lblValidacaoFlexoTracaoY.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.lblValidacaoFlexoTracaoY.Location = New System.Drawing.Point(272, 112)
         Me.lblValidacaoFlexoTracaoY.Name = "lblValidacaoFlexoTracaoY"
-        Me.lblValidacaoFlexoTracaoY.Size = New System.Drawing.Size(91, 19)
+        Me.lblValidacaoFlexoTracaoY.Size = New System.Drawing.Size(110, 23)
         Me.lblValidacaoFlexoTracaoY.TabIndex = 144
         Me.lblValidacaoFlexoTracaoY.Text = "VERFICAÇÃO"
         '
@@ -6948,7 +6983,7 @@ Partial Class Form1
         Me.Label550.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label550.Location = New System.Drawing.Point(275, 242)
         Me.Label550.Name = "Label550"
-        Me.Label550.Size = New System.Drawing.Size(37, 19)
+        Me.Label550.Size = New System.Drawing.Size(43, 23)
         Me.Label550.TabIndex = 143
         Me.Label550.Text = "MPa"
         '
@@ -6958,7 +6993,7 @@ Partial Class Form1
         Me.txtftFlexo.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.txtftFlexo.Location = New System.Drawing.Point(49, 186)
         Me.txtftFlexo.Name = "txtftFlexo"
-        Me.txtftFlexo.Size = New System.Drawing.Size(57, 26)
+        Me.txtftFlexo.Size = New System.Drawing.Size(57, 30)
         Me.txtftFlexo.TabIndex = 149
         '
         'Label319
@@ -6967,7 +7002,7 @@ Partial Class Form1
         Me.Label319.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label319.Location = New System.Drawing.Point(275, 199)
         Me.Label319.Name = "Label319"
-        Me.Label319.Size = New System.Drawing.Size(37, 19)
+        Me.Label319.Size = New System.Drawing.Size(43, 23)
         Me.Label319.TabIndex = 142
         Me.Label319.Text = "MPa"
         '
@@ -6977,7 +7012,7 @@ Partial Class Form1
         Me.Label313.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label313.Location = New System.Drawing.Point(275, 159)
         Me.Label313.Name = "Label313"
-        Me.Label313.Size = New System.Drawing.Size(37, 19)
+        Me.Label313.Size = New System.Drawing.Size(43, 23)
         Me.Label313.TabIndex = 111
         Me.Label313.Text = "MPa"
         '
@@ -6987,7 +7022,7 @@ Partial Class Form1
         Me.Label536.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label536.Location = New System.Drawing.Point(181, 128)
         Me.Label536.Name = "Label536"
-        Me.Label536.Size = New System.Drawing.Size(24, 12)
+        Me.Label536.Size = New System.Drawing.Size(31, 15)
         Me.Label536.TabIndex = 141
         Me.Label536.Text = "ft0,d"
         '
@@ -6997,7 +7032,7 @@ Partial Class Form1
         Me.Label202.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label202.Location = New System.Drawing.Point(204, 242)
         Me.Label202.Name = "Label202"
-        Me.Label202.Size = New System.Drawing.Size(12, 19)
+        Me.Label202.Size = New System.Drawing.Size(14, 23)
         Me.Label202.TabIndex = 97
         Me.Label202.Text = ":"
         '
@@ -7007,7 +7042,7 @@ Partial Class Form1
         Me.Label537.Font = New System.Drawing.Font("Symbol", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label537.Location = New System.Drawing.Point(150, 112)
         Me.Label537.Name = "Label537"
-        Me.Label537.Size = New System.Drawing.Size(16, 17)
+        Me.Label537.Size = New System.Drawing.Size(19, 21)
         Me.Label537.TabIndex = 140
         Me.Label537.Text = "+"
         '
@@ -7017,7 +7052,7 @@ Partial Class Form1
         Me.Label518.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label518.Location = New System.Drawing.Point(202, 200)
         Me.Label518.Name = "Label518"
-        Me.Label518.Size = New System.Drawing.Size(12, 19)
+        Me.Label518.Size = New System.Drawing.Size(14, 23)
         Me.Label518.TabIndex = 96
         Me.Label518.Text = ":"
         '
@@ -7027,7 +7062,7 @@ Partial Class Form1
         Me.Label538.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label538.Location = New System.Drawing.Point(186, 111)
         Me.Label538.Name = "Label538"
-        Me.Label538.Size = New System.Drawing.Size(27, 12)
+        Me.Label538.Size = New System.Drawing.Size(34, 15)
         Me.Label538.TabIndex = 138
         Me.Label538.Text = "Mx,d"
         '
@@ -7037,7 +7072,7 @@ Partial Class Form1
         Me.Label517.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label517.Location = New System.Drawing.Point(202, 159)
         Me.Label517.Name = "Label517"
-        Me.Label517.Size = New System.Drawing.Size(12, 19)
+        Me.Label517.Size = New System.Drawing.Size(14, 23)
         Me.Label517.TabIndex = 95
         Me.Label517.Text = ":"
         '
@@ -7047,7 +7082,7 @@ Partial Class Form1
         Me.Label539.Font = New System.Drawing.Font("Symbol", 10.2!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point)
         Me.Label539.Location = New System.Drawing.Point(172, 107)
         Me.Label539.Name = "Label539"
-        Me.Label539.Size = New System.Drawing.Size(53, 17)
+        Me.Label539.Size = New System.Drawing.Size(56, 21)
         Me.Label539.TabIndex = 139
         Me.Label539.Text = "s         "
         '
@@ -7057,7 +7092,7 @@ Partial Class Form1
         Me.Label329.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label329.Location = New System.Drawing.Point(175, 247)
         Me.Label329.Name = "Label329"
-        Me.Label329.Size = New System.Drawing.Size(27, 12)
+        Me.Label329.Size = New System.Drawing.Size(34, 15)
         Me.Label329.TabIndex = 15
         Me.Label329.Text = "My,d"
         '
@@ -7067,7 +7102,7 @@ Partial Class Form1
         Me.Label540.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label540.Location = New System.Drawing.Point(106, 127)
         Me.Label540.Name = "Label540"
-        Me.Label540.Size = New System.Drawing.Size(24, 12)
+        Me.Label540.Size = New System.Drawing.Size(31, 15)
         Me.Label540.TabIndex = 137
         Me.Label540.Text = "ft0,d"
         '
@@ -7078,7 +7113,7 @@ Partial Class Form1
         Me.Label330.Location = New System.Drawing.Point(160, 241)
         Me.Label330.Name = "Label330"
         Me.Label330.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.Label330.Size = New System.Drawing.Size(17, 17)
+        Me.Label330.Size = New System.Drawing.Size(20, 21)
         Me.Label330.TabIndex = 14
         Me.Label330.Text = "s"
         '
@@ -7088,7 +7123,7 @@ Partial Class Form1
         Me.Label541.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label541.Location = New System.Drawing.Point(15, 128)
         Me.Label541.Name = "Label541"
-        Me.Label541.Size = New System.Drawing.Size(24, 12)
+        Me.Label541.Size = New System.Drawing.Size(31, 15)
         Me.Label541.TabIndex = 135
         Me.Label541.Text = "ft0,d"
         '
@@ -7098,7 +7133,7 @@ Partial Class Form1
         Me.Label542.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label542.Location = New System.Drawing.Point(221, 112)
         Me.Label542.Name = "Label542"
-        Me.Label542.Size = New System.Drawing.Size(31, 19)
+        Me.Label542.Size = New System.Drawing.Size(36, 23)
         Me.Label542.TabIndex = 134
         Me.Label542.Text = "≤ 1"
         '
@@ -7108,7 +7143,7 @@ Partial Class Form1
         Me.txtFlexoTracaoMx.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.txtFlexoTracaoMx.Location = New System.Drawing.Point(218, 197)
         Me.txtFlexoTracaoMx.Name = "txtFlexoTracaoMx"
-        Me.txtFlexoTracaoMx.Size = New System.Drawing.Size(57, 26)
+        Me.txtFlexoTracaoMx.Size = New System.Drawing.Size(57, 30)
         Me.txtFlexoTracaoMx.TabIndex = 8
         '
         'Label543
@@ -7117,7 +7152,7 @@ Partial Class Form1
         Me.Label543.Font = New System.Drawing.Font("Symbol", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label543.Location = New System.Drawing.Point(86, 112)
         Me.Label543.Name = "Label543"
-        Me.Label543.Size = New System.Drawing.Size(12, 17)
+        Me.Label543.Size = New System.Drawing.Size(14, 21)
         Me.Label543.TabIndex = 133
         Me.Label543.Text = "."
         '
@@ -7127,7 +7162,7 @@ Partial Class Form1
         Me.Label315.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label315.Location = New System.Drawing.Point(175, 206)
         Me.Label315.Name = "Label315"
-        Me.Label315.Size = New System.Drawing.Size(27, 12)
+        Me.Label315.Size = New System.Drawing.Size(34, 15)
         Me.Label315.TabIndex = 10
         Me.Label315.Text = "Mx,d"
         '
@@ -7137,7 +7172,7 @@ Partial Class Form1
         Me.Label544.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label544.Location = New System.Drawing.Point(111, 110)
         Me.Label544.Name = "Label544"
-        Me.Label544.Size = New System.Drawing.Size(27, 12)
+        Me.Label544.Size = New System.Drawing.Size(34, 15)
         Me.Label544.TabIndex = 131
         Me.Label544.Text = "My,d"
         '
@@ -7147,7 +7182,7 @@ Partial Class Form1
         Me.Label317.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label317.Location = New System.Drawing.Point(175, 165)
         Me.Label317.Name = "Label317"
-        Me.Label317.Size = New System.Drawing.Size(23, 12)
+        Me.Label317.Size = New System.Drawing.Size(30, 15)
         Me.Label317.TabIndex = 6
         Me.Label317.Text = "Nt,d"
         '
@@ -7157,7 +7192,7 @@ Partial Class Form1
         Me.Label545.Font = New System.Drawing.Font("Symbol", 10.2!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point)
         Me.Label545.Location = New System.Drawing.Point(97, 106)
         Me.Label545.Name = "Label545"
-        Me.Label545.Size = New System.Drawing.Size(53, 17)
+        Me.Label545.Size = New System.Drawing.Size(56, 21)
         Me.Label545.TabIndex = 132
         Me.Label545.Text = "s         "
         '
@@ -7167,7 +7202,7 @@ Partial Class Form1
         Me.txtFlexoTracaoMy.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.txtFlexoTracaoMy.Location = New System.Drawing.Point(218, 238)
         Me.txtFlexoTracaoMy.Name = "txtFlexoTracaoMy"
-        Me.txtFlexoTracaoMy.Size = New System.Drawing.Size(57, 26)
+        Me.txtFlexoTracaoMy.Size = New System.Drawing.Size(57, 30)
         Me.txtFlexoTracaoMy.TabIndex = 12
         '
         'Label546
@@ -7176,7 +7211,7 @@ Partial Class Form1
         Me.Label546.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label546.Location = New System.Drawing.Point(69, 121)
         Me.Label546.Name = "Label546"
-        Me.Label546.Size = New System.Drawing.Size(14, 12)
+        Me.Label546.Size = New System.Drawing.Size(18, 15)
         Me.Label546.TabIndex = 130
         Me.Label546.Text = "M"
         '
@@ -7186,7 +7221,7 @@ Partial Class Form1
         Me.lblValidacaoFlexoTracaoX.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.lblValidacaoFlexoTracaoX.Location = New System.Drawing.Point(272, 66)
         Me.lblValidacaoFlexoTracaoX.Name = "lblValidacaoFlexoTracaoX"
-        Me.lblValidacaoFlexoTracaoX.Size = New System.Drawing.Size(91, 19)
+        Me.lblValidacaoFlexoTracaoX.Size = New System.Drawing.Size(110, 23)
         Me.lblValidacaoFlexoTracaoX.TabIndex = 7
         Me.lblValidacaoFlexoTracaoX.Text = "VERFICAÇÃO"
         '
@@ -7196,7 +7231,7 @@ Partial Class Form1
         Me.Label547.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label547.Location = New System.Drawing.Point(20, 110)
         Me.Label547.Name = "Label547"
-        Me.Label547.Size = New System.Drawing.Size(25, 12)
+        Me.Label547.Size = New System.Drawing.Size(32, 15)
         Me.Label547.TabIndex = 128
         Me.Label547.Text = "Nc,d"
         '
@@ -7207,7 +7242,7 @@ Partial Class Form1
         Me.Label314.Location = New System.Drawing.Point(160, 200)
         Me.Label314.Name = "Label314"
         Me.Label314.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.Label314.Size = New System.Drawing.Size(17, 17)
+        Me.Label314.Size = New System.Drawing.Size(20, 21)
         Me.Label314.TabIndex = 9
         Me.Label314.Text = "s"
         '
@@ -7217,7 +7252,7 @@ Partial Class Form1
         Me.Label548.Font = New System.Drawing.Font("Symbol", 10.2!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point)
         Me.Label548.Location = New System.Drawing.Point(7, 107)
         Me.Label548.Name = "Label548"
-        Me.Label548.Size = New System.Drawing.Size(45, 17)
+        Me.Label548.Size = New System.Drawing.Size(48, 21)
         Me.Label548.TabIndex = 129
         Me.Label548.Text = "s       "
         '
@@ -7228,7 +7263,7 @@ Partial Class Form1
         Me.Label316.Location = New System.Drawing.Point(160, 159)
         Me.Label316.Name = "Label316"
         Me.Label316.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.Label316.Size = New System.Drawing.Size(21, 17)
+        Me.Label316.Size = New System.Drawing.Size(24, 21)
         Me.Label316.TabIndex = 6
         Me.Label316.Text = "s "
         '
@@ -7238,7 +7273,7 @@ Partial Class Form1
         Me.Label549.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label549.Location = New System.Drawing.Point(51, 114)
         Me.Label549.Name = "Label549"
-        Me.Label549.Size = New System.Drawing.Size(26, 19)
+        Me.Label549.Size = New System.Drawing.Size(30, 23)
         Me.Label549.TabIndex = 127
         Me.Label549.Text = "+k"
         '
@@ -7248,7 +7283,7 @@ Partial Class Form1
         Me.txtFlexoTracao.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.txtFlexoTracao.Location = New System.Drawing.Point(218, 156)
         Me.txtFlexoTracao.Name = "txtFlexoTracao"
-        Me.txtFlexoTracao.Size = New System.Drawing.Size(57, 26)
+        Me.txtFlexoTracao.Size = New System.Drawing.Size(57, 30)
         Me.txtFlexoTracao.TabIndex = 6
         '
         'Label320
@@ -7257,7 +7292,7 @@ Partial Class Form1
         Me.Label320.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label320.Location = New System.Drawing.Point(15, 26)
         Me.Label320.Name = "Label320"
-        Me.Label320.Size = New System.Drawing.Size(262, 19)
+        Me.Label320.Size = New System.Drawing.Size(327, 23)
         Me.Label320.TabIndex = 6
         Me.Label320.Text = "Verificação ao Estado Limite Último (ELU):"
         '
@@ -7267,7 +7302,7 @@ Partial Class Form1
         Me.Label551.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label551.Location = New System.Drawing.Point(181, 82)
         Me.Label551.Name = "Label551"
-        Me.Label551.Size = New System.Drawing.Size(24, 12)
+        Me.Label551.Size = New System.Drawing.Size(31, 15)
         Me.Label551.TabIndex = 126
         Me.Label551.Text = "ft0,d"
         '
@@ -7277,7 +7312,7 @@ Partial Class Form1
         Me.Label562.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label562.Location = New System.Drawing.Point(69, 75)
         Me.Label562.Name = "Label562"
-        Me.Label562.Size = New System.Drawing.Size(14, 12)
+        Me.Label562.Size = New System.Drawing.Size(18, 15)
         Me.Label562.TabIndex = 114
         Me.Label562.Text = "M"
         '
@@ -7287,7 +7322,7 @@ Partial Class Form1
         Me.Label552.Font = New System.Drawing.Font("Symbol", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label552.Location = New System.Drawing.Point(150, 66)
         Me.Label552.Name = "Label552"
-        Me.Label552.Size = New System.Drawing.Size(16, 17)
+        Me.Label552.Size = New System.Drawing.Size(19, 21)
         Me.Label552.TabIndex = 125
         Me.Label552.Text = "+"
         '
@@ -7297,7 +7332,7 @@ Partial Class Form1
         Me.Label565.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label565.Location = New System.Drawing.Point(51, 68)
         Me.Label565.Name = "Label565"
-        Me.Label565.Size = New System.Drawing.Size(26, 19)
+        Me.Label565.Size = New System.Drawing.Size(30, 23)
         Me.Label565.TabIndex = 111
         Me.Label565.Text = "+k"
         '
@@ -7307,7 +7342,7 @@ Partial Class Form1
         Me.Label553.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label553.Location = New System.Drawing.Point(186, 65)
         Me.Label553.Name = "Label553"
-        Me.Label553.Size = New System.Drawing.Size(27, 12)
+        Me.Label553.Size = New System.Drawing.Size(34, 15)
         Me.Label553.TabIndex = 123
         Me.Label553.Text = "My,d"
         '
@@ -7317,7 +7352,7 @@ Partial Class Form1
         Me.Label554.Font = New System.Drawing.Font("Symbol", 10.2!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point)
         Me.Label554.Location = New System.Drawing.Point(172, 61)
         Me.Label554.Name = "Label554"
-        Me.Label554.Size = New System.Drawing.Size(53, 17)
+        Me.Label554.Size = New System.Drawing.Size(56, 21)
         Me.Label554.TabIndex = 124
         Me.Label554.Text = "s         "
         '
@@ -7327,7 +7362,7 @@ Partial Class Form1
         Me.Label563.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label563.Location = New System.Drawing.Point(20, 64)
         Me.Label563.Name = "Label563"
-        Me.Label563.Size = New System.Drawing.Size(25, 12)
+        Me.Label563.Size = New System.Drawing.Size(32, 15)
         Me.Label563.TabIndex = 112
         Me.Label563.Text = "Nc,d"
         '
@@ -7337,7 +7372,7 @@ Partial Class Form1
         Me.Label555.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label555.Location = New System.Drawing.Point(106, 81)
         Me.Label555.Name = "Label555"
-        Me.Label555.Size = New System.Drawing.Size(24, 12)
+        Me.Label555.Size = New System.Drawing.Size(31, 15)
         Me.Label555.TabIndex = 122
         Me.Label555.Text = "ft0,d"
         '
@@ -7347,7 +7382,7 @@ Partial Class Form1
         Me.Label557.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label557.Location = New System.Drawing.Point(15, 82)
         Me.Label557.Name = "Label557"
-        Me.Label557.Size = New System.Drawing.Size(24, 12)
+        Me.Label557.Size = New System.Drawing.Size(31, 15)
         Me.Label557.TabIndex = 119
         Me.Label557.Text = "ft0,d"
         '
@@ -7357,7 +7392,7 @@ Partial Class Form1
         Me.Label560.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label560.Location = New System.Drawing.Point(111, 64)
         Me.Label560.Name = "Label560"
-        Me.Label560.Size = New System.Drawing.Size(27, 12)
+        Me.Label560.Size = New System.Drawing.Size(34, 15)
         Me.Label560.TabIndex = 115
         Me.Label560.Text = "Mx,d"
         '
@@ -7367,7 +7402,7 @@ Partial Class Form1
         Me.Label558.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label558.Location = New System.Drawing.Point(221, 66)
         Me.Label558.Name = "Label558"
-        Me.Label558.Size = New System.Drawing.Size(31, 19)
+        Me.Label558.Size = New System.Drawing.Size(36, 23)
         Me.Label558.TabIndex = 118
         Me.Label558.Text = "≤ 1"
         '
@@ -7377,7 +7412,7 @@ Partial Class Form1
         Me.Label559.Font = New System.Drawing.Font("Symbol", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label559.Location = New System.Drawing.Point(86, 66)
         Me.Label559.Name = "Label559"
-        Me.Label559.Size = New System.Drawing.Size(12, 17)
+        Me.Label559.Size = New System.Drawing.Size(14, 21)
         Me.Label559.TabIndex = 117
         Me.Label559.Text = "."
         '
@@ -7387,7 +7422,7 @@ Partial Class Form1
         Me.Label564.Font = New System.Drawing.Font("Symbol", 10.2!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point)
         Me.Label564.Location = New System.Drawing.Point(7, 61)
         Me.Label564.Name = "Label564"
-        Me.Label564.Size = New System.Drawing.Size(45, 17)
+        Me.Label564.Size = New System.Drawing.Size(48, 21)
         Me.Label564.TabIndex = 113
         Me.Label564.Text = "s       "
         '
@@ -7397,7 +7432,7 @@ Partial Class Form1
         Me.Label561.Font = New System.Drawing.Font("Symbol", 10.2!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point)
         Me.Label561.Location = New System.Drawing.Point(97, 60)
         Me.Label561.Name = "Label561"
-        Me.Label561.Size = New System.Drawing.Size(53, 17)
+        Me.Label561.Size = New System.Drawing.Size(56, 21)
         Me.Label561.TabIndex = 116
         Me.Label561.Text = "s         "
         '
@@ -7471,7 +7506,7 @@ Partial Class Form1
         Me.Label232.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label232.Location = New System.Drawing.Point(117, 215)
         Me.Label232.Name = "Label232"
-        Me.Label232.Size = New System.Drawing.Size(37, 19)
+        Me.Label232.Size = New System.Drawing.Size(43, 23)
         Me.Label232.TabIndex = 154
         Me.Label232.Text = "MPa"
         '
@@ -7481,7 +7516,7 @@ Partial Class Form1
         Me.Label254.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label254.Location = New System.Drawing.Point(18, 213)
         Me.Label254.Name = "Label254"
-        Me.Label254.Size = New System.Drawing.Size(33, 19)
+        Me.Label254.Size = New System.Drawing.Size(40, 23)
         Me.Label254.TabIndex = 153
         Me.Label254.Text = "fc,0:"
         '
@@ -7491,7 +7526,7 @@ Partial Class Form1
         Me.txtfc.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.txtfc.Location = New System.Drawing.Point(60, 210)
         Me.txtfc.Name = "txtfc"
-        Me.txtfc.Size = New System.Drawing.Size(57, 26)
+        Me.txtfc.Size = New System.Drawing.Size(57, 30)
         Me.txtfc.TabIndex = 152
         '
         'lblValidacaoFlexoCompressaoY
@@ -7500,7 +7535,7 @@ Partial Class Form1
         Me.lblValidacaoFlexoCompressaoY.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.lblValidacaoFlexoCompressaoY.Location = New System.Drawing.Point(289, 114)
         Me.lblValidacaoFlexoCompressaoY.Name = "lblValidacaoFlexoCompressaoY"
-        Me.lblValidacaoFlexoCompressaoY.Size = New System.Drawing.Size(95, 19)
+        Me.lblValidacaoFlexoCompressaoY.Size = New System.Drawing.Size(115, 23)
         Me.lblValidacaoFlexoCompressaoY.TabIndex = 147
         Me.lblValidacaoFlexoCompressaoY.Text = "VERIFICAÇÃO"
         '
@@ -7509,7 +7544,7 @@ Partial Class Form1
         Me.Label81.AutoSize = True
         Me.Label81.Location = New System.Drawing.Point(265, 116)
         Me.Label81.Name = "Label81"
-        Me.Label81.Size = New System.Drawing.Size(21, 19)
+        Me.Label81.Size = New System.Drawing.Size(25, 23)
         Me.Label81.TabIndex = 148
         Me.Label81.Text = "→"
         '
@@ -7518,7 +7553,7 @@ Partial Class Form1
         Me.Label80.AutoSize = True
         Me.Label80.Location = New System.Drawing.Point(265, 64)
         Me.Label80.Name = "Label80"
-        Me.Label80.Size = New System.Drawing.Size(21, 19)
+        Me.Label80.Size = New System.Drawing.Size(25, 23)
         Me.Label80.TabIndex = 147
         Me.Label80.Text = "→"
         '
@@ -7528,7 +7563,7 @@ Partial Class Form1
         Me.Label534.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label534.Location = New System.Drawing.Point(53, 104)
         Me.Label534.Name = "Label534"
-        Me.Label534.Size = New System.Drawing.Size(10, 12)
+        Me.Label534.Size = New System.Drawing.Size(13, 15)
         Me.Label534.TabIndex = 110
         Me.Label534.Text = "2"
         '
@@ -7538,7 +7573,7 @@ Partial Class Form1
         Me.Label210.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label210.Location = New System.Drawing.Point(295, 247)
         Me.Label210.Name = "Label210"
-        Me.Label210.Size = New System.Drawing.Size(37, 19)
+        Me.Label210.Size = New System.Drawing.Size(43, 23)
         Me.Label210.TabIndex = 146
         Me.Label210.Text = "MPa"
         '
@@ -7548,7 +7583,7 @@ Partial Class Form1
         Me.Label519.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label519.Location = New System.Drawing.Point(198, 132)
         Me.Label519.Name = "Label519"
-        Me.Label519.Size = New System.Drawing.Size(26, 12)
+        Me.Label519.Size = New System.Drawing.Size(33, 15)
         Me.Label519.TabIndex = 109
         Me.Label519.Text = "fc0,d"
         '
@@ -7558,7 +7593,7 @@ Partial Class Form1
         Me.Label227.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label227.Location = New System.Drawing.Point(294, 210)
         Me.Label227.Name = "Label227"
-        Me.Label227.Size = New System.Drawing.Size(37, 19)
+        Me.Label227.Size = New System.Drawing.Size(43, 23)
         Me.Label227.TabIndex = 145
         Me.Label227.Text = "MPa"
         '
@@ -7568,7 +7603,7 @@ Partial Class Form1
         Me.Label520.Font = New System.Drawing.Font("Symbol", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label520.Location = New System.Drawing.Point(167, 116)
         Me.Label520.Name = "Label520"
-        Me.Label520.Size = New System.Drawing.Size(16, 17)
+        Me.Label520.Size = New System.Drawing.Size(19, 21)
         Me.Label520.TabIndex = 108
         Me.Label520.Text = "+"
         '
@@ -7578,7 +7613,7 @@ Partial Class Form1
         Me.Label203.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label203.Location = New System.Drawing.Point(228, 248)
         Me.Label203.Name = "Label203"
-        Me.Label203.Size = New System.Drawing.Size(12, 19)
+        Me.Label203.Size = New System.Drawing.Size(14, 23)
         Me.Label203.TabIndex = 106
         Me.Label203.Text = ":"
         '
@@ -7588,7 +7623,7 @@ Partial Class Form1
         Me.Label521.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label521.Location = New System.Drawing.Point(203, 115)
         Me.Label521.Name = "Label521"
-        Me.Label521.Size = New System.Drawing.Size(27, 12)
+        Me.Label521.Size = New System.Drawing.Size(34, 15)
         Me.Label521.TabIndex = 106
         Me.Label521.Text = "Mx,d"
         '
@@ -7598,7 +7633,7 @@ Partial Class Form1
         Me.Label228.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label228.Location = New System.Drawing.Point(294, 171)
         Me.Label228.Name = "Label228"
-        Me.Label228.Size = New System.Drawing.Size(37, 19)
+        Me.Label228.Size = New System.Drawing.Size(43, 23)
         Me.Label228.TabIndex = 144
         Me.Label228.Text = "MPa"
         '
@@ -7608,7 +7643,7 @@ Partial Class Form1
         Me.Label522.Font = New System.Drawing.Font("Symbol", 10.2!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point)
         Me.Label522.Location = New System.Drawing.Point(189, 111)
         Me.Label522.Name = "Label522"
-        Me.Label522.Size = New System.Drawing.Size(53, 17)
+        Me.Label522.Size = New System.Drawing.Size(56, 21)
         Me.Label522.TabIndex = 107
         Me.Label522.Text = "s         "
         '
@@ -7617,7 +7652,7 @@ Partial Class Form1
         Me.txtFlexoCompressaoMy.Enabled = False
         Me.txtFlexoCompressaoMy.Location = New System.Drawing.Point(239, 245)
         Me.txtFlexoCompressaoMy.Name = "txtFlexoCompressaoMy"
-        Me.txtFlexoCompressaoMy.Size = New System.Drawing.Size(57, 26)
+        Me.txtFlexoCompressaoMy.Size = New System.Drawing.Size(57, 30)
         Me.txtFlexoCompressaoMy.TabIndex = 12
         '
         'Label523
@@ -7626,7 +7661,7 @@ Partial Class Form1
         Me.Label523.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label523.Location = New System.Drawing.Point(123, 131)
         Me.Label523.Name = "Label523"
-        Me.Label523.Size = New System.Drawing.Size(26, 12)
+        Me.Label523.Size = New System.Drawing.Size(33, 15)
         Me.Label523.TabIndex = 105
         Me.Label523.Text = "fc0,d"
         '
@@ -7636,7 +7671,7 @@ Partial Class Form1
         Me.Label524.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label524.Location = New System.Drawing.Point(24, 132)
         Me.Label524.Name = "Label524"
-        Me.Label524.Size = New System.Drawing.Size(26, 12)
+        Me.Label524.Size = New System.Drawing.Size(33, 15)
         Me.Label524.TabIndex = 103
         Me.Label524.Text = "fc0,d"
         '
@@ -7646,7 +7681,7 @@ Partial Class Form1
         Me.Label204.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label204.Location = New System.Drawing.Point(225, 212)
         Me.Label204.Name = "Label204"
-        Me.Label204.Size = New System.Drawing.Size(12, 19)
+        Me.Label204.Size = New System.Drawing.Size(14, 23)
         Me.Label204.TabIndex = 105
         Me.Label204.Text = ":"
         '
@@ -7656,7 +7691,7 @@ Partial Class Form1
         Me.Label525.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label525.Location = New System.Drawing.Point(238, 116)
         Me.Label525.Name = "Label525"
-        Me.Label525.Size = New System.Drawing.Size(31, 19)
+        Me.Label525.Size = New System.Drawing.Size(36, 23)
         Me.Label525.TabIndex = 102
         Me.Label525.Text = "≤ 1"
         '
@@ -7666,7 +7701,7 @@ Partial Class Form1
         Me.lblValidacaoFlexoCompressaoX.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.lblValidacaoFlexoCompressaoX.Location = New System.Drawing.Point(289, 65)
         Me.lblValidacaoFlexoCompressaoX.Name = "lblValidacaoFlexoCompressaoX"
-        Me.lblValidacaoFlexoCompressaoX.Size = New System.Drawing.Size(95, 19)
+        Me.lblValidacaoFlexoCompressaoX.Size = New System.Drawing.Size(115, 23)
         Me.lblValidacaoFlexoCompressaoX.TabIndex = 7
         Me.lblValidacaoFlexoCompressaoX.Text = "VERIFICAÇÃO"
         '
@@ -7676,7 +7711,7 @@ Partial Class Form1
         Me.Label526.Font = New System.Drawing.Font("Symbol", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label526.Location = New System.Drawing.Point(103, 116)
         Me.Label526.Name = "Label526"
-        Me.Label526.Size = New System.Drawing.Size(12, 17)
+        Me.Label526.Size = New System.Drawing.Size(14, 21)
         Me.Label526.TabIndex = 101
         Me.Label526.Text = "."
         '
@@ -7686,7 +7721,7 @@ Partial Class Form1
         Me.Label321.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label321.Location = New System.Drawing.Point(225, 172)
         Me.Label321.Name = "Label321"
-        Me.Label321.Size = New System.Drawing.Size(12, 19)
+        Me.Label321.Size = New System.Drawing.Size(14, 23)
         Me.Label321.TabIndex = 104
         Me.Label321.Text = ":"
         '
@@ -7696,7 +7731,7 @@ Partial Class Form1
         Me.Label527.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label527.Location = New System.Drawing.Point(128, 114)
         Me.Label527.Name = "Label527"
-        Me.Label527.Size = New System.Drawing.Size(27, 12)
+        Me.Label527.Size = New System.Drawing.Size(34, 15)
         Me.Label527.TabIndex = 99
         Me.Label527.Text = "My,d"
         '
@@ -7706,7 +7741,7 @@ Partial Class Form1
         Me.Label322.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label322.Location = New System.Drawing.Point(199, 253)
         Me.Label322.Name = "Label322"
-        Me.Label322.Size = New System.Drawing.Size(27, 12)
+        Me.Label322.Size = New System.Drawing.Size(34, 15)
         Me.Label322.TabIndex = 103
         Me.Label322.Text = "My,d"
         '
@@ -7716,7 +7751,7 @@ Partial Class Form1
         Me.Label528.Font = New System.Drawing.Font("Symbol", 10.2!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point)
         Me.Label528.Location = New System.Drawing.Point(114, 110)
         Me.Label528.Name = "Label528"
-        Me.Label528.Size = New System.Drawing.Size(53, 17)
+        Me.Label528.Size = New System.Drawing.Size(56, 21)
         Me.Label528.TabIndex = 100
         Me.Label528.Text = "s         "
         '
@@ -7725,7 +7760,7 @@ Partial Class Form1
         Me.txtFlexoCompressaoMx.Enabled = False
         Me.txtFlexoCompressaoMx.Location = New System.Drawing.Point(238, 207)
         Me.txtFlexoCompressaoMx.Name = "txtFlexoCompressaoMx"
-        Me.txtFlexoCompressaoMx.Size = New System.Drawing.Size(57, 26)
+        Me.txtFlexoCompressaoMx.Size = New System.Drawing.Size(57, 30)
         Me.txtFlexoCompressaoMx.TabIndex = 8
         '
         'Label529
@@ -7734,7 +7769,7 @@ Partial Class Form1
         Me.Label529.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label529.Location = New System.Drawing.Point(86, 125)
         Me.Label529.Name = "Label529"
-        Me.Label529.Size = New System.Drawing.Size(14, 12)
+        Me.Label529.Size = New System.Drawing.Size(18, 15)
         Me.Label529.TabIndex = 98
         Me.Label529.Text = "M"
         '
@@ -7745,7 +7780,7 @@ Partial Class Form1
         Me.Label325.Location = New System.Drawing.Point(184, 247)
         Me.Label325.Name = "Label325"
         Me.Label325.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.Label325.Size = New System.Drawing.Size(17, 17)
+        Me.Label325.Size = New System.Drawing.Size(20, 21)
         Me.Label325.TabIndex = 102
         Me.Label325.Text = "s"
         '
@@ -7755,7 +7790,7 @@ Partial Class Form1
         Me.Label530.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label530.Location = New System.Drawing.Point(29, 114)
         Me.Label530.Name = "Label530"
-        Me.Label530.Size = New System.Drawing.Size(25, 12)
+        Me.Label530.Size = New System.Drawing.Size(32, 15)
         Me.Label530.TabIndex = 96
         Me.Label530.Text = "Nc,d"
         '
@@ -7764,7 +7799,7 @@ Partial Class Form1
         Me.txtFlexoCompressao.Enabled = False
         Me.txtFlexoCompressao.Location = New System.Drawing.Point(238, 167)
         Me.txtFlexoCompressao.Name = "txtFlexoCompressao"
-        Me.txtFlexoCompressao.Size = New System.Drawing.Size(57, 26)
+        Me.txtFlexoCompressao.Size = New System.Drawing.Size(57, 30)
         Me.txtFlexoCompressao.TabIndex = 6
         '
         'Label531
@@ -7773,7 +7808,7 @@ Partial Class Form1
         Me.Label531.Font = New System.Drawing.Font("Symbol", 10.2!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point)
         Me.Label531.Location = New System.Drawing.Point(16, 111)
         Me.Label531.Name = "Label531"
-        Me.Label531.Size = New System.Drawing.Size(45, 17)
+        Me.Label531.Size = New System.Drawing.Size(48, 21)
         Me.Label531.TabIndex = 97
         Me.Label531.Text = "s       "
         '
@@ -7783,7 +7818,7 @@ Partial Class Form1
         Me.Label326.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label326.Location = New System.Drawing.Point(198, 218)
         Me.Label326.Name = "Label326"
-        Me.Label326.Size = New System.Drawing.Size(27, 12)
+        Me.Label326.Size = New System.Drawing.Size(34, 15)
         Me.Label326.TabIndex = 101
         Me.Label326.Text = "Mx,d"
         '
@@ -7793,7 +7828,7 @@ Partial Class Form1
         Me.Label532.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label532.Location = New System.Drawing.Point(68, 118)
         Me.Label532.Name = "Label532"
-        Me.Label532.Size = New System.Drawing.Size(26, 19)
+        Me.Label532.Size = New System.Drawing.Size(30, 23)
         Me.Label532.TabIndex = 95
         Me.Label532.Text = "+k"
         '
@@ -7803,7 +7838,7 @@ Partial Class Form1
         Me.Label327.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label327.Location = New System.Drawing.Point(198, 178)
         Me.Label327.Name = "Label327"
-        Me.Label327.Size = New System.Drawing.Size(23, 12)
+        Me.Label327.Size = New System.Drawing.Size(30, 15)
         Me.Label327.TabIndex = 98
         Me.Label327.Text = "Nt,d"
         '
@@ -7813,7 +7848,7 @@ Partial Class Form1
         Me.Label533.Font = New System.Drawing.Font("Symbol", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label533.Location = New System.Drawing.Point(3, 119)
         Me.Label533.Name = "Label533"
-        Me.Label533.Size = New System.Drawing.Size(66, 17)
+        Me.Label533.Size = New System.Drawing.Size(70, 21)
         Me.Label533.TabIndex = 104
         Me.Label533.Text = "(            )"
         '
@@ -7824,7 +7859,7 @@ Partial Class Form1
         Me.Label328.Location = New System.Drawing.Point(183, 212)
         Me.Label328.Name = "Label328"
         Me.Label328.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.Label328.Size = New System.Drawing.Size(17, 17)
+        Me.Label328.Size = New System.Drawing.Size(20, 21)
         Me.Label328.TabIndex = 100
         Me.Label328.Text = "s"
         '
@@ -7834,7 +7869,7 @@ Partial Class Form1
         Me.Label332.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label332.Location = New System.Drawing.Point(15, 26)
         Me.Label332.Name = "Label332"
-        Me.Label332.Size = New System.Drawing.Size(262, 19)
+        Me.Label332.Size = New System.Drawing.Size(327, 23)
         Me.Label332.TabIndex = 6
         Me.Label332.Text = "Verificação ao Estado Limite Último (ELU):"
         '
@@ -7844,7 +7879,7 @@ Partial Class Form1
         Me.Label433.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label433.Location = New System.Drawing.Point(198, 81)
         Me.Label433.Name = "Label433"
-        Me.Label433.Size = New System.Drawing.Size(26, 12)
+        Me.Label433.Size = New System.Drawing.Size(33, 15)
         Me.Label433.TabIndex = 94
         Me.Label433.Text = "fc0,d"
         '
@@ -7854,7 +7889,7 @@ Partial Class Form1
         Me.Label439.Font = New System.Drawing.Font("Symbol", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label439.Location = New System.Drawing.Point(167, 65)
         Me.Label439.Name = "Label439"
-        Me.Label439.Size = New System.Drawing.Size(16, 17)
+        Me.Label439.Size = New System.Drawing.Size(19, 21)
         Me.Label439.TabIndex = 93
         Me.Label439.Text = "+"
         '
@@ -7865,7 +7900,7 @@ Partial Class Form1
         Me.Label535.Location = New System.Drawing.Point(183, 172)
         Me.Label535.Name = "Label535"
         Me.Label535.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.Label535.Size = New System.Drawing.Size(21, 17)
+        Me.Label535.Size = New System.Drawing.Size(24, 21)
         Me.Label535.TabIndex = 99
         Me.Label535.Text = "s "
         '
@@ -7875,7 +7910,7 @@ Partial Class Form1
         Me.Label452.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label452.Location = New System.Drawing.Point(203, 64)
         Me.Label452.Name = "Label452"
-        Me.Label452.Size = New System.Drawing.Size(27, 12)
+        Me.Label452.Size = New System.Drawing.Size(34, 15)
         Me.Label452.TabIndex = 91
         Me.Label452.Text = "My,d"
         '
@@ -7885,7 +7920,7 @@ Partial Class Form1
         Me.Label459.Font = New System.Drawing.Font("Symbol", 10.2!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point)
         Me.Label459.Location = New System.Drawing.Point(189, 60)
         Me.Label459.Name = "Label459"
-        Me.Label459.Size = New System.Drawing.Size(53, 17)
+        Me.Label459.Size = New System.Drawing.Size(56, 21)
         Me.Label459.TabIndex = 92
         Me.Label459.Text = "s         "
         '
@@ -7895,7 +7930,7 @@ Partial Class Form1
         Me.Label415.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label415.Location = New System.Drawing.Point(68, 67)
         Me.Label415.Name = "Label415"
-        Me.Label415.Size = New System.Drawing.Size(26, 19)
+        Me.Label415.Size = New System.Drawing.Size(30, 23)
         Me.Label415.TabIndex = 48
         Me.Label415.Text = "+k"
         '
@@ -7905,7 +7940,7 @@ Partial Class Form1
         Me.Label432.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label432.Location = New System.Drawing.Point(123, 80)
         Me.Label432.Name = "Label432"
-        Me.Label432.Size = New System.Drawing.Size(26, 12)
+        Me.Label432.Size = New System.Drawing.Size(33, 15)
         Me.Label432.TabIndex = 90
         Me.Label432.Text = "fc0,d"
         '
@@ -7915,7 +7950,7 @@ Partial Class Form1
         Me.Label416.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label416.Location = New System.Drawing.Point(53, 53)
         Me.Label416.Name = "Label416"
-        Me.Label416.Size = New System.Drawing.Size(10, 12)
+        Me.Label416.Size = New System.Drawing.Size(13, 15)
         Me.Label416.TabIndex = 67
         Me.Label416.Text = "2"
         '
@@ -7925,7 +7960,7 @@ Partial Class Form1
         Me.Label413.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label413.Location = New System.Drawing.Point(29, 63)
         Me.Label413.Name = "Label413"
-        Me.Label413.Size = New System.Drawing.Size(25, 12)
+        Me.Label413.Size = New System.Drawing.Size(32, 15)
         Me.Label413.TabIndex = 49
         Me.Label413.Text = "Nc,d"
         '
@@ -7935,7 +7970,7 @@ Partial Class Form1
         Me.Label417.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label417.Location = New System.Drawing.Point(24, 81)
         Me.Label417.Name = "Label417"
-        Me.Label417.Size = New System.Drawing.Size(26, 12)
+        Me.Label417.Size = New System.Drawing.Size(33, 15)
         Me.Label417.TabIndex = 66
         Me.Label417.Text = "fc0,d"
         '
@@ -7945,7 +7980,7 @@ Partial Class Form1
         Me.Label412.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label412.Location = New System.Drawing.Point(86, 74)
         Me.Label412.Name = "Label412"
-        Me.Label412.Size = New System.Drawing.Size(14, 12)
+        Me.Label412.Size = New System.Drawing.Size(18, 15)
         Me.Label412.TabIndex = 51
         Me.Label412.Text = "M"
         '
@@ -7955,7 +7990,7 @@ Partial Class Form1
         Me.Label408.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label408.Location = New System.Drawing.Point(238, 65)
         Me.Label408.Name = "Label408"
-        Me.Label408.Size = New System.Drawing.Size(31, 19)
+        Me.Label408.Size = New System.Drawing.Size(36, 23)
         Me.Label408.TabIndex = 55
         Me.Label408.Text = "≤ 1"
         '
@@ -7965,7 +8000,7 @@ Partial Class Form1
         Me.Label409.Font = New System.Drawing.Font("Symbol", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label409.Location = New System.Drawing.Point(103, 65)
         Me.Label409.Name = "Label409"
-        Me.Label409.Size = New System.Drawing.Size(12, 17)
+        Me.Label409.Size = New System.Drawing.Size(14, 21)
         Me.Label409.TabIndex = 54
         Me.Label409.Text = "."
         '
@@ -7975,7 +8010,7 @@ Partial Class Form1
         Me.Label410.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label410.Location = New System.Drawing.Point(128, 63)
         Me.Label410.Name = "Label410"
-        Me.Label410.Size = New System.Drawing.Size(27, 12)
+        Me.Label410.Size = New System.Drawing.Size(34, 15)
         Me.Label410.TabIndex = 52
         Me.Label410.Text = "Mx,d"
         '
@@ -7985,7 +8020,7 @@ Partial Class Form1
         Me.Label414.Font = New System.Drawing.Font("Symbol", 10.2!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point)
         Me.Label414.Location = New System.Drawing.Point(16, 60)
         Me.Label414.Name = "Label414"
-        Me.Label414.Size = New System.Drawing.Size(45, 17)
+        Me.Label414.Size = New System.Drawing.Size(48, 21)
         Me.Label414.TabIndex = 50
         Me.Label414.Text = "s       "
         '
@@ -7995,7 +8030,7 @@ Partial Class Form1
         Me.Label418.Font = New System.Drawing.Font("Symbol", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label418.Location = New System.Drawing.Point(3, 68)
         Me.Label418.Name = "Label418"
-        Me.Label418.Size = New System.Drawing.Size(66, 17)
+        Me.Label418.Size = New System.Drawing.Size(70, 21)
         Me.Label418.TabIndex = 68
         Me.Label418.Text = "(            )"
         '
@@ -8005,7 +8040,7 @@ Partial Class Form1
         Me.Label411.Font = New System.Drawing.Font("Symbol", 10.2!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point)
         Me.Label411.Location = New System.Drawing.Point(114, 59)
         Me.Label411.Name = "Label411"
-        Me.Label411.Size = New System.Drawing.Size(53, 17)
+        Me.Label411.Size = New System.Drawing.Size(56, 21)
         Me.Label411.TabIndex = 53
         Me.Label411.Text = "s         "
         '
@@ -8071,7 +8106,7 @@ Partial Class Form1
         Me.Label257.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label257.Location = New System.Drawing.Point(111, 159)
         Me.Label257.Name = "Label257"
-        Me.Label257.Size = New System.Drawing.Size(37, 19)
+        Me.Label257.Size = New System.Drawing.Size(43, 23)
         Me.Label257.TabIndex = 154
         Me.Label257.Text = "MPa"
         '
@@ -8080,7 +8115,7 @@ Partial Class Form1
         Me.Label79.AutoSize = True
         Me.Label79.Location = New System.Drawing.Point(214, 99)
         Me.Label79.Name = "Label79"
-        Me.Label79.Size = New System.Drawing.Size(21, 19)
+        Me.Label79.Size = New System.Drawing.Size(25, 23)
         Me.Label79.TabIndex = 113
         Me.Label79.Text = "→"
         '
@@ -8090,7 +8125,7 @@ Partial Class Form1
         Me.Label258.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label258.Location = New System.Drawing.Point(12, 157)
         Me.Label258.Name = "Label258"
-        Me.Label258.Size = New System.Drawing.Size(32, 19)
+        Me.Label258.Size = New System.Drawing.Size(38, 23)
         Me.Label258.TabIndex = 153
         Me.Label258.Text = "ft,0:"
         '
@@ -8099,7 +8134,7 @@ Partial Class Form1
         Me.Label76.AutoSize = True
         Me.Label76.Location = New System.Drawing.Point(214, 61)
         Me.Label76.Name = "Label76"
-        Me.Label76.Size = New System.Drawing.Size(21, 19)
+        Me.Label76.Size = New System.Drawing.Size(25, 23)
         Me.Label76.TabIndex = 112
         Me.Label76.Text = "→"
         '
@@ -8109,7 +8144,7 @@ Partial Class Form1
         Me.TextBox4.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.TextBox4.Location = New System.Drawing.Point(54, 154)
         Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.Size = New System.Drawing.Size(57, 26)
+        Me.TextBox4.Size = New System.Drawing.Size(57, 30)
         Me.TextBox4.TabIndex = 152
         '
         'lblValidacaoFlexaoObliquaY
@@ -8118,7 +8153,7 @@ Partial Class Form1
         Me.lblValidacaoFlexaoObliquaY.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.lblValidacaoFlexaoObliquaY.Location = New System.Drawing.Point(234, 98)
         Me.lblValidacaoFlexaoObliquaY.Name = "lblValidacaoFlexaoObliquaY"
-        Me.lblValidacaoFlexaoObliquaY.Size = New System.Drawing.Size(95, 19)
+        Me.lblValidacaoFlexaoObliquaY.Size = New System.Drawing.Size(115, 23)
         Me.lblValidacaoFlexaoObliquaY.TabIndex = 49
         Me.lblValidacaoFlexaoObliquaY.Text = "VERIFICAÇÃO"
         Me.lblValidacaoFlexaoObliquaY.Visible = False
@@ -8129,7 +8164,7 @@ Partial Class Form1
         Me.lblValidacaoFlexaoObliquaX.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.lblValidacaoFlexaoObliquaX.Location = New System.Drawing.Point(234, 62)
         Me.lblValidacaoFlexaoObliquaX.Name = "lblValidacaoFlexaoObliquaX"
-        Me.lblValidacaoFlexaoObliquaX.Size = New System.Drawing.Size(95, 19)
+        Me.lblValidacaoFlexaoObliquaX.Size = New System.Drawing.Size(115, 23)
         Me.lblValidacaoFlexaoObliquaX.TabIndex = 48
         Me.lblValidacaoFlexaoObliquaX.Text = "VERIFICAÇÃO"
         Me.lblValidacaoFlexaoObliquaX.Visible = False
@@ -8140,7 +8175,7 @@ Partial Class Form1
         Me.Label397.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label397.Location = New System.Drawing.Point(190, 105)
         Me.Label397.Name = "Label397"
-        Me.Label397.Size = New System.Drawing.Size(21, 12)
+        Me.Label397.Size = New System.Drawing.Size(27, 15)
         Me.Label397.TabIndex = 47
         Me.Label397.Text = "t0,d"
         '
@@ -8150,7 +8185,7 @@ Partial Class Form1
         Me.Label398.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label398.Location = New System.Drawing.Point(163, 97)
         Me.Label398.Name = "Label398"
-        Me.Label398.Size = New System.Drawing.Size(27, 19)
+        Me.Label398.Size = New System.Drawing.Size(32, 23)
         Me.Label398.TabIndex = 46
         Me.Label398.Text = "≤ f"
         '
@@ -8160,7 +8195,7 @@ Partial Class Form1
         Me.Label399.Font = New System.Drawing.Font("Symbol", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label399.Location = New System.Drawing.Point(57, 97)
         Me.Label399.Name = "Label399"
-        Me.Label399.Size = New System.Drawing.Size(12, 17)
+        Me.Label399.Size = New System.Drawing.Size(14, 21)
         Me.Label399.TabIndex = 45
         Me.Label399.Text = "."
         '
@@ -8170,7 +8205,7 @@ Partial Class Form1
         Me.Label400.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label400.Location = New System.Drawing.Point(128, 104)
         Me.Label400.Name = "Label400"
-        Me.Label400.Size = New System.Drawing.Size(27, 12)
+        Me.Label400.Size = New System.Drawing.Size(34, 15)
         Me.Label400.TabIndex = 43
         Me.Label400.Text = "My,d"
         '
@@ -8180,7 +8215,7 @@ Partial Class Form1
         Me.Label401.Font = New System.Drawing.Font("Symbol", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label401.Location = New System.Drawing.Point(114, 98)
         Me.Label401.Name = "Label401"
-        Me.Label401.Size = New System.Drawing.Size(53, 17)
+        Me.Label401.Size = New System.Drawing.Size(56, 21)
         Me.Label401.TabIndex = 44
         Me.Label401.Text = "s         "
         '
@@ -8190,7 +8225,7 @@ Partial Class Form1
         Me.Label402.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label402.Location = New System.Drawing.Point(82, 105)
         Me.Label402.Name = "Label402"
-        Me.Label402.Size = New System.Drawing.Size(14, 12)
+        Me.Label402.Size = New System.Drawing.Size(18, 15)
         Me.Label402.TabIndex = 42
         Me.Label402.Text = "M"
         '
@@ -8200,7 +8235,7 @@ Partial Class Form1
         Me.Label403.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label403.Location = New System.Drawing.Point(22, 103)
         Me.Label403.Name = "Label403"
-        Me.Label403.Size = New System.Drawing.Size(27, 12)
+        Me.Label403.Size = New System.Drawing.Size(34, 15)
         Me.Label403.TabIndex = 40
         Me.Label403.Text = "Mx,d"
         '
@@ -8210,7 +8245,7 @@ Partial Class Form1
         Me.Label404.Font = New System.Drawing.Font("Symbol", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label404.Location = New System.Drawing.Point(8, 97)
         Me.Label404.Name = "Label404"
-        Me.Label404.Size = New System.Drawing.Size(53, 17)
+        Me.Label404.Size = New System.Drawing.Size(56, 21)
         Me.Label404.TabIndex = 41
         Me.Label404.Text = "s         "
         '
@@ -8220,7 +8255,7 @@ Partial Class Form1
         Me.Label405.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label405.Location = New System.Drawing.Point(70, 97)
         Me.Label405.Name = "Label405"
-        Me.Label405.Size = New System.Drawing.Size(42, 19)
+        Me.Label405.Size = New System.Drawing.Size(50, 23)
         Me.Label405.TabIndex = 39
         Me.Label405.Text = "k    +"
         '
@@ -8230,7 +8265,7 @@ Partial Class Form1
         Me.Label395.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label395.Location = New System.Drawing.Point(190, 67)
         Me.Label395.Name = "Label395"
-        Me.Label395.Size = New System.Drawing.Size(21, 12)
+        Me.Label395.Size = New System.Drawing.Size(27, 15)
         Me.Label395.TabIndex = 38
         Me.Label395.Text = "t0,d"
         '
@@ -8240,7 +8275,7 @@ Partial Class Form1
         Me.Label396.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label396.Location = New System.Drawing.Point(163, 59)
         Me.Label396.Name = "Label396"
-        Me.Label396.Size = New System.Drawing.Size(27, 19)
+        Me.Label396.Size = New System.Drawing.Size(32, 23)
         Me.Label396.TabIndex = 37
         Me.Label396.Text = "≤ f"
         '
@@ -8250,7 +8285,7 @@ Partial Class Form1
         Me.Label394.Font = New System.Drawing.Font("Symbol", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label394.Location = New System.Drawing.Point(100, 59)
         Me.Label394.Name = "Label394"
-        Me.Label394.Size = New System.Drawing.Size(12, 17)
+        Me.Label394.Size = New System.Drawing.Size(14, 21)
         Me.Label394.TabIndex = 36
         Me.Label394.Text = "."
         '
@@ -8260,7 +8295,7 @@ Partial Class Form1
         Me.Label392.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label392.Location = New System.Drawing.Point(128, 66)
         Me.Label392.Name = "Label392"
-        Me.Label392.Size = New System.Drawing.Size(27, 12)
+        Me.Label392.Size = New System.Drawing.Size(34, 15)
         Me.Label392.TabIndex = 34
         Me.Label392.Text = "My,d"
         '
@@ -8270,7 +8305,7 @@ Partial Class Form1
         Me.Label393.Font = New System.Drawing.Font("Symbol", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label393.Location = New System.Drawing.Point(114, 60)
         Me.Label393.Name = "Label393"
-        Me.Label393.Size = New System.Drawing.Size(53, 17)
+        Me.Label393.Size = New System.Drawing.Size(56, 21)
         Me.Label393.TabIndex = 35
         Me.Label393.Text = "s         "
         '
@@ -8280,7 +8315,7 @@ Partial Class Form1
         Me.Label144.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label144.Location = New System.Drawing.Point(82, 67)
         Me.Label144.Name = "Label144"
-        Me.Label144.Size = New System.Drawing.Size(14, 12)
+        Me.Label144.Size = New System.Drawing.Size(18, 15)
         Me.Label144.TabIndex = 33
         Me.Label144.Text = "M"
         '
@@ -8290,7 +8325,7 @@ Partial Class Form1
         Me.Label366.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label366.Location = New System.Drawing.Point(22, 65)
         Me.Label366.Name = "Label366"
-        Me.Label366.Size = New System.Drawing.Size(27, 12)
+        Me.Label366.Size = New System.Drawing.Size(34, 15)
         Me.Label366.TabIndex = 31
         Me.Label366.Text = "Mx,d"
         '
@@ -8300,7 +8335,7 @@ Partial Class Form1
         Me.Label391.Font = New System.Drawing.Font("Symbol", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label391.Location = New System.Drawing.Point(8, 59)
         Me.Label391.Name = "Label391"
-        Me.Label391.Size = New System.Drawing.Size(61, 17)
+        Me.Label391.Size = New System.Drawing.Size(65, 21)
         Me.Label391.TabIndex = 32
         Me.Label391.Text = "s         +"
         '
@@ -8310,7 +8345,7 @@ Partial Class Form1
         Me.Label145.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label145.Location = New System.Drawing.Point(19, 247)
         Me.Label145.Name = "Label145"
-        Me.Label145.Size = New System.Drawing.Size(27, 12)
+        Me.Label145.Size = New System.Drawing.Size(34, 15)
         Me.Label145.TabIndex = 29
         Me.Label145.Text = "My,d"
         '
@@ -8320,7 +8355,7 @@ Partial Class Form1
         Me.Label146.Font = New System.Drawing.Font("Symbol", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label146.Location = New System.Drawing.Point(5, 241)
         Me.Label146.Name = "Label146"
-        Me.Label146.Size = New System.Drawing.Size(52, 17)
+        Me.Label146.Size = New System.Drawing.Size(56, 21)
         Me.Label146.TabIndex = 30
         Me.Label146.Text = "s        :"
         '
@@ -8330,7 +8365,7 @@ Partial Class Form1
         Me.Label148.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label148.Location = New System.Drawing.Point(111, 237)
         Me.Label148.Name = "Label148"
-        Me.Label148.Size = New System.Drawing.Size(37, 19)
+        Me.Label148.Size = New System.Drawing.Size(43, 23)
         Me.Label148.TabIndex = 24
         Me.Label148.Text = "MPa"
         '
@@ -8340,7 +8375,7 @@ Partial Class Form1
         Me.Label368.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label368.Location = New System.Drawing.Point(111, 196)
         Me.Label368.Name = "Label368"
-        Me.Label368.Size = New System.Drawing.Size(37, 19)
+        Me.Label368.Size = New System.Drawing.Size(43, 23)
         Me.Label368.TabIndex = 22
         Me.Label368.Text = "MPa"
         '
@@ -8350,7 +8385,7 @@ Partial Class Form1
         Me.Label369.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label369.Location = New System.Drawing.Point(19, 202)
         Me.Label369.Name = "Label369"
-        Me.Label369.Size = New System.Drawing.Size(27, 12)
+        Me.Label369.Size = New System.Drawing.Size(34, 15)
         Me.Label369.TabIndex = 19
         Me.Label369.Text = "Mx,d"
         '
@@ -8360,7 +8395,7 @@ Partial Class Form1
         Me.Label147.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label147.Location = New System.Drawing.Point(17, 121)
         Me.Label147.Name = "Label147"
-        Me.Label147.Size = New System.Drawing.Size(187, 19)
+        Me.Label147.Size = New System.Drawing.Size(235, 23)
         Me.Label147.TabIndex = 22
         Me.Label147.Text = "Tensão Solicitante de Cálculo:"
         '
@@ -8370,7 +8405,7 @@ Partial Class Form1
         Me.txtTensaoMy.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.txtTensaoMy.Location = New System.Drawing.Point(55, 234)
         Me.txtTensaoMy.Name = "txtTensaoMy"
-        Me.txtTensaoMy.Size = New System.Drawing.Size(57, 26)
+        Me.txtTensaoMy.Size = New System.Drawing.Size(57, 30)
         Me.txtTensaoMy.TabIndex = 21
         '
         'Label150
@@ -8379,7 +8414,7 @@ Partial Class Form1
         Me.Label150.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label150.Location = New System.Drawing.Point(70, 59)
         Me.Label150.Name = "Label150"
-        Me.Label150.Size = New System.Drawing.Size(16, 19)
+        Me.Label150.Size = New System.Drawing.Size(18, 23)
         Me.Label150.TabIndex = 6
         Me.Label150.Text = "k"
         '
@@ -8389,7 +8424,7 @@ Partial Class Form1
         Me.txtTensaoMx.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.txtTensaoMx.Location = New System.Drawing.Point(54, 193)
         Me.txtTensaoMx.Name = "txtTensaoMx"
-        Me.txtTensaoMx.Size = New System.Drawing.Size(57, 26)
+        Me.txtTensaoMx.Size = New System.Drawing.Size(57, 30)
         Me.txtTensaoMx.TabIndex = 20
         '
         'Label370
@@ -8398,7 +8433,7 @@ Partial Class Form1
         Me.Label370.Font = New System.Drawing.Font("Symbol", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label370.Location = New System.Drawing.Point(5, 196)
         Me.Label370.Name = "Label370"
-        Me.Label370.Size = New System.Drawing.Size(52, 17)
+        Me.Label370.Size = New System.Drawing.Size(56, 21)
         Me.Label370.TabIndex = 23
         Me.Label370.Text = "s        :"
         '
@@ -8408,7 +8443,7 @@ Partial Class Form1
         Me.Label207.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label207.Location = New System.Drawing.Point(15, 26)
         Me.Label207.Name = "Label207"
-        Me.Label207.Size = New System.Drawing.Size(262, 19)
+        Me.Label207.Size = New System.Drawing.Size(327, 23)
         Me.Label207.TabIndex = 6
         Me.Label207.Text = "Verificação ao Estado Limite Último (ELU):"
         '
@@ -8448,7 +8483,7 @@ Partial Class Form1
         Me.Label75.AutoSize = True
         Me.Label75.Location = New System.Drawing.Point(150, 91)
         Me.Label75.Name = "Label75"
-        Me.Label75.Size = New System.Drawing.Size(21, 19)
+        Me.Label75.Size = New System.Drawing.Size(25, 23)
         Me.Label75.TabIndex = 113
         Me.Label75.Text = "→"
         '
@@ -8457,7 +8492,7 @@ Partial Class Form1
         Me.Label71.AutoSize = True
         Me.Label71.Location = New System.Drawing.Point(150, 58)
         Me.Label71.Name = "Label71"
-        Me.Label71.Size = New System.Drawing.Size(21, 19)
+        Me.Label71.Size = New System.Drawing.Size(25, 23)
         Me.Label71.TabIndex = 112
         Me.Label71.Text = "→"
         '
@@ -8467,7 +8502,7 @@ Partial Class Form1
         Me.lblValidacaoFlexaoSimplesY.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.lblValidacaoFlexaoSimplesY.Location = New System.Drawing.Point(171, 92)
         Me.lblValidacaoFlexaoSimplesY.Name = "lblValidacaoFlexaoSimplesY"
-        Me.lblValidacaoFlexaoSimplesY.Size = New System.Drawing.Size(95, 19)
+        Me.lblValidacaoFlexaoSimplesY.Size = New System.Drawing.Size(115, 23)
         Me.lblValidacaoFlexaoSimplesY.TabIndex = 63
         Me.lblValidacaoFlexaoSimplesY.Text = "VERIFICAÇÃO"
         Me.lblValidacaoFlexaoSimplesY.Visible = False
@@ -8478,7 +8513,7 @@ Partial Class Form1
         Me.lblValidacaoFlexaoSimplesX.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.lblValidacaoFlexaoSimplesX.Location = New System.Drawing.Point(171, 60)
         Me.lblValidacaoFlexaoSimplesX.Name = "lblValidacaoFlexaoSimplesX"
-        Me.lblValidacaoFlexaoSimplesX.Size = New System.Drawing.Size(95, 19)
+        Me.lblValidacaoFlexaoSimplesX.Size = New System.Drawing.Size(115, 23)
         Me.lblValidacaoFlexaoSimplesX.TabIndex = 50
         Me.lblValidacaoFlexaoSimplesX.Text = "VERIFICAÇÃO"
         Me.lblValidacaoFlexaoSimplesX.Visible = False
@@ -8489,7 +8524,7 @@ Partial Class Form1
         Me.Label142.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label142.Location = New System.Drawing.Point(120, 99)
         Me.Label142.Name = "Label142"
-        Me.Label142.Size = New System.Drawing.Size(23, 12)
+        Me.Label142.Size = New System.Drawing.Size(29, 15)
         Me.Label142.TabIndex = 60
         Me.Label142.Text = "c0,d"
         '
@@ -8499,7 +8534,7 @@ Partial Class Form1
         Me.Label196.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label196.Location = New System.Drawing.Point(93, 91)
         Me.Label196.Name = "Label196"
-        Me.Label196.Size = New System.Drawing.Size(27, 19)
+        Me.Label196.Size = New System.Drawing.Size(32, 23)
         Me.Label196.TabIndex = 59
         Me.Label196.Text = "≤ f"
         '
@@ -8509,7 +8544,7 @@ Partial Class Form1
         Me.Label197.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label197.Location = New System.Drawing.Point(68, 99)
         Me.Label197.Name = "Label197"
-        Me.Label197.Size = New System.Drawing.Size(23, 12)
+        Me.Label197.Size = New System.Drawing.Size(29, 15)
         Me.Label197.TabIndex = 61
         Me.Label197.Text = "c0,d"
         '
@@ -8519,7 +8554,7 @@ Partial Class Form1
         Me.Label198.Font = New System.Drawing.Font("Symbol", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label198.Location = New System.Drawing.Point(54, 93)
         Me.Label198.Name = "Label198"
-        Me.Label198.Size = New System.Drawing.Size(41, 17)
+        Me.Label198.Size = New System.Drawing.Size(44, 21)
         Me.Label198.TabIndex = 62
         Me.Label198.Text = "s      "
         '
@@ -8529,7 +8564,7 @@ Partial Class Form1
         Me.Label138.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label138.Location = New System.Drawing.Point(120, 66)
         Me.Label138.Name = "Label138"
-        Me.Label138.Size = New System.Drawing.Size(21, 12)
+        Me.Label138.Size = New System.Drawing.Size(27, 15)
         Me.Label138.TabIndex = 49
         Me.Label138.Text = "t0,d"
         '
@@ -8539,7 +8574,7 @@ Partial Class Form1
         Me.Label195.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label195.Location = New System.Drawing.Point(93, 58)
         Me.Label195.Name = "Label195"
-        Me.Label195.Size = New System.Drawing.Size(27, 19)
+        Me.Label195.Size = New System.Drawing.Size(32, 23)
         Me.Label195.TabIndex = 48
         Me.Label195.Text = "≤ f"
         '
@@ -8549,7 +8584,7 @@ Partial Class Form1
         Me.Label193.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label193.Location = New System.Drawing.Point(75, 66)
         Me.Label193.Name = "Label193"
-        Me.Label193.Size = New System.Drawing.Size(21, 12)
+        Me.Label193.Size = New System.Drawing.Size(27, 15)
         Me.Label193.TabIndex = 57
         Me.Label193.Text = "t0,d"
         '
@@ -8559,7 +8594,7 @@ Partial Class Form1
         Me.Label194.Font = New System.Drawing.Font("Symbol", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label194.Location = New System.Drawing.Point(61, 60)
         Me.Label194.Name = "Label194"
-        Me.Label194.Size = New System.Drawing.Size(41, 17)
+        Me.Label194.Size = New System.Drawing.Size(44, 21)
         Me.Label194.TabIndex = 58
         Me.Label194.Text = "s      "
         '
@@ -8569,7 +8604,7 @@ Partial Class Form1
         Me.Label139.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label139.Location = New System.Drawing.Point(29, 207)
         Me.Label139.Name = "Label139"
-        Me.Label139.Size = New System.Drawing.Size(23, 12)
+        Me.Label139.Size = New System.Drawing.Size(29, 15)
         Me.Label139.TabIndex = 55
         Me.Label139.Text = "c0,d"
         '
@@ -8579,7 +8614,7 @@ Partial Class Form1
         Me.Label168.Font = New System.Drawing.Font("Symbol", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label168.Location = New System.Drawing.Point(15, 201)
         Me.Label168.Name = "Label168"
-        Me.Label168.Size = New System.Drawing.Size(48, 17)
+        Me.Label168.Size = New System.Drawing.Size(52, 21)
         Me.Label168.TabIndex = 56
         Me.Label168.Text = "s       :"
         '
@@ -8589,7 +8624,7 @@ Partial Class Form1
         Me.Label169.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label169.Location = New System.Drawing.Point(120, 200)
         Me.Label169.Name = "Label169"
-        Me.Label169.Size = New System.Drawing.Size(37, 19)
+        Me.Label169.Size = New System.Drawing.Size(43, 23)
         Me.Label169.TabIndex = 54
         Me.Label169.Text = "MPa"
         '
@@ -8599,7 +8634,7 @@ Partial Class Form1
         Me.Label170.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label170.Location = New System.Drawing.Point(120, 158)
         Me.Label170.Name = "Label170"
-        Me.Label170.Size = New System.Drawing.Size(37, 19)
+        Me.Label170.Size = New System.Drawing.Size(43, 23)
         Me.Label170.TabIndex = 51
         Me.Label170.Text = "MPa"
         '
@@ -8609,7 +8644,7 @@ Partial Class Form1
         Me.Label171.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label171.Location = New System.Drawing.Point(29, 167)
         Me.Label171.Name = "Label171"
-        Me.Label171.Size = New System.Drawing.Size(21, 12)
+        Me.Label171.Size = New System.Drawing.Size(27, 15)
         Me.Label171.TabIndex = 48
         Me.Label171.Text = "t0,d"
         '
@@ -8619,7 +8654,7 @@ Partial Class Form1
         Me.Label141.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label141.Location = New System.Drawing.Point(15, 26)
         Me.Label141.Name = "Label141"
-        Me.Label141.Size = New System.Drawing.Size(262, 19)
+        Me.Label141.Size = New System.Drawing.Size(327, 23)
         Me.Label141.TabIndex = 6
         Me.Label141.Text = "Verificação ao Estado Limite Último (ELU):"
         '
@@ -8629,7 +8664,7 @@ Partial Class Form1
         Me.Label174.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label174.Location = New System.Drawing.Point(1, 122)
         Me.Label174.Name = "Label174"
-        Me.Label174.Size = New System.Drawing.Size(187, 19)
+        Me.Label174.Size = New System.Drawing.Size(235, 23)
         Me.Label174.TabIndex = 52
         Me.Label174.Text = "Tensão Solicitante de Cálculo:"
         '
@@ -8639,7 +8674,7 @@ Partial Class Form1
         Me.txtTensaoTx.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.txtTensaoTx.Location = New System.Drawing.Point(62, 155)
         Me.txtTensaoTx.Name = "txtTensaoTx"
-        Me.txtTensaoTx.Size = New System.Drawing.Size(57, 26)
+        Me.txtTensaoTx.Size = New System.Drawing.Size(57, 30)
         Me.txtTensaoTx.TabIndex = 49
         '
         'txtTensaoCy
@@ -8648,7 +8683,7 @@ Partial Class Form1
         Me.txtTensaoCy.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.txtTensaoCy.Location = New System.Drawing.Point(62, 197)
         Me.txtTensaoCy.Name = "txtTensaoCy"
-        Me.txtTensaoCy.Size = New System.Drawing.Size(57, 26)
+        Me.txtTensaoCy.Size = New System.Drawing.Size(57, 30)
         Me.txtTensaoCy.TabIndex = 50
         '
         'Label175
@@ -8657,7 +8692,7 @@ Partial Class Form1
         Me.Label175.Font = New System.Drawing.Font("Symbol", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label175.Location = New System.Drawing.Point(15, 161)
         Me.Label175.Name = "Label175"
-        Me.Label175.Size = New System.Drawing.Size(48, 17)
+        Me.Label175.Size = New System.Drawing.Size(52, 21)
         Me.Label175.TabIndex = 53
         Me.Label175.Text = "s       :"
         '
@@ -8688,9 +8723,9 @@ Partial Class Form1
         Me.Label66.BackColor = System.Drawing.Color.Transparent
         Me.Label66.Font = New System.Drawing.Font("Segoe UI", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label66.ImageAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.Label66.Location = New System.Drawing.Point(152, 103)
+        Me.Label66.Location = New System.Drawing.Point(150, 101)
         Me.Label66.Name = "Label66"
-        Me.Label66.Size = New System.Drawing.Size(28, 13)
+        Me.Label66.Size = New System.Drawing.Size(32, 17)
         Me.Label66.TabIndex = 49
         Me.Label66.Text = "1,10"
         Me.Label66.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -8735,9 +8770,9 @@ Partial Class Form1
         Me.Label20.BackColor = System.Drawing.Color.Transparent
         Me.Label20.Font = New System.Drawing.Font("Segoe UI", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label20.ImageAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.Label20.Location = New System.Drawing.Point(152, 83)
+        Me.Label20.Location = New System.Drawing.Point(150, 81)
         Me.Label20.Name = "Label20"
-        Me.Label20.Size = New System.Drawing.Size(28, 13)
+        Me.Label20.Size = New System.Drawing.Size(32, 17)
         Me.Label20.TabIndex = 47
         Me.Label20.Text = "0,90"
         Me.Label20.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -8777,7 +8812,7 @@ Partial Class Form1
         Me.Label153.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label153.Location = New System.Drawing.Point(2, 47)
         Me.Label153.Name = "Label153"
-        Me.Label153.Size = New System.Drawing.Size(234, 19)
+        Me.Label153.Size = New System.Drawing.Size(293, 23)
         Me.Label153.TabIndex = 1
         Me.Label153.Text = "Esforço Cortante de Cálculo à Flexão:"
         '
@@ -8787,7 +8822,7 @@ Partial Class Form1
         Me.Label154.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label154.Location = New System.Drawing.Point(6, 92)
         Me.Label154.Name = "Label154"
-        Me.Label154.Size = New System.Drawing.Size(232, 19)
+        Me.Label154.Size = New System.Drawing.Size(289, 23)
         Me.Label154.TabIndex = 0
         Me.Label154.Text = "Momento Fletor de Cálculo à Flexão:"
         '
@@ -8797,7 +8832,7 @@ Partial Class Form1
         Me.Label155.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label155.Location = New System.Drawing.Point(374, 92)
         Me.Label155.Name = "Label155"
-        Me.Label155.Size = New System.Drawing.Size(43, 19)
+        Me.Label155.Size = New System.Drawing.Size(53, 23)
         Me.Label155.TabIndex = 5
         Me.Label155.Text = "kN/m"
         '
@@ -8805,14 +8840,14 @@ Partial Class Form1
         '
         Me.TextBox42.Location = New System.Drawing.Point(295, 44)
         Me.TextBox42.Name = "TextBox42"
-        Me.TextBox42.Size = New System.Drawing.Size(73, 23)
+        Me.TextBox42.Size = New System.Drawing.Size(73, 27)
         Me.TextBox42.TabIndex = 2
         '
         'TextBox43
         '
         Me.TextBox43.Location = New System.Drawing.Point(295, 89)
         Me.TextBox43.Name = "TextBox43"
-        Me.TextBox43.Size = New System.Drawing.Size(73, 23)
+        Me.TextBox43.Size = New System.Drawing.Size(73, 27)
         Me.TextBox43.TabIndex = 4
         '
         'Label156
@@ -8821,7 +8856,7 @@ Partial Class Form1
         Me.Label156.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label156.Location = New System.Drawing.Point(374, 47)
         Me.Label156.Name = "Label156"
-        Me.Label156.Size = New System.Drawing.Size(26, 19)
+        Me.Label156.Size = New System.Drawing.Size(31, 23)
         Me.Label156.TabIndex = 3
         Me.Label156.Text = "kN"
         '
@@ -8846,7 +8881,7 @@ Partial Class Form1
         Me.Label157.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label157.Location = New System.Drawing.Point(2, 47)
         Me.Label157.Name = "Label157"
-        Me.Label157.Size = New System.Drawing.Size(234, 19)
+        Me.Label157.Size = New System.Drawing.Size(293, 23)
         Me.Label157.TabIndex = 1
         Me.Label157.Text = "Esforço Cortante de Cálculo à Flexão:"
         '
@@ -8856,7 +8891,7 @@ Partial Class Form1
         Me.Label158.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label158.Location = New System.Drawing.Point(6, 92)
         Me.Label158.Name = "Label158"
-        Me.Label158.Size = New System.Drawing.Size(232, 19)
+        Me.Label158.Size = New System.Drawing.Size(289, 23)
         Me.Label158.TabIndex = 0
         Me.Label158.Text = "Momento Fletor de Cálculo à Flexão:"
         '
@@ -8866,7 +8901,7 @@ Partial Class Form1
         Me.Label159.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label159.Location = New System.Drawing.Point(374, 92)
         Me.Label159.Name = "Label159"
-        Me.Label159.Size = New System.Drawing.Size(43, 19)
+        Me.Label159.Size = New System.Drawing.Size(53, 23)
         Me.Label159.TabIndex = 5
         Me.Label159.Text = "kN/m"
         '
@@ -8874,14 +8909,14 @@ Partial Class Form1
         '
         Me.TextBox44.Location = New System.Drawing.Point(295, 44)
         Me.TextBox44.Name = "TextBox44"
-        Me.TextBox44.Size = New System.Drawing.Size(73, 23)
+        Me.TextBox44.Size = New System.Drawing.Size(73, 27)
         Me.TextBox44.TabIndex = 2
         '
         'TextBox45
         '
         Me.TextBox45.Location = New System.Drawing.Point(295, 89)
         Me.TextBox45.Name = "TextBox45"
-        Me.TextBox45.Size = New System.Drawing.Size(73, 23)
+        Me.TextBox45.Size = New System.Drawing.Size(73, 27)
         Me.TextBox45.TabIndex = 4
         '
         'Label160
@@ -8890,7 +8925,7 @@ Partial Class Form1
         Me.Label160.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label160.Location = New System.Drawing.Point(374, 47)
         Me.Label160.Name = "Label160"
-        Me.Label160.Size = New System.Drawing.Size(26, 19)
+        Me.Label160.Size = New System.Drawing.Size(31, 23)
         Me.Label160.TabIndex = 3
         Me.Label160.Text = "kN"
         '
@@ -8959,9 +8994,9 @@ Partial Class Form1
         Me.Label209.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label209.AutoSize = True
         Me.Label209.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label209.Location = New System.Drawing.Point(7, 0)
+        Me.Label209.Location = New System.Drawing.Point(6, 0)
         Me.Label209.Name = "Label209"
-        Me.Label209.Size = New System.Drawing.Size(180, 84)
+        Me.Label209.Size = New System.Drawing.Size(182, 84)
         Me.Label209.TabIndex = 7
         Me.Label209.Text = "Nota: O esforço cortante e os momentos fletores de cálculo em ambos os eixos, dev" &
     "em ser inseridas com as devidas combinações normativas."
@@ -9000,7 +9035,7 @@ Partial Class Form1
         Me.Label211.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label211.Location = New System.Drawing.Point(252, 126)
         Me.Label211.Name = "Label211"
-        Me.Label211.Size = New System.Drawing.Size(37, 19)
+        Me.Label211.Size = New System.Drawing.Size(43, 23)
         Me.Label211.TabIndex = 11
         Me.Label211.Text = "MPa"
         '
@@ -9010,7 +9045,7 @@ Partial Class Form1
         Me.Label212.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point)
         Me.Label212.Location = New System.Drawing.Point(16, 175)
         Me.Label212.Name = "Label212"
-        Me.Label212.Size = New System.Drawing.Size(275, 19)
+        Me.Label212.Size = New System.Drawing.Size(338, 23)
         Me.Label212.TabIndex = 7
         Me.Label212.Text = "AVISO SE PASSOU NA VERIFICÃO OU NÃO"
         '
@@ -9020,7 +9055,7 @@ Partial Class Form1
         Me.Label213.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label213.Location = New System.Drawing.Point(120, 132)
         Me.Label213.Name = "Label213"
-        Me.Label213.Size = New System.Drawing.Size(16, 12)
+        Me.Label213.Size = New System.Drawing.Size(21, 15)
         Me.Label213.TabIndex = 10
         Me.Label213.Text = "t,d"
         '
@@ -9030,7 +9065,7 @@ Partial Class Form1
         Me.Label214.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point)
         Me.Label214.Location = New System.Drawing.Point(154, 74)
         Me.Label214.Name = "Label214"
-        Me.Label214.Size = New System.Drawing.Size(78, 19)
+        Me.Label214.Size = New System.Drawing.Size(92, 23)
         Me.Label214.TabIndex = 6
         Me.Label214.Text = "FÓRMULA "
         '
@@ -9040,7 +9075,7 @@ Partial Class Form1
         Me.Label215.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label215.Location = New System.Drawing.Point(101, 126)
         Me.Label215.Name = "Label215"
-        Me.Label215.Size = New System.Drawing.Size(39, 19)
+        Me.Label215.Size = New System.Drawing.Size(48, 23)
         Me.Label215.TabIndex = 9
         Me.Label215.Text = "T     :"
         '
@@ -9049,7 +9084,7 @@ Partial Class Form1
         Me.TextBox36.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.TextBox36.Location = New System.Drawing.Point(159, 123)
         Me.TextBox36.Name = "TextBox36"
-        Me.TextBox36.Size = New System.Drawing.Size(87, 26)
+        Me.TextBox36.Size = New System.Drawing.Size(87, 30)
         Me.TextBox36.TabIndex = 8
         '
         'Label216
@@ -9058,7 +9093,7 @@ Partial Class Form1
         Me.Label216.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label216.Location = New System.Drawing.Point(6, 41)
         Me.Label216.Name = "Label216"
-        Me.Label216.Size = New System.Drawing.Size(262, 19)
+        Me.Label216.Size = New System.Drawing.Size(327, 23)
         Me.Label216.TabIndex = 0
         Me.Label216.Text = "Verificação ao Estado Limite Último (ELU):"
         '
@@ -9195,7 +9230,7 @@ Partial Class Form1
         Me.Label340.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label340.Location = New System.Drawing.Point(252, 126)
         Me.Label340.Name = "Label340"
-        Me.Label340.Size = New System.Drawing.Size(37, 19)
+        Me.Label340.Size = New System.Drawing.Size(43, 23)
         Me.Label340.TabIndex = 11
         Me.Label340.Text = "MPa"
         '
@@ -9205,7 +9240,7 @@ Partial Class Form1
         Me.Label341.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point)
         Me.Label341.Location = New System.Drawing.Point(16, 170)
         Me.Label341.Name = "Label341"
-        Me.Label341.Size = New System.Drawing.Size(275, 19)
+        Me.Label341.Size = New System.Drawing.Size(338, 23)
         Me.Label341.TabIndex = 7
         Me.Label341.Text = "AVISO SE PASSOU NA VERIFICÃO OU NÃO"
         '
@@ -9215,7 +9250,7 @@ Partial Class Form1
         Me.Label342.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label342.Location = New System.Drawing.Point(120, 132)
         Me.Label342.Name = "Label342"
-        Me.Label342.Size = New System.Drawing.Size(16, 12)
+        Me.Label342.Size = New System.Drawing.Size(21, 15)
         Me.Label342.TabIndex = 10
         Me.Label342.Text = "t,d"
         '
@@ -9225,7 +9260,7 @@ Partial Class Form1
         Me.Label343.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point)
         Me.Label343.Location = New System.Drawing.Point(154, 74)
         Me.Label343.Name = "Label343"
-        Me.Label343.Size = New System.Drawing.Size(78, 19)
+        Me.Label343.Size = New System.Drawing.Size(92, 23)
         Me.Label343.TabIndex = 6
         Me.Label343.Text = "FÓRMULA "
         '
@@ -9235,7 +9270,7 @@ Partial Class Form1
         Me.Label344.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label344.Location = New System.Drawing.Point(101, 126)
         Me.Label344.Name = "Label344"
-        Me.Label344.Size = New System.Drawing.Size(39, 19)
+        Me.Label344.Size = New System.Drawing.Size(48, 23)
         Me.Label344.TabIndex = 9
         Me.Label344.Text = "S     :"
         '
@@ -9244,7 +9279,7 @@ Partial Class Form1
         Me.TextBox79.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.TextBox79.Location = New System.Drawing.Point(159, 123)
         Me.TextBox79.Name = "TextBox79"
-        Me.TextBox79.Size = New System.Drawing.Size(87, 26)
+        Me.TextBox79.Size = New System.Drawing.Size(87, 30)
         Me.TextBox79.TabIndex = 8
         '
         'Label345
@@ -9253,7 +9288,7 @@ Partial Class Form1
         Me.Label345.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label345.Location = New System.Drawing.Point(6, 41)
         Me.Label345.Name = "Label345"
-        Me.Label345.Size = New System.Drawing.Size(262, 19)
+        Me.Label345.Size = New System.Drawing.Size(327, 23)
         Me.Label345.TabIndex = 0
         Me.Label345.Text = "Verificação ao Estado Limite Último (ELU):"
         '
@@ -9293,9 +9328,9 @@ Partial Class Form1
         Me.Label346.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label346.AutoSize = True
         Me.Label346.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label346.Location = New System.Drawing.Point(4, 7)
+        Me.Label346.Location = New System.Drawing.Point(8, 3)
         Me.Label346.Name = "Label346"
-        Me.Label346.Size = New System.Drawing.Size(453, 38)
+        Me.Label346.Size = New System.Drawing.Size(446, 46)
         Me.Label346.TabIndex = 6
         Me.Label346.Text = "Nota: A força normalsolicitante de cálculo à tração, deve ser inserida com as dev" &
     "idas combinações normativas."
@@ -9316,7 +9351,7 @@ Partial Class Form1
         Me.Label347.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label347.Location = New System.Drawing.Point(167, 90)
         Me.Label347.Name = "Label347"
-        Me.Label347.Size = New System.Drawing.Size(26, 19)
+        Me.Label347.Size = New System.Drawing.Size(31, 23)
         Me.Label347.TabIndex = 4
         Me.Label347.Text = "kN"
         '
@@ -9326,7 +9361,7 @@ Partial Class Form1
         Me.Label348.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label348.Location = New System.Drawing.Point(35, 96)
         Me.Label348.Name = "Label348"
-        Me.Label348.Size = New System.Drawing.Size(16, 12)
+        Me.Label348.Size = New System.Drawing.Size(21, 15)
         Me.Label348.TabIndex = 3
         Me.Label348.Text = "t,d"
         '
@@ -9336,7 +9371,7 @@ Partial Class Form1
         Me.Label349.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label349.Location = New System.Drawing.Point(16, 90)
         Me.Label349.Name = "Label349"
-        Me.Label349.Size = New System.Drawing.Size(42, 19)
+        Me.Label349.Size = New System.Drawing.Size(52, 23)
         Me.Label349.TabIndex = 2
         Me.Label349.Text = "N     :"
         '
@@ -9345,7 +9380,7 @@ Partial Class Form1
         Me.TextBox80.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.TextBox80.Location = New System.Drawing.Point(74, 87)
         Me.TextBox80.Name = "TextBox80"
-        Me.TextBox80.Size = New System.Drawing.Size(87, 26)
+        Me.TextBox80.Size = New System.Drawing.Size(87, 30)
         Me.TextBox80.TabIndex = 1
         '
         'Label350
@@ -9354,7 +9389,7 @@ Partial Class Form1
         Me.Label350.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label350.Location = New System.Drawing.Point(6, 41)
         Me.Label350.Name = "Label350"
-        Me.Label350.Size = New System.Drawing.Size(292, 19)
+        Me.Label350.Size = New System.Drawing.Size(369, 23)
         Me.Label350.TabIndex = 0
         Me.Label350.Text = "Esforço Normal Solicitante de Cálculo à Tração:"
         '
@@ -9380,7 +9415,7 @@ Partial Class Form1
         Me.Label333.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label333.Location = New System.Drawing.Point(252, 126)
         Me.Label333.Name = "Label333"
-        Me.Label333.Size = New System.Drawing.Size(37, 19)
+        Me.Label333.Size = New System.Drawing.Size(43, 23)
         Me.Label333.TabIndex = 11
         Me.Label333.Text = "MPa"
         '
@@ -9390,7 +9425,7 @@ Partial Class Form1
         Me.Label334.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point)
         Me.Label334.Location = New System.Drawing.Point(16, 170)
         Me.Label334.Name = "Label334"
-        Me.Label334.Size = New System.Drawing.Size(275, 19)
+        Me.Label334.Size = New System.Drawing.Size(338, 23)
         Me.Label334.TabIndex = 7
         Me.Label334.Text = "AVISO SE PASSOU NA VERIFICÃO OU NÃO"
         '
@@ -9400,7 +9435,7 @@ Partial Class Form1
         Me.Label335.Font = New System.Drawing.Font("Segoe UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label335.Location = New System.Drawing.Point(120, 132)
         Me.Label335.Name = "Label335"
-        Me.Label335.Size = New System.Drawing.Size(16, 12)
+        Me.Label335.Size = New System.Drawing.Size(21, 15)
         Me.Label335.TabIndex = 10
         Me.Label335.Text = "t,d"
         '
@@ -9410,7 +9445,7 @@ Partial Class Form1
         Me.Label336.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point)
         Me.Label336.Location = New System.Drawing.Point(154, 74)
         Me.Label336.Name = "Label336"
-        Me.Label336.Size = New System.Drawing.Size(78, 19)
+        Me.Label336.Size = New System.Drawing.Size(92, 23)
         Me.Label336.TabIndex = 6
         Me.Label336.Text = "FÓRMULA "
         '
@@ -9420,7 +9455,7 @@ Partial Class Form1
         Me.Label337.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label337.Location = New System.Drawing.Point(101, 126)
         Me.Label337.Name = "Label337"
-        Me.Label337.Size = New System.Drawing.Size(39, 19)
+        Me.Label337.Size = New System.Drawing.Size(48, 23)
         Me.Label337.TabIndex = 9
         Me.Label337.Text = "S     :"
         '
@@ -9429,7 +9464,7 @@ Partial Class Form1
         Me.TextBox78.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.TextBox78.Location = New System.Drawing.Point(159, 123)
         Me.TextBox78.Name = "TextBox78"
-        Me.TextBox78.Size = New System.Drawing.Size(87, 26)
+        Me.TextBox78.Size = New System.Drawing.Size(87, 30)
         Me.TextBox78.TabIndex = 8
         '
         'Label338
@@ -9438,7 +9473,7 @@ Partial Class Form1
         Me.Label338.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label338.Location = New System.Drawing.Point(6, 41)
         Me.Label338.Name = "Label338"
-        Me.Label338.Size = New System.Drawing.Size(262, 19)
+        Me.Label338.Size = New System.Drawing.Size(327, 23)
         Me.Label338.TabIndex = 0
         Me.Label338.Text = "Verificação ao Estado Limite Último (ELU):"
         '
@@ -9503,9 +9538,9 @@ Partial Class Form1
         Me.Label512.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label512.AutoSize = True
         Me.Label512.Font = New System.Drawing.Font("Segoe UI", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label512.Location = New System.Drawing.Point(10, 39)
+        Me.Label512.Location = New System.Drawing.Point(7, 35)
         Me.Label512.Name = "Label512"
-        Me.Label512.Size = New System.Drawing.Size(39, 26)
+        Me.Label512.Size = New System.Drawing.Size(45, 34)
         Me.Label512.TabIndex = 46
         Me.Label512.Text = "Classe (4)"
         Me.Label512.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -9541,7 +9576,7 @@ Partial Class Form1
         '
         'Form1
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 19.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 23.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1090, 634)
         Me.Controls.Add(Me.StatusStrip1)
@@ -9575,6 +9610,8 @@ Partial Class Form1
         Me.GroupBox7.PerformLayout
         Me.TabDadosIniciais.ResumeLayout(False)
         Me.TabDadosIniciais.PerformLayout
+        Me.gbx2Elementos.ResumeLayout(False)
+        Me.gbx2Elementos.PerformLayout
         Me.gbx3Elementos.ResumeLayout(False)
         Me.gbx3Elementos.PerformLayout
         Me.gbxCompostaCaixao.ResumeLayout(False)
@@ -9585,8 +9622,6 @@ Partial Class Form1
         Me.gbxVinculacao.PerformLayout
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit
         CType(Me.imgSecao, System.ComponentModel.ISupportInitialize).EndInit
-        Me.gbx2Elementos.ResumeLayout(False)
-        Me.gbx2Elementos.PerformLayout
         Me.gbxCompostaI.ResumeLayout(False)
         Me.gbxCompostaI.PerformLayout
         Me.gbxCircular.ResumeLayout(False)
@@ -10457,4 +10492,7 @@ Partial Class Form1
     Friend WithEvents Label23 As Label
     Friend WithEvents SalvarToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents SairToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents Label31 As Label
+    Friend WithEvents Label29 As Label
+    Friend WithEvents txtEixoXX As TextBox
 End Class

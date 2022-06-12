@@ -238,69 +238,73 @@ Public Class GeradorPDF
 
         doc.Add(New Paragraph("PROPRIEDADES GEOMÉTRICAS:", fontSubTitle))
         'seções simples
-        doc.Add(New Paragraph("Área (A):", fontItem))
-        doc.Add(New Paragraph(_madeira.PropriedadesGeometricas.Area & "m²", fontDescription))
+        If _exibir.ExibeProprSimples Then
+            doc.Add(New Paragraph("Área (A):", fontItem))
+            doc.Add(New Paragraph(_madeira.PropriedadesGeometricas.Area & "m²", fontDescription))
 
-        doc.Add(New Paragraph("Eixo X:", fontItem))
-        doc.Add(New Paragraph("Momento de Inércia (Ix):", fontItem))
-        doc.Add(New Paragraph(_madeira.PropriedadesGeometricas.EixoXmi & "m^4", fontDescription))
+            doc.Add(New Paragraph("Eixo X:", fontItem))
+            doc.Add(New Paragraph("Momento de Inércia (Ix):", fontItem))
+            doc.Add(New Paragraph(_madeira.PropriedadesGeometricas.EixoXmi & "m^4", fontDescription))
 
-        doc.Add(New Paragraph("Raio de Giração (rx):", fontItem))
-        doc.Add(New Paragraph(_madeira.PropriedadesGeometricas.EixoXrg & "m²", fontDescription))
+            doc.Add(New Paragraph("Raio de Giração (rx):", fontItem))
+            doc.Add(New Paragraph(_madeira.PropriedadesGeometricas.EixoXrg & "m²", fontDescription))
 
-        doc.Add(New Paragraph("Módulo de Rêsistência (Wx):", fontItem))
-        doc.Add(New Paragraph(_madeira.PropriedadesGeometricas.EixoXmr & "m³", fontDescription))
+            doc.Add(New Paragraph("Módulo de Rêsistência (Wx):", fontItem))
+            doc.Add(New Paragraph(_madeira.PropriedadesGeometricas.EixoXmr & "m³", fontDescription))
 
-        doc.Add(New Paragraph("Eixo Y:", fontItem))
-        doc.Add(New Paragraph("Momento de Inércia (Iy):", fontItem))
-        doc.Add(New Paragraph(_madeira.PropriedadesGeometricas.EixoYmi & "m^4", fontDescription))
+            doc.Add(New Paragraph("Eixo Y:", fontItem))
+            doc.Add(New Paragraph("Momento de Inércia (Iy):", fontItem))
+            doc.Add(New Paragraph(_madeira.PropriedadesGeometricas.EixoYmi & "m^4", fontDescription))
 
-        doc.Add(New Paragraph("Raio de Giração (ry):", fontItem))
-        doc.Add(New Paragraph(_madeira.PropriedadesGeometricas.EixoYrg & "m²", fontDescription))
+            doc.Add(New Paragraph("Raio de Giração (ry):", fontItem))
+            doc.Add(New Paragraph(_madeira.PropriedadesGeometricas.EixoYrg & "m²", fontDescription))
 
-        doc.Add(New Paragraph("Módulo de Rêsistência (Wy):", fontItem))
-        doc.Add(New Paragraph(_madeira.PropriedadesGeometricas.EixoYmr & "m³", fontDescription))
+            doc.Add(New Paragraph("Módulo de Rêsistência (Wy):", fontItem))
+            doc.Add(New Paragraph(_madeira.PropriedadesGeometricas.EixoYmr & "m³", fontDescription))
+        End If
 
         'seções solidarizadas continuamente
-        doc.Add(New Paragraph("Elemento componente:", fontItem))
-        doc.Add(New Paragraph("Área (A1):", fontItem))
-        doc.Add(New Paragraph(_madeira.PropriedadesGeometricas.AreaA1 & "m²", fontDescription))
+        If _exibir.ExibeProprComp Then
+            doc.Add(New Paragraph("Elemento componente:", fontItem))
+            doc.Add(New Paragraph("Área (A1):", fontItem))
+            doc.Add(New Paragraph(_madeira.PropriedadesGeometricas.AreaA1 & "m²", fontDescription))
 
-        doc.Add(New Paragraph("Momento de Inércia (I1):", fontItem))
-        doc.Add(New Paragraph(_madeira.PropriedadesGeometricas.EixoXmi1 & "m^4", fontDescription))
+            doc.Add(New Paragraph("Momento de Inércia (I1):", fontItem))
+            doc.Add(New Paragraph(_madeira.PropriedadesGeometricas.EixoXmi1 & "m^4", fontDescription))
 
-        doc.Add(New Paragraph("Momento de Inércia (I2):", fontItem))
-        doc.Add(New Paragraph(_madeira.PropriedadesGeometricas.EixoYmi1 & "m^4", fontDescription))
+            doc.Add(New Paragraph("Momento de Inércia (I2):", fontItem))
+            doc.Add(New Paragraph(_madeira.PropriedadesGeometricas.EixoYmi1 & "m^4", fontDescription))
 
-        doc.Add(New Paragraph("Seção Composta:", fontItem))
-        doc.Add(New Paragraph("Área (A):", fontItem))
-        doc.Add(New Paragraph(_madeira.PropriedadesGeometricas.Area & "m²", fontDescription))
+            doc.Add(New Paragraph("Seção Composta:", fontItem))
+            doc.Add(New Paragraph("Área (A):", fontItem))
+            doc.Add(New Paragraph(_madeira.PropriedadesGeometricas.Area & "m²", fontDescription))
 
-        doc.Add(New Paragraph("Momento de Inércia (Ix):", fontItem))
-        doc.Add(New Paragraph(_madeira.PropriedadesGeometricas.EixoXmi & "m^4", fontDescription))
+            doc.Add(New Paragraph("Momento de Inércia (Ix):", fontItem))
+            doc.Add(New Paragraph(_madeira.PropriedadesGeometricas.EixoXmi & "m^4", fontDescription))
 
-        doc.Add(New Paragraph("Momento de Inércia (Iy):", fontItem))
-        doc.Add(New Paragraph(_madeira.PropriedadesGeometricas.EixoYmi & "m^4", fontDescription))
+            doc.Add(New Paragraph("Momento de Inércia (Iy):", fontItem))
+            doc.Add(New Paragraph(_madeira.PropriedadesGeometricas.EixoYmi & "m^4", fontDescription))
 
-        doc.Add(New Paragraph("Coeficiente (By):", fontItem))
-        doc.Add(New Paragraph(_madeira.PropriedadesGeometricas.CoefBy, fontDescription))
+            doc.Add(New Paragraph("Coeficiente (By):", fontItem))
+            doc.Add(New Paragraph(_madeira.PropriedadesGeometricas.CoefBy, fontDescription))
 
-        doc.Add(New Paragraph("Módulo de Rêsistência (Wy):", fontItem))
-        doc.Add(New Paragraph(_madeira.PropriedadesGeometricas.EixoYmr & "m³", fontDescription))
+            doc.Add(New Paragraph("Módulo de Rêsistência (Wy):", fontItem))
+            doc.Add(New Paragraph(_madeira.PropriedadesGeometricas.EixoYmr & "m³", fontDescription))
 
-        doc.Add(New Paragraph("Inércia Efetiva (Ief):", fontItem))
-        doc.Add(New Paragraph(_madeira.PropriedadesGeometricas.EixoYie & "m^4", fontDescription))
+            doc.Add(New Paragraph("Inércia Efetiva (Ief):", fontItem))
+            doc.Add(New Paragraph(_madeira.PropriedadesGeometricas.EixoYie & "m^4", fontDescription))
 
-        doc.Add(New Paragraph(" Númetos de intervalos de comprimento (L1) em que fica divido o comprimento (L) total da peça (m):", fontItem))
-        doc.Add(New Paragraph(_madeira.PropriedadesGeometricas.IntervalosM, fontDescription))
+            doc.Add(New Paragraph(" Númetos de intervalos de comprimento (L1) em que fica divido o comprimento (L) total da peça (m):", fontItem))
+            doc.Add(New Paragraph(_madeira.PropriedadesGeometricas.IntervalosM, fontDescription))
 
-        doc.Add(New Paragraph("W2:", fontItem))
-        doc.Add(New Paragraph(_madeira.PropriedadesGeometricas.W2 & "m³", fontDescription))
+            doc.Add(New Paragraph("W2:", fontItem))
+            doc.Add(New Paragraph(_madeira.PropriedadesGeometricas.W2 & "m³", fontDescription))
+        End If
+
 
         'TRAÇÃO:
         If _exibir.ExibeTracao Then
             doc.Add(New Paragraph("TRAÇÃO:", fontSubTitle))
-
             doc.Add(New Paragraph("Tensao solicitante de Projeto à Tracao", fontItem))
             doc.Add(New Paragraph("sigmat = Nt/A", fontItem))
             doc.Add(New Paragraph(_madeira.Tracao.TensaoTracao, "MPa", fontDescription))
@@ -404,35 +408,32 @@ Public Class GeradorPDF
         End If
 
         'CISALHAMENTO:
-        doc.Add(New Paragraph("CISALHAMENTO:", fontSubTitle))
+        If _exibir.ExibeCisalhamento Then
+            doc.Add(New Paragraph("CISALHAMENTO:", fontSubTitle))
 
-        doc.Add(New Paragraph("Tensao de Cisalhamento Solicitante de Projeto no Eixo X:", fontItem))
-        doc.Add(New Paragraph("", fontItem))
-        doc.Add(New Paragraph(_madeira.Cisalhamento.TensaoCisalhanteX, fontDescription))
+            doc.Add(New Paragraph("Tensao de Cisalhamento Solicitante de Projeto no Eixo X:", fontItem))
+            doc.Add(New Paragraph("", fontItem))
+            doc.Add(New Paragraph(_madeira.Cisalhamento.TensaoCisalhanteX, fontDescription))
 
-        doc.Add(New Paragraph("Tensao de Cisalhamento Solicitante de Projeto no Eixo Y:", fontItem))
-        doc.Add(New Paragraph("", fontItem))
-        doc.Add(New Paragraph(_madeira.Cisalhamento.TensaoCisalhanteY, fontDescription))
+            doc.Add(New Paragraph("Tensao de Cisalhamento Solicitante de Projeto no Eixo Y:", fontItem))
+            doc.Add(New Paragraph("", fontItem))
+            doc.Add(New Paragraph(_madeira.Cisalhamento.TensaoCisalhanteY, fontDescription))
 
-        doc.Add(New Paragraph("Esforço Solicitante de cisalhamento dos espaçadores (vd):", fontItem))
-        doc.Add(New Paragraph("", fontItem))
-        doc.Add(New Paragraph(_madeira.Cisalhamento.Vd, fontDescription))
+            doc.Add(New Paragraph("Esforço Solicitante de cisalhamento dos espaçadores (vd):", fontItem))
+            doc.Add(New Paragraph("", fontItem))
+            doc.Add(New Paragraph(_madeira.Cisalhamento.Vd, fontDescription))
+        End If
 
         'FLEXÃO:
         'COLOCAR OS IF ELSE 
-        doc.Add(New Paragraph("FLEXÃO:", fontSubTitle))
+        If _exibir.ExibeFlexaoSimplesReta Then
+            doc.Add(New Paragraph("FLEXÃO:", fontSubTitle))
+            doc.Add(New Paragraph("FLEXÃO SIMPLES RETA:", fontSubTitle))
+            doc.Add(New Paragraph("Tensão de Cálculo na Borda Comprimida (sigma Cx):", fontItem))
+            doc.Add(New Paragraph("sigmac,dy = Nsd/A", fontItem))
+            doc.Add(New Paragraph(_madeira.Flexao.tensaoCX, fontDescription))
+        End If
 
-        doc.Add(New Paragraph("tensaoFlexaoX", fontItem))
-        doc.Add(New Paragraph("", fontItem))
-        doc.Add(New Paragraph(_madeira.Flexao.tensaoFlexaoX, fontDescription))
-
-        doc.Add(New Paragraph("tensaoFlexaoY", fontItem))
-        doc.Add(New Paragraph("", fontItem))
-        doc.Add(New Paragraph(_madeira.Flexao.tensaoFlexaoY, fontDescription))
-
-        doc.Add(New Paragraph("Tensão de Cálculo na Borda Comprimida (sigma Cx):", fontItem))
-        doc.Add(New Paragraph("sigmac,dy = Nsd/A", fontItem))
-        doc.Add(New Paragraph(_madeira.Flexao.tensaoCX, fontDescription))
 
         doc.Add(New Paragraph("Tensão de Cálculo na Borda Comprimida (sigma Cy)", fontItem))
         doc.Add(New Paragraph("sigmac,dy = Nsd/A", fontItem))
@@ -442,9 +443,20 @@ Public Class GeradorPDF
         doc.Add(New Paragraph("sigmat,dy = Nsd/A", fontItem))
         doc.Add(New Paragraph(_madeira.Flexao.tensaoTX, fontDescription))
 
+
+
         doc.Add(New Paragraph("Tensão de Cálculo na Borda Tracionada (sigma Ty)", fontItem))
         doc.Add(New Paragraph("sigmat,dy = Nsd/A", fontItem))
         doc.Add(New Paragraph(_madeira.Flexao.tensaoTY, fontDescription))
+
+
+        doc.Add(New Paragraph("tensaoFlexaoX", fontItem))
+        doc.Add(New Paragraph("", fontItem))
+        doc.Add(New Paragraph(_madeira.Flexao.tensaoFlexaoX, fontDescription))
+
+        doc.Add(New Paragraph("tensaoFlexaoY", fontItem))
+        doc.Add(New Paragraph("", fontItem))
+        doc.Add(New Paragraph(_madeira.Flexao.tensaoFlexaoY, fontDescription))
 
         doc.Add(New Paragraph("Compressão Normal no Apoio no Eixo X", fontItem))
         doc.Add(New Paragraph("sigmac,dx = Fd/A", fontItem))
@@ -455,7 +467,7 @@ Public Class GeradorPDF
         doc.Add(New Paragraph(_madeira.Flexao.ApoioY, fontDescription))
 
 
-        doc.Add(New Paragraph("FLEXÃO SIMPLES RETA:", fontSubTitle))
+
         doc.Add(New Paragraph("FLEXÃO SIMPLES OBLÍQUA:", fontSubTitle))
         doc.Add(New Paragraph("FLEXOTRAÇÃO:", fontSubTitle))
         doc.Add(New Paragraph("FLEXOCOMPRESSÃO:", fontSubTitle))

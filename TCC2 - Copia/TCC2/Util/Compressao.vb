@@ -705,9 +705,9 @@ Public Class Compressao
                 compr.EsbeltezCompressaoX = (lvinculado / (Math.Sqrt(proprGeo.EixoXmi / proprGeo.Area))) 'OK
                 compr.EsbeltezCompressaoY = (lvinculado / (Math.Sqrt(proprGeo.EixoYie / proprGeo.Area))) 'OK
                 'segurança no eixo YY
-                compr.EixoYY = ((normalCompressao / a) + ((mdY * proprGeo.EixoYmi1) / (proprGeo.EixoYie * proprGeo.W2)) + ((mdY / (2 * a1 * proprGeo.AreaA1)) * (1 - (3 * (proprGeo.EixoYmi1 / proprGeo.EixoYmi1)))) * 10)
+                compr.EixoYY = ((normalCompressao / proprGeo.Area) + ((mdY * proprGeo.EixoYmi1) / (proprGeo.EixoYie * proprGeo.W2)) + ((mdY / (2 * a1 * proprGeo.AreaA1)) * (1 - (2 * (proprGeo.EixoYmi1 / proprGeo.EixoYie)))) * 10)
                 'segurança no eixo XX
-                compr.EixoXX = ((normalCompressao / a) + ((mdY / proprGeo.EixoYmi1) * (h / 2)))
+                compr.EixoXX = ((normalCompressao / proprGeo.Area) + ((mdY / proprGeo.EixoYmi1) * (h / 2)))
 
                 'peças interpostas
                 If (a <= 3 * b1) And (9 * b1 <= l1 <= 18 * b1) And (elementoFixacaoSelecionado = "Espacador Interposto") Then
@@ -730,8 +730,8 @@ Public Class Compressao
 
                     'ELEMENTO MEDIANAMENTE ESBELTO EM X ==============
                 ElseIf 40 < compr.EsbeltezCompressaoX And compr.EsbeltezCompressaoX <= 80 Then
-                    compr.ForcaElasticaX = ((System.Math.PI ^ 2) * proprGeo.EixoXmi * (ResistenciaCalculo.moduloElasticidade / 10)) / ((lvinculado * 100) ^ 2)
-                    compr.EaX = (lvinculado * 100) / 300
+                    compr.ForcaElasticaX = ((System.Math.PI ^ 2) * proprGeo.EixoXmi * (ResistenciaCalculo.moduloElasticidade / 10)) / ((lvinculado) ^ 2)
+                    compr.EaX = (lvinculado) / 300
                     'Definindo o valor da excentricidade inicial
                     If ((momentoFletorX / normalCompressao) * 100) < (h / 30) Then
                         compr.EiX = h / 30
@@ -747,12 +747,12 @@ Public Class Compressao
                     'ELEMENTO ESBELTO EM X ==============
                 ElseIf 80 < compr.EsbeltezCompressaoX And compr.EsbeltezCompressaoX <= 140 Then
                     Form1.esbelta = True
-                    compr.ForcaElasticaX = (((System.Math.PI) ^ 2) * proprGeo.EixoXmi * (ResistenciaCalculo.moduloElasticidade / 10)) / ((lvinculado * 100) ^ 2)
+                    compr.ForcaElasticaX = (((System.Math.PI) ^ 2) * proprGeo.EixoXmi * (ResistenciaCalculo.moduloElasticidade / 10)) / ((lvinculado) ^ 2)
                     'Definindo o valor da excentricidade acidental
-                    If ((lvinculado * 100) / 300) < (h / 30) Then
+                    If ((lvinculado) / 300) < (h / 30) Then
                         compr.EaX = h / 30
                     Else
-                        compr.EaX = (lvinculado * 100) / 300
+                        compr.EaX = (lvinculado) / 300
                     End If
                     'Definindo o valor da excentricidade inicial
                     compr.EiX = (((MomentoCargaPermanenteX + MomentoCargaVariavelX) * 100) / normalCompressao)
@@ -774,8 +774,8 @@ Public Class Compressao
 
                     'ELEMENTO MEDIANAMENTE ESBELTO EM Y ==============
                 ElseIf 40 < compr.EsbeltezCompressaoY And compr.EsbeltezCompressaoY <= 80 Then
-                    compr.ForcaElasticaY = ((System.Math.PI) ^ 2 * proprGeo.EixoYmi * (ResistenciaCalculo.moduloElasticidade / 10)) / ((lvinculado * 100) ^ 2)
-                    compr.EaY = (lvinculado * 100) / 300
+                    compr.ForcaElasticaY = ((System.Math.PI) ^ 2 * proprGeo.EixoYie * (ResistenciaCalculo.moduloElasticidade / 10)) / ((lvinculado) ^ 2)
+                    compr.EaY = (lvinculado) / 300
                     'Definindo o valor da excentricidade inicial
                     If ((momentoFletorY / normalCompressao) * 100) < (b / 30) Then
                         compr.EiY = b / 30
@@ -790,12 +790,12 @@ Public Class Compressao
                     'ELEMENTO ESBELTO EM Y ==============
                 ElseIf 80 < compr.EsbeltezCompressaoY <= 140 Then
                     Form1.esbelta = True
-                    compr.ForcaElasticaY = ((System.Math.PI) ^ 2 * proprGeo.EixoYmi * (ResistenciaCalculo.moduloElasticidade / 10)) / ((lvinculado * 100) ^ 2)
+                    compr.ForcaElasticaY = (((System.Math.PI) ^ 2 * proprGeo.EixoYie * (ResistenciaCalculo.moduloElasticidade / 10)) / ((lvinculado) ^ 2))
                     'Definindo o valor da excentricidade acidental
-                    If ((lvinculado * 100) / 300) < (b / 30) Then
+                    If ((lvinculado) / 300) < (b / 30) Then
                         compr.EaY = b / 30
                     Else
-                        compr.EaY = (lvinculado * 100) / 300
+                        compr.EaY = (lvinculado) / 300
                     End If
                     'Definindo o valor da excentricidade inicial
                     compr.EiY = (((MomentoCargaPermanenteY + MomentoCargaVariavelY) * 100) / normalCompressao)
@@ -810,9 +810,15 @@ Public Class Compressao
                                     Insira novos valores para a seção transversal da peça.")
                 End If
 
+
+
             Case Madeira.TipoSecao.ElementosJustaposto3
                 compr.EsbeltezCompressaoX = (lvinculado / (Math.Sqrt(proprGeo.EixoXmi / proprGeo.Area))) 'OK
                 compr.EsbeltezCompressaoY = (lvinculado / (Math.Sqrt(proprGeo.EixoYie / proprGeo.Area))) 'OK
+                'segurança no eixo YY
+                compr.EixoYY = ((normalCompressao / proprGeo.Area) + ((mdY * proprGeo.EixoYmi1) / (proprGeo.EixoYie * proprGeo.W2)) + ((mdY / (2 * a1 * proprGeo.AreaA1)) * (1 - (3 * (proprGeo.EixoYmi1 / proprGeo.EixoYmie)))) * 10)
+                'segurança no eixo XX
+                compr.EixoXX = ((normalCompressao / proprGeo.Area) + ((mdY / proprGeo.EixoYmi1) * (h / 2)))
 
                 'peças interpostas
                 If (a <= 3 * b1) And (9 * b1 <= l1 <= 18 * b1) And (elementoFixacaoSelecionado = "Espacador Interposto") Then
@@ -835,8 +841,8 @@ Public Class Compressao
 
                     'ELEMENTO MEDIANAMENTE ESBELTO EM X ==============
                 ElseIf 40 < compr.EsbeltezCompressaoX And compr.EsbeltezCompressaoX <= 80 Then
-                    compr.ForcaElasticaX = ((System.Math.PI ^ 2) * proprGeo.EixoXmi * (ResistenciaCalculo.moduloElasticidade / 10)) / ((lvinculado * 100) ^ 2)
-                    compr.EaX = (lvinculado * 100) / 300
+                    compr.ForcaElasticaX = ((System.Math.PI ^ 2) * proprGeo.EixoXmi * (ResistenciaCalculo.moduloElasticidade / 10)) / ((lvinculado) ^ 2)
+                    compr.EaX = (lvinculado) / 300
                     'Definindo o valor da excentricidade inicial
                     If ((momentoFletorX / normalCompressao) * 100) < (h / 30) Then
                         compr.EiX = h / 30
@@ -852,12 +858,12 @@ Public Class Compressao
                     'ELEMENTO ESBELTO EM X ==============
                 ElseIf 80 < compr.EsbeltezCompressaoX And compr.EsbeltezCompressaoX <= 140 Then
                     Form1.esbelta = True
-                    compr.ForcaElasticaX = (((System.Math.PI) ^ 2) * proprGeo.EixoXmi * (ResistenciaCalculo.moduloElasticidade / 10)) / ((lvinculado * 100) ^ 2)
+                    compr.ForcaElasticaX = (((System.Math.PI) ^ 2) * proprGeo.EixoXmi * (ResistenciaCalculo.moduloElasticidade / 10)) / ((lvinculado) ^ 2)
                     'Definindo o valor da excentricidade acidental
-                    If ((lvinculado * 100) / 300) < (h / 30) Then
+                    If ((lvinculado) / 300) < (h / 30) Then
                         compr.EaX = h / 30
                     Else
-                        compr.EaX = (lvinculado * 100) / 300
+                        compr.EaX = (lvinculado) / 300
                     End If
                     'Definindo o valor da excentricidade inicial
                     compr.EiX = (((MomentoCargaPermanenteX + MomentoCargaVariavelX) * 100) / normalCompressao)
@@ -879,8 +885,8 @@ Public Class Compressao
 
                     'ELEMENTO MEDIANAMENTE ESBELTO EM Y ==============
                 ElseIf 40 < compr.EsbeltezCompressaoY And compr.EsbeltezCompressaoY <= 80 Then
-                    compr.ForcaElasticaY = ((System.Math.PI) ^ 2 * proprGeo.EixoYmi * (ResistenciaCalculo.moduloElasticidade / 10)) / ((lvinculado * 100) ^ 2)
-                    compr.EaY = (lvinculado * 100) / 300
+                    compr.ForcaElasticaY = ((System.Math.PI) ^ 2 * proprGeo.EixoYie * (ResistenciaCalculo.moduloElasticidade / 10)) / ((lvinculado) ^ 2)
+                    compr.EaY = (lvinculado) / 300
                     'Definindo o valor da excentricidade inicial
                     If ((momentoFletorY / normalCompressao) * 100) < (b / 30) Then
                         compr.EiY = b / 30
@@ -895,12 +901,12 @@ Public Class Compressao
                     'ELEMENTO ESBELTO EM Y ==============
                 ElseIf 80 < compr.EsbeltezCompressaoY <= 140 Then
                     Form1.esbelta = True
-                    compr.ForcaElasticaY = ((System.Math.PI) ^ 2 * proprGeo.EixoYmi * (ResistenciaCalculo.moduloElasticidade / 10)) / ((lvinculado * 100) ^ 2)
+                    compr.ForcaElasticaY = (((System.Math.PI) ^ 2 * proprGeo.EixoYie * (ResistenciaCalculo.moduloElasticidade / 10)) / ((lvinculado) ^ 2))
                     'Definindo o valor da excentricidade acidental
-                    If ((lvinculado * 100) / 300) < (b / 30) Then
+                    If ((lvinculado) / 300) < (b / 30) Then
                         compr.EaY = b / 30
                     Else
-                        compr.EaY = (lvinculado * 100) / 300
+                        compr.EaY = (lvinculado) / 300
                     End If
                     'Definindo o valor da excentricidade inicial
                     compr.EiY = (((MomentoCargaPermanenteY + MomentoCargaVariavelY) * 100) / normalCompressao)

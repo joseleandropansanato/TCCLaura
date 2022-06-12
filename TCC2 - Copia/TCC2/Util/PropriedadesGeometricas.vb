@@ -58,8 +58,6 @@
     Public Shared h2c As Double = 0
     Public Shared h3c As Double = 0
     Public Shared h4c As Double = 0 'hbf1 caixao
-
-
     Enum Pilar
         Espaçador
         Chapa
@@ -442,7 +440,6 @@
 
         Return proprGeometricas
     End Function
-
     Public Function CalculoCircular(diametro As Double) As PropriedadesGeometricas
         Dim proprGeometricas = New PropriedadesGeometricas()
         'SEÇÃO CIRCULAR:PROPRIEDADES VALIDADAS
@@ -456,7 +453,6 @@
 
         Return proprGeometricas
     End Function
-
     Public Function CalculoCompostoSecaoT(bf As Double, hf As Double, h As Double, bw As Double) As PropriedadesGeometricas
         Dim proprGeometricas = New PropriedadesGeometricas()
         Dim bases As Double() = {0, bw, bf}
@@ -479,7 +475,6 @@
 
         Return proprGeometricas
     End Function
-
     Public Function CalculoCompostoSecaoI(bf1 As Double, hf1 As Double, bf2 As Double, hf2 As Double, bw As Double, h As Double) As PropriedadesGeometricas
         Dim proprGeometricas = New PropriedadesGeometricas()
         Dim bases As Double() = {bf2, bw, bf1}
@@ -527,7 +522,6 @@
 
         Return proprGeometricas
     End Function
-
     Public Function Calculo2Elementos(l As Double, l1 As Double, a1 As Double, h1 As Double, b1 As Double, pilar As PropriedadesGeometricas.Pilar) As PropriedadesGeometricas
         Dim proprGeometricas = New PropriedadesGeometricas()
         '2 ELEMENTOS JUSTAPOSTOS:PROPRIEDADES VALIDADAS
@@ -535,6 +529,7 @@
         proprGeometricas.Area = proprGeometricas.AreaA1 * 2
         proprGeometricas.EixoXmi1 = (b1 * h1 ^ 3) / 12
         proprGeometricas.EixoXmi = 2 * proprGeometricas.EixoXmi1
+        proprGeometricas.EixoXmr = proprGeometricas.EixoXmi1 / (h1 / 2)
         proprGeometricas.EixoYmi1 = (b1 ^ 3 * h1) / 12
         proprGeometricas.EixoYmi = (2 * proprGeometricas.EixoYmi1) + (2 * proprGeometricas.AreaA1 * (a1 ^ 2))
         Select Case pilar
@@ -550,7 +545,6 @@
 
         Return proprGeometricas
     End Function
-
     Public Function Calculo3Elementos(l As Double, l1 As Double, a1 As Double, h1 As Double, b1 As Double, pilar As PropriedadesGeometricas.Pilar) As PropriedadesGeometricas
         Dim proprGeometricas = New PropriedadesGeometricas()
         '3 ELEMENTOS JUSTAPOSTOS:PROPRIEDADES VALIDADAS
