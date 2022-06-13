@@ -422,8 +422,6 @@ Public Class Form1
 
             'COMPRESSAO: ACONTEECE QUANDO A NORMAL TRAÇÃO ESTÁ SELECIONADA: OK
         ElseIf txtNormal.Text.ToString <> "" And cboTracaoCompressao.Text = "Compressão" Then
-            MessageBox.Show("Peças sob esforços de compressão, estão sujeitas aos fenomênos de flambagem. Por favor, insira a vinculação da peça.")
-            'gbxVinculacao.Visible = True
             madeiraSelecionada.Compressao = CalcTensaoC(
                 PropriedadesResistencia.verificaVazio(txtNormal.Text),
                 PropriedadesResistencia.verificaVazio(txtMx.Text),
@@ -465,8 +463,8 @@ Public Class Form1
         End If
 
         'FLEXÃO SIMPLES RETA: ACONTECE: mX OU mY SELECIONADOS JUNTO A ESFORÇOS DE CISALHAMENTO
-        If (txtMx.Text.ToString <> "" And txtMy.Text.ToString = "" And (txtCortanteX.Text.ToString <> "" Or txtCortanteY.Text.ToString <> "")) Or
-           (txtMy.Text.ToString <> "" And txtMx.Text.ToString = "" And (txtCortanteX.Text.ToString <> "" Or txtCortanteY.Text.ToString <> "")) Then
+        If (txtMx.Text.ToString <> "" Or txtMy.Text.ToString = "" And (txtCortanteX.Text.ToString <> "" Or txtCortanteY.Text.ToString <> "")) Or
+           (txtMy.Text.ToString <> "" Or txtMx.Text.ToString = "" And (txtCortanteX.Text.ToString <> "" Or txtCortanteY.Text.ToString <> "")) Then
             gbxFlexaoSimples.Visible = True
             gbxFlexaoObliqua.Visible = False
             madeiraSelecionada.Flexao = CalcTensaoFlexaoSimples(
@@ -508,6 +506,8 @@ Public Class Form1
             PropriedadesResistencia.verificaVazio(txtEntradaRetangularBx.Text),
             PropriedadesResistencia.verificaVazio(txtEntradaRetangularBy.Text),
             PropriedadesResistencia.verificaVazio(txtEntradaCircularD.Text),
+            PropriedadesResistencia.verificaVazio(txtApoioX.Text),
+            PropriedadesResistencia.verificaVazio(txtApoioY.Text),
             madeiraSelecionada.PropriedadesGeometricas,
             tipoSecao
             )
@@ -522,6 +522,8 @@ Public Class Form1
             PropriedadesResistencia.verificaVazio(txtEntradaRetangularBx.Text),
             PropriedadesResistencia.verificaVazio(txtEntradaRetangularBy.Text),
             PropriedadesResistencia.verificaVazio(txtEntradaCircularD.Text),
+            PropriedadesResistencia.verificaVazio(txtApoioX.Text),
+            PropriedadesResistencia.verificaVazio(txtApoioY.Text),
             madeiraSelecionada.PropriedadesGeometricas,
             tipoSecao
             )
@@ -663,6 +665,9 @@ Public Class Form1
 
         txtEcX.Text = coefInfluencia()
         txtEcY.Text = coefInfluencia()
+
+        'txtMdx.Text = madeiraSelecionada.Compressao.Mdx
+        'txtMdx.Text = madeiraSelecionada.Compressao.mdY
 
         txtEixoXX.Text = madeiraSelecionada.Compressao.EixoXX
         txtEixoYY.Text = madeiraSelecionada.Compressao.EixoYY
@@ -845,7 +850,11 @@ Public Class Form1
         'apoio
         txtCompApoioX.Text = madeiraSelecionada.Flexao.ApoioX
         txtCompApoioX.Text = madeiraSelecionada.Flexao.ApoioY
+
         'reta
+        txtTensaoTx.Text = madeiraSelecionada.Flexao.tensaoTX
+        txtTensaoCy.Text = madeiraSelecionada.Flexao.tensaoCX
+
         txtTensaoTx.Text = madeiraSelecionada.Flexao.tensaoTY
         txtTensaoCy.Text = madeiraSelecionada.Flexao.tensaoCY
         'obliqua
@@ -937,11 +946,13 @@ Public Class Form1
     'FLEXÃO COMPOSTA ================================
     Private Sub flexaoComposta(tipoSecao As Madeira.TipoSecao)
         txtFlexoTracao.Text = madeiraSelecionada.Tracao.TensaoTracao
-        txtFlexoTracaoMx.Text = madeiraSelecionada.Flexao.tensaoFlexaoX
-        txtFlexoTracaoMy.Text = madeiraSelecionada.Flexao.tensaoFlexaoY
+        txtFlexoTracaoMx.Text = madeiraSelecionada.Flexao.tensaoFlexaoXT
+        txtFlexoTracaoMy.Text = madeiraSelecionada.Flexao.tensaoFlexaoYT
+
         txtFlexoCompressao.Text = madeiraSelecionada.Compressao.TensaoCompressaoX 'OU Y POIS SÃO IGUAIS
-        txtFlexoCompressaoMx.Text = madeiraSelecionada.Flexao.tensaoFlexaoX
-        txtFlexoCompressaoMy.Text = madeiraSelecionada.Flexao.tensaoFlexaoY
+        txtFlexoCompressaoMx.Text = madeiraSelecionada.Flexao.tensaoFlexaoXC
+        txtFlexoCompressaoMy.Text = madeiraSelecionada.Flexao.tensaoFlexaoYC
+
         txtftFlexo.Text = madeiraSelecionada.ResistenciaCalculo.resistCalculoTracaoParalela
         txtfc.Text = madeiraSelecionada.ResistenciaCalculo.resistCalculoCompressaoParalela
 
@@ -1039,6 +1050,7 @@ Public Class Form1
         txtEixoYRaioGiracao.Text = Format(resultProprGeometricas.EixoYrg, "#0.0##;-#0.0##")
         txtEixoYModuloResistencia.Text = Format(resultProprGeometricas.EixoYmr, "#0.0##;-#0.0##")
         txtEixoYInerciaEfetiva.Text = Format(resultProprGeometricas.EixoYie, "#0.0##;-#0.0##")
+
     End Sub
 
     'DADOS INICIAIS QUE SÃO FECHADOS PRO USUARIO NÃO DIGITAR NADA 
@@ -1193,6 +1205,7 @@ Public Class Form1
         txtInterpoEixoYCoefB.Text = Format(resultProprGeometricas.CoefBy, "#0.0##;-#0.0##")
         txtInterpoIModuloResist.Text = Format(resultProprGeometricas.EixoYmr, "#0.0##;-#0.0##")
         txtInterpoEixoYInerciaEfetiva.Text = Format(resultProprGeometricas.EixoYie, "#0.0##;-#0.0##")
+        fcok = Convert.ToDouble(txtArea1.Text)
     End Sub
     'VALIDAÇÕES TXT PROPRIEDADES DA MADEIRA =========================================================================
     Private Sub txtResistCompParalela_Validated(sender As Object, e As EventArgs) Handles txtResistCompParalela.Validated
@@ -1672,6 +1685,17 @@ Public Class Form1
     Private Sub getDadosIniciais(tipoSecao As Madeira.TipoSecao)
 
         Select Case tipoSecao
+            Case Madeira.TipoSecao.Retangular
+                madeiraSelecionada.PropriedadesGeometricas.base = txtEntradaRetangularBx.Text
+                madeiraSelecionada.PropriedadesGeometricas.altura = txtEntradaRetangularBy.Text
+                madeiraSelecionada.PropriedadesGeometricas.comprimento = txtEntradaRetangularL.Text
+
+            Case Madeira.TipoSecao.Circular
+                madeiraSelecionada.PropriedadesGeometricas.diametro = txtEntradaCircularD.Text
+                madeiraSelecionada.PropriedadesGeometricas.comprimento = txtEntradaCircularL.Text
+
+
+
             Case Madeira.TipoSecao.SecaoT
                 madeiraSelecionada.PropriedadesGeometricas.b1 = 0 'OK
                 madeiraSelecionada.PropriedadesGeometricas.b2 = txtEntradaCompostaBw.Text 'OK
@@ -1679,6 +1703,7 @@ Public Class Form1
                 madeiraSelecionada.PropriedadesGeometricas.h1 = 0 'OK
                 madeiraSelecionada.PropriedadesGeometricas.h2 = txtEntradaCompostaTh.Text 'OK
                 madeiraSelecionada.PropriedadesGeometricas.h3 = txtEntradaCompostaHf.Text 'OK
+                madeiraSelecionada.PropriedadesGeometricas.comprimento = txtTComp.Text 'OK
 
             Case Madeira.TipoSecao.SecaoI
                 madeiraSelecionada.PropriedadesGeometricas.b1 = txtEntradaIBf2.Text 'OK
@@ -1687,6 +1712,7 @@ Public Class Form1
                 madeiraSelecionada.PropriedadesGeometricas.h1 = txtEntradaIHf2.Text 'OK
                 madeiraSelecionada.PropriedadesGeometricas.h2 = txtEntradaIH.Text 'OK
                 madeiraSelecionada.PropriedadesGeometricas.h3 = txtEntradaIHf1.Text 'OK
+                madeiraSelecionada.PropriedadesGeometricas.comprimento = txtIComp.Text
 
             Case Madeira.TipoSecao.Caixao
                 madeiraSelecionada.PropriedadesGeometricas.b1c = txtEntradaCaixaoB1.Text 'OK
@@ -1697,6 +1723,22 @@ Public Class Form1
                 madeiraSelecionada.PropriedadesGeometricas.h2c = txtEntradaCaixaoH2.Text 'OK
                 madeiraSelecionada.PropriedadesGeometricas.h3c = txtEntradaCaixaoH3.Text 'OK
                 madeiraSelecionada.PropriedadesGeometricas.h4c = txtEntradaCaixaoH4.Text 'OK
+                madeiraSelecionada.PropriedadesGeometricas.comprimento = txtCaixaoComp.Text
+
+            Case Madeira.TipoSecao.ElementosJustaposto2
+                madeiraSelecionada.PropriedadesGeometricas.comprimento = txtEntrada2L.Text
+                madeiraSelecionada.PropriedadesGeometricas.l1 = txtEntrada2L1.Text
+                madeiraSelecionada.PropriedadesGeometricas.a1 = txtEntrada2a1.Text
+                madeiraSelecionada.PropriedadesGeometricas.h1 = txtEntrada2h1.Text
+                madeiraSelecionada.PropriedadesGeometricas.b1 = txtEntrada2b1.Text
+
+            Case Madeira.TipoSecao.ElementosJustaposto3
+                madeiraSelecionada.PropriedadesGeometricas.comprimento = txtEntrada3L.Text
+                madeiraSelecionada.PropriedadesGeometricas.l1 = txtEntrada3L1.Text
+                madeiraSelecionada.PropriedadesGeometricas.a1 = txtEntrada3a1.Text
+                madeiraSelecionada.PropriedadesGeometricas.h1 = txtEntrada3h1.Text
+                madeiraSelecionada.PropriedadesGeometricas.b1 = txtEntrada3b1.Text
+
         End Select
     End Sub
 
@@ -1709,11 +1751,14 @@ Public Class Form1
         exibicao.ExibeFlexaoSimplesObliqua = PropriedadesResistencia.verificaVazio(txtMx.Text.ToString) <> 0 And PropriedadesResistencia.verificaVazio(txtMy.Text.ToString) <> 0 And PropriedadesResistencia.verificaVazio(txtCortanteX.Text.ToString) <> 0 Or PropriedadesResistencia.verificaVazio(txtCortanteY.Text.ToString) <> 0
         exibicao.ExibeFlexoTracao = PropriedadesResistencia.verificaVazio(txtMx.Text.ToString) <> 0 Or PropriedadesResistencia.verificaVazio(txtMy.Text.ToString) <> 0 And PropriedadesResistencia.verificaVazio(txtNormal.Text.ToString) <> 0 And cboTracaoCompressao.SelectedIndex = 0
         exibicao.ExibeFlexoCompressao = PropriedadesResistencia.verificaVazio(txtMx.Text.ToString) <> 0 Or PropriedadesResistencia.verificaVazio(txtMy.Text.ToString) <> 0 And PropriedadesResistencia.verificaVazio(txtNormal.Text.ToString) <> 0 And cboTracaoCompressao.SelectedIndex = 1
-    End Sub
-
-    Private Sub RegraExibicaoPropr()
-        exibicao.ExibeProprSimples = rbtSecaoRetangular.Checked Or rbtSecaoCircular.Checked Or rbtSecaoI.Checked Or rbtSecaoCaixao.Checked
+        exibicao.ExibeProprSimples = rbtSecaoRetangular.Checked Or rbtSecaoCircular.Checked Or rbtSecaoT.Checked Or rbtSecaoI.Checked Or rbtSecaoCaixao.Checked
         exibicao.ExibeProprComp = rbt2Elementos.Checked Or rbt3Elementos.Checked
+        exibicao.ExibeRetangular = rbtSecaoRetangular.Checked
+        exibicao.ExibeCircular = rbtSecaoCircular.Checked
+        exibicao.ExibeSecaoT = rbtSecaoT.Checked
+        exibicao.ExibeSecaoI = rbtSecaoI.Checked
+        exibicao.ExibeCaixao = rbtSecaoCaixao.Checked
+        exibicao.Exibe2Elementos = rbt2Elementos.Checked
+        exibicao.Exibe3Elementos = rbt3Elementos.Checked
     End Sub
-
 End Class

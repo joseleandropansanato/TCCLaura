@@ -57,6 +57,8 @@ Public Class Compressao
 
     Private _eixoYY As Double = 0
     Private _eixoXX As Double = 0
+
+
     Public Sub New()
 
     End Sub

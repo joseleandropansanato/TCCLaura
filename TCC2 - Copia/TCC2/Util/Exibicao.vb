@@ -9,6 +9,13 @@
     Private _exibeFlexoCompressao As Boolean = True
     Private _exibeProprSimples As Boolean = True
     Private _exibeProprComp As Boolean = True
+    Private _exibeRetangular As Boolean = True
+    Private _exibeCircular As Boolean = True
+    Private _exibeSecaoT As Boolean = True
+    Private _exibeSecaoI As Boolean = True
+    Private _exibeCaixao As Boolean = True
+    Private _exibe2Elementos As Boolean = True
+    Private _exibe3Elementos As Boolean = True
 
     Public Sub New()
 
@@ -89,6 +96,69 @@
         End Get
         Set(value As Boolean)
             _exibeProprComp = value
+        End Set
+    End Property
+
+    Public Property ExibeRetangular() As Boolean
+        Get
+            Return _exibeRetangular
+        End Get
+        Set(value As Boolean)
+            _exibeRetangular = value
+        End Set
+    End Property
+
+    Public Property ExibeCircular() As Boolean
+        Get
+            Return _exibeCircular
+        End Get
+        Set(value As Boolean)
+            _exibeCircular = value
+        End Set
+    End Property
+
+    Public Property ExibeSecaoT() As Boolean
+        Get
+            Return _exibeSecaoT
+        End Get
+        Set(value As Boolean)
+            _exibeSecaoT = value
+        End Set
+    End Property
+
+    Public Property ExibeSecaoI() As Boolean
+        Get
+            Return _exibeSecaoI
+        End Get
+        Set(value As Boolean)
+            _exibeSecaoI = value
+        End Set
+    End Property
+
+    Public Property ExibeCaixao() As Boolean
+        Get
+            Return _exibeCaixao
+        End Get
+        Set(value As Boolean)
+            _exibeCaixao = value
+        End Set
+    End Property
+
+    Public Property Exibe2Elementos() As Boolean
+        Get
+            Return _exibe2Elementos
+        End Get
+        Set(value As Boolean)
+            _exibe2Elementos = value
+        End Set
+    End Property
+
+    Public Property Exibe3Elementos() As Boolean
+        Get
+            Return _exibe3Elementos
+        End Get
+        Set(value As Boolean)
+            _exibe3Elementos = value
         End Set
     End Property
 

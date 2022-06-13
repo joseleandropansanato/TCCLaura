@@ -41,11 +41,17 @@
     Public Shared centroGeometricoX As Double = 0
     Public Shared centroGeometricoY As Double = 0
 
+    Public Shared base As Double = 0
+    Public Shared altura As Double = 0
+    Public Shared diametro As Double = 0
+    Public Shared comprimento As Double = 0
+
+
     'SEÇÃO T OU I
-    Public Shared b1 As Double = 0 'bf2
+    Public Shared b1 As Double = 0 'bf2 'justaposto
     Public Shared b2 As Double = 0 'bw
     Public Shared b3 As Double = 0 'bf1
-    Public Shared h1 As Double = 0 'hf2
+    Public Shared h1 As Double = 0 'hf2 'justaposto
     Public Shared h2 As Double = 0 'h
     Public Shared h3 As Double = 0 'hf1
 
@@ -58,6 +64,12 @@
     Public Shared h2c As Double = 0
     Public Shared h3c As Double = 0
     Public Shared h4c As Double = 0 'hbf1 caixao
+
+    'element justaposto
+    Public Shared l1 As Double = 0
+    Public Shared a1 As Double = 0
+
+
     Enum Pilar
         Espaçador
         Chapa
