@@ -852,8 +852,8 @@ Public Class Form1
         txtTensaoMx.Text = madeiraSelecionada.Flexao.tensaoFlexaoX
         txtTensaoMy.Text = madeiraSelecionada.Flexao.tensaoFlexaoY
         'apoio
-        txtApoioX.Text = Format(madeiraSelecionada.Flexao.ApoioX, "#0.0##;-#0.0##")
-        txtApoioY.Text = Format(madeiraSelecionada.Flexao.ApoioY, "#0.0##;-#0.0##")
+        txtCompApoioX.Text = Format(madeiraSelecionada.Flexao.ApoioX, "#0.0##;-#0.0##")
+        txtCompApoioY.Text = Format(madeiraSelecionada.Flexao.ApoioY, "#0.0##;-#0.0##")
         'reta
         txtTensaoTx.Text = Format(madeiraSelecionada.Flexao.tensaoTY, "#0.0##;-#0.0##")
         txtTensaoCy.Text = Format(madeiraSelecionada.Flexao.tensaoCY, "#0.0##;-#0.0##")
@@ -895,8 +895,7 @@ Public Class Form1
             lblValidacaoFlexaoSimplesX.Visible = True
             lblValidacaoFlexaoSimplesX.ForeColor = Color.Red
         End If
-        ' lblValidacaoFlexaoSimplesX.Visible = (PropriedadesResistencia.verificaVazio(txtMx.Text.ToString) <> 0) And (PropriedadesResistencia.verificaVazio(txtMy.Text.ToString) = 0) And (PropriedadesResistencia.verificaVazio(txtCortanteX.Text.ToString) <> 0) Or (PropriedadesResistencia.verificaVazio(txtCortanteY.Text.ToString <> 0)) Or
-        ' (PropriedadesResistencia.verificaVazio(txtMy.Text.ToString) <> 0) And (PropriedadesResistencia.verificaVazio(txtMx.Text.ToString) = 0) And (PropriedadesResistencia.verificaVazio(txtCortanteX.Text.ToString) <> 0) Or (PropriedadesResistencia.verificaVazio(txtCortanteY.Text.ToString) <> 0)
+        lblValidacaoFlexaoSimplesX.Visible = (PropriedadesResistencia.verificaVazio(txtMx.Text.ToString) <> 0) And (PropriedadesResistencia.verificaVazio(txtMy.Text.ToString) = 0) And (PropriedadesResistencia.verificaVazio(txtCortanteX.Text.ToString) <> 0) Or (PropriedadesResistencia.verificaVazio(txtCortanteY.Text.ToString) <> 0) Or (PropriedadesResistencia.verificaVazio(txtMy.Text.ToString) <> 0) And (PropriedadesResistencia.verificaVazio(txtMx.Text.ToString) = 0) And (PropriedadesResistencia.verificaVazio(txtCortanteX.Text.ToString) <> 0) Or (PropriedadesResistencia.verificaVazio(txtCortanteY.Text.ToString) <> 0)
 
         'VALIDAÇÃO FLEXÃO SIMPLES RETA Y:
         If PropriedadesResistencia.validarTensaoFlexaoSimplesRetaY(madeiraSelecionada.Flexao.tensaoFlexaoX, madeiraSelecionada.ResistenciaCalculo.resistCalculoCompressaoParalela) Then
@@ -908,8 +907,8 @@ Public Class Form1
             lblValidacaoFlexaoSimplesY.Visible = True
             lblValidacaoFlexaoSimplesY.ForeColor = Color.Red
         End If
-        '  lblValidacaoFlexaoSimplesY.Visible = (PropriedadesResistencia.verificaVazio(txtMx.Text.ToString) <> 0) And (PropriedadesResistencia.verificaVazio(txtMy.Text.ToString) = 0) And (PropriedadesResistencia.verificaVazio(txtCortanteX.Text.ToString) <> 0) Or (PropriedadesResistencia.verificaVazio(txtCortanteY.Text.ToString <> 0)) Or
-        '     (PropriedadesResistencia.verificaVazio(txtMy.Text.ToString) <> 0) And (PropriedadesResistencia.verificaVazio(txtMx.Text.ToString) = 0) And (PropriedadesResistencia.verificaVazio(txtCortanteX.Text.ToString) <> 0) Or (PropriedadesResistencia.verificaVazio(txtCortanteY.Text.ToString) <> 0)
+        lblValidacaoFlexaoSimplesY.Visible = (PropriedadesResistencia.verificaVazio(txtMx.Text.ToString) <> 0) And (PropriedadesResistencia.verificaVazio(txtMy.Text.ToString) = 0) And (PropriedadesResistencia.verificaVazio(txtCortanteX.Text.ToString) <> 0) Or (PropriedadesResistencia.verificaVazio(txtCortanteY.Text.ToString) <> 0) Or (PropriedadesResistencia.verificaVazio(txtMy.Text.ToString) <> 0) And (PropriedadesResistencia.verificaVazio(txtMx.Text.ToString) = 0) And (PropriedadesResistencia.verificaVazio(txtCortanteX.Text.ToString) <> 0) Or (PropriedadesResistencia.verificaVazio(txtCortanteY.Text.ToString) <> 0)
+
         'VALIDAÇÃO FLEXÃO SIMPLES OBLIQUA X:
         If PropriedadesResistencia.validarTensaoFlexaoSimplesObliquaX(madeiraSelecionada.Flexao.tensaoFlexaoX, madeiraSelecionada.Flexao.tensaoFlexaoY, madeiraSelecionada.ResistenciaCalculo.resistCalculoTracaoParalela, tipoSecao) Then
             lblValidacaoFlexaoObliquaX.Text = "PASSOU NA VERIFICAÇÃO"
@@ -920,7 +919,8 @@ Public Class Form1
             lblValidacaoFlexaoObliquaX.Visible = True
             lblValidacaoFlexaoObliquaX.ForeColor = Color.Red
         End If
-        ' lblValidacaoFlexaoObliquaX.Visible = (PropriedadesResistencia.verificaVazio(txtMx.Text.ToString) <> 0) And (PropriedadesResistencia.verificaVazio(txtMy.Text.ToString) <> 0) And (PropriedadesResistencia.verificaVazio(txtCortanteX.Text.ToString) <> 0) Or (PropriedadesResistencia.verificaVazio(txtCortanteY.Text.ToString) <> 0)
+        lblValidacaoFlexaoObliquaX.Visible = (PropriedadesResistencia.verificaVazio(txtMx.Text.ToString) <> 0) And (PropriedadesResistencia.verificaVazio(txtMy.Text.ToString) <> 0) And (PropriedadesResistencia.verificaVazio(txtCortanteX.Text.ToString) <> 0) Or (PropriedadesResistencia.verificaVazio(txtCortanteY.Text.ToString) <> 0)
+
         'VALIDAÇÃO FLEXÃO SIMPLES OBLIQUA Y:
         If PropriedadesResistencia.validarTensaoFlexaoSimplesObliquaY(madeiraSelecionada.Flexao.tensaoFlexaoX, madeiraSelecionada.Flexao.tensaoFlexaoY, madeiraSelecionada.ResistenciaCalculo.resistCalculoCompressaoParalela, tipoSecao) Then
             lblValidacaoFlexaoObliquaY.Text = "PASSOU NA VERIFICAÇÃO"
@@ -931,7 +931,7 @@ Public Class Form1
             lblValidacaoFlexaoObliquaY.Visible = True
             lblValidacaoFlexaoObliquaY.ForeColor = Color.Red
         End If
-        ' lblValidacaoFlexaoObliquaY.Visible = (PropriedadesResistencia.verificaVazio(txtMx.Text.ToString) <> 0) And (PropriedadesResistencia.verificaVazio(txtMy.Text.ToString) <> 0) And (PropriedadesResistencia.verificaVazio(txtCortanteX.Text.ToString) <> 0) Or (PropriedadesResistencia.verificaVazio(txtCortanteY.Text.ToString) <> 0)
+        lblValidacaoFlexaoObliquaY.Visible = (PropriedadesResistencia.verificaVazio(txtMx.Text.ToString) <> 0) And (PropriedadesResistencia.verificaVazio(txtMy.Text.ToString) <> 0) And (PropriedadesResistencia.verificaVazio(txtCortanteX.Text.ToString) <> 0) Or (PropriedadesResistencia.verificaVazio(txtCortanteY.Text.ToString) <> 0)
     End Sub
 
     'FLEXÃO COMPOSTA ================================
@@ -962,7 +962,7 @@ Public Class Form1
             lblValidacaoFlexoTracaoX.Visible = True
             lblValidacaoFlexoTracaoX.ForeColor = Color.Red
         End If
-        'lblValidacaoFlexoTracaoX.Visible = (PropriedadesResistencia.verificaVazio(txtMx.Text.ToString) <> 0) Or (PropriedadesResistencia.verificaVazio(txtMy.Text.ToString) <> 0) And (PropriedadesResistencia.verificaVazio(txtNormal.Text.ToString) <> 0) And cboTracaoCompressao.Text = "Tração"
+        lblValidacaoFlexoTracaoX.Visible = (PropriedadesResistencia.verificaVazio(txtMx.Text.ToString) <> 0) Or (PropriedadesResistencia.verificaVazio(txtMy.Text.ToString) <> 0) And (PropriedadesResistencia.verificaVazio(txtNormal.Text.ToString) <> 0) And cboTracaoCompressao.Text = "Tração"
 
         'VALIDAÇÃO FLEXOTRAÇÃO Y:
         If PropriedadesResistencia.validarTensaoFlexotracaoY(madeiraSelecionada.Tracao.TensaoTracao, madeiraSelecionada.Flexao.tensaoFlexaoX, madeiraSelecionada.Flexao.tensaoFlexaoY, madeiraSelecionada.ResistenciaCalculo.resistCalculoTracaoParalela, tipoSecao) Then
@@ -974,7 +974,7 @@ Public Class Form1
             lblValidacaoFlexoTracaoY.Visible = True
             lblValidacaoFlexoTracaoY.ForeColor = Color.Red
         End If
-        'lblValidacaoFlexoTracaoY.Visible = (PropriedadesResistencia.verificaVazio(txtMx.Text.ToString) <> 0) Or (PropriedadesResistencia.verificaVazio(txtMy.Text.ToString) <> 0) And (PropriedadesResistencia.verificaVazio(txtNormal.Text.ToString) <> 0) And cboTracaoCompressao.Text = "Tração"
+        lblValidacaoFlexoTracaoY.Visible = (PropriedadesResistencia.verificaVazio(txtMx.Text.ToString) <> 0) Or (PropriedadesResistencia.verificaVazio(txtMy.Text.ToString) <> 0) And (PropriedadesResistencia.verificaVazio(txtNormal.Text.ToString) <> 0) And cboTracaoCompressao.Text = "Tração"
 
         'VALIDAÇÃO FLEXOCOMPRESSAO X:
         If PropriedadesResistencia.validarTensaoFlexocompressaoX(madeiraSelecionada.Compressao.TensaoCompressaoX, madeiraSelecionada.Flexao.tensaoFlexaoX, madeiraSelecionada.Flexao.tensaoFlexaoY, madeiraSelecionada.ResistenciaCalculo.resistCalculoCompressaoParalela, tipoSecao) Then
@@ -986,7 +986,7 @@ Public Class Form1
             lblValidacaoFlexoCompressaoX.Visible = True
             lblValidacaoFlexoCompressaoX.ForeColor = Color.Red
         End If
-        ' lblValidacaoFlexoCompressaoX.Visible = (PropriedadesResistencia.verificaVazio(txtMx.Text.ToString) <> 0) Or (PropriedadesResistencia.verificaVazio(txtMy.Text.ToString) <> 0) And (PropriedadesResistencia.verificaVazio(txtNormal.Text.ToString) <> 0) And cboTracaoCompressao.Text = "Compressão"
+        lblValidacaoFlexoCompressaoX.Visible = (PropriedadesResistencia.verificaVazio(txtMx.Text.ToString) <> 0) Or (PropriedadesResistencia.verificaVazio(txtMy.Text.ToString) <> 0) And (PropriedadesResistencia.verificaVazio(txtNormal.Text.ToString) <> 0) And cboTracaoCompressao.Text = "Compressão"
 
         'VALIDAÇÃO FLEXOCOMPRESSAO Y:
         If PropriedadesResistencia.validarTensaoFlexocompressaoY(madeiraSelecionada.Compressao.TensaoCompressaoY, madeiraSelecionada.Flexao.tensaoFlexaoX, madeiraSelecionada.Flexao.tensaoFlexaoY, madeiraSelecionada.ResistenciaCalculo.resistCalculoCompressaoParalela, tipoSecao) Then
@@ -998,7 +998,7 @@ Public Class Form1
             lblValidacaoFlexoCompressaoY.Visible = True
             lblValidacaoFlexoCompressaoY.ForeColor = Color.Red
         End If
-        ' lblValidacaoFlexoCompressaoY.Visible = (PropriedadesResistencia.verificaVazio(txtMx.Text.ToString) <> 0) Or (PropriedadesResistencia.verificaVazio(txtMy.Text.ToString) <> 0) And (PropriedadesResistencia.verificaVazio(txtNormal.Text.ToString) <> 0) And cboTracaoCompressao.Text = "Compressão"
+        lblValidacaoFlexoCompressaoY.Visible = (PropriedadesResistencia.verificaVazio(txtMx.Text.ToString) <> 0) Or (PropriedadesResistencia.verificaVazio(txtMy.Text.ToString) <> 0) And (PropriedadesResistencia.verificaVazio(txtNormal.Text.ToString) <> 0) And cboTracaoCompressao.Text = "Compressão"
     End Sub
     Private Sub ResistCalculo()
         madeiraSelecionada.ResistenciaCalculo.resistCalculoCompressaoParalela = PropriedadesResistencia.resistCalCompParalela(madeiraSelecionada.Kmod, madeiraSelecionada.ResistCompParalela)
@@ -1703,7 +1703,7 @@ Public Class Form1
     Private Sub RegraExibicao()
         exibicao.ExibeTracao = PropriedadesResistencia.verificaVazio(txtNormal.Text.ToString) <> 0 And cboTracaoCompressao.SelectedIndex = 0
         exibicao.ExibeCompressao = PropriedadesResistencia.verificaVazio(txtNormal.Text.ToString) <> 0 And cboTracaoCompressao.SelectedIndex = 1
-        exibicao.ExibeCisalhamento = PropriedadesResistencia.verificaVazio(txtCortanteX.Text.ToString <> 0) Or PropriedadesResistencia.verificaVazio(txtCortanteY.Text.ToString) <> 0
+        exibicao.ExibeCisalhamento = PropriedadesResistencia.verificaVazio(txtCortanteX.Text.ToString) <> 0 Or PropriedadesResistencia.verificaVazio(txtCortanteY.Text.ToString) <> 0
         exibicao.ExibeFlexaoSimplesReta = PropriedadesResistencia.verificaVazio(txtMx.Text.ToString) <> 0 And PropriedadesResistencia.verificaVazio(txtMy.Text.ToString) = 0 And (txtCortanteX.Text.ToString) <> 0 Or PropriedadesResistencia.verificaVazio(txtCortanteY.Text.ToString) <> 0 Or
                                           PropriedadesResistencia.verificaVazio(txtMy.Text.ToString) <> 0 And PropriedadesResistencia.verificaVazio(txtMx.Text.ToString) = 0 And PropriedadesResistencia.verificaVazio(txtCortanteX.Text.ToString) <> 0 Or PropriedadesResistencia.verificaVazio(txtCortanteY.Text.ToString) <> 0
         exibicao.ExibeFlexaoSimplesObliqua = PropriedadesResistencia.verificaVazio(txtMx.Text.ToString) <> 0 And PropriedadesResistencia.verificaVazio(txtMy.Text.ToString) <> 0 And PropriedadesResistencia.verificaVazio(txtCortanteX.Text.ToString) <> 0 Or PropriedadesResistencia.verificaVazio(txtCortanteY.Text.ToString) <> 0
