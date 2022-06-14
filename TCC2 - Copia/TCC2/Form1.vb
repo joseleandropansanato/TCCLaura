@@ -409,7 +409,7 @@ Public Class Form1
         'fim
 
         'TRAÇÃO: ACONTEECE QUANDO A NORMAL TRAÇÃO ESTÁ SELECIONADA: OK
-        If txtNormal.Text.ToString <> "" And cboTracaoCompressao.Text = "Tração" Then
+        If PropriedadesResistencia.verificaVazio(txtNormal.Text) <> 0 And cboTracaoCompressao.SelectedIndex = 0 Then
             madeiraSelecionada.Tracao = CalcTensaoT(
                 PropriedadesResistencia.verificaVazio(txtNormal.Text),
                 comprimento(),
@@ -421,7 +421,7 @@ Public Class Form1
                 )
 
             'COMPRESSAO: ACONTEECE QUANDO A NORMAL TRAÇÃO ESTÁ SELECIONADA: OK
-        ElseIf txtNormal.Text.ToString <> "" And cboTracaoCompressao.Text = "Compressão" Then
+        ElseIf PropriedadesResistencia.verificaVazio(txtNormal.Text) <> 0 And cboTracaoCompressao.SelectedIndex = 1 Then
             madeiraSelecionada.Compressao = CalcTensaoC(
                 PropriedadesResistencia.verificaVazio(txtNormal.Text),
                 PropriedadesResistencia.verificaVazio(txtMx.Text),
@@ -450,7 +450,7 @@ Public Class Form1
         End If
 
         'CISALHAMENTO: ACONTEECE QUANDO Vx ou Vy ESTÁ SELECIONADA: OK 
-        If txtCortanteX.Text.ToString <> "" Or txtCortanteY.Text.ToString <> "" Then
+        If PropriedadesResistencia.verificaVazio(txtCortanteX.Text) <> 0 Or PropriedadesResistencia.verificaVazio(txtCortanteY.Text) <> 0 Then
             madeiraSelecionada.Cisalhamento = CalcTensaoCisalhamento(
              PropriedadesResistencia.verificaVazio(txtCortanteX.Text),
              PropriedadesResistencia.verificaVazio(txtCortanteY.Text),
@@ -463,23 +463,24 @@ Public Class Form1
         End If
 
         'FLEXÃO SIMPLES RETA: ACONTECE: mX OU mY SELECIONADOS JUNTO A ESFORÇOS DE CISALHAMENTO
-        If (txtMx.Text.ToString <> "" Or txtMy.Text.ToString = "" And (txtCortanteX.Text.ToString <> "" Or txtCortanteY.Text.ToString <> "")) Or
-           (txtMy.Text.ToString <> "" Or txtMx.Text.ToString = "" And (txtCortanteX.Text.ToString <> "" Or txtCortanteY.Text.ToString <> "")) Then
-            gbxFlexaoSimples.Visible = True
-            gbxFlexaoObliqua.Visible = False
-            madeiraSelecionada.Flexao = CalcTensaoFlexaoSimples(
-            PropriedadesResistencia.verificaVazio(txtMx.Text),
-            PropriedadesResistencia.verificaVazio(txtMy.Text),
-            PropriedadesResistencia.verificaVazio(txtEntradaRetangularBx.Text),
-            PropriedadesResistencia.verificaVazio(txtEntradaRetangularBy.Text),
-            PropriedadesResistencia.verificaVazio(txtEntradaCircularD.Text),
-            PropriedadesResistencia.verificaVazio(txtApoioX.Text),
-            PropriedadesResistencia.verificaVazio(txtApoioY.Text),
-           madeiraSelecionada.PropriedadesGeometricas,
-           tipoSecao
-           )
+        If Not ((PropriedadesResistencia.verificaVazio(txtMx.Text) <> 0) And (PropriedadesResistencia.verificaVazio(txtMy.Text) <> 0)) Then
+            If ((PropriedadesResistencia.verificaVazio(txtMx.Text) <> 0) Or (PropriedadesResistencia.verificaVazio(txtMy.Text) <> 0)) Then
+                gbxFlexaoSimples.Visible = True
+                gbxFlexaoObliqua.Visible = False
+                madeiraSelecionada.Flexao = CalcTensaoFlexaoSimples(
+                PropriedadesResistencia.verificaVazio(txtMx.Text),
+                PropriedadesResistencia.verificaVazio(txtMy.Text),
+                PropriedadesResistencia.verificaVazio(txtEntradaRetangularBx.Text),
+                PropriedadesResistencia.verificaVazio(txtEntradaRetangularBy.Text),
+                PropriedadesResistencia.verificaVazio(txtEntradaCircularD.Text),
+                PropriedadesResistencia.verificaVazio(txtApoioX.Text),
+                PropriedadesResistencia.verificaVazio(txtApoioY.Text),
+               madeiraSelecionada.PropriedadesGeometricas,
+               tipoSecao
+               )
+            End If
             'FLEXÃO OBLIQUA: ACONTECE QUANDO Mx e My ESTÃOO SELECIONADO: OK
-        ElseIf txtMx.Text.ToString <> "" And txtMy.Text.ToString <> "" And (txtCortanteX.Text.ToString <> "" Or txtCortanteY.Text.ToString <> "") Then
+        ElseIf (PropriedadesResistencia.verificaVazio(txtMx.Text) <> 0) And (PropriedadesResistencia.verificaVazio(txtMy.Text) <> 0) Then
             gbxFlexaoSimples.Visible = False
             gbxFlexaoObliqua.Visible = True
             madeiraSelecionada.Flexao = CalcTensaoFlexaoObliqua(
@@ -497,35 +498,37 @@ Public Class Form1
 
         'FLEXAO COMPOSTA
         '------------------------FLEXOTRAÇÃO------------------------
-        If txtMx.Text.ToString <> "" Or txtMy.Text.ToString <> "" And txtNormal.Text.ToString <> "" And cboTracaoCompressao.Text = "Tração" Then
+        If ((PropriedadesResistencia.verificaVazio(txtNormal.Text) <> 0) And (cboTracaoCompressao.SelectedIndex = 0)) And ((PropriedadesResistencia.verificaVazio(txtMx.Text) <> 0) Or (PropriedadesResistencia.verificaVazio(txtMy.Text) <> 0)) Then
             gbxFlexoTracao.Visible = True
             gbxFlexoCompressao.Visible = False
             madeiraSelecionada.Flexao = CalcTensaoFlexotracao(
-            PropriedadesResistencia.verificaVazio(txtMx.Text),
-            PropriedadesResistencia.verificaVazio(txtMy.Text),
-            PropriedadesResistencia.verificaVazio(txtEntradaRetangularBx.Text),
-            PropriedadesResistencia.verificaVazio(txtEntradaRetangularBy.Text),
-            PropriedadesResistencia.verificaVazio(txtEntradaCircularD.Text),
-            PropriedadesResistencia.verificaVazio(txtApoioX.Text),
-            PropriedadesResistencia.verificaVazio(txtApoioY.Text),
-            madeiraSelecionada.PropriedadesGeometricas,
-            tipoSecao
+                madeiraSelecionada.Flexao,
+                PropriedadesResistencia.verificaVazio(txtMx.Text),
+                PropriedadesResistencia.verificaVazio(txtMy.Text),
+                PropriedadesResistencia.verificaVazio(txtEntradaRetangularBx.Text),
+                PropriedadesResistencia.verificaVazio(txtEntradaRetangularBy.Text),
+                PropriedadesResistencia.verificaVazio(txtEntradaCircularD.Text),
+                PropriedadesResistencia.verificaVazio(txtApoioX.Text),
+                PropriedadesResistencia.verificaVazio(txtApoioY.Text),
+                madeiraSelecionada.PropriedadesGeometricas,
+                tipoSecao
             )
 
             '------------------------FLEXOCOMPRESSAO------------------------
-        ElseIf txtMx.Text.ToString <> "" Or txtMy.Text.ToString <> "" And txtNormal.Text.ToString <> "" And cboTracaoCompressao.Text = "Compressão" Then
+        ElseIf ((PropriedadesResistencia.verificaVazio(txtNormal.Text) <> 0) And (cboTracaoCompressao.SelectedIndex = 1)) And ((PropriedadesResistencia.verificaVazio(txtMx.Text) <> 0) Or (PropriedadesResistencia.verificaVazio(txtMy.Text) <> 0)) Then
             gbxFlexoCompressao.Visible = True
             gbxFlexoTracao.Visible = False
             madeiraSelecionada.Flexao = CalcTensaoFlexocompressao(
-            PropriedadesResistencia.verificaVazio(txtMx.Text),
-            PropriedadesResistencia.verificaVazio(txtMy.Text),
-            PropriedadesResistencia.verificaVazio(txtEntradaRetangularBx.Text),
-            PropriedadesResistencia.verificaVazio(txtEntradaRetangularBy.Text),
-            PropriedadesResistencia.verificaVazio(txtEntradaCircularD.Text),
-            PropriedadesResistencia.verificaVazio(txtApoioX.Text),
-            PropriedadesResistencia.verificaVazio(txtApoioY.Text),
-            madeiraSelecionada.PropriedadesGeometricas,
-            tipoSecao
+                madeiraSelecionada.Flexao,
+                PropriedadesResistencia.verificaVazio(txtMx.Text),
+                PropriedadesResistencia.verificaVazio(txtMy.Text),
+                PropriedadesResistencia.verificaVazio(txtEntradaRetangularBx.Text),
+                PropriedadesResistencia.verificaVazio(txtEntradaRetangularBy.Text),
+                PropriedadesResistencia.verificaVazio(txtEntradaCircularD.Text),
+                PropriedadesResistencia.verificaVazio(txtApoioX.Text),
+                PropriedadesResistencia.verificaVazio(txtApoioY.Text),
+                madeiraSelecionada.PropriedadesGeometricas,
+                tipoSecao
             )
         End If
 
@@ -852,11 +855,14 @@ Public Class Form1
         txtCompApoioX.Text = madeiraSelecionada.Flexao.ApoioY
 
         'reta
-        txtTensaoTx.Text = madeiraSelecionada.Flexao.tensaoTX
-        txtTensaoCy.Text = madeiraSelecionada.Flexao.tensaoCX
+        If PropriedadesResistencia.verificaVazio(txtMx.Text) <> 0 And PropriedadesResistencia.verificaVazio(txtMy.Text) = 0 Then
+            txtTensaoTx.Text = madeiraSelecionada.Flexao.tensaoTX
+            txtTensaoCy.Text = madeiraSelecionada.Flexao.tensaoCX
+        ElseIf PropriedadesResistencia.verificaVazio(txtMy.Text) <> 0 And PropriedadesResistencia.verificaVazio(txtMx.Text) = 0 Then
+            txtTensaoTx.Text = madeiraSelecionada.Flexao.tensaoTY
+            txtTensaoCy.Text = madeiraSelecionada.Flexao.tensaoCY
+        End If
 
-        txtTensaoTx.Text = madeiraSelecionada.Flexao.tensaoTY
-        txtTensaoCy.Text = madeiraSelecionada.Flexao.tensaoCY
         'obliqua
         txtTensaoMx.Text = madeiraSelecionada.Flexao.tensaoFlexaoX
         txtTensaoMy.Text = madeiraSelecionada.Flexao.tensaoFlexaoY
@@ -957,11 +963,11 @@ Public Class Form1
         txtfc.Text = madeiraSelecionada.ResistenciaCalculo.resistCalculoCompressaoParalela
 
         txtFlexoTracao.Text = Format(madeiraSelecionada.Tracao.TensaoTracao, "#0.0##;-#0.0##")
-        txtFlexoTracaoMx.Text = Format(madeiraSelecionada.Flexao.tensaoFlexaoX, "#0.0##;-#0.0##")
-        txtFlexoTracaoMy.Text = Format(madeiraSelecionada.Flexao.tensaoFlexaoY, "#0.0##;-#0.0##")
+        txtFlexoTracaoMx.Text = Format(madeiraSelecionada.Flexao.tensaoFlexaoXT, "#0.0##;-#0.0##")
+        txtFlexoTracaoMy.Text = Format(madeiraSelecionada.Flexao.tensaoFlexaoYT, "#0.0##;-#0.0##")
         txtFlexoCompressao.Text = Format(madeiraSelecionada.Compressao.TensaoCompressaoX, "#0.0##;-#0.0##") 'OU Y POIS SÃO IGUAIS
-        txtFlexoCompressaoMx.Text = Format(madeiraSelecionada.Flexao.tensaoFlexaoX, "#0.0##;-#0.0##")
-        txtFlexoCompressaoMy.Text = Format(madeiraSelecionada.Flexao.tensaoFlexaoY, "#0.0##;-#0.0##")
+        txtFlexoCompressaoMx.Text = Format(madeiraSelecionada.Flexao.tensaoFlexaoXC, "#0.0##;-#0.0##")
+        txtFlexoCompressaoMy.Text = Format(madeiraSelecionada.Flexao.tensaoFlexaoYC, "#0.0##;-#0.0##")
 
         'VALIDAÇÃO FLEXOTRAÇÃO X:
         If PropriedadesResistencia.validarTensaoFlexotracaoX(madeiraSelecionada.Tracao.TensaoTracao, madeiraSelecionada.Flexao.tensaoFlexaoX, madeiraSelecionada.Flexao.tensaoFlexaoY, madeiraSelecionada.ResistenciaCalculo.resistCalculoTracaoParalela, tipoSecao) Then

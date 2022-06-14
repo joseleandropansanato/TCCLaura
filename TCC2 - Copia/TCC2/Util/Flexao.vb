@@ -366,8 +366,9 @@
     End Function
 
 
-    Public Shared Function CalcTensaoFlexotracao(momentoFletorX As Double, momentoFletorY As Double, b As Double, h As Double, d As Double, fx As Double, fy As Double, proprGeo As PropriedadesGeometricas, tipoSecao As Madeira.TipoSecao) As Flexao
+    Public Shared Function CalcTensaoFlexotracao(flexaoSimplesOrObiqua As Flexao, momentoFletorX As Double, momentoFletorY As Double, b As Double, h As Double, d As Double, fx As Double, fy As Double, proprGeo As PropriedadesGeometricas, tipoSecao As Madeira.TipoSecao) As Flexao
         Dim flex = New Flexao()
+        flex = flexaoSimplesOrObiqua
 
         Select Case tipoSecao
             Case Madeira.TipoSecao.Retangular
@@ -471,8 +472,9 @@
         Return flex
     End Function
 
-    Public Shared Function CalcTensaoFlexocompressao(momentoFletorX As Double, momentoFletorY As Double, b As Double, h As Double, d As Double, fx As Double, fy As Double, proprGeo As PropriedadesGeometricas, tipoSecao As Madeira.TipoSecao) As Flexao
+    Public Shared Function CalcTensaoFlexocompressao(flexaoSimplesOrObiqua As Flexao, momentoFletorX As Double, momentoFletorY As Double, b As Double, h As Double, d As Double, fx As Double, fy As Double, proprGeo As PropriedadesGeometricas, tipoSecao As Madeira.TipoSecao) As Flexao
         Dim flex = New Flexao()
+        flex = flexaoSimplesOrObiqua
 
         Select Case tipoSecao
 

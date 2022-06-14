@@ -746,7 +746,6 @@ Public Class GeradorPDF
         End If
 
 
-
         doc.Close()
         arquivo.Close()
     End Sub
